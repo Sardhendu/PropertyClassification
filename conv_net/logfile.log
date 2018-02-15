@@ -1,0 +1,467 @@
+2018-02-14 23:04:33,572 INFO     INITIATING RUN ........
+2018-02-14 23:04:33,572 INFO     PREPROCESSING THE DATASET ..........
+2018-02-14 23:04:33,592 INFO     Adding random brightness
+2018-02-14 23:04:33,602 INFO     Adding random Contrast
+2018-02-14 23:04:33,610 INFO     Performing Central crop
+2018-02-14 23:04:33,629 INFO     Performing random horizontal flip
+2018-02-14 23:04:33,646 INFO     Standarizing the image
+2018-02-14 23:04:33,666 INFO     CONV_1 .........................
+2018-02-14 23:04:33,667 INFO     Running Scope conv1: 
+2018-02-14 23:04:33,667 INFO     SEED for scope: 553
+2018-02-14 23:04:33,690 INFO     CONV_1: shape (?, 224, 224, 64)
+2018-02-14 23:04:33,690 INFO     Running Scope bn1: 
+2018-02-14 23:04:33,736 INFO     BN 1: shape (?, 224, 224, 64)
+2018-02-14 23:04:33,737 INFO     RELU_1: shape (?, 224, 224, 64)
+2018-02-14 23:04:33,740 INFO     MAXPOOL_1: shape (?, 112, 112, 64)
+2018-02-14 23:04:33,740 INFO     CONV_2 .........................
+2018-02-14 23:04:33,740 INFO     Running Scope conv2: 
+2018-02-14 23:04:33,740 INFO     SEED for scope: 292
+2018-02-14 23:04:33,767 INFO     CONV_2: shape (?, 112, 112, 128)
+2018-02-14 23:04:33,768 INFO     Running Scope bn2: 
+2018-02-14 23:04:33,815 INFO     BN_2: shape (?, 112, 112, 128)
+2018-02-14 23:04:33,816 INFO     RELU_2: shape (?, 112, 112, 128)
+2018-02-14 23:04:33,818 INFO     MAXPOOL_2: shape (?, 56, 56, 128)
+2018-02-14 23:04:33,818 INFO     CONV_3 .........................
+2018-02-14 23:04:33,818 INFO     Running Scope conv3: 
+2018-02-14 23:04:33,819 INFO     SEED for scope: 394
+2018-02-14 23:04:33,841 INFO     CONV_3 shape (?, 56, 56, 256)
+2018-02-14 23:04:33,841 INFO     Running Scope bn3: 
+2018-02-14 23:04:33,893 INFO     BN_3: shape (?, 56, 56, 256)
+2018-02-14 23:04:33,894 INFO     RELU_3: shape (?, 56, 56, 256)
+2018-02-14 23:04:33,896 INFO     MAXPOOL_3: shape (?, 28, 28, 256)
+2018-02-14 23:04:33,896 INFO     CONV_4 .........................
+2018-02-14 23:04:33,896 INFO     Running Scope conv4: 
+2018-02-14 23:04:33,896 INFO     SEED for scope: 874
+2018-02-14 23:04:33,923 INFO     CONV_4: shape (?, 28, 28, 256)
+2018-02-14 23:04:33,923 INFO     Running Scope bn4: 
+2018-02-14 23:04:33,974 INFO     BN_3: shape (?, 28, 28, 256)
+2018-02-14 23:04:33,975 INFO     RELU_4: shape (?, 28, 28, 256)
+2018-02-14 23:04:33,977 INFO     MAXPOOL_4: shape (?, 14, 14, 256)
+2018-02-14 23:04:35,009 INFO     FC_1 .........................
+2018-02-14 23:04:35,009 INFO     Running Scope fc1: 
+2018-02-14 23:04:35,009 INFO     SEED for scope: 445
+2018-02-14 23:04:35,031 INFO     FC_1: shape (?, 1280)
+2018-02-14 23:04:35,032 INFO     RELU_5: shape (?, 1280)
+2018-02-14 23:04:35,046 INFO     FC_2 .........................
+2018-02-14 23:04:35,046 INFO     Running Scope fc2: 
+2018-02-14 23:04:35,046 INFO     SEED for scope: 191
+2018-02-14 23:04:35,068 INFO     FC_2: shape (?, 1280)
+2018-02-14 23:04:35,069 INFO     RELU_6: shape (?, 1280)
+2018-02-14 23:04:35,084 INFO     FC_3 .........................
+2018-02-14 23:04:35,084 INFO     Running Scope fc3: 
+2018-02-14 23:04:35,084 INFO     SEED for scope: 161
+2018-02-14 23:04:35,105 INFO     FC_3: shape (?, 1000)
+2018-02-14 23:04:35,106 INFO     RELU_7: shape (?, 1000)
+2018-02-14 23:04:35,120 INFO     The X till this point is: shape [None, 1000]
+2018-02-14 23:04:35,120 INFO     SOFTMAX .........................
+2018-02-14 23:04:35,120 INFO     Running Scope softmax: 
+2018-02-14 23:04:35,120 INFO     SEED for scope: 141
+2018-02-14 23:04:35,142 INFO     Softmax: shape (?, 1000)
+2018-02-14 23:04:35,142 INFO     Logits: shape [None, 2]
+2018-02-14 23:04:35,143 INFO     Probabilities: shape [None, 2]
+2018-02-14 23:04:35,234 INFO     INITIALIZING LOSS: .....
+2018-02-14 23:04:35,272 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-02-14 23:04:39,777 INFO     No Checkpoint found, hence initializing random weights
+2018-02-14 23:04:39,777 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr0.pickle 
+2018-02-14 23:04:39,859 INFO     DATA FORMATTER: Retrieved the pickle file tr0.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:05:09,107 INFO     Fold: 1, epoch: 1, batch: 0, Loss: 253.613098, Accuracy: 37.50000
+2018-02-14 23:05:09,116 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr1.pickle 
+2018-02-14 23:05:09,177 INFO     DATA FORMATTER: Retrieved the pickle file tr1.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:05:37,213 INFO     Fold: 1, epoch: 1, batch: 1, Loss: 1069.040283, Accuracy: 50.00000
+2018-02-14 23:05:37,217 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr2.pickle 
+2018-02-14 23:05:37,292 INFO     DATA FORMATTER: Retrieved the pickle file tr2.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:06:04,180 INFO     Fold: 1, epoch: 1, batch: 2, Loss: 1033.748047, Accuracy: 50.00000
+2018-02-14 23:06:04,188 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr3.pickle 
+2018-02-14 23:06:04,245 INFO     DATA FORMATTER: Retrieved the pickle file tr3.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:06:30,820 INFO     Fold: 1, epoch: 1, batch: 3, Loss: 407.580261, Accuracy: 53.12500
+2018-02-14 23:06:30,826 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr4.pickle 
+2018-02-14 23:06:30,877 INFO     DATA FORMATTER: Retrieved the pickle file tr4.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:06:59,034 INFO     Fold: 1, epoch: 1, batch: 4, Loss: 883.454346, Accuracy: 50.00000
+2018-02-14 23:06:59,039 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr5.pickle 
+2018-02-14 23:06:59,098 INFO     DATA FORMATTER: Retrieved the pickle file tr5.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:07:25,361 INFO     Fold: 1, epoch: 1, batch: 5, Loss: 792.509766, Accuracy: 50.00000
+2018-02-14 23:07:25,365 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr6.pickle 
+2018-02-14 23:07:25,418 INFO     DATA FORMATTER: Retrieved the pickle file tr6.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:07:51,944 INFO     Fold: 1, epoch: 1, batch: 6, Loss: 311.223083, Accuracy: 54.68750
+2018-02-14 23:07:51,949 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr7.pickle 
+2018-02-14 23:07:51,997 INFO     DATA FORMATTER: Retrieved the pickle file tr7.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:08:18,517 INFO     Fold: 1, epoch: 1, batch: 7, Loss: 556.632812, Accuracy: 51.56250
+2018-02-14 23:08:18,523 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr8.pickle 
+2018-02-14 23:08:18,572 INFO     DATA FORMATTER: Retrieved the pickle file tr8.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:08:44,787 INFO     Fold: 1, epoch: 1, batch: 8, Loss: 541.666138, Accuracy: 50.00000
+2018-02-14 23:08:44,792 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr9.pickle 
+2018-02-14 23:08:44,840 INFO     DATA FORMATTER: Retrieved the pickle file tr9.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:09:15,309 INFO     Fold: 1, epoch: 1, batch: 9, Loss: 408.772797, Accuracy: 59.37500
+2018-02-14 23:09:15,314 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr10.pickle 
+2018-02-14 23:09:15,376 INFO     DATA FORMATTER: Retrieved the pickle file tr10.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:09:42,434 INFO     Fold: 1, epoch: 1, batch: 10, Loss: 226.782104, Accuracy: 53.12500
+2018-02-14 23:09:42,442 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr11.pickle 
+2018-02-14 23:09:42,488 INFO     DATA FORMATTER: Retrieved the pickle file tr11.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:10:09,260 INFO     Fold: 1, epoch: 1, batch: 11, Loss: 364.011871, Accuracy: 54.68750
+2018-02-14 23:10:09,266 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr12.pickle 
+2018-02-14 23:10:09,314 INFO     DATA FORMATTER: Retrieved the pickle file tr12.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:10:37,870 INFO     Fold: 1, epoch: 1, batch: 12, Loss: 546.528442, Accuracy: 53.12500
+2018-02-14 23:10:37,875 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr13.pickle 
+2018-02-14 23:10:37,924 INFO     DATA FORMATTER: Retrieved the pickle file tr13.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:11:07,226 INFO     Fold: 1, epoch: 1, batch: 13, Loss: 294.956238, Accuracy: 57.81250
+2018-02-14 23:11:07,231 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr14.pickle 
+2018-02-14 23:11:07,285 INFO     DATA FORMATTER: Retrieved the pickle file tr14.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:11:35,059 INFO     Fold: 1, epoch: 1, batch: 14, Loss: 292.697632, Accuracy: 51.56250
+2018-02-14 23:11:35,065 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr15.pickle 
+2018-02-14 23:11:35,114 INFO     DATA FORMATTER: Retrieved the pickle file tr15.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:12:01,562 INFO     Fold: 1, epoch: 1, batch: 15, Loss: 247.884903, Accuracy: 62.50000
+2018-02-14 23:12:01,570 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr16.pickle 
+2018-02-14 23:12:01,621 INFO     DATA FORMATTER: Retrieved the pickle file tr16.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:12:29,743 INFO     Fold: 1, epoch: 1, batch: 16, Loss: 333.348755, Accuracy: 57.81250
+2018-02-14 23:12:29,755 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr17.pickle 
+2018-02-14 23:12:29,800 INFO     DATA FORMATTER: Retrieved the pickle file tr17.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:12:57,145 INFO     Fold: 1, epoch: 1, batch: 17, Loss: 398.097809, Accuracy: 59.37500
+2018-02-14 23:12:57,153 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr18.pickle 
+2018-02-14 23:12:57,202 INFO     DATA FORMATTER: Retrieved the pickle file tr18.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:13:22,897 INFO     Fold: 1, epoch: 1, batch: 18, Loss: 241.881760, Accuracy: 60.93750
+2018-02-14 23:13:22,904 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr19.pickle 
+2018-02-14 23:13:22,951 INFO     DATA FORMATTER: Retrieved the pickle file tr19.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:13:50,874 INFO     Fold: 1, epoch: 1, batch: 19, Loss: 192.484528, Accuracy: 60.93750
+2018-02-14 23:13:50,879 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr20.pickle 
+2018-02-14 23:13:50,927 INFO     DATA FORMATTER: Retrieved the pickle file tr20.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:14:17,001 INFO     Fold: 1, epoch: 1, batch: 20, Loss: 307.959900, Accuracy: 54.68750
+2018-02-14 23:14:17,008 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr21.pickle 
+2018-02-14 23:14:17,059 INFO     DATA FORMATTER: Retrieved the pickle file tr21.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:14:43,662 INFO     Fold: 1, epoch: 1, batch: 21, Loss: 369.683899, Accuracy: 48.43750
+2018-02-14 23:14:43,668 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr22.pickle 
+2018-02-14 23:14:43,730 INFO     DATA FORMATTER: Retrieved the pickle file tr22.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:15:11,594 INFO     Fold: 1, epoch: 1, batch: 22, Loss: 229.830322, Accuracy: 57.81250
+2018-02-14 23:15:11,601 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr23.pickle 
+2018-02-14 23:15:11,658 INFO     DATA FORMATTER: Retrieved the pickle file tr23.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:15:38,732 INFO     Fold: 1, epoch: 1, batch: 23, Loss: 208.326157, Accuracy: 62.50000
+2018-02-14 23:15:38,739 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr24.pickle 
+2018-02-14 23:15:38,803 INFO     DATA FORMATTER: Retrieved the pickle file tr24.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:16:04,961 INFO     Fold: 1, epoch: 1, batch: 24, Loss: 230.495300, Accuracy: 57.81250
+2018-02-14 23:16:04,968 INFO     CHECKPOINT SAVER: Saving model updated parameters
+2018-02-14 23:16:11,267 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr0.pickle 
+2018-02-14 23:16:11,344 INFO     DATA FORMATTER: Retrieved the pickle file tr0.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:16:38,698 INFO     Fold: 1, epoch: 2, batch: 0, Loss: 221.534515, Accuracy: 48.43750
+2018-02-14 23:16:38,704 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr1.pickle 
+2018-02-14 23:16:38,753 INFO     DATA FORMATTER: Retrieved the pickle file tr1.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:17:07,171 INFO     Fold: 1, epoch: 2, batch: 1, Loss: 161.491699, Accuracy: 62.50000
+2018-02-14 23:17:07,178 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr2.pickle 
+2018-02-14 23:17:07,241 INFO     DATA FORMATTER: Retrieved the pickle file tr2.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:17:34,462 INFO     Fold: 1, epoch: 2, batch: 2, Loss: 214.376953, Accuracy: 60.93750
+2018-02-14 23:17:34,467 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr3.pickle 
+2018-02-14 23:17:34,520 INFO     DATA FORMATTER: Retrieved the pickle file tr3.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:18:02,082 INFO     Fold: 1, epoch: 2, batch: 3, Loss: 169.244080, Accuracy: 64.06250
+2018-02-14 23:18:02,088 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr4.pickle 
+2018-02-14 23:18:02,142 INFO     DATA FORMATTER: Retrieved the pickle file tr4.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:18:30,277 INFO     Fold: 1, epoch: 2, batch: 4, Loss: 208.786530, Accuracy: 50.00000
+2018-02-14 23:18:30,287 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr5.pickle 
+2018-02-14 23:18:30,327 INFO     DATA FORMATTER: Retrieved the pickle file tr5.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:18:58,669 INFO     Fold: 1, epoch: 2, batch: 5, Loss: 210.214996, Accuracy: 46.87500
+2018-02-14 23:18:58,673 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr6.pickle 
+2018-02-14 23:18:58,714 INFO     DATA FORMATTER: Retrieved the pickle file tr6.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:19:27,915 INFO     Fold: 1, epoch: 2, batch: 6, Loss: 163.641449, Accuracy: 60.93750
+2018-02-14 23:19:27,921 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr7.pickle 
+2018-02-14 23:19:27,972 INFO     DATA FORMATTER: Retrieved the pickle file tr7.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:19:55,883 INFO     Fold: 1, epoch: 2, batch: 7, Loss: 230.794144, Accuracy: 48.43750
+2018-02-14 23:19:55,890 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr8.pickle 
+2018-02-14 23:19:55,945 INFO     DATA FORMATTER: Retrieved the pickle file tr8.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:20:23,443 INFO     Fold: 1, epoch: 2, batch: 8, Loss: 177.899551, Accuracy: 60.93750
+2018-02-14 23:20:23,449 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr9.pickle 
+2018-02-14 23:20:23,508 INFO     DATA FORMATTER: Retrieved the pickle file tr9.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:20:52,375 INFO     Fold: 1, epoch: 2, batch: 9, Loss: 165.258957, Accuracy: 51.56250
+2018-02-14 23:20:52,379 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr10.pickle 
+2018-02-14 23:20:52,432 INFO     DATA FORMATTER: Retrieved the pickle file tr10.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:21:18,095 INFO     Fold: 1, epoch: 2, batch: 10, Loss: 90.969955, Accuracy: 70.31250
+2018-02-14 23:21:18,106 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr11.pickle 
+2018-02-14 23:21:18,155 INFO     DATA FORMATTER: Retrieved the pickle file tr11.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:21:42,797 INFO     Fold: 1, epoch: 2, batch: 11, Loss: 188.370010, Accuracy: 53.12500
+2018-02-14 23:21:42,803 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr12.pickle 
+2018-02-14 23:21:42,849 INFO     DATA FORMATTER: Retrieved the pickle file tr12.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:22:07,680 INFO     Fold: 1, epoch: 2, batch: 12, Loss: 173.741394, Accuracy: 53.12500
+2018-02-14 23:22:07,690 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr13.pickle 
+2018-02-14 23:22:07,739 INFO     DATA FORMATTER: Retrieved the pickle file tr13.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:22:32,362 INFO     Fold: 1, epoch: 2, batch: 13, Loss: 139.487289, Accuracy: 62.50000
+2018-02-14 23:22:32,366 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr14.pickle 
+2018-02-14 23:22:32,418 INFO     DATA FORMATTER: Retrieved the pickle file tr14.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:22:56,955 INFO     Fold: 1, epoch: 2, batch: 14, Loss: 182.552429, Accuracy: 51.56250
+2018-02-14 23:22:56,966 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr15.pickle 
+2018-02-14 23:22:57,015 INFO     DATA FORMATTER: Retrieved the pickle file tr15.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:23:21,826 INFO     Fold: 1, epoch: 2, batch: 15, Loss: 160.571777, Accuracy: 56.25000
+2018-02-14 23:23:21,830 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr16.pickle 
+2018-02-14 23:23:21,875 INFO     DATA FORMATTER: Retrieved the pickle file tr16.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:23:46,237 INFO     Fold: 1, epoch: 2, batch: 16, Loss: 131.483063, Accuracy: 62.50000
+2018-02-14 23:23:46,250 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr17.pickle 
+2018-02-14 23:23:46,299 INFO     DATA FORMATTER: Retrieved the pickle file tr17.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:24:10,850 INFO     Fold: 1, epoch: 2, batch: 17, Loss: 118.676109, Accuracy: 60.93750
+2018-02-14 23:24:10,854 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr18.pickle 
+2018-02-14 23:24:10,908 INFO     DATA FORMATTER: Retrieved the pickle file tr18.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:24:35,306 INFO     Fold: 1, epoch: 2, batch: 18, Loss: 132.741882, Accuracy: 54.68750
+2018-02-14 23:24:35,318 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr19.pickle 
+2018-02-14 23:24:35,368 INFO     DATA FORMATTER: Retrieved the pickle file tr19.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:24:59,977 INFO     Fold: 1, epoch: 2, batch: 19, Loss: 123.132584, Accuracy: 53.12500
+2018-02-14 23:24:59,981 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr20.pickle 
+2018-02-14 23:25:00,033 INFO     DATA FORMATTER: Retrieved the pickle file tr20.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:25:24,658 INFO     Fold: 1, epoch: 2, batch: 20, Loss: 133.732971, Accuracy: 62.50000
+2018-02-14 23:25:24,669 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr21.pickle 
+2018-02-14 23:25:24,719 INFO     DATA FORMATTER: Retrieved the pickle file tr21.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:25:49,372 INFO     Fold: 1, epoch: 2, batch: 21, Loss: 104.005859, Accuracy: 54.68750
+2018-02-14 23:25:49,377 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr22.pickle 
+2018-02-14 23:25:49,438 INFO     DATA FORMATTER: Retrieved the pickle file tr22.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:26:14,014 INFO     Fold: 1, epoch: 2, batch: 22, Loss: 101.696655, Accuracy: 70.31250
+2018-02-14 23:26:14,020 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr23.pickle 
+2018-02-14 23:26:14,081 INFO     DATA FORMATTER: Retrieved the pickle file tr23.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:26:39,165 INFO     Fold: 1, epoch: 2, batch: 23, Loss: 63.680145, Accuracy: 76.56250
+2018-02-14 23:26:39,172 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr24.pickle 
+2018-02-14 23:26:39,215 INFO     DATA FORMATTER: Retrieved the pickle file tr24.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:27:04,100 INFO     Fold: 1, epoch: 2, batch: 24, Loss: 121.390656, Accuracy: 57.81250
+2018-02-14 23:27:04,110 INFO     CHECKPOINT SAVER: Saving model updated parameters
+2018-02-14 23:27:09,821 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr0.pickle 
+2018-02-14 23:27:09,897 INFO     DATA FORMATTER: Retrieved the pickle file tr0.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:27:35,216 INFO     Fold: 1, epoch: 3, batch: 0, Loss: 94.540192, Accuracy: 64.06250
+2018-02-14 23:27:35,223 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr1.pickle 
+2018-02-14 23:27:35,274 INFO     DATA FORMATTER: Retrieved the pickle file tr1.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:28:01,542 INFO     Fold: 1, epoch: 3, batch: 1, Loss: 56.930351, Accuracy: 68.75000
+2018-02-14 23:28:01,550 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr2.pickle 
+2018-02-14 23:28:01,614 INFO     DATA FORMATTER: Retrieved the pickle file tr2.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:28:27,404 INFO     Fold: 1, epoch: 3, batch: 2, Loss: 152.924942, Accuracy: 50.00000
+2018-02-14 23:28:27,412 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr3.pickle 
+2018-02-14 23:28:27,462 INFO     DATA FORMATTER: Retrieved the pickle file tr3.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:28:53,978 INFO     Fold: 1, epoch: 3, batch: 3, Loss: 113.153580, Accuracy: 56.25000
+2018-02-14 23:28:53,984 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr4.pickle 
+2018-02-14 23:28:54,054 INFO     DATA FORMATTER: Retrieved the pickle file tr4.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:29:20,828 INFO     Fold: 1, epoch: 3, batch: 4, Loss: 120.662224, Accuracy: 68.75000
+2018-02-14 23:29:20,835 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr5.pickle 
+2018-02-14 23:29:20,873 INFO     DATA FORMATTER: Retrieved the pickle file tr5.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:29:48,055 INFO     Fold: 1, epoch: 3, batch: 5, Loss: 130.418350, Accuracy: 57.81250
+2018-02-14 23:29:48,060 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr6.pickle 
+2018-02-14 23:29:48,127 INFO     DATA FORMATTER: Retrieved the pickle file tr6.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:30:15,256 INFO     Fold: 1, epoch: 3, batch: 6, Loss: 137.849152, Accuracy: 53.12500
+2018-02-14 23:30:15,264 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr7.pickle 
+2018-02-14 23:30:15,316 INFO     DATA FORMATTER: Retrieved the pickle file tr7.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:30:42,183 INFO     Fold: 1, epoch: 3, batch: 7, Loss: 90.471481, Accuracy: 70.31250
+2018-02-14 23:30:42,193 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr8.pickle 
+2018-02-14 23:30:42,239 INFO     DATA FORMATTER: Retrieved the pickle file tr8.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:31:09,775 INFO     Fold: 1, epoch: 3, batch: 8, Loss: 132.542053, Accuracy: 53.12500
+2018-02-14 23:31:09,783 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr9.pickle 
+2018-02-14 23:31:09,831 INFO     DATA FORMATTER: Retrieved the pickle file tr9.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:31:37,232 INFO     Fold: 1, epoch: 3, batch: 9, Loss: 105.805862, Accuracy: 65.62500
+2018-02-14 23:31:37,239 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr10.pickle 
+2018-02-14 23:31:37,302 INFO     DATA FORMATTER: Retrieved the pickle file tr10.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:32:04,308 INFO     Fold: 1, epoch: 3, batch: 10, Loss: 107.432274, Accuracy: 53.12500
+2018-02-14 23:32:04,313 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr11.pickle 
+2018-02-14 23:32:04,359 INFO     DATA FORMATTER: Retrieved the pickle file tr11.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:32:30,523 INFO     Fold: 1, epoch: 3, batch: 11, Loss: 121.308975, Accuracy: 54.68750
+2018-02-14 23:32:30,530 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr12.pickle 
+2018-02-14 23:32:30,570 INFO     DATA FORMATTER: Retrieved the pickle file tr12.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:32:56,791 INFO     Fold: 1, epoch: 3, batch: 12, Loss: 68.847260, Accuracy: 67.18750
+2018-02-14 23:32:56,797 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr13.pickle 
+2018-02-14 23:32:56,845 INFO     DATA FORMATTER: Retrieved the pickle file tr13.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:33:23,766 INFO     Fold: 1, epoch: 3, batch: 13, Loss: 80.237442, Accuracy: 67.18750
+2018-02-14 23:33:23,771 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr14.pickle 
+2018-02-14 23:33:23,828 INFO     DATA FORMATTER: Retrieved the pickle file tr14.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:33:49,700 INFO     Fold: 1, epoch: 3, batch: 14, Loss: 69.660721, Accuracy: 57.81250
+2018-02-14 23:33:49,708 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr15.pickle 
+2018-02-14 23:33:49,759 INFO     DATA FORMATTER: Retrieved the pickle file tr15.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:34:16,090 INFO     Fold: 1, epoch: 3, batch: 15, Loss: 83.738052, Accuracy: 67.18750
+2018-02-14 23:34:16,098 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr16.pickle 
+2018-02-14 23:34:16,141 INFO     DATA FORMATTER: Retrieved the pickle file tr16.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:34:41,997 INFO     Fold: 1, epoch: 3, batch: 16, Loss: 92.179276, Accuracy: 60.93750
+2018-02-14 23:34:42,003 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr17.pickle 
+2018-02-14 23:34:42,052 INFO     DATA FORMATTER: Retrieved the pickle file tr17.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:35:07,807 INFO     Fold: 1, epoch: 3, batch: 17, Loss: 86.035980, Accuracy: 57.81250
+2018-02-14 23:35:07,814 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr18.pickle 
+2018-02-14 23:35:07,864 INFO     DATA FORMATTER: Retrieved the pickle file tr18.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:35:33,145 INFO     Fold: 1, epoch: 3, batch: 18, Loss: 89.107071, Accuracy: 60.93750
+2018-02-14 23:35:33,152 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr19.pickle 
+2018-02-14 23:35:33,204 INFO     DATA FORMATTER: Retrieved the pickle file tr19.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:35:59,576 INFO     Fold: 1, epoch: 3, batch: 19, Loss: 86.548111, Accuracy: 60.93750
+2018-02-14 23:35:59,583 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr20.pickle 
+2018-02-14 23:35:59,635 INFO     DATA FORMATTER: Retrieved the pickle file tr20.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:36:24,787 INFO     Fold: 1, epoch: 3, batch: 20, Loss: 52.016468, Accuracy: 70.31250
+2018-02-14 23:36:24,792 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr21.pickle 
+2018-02-14 23:36:24,849 INFO     DATA FORMATTER: Retrieved the pickle file tr21.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:36:49,791 INFO     Fold: 1, epoch: 3, batch: 21, Loss: 147.008850, Accuracy: 50.00000
+2018-02-14 23:36:49,801 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr22.pickle 
+2018-02-14 23:36:49,856 INFO     DATA FORMATTER: Retrieved the pickle file tr22.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:37:14,996 INFO     Fold: 1, epoch: 3, batch: 22, Loss: 70.967308, Accuracy: 67.18750
+2018-02-14 23:37:15,004 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr23.pickle 
+2018-02-14 23:37:15,065 INFO     DATA FORMATTER: Retrieved the pickle file tr23.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:37:40,846 INFO     Fold: 1, epoch: 3, batch: 23, Loss: 43.894981, Accuracy: 67.18750
+2018-02-14 23:37:40,853 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr24.pickle 
+2018-02-14 23:37:40,893 INFO     DATA FORMATTER: Retrieved the pickle file tr24.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:38:06,712 INFO     Fold: 1, epoch: 3, batch: 24, Loss: 133.370834, Accuracy: 40.62500
+2018-02-14 23:38:06,717 INFO     CHECKPOINT SAVER: Saving model updated parameters
+2018-02-14 23:38:13,415 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr0.pickle 
+2018-02-14 23:38:13,487 INFO     DATA FORMATTER: Retrieved the pickle file tr0.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:38:40,789 INFO     Fold: 1, epoch: 4, batch: 0, Loss: 86.972504, Accuracy: 57.81250
+2018-02-14 23:38:40,795 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr1.pickle 
+2018-02-14 23:38:40,841 INFO     DATA FORMATTER: Retrieved the pickle file tr1.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:39:07,069 INFO     Fold: 1, epoch: 4, batch: 1, Loss: 58.556995, Accuracy: 64.06250
+2018-02-14 23:39:07,076 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr2.pickle 
+2018-02-14 23:39:07,145 INFO     DATA FORMATTER: Retrieved the pickle file tr2.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:39:33,990 INFO     Fold: 1, epoch: 4, batch: 2, Loss: 62.747612, Accuracy: 64.06250
+2018-02-14 23:39:33,996 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr3.pickle 
+2018-02-14 23:39:34,049 INFO     DATA FORMATTER: Retrieved the pickle file tr3.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:40:00,972 INFO     Fold: 1, epoch: 4, batch: 3, Loss: 61.108692, Accuracy: 70.31250
+2018-02-14 23:40:00,977 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr4.pickle 
+2018-02-14 23:40:01,027 INFO     DATA FORMATTER: Retrieved the pickle file tr4.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:40:28,597 INFO     Fold: 1, epoch: 4, batch: 4, Loss: 74.146126, Accuracy: 59.37500
+2018-02-14 23:40:28,604 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr5.pickle 
+2018-02-14 23:40:28,645 INFO     DATA FORMATTER: Retrieved the pickle file tr5.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:40:55,958 INFO     Fold: 1, epoch: 4, batch: 5, Loss: 94.485931, Accuracy: 53.12500
+2018-02-14 23:40:55,965 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr6.pickle 
+2018-02-14 23:40:56,004 INFO     DATA FORMATTER: Retrieved the pickle file tr6.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:41:23,127 INFO     Fold: 1, epoch: 4, batch: 6, Loss: 105.510971, Accuracy: 50.00000
+2018-02-14 23:41:23,132 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr7.pickle 
+2018-02-14 23:41:23,182 INFO     DATA FORMATTER: Retrieved the pickle file tr7.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:41:49,807 INFO     Fold: 1, epoch: 4, batch: 7, Loss: 87.736740, Accuracy: 56.25000
+2018-02-14 23:41:49,814 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr8.pickle 
+2018-02-14 23:41:49,894 INFO     DATA FORMATTER: Retrieved the pickle file tr8.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:42:16,828 INFO     Fold: 1, epoch: 4, batch: 8, Loss: 118.991211, Accuracy: 53.12500
+2018-02-14 23:42:16,834 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr9.pickle 
+2018-02-14 23:42:16,906 INFO     DATA FORMATTER: Retrieved the pickle file tr9.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:42:44,393 INFO     Fold: 1, epoch: 4, batch: 9, Loss: 82.244316, Accuracy: 56.25000
+2018-02-14 23:42:44,400 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr10.pickle 
+2018-02-14 23:42:44,446 INFO     DATA FORMATTER: Retrieved the pickle file tr10.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:43:09,977 INFO     Fold: 1, epoch: 4, batch: 10, Loss: 60.947483, Accuracy: 62.50000
+2018-02-14 23:43:09,984 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr11.pickle 
+2018-02-14 23:43:10,030 INFO     DATA FORMATTER: Retrieved the pickle file tr11.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:43:35,213 INFO     Fold: 1, epoch: 4, batch: 11, Loss: 97.747292, Accuracy: 46.87500
+2018-02-14 23:43:35,220 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr12.pickle 
+2018-02-14 23:43:35,257 INFO     DATA FORMATTER: Retrieved the pickle file tr12.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:44:00,646 INFO     Fold: 1, epoch: 4, batch: 12, Loss: 71.797363, Accuracy: 62.50000
+2018-02-14 23:44:00,658 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr13.pickle 
+2018-02-14 23:44:00,704 INFO     DATA FORMATTER: Retrieved the pickle file tr13.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:44:27,481 INFO     Fold: 1, epoch: 4, batch: 13, Loss: 66.935287, Accuracy: 62.50000
+2018-02-14 23:44:27,488 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr14.pickle 
+2018-02-14 23:44:27,533 INFO     DATA FORMATTER: Retrieved the pickle file tr14.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:44:53,910 INFO     Fold: 1, epoch: 4, batch: 14, Loss: 64.006393, Accuracy: 60.93750
+2018-02-14 23:44:53,919 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr15.pickle 
+2018-02-14 23:44:53,966 INFO     DATA FORMATTER: Retrieved the pickle file tr15.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:45:19,904 INFO     Fold: 1, epoch: 4, batch: 15, Loss: 80.680504, Accuracy: 62.50000
+2018-02-14 23:45:19,909 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr16.pickle 
+2018-02-14 23:45:19,951 INFO     DATA FORMATTER: Retrieved the pickle file tr16.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:45:45,241 INFO     Fold: 1, epoch: 4, batch: 16, Loss: 82.392593, Accuracy: 54.68750
+2018-02-14 23:45:45,249 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr17.pickle 
+2018-02-14 23:45:45,296 INFO     DATA FORMATTER: Retrieved the pickle file tr17.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:46:10,811 INFO     Fold: 1, epoch: 4, batch: 17, Loss: 80.066162, Accuracy: 57.81250
+2018-02-14 23:46:10,816 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr18.pickle 
+2018-02-14 23:46:10,862 INFO     DATA FORMATTER: Retrieved the pickle file tr18.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:46:37,300 INFO     Fold: 1, epoch: 4, batch: 18, Loss: 52.280571, Accuracy: 73.43750
+2018-02-14 23:46:37,308 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr19.pickle 
+2018-02-14 23:46:37,355 INFO     DATA FORMATTER: Retrieved the pickle file tr19.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:47:03,159 INFO     Fold: 1, epoch: 4, batch: 19, Loss: 70.600647, Accuracy: 59.37500
+2018-02-14 23:47:03,172 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr20.pickle 
+2018-02-14 23:47:03,219 INFO     DATA FORMATTER: Retrieved the pickle file tr20.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:47:28,818 INFO     Fold: 1, epoch: 4, batch: 20, Loss: 94.056229, Accuracy: 59.37500
+2018-02-14 23:47:28,824 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr21.pickle 
+2018-02-14 23:47:28,874 INFO     DATA FORMATTER: Retrieved the pickle file tr21.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:47:55,636 INFO     Fold: 1, epoch: 4, batch: 21, Loss: 61.640011, Accuracy: 62.50000
+2018-02-14 23:47:55,643 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr22.pickle 
+2018-02-14 23:47:55,700 INFO     DATA FORMATTER: Retrieved the pickle file tr22.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:48:21,423 INFO     Fold: 1, epoch: 4, batch: 22, Loss: 65.655350, Accuracy: 68.75000
+2018-02-14 23:48:21,431 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr23.pickle 
+2018-02-14 23:48:21,488 INFO     DATA FORMATTER: Retrieved the pickle file tr23.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:48:47,415 INFO     Fold: 1, epoch: 4, batch: 23, Loss: 32.907578, Accuracy: 73.43750
+2018-02-14 23:48:47,423 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr24.pickle 
+2018-02-14 23:48:47,463 INFO     DATA FORMATTER: Retrieved the pickle file tr24.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:49:13,360 INFO     Fold: 1, epoch: 4, batch: 24, Loss: 44.593243, Accuracy: 60.93750
+2018-02-14 23:49:13,367 INFO     CHECKPOINT SAVER: Saving model updated parameters
+2018-02-14 23:49:19,456 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr0.pickle 
+2018-02-14 23:49:19,531 INFO     DATA FORMATTER: Retrieved the pickle file tr0.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:49:45,143 INFO     Fold: 1, epoch: 5, batch: 0, Loss: 61.864120, Accuracy: 51.56250
+2018-02-14 23:49:45,151 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr1.pickle 
+2018-02-14 23:49:45,198 INFO     DATA FORMATTER: Retrieved the pickle file tr1.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:50:12,524 INFO     Fold: 1, epoch: 5, batch: 1, Loss: 51.592216, Accuracy: 67.18750
+2018-02-14 23:50:12,532 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr2.pickle 
+2018-02-14 23:50:12,617 INFO     DATA FORMATTER: Retrieved the pickle file tr2.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:50:39,851 INFO     Fold: 1, epoch: 5, batch: 2, Loss: 39.149822, Accuracy: 71.87500
+2018-02-14 23:50:39,862 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr3.pickle 
+2018-02-14 23:50:39,908 INFO     DATA FORMATTER: Retrieved the pickle file tr3.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:51:07,924 INFO     Fold: 1, epoch: 5, batch: 3, Loss: 50.818176, Accuracy: 62.50000
+2018-02-14 23:51:07,931 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr4.pickle 
+2018-02-14 23:51:07,983 INFO     DATA FORMATTER: Retrieved the pickle file tr4.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:51:42,133 INFO     Fold: 1, epoch: 5, batch: 4, Loss: 44.248291, Accuracy: 65.62500
+2018-02-14 23:51:42,138 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr5.pickle 
+2018-02-14 23:51:42,177 INFO     DATA FORMATTER: Retrieved the pickle file tr5.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:52:14,577 INFO     Fold: 1, epoch: 5, batch: 5, Loss: 57.867416, Accuracy: 54.68750
+2018-02-14 23:52:14,583 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr6.pickle 
+2018-02-14 23:52:14,632 INFO     DATA FORMATTER: Retrieved the pickle file tr6.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:52:44,215 INFO     Fold: 1, epoch: 5, batch: 6, Loss: 78.254051, Accuracy: 50.00000
+2018-02-14 23:52:44,225 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr7.pickle 
+2018-02-14 23:52:44,276 INFO     DATA FORMATTER: Retrieved the pickle file tr7.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:53:14,665 INFO     Fold: 1, epoch: 5, batch: 7, Loss: 69.752319, Accuracy: 51.56250
+2018-02-14 23:53:14,672 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr8.pickle 
+2018-02-14 23:53:14,727 INFO     DATA FORMATTER: Retrieved the pickle file tr8.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:53:44,073 INFO     Fold: 1, epoch: 5, batch: 8, Loss: 59.429214, Accuracy: 68.75000
+2018-02-14 23:53:44,083 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr9.pickle 
+2018-02-14 23:53:44,139 INFO     DATA FORMATTER: Retrieved the pickle file tr9.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:54:11,498 INFO     Fold: 1, epoch: 5, batch: 9, Loss: 39.750999, Accuracy: 59.37500
+2018-02-14 23:54:11,503 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr10.pickle 
+2018-02-14 23:54:11,554 INFO     DATA FORMATTER: Retrieved the pickle file tr10.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:54:39,823 INFO     Fold: 1, epoch: 5, batch: 10, Loss: 85.500137, Accuracy: 53.12500
+2018-02-14 23:54:39,832 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr11.pickle 
+2018-02-14 23:54:39,876 INFO     DATA FORMATTER: Retrieved the pickle file tr11.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:55:05,496 INFO     Fold: 1, epoch: 5, batch: 11, Loss: 37.975502, Accuracy: 62.50000
+2018-02-14 23:55:05,503 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr12.pickle 
+2018-02-14 23:55:05,545 INFO     DATA FORMATTER: Retrieved the pickle file tr12.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:55:31,278 INFO     Fold: 1, epoch: 5, batch: 12, Loss: 30.721285, Accuracy: 78.12500
+2018-02-14 23:55:31,286 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr13.pickle 
+2018-02-14 23:55:31,340 INFO     DATA FORMATTER: Retrieved the pickle file tr13.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:55:57,051 INFO     Fold: 1, epoch: 5, batch: 13, Loss: 60.760521, Accuracy: 56.25000
+2018-02-14 23:55:57,056 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr14.pickle 
+2018-02-14 23:55:57,104 INFO     DATA FORMATTER: Retrieved the pickle file tr14.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:56:28,451 INFO     Fold: 1, epoch: 5, batch: 14, Loss: 42.237679, Accuracy: 70.31250
+2018-02-14 23:56:28,456 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr15.pickle 
+2018-02-14 23:56:28,516 INFO     DATA FORMATTER: Retrieved the pickle file tr15.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:56:57,709 INFO     Fold: 1, epoch: 5, batch: 15, Loss: 40.643814, Accuracy: 62.50000
+2018-02-14 23:56:57,717 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr16.pickle 
+2018-02-14 23:56:57,765 INFO     DATA FORMATTER: Retrieved the pickle file tr16.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:57:24,803 INFO     Fold: 1, epoch: 5, batch: 16, Loss: 53.490906, Accuracy: 51.56250
+2018-02-14 23:57:24,811 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr17.pickle 
+2018-02-14 23:57:24,856 INFO     DATA FORMATTER: Retrieved the pickle file tr17.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:57:53,729 INFO     Fold: 1, epoch: 5, batch: 17, Loss: 58.344929, Accuracy: 70.31250
+2018-02-14 23:57:53,734 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr18.pickle 
+2018-02-14 23:57:53,793 INFO     DATA FORMATTER: Retrieved the pickle file tr18.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:58:22,337 INFO     Fold: 1, epoch: 5, batch: 18, Loss: 37.518669, Accuracy: 64.06250
+2018-02-14 23:58:22,344 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr19.pickle 
+2018-02-14 23:58:22,404 INFO     DATA FORMATTER: Retrieved the pickle file tr19.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:58:50,446 INFO     Fold: 1, epoch: 5, batch: 19, Loss: 45.738686, Accuracy: 60.93750
+2018-02-14 23:58:50,453 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr20.pickle 
+2018-02-14 23:58:50,499 INFO     DATA FORMATTER: Retrieved the pickle file tr20.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:59:19,555 INFO     Fold: 1, epoch: 5, batch: 20, Loss: 67.324112, Accuracy: 57.81250
+2018-02-14 23:59:19,563 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr21.pickle 
+2018-02-14 23:59:19,613 INFO     DATA FORMATTER: Retrieved the pickle file tr21.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-14 23:59:48,221 INFO     Fold: 1, epoch: 5, batch: 21, Loss: 63.009087, Accuracy: 60.93750
+2018-02-14 23:59:48,228 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr22.pickle 
+2018-02-14 23:59:48,290 INFO     DATA FORMATTER: Retrieved the pickle file tr22.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-15 00:00:17,980 INFO     Fold: 1, epoch: 5, batch: 22, Loss: 25.567257, Accuracy: 75.00000
+2018-02-15 00:00:17,986 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr23.pickle 
+2018-02-15 00:00:18,050 INFO     DATA FORMATTER: Retrieved the pickle file tr23.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-15 00:00:48,268 INFO     Fold: 1, epoch: 5, batch: 23, Loss: 53.942989, Accuracy: 59.37500
+2018-02-15 00:00:48,276 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr24.pickle 
+2018-02-15 00:00:48,319 INFO     DATA FORMATTER: Retrieved the pickle file tr24.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-15 00:01:15,428 INFO     Fold: 1, epoch: 5, batch: 24, Loss: 21.363092, Accuracy: 73.43750
+2018-02-15 00:01:15,436 INFO     CHECKPOINT SAVER: Saving model updated parameters
+2018-02-15 00:01:21,972 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr0.pickle 
+2018-02-15 00:01:22,049 INFO     DATA FORMATTER: Retrieved the pickle file tr0.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-15 00:01:49,543 INFO     Fold: 1, epoch: 6, batch: 0, Loss: 29.969563, Accuracy: 70.31250
+2018-02-15 00:01:49,549 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr1.pickle 
+2018-02-15 00:01:49,599 INFO     DATA FORMATTER: Retrieved the pickle file tr1.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-15 00:02:17,865 INFO     Fold: 1, epoch: 6, batch: 1, Loss: 42.003151, Accuracy: 65.62500
+2018-02-15 00:02:17,872 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr2.pickle 
+2018-02-15 00:02:17,931 INFO     DATA FORMATTER: Retrieved the pickle file tr2.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-15 00:02:50,071 INFO     Fold: 1, epoch: 6, batch: 2, Loss: 45.734482, Accuracy: 57.81250
+2018-02-15 00:02:50,078 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr3.pickle 
+2018-02-15 00:02:50,160 INFO     DATA FORMATTER: Retrieved the pickle file tr3.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-15 00:03:20,175 INFO     Fold: 1, epoch: 6, batch: 3, Loss: 48.103104, Accuracy: 70.31250
+2018-02-15 00:03:20,182 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr4.pickle 
+2018-02-15 00:03:20,233 INFO     DATA FORMATTER: Retrieved the pickle file tr4.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-15 00:03:49,720 INFO     Fold: 1, epoch: 6, batch: 4, Loss: 35.331978, Accuracy: 70.31250
+2018-02-15 00:03:49,727 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr5.pickle 
+2018-02-15 00:03:49,770 INFO     DATA FORMATTER: Retrieved the pickle file tr5.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-15 00:04:19,819 INFO     Fold: 1, epoch: 6, batch: 5, Loss: 33.011757, Accuracy: 62.50000
+2018-02-15 00:04:19,827 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr6.pickle 
+2018-02-15 00:04:19,871 INFO     DATA FORMATTER: Retrieved the pickle file tr6.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-15 00:04:51,907 INFO     Fold: 1, epoch: 6, batch: 6, Loss: 56.890244, Accuracy: 59.37500
+2018-02-15 00:04:51,912 INFO     Loading the data from path /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data/tr7.pickle 
+2018-02-15 00:04:51,983 INFO     DATA FORMATTER: Retrieved the pickle file tr7.pickle from disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
