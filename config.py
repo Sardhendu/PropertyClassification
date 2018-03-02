@@ -21,11 +21,11 @@ api_call ={}
 myNet = {}
 netParams=defaultdict(lambda: defaultdict())
 
-api_call['zillow_zid'] = 'xyz'
-api_call['bing_key'] = 'xyz'
-api_call['google_streetside_key'] = 'xyz'
-api_call['google_aerial_key'] = 'xyz'
-api_call['google_meta_key'] = 'xyz'
+# api_call['zillow_zid'] = 'xyz'
+# api_call['bing_key'] = 'xyz'
+# api_call['google_streetside_key'] = 'xyz'
+# api_call['google_aerial_key'] = 'xyz'
+# api_call['google_meta_key'] = 'xyz'
 
 api_call['google_aerial_key'] = str(api_call['google_aerial_key'][2])
 api_call['google_meta_key'] = str(api_call['google_meta_key'][2])

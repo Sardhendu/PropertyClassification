@@ -17,7 +17,6 @@ logging.basicConfig(level=logging.DEBUG, filename="logfile.log", filemode="w",
                     format="%(asctime)-15s %(levelname)-8s %(message)s")
 
 
-# https://maps.googleapis.com/maps/api/staticmap?center=41.845824, -87.716752&zoom=19&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU
 
 map_size = [400,400]
 zoom_lvl = 40

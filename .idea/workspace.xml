@@ -2,47 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73474898-f241-419a-9841-3f571f14b794" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ExternalData/google_aerial.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ExternalData/google_streetside.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ExternalData/osm_bbox_jsonToshp.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ExternalData/rough.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Notes/notes.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Notes/resnet.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Notes/zoom_level.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ROUGH/rough2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/conv_net/resnet.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic_segmentation/FCN.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic_segmentation/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic_segmentation/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic_segmentation/latlon_to_pixelXY.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic_segmentation/ops.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic_segmentation/overlay_building_bbox.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic_segmentation/utils.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Analysis-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/ROUGH-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/data_loader-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ExternalData/logfile.log" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Experiment-Record.md" afterPath="$PROJECT_DIR$/Notes/Experiment-Record.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ExternalData/bing_search.py" afterPath="$PROJECT_DIR$/ExternalData/bing_aerial.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ROUGH.ipynb" afterPath="$PROJECT_DIR$/ROUGH/ROUGH.ipynb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ROUGH.py" afterPath="$PROJECT_DIR$/ROUGH/ROUGH.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/__init__.py" afterPath="$PROJECT_DIR$/ExternalData/osm_buildings.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/conv_net/run.py" afterPath="$PROJECT_DIR$/ROUGH/run.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/conv_net/run_3.py" afterPath="$PROJECT_DIR$/conv_net/run.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/conv_net/run_old.py" afterPath="$PROJECT_DIR$/ROUGH/run_old.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/metadata.md" afterPath="$PROJECT_DIR$/Notes/metadata.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ExternalData/__init__.py" afterPath="$PROJECT_DIR$/external_data/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ExternalData/bing_aerial.py" afterPath="$PROJECT_DIR$/external_data/bing_aerial.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ExternalData/google_aerial.py" afterPath="$PROJECT_DIR$/external_data/google_aerial.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ExternalData/google_streetside.py" afterPath="$PROJECT_DIR$/external_data/google_streetside.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ExternalData/osm_bbox_jsonToshp.py" afterPath="$PROJECT_DIR$/external_data/osm_bbox_jsonToshp.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ExternalData/osm_buildings.py" afterPath="$PROJECT_DIR$/external_data/osm_buildings.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ExternalData/rough.py" afterPath="$PROJECT_DIR$/external_data/rough.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ExternalData/zillow_api_call.py" afterPath="$PROJECT_DIR$/external_data/zillow_api_call.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Notes/Experiment-Record.md" afterPath="$PROJECT_DIR$/notes/Experiment-Record.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Notes/metadata.md" afterPath="$PROJECT_DIR$/notes/metadata.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Notes/notes.md" afterPath="$PROJECT_DIR$/notes/notes.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Notes/resnet.md" afterPath="$PROJECT_DIR$/notes/resnet.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Notes/zoom_level.md" afterPath="$PROJECT_DIR$/notes/zoom_level.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ROUGH/RANDOM_STRATIFIED_BATCH.py" afterPath="$PROJECT_DIR$/rough/RANDOM_STRATIFIED_BATCH.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ROUGH/ROUGH.ipynb" afterPath="$PROJECT_DIR$/rough/ROUGH.ipynb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ROUGH/ROUGH.py" afterPath="$PROJECT_DIR$/rough/ROUGH.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ROUGH/__init__.py" afterPath="$PROJECT_DIR$/rough/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ROUGH/data_generation.ipynb" afterPath="$PROJECT_DIR$/rough/data_generation.ipynb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ROUGH/overlap_building_corners_on_image.ipynb" afterPath="$PROJECT_DIR$/rough/overlap_building_corners_on_image.ipynb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ROUGH/rough2.py" afterPath="$PROJECT_DIR$/rough/rough2.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ROUGH/run.py" afterPath="$PROJECT_DIR$/rough/run.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ROUGH/run_old.py" afterPath="$PROJECT_DIR$/rough/run_old.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conv_net/logfile.log" afterPath="$PROJECT_DIR$/conv_net/logfile.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conv_net/ops.py" afterPath="$PROJECT_DIR$/conv_net/ops.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conv_net/vgg.py" afterPath="$PROJECT_DIR$/conv_net/vgg.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_loader.ipynb" afterPath="$PROJECT_DIR$/data_loader.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_transformation/data_prep.py" afterPath="$PROJECT_DIR$/data_transformation/data_prep.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logfile.log" afterPath="$PROJECT_DIR$/logfile.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,22 +42,106 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="config.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="480">
+              <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bing_aerial.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/external_data/bing_aerial.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3866">
+              <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+              <folding>
+                <element signature="e#2#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="google_streetside.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/external_data/google_streetside.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1886">
+              <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="osm_bbox_jsonToshp.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/external_data/osm_bbox_jsonToshp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="osm_buildings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/external_data/osm_buildings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rough.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/external_data/rough.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1840">
+              <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zillow_api_call.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/external_data/zillow_api_call.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="google_aerial.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/external_data/google_aerial.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="43" column="34" lean-forward="true" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#64#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="80">
-                <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <first_editor relative-caret-position="160">
+                <caret line="8" column="59" lean-forward="false" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -153,9 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/__init__.py" />
-        <option value="$PROJECT_DIR$/code/main.py" />
-        <option value="$PROJECT_DIR$/code/ExternalData/bing_search.py" />
         <option value="$PROJECT_DIR$/data_transformation/ROUGH.py" />
         <option value="$PROJECT_DIR$/ROUGH.py" />
         <option value="$PROJECT_DIR$/ROUGH/RANDOM_STRATIFIED_BATCH.py" />
@@ -201,9 +268,12 @@
         <option value="$PROJECT_DIR$/ExternalData/osm_bbox_jsonToshp.py" />
         <option value="$PROJECT_DIR$/semantic_segmentation/latlon_to_pixelXY.py" />
         <option value="$PROJECT_DIR$/semantic_segmentation/overlay_parcels_on_static_img.py" />
-        <option value="$PROJECT_DIR$/config.py" />
-        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/external_data/google_aerial.py" />
+        <option value="$PROJECT_DIR$/external_data/rough.py" />
+        <option value="$PROJECT_DIR$/external_data/zillow_api_call.py" />
+        <option value="$PROJECT_DIR$/config.py" />
       </list>
     </option>
   </component>
@@ -247,12 +317,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="PropertyClassification" type="b2602c69:ProjectViewProjectNode" />
               <item name="PropertyClassification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PropertyClassification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PropertyClassification" type="462c0819:PsiDirectoryNode" />
+              <item name="external_data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PropertyClassification" type="b2602c69:ProjectViewProjectNode" />
@@ -264,7 +340,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -419,24 +494,24 @@
     <frame x="-2560" y="-191" width="2560" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.105325915" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08505564" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24403815" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3191574" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36804453" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14326647" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3191574" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36804453" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -446,7 +521,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ROUGH/ROUGH.py</url>
+          <url>file://$PROJECT_DIR$/rough/ROUGH.py</url>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
@@ -462,7 +537,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ROUGH/run_old.py">
+    <entry file="file://$PROJECT_DIR$/rough/run_old.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
           <caret line="146" column="100" lean-forward="true" selection-start-line="146" selection-start-column="100" selection-end-line="146" selection-end-column="100" />
@@ -497,14 +572,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ROUGH/ROUGH.ipynb">
+    <entry file="file://$PROJECT_DIR$/rough/ROUGH.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ROUGH/ROUGH.py">
+    <entry file="file://$PROJECT_DIR$/rough/ROUGH.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
@@ -514,7 +589,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ROUGH/rough2.py">
+    <entry file="file://$PROJECT_DIR$/rough/rough2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="15" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
@@ -542,7 +617,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ROUGH/run.py">
+    <entry file="file://$PROJECT_DIR$/rough/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="307" column="37" lean-forward="true" selection-start-line="307" selection-start-column="37" selection-end-line="307" selection-end-column="37" />
@@ -580,20 +655,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ExternalData/rough.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="74" column="12" lean-forward="true" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExternalData/logfile.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="1380">
-          <caret line="69" column="210" lean-forward="false" selection-start-line="69" selection-start-column="70" selection-end-line="69" selection-end-column="210" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ExternalData/logfile.log" />
     <entry file="file://$PROJECT_DIR$/semantic_segmentation/FCN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2580">
@@ -601,7 +663,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Notes/zoom_level.md">
+    <entry file="file://$PROJECT_DIR$/notes/zoom_level.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="420">
@@ -611,7 +673,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Notes/resnet.md">
+    <entry file="file://$PROJECT_DIR$/notes/resnet.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="2200">
@@ -621,7 +683,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Notes/metadata.md">
+    <entry file="file://$PROJECT_DIR$/notes/metadata.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="560">
@@ -639,16 +701,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ExternalData/OSM_fetch.ipynb" />
-    <entry file="file://$PROJECT_DIR$/ExternalData/zillow_api_call.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ExternalData/Temp-Plot.png" />
     <entry file="file://$PROJECT_DIR$/data_loader.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
@@ -664,32 +716,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ExternalData/bing_aerial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4620">
-          <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
-          <folding>
-            <element signature="e#2#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/semantic_segmentation/logfile.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="200">
-          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/semantic_segmentation/logfile.log" />
     <entry file="file://$PROJECT_DIR$/data_transformation/data_prep.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2946">
           <caret line="70" column="4" lean-forward="true" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Notes/notes.md">
+    <entry file="file://$PROJECT_DIR$/notes/notes.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="129">
@@ -704,7 +739,7 @@
         <state relative-caret-position="-693">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -713,19 +748,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-109">
           <caret line="44" column="40" lean-forward="false" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ExternalData/google_aerial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-426">
-          <caret line="155" column="33" lean-forward="true" selection-start-line="155" selection-start-column="33" selection-end-line="155" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Notes/Experiment-Record.md">
+    <entry file="file://$PROJECT_DIR$/notes/Experiment-Record.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="240">
@@ -739,7 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -748,35 +773,7 @@
         <state relative-caret-position="640">
           <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
           <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExternalData/google_streetside.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExternalData/osm_bbox_jsonToshp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding>
-            <element signature="e#452#461#0" expanded="false" />
+            <element signature="e#0#64#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -786,7 +783,7 @@
         <state relative-caret-position="500">
           <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
           <folding>
-            <element signature="e#0#64#0" expanded="true" />
+            <element signature="e#0#64#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -799,13 +796,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.ipynb_checkpoints/Analysis-checkpoint.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.ipynb_checkpoints/Analysis-checkpoint.ipynb" />
     <entry file="file://$PROJECT_DIR$/conv_net/logfile.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="595">
@@ -813,34 +804,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ExternalData/osm_buildings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ROUGH/data_generation.ipynb">
+    <entry file="file://$PROJECT_DIR$/rough/data_generation.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/semantic_segmentation/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="200">
-            <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+          <first_editor relative-caret-position="400">
+            <caret line="17" column="393" lean-forward="true" selection-start-line="17" selection-start-column="393" selection-end-line="17" selection-end-column="393" />
             <folding />
           </first_editor>
           <second_editor />
@@ -850,11 +825,87 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="80">
-            <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <first_editor relative-caret-position="160">
+            <caret line="8" column="59" lean-forward="false" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="43" column="34" lean-forward="true" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/external_data/google_aerial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/external_data/bing_aerial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3866">
+          <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+          <folding>
+            <element signature="e#2#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/external_data/google_streetside.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1886">
+          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/external_data/osm_bbox_jsonToshp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/external_data/osm_buildings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/external_data/rough.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1840">
+          <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/external_data/zillow_api_call.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
