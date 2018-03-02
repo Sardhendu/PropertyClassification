@@ -1,212 +1,38 @@
-2018-02-14 18:44:48,985 INFO     Input Land Images from /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/aerial_images/land: 
-2018-02-14 18:44:48,985 INFO     Input House Images from /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/aerial_images/house: 
-2018-02-14 18:44:48,985 INFO     Output batch array to /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/aerial_images/batch_data: 
-2018-02-14 18:44:48,990 INFO     Input Data: Total Land: 653, Total House: 891
-2018-02-14 18:44:49,727 INFO     DATA FORMATTER: Dumping the pickle file cv.pickle to disk, dataX shape = (200, 224, 224, 3), dataY shape = (200,)
-2018-02-14 18:44:50,151 INFO     Validation Land Size: 100, Validation House Size: 100, Training Land Size: 553, Training House Size: 791
-2018-02-14 18:44:50,151 INFO     Creating BATCH 0 .......... 
-2018-02-14 18:44:50,152 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:50,152 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:50,422 INFO     DATA FORMATTER: Dumping the pickle file tr0.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:50,552 INFO     Creating BATCH 1 .......... 
-2018-02-14 18:44:50,552 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:50,553 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:50,767 INFO     DATA FORMATTER: Dumping the pickle file tr1.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:50,850 INFO     Creating BATCH 2 .......... 
-2018-02-14 18:44:50,851 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:50,851 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:51,082 INFO     DATA FORMATTER: Dumping the pickle file tr2.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:51,196 INFO     Creating BATCH 3 .......... 
-2018-02-14 18:44:51,196 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:51,196 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:51,413 INFO     DATA FORMATTER: Dumping the pickle file tr3.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:51,515 INFO     Creating BATCH 4 .......... 
-2018-02-14 18:44:51,515 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:51,515 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:51,721 INFO     DATA FORMATTER: Dumping the pickle file tr4.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:51,834 INFO     Creating BATCH 5 .......... 
-2018-02-14 18:44:51,834 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:51,834 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:52,034 INFO     DATA FORMATTER: Dumping the pickle file tr5.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:52,132 INFO     Creating BATCH 6 .......... 
-2018-02-14 18:44:52,132 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:52,132 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:52,334 INFO     DATA FORMATTER: Dumping the pickle file tr6.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:52,445 INFO     Creating BATCH 7 .......... 
-2018-02-14 18:44:52,445 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:52,445 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:52,655 INFO     DATA FORMATTER: Dumping the pickle file tr7.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:52,770 INFO     Creating BATCH 8 .......... 
-2018-02-14 18:44:52,770 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:52,770 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:52,982 INFO     DATA FORMATTER: Dumping the pickle file tr8.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:53,106 INFO     Creating BATCH 9 .......... 
-2018-02-14 18:44:53,106 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:53,106 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:53,311 INFO     DATA FORMATTER: Dumping the pickle file tr9.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:53,433 INFO     Creating BATCH 10 .......... 
-2018-02-14 18:44:53,433 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:53,433 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:53,638 INFO     DATA FORMATTER: Dumping the pickle file tr10.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:53,769 INFO     Creating BATCH 11 .......... 
-2018-02-14 18:44:53,770 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:53,770 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:53,974 INFO     DATA FORMATTER: Dumping the pickle file tr11.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:54,166 INFO     Creating BATCH 12 .......... 
-2018-02-14 18:44:54,166 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:54,166 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:54,403 INFO     DATA FORMATTER: Dumping the pickle file tr12.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:54,528 INFO     Creating BATCH 13 .......... 
-2018-02-14 18:44:54,529 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:54,529 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:54,758 INFO     DATA FORMATTER: Dumping the pickle file tr13.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:54,872 INFO     Creating BATCH 14 .......... 
-2018-02-14 18:44:54,872 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:54,872 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:55,089 INFO     DATA FORMATTER: Dumping the pickle file tr14.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:55,222 INFO     Creating BATCH 15 .......... 
-2018-02-14 18:44:55,222 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:55,222 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:55,446 INFO     DATA FORMATTER: Dumping the pickle file tr15.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:55,567 INFO     Creating BATCH 16 .......... 
-2018-02-14 18:44:55,567 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:55,568 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:44:55,772 INFO     DATA FORMATTER: Dumping the pickle file tr16.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:55,897 INFO     Creating BATCH 17 .......... 
-2018-02-14 18:44:55,897 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:55,898 INFO     Smaller: idx1 < len(Smaller) < idx2 
-2018-02-14 18:44:56,112 INFO     DATA FORMATTER: Dumping the pickle file tr17.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:56,223 INFO     Creating BATCH 18 .......... 
-2018-02-14 18:44:56,223 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:56,223 INFO     Smaller: len(Smaller) < idx1 < idx2 
-2018-02-14 18:44:56,413 INFO     DATA FORMATTER: Dumping the pickle file tr18.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:56,538 INFO     Creating BATCH 19 .......... 
-2018-02-14 18:44:56,538 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:56,539 INFO     Smaller: len(Smaller) < idx1 < idx2 
-2018-02-14 18:44:56,736 INFO     DATA FORMATTER: Dumping the pickle file tr19.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:56,837 INFO     Creating BATCH 20 .......... 
-2018-02-14 18:44:56,837 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:56,837 INFO     Smaller: len(Smaller) < idx1 < idx2 
-2018-02-14 18:44:57,046 INFO     DATA FORMATTER: Dumping the pickle file tr20.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:57,159 INFO     Creating BATCH 21 .......... 
-2018-02-14 18:44:57,159 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:57,160 INFO     Smaller: len(Smaller) < idx1 < idx2 
-2018-02-14 18:44:57,364 INFO     DATA FORMATTER: Dumping the pickle file tr21.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:57,483 INFO     Creating BATCH 22 .......... 
-2018-02-14 18:44:57,483 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:57,484 INFO     Smaller: len(Smaller) < idx1 < idx2 
-2018-02-14 18:44:57,674 INFO     DATA FORMATTER: Dumping the pickle file tr22.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:57,795 INFO     Creating BATCH 23 .......... 
-2018-02-14 18:44:57,795 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:44:57,796 INFO     Smaller: len(Smaller) < idx1 < idx2 
-2018-02-14 18:44:57,998 INFO     DATA FORMATTER: Dumping the pickle file tr23.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:58,106 INFO     Creating BATCH 24 .......... 
-2018-02-14 18:44:58,106 INFO     Bigger: idx1 < len(bigger) < idx2 
-2018-02-14 18:44:58,106 INFO     Smaller: len(Smaller) < idx1 < idx2 
-2018-02-14 18:44:58,300 INFO     DATA FORMATTER: Dumping the pickle file tr24.pickle to disk, dataX shape = (64, 224, 224, 3), dataY shape = (64,)
-2018-02-14 18:44:58,450 INFO     Input Land Images from /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/assessor_images/land: 
-2018-02-14 18:44:58,450 INFO     Input House Images from /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/assessor_images/house: 
-2018-02-14 18:44:58,450 INFO     Output batch array to /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data: 
-2018-02-14 18:44:58,455 INFO     Input Data: Total Land: 653, Total House: 891
-2018-02-14 18:45:03,656 INFO     DATA FORMATTER: Dumping the pickle file cv.pickle to disk, dataX shape = (200, 260, 260, 3), dataY shape = (200,)
-2018-02-14 18:45:04,419 INFO     Validation Land Size: 100, Validation House Size: 100, Training Land Size: 553, Training House Size: 791
-2018-02-14 18:45:04,419 INFO     Creating BATCH 0 .......... 
-2018-02-14 18:45:04,419 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:04,420 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:05,941 INFO     DATA FORMATTER: Dumping the pickle file tr0.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:06,132 INFO     Creating BATCH 1 .......... 
-2018-02-14 18:45:06,133 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:06,133 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:07,549 INFO     DATA FORMATTER: Dumping the pickle file tr1.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:07,739 INFO     Creating BATCH 2 .......... 
-2018-02-14 18:45:07,740 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:07,740 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:09,440 INFO     DATA FORMATTER: Dumping the pickle file tr2.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:09,657 INFO     Creating BATCH 3 .......... 
-2018-02-14 18:45:09,657 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:09,657 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:11,804 INFO     DATA FORMATTER: Dumping the pickle file tr3.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:12,015 INFO     Creating BATCH 4 .......... 
-2018-02-14 18:45:12,015 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:12,016 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:13,989 INFO     DATA FORMATTER: Dumping the pickle file tr4.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:14,199 INFO     Creating BATCH 5 .......... 
-2018-02-14 18:45:14,199 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:14,200 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:15,407 INFO     DATA FORMATTER: Dumping the pickle file tr5.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:15,622 INFO     Creating BATCH 6 .......... 
-2018-02-14 18:45:15,622 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:15,622 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:17,369 INFO     DATA FORMATTER: Dumping the pickle file tr6.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:17,546 INFO     Creating BATCH 7 .......... 
-2018-02-14 18:45:17,546 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:17,546 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:19,063 INFO     DATA FORMATTER: Dumping the pickle file tr7.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:19,240 INFO     Creating BATCH 8 .......... 
-2018-02-14 18:45:19,240 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:19,240 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:21,218 INFO     DATA FORMATTER: Dumping the pickle file tr8.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:21,431 INFO     Creating BATCH 9 .......... 
-2018-02-14 18:45:21,431 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:21,431 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:23,552 INFO     DATA FORMATTER: Dumping the pickle file tr9.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:23,766 INFO     Creating BATCH 10 .......... 
-2018-02-14 18:45:23,766 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:23,766 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:24,813 INFO     DATA FORMATTER: Dumping the pickle file tr10.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:25,008 INFO     Creating BATCH 11 .......... 
-2018-02-14 18:45:25,008 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:25,008 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:26,801 INFO     DATA FORMATTER: Dumping the pickle file tr11.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:26,995 INFO     Creating BATCH 12 .......... 
-2018-02-14 18:45:26,996 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:26,996 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:28,512 INFO     DATA FORMATTER: Dumping the pickle file tr12.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:28,694 INFO     Creating BATCH 13 .......... 
-2018-02-14 18:45:28,694 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:28,694 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:30,833 INFO     DATA FORMATTER: Dumping the pickle file tr13.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:31,029 INFO     Creating BATCH 14 .......... 
-2018-02-14 18:45:31,029 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:31,029 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:32,087 INFO     DATA FORMATTER: Dumping the pickle file tr14.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:32,289 INFO     Creating BATCH 15 .......... 
-2018-02-14 18:45:32,289 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:32,289 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:33,709 INFO     DATA FORMATTER: Dumping the pickle file tr15.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:33,934 INFO     Creating BATCH 16 .......... 
-2018-02-14 18:45:33,934 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:33,934 INFO     Smaller: len(Smaller) >= idx2 
-2018-02-14 18:45:35,309 INFO     DATA FORMATTER: Dumping the pickle file tr16.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:35,483 INFO     Creating BATCH 17 .......... 
-2018-02-14 18:45:35,483 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:35,483 INFO     Smaller: idx1 < len(Smaller) < idx2 
-2018-02-14 18:45:36,548 INFO     DATA FORMATTER: Dumping the pickle file tr17.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:36,705 INFO     Creating BATCH 18 .......... 
-2018-02-14 18:45:36,705 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:36,705 INFO     Smaller: len(Smaller) < idx1 < idx2 
-2018-02-14 18:45:38,376 INFO     DATA FORMATTER: Dumping the pickle file tr18.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:38,528 INFO     Creating BATCH 19 .......... 
-2018-02-14 18:45:38,528 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:38,528 INFO     Smaller: len(Smaller) < idx1 < idx2 
-2018-02-14 18:45:41,255 INFO     DATA FORMATTER: Dumping the pickle file tr19.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:41,405 INFO     Creating BATCH 20 .......... 
-2018-02-14 18:45:41,406 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:41,406 INFO     Smaller: len(Smaller) < idx1 < idx2 
-2018-02-14 18:45:43,334 INFO     DATA FORMATTER: Dumping the pickle file tr20.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:43,461 INFO     Creating BATCH 21 .......... 
-2018-02-14 18:45:43,461 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:43,461 INFO     Smaller: len(Smaller) < idx1 < idx2 
-2018-02-14 18:45:45,392 INFO     DATA FORMATTER: Dumping the pickle file tr21.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:45,534 INFO     Creating BATCH 22 .......... 
-2018-02-14 18:45:45,535 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:45,535 INFO     Smaller: len(Smaller) < idx1 < idx2 
-2018-02-14 18:45:47,506 INFO     DATA FORMATTER: Dumping the pickle file tr22.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:47,670 INFO     Creating BATCH 23 .......... 
-2018-02-14 18:45:47,670 INFO     Bigger: len(bigger) >= idx2 
-2018-02-14 18:45:47,671 INFO     Smaller: len(Smaller) < idx1 < idx2 
-2018-02-14 18:45:50,121 INFO     DATA FORMATTER: Dumping the pickle file tr23.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
-2018-02-14 18:45:50,275 INFO     Creating BATCH 24 .......... 
-2018-02-14 18:45:50,275 INFO     Bigger: idx1 < len(bigger) < idx2 
-2018-02-14 18:45:50,276 INFO     Smaller: len(Smaller) < idx1 < idx2 
-2018-02-14 18:45:51,621 INFO     DATA FORMATTER: Dumping the pickle file tr24.pickle to disk, dataX shape = (64, 260, 260, 3), dataY shape = (64,)
+2018-02-28 18:31:40,628 DEBUG    Found GEOS DLL: <CDLL '/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/shapely/.dylibs/libgeos_c.1.dylib', handle 7ffd457caec0 at 0x110658a90>, using it.
+2018-02-28 18:31:40,630 DEBUG    Trying `CDLL(/usr/lib/libc.dylib)`
+2018-02-28 18:31:40,630 DEBUG    Library path: '/usr/lib/libc.dylib'
+2018-02-28 18:31:40,630 DEBUG    DLL: <CDLL '/usr/lib/libc.dylib', handle 10f39f700 at 0x110658e10>
+2018-02-28 18:52:32,077 DEBUG    Set GDAL_DATA = '/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/fiona/gdal_data'
+2018-02-28 18:52:32,078 DEBUG    Set PROJ_LIB = '/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/fiona/proj_data'
+2018-02-28 18:52:32,096 DEBUG    GDAL_DATA: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/fiona/gdal_data
+2018-02-28 18:52:32,096 DEBUG    PROJ_LIB: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/fiona/proj_data
+2018-02-28 18:52:32,096 DEBUG    Userencoding: None
+2018-02-28 18:52:32,102 DEBUG    Projection not found (cogr_crs was NULL)
+2018-02-28 18:52:32,102 DEBUG    Index: 0
+2018-02-28 18:52:38,186 DEBUG    Projection not found (cogr_crs was NULL)
+2018-02-28 18:52:38,205 DEBUG    Flushed buffer
+2018-02-28 18:52:38,205 DEBUG    Stopped session
+2018-02-28 18:53:44,230 DEBUG    GDAL_DATA: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/fiona/gdal_data
+2018-02-28 18:53:44,230 DEBUG    PROJ_LIB: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/fiona/proj_data
+2018-02-28 18:53:44,231 DEBUG    Userencoding: None
+2018-02-28 18:53:44,234 DEBUG    Projection not found (cogr_crs was NULL)
+2018-02-28 18:53:44,234 DEBUG    Index: 0
+2018-02-28 18:53:50,402 DEBUG    Projection not found (cogr_crs was NULL)
+2018-02-28 18:53:50,423 DEBUG    Flushed buffer
+2018-02-28 18:53:50,423 DEBUG    Stopped session
+2018-02-28 18:56:11,754 DEBUG    GDAL_DATA: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/fiona/gdal_data
+2018-02-28 18:56:11,754 DEBUG    PROJ_LIB: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/fiona/proj_data
+2018-02-28 18:56:11,754 DEBUG    Userencoding: None
+2018-02-28 18:56:11,756 DEBUG    Projection not found (cogr_crs was NULL)
+2018-02-28 18:56:11,756 DEBUG    Index: 0
+2018-02-28 18:56:17,132 DEBUG    Projection not found (cogr_crs was NULL)
+2018-02-28 18:56:17,153 DEBUG    Flushed buffer
+2018-02-28 18:56:17,153 DEBUG    Stopped session
+2018-02-28 18:56:57,960 DEBUG    GDAL_DATA: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/fiona/gdal_data
+2018-02-28 18:56:57,960 DEBUG    PROJ_LIB: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/fiona/proj_data
+2018-02-28 18:56:57,961 DEBUG    Userencoding: None
+2018-02-28 18:56:57,962 DEBUG    Projection not found (cogr_crs was NULL)
+2018-02-28 18:56:57,962 DEBUG    Index: 0
+2018-02-28 18:57:03,490 DEBUG    Projection not found (cogr_crs was NULL)
+2018-02-28 18:57:03,507 DEBUG    Flushed buffer
+2018-02-28 18:57:03,508 DEBUG    Stopped session

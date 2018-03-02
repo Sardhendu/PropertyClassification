@@ -8,24 +8,26 @@ import config
 from config import netParams, myNet, vars
 
 
-def conv_layer(X, scope_name):
-    logging.info('Running Scope %s: ', str(scope_name))
-    stride = netParams[scope_name]['conv_stride']
-    pad = netParams[scope_name]['conv_pad']
-    k_shape = netParams[scope_name]['conv_shape']
-
+def conv_layer(X, k_shape, stride=1, padding='SAME',  w_init='tn', scope_name='conv_layer'):
+    m, h, w, f = X.get_shape().as_list()
+    
     if config.weight_seed_idx == len(config.seed_arr) - 1:
         config.weight_seed_idx = 0
     
     logging.info('SEED for scope: %s', str(config.seed_arr[config.weight_seed_idx]))
     
+    if w_init == 'gu':
+        wght_init = tf.glorot_uniform_initializer(seed=config.seed_arr[config.weight_seed_idx])
+    else:
+        wght_init = tf.truncated_normal_initializer(
+                stddev=0.1, seed=config.seed_arr[config.weight_seed_idx]
+        )
+        
     with tf.variable_scope(scope_name):
         weight = tf.get_variable(
                 dtype = tf.float32,
                 shape = k_shape,
-                initializer=tf.truncated_normal_initializer(
-                        stddev=0.1, seed=config.seed_arr[config.weight_seed_idx]
-                ),
+                initializer=wght_init,
                 name="w",
                 trainable=True
         )
@@ -42,10 +44,10 @@ def conv_layer(X, scope_name):
     tf.summary.histogram("conv_weights", weight)
     tf.summary.histogram("conv_bias", bias)
     
-    return tf.nn.conv2d(X, weight, [1, stride, stride, 1], padding=pad) + bias
+    return tf.nn.conv2d(X, weight, [1, stride, stride, 1], padding=padding) + bias
 
 
-def batch_norm(X, numOUT, axis=[0,1,2], scope_name=None):
+def batch_norm(X, axis=[0,1,2], scope_name=None):
     '''
     :param X:            The RELU output to be normalized
     :param numOUT:       Number of output channels (neurons)
@@ -57,7 +59,7 @@ def batch_norm(X, numOUT, axis=[0,1,2], scope_name=None):
     '''
     logging.info('Running Scope %s: ', str(scope_name))
     decay = config.myNet['batch_norm_decay']
-    
+    numOUT = X.get_shape().as_list()[-1]
     with tf.variable_scope(scope_name):
         beta = tf.get_variable(
                 dtype='float32',
@@ -104,21 +106,24 @@ def batch_norm(X, numOUT, axis=[0,1,2], scope_name=None):
         return bn
     
     
-def fc_layers(X, scope_name):
-    logging.info('Running Scope %s: ', str(scope_name))
-    k_shape = netParams[scope_name]['shape']
-    # print (k_shape)
-
+def fc_layers(X, k_shape, w_init='tn', scope_name='fc_layer'):
     if config.weight_seed_idx == len(config.seed_arr) - 1:
         config.weight_seed_idx = 0
         
     logging.info('SEED for scope: %s', str(config.seed_arr[config.weight_seed_idx]))
+    
+    if w_init == 'gu':
+        wght_init = tf.glorot_uniform_initializer(seed=config.seed_arr[config.weight_seed_idx])
+    else:
+        wght_init = tf.truncated_normal_initializer(
+                stddev=0.1, seed=config.seed_arr[config.weight_seed_idx]
+        )
+        
+        
     with tf.variable_scope(scope_name):
         weight = tf.get_variable(dtype=tf.float32,
                                  shape=k_shape,
-                                 initializer=tf.truncated_normal_initializer(
-                                         stddev=0.1, seed=config.seed_arr[config.weight_seed_idx]
-                                 ),
+                                 initializer=wght_init,
                                  name='w',
                                  trainable=True
                                  )
@@ -138,14 +143,14 @@ def fc_layers(X, scope_name):
     
 
 
-def activation(X, type='relu'):
+def activation(X, type='relu', scope_name='relu'):
     if type == 'relu':
-        return tf.nn.relu(X)
+        return tf.nn.relu(X, name=scope_name)
     elif type == 'sigmoid':
-        return tf.nn.sigmoid(X)
+        return tf.nn.sigmoid(X, name=scope_name)
 
 
-def loss_optimization(X, y, learning_rate_decay=True):
+def loss_optimization(X, y, learning_rate_decay=True, add_smry=True):
     globalStep = tf.Variable(0, dtype=tf.float32)
     if learning_rate_decay:
         
@@ -154,7 +159,7 @@ def loss_optimization(X, y, learning_rate_decay=True):
                                                   vars['train_size'],  # Decay steps
                                                   myNet['learning_rate_decay_rate'],  # Decay rate
                                                   staircase=True)  # Will decay the learning rate in discrete interval
-        tf.summary.scalar('learning_rate', l_rate)
+        
     else:
         l_rate = myNet['learning_rate']
     
@@ -162,7 +167,7 @@ def loss_optimization(X, y, learning_rate_decay=True):
     logging.info('INITIALIZING LOSS: .....')
     with tf.name_scope("Loss"):
         lossCE = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=X, labels=y))
-        tf.summary.scalar('cross_entropy_loss', lossCE)
+        
 
     logging.info('INITIALIZING OPTIMIZATION WITH %s: .....', str(myNet['optimizer']))
     with tf.name_scope("Optimizer"):
@@ -179,6 +184,10 @@ def loss_optimization(X, y, learning_rate_decay=True):
             optimizer = None
             raise ValueError('Your provided optimizers do not match with any of the initialized optimizers')
     
+    if add_smry:
+        tf.summary.scalar('learning_rate', l_rate)
+        tf.summary.scalar('cross_entropy_loss', lossCE)
+        
     return lossCE, optimizer, l_rate
 
 

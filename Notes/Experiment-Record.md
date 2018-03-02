@@ -91,8 +91,29 @@
     Epoch: 2, AVG Training Accuracy= 58.18750
     Epoch: 3, AVG Training Accuracy= 60.43750
     Epoch: 4, AVG Training Accuracy= 60.50000
+    Epoch: 5, AVG Training Accuracy= 62.37500
+    Epoch: 6, AVG Training Accuracy= 63.87500
     
-   
+    Epoch: 2, Cross Validation Accuracy= 65.50000
+    Epoch: 3, Cross Validation Accuracy= 64.50000
+    Epoch: 4, Cross Validation Accuracy= 74.00000
+    Epoch: 5, Cross Validation Accuracy= 71.00000
+    Epoch: 6, Cross Validation Accuracy= 67.50000
+    
+    Aerial Images:
+    
+    Epoch: 1, AVG Training Accuracy= 53.50000
+    Epoch: 2, AVG Training Accuracy= 55.50000
+    Epoch: 3, AVG Training Accuracy= 58.00000
+    Epoch: 4, AVG Training Accuracy= 59.31250
+    Epoch: 5, AVG Training Accuracy= 57.87500
+    Epoch: 6, AVG Training Accuracy= 59.12500
+    
+    Epoch: 2, Cross Validation Accuracy= 56.50000
+    Epoch: 3, Cross Validation Accuracy= 57.50000
+    Epoch: 4, Cross Validation Accuracy= 60.00000
+    Epoch: 5, Cross Validation Accuracy= 62.00000
+    Epoch: 6, Cross Validation Accuracy= 62.00000
    
    
    

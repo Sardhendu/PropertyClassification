@@ -67,9 +67,9 @@ def get_dump_image_given_path(paths, img_resize_shape, img_per_label_per_batch, 
                    picklefileName=filename)
 
 
-def genStratifiedBatches(img_resize_shape, valid_land_pins, valid_house_pins, cv_batch_size, tr_batch_size, image_type='aerial', dump=True):
+def genStratifiedBatches(img_resize_shape, valid_land_pins, valid_house_pins, cv_batch_size, tr_batch_size, image_type='aerial', dump=True, shuffle_seed=873):
     
-    if image_type not in ['assessor', 'aerial']:
+    if image_type not in ['assessor', 'google_aerial', 'bing_aerial', 'streetside']:
         raise ValueError('Variable image_type not understood')
     
     land_image_path = os.path.join(pathDict['%s_image_path' % (image_type)], 'land')
@@ -91,7 +91,7 @@ def genStratifiedBatches(img_resize_shape, valid_land_pins, valid_house_pins, cv
             np.array([img.split('.')[0] for img in os.listdir(house_image_path) if img != '.DS_Store'], dtype=str),
             valid_house_pins))
     
-    my_seed = 873
+    my_seed = shuffle_seed
     np.random.seed(my_seed)
     np.random.shuffle(land_pins)
     np.random.shuffle(house_pins)
@@ -108,8 +108,8 @@ def genStratifiedBatches(img_resize_shape, valid_land_pins, valid_house_pins, cv
     train_land_pins = land_pins[cv_img_per_label_per_batch: ]
     train_house_pins = house_pins[cv_img_per_label_per_batch:]
 
-    paths = [os.path.join(land_image_path, pin + '.jpg') for pin in valid_land_pins] + [
-        os.path.join(house_image_path, pin + '.jpg') for pin in valid_house_pins]
+    paths = [os.path.join(land_image_path, pin + '.jpg') for pin in valid_land_pins] + \
+            [os.path.join(house_image_path, pin + '.jpg') for pin in valid_house_pins]
         
     # LOAD THE VALIDATION SET TO THE DISK
     if dump:
