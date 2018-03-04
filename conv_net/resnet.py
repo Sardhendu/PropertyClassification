@@ -5,10 +5,12 @@ import numpy as np
 from config import myNet
 from conv_net import ops
 import logging
+
+
 logging.basicConfig(level=logging.DEBUG, filename="logfile.log", filemode="w",
                     format="%(asctime)-15s %(levelname)-8s %(message)s")
 
-###
+# Courtesy #
 # https://github.com/dalgu90/resnet-18-tensorflow
 
 

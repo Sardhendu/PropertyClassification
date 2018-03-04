@@ -18,17 +18,15 @@ logging.basicConfig(level=logging.DEBUG, filename="logfile.log", filemode="w",
 
 def load_batch_data(image_type, image_shape, which_data='cv'):
     batch_file_name = None
-    if image_type == 'aerial':
-        data_path = pathDict['aerial_batch_path']
-    elif image_type == 'assessor':
-        data_path = pathDict['assessor_batch_path']
-    elif image_type == 'streetside':
-        data_path = pathDict['streetside_batch_path']
-    else:
-        raise ValueError('The image type doesnt match the type handled')
+
+    if image_type not in ['bing_aerial', 'google_aerial', 'assessor', 'google_streetside', 'bing_streetside','google_overlayed']:
+        raise ValueError('Can not identify the image type %s, Please provide a valid one' % (str(image_type)))
+    
+    
+    data_path = pathDict['%s_batch_path' % (str(image_type))]
     
     batch_file_name = '%s.pickle' % (which_data)
-    
+    # print (os.path.exists(os.path.join(data_path, batch_file_name)))
     if not os.path.exists(os.path.join(data_path, batch_file_name)):
         raise ValueError('The batch file doesnt seem to exists')
     else:
@@ -42,9 +40,10 @@ def load_batch_data(image_type, image_shape, which_data='cv'):
 
 
 class PropertyClassification():
-    def __init__(self, params, which_net, image_type):
+    def __init__(self, params, which_net, image_type, inp_image_shape):
         params_keys = list(params.keys())
         self.which_net = which_net
+        myNet['inp_image_shape'] = inp_image_shape
         
         if 'use_checkpoint' in params_keys:
             self.use_checkpoint = params['use_checkpoint']
@@ -55,19 +54,22 @@ class PropertyClassification():
         if 'write_tensorboard_summary' in params_keys:
             self.write_tensorboard_summary = params['write_tensorboard_summary']
         
-        if image_type == 'aerial':
-            self.ckpt_path = os.path.join(pathDict['aerial_ckpt_path'], self.which_net )
-            self.smry_path = os.path.join(pathDict['aerial_smry_path'], self.which_net )
-            # aerial images are small in size, so to accomodate it, we override the input shape them here
-            myNet['image_shape'] = [224, 224, 3]  # override the shape
-        elif image_type == 'assessor':
-            self.ckpt_path = os.path.join(pathDict['assessor_ckpt_path'], self.which_net )
-            self.smry_path = os.path.join(pathDict['assessor_smry_path'], self.which_net )
-        elif image_type == 'streetside':
-            self.ckpt_path = os.path.join(pathDict['streetside_ckpt_path'], self.which_net )
-            self.smry_path = os.path.join(pathDict['streetside_smry_path'], self.which_net )
-        else:
-            raise ValueError('Provide a valid image type')
+        if image_type not in ['bing_aerial', 'google_aerial', 'assessor', 'google_streetside', 'bing_streetside', 'google_overlayed']:
+            raise ValueError('Can not identify the image type %s, Please provide a valid one'%(str(image_type)))
+        
+        self.ckpt_path = os.path.join(pathDict['%s_ckpt_path'%(str(image_type))], self.which_net )
+        self.smry_path = os.path.join(pathDict['%s_smry_path'%(str(image_type))], self.which_net )
+        
+        if not os.path.exists(self.ckpt_path):
+            os.makedirs(self.ckpt_path)
+            
+        if not os.path.exists(self.smry_path):
+            os.makedirs(self.smry_path)
+        
+        self.image_type = image_type
+        print('Dumping Checkpoints to %s', self.ckpt_path)
+        print('Dumping Tensorboard Summary to %s', self.smry_path)
+        
 
     def reshape(self, x, y):
         return (x.reshape(x.shape[0] * x.shape[1], x.shape[2], x.shape[3], x.shape[4]),
@@ -132,8 +134,8 @@ class PropertyClassification():
 
 class Train(PropertyClassification):
     
-    def _init__(self, params, which_net, image_type):
-        PropertyClassification.__init__(self, params, which_net, image_type)
+    def _init__(self, params, which_net, image_type, inp_image_shape):
+        PropertyClassification.__init__(self, params, which_net, image_type, inp_image_shape)
     
     def train(self, batchX, batchY, sess):
         preprocessed_data = self.run_preprocessor(batchX, self.preprocess_graph, sess)
@@ -204,11 +206,14 @@ class Train(PropertyClassification):
                 self.epoch = epoch
                 avg_accuracy = 0
                 get_stats_at = 10
+                # keep_cnt = 1
                 for batch_num in range(self.max_batch, self.num_batches):
                     self.batch_num = batch_num
-                    batchX, batchY, label_dict = load_batch_data(image_type=image_type,
-                                                                 image_shape=image_shape,
-                                                                 which_data='tr%s'%(batch_num))
+                    batchX, batchY, label_dict = load_batch_data(
+                            image_type=self.image_type,
+                            image_shape=myNet['inp_image_shape'],
+                            which_data='tr%s'%(batch_num))
+                    
                     batchY = self.to_one_hot(batchY)
                     acc = self.train(batchX, batchY, sess)
 
@@ -222,18 +227,22 @@ class Train(PropertyClassification):
                         if self.save_checkpoint:
                             logging.info('CHECKPOINT SAVER: Saving model updated parameters')
                             checkpoint_path = os.path.join(
-                                    self.ckpt_path, '%s_epoch_%s_batch_%s.ckpt'%(self.which_net, str(epoch),
-                                                                                 str(batch_num)))
+                                    self.ckpt_path,
+                                    '%s_epoch_%s_batch_%s.ckpt'%(self.which_net, str(epoch),str(batch_num))
+                            )
 
                             saver.save(sess, checkpoint_path)
-    
+                    #     keep_cnt = 1
+                    #
+                    # keep_cnt += 1
+                    #
     def run(self, num_epochs, num_batches):
         logging.info('INITIATING RUN ........')
         self.foldNUM = 1
         self.epochs = num_epochs
         self.num_batches = num_batches
 
-        self.preprocess_graph = Preprocessing().preprocessImageGraph(myNet['image_shape'])
+        self.preprocess_graph = Preprocessing().preprocessImageGraph(myNet['inp_image_shape'])
         
         if self.which_net == 'vgg':
             self.train_graph = vgg(training=True)
@@ -246,8 +255,9 @@ class Train(PropertyClassification):
 
 
 class Test(PropertyClassification):
-    def _init__(self, params, which_net, image_type):
-        PropertyClassification.__init__(self, params, image_type)
+    
+    def _init__(self, params, which_net, image_type, inp_image_shape):
+        PropertyClassification.__init__(self, params, which_net, image_type, inp_image_shape)
         
     def cvalid(self, batchX, batchY, sess):
         preprocessed_data = self.run_preprocessor(batchX, self.preprocess_graph, sess)
@@ -256,13 +266,14 @@ class Test(PropertyClassification):
         }
 
         out_prob = sess.run(self.test_graph['outProbs'], feed_dict=feed_dict)
+        
 
         v_acc = self.accuracy(y=batchY, y_hat=out_prob)
 
         print("Epoch: " + str(self.epoch) +
               ", Cross Validation Accuracy= " + "{:.5f}".format(v_acc))
 
-        return v_acc
+        return out_prob, v_acc
 
     def test(self,  checkpoint_path):
         saver = tf.train.Saver()
@@ -270,21 +281,30 @@ class Test(PropertyClassification):
         with tf.Session() as sess:
             sess.run(tf.global_variables_initializer())
 
-            batchX, batchY, label_dict = load_batch_data(image_type=image_type,
-                                                         image_shape=image_shape,
-                                                         which_data='cv')
-           
+            batchX, batchY, label_dict = load_batch_data(
+                    image_type=self.image_type,
+                    image_shape=myNet['inp_image_shape'],
+                    which_data='cv')
+            
             
             self.epoch = int(str(checkpoint_path.split('.')[0]).split('_')[-1])
             self.restore_checkpoint(checkpoint_path, saver, sess)
-            batchY = self.to_one_hot(batchY)
-            accuracy = self.cvalid(batchX, batchY, sess)
+            batchY_1hot = self.to_one_hot(batchY)
+            out_prob, acc = self.cvalid(batchX, batchY_1hot, sess)
+        
+        return batchY, out_prob, acc
+        
 
-    def run(self):
-        logging.info('INITIATING RUN ........')
+    def run(self, dump_stats=False):
+        logging.info('INITIATING TEST ........')
+        self.dump_stats = dump_stats
         checkpoint_paths = self.get_checkpoint_path(which_checkpoint='all')
-        for path in checkpoint_paths:
-            self.preprocess_graph = Preprocessing().preprocessImageGraph(myNet['image_shape'])
+
+        stats_matrix = []
+        colnames = []
+        for path_num, chk_path in enumerate(checkpoint_paths):
+            
+            self.preprocess_graph = Preprocessing(training=False).preprocessImageGraph(myNet['inp_image_shape'])
 
             if self.which_net == 'vgg':
                 print ('Test Graph: VGG')
@@ -294,27 +314,66 @@ class Test(PropertyClassification):
                 self.test_graph = resnet(training=False)
             else:
                 raise ValueError('Provide a valid Net type options ={vgg, resnet}')
-            ########   RUN THE SESSION
-            self.test(path)
-            tf.reset_default_graph()
             
-        
-# image_type = 'aerial'
-# image_shape = [224,224,3]
-# image_type = 'assessor'
-# image_shape = [260, 260, 3]
-image_type = 'streetside'
-image_shape = [260,260,3]
+            ########   RUN THE SESSION
+            batchY, out_prob, acc = self.test(chk_path)
+            y_hat = np.argmax(out_prob, 1).reshape(-1,1)
+            
+            # print('1 ', len(batchY))
+            # print('2 ',batchY.shape)
+            # print ('3 ',len(out_prob))
+            # print ('4 ',out_prob.shape)
+            
+            if self.dump_stats:
 
-run = True
-if run:
-    Train(dict(use_checkpoint=True,
-               save_checkpoint=True,
-               write_tensorboard_summary=True
-               ),
-          which_net='resnet', # vgg
-          image_type=image_type).run(num_epochs=3,
-                                     num_batches=149)
+                if path_num == 0:
+                    colnames.append('Label')
+                    stats_matrix = batchY.reshape(-1,1)
+                
+                # print (out_prob[0:5])
+                # print (np.argmax(out_prob, 1))
+                print(stats_matrix.shape)
+                colnames.append(os.path.basename(chk_path.split('.')[0] + '_pred'))
+                colnames.append(os.path.basename(chk_path.split('.')[0] + '_prob'))
+                stats_matrix = np.column_stack((
+                    stats_matrix, y_hat,
+                    np.maximum(out_prob[:,0], out_prob[:,1]).reshape(-1,1))
+                )
+
+            tf.reset_default_graph()
+
+        if self.dump_stats:
+            stats_matrix = pd.DataFrame(stats_matrix, columns=colnames)
+            stats_path = os.path.join(pathDict['%s_pred_stats' % str(self.image_type)], 'pred_stats.csv')
+            stats_matrix.to_csv(stats_path, index=None)
+        # print(len(colnames), colnames)
+        # print(stats_matrix.shape)
+                
+                
+                
+        
+            
+   
+debugg  = False
+
+if debugg:
+    # image_type = 'aerial'
+    # image_shape = [224,224,3]
+    image_type = 'assessor'
+    inp_image_shape = [260, 260, 3]
+    # image_type = 'streetside'
+    # image_shape = [260,260,3]
     
-    
-    # Test(params={}, which_net='resnet', image_type=image_type).run()
+    run = True
+    if run:
+        Train(dict(use_checkpoint=True,
+                   save_checkpoint=True,
+                   write_tensorboard_summary=True
+                   ),
+              which_net='resnet', # vgg
+              image_type=image_type,
+              inp_image_shape=inp_image_shape).run(num_epochs=3,
+                                         num_batches=149)
+        
+        
+        # Test(params={}, which_net='resnet', image_type=image_type).run()

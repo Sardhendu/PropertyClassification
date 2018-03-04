@@ -109,11 +109,14 @@
     Epoch: 5, AVG Training Accuracy= 57.87500
     Epoch: 6, AVG Training Accuracy= 59.12500
     
-    Epoch: 2, Cross Validation Accuracy= 56.50000
+    Epoch: 2, Coverlayed_imagesross Validation Accuracy= 56.50000
     Epoch: 3, Cross Validation Accuracy= 57.50000
     Epoch: 4, Cross Validation Accuracy= 60.00000
     Epoch: 5, Cross Validation Accuracy= 62.00000
     Epoch: 6, Cross Validation Accuracy= 62.00000
+    
+    
+### Mar 2: Resnet
    
    
    

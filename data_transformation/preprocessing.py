@@ -27,8 +27,8 @@ class Preprocessing():
         batch.
     '''
     
-    def __init__(self):
-        pass
+    def __init__(self, training=True):
+        self.training = training
     
     def randomCrop(self, imageIN):
         logging.info('Performing random crop')
@@ -91,28 +91,34 @@ class Preprocessing():
         
         # Add random contrast
         imageOUT = imageIN
-        if config.pp_vars['rand_brightness']:
-            imageOUT = self.addRandBrightness(imageOUT)
         
-        if config.pp_vars['rand_contrast']:
-            imageOUT = self.addRandContrast(imageOUT)
-        
-        if config.pp_vars['rand_rotate']:
-            imageOUT = self.randomRotate(imageOUT)
-        
+        if self.training:
+            if config.pp_vars['rand_brightness']:
+                imageOUT = self.addRandBrightness(imageOUT)
+            
+            if config.pp_vars['rand_contrast']:
+                imageOUT = self.addRandContrast(imageOUT)
+            
+            if config.pp_vars['rand_rotate']:
+                imageOUT = self.randomRotate(imageOUT)
+            
+            
+            
+            if config.pp_vars['rand_flip']:
+                imageOUT = self.randomFlip(imageOUT)
+
         if config.pp_vars['rand_crop']:
             imageOUT = self.randomCrop(imageOUT)
+            logging.info('Image shape after random crop: %s', str(imageOUT.shape))
         elif config.pp_vars['central_crop']:
             imageOUT = self.centralCrop(imageOUT)
+            logging.info('Image shape after central crop: %s', str(imageOUT.shape))
         else:
             imageOUT = tf.image.resize_image_with_crop_or_pad(
                     imageOUT, myNet['crop_shape'][0],
                     myNet['crop_shape'][1]
             )
-        
-        if config.pp_vars['rand_flip']:
-            imageOUT = self.randomFlip(imageOUT)
-        
+            
         if config.pp_vars['standardise']:
             imageOUT = self.standardize(imageOUT)
         

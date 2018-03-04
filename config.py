@@ -21,11 +21,12 @@ api_call ={}
 myNet = {}
 netParams=defaultdict(lambda: defaultdict())
 
-# api_call['zillow_zid'] = 'xyz'
-# api_call['bing_key'] = 'xyz'
-# api_call['google_streetside_key'] = 'xyz'
-# api_call['google_aerial_key'] = 'xyz'
-# api_call['google_meta_key'] = 'xyz'
+api_call['zillow_zid'] = 'xyz'
+api_call['bing_key'] = 'xyz'
+api_call['google_streetside_key'] = 'xyz'
+api_call['google_aerial_key'] = 'xyz'
+api_call['google_meta_key'] = 'xyz'
+
 
 api_call['google_aerial_key'] = str(api_call['google_aerial_key'][2])
 api_call['google_meta_key'] = str(api_call['google_meta_key'][2])
@@ -53,7 +54,7 @@ pp_vars['central_crop'] = True
 #####################   NET PARAMETERS
 # myNet['image_shape'] = [160, 160, 3]
 # myNet['crop_shape'] = [128, 128, 3]
-myNet['image_shape'] = [260, 260, 3]
+# myNet['image_shape'] = [260, 260, 3]
 myNet['crop_shape'] = [224, 224, 3]
 myNet['num_labels'] = 2
 myNet['optimizer'] = 'ADAM'
@@ -137,15 +138,21 @@ pathDict['pin_batch_row_meta_path'] = os.path.join(pathDict['statistics_path'], 
 
 ##### Aerial Images from Google
 pathDict['google_aerial_image_path'] = os.path.join(pathDict['parent_path'], "input_images", "aerial_images", "google")
+pathDict['google_streetside_image_path'] = os.path.join(pathDict['parent_path'], "input_images", "streetside_images", "google")
 pathDict['google_overlayed_image_path'] = os.path.join(pathDict['parent_path'],"input_images","overlayed_images","google")
 pathDict['google_aerial_stats_path'] = os.path.join(pathDict['statistics_path'], "aerial_images", "google")
 # pathDict['aerial_rsized_path'] = os.path.join(pathDict['data_model_path'], "aerial_images")
 pathDict['google_aerial_batch_path'] = os.path.join(pathDict['data_model_path'], "aerial_images", "google",'batch_data')
+pathDict['google_overlayed_batch_path'] = os.path.join(pathDict['data_model_path'],"overlayed_images","google",'batch_data')
 pathDict['google_aerial_ckpt_path'] = os.path.join(pathDict['data_model_path'], "aerial_images", "google", 'checkpoint')
+pathDict['google_overlayed_ckpt_path'] = os.path.join(pathDict['data_model_path'], "overlayed_images", "google", 'checkpoint')
 pathDict['google_aerial_smry_path'] = os.path.join(pathDict['data_model_path'], "aerial_images", "google", 'summary')
+pathDict['google_overlayed_smry_path'] = os.path.join(pathDict['data_model_path'], "overlayed_images", "google", 'summary')
 
 ##### Aerial Images from Bing
 pathDict['bing_aerial_image_path'] = os.path.join(pathDict['parent_path'], "input_images", "aerial_images", "bing")
+pathDict['bing_streetside_image_path'] = os.path.join(pathDict['parent_path'], "input_images", "streetside_images", "bing")
+pathDict['bing_overlayed_image_path'] = os.path.join(pathDict['parent_path'],"input_images","overlayed_images","bing")
 pathDict['bing_aerial_stats_path'] = os.path.join(pathDict['statistics_path'], "aerial_images", "bing")
 # pathDict['aerial_rsized_path'] = os.path.join(pathDict['data_model_path'], "aerial_images")
 pathDict['bing_aerial_batch_path'] = os.path.join(pathDict['data_model_path'], "aerial_images", "bing", 'batch_data')
@@ -174,4 +181,10 @@ pathDict['streetside_batch_path'] = os.path.join(pathDict['data_model_path'], "s
 pathDict['streetside_ckpt_path'] = os.path.join(pathDict['data_model_path'], "streetside_images", 'checkpoint')
 pathDict['streetside_smry_path'] = os.path.join(pathDict['data_model_path'], "streetside_images", 'summary')
 
+
+
+##### Other Stats directory
+pathDict['assessor_pred_stats'] = os.path.join(pathDict['statistics_path'], 'assessor_images')
+pathDict['google_aerial_pred_stats'] = os.path.join(pathDict['statistics_path'], 'aerial_images')
+pathDict['google_overlayed_pred_stats'] = os.path.join(pathDict['statistics_path'], 'overlayed_images')
 

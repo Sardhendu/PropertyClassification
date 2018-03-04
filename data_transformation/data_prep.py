@@ -69,13 +69,13 @@ def get_dump_image_given_path(paths, img_resize_shape, img_per_label_per_batch, 
 
 def genStratifiedBatches(img_resize_shape, valid_land_pins, valid_house_pins, cv_batch_size, tr_batch_size, image_type='aerial', dump=True, shuffle_seed=873):
     
-    if image_type not in ['assessor', 'google_aerial', 'bing_aerial', 'streetside']:
+    if image_type not in ['assessor', 'google_aerial', 'bing_aerial', 'bing_streetside', 'google_overlayed']:
         raise ValueError('Variable image_type not understood')
     
     land_image_path = os.path.join(pathDict['%s_image_path' % (image_type)], 'land')
     house_image_path = os.path.join(pathDict['%s_image_path' % (image_type)], 'house')
     output_batch_path = pathDict['%s_batch_path' % (image_type)]
-
+    # print (output_batch_path)
     logging.info('Input Land Images from %s: ', str(land_image_path))
     logging.info('Input House Images from %s: ', str(house_image_path))
     logging.info('Output batch array to %s: ', str(output_batch_path))

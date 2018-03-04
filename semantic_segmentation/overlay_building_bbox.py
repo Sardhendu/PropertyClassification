@@ -98,8 +98,8 @@ def get_overlayed_image(parcels_in_image, tl_pxl, img):
 
 def overlay_parcel_on_images(data_to_model):
     for sc_cnt,scoop in enumerate(scoop_arr):
-        if sc_cnt == 0:
-            continue
+        # if sc_cnt == 0:
+        #     continue
         min_lat, max_lon, max_lat, min_lon = [float(i.strip()) for i in lat_scoop[scoop].split(',')]
         # print(min_lat, max_lon, max_lat, min_lon)
         data_ = data_to_model[
@@ -109,8 +109,8 @@ def overlay_parcel_on_images(data_to_model):
         print('Initiating Run for scoop %s : DATA SHAPE %s'%(scoop, str(property_parcel.shape)))
         
         for rcnt, (pin, lat, lon, label) in enumerate(np.array(data_[['pin', 'lat', 'lon', 'indicator']])):
-            if rcnt<700:
-                continue
+            # if rcnt<700:
+            #     continue
             # Get the Google map static images using Pin from the disk
             if label == 'Likely Land':
                 output_path = os.path.join(pathDict['google_overlayed_image_path'], 'land', '%s.jpg'%str(pin))
