@@ -191,11 +191,13 @@ def loss_optimization(X, y, learning_rate_decay=True, add_smry=True):
     return lossCE, optimizer, l_rate
 
 
-def accuracy(labels, yPred):
+def accuracy(labels, logits, type='training', add_smry=True):
     with tf.name_scope("Accuracy"):
-        pred = tf.equal(tf.argmax(yPred, 1), tf.argmax(labels, 1))
-        accuracy = tf.reduce_mean(tf.cast(pred, tf.float32))
-        return accuracy
+        pred = tf.equal(tf.argmax(logits, 1), tf.argmax(labels, 1))
+        acc = tf.reduce_mean(tf.cast(pred, tf.float32))
+    # if add_smry:
+    #     tf.summary.scalar('%s_accuracy'%str(type), acc)
+    return acc
 
 
 def summary_builder(sess, outFilePath):

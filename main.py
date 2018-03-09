@@ -95,9 +95,9 @@ image_type = overlayed_img_type#aerial_img_type#assessor_img_type
 
 
 batch_prepare = False
-train = False
-test = True
-
+train = True
+test = False
+which_net = 'resnet'
 
 if batch_prepare:
     valid_land_pins, valid_house_pins = get_valid_land_house_ids(
@@ -130,11 +130,11 @@ if train:
                save_checkpoint=True,
                write_tensorboard_summary=True
                ),
-          which_net='resnet',  # vgg
+          which_net=which_net,  # vgg
           image_type=image_type,
           inp_image_shape = inp_image_shape).run(num_epochs=3,
                                      num_batches=160)
 if test:
-    Test(params={}, which_net='resnet',
+    Test(params={}, which_net=which_net,
          image_type=image_type,
          inp_image_shape = inp_image_shape).run(dump_stats=True)

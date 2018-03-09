@@ -84,6 +84,7 @@ class PropertyClassification():
     def accuracy(self, y, y_hat):
         # Both the predictions and the labels should be in One-Hot vector format.
         return (100.0 * np.sum(np.argmax(y_hat, 1) == np.argmax(y, 1)) / y_hat.shape[0])
+    
 
     def restore_checkpoint(self, checkpoint_path, saver, sess):
         saver.restore(sess, checkpoint_path)
@@ -94,7 +95,7 @@ class PropertyClassification():
                        if filename.endswith('meta')]
         if len(checkpoints) > 0:
             if which_checkpoint == 'all':
-                checkpoint_path = [os.path.join(self.ckpt_path, pth+'.ckpt') for pth in checkpoints]
+                checkpoint_path = [os.path.join(self.ckpt_path, pth) for pth in checkpoints]
             elif which_checkpoint == 'max':
                 epoch_batch  = np.array([[int(ckpt.split('_')[2]), int(ckpt.split('_')[4])]
                                          for ckpt in checkpoints], dtype=int)
@@ -103,7 +104,7 @@ class PropertyClassification():
                 # print(max_epoch_, '\n')
                 self.max_epoch, self.max_batch = np.squeeze(max_epoch_[np.where(max_epoch_[:,1] == max(max_epoch_[:,1]))[0]])
                 checkpoint_path = os.path.join(self.ckpt_path,
-                                               '%s_epoch_%s_batch_%s.ckpt'%(self.which_net ,str(self.max_epoch),self.max_batch))
+                                               '%s_epoch_%s_batch_%s'%(self.which_net ,str(self.max_epoch),self.max_batch))
                 print ('Checkpoint latest at: ', checkpoint_path)
             else:
                 raise ValueError('Provide valid checkpoint type')
@@ -114,20 +115,20 @@ class PropertyClassification():
             return []
 
 
-    def run_preprocessor(self, dataIN, preprocess_graph, sess):
+    def run_preprocessor(self, sess, dataIN, preprocess_graph, is_training):
         # logging.info('INITIATING PREPROCESSING.................')
         out_shape = [dataIN.shape[0]] + myNet['crop_shape']
         pp_imgs = np.ndarray(shape=(out_shape), dtype='float32')
         for img_no in np.arange(dataIN.shape[0]):
             feed_dict = {
-                preprocess_graph['imageIN']: dataIN[img_no, :]
+                preprocess_graph['imageIN']: dataIN[img_no, :],
+                preprocess_graph['is_training']: is_training
             }
             pp_imgs[img_no, :] = sess.run(
                     preprocess_graph['imageOUT'],
                     feed_dict=feed_dict
             )
             
-        # logging.info('Preprocessed data Shape: %s', str(pp_imgs.shape))
         return pp_imgs
 
 
@@ -138,44 +139,60 @@ class Train(PropertyClassification):
         PropertyClassification.__init__(self, params, which_net, image_type, inp_image_shape)
     
     def train(self, batchX, batchY, sess):
-        preprocessed_data = self.run_preprocessor(batchX, self.preprocess_graph, sess)
+        preprocessed_data = self.run_preprocessor(sess, batchX, self.preprocess_graph, is_training=True)
         feed_dict = {
             self.train_graph['inpX']: preprocessed_data,
-            self.train_graph['inpY']: batchY
+            self.train_graph['inpY']: batchY,
+            self.train_graph['is_training']: True
         }
         
         if self.write_tensorboard_summary:
-            out_prob, ls, _, l_rt, smry = sess.run([self.train_graph['outProbs'],
-                                                    self.train_graph['loss'],
-                                                    self.train_graph['optimizer'],
-                                                    self.train_graph['l_rate'],
-                                                    self.merged_summary],
-                                                   feed_dict=feed_dict)
+            out_prob, tacc, ls, _, l_rt, smry = sess.run([self.train_graph['outProbs'],
+                                                            self.train_graph['accuracy'],
+                                                            self.train_graph['loss'],
+                                                            self.train_graph['optimizer'],
+                                                            self.train_graph['l_rate'],
+                                                            self.merged_summary], feed_dict=feed_dict)
             self.writer.add_summary(smry, self.epoch)
         else:
-            out_prob, ls, _, l_rt = sess.run([self.train_graph['outProbs'],
+            out_prob, tacc, ls, _, l_rt = sess.run([self.train_graph['outProbs'],
+                                              self.train_graph['accuracy'],
                                               self.train_graph['loss'],
                                               self.train_graph['optimizer'],
                                               self.train_graph['l_rate']], feed_dict=feed_dict)
         
-        acc = self.accuracy(y=batchY, y_hat=out_prob)
-        # print("Fold: " + str(self.foldNUM) +
-        #       ", epoch: " + str(self.epoch) +
-        #       ", batch: " + str(self.batch_num) +
-        #       ", Loss= " + "{:.6f}".format(ls) +
-        #       ", Training Accuracy= " + "{:.5f}".format(acc))
+        # acc1 = self.accuracy(y=batchY, y_hat=out_prob)
         
         logging.info("Fold: %s, epoch: %s, batch: %s, Loss: %s, Accuracy: %s",
                      str(self.foldNUM),
                      str(self.epoch),
                      str(self.batch_num),
                      str("{:.6f}".format(ls)),
-                     str("{:.5f}".format(acc)))
+                     str("{:.5f}".format(tacc)))
         
-        return acc
-            
+        return tacc
+    
+    def cvalid(self, sess):
+        feed_dict = {
+            self.train_graph['inpX']: self.cv_preprocessed_data,
+            self.train_graph['inpY']: self.cvbatchY,
+            self.train_graph['is_training']: False
+        }
+    
+        if self.write_tensorboard_summary:
+            out_prob, acc, smry = sess.run([self.train_graph['outProbs'],
+                                                         self.train_graph['accuracy'],
+                                                         self.merged_summary], feed_dict=feed_dict)
+            self.writer.add_summary(smry, self.epoch)
+        else:
+            out_prob, acc, = sess.run([self.train_graph['outProbs'],
+                                                   self.train_graph['accuracy']], feed_dict=feed_dict)
+    
+        acc1 = self.accuracy(y=self.cvbatchY, y_hat=out_prob)
+        return acc1
+
     def run_epoch(self):
-        saver = tf.train.Saver()
+        saver = tf.train.Saver(max_to_keep=20)
         self.max_batch = 0
         self.max_epoch = 0
         with tf.Session() as sess:
@@ -199,14 +216,24 @@ class Train(PropertyClassification):
             elif self.max_batch == 0:
                 self.max_batch = 0
             else:
-                self.max_batch += 1   # When we have already run some batches for the epoch then we nees to run from
+                self.max_batch += 1   # When we have already run some batches for the epoch then we need to run from
                 # the next batch
             
+            # CROSS-VALIDATION We load and Preprocess the Cross-Validation set once, since we have to use it many times
+            cvbatchX, cvbatchY,_ = load_batch_data(image_type=self.image_type, image_shape=myNet['inp_image_shape'],
+                                                   which_data='cv')
+            self.cvbatchY = self.to_one_hot(cvbatchY)
+            self.cv_preprocessed_data = self.run_preprocessor(sess, cvbatchX, self.preprocess_graph, is_training=False)
+            del cvbatchX
+            del cvbatchY
+            
+            
+            # INITIATE EXECUTION (TRAINING AND TESTING)
             for epoch in range(self.max_epoch, self.max_epoch + self.epochs):
                 self.epoch = epoch
                 avg_accuracy = 0
-                get_stats_at = 10
-                # keep_cnt = 1
+                get_stats_at = 20
+
                 for batch_num in range(self.max_batch, self.num_batches):
                     self.batch_num = batch_num
                     batchX, batchY, label_dict = load_batch_data(
@@ -215,27 +242,31 @@ class Train(PropertyClassification):
                             which_data='tr%s'%(batch_num))
                     
                     batchY = self.to_one_hot(batchY)
-                    acc = self.train(batchX, batchY, sess)
+                    train_acc = self.train(batchX, batchY, sess)
 
-                    avg_accuracy += acc
+                    avg_accuracy += train_acc
 
                     if ((batch_num+1)%get_stats_at == 0) or (batch_num == self.num_batches -1):
                         print("Epoch: " + str(epoch) + ", Batch: " + str(batch_num) +
                               ", AVG Training Accuracy= " + "{:.5f}".format(avg_accuracy/get_stats_at))
                         avg_accuracy = 0
+                        
+                        
+                        ## VALIDATION ACCURACY
+                        valid_acc = self.cvalid( sess)
+                        print("Epoch: " + str(epoch) + ", Batch: " + str(batch_num) +
+                              ", Validation Accuracy= " + "{:.5f}".format(valid_acc))
+                        
                         # SAVE CHECKPOINTS TO THE PATH FOR EVERY EPOCH
                         if self.save_checkpoint:
                             logging.info('CHECKPOINT SAVER: Saving model updated parameters')
                             checkpoint_path = os.path.join(
                                     self.ckpt_path,
-                                    '%s_epoch_%s_batch_%s.ckpt'%(self.which_net, str(epoch),str(batch_num))
+                                    '%s_epoch_%s_batch_%s'%(self.which_net, str(epoch),str(batch_num))
                             )
 
-                            saver.save(sess, checkpoint_path)
-                    #     keep_cnt = 1
-                    #
-                    # keep_cnt += 1
-                    #
+                            saver.save(sess, checkpoint_path, write_meta_graph=False)
+
     def run(self, num_epochs, num_batches):
         logging.info('INITIATING RUN ........')
         self.foldNUM = 1
@@ -247,7 +278,7 @@ class Train(PropertyClassification):
         if self.which_net == 'vgg':
             self.train_graph = vgg(training=True)
         elif self.which_net == 'resnet':
-            self.train_graph = resnet(training=True)
+            self.train_graph = resnet()
         else:
             raise ValueError('Provide a valid Net type options ={vgg, resnet}')
         ########   RUN THE SESSION
@@ -260,7 +291,7 @@ class Test(PropertyClassification):
         PropertyClassification.__init__(self, params, which_net, image_type, inp_image_shape)
         
     def cvalid(self, batchX, batchY, sess):
-        preprocessed_data = self.run_preprocessor(batchX, self.preprocess_graph, sess)
+        preprocessed_data = self.run_preprocessor(sess, batchX, self.preprocess_graph, is_training=False)
         feed_dict = {
             self.test_graph['inpX']: preprocessed_data
         }
@@ -304,14 +335,14 @@ class Test(PropertyClassification):
         colnames = []
         for path_num, chk_path in enumerate(checkpoint_paths):
             
-            self.preprocess_graph = Preprocessing(training=False).preprocessImageGraph(myNet['inp_image_shape'])
+            self.preprocess_graph = Preprocessing().preprocessImageGraph(myNet['inp_image_shape'])
 
             if self.which_net == 'vgg':
                 print ('Test Graph: VGG')
                 self.test_graph = vgg(training=False)
             elif self.which_net == 'resnet':
                 print('Test Graphs: RESNET')
-                self.test_graph = resnet(training=False)
+                self.test_graph = resnet()
             else:
                 raise ValueError('Provide a valid Net type options ={vgg, resnet}')
             

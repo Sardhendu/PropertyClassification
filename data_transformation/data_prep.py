@@ -67,7 +67,7 @@ def get_dump_image_given_path(paths, img_resize_shape, img_per_label_per_batch, 
                    picklefileName=filename)
 
 
-def genStratifiedBatches(img_resize_shape, valid_land_pins, valid_house_pins, cv_batch_size, tr_batch_size, image_type='aerial', dump=True, shuffle_seed=873):
+def genStratifiedBatches(img_resize_shape, cvalid_land_pins, cvalid_house_pins, cv_batch_size, tr_batch_size, image_type='aerial', dump=True, shuffle_seed=873):
     
     if image_type not in ['assessor', 'google_aerial', 'bing_aerial', 'bing_streetside', 'google_overlayed']:
         raise ValueError('Variable image_type not understood')
@@ -85,11 +85,11 @@ def genStratifiedBatches(img_resize_shape, valid_land_pins, valid_house_pins, cv
     label_dict = {'0': 'land', '1': 'house'}
     land_pins = np.sort(np.intersect1d(
         np.array([img.split('.')[0] for img in os.listdir(land_image_path) if img != '.DS_Store'], dtype=str),
-        valid_land_pins))
+        cvalid_land_pins))
     
     house_pins = np.sort(np.intersect1d(
             np.array([img.split('.')[0] for img in os.listdir(house_image_path) if img != '.DS_Store'], dtype=str),
-            valid_house_pins))
+            cvalid_house_pins))
     
     my_seed = shuffle_seed
     np.random.seed(my_seed)
@@ -101,15 +101,15 @@ def genStratifiedBatches(img_resize_shape, valid_land_pins, valid_house_pins, cv
     ####################################################################################
     # Create the first batch as Validation and then remove the validation data from the actual dataset. This is done to ensure that the none of the validation data falls under the training batches
     cv_img_per_label_per_batch = cv_batch_size // 2
-    valid_land_pins = land_pins[0: cv_img_per_label_per_batch]
-    valid_house_pins = house_pins[0: cv_img_per_label_per_batch]
+    cvalid_land_pins = land_pins[0: cv_img_per_label_per_batch]
+    cvalid_house_pins = house_pins[0: cv_img_per_label_per_batch]
     
     # New land pins, and house_pins
     train_land_pins = land_pins[cv_img_per_label_per_batch: ]
     train_house_pins = house_pins[cv_img_per_label_per_batch:]
 
-    paths = [os.path.join(land_image_path, pin + '.jpg') for pin in valid_land_pins] + \
-            [os.path.join(house_image_path, pin + '.jpg') for pin in valid_house_pins]
+    paths = [os.path.join(land_image_path, pin + '.jpg') for pin in cvalid_land_pins] + \
+            [os.path.join(house_image_path, pin + '.jpg') for pin in cvalid_house_pins]
         
     # LOAD THE VALIDATION SET TO THE DISK
     if dump:
@@ -118,8 +118,17 @@ def genStratifiedBatches(img_resize_shape, valid_land_pins, valid_house_pins, cv
                                   labels=[land_label,house_label],
                                   outpath=output_batch_path,
                                   filename='cv.pickle')
+        
+        # In-order to validate the cross validation results we need to manually analyze what images are classified
+        # correctly are which images arent. Here we build a statistic file with all the pins sequentially stashed in
+        # the Cross-validation data set.
+        # print (train_land_pins, type(train_land_pins))
+        cv_pins_path = os.path.join(pathDict['%s_pred_stats' % str(image_type)], 'cv_pins.csv')
+        _pins_ = np.append(cvalid_land_pins, cvalid_house_pins)
+        _pins_ = pd.DataFrame(_pins_, columns=['property_pins'])
+        _pins_.to_csv(cv_pins_path, index=None)
     
-    logging.info('Validation Land Size: %s, Validation House Size: %s, Training Land Size: %s, Training House Size: %s', str(len(valid_land_pins)), str(len(valid_house_pins)), str(len(train_land_pins)), str(len(train_house_pins)))
+    logging.info('Validation Land Size: %s, Validation House Size: %s, Training Land Size: %s, Training House Size: %s', str(len(cvalid_land_pins)), str(len(cvalid_house_pins)), str(len(train_land_pins)), str(len(train_house_pins)))
 
     ####################################################################################
 
@@ -225,7 +234,7 @@ def genStratifiedBatches(img_resize_shape, valid_land_pins, valid_house_pins, cv
         
 debugg = False
 if debugg:
-    valid_land_pins = np.array(['30-07-132-018-0000', '29-36-102-064-0000', '24-33-100-102-0000',
+    cvalid_land_pins = np.array(['30-07-132-018-0000', '29-36-102-064-0000', '24-33-100-102-0000',
      '31-34-404-016-0000', '24-04-427-016-0000', '18-04-236-010-0000',
      '28-22-315-044-0000', '30-07-102-004-0000', '16-32-405-054-0000',
      '29-36-101-023-0000', '29-36-101-022-0000', '01-13-101-026',
@@ -256,5 +265,5 @@ if debugg:
      '11-29-401-020', '11-21-309-013', '30-20-304-061-0000', '20-02-303-040-0000',
      '05-23-200-042', '11-29-306-010' ,'04-16-412-015', '30-17-103-004-0000','07-06-303-011'])
 
-    genStratifiedBatches([224, 224], valid_land_pins, valid_house_ids, cv_batch_size=100, tr_batch_size=20, image_type='aerial',
+    genStratifiedBatches([224, 224], cvalid_land_pins, valid_house_ids, cv_batch_size=100, tr_batch_size=20, image_type='aerial',
                                dump=True)

@@ -76,14 +76,14 @@ def residual_block_first(X, filters, block_num, scope_name):
         
     return X
         
-def resnet(training=True):
+def resnet():
     inpX = tf.placeholder(dtype=tf.float32,
                           shape=[None, myNet['crop_shape'][0], myNet['crop_shape'][1], myNet['crop_shape'][2]],
                           name='X')
     inpY = tf.placeholder(dtype=tf.float32,
                           shape=[None, myNet['num_labels']],
                           name='Y')
-    
+    is_training = tf.placeholder(tf.bool)
     
     filters = [64,64,128,256,512]
 
@@ -113,10 +113,24 @@ def resnet(training=True):
     Y_probs = tf.nn.softmax(X_logits)
     logging.info('Softmax Y-Prob shape: shape %s', str(Y_probs.shape))
 
-    if training:
-        lossCE, optimizer, l_rate = ops.loss_optimization(X=X_logits, y=inpY, learning_rate_decay=True)
-        
-        return dict(inpX=inpX, inpY=inpY, outProbs=Y_probs,
-                    loss=lossCE, optimizer=optimizer, l_rate=l_rate)
-    else:
-        return dict(inpX=inpX, inpY=inpY, outProbs=Y_probs)
+    
+    lossCE, optimizer, l_rate = ops.loss_optimization(X=X_logits, y=inpY, learning_rate_decay=True)
+
+    acc = tf.cond(is_training,
+                  lambda: ops.accuracy(labels=inpY, logits=X_logits, type='training', add_smry=True),
+                  lambda: ops.accuracy(labels=inpY, logits=X_logits, type='validation', add_smry=True)
+                  )
+
+    return dict(inpX=inpX, inpY=inpY, is_training=is_training,
+                outProbs=Y_probs, accuracy=acc, loss=lossCE, optimizer=optimizer, l_rate=l_rate)
+
+
+    # if training:
+    #     accuracy = ops.accuracy(labels=inpY, logits=X_logits, type='training', add_smry=True)
+    #     lossCE, optimizer, l_rate = ops.loss_optimization(X=X_logits, y=inpY, learning_rate_decay=True)
+    #
+    #     return dict(inpX=inpX, inpY=inpY, outProbs=Y_probs, acc=accuracy,
+    #                 loss=lossCE, optimizer=optimizer, l_rate=l_rate)
+    # else:
+    #     accuracy = ops.accuracy(labels=inpY, logits=X_logits, type='validation', add_smry=True)
+    #     return dict(inpX=inpX, inpY=inpY, outProbs=Y_probs, acc=accuracy,)

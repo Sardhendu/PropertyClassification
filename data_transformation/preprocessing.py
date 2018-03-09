@@ -27,8 +27,8 @@ class Preprocessing():
         batch.
     '''
     
-    def __init__(self, training=True):
-        self.training = training
+    def __init__(self):
+        pass
     
     def randomCrop(self, imageIN):
         logging.info('Performing random crop')
@@ -73,6 +73,52 @@ class Preprocessing():
         logging.info('Standarizing the image')
         return tf.image.per_image_standardization(imageIN)
     
+    
+    def preprocess_for_train(self, img):
+        logging.info('PREPROCESSING config: With the training Data Set')
+        imageOUT = img
+        if config.pp_vars['rand_brightness']:
+            imageOUT = self.addRandBrightness(img)
+    
+        if config.pp_vars['rand_contrast']:
+            imageOUT = self.addRandContrast(imageOUT)
+    
+        if config.pp_vars['rand_rotate']:
+            imageOUT = self.randomRotate(imageOUT)
+    
+        if config.pp_vars['rand_flip']:
+            imageOUT = self.randomFlip(imageOUT)
+            
+        if config.pp_vars['rand_crop']:
+            imageOUT = self.randomCrop(imageOUT)
+            logging.info('Image shape after random crop: %s', str(imageOUT.shape))
+        elif config.pp_vars['central_crop']:
+            imageOUT = self.centralCrop(imageOUT)
+            logging.info('Image shape after central crop: %s', str(imageOUT.shape))
+        else:
+            imageOUT = tf.image.resize_image_with_crop_or_pad(
+                    imageOUT, myNet['crop_shape'][0],
+                    myNet['crop_shape'][1]
+            )
+            
+        if config.pp_vars['standardise']:
+            imageOUT = self.standardize(imageOUT)
+            
+        return imageOUT
+
+    def preprocess_for_test(self, img):
+        logging.info('PREPROCESSING config: With the Test Data Set')
+        imageOUT = img
+        if config.pp_vars['central_crop']:
+            imageOUT = self.centralCrop(imageOUT)
+            logging.info('Image shape after central crop: %s', str(imageOUT.shape))
+    
+        if config.pp_vars['standardise']:
+            imageOUT = self.standardize(imageOUT)
+            
+        return imageOUT
+    
+    
     def preprocessImageGraph(self, imageShape):
         """
         :param imageSize:   The size of image
@@ -88,38 +134,13 @@ class Preprocessing():
         imageIN = tf.placeholder(dtype=tf.float32,
                                  shape=[imageShape[0], imageShape[1], imageShape[2]],
                                  name="Preprocessor-variableHolder")
+        is_training = tf.placeholder(tf.bool)
         
         # Add random contrast
         imageOUT = imageIN
         
-        if self.training:
-            if config.pp_vars['rand_brightness']:
-                imageOUT = self.addRandBrightness(imageOUT)
-            
-            if config.pp_vars['rand_contrast']:
-                imageOUT = self.addRandContrast(imageOUT)
-            
-            if config.pp_vars['rand_rotate']:
-                imageOUT = self.randomRotate(imageOUT)
-            
-            
-            
-            if config.pp_vars['rand_flip']:
-                imageOUT = self.randomFlip(imageOUT)
+        imageOUT = tf.cond(is_training, lambda: self.preprocess_for_train(imageOUT),
+                           lambda : self.preprocess_for_test(imageOUT))
 
-        if config.pp_vars['rand_crop']:
-            imageOUT = self.randomCrop(imageOUT)
-            logging.info('Image shape after random crop: %s', str(imageOUT.shape))
-        elif config.pp_vars['central_crop']:
-            imageOUT = self.centralCrop(imageOUT)
-            logging.info('Image shape after central crop: %s', str(imageOUT.shape))
-        else:
-            imageOUT = tf.image.resize_image_with_crop_or_pad(
-                    imageOUT, myNet['crop_shape'][0],
-                    myNet['crop_shape'][1]
-            )
-            
-        if config.pp_vars['standardise']:
-            imageOUT = self.standardize(imageOUT)
         
-        return dict(imageIN=imageIN, imageOUT=imageOUT)
+        return dict(imageIN=imageIN, imageOUT=imageOUT, is_training=is_training)
