@@ -76,9 +76,9 @@ def residual_block_first(X, filters, block_num, scope_name):
         
     return X
         
-def resnet():
+def resnet(img_shape):
     inpX = tf.placeholder(dtype=tf.float32,
-                          shape=[None, myNet['crop_shape'][0], myNet['crop_shape'][1], myNet['crop_shape'][2]],
+                          shape=[None, img_shape[0], img_shape[1], img_shape[2]],
                           name='X')
     inpY = tf.placeholder(dtype=tf.float32,
                           shape=[None, myNet['num_labels']],

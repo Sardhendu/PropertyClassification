@@ -52,10 +52,6 @@ pp_vars['central_crop'] = True
 
 
 #####################   NET PARAMETERS
-# myNet['image_shape'] = [160, 160, 3]
-# myNet['crop_shape'] = [128, 128, 3]
-# myNet['image_shape'] = [260, 260, 3]
-myNet['crop_shape'] = [224, 224, 3]
 myNet['num_labels'] = 2
 myNet['optimizer'] = 'ADAM'
 myNet['learning_rate'] = 0.0009

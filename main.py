@@ -124,9 +124,11 @@ if batch_prepare:
 
 
 
-
 if train:
-    Train(dict(use_checkpoint=True,
+    Train(dict(inp_img_shape=[400,400,3],
+               crop_shape=[160,160,3],
+               out_img_shape=[224, 224, 3],
+               use_checkpoint=False,
                save_checkpoint=True,
                write_tensorboard_summary=True
                ),
