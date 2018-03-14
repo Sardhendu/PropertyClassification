@@ -128,7 +128,7 @@ def get_valid_land_house_ids(aerial_img_type=None, streetside_img_type=None, ove
 
 def unison_shuffled_copies(a, b):
     assert len(a) == len(b)
-    # np.random.seed(172)
+    np.random.seed(172)
     p = np.random.permutation(len(a))
     return a[p], b[p]
 
@@ -147,7 +147,7 @@ def get_dump_image_given_path(land_paths, house_paths, img_resize_shape, label_d
             np.tile(float(labels[1]), len(house_paths)))
     
     # Shuffle data in the batch and dump
-    dataBatchX, dataBatchY = unison_shuffled_copies(dataBatchX, dataBatchY)
+    # dataBatchX, dataBatchY = unison_shuffled_copies(dataBatchX, dataBatchY)
     
     dumpH5File(dataX=dataBatchX,
                    dataY=dataBatchY,

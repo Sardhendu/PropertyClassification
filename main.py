@@ -20,7 +20,7 @@ streetside_img_type = None
 
 
 
-image_type = overlayed_img_type#aerial_img_type#assessor_img_type
+image_type = assessor_img_type#aerial_img_type#overlayed_img_type##
 
 if image_type == 'assessor':
     inp_image_shape = [260, 260, 3]
