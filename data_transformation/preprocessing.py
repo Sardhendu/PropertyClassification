@@ -76,7 +76,7 @@ class Preprocessing():
     
     def centralCrop(self, imageIN):
         logging.info('Performing Central crop')
-        return tf.random_crop(imageIN, self.crop_shape)
+        return tf.image.central_crop(imageIN, 0.8)#tf.random_crop(imageIN, self.crop_shape)
     
     def randomFlip(self, imageIN):
         logging.info('Performing random horizontal flip')

@@ -39,7 +39,7 @@ def load_batch_data(image_type, image_shape, which_data='cv'):
 
 
 class PropertyClassification(object):
-    def __init__(self, params, which_net, image_type, inp_image_shape):
+    def __init__(self, params, which_net, image_type):
         params_keys = list(params.keys())
         self.which_net = which_net
         if 'inp_img_shape' in  params_keys:
@@ -143,8 +143,8 @@ class PropertyClassification(object):
 
 class Train(PropertyClassification):
     
-    def _init__(self, params, which_net, image_type, inp_image_shape):
-        PropertyClassification.__init__(self, params, which_net, image_type, inp_image_shape)
+    def _init__(self, params, which_net, image_type):
+        PropertyClassification.__init__(self, params, which_net, image_type)
     
     def train(self, batchX, batchY, sess):
         preprocessed_data = self.run_preprocessor(sess, batchX, self.preprocess_graph, is_training=True)
@@ -301,8 +301,8 @@ class Train(PropertyClassification):
 
 class Test(PropertyClassification):
     
-    def _init__(self, params, which_net, image_type, inp_image_shape):
-        PropertyClassification.__init__(self, params, which_net, image_type, inp_image_shape)
+    def _init__(self, params, which_net, image_type):
+        PropertyClassification.__init__(self, params, which_net, image_type)
         
     def cvalid(self, batchX, batchY, sess):
         preprocessed_data = self.run_preprocessor(sess, batchX, self.preprocess_graph, is_training=False)
@@ -413,14 +413,14 @@ if debugg:
     
     run = True
     if run:
-        Train(dict(use_checkpoint=True,
-                   save_checkpoint=True,
-                   write_tensorboard_summary=True
-                   ),
-              which_net='resnet', # vgg
-              image_type=image_type,
-              inp_image_shape=inp_image_shape).run(num_epochs=3,
-                                         num_batches=149)
+        # Train(dict(use_checkpoint=True,
+        #            save_checkpoint=True,
+        #            write_tensorboard_summary=True
+        #            ),
+        #       which_net='resnet', # vgg
+        #       image_type=image_type,
+        #       inp_image_shape=inp_image_shape).run(num_epochs=3,
+        #                                  num_batches=149)
+        #
         
-        
-        # Test(params={}, which_net='resnet', image_type=image_type).run()
+        Test(params={}, which_net='resnet', image_type=image_type, inp_image_shape=inp_image_shape).run()

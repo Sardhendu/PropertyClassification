@@ -1,0 +1,9 @@
+2018-03-13 21:11:58,843 INFO     Input Land Images from /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/overlayed_images/google/land: 
+2018-03-13 21:11:58,843 INFO     Input House Images from /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/overlayed_images/google/house: 
+2018-03-13 21:11:58,843 INFO     Output batch array to /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/batch_data: 
+2018-03-13 21:11:58,883 INFO     Input Data: Total Land: 5433, Total House: 5433
+2018-03-13 21:12:06,783 INFO     DATA FORMATTER: Dumping the hdf5 file cvalid to disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-13 21:12:10,284 INFO     DATA FORMATTER: Dumping the hdf5 file train_0 to disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
+2018-03-13 21:12:11,541 INFO     DATA FORMATTER: Dumping the hdf5 file train_1 to disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
+2018-03-13 21:12:13,169 INFO     DATA FORMATTER: Dumping the hdf5 file train_2 to disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
+2018-03-13 21:12:13,491 INFO     Validation Land Size: 543, Validation House Size: 543, Training Land Size: 4890, Training House Size: 4890

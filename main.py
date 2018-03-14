@@ -5,78 +5,7 @@ import os
 import numpy as np
 from config import pathDict
 from conv_net.run import Train, Test
-from data_transformation.data_prep import genStratifiedBatches
-
-
-logging.basicConfig(level=logging.DEBUG, filename="logfile.log", filemode="w", format="%(asctime)-15s %(levelname)-8s %(message)s")
-
-
-def get_valid_land_house_ids(aerial_img_type=None, streetside_img_type=None, overlayed_img_type=None,
-                             images_per_label=None):
-    cmn_land_pins = np.array(
-            [img.split('.')[0] for img in os.listdir(os.path.join(pathDict['assessor_image_path'], 'land')) if
-             img != ".DS_Store"], dtype=str)
-
-    cmn_house_pins = np.array(
-            [img.split('.')[0] for img in os.listdir(os.path.join(pathDict['assessor_image_path'], 'house')) if
-             img != ".DS_Store"], dtype=str)
- 
-    
-    if aerial_img_type:
-        print(os.path.join(pathDict['%s_image_path' % (aerial_img_type)], 'land'))
-        aerial_land_pins = np.array(
-                [img.split('.')[0]
-                for img in os.listdir(os.path.join(pathDict['%s_image_path'%(aerial_img_type)], 'land'))
-                 if img !=".DS_Store"], dtype=str)
-    
-        aerial_house_pins = np.array(
-                [img.split('.')[0]
-                for img in os.listdir(os.path.join(pathDict['%s_image_path'%(aerial_img_type)], 'house'))
-                 if img !=".DS_Store"], dtype=str)
-        print ('aerial pins: ', len(aerial_land_pins), len(aerial_house_pins))
-        cmn_land_pins = np.intersect1d(cmn_land_pins, aerial_land_pins)
-        cmn_house_pins = np.intersect1d(cmn_house_pins, aerial_house_pins)
-
-        print('common aerial pins: ', len(cmn_land_pins), len(cmn_house_pins))
-        
-    if streetside_img_type:
-        print(os.path.join(pathDict['%s_image_path' % (streetside_img_type)], 'land'))
-        streetside_land_pins = np.array([img.split('.')[0] for img in os.listdir(
-                os.path.join(pathDict['%s_image_path'%(streetside_img_type)], 'land')) if img !=".DS_Store"], dtype=str)
-    
-        streetside_house_pins = np.array([img.split('.')[0] for img in os.listdir(
-                os.path.join(pathDict['%s_image_path'%(streetside_img_type)], 'house')) if img != ".DS_Store"], dtype=str)
-
-        print('streetside pins: ', len(streetside_land_pins), len(streetside_house_pins))
-        cmn_land_pins = np.intersect1d(cmn_land_pins, streetside_land_pins)
-        cmn_house_pins = np.intersect1d(cmn_house_pins, streetside_house_pins)
-
-        print('common streetside pins: ', len(cmn_land_pins), len(cmn_house_pins))
-    
-    if overlayed_img_type:
-        print (os.path.join(pathDict['%s_image_path'%(overlayed_img_type)], 'land'))
-        overlayed_land_pins = np.array([img.split('.')[0] for img in os.listdir(
-                os.path.join(pathDict['%s_image_path'%(overlayed_img_type)], 'land')) if img != ".DS_Store"], dtype=str)
-    
-        overlayed_house_pins = np.array([img.split('.')[0] for img in os.listdir(
-                os.path.join(pathDict['%s_image_path'%(overlayed_img_type)], 'house')) if img != ".DS_Store"], dtype=str)
-
-        print('overlayed pins: ', len(overlayed_land_pins), len(overlayed_house_pins))
-        cmn_land_pins = np.intersect1d(cmn_land_pins, overlayed_land_pins)
-        cmn_house_pins = np.intersect1d(cmn_house_pins, overlayed_house_pins)
-
-        print('common overlayed pins: ', len(cmn_land_pins), len(cmn_house_pins))
-        
-
-    np.random.seed(184)
-    np.random.shuffle(cmn_land_pins)
-    np.random.shuffle(cmn_house_pins)
-
-    if not images_per_label:
-        images_per_label = min(len(cmn_land_pins), len(cmn_house_pins))
-
-    return cmn_land_pins[0:images_per_label], cmn_house_pins[0:images_per_label]
-
+from data_transformation.data_prep import get_valid_land_house_ids, dumpStratifiedBatches_balanced_class
 
 
 
@@ -86,57 +15,61 @@ assessor_img_type = 'assessor'
 aerial_img_type = 'google_aerial' # 'bing_aerial'
 overlayed_img_type = 'google_overlayed'
 streetside_img_type = None
-# image_shape = [224,224,3]
-# inp_image_shape = [260, 260, 3]
-inp_image_shape = [400, 400, 3]
+
+
+
+
 
 image_type = overlayed_img_type#aerial_img_type#assessor_img_type
 
-
-
-batch_prepare = False
-train = True
+if image_type == 'assessor':
+    inp_image_shape = [260, 260, 3]
+elif image_type == 'google_aerial':
+    inp_image_shape = [400, 400, 3]
+elif image_type == 'google_overlayed':
+    inp_image_shape = [400, 400, 3]
+elif image_type == 'google_streetside':
+    inp_image_shape = [260, 260, 3]
+else:
+    raise ValueError('Not a valid image type provided')
+    
+batch_prepare = True
+train = False
 test = False
 which_net = 'resnet'
+max_batches = 5
+
+
 
 if batch_prepare:
-    valid_land_pins, valid_house_pins = get_valid_land_house_ids(
+    cmn_land_pins, cmn_house_pins = get_valid_land_house_ids(
             aerial_img_type=aerial_img_type,
             streetside_img_type=streetside_img_type,
             overlayed_img_type=overlayed_img_type,
             images_per_label=images_per_label)
-    print (len(valid_land_pins), len(valid_house_pins))
+    print (len(cmn_land_pins), len(cmn_house_pins))
 
-
-    if image_type == 'assessor':
-        genStratifiedBatches([260, 260, 3], valid_land_pins, valid_house_pins, cv_batch_size=500, tr_batch_size=64, image_type='assessor', dump=True, shuffle_seed=874)
-
-    elif image_type == 'google_aerial':
-        genStratifiedBatches([400, 400, 3], valid_land_pins, valid_house_pins, cv_batch_size=500, tr_batch_size=64, image_type='google_aerial', dump=True, shuffle_seed=874)
-
-    elif image_type == 'google_overlayed':
-        genStratifiedBatches([400, 400, 3], valid_land_pins, valid_house_pins, cv_batch_size=500, tr_batch_size=64,image_type='google_overlayed', dump=True, shuffle_seed=874)
-    elif image_type == 'google_streetside':
-        genStratifiedBatches([260, 260, 3], valid_land_pins, valid_house_pins, cv_batch_size=500, tr_batch_size=64, image_type='streetside', dump=True, shuffle_seed=874)
+    cv_batch_size = (len(cmn_land_pins) + len(cmn_house_pins)) // 10
     
-    else:
-        raise ValueError('Not a valid image type provided')
-
+    dumpStratifiedBatches_balanced_class(cmn_land_pins, cmn_house_pins, img_resize_shape=inp_image_shape,
+                                         image_type=image_type, cv_batch_size=cv_batch_size, tr_batch_size=128,
+                                         shuffle_seed=873, get_stats=True, max_batches=max_batches)
 
 
 if train:
     Train(dict(inp_img_shape=[400,400,3],
                crop_shape=[160,160,3],
                out_img_shape=[224, 224, 3],
-               use_checkpoint=False,
+               use_checkpoint=True,
                save_checkpoint=True,
                write_tensorboard_summary=True
                ),
           which_net=which_net,  # vgg
-          image_type=image_type,
-          inp_image_shape = inp_image_shape).run(num_epochs=3,
+          image_type=image_type).run(num_epochs=3,
                                      num_batches=160)
 if test:
-    Test(params={}, which_net=which_net,
-         image_type=image_type,
-         inp_image_shape = inp_image_shape).run(dump_stats=True)
+    Test(params=dict(inp_img_shape=[400,400,3],
+                     crop_shape=[160, 160, 3],
+                     out_img_shape=[224, 224, 3]),
+         which_net=which_net,
+         image_type=image_type).run(dump_stats=True)
