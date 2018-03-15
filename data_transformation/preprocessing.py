@@ -11,7 +11,7 @@ import config
 from config import myNet
 
 
-def zero_pad(inp, out_shape):
+def zero_pad(inp, crop_shape, out_shape):
     '''
     :param inp:
     :param out_shape:
@@ -19,7 +19,7 @@ def zero_pad(inp, out_shape):
 
     One image at a time
     '''
-    m, n, c = inp.get_shape().as_list()
+    m, n, c = crop_shape#inp.get_shape().as_list()
     out_m, out_n, out_c = out_shape
     
     to_pad_m = max(out_m - m, 0)
@@ -76,7 +76,7 @@ class Preprocessing():
     
     def centralCrop(self, imageIN):
         logging.info('Performing Central crop')
-        return tf.image.central_crop(imageIN, 0.8)#tf.random_crop(imageIN, self.crop_shape)
+        return tf.image.central_crop(imageIN, self.crop_shape[0]/self.inp_img_shape[0])#tf.random_crop(imageIN, self.crop_shape)
     
     def randomFlip(self, imageIN):
         logging.info('Performing random horizontal flip')
@@ -184,8 +184,15 @@ class Preprocessing():
                            lambda : self.preprocess_for_test(imageOUT))
         # print (imageOUT.get_shape().as_list() , self.out_img_shape)
 
-        if imageOUT.get_shape().as_list()[0] - self.out_img_shape[0] < 0:#) == [0,0,0]:
-            imageOUT = zero_pad(inp=imageOUT, out_shape=self.out_img_shape)
+        # if imageOUT.get_shape().as_list()[0] - self.out_img_shape[0] < 0:#) == [0,0,0]:
+        #     imageOUT = zero_pad(inp=imageOUT, out_shape=self.out_img_shape)
+        
+        if self.crop_shape[0] - self.out_img_shape[0] < 0:
+            imageOUT = zero_pad(inp=imageOUT, crop_shape=self.crop_shape, out_shape=self.out_img_shape)
+
+        # imageOUT = tf.cond(imageOUT.get_shape().as_list()[0] - self.out_img_shape[0] < 0,
+        #                     zero_pad(inp=imageOUT, out_shape=self.out_img_shape),
+        #                     imageOUT)
             
         return dict(imageIN=imageIN, imageOUT=imageOUT, is_training=is_training)
     

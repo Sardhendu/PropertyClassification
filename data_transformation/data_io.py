@@ -2,6 +2,7 @@ import os
 import pickle
 import logging
 import h5py
+import numpy as np
 
 
 def dumpPickleFile(dataX, dataY, labelDict=None, folderPath=None, fileName=None):

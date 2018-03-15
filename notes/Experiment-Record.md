@@ -117,6 +117,23 @@
     
     
 ### Mar 2: Resnet
+
+* Overlaying building polygons on top of Google's satellite image -- image_size = 400x400x3,
+* Performing Central Crop of 96x96
+* Adding zeropad to make the image_size as 224x224x3
    
-   
+    Epoch: 0, Batch: 9, AVG Training Accuracy= 0.68281
+    Epoch: 0, Batch: 9, Validation Accuracy= 83.88582
+    Epoch: 0, Batch: 19, AVG Training Accuracy= 0.85703
+    Epoch: 0, Batch: 19, Validation Accuracy= 88.95028
+    Epoch: 0, Batch: 29, AVG Training Accuracy= 0.82891
+    Epoch: 0, Batch: 29, Validation Accuracy= 85.91160
+    Epoch: 0, Batch: 39, AVG Training Accuracy= 0.84844
+    Epoch: 0, Batch: 39, Validation Accuracy= 70.90239
+    Epoch: 0, Batch: 49, AVG Training Accuracy= 0.83281
+    Epoch: 0, Batch: 49, Validation Accuracy= 87.20074
+    Epoch: 0, Batch: 59, AVG Training Accuracy= 0.84297
+    Epoch: 0, Batch: 59, Validation Accuracy= 86.37201
+    Epoch: 0, Batch: 69, AVG Training Accuracy= 0.89687
+    Epoch: 0, Batch: 69, Validation Accuracy= 77.62431
    

@@ -1,11 +1,1682 @@
-2018-03-14 01:49:09,780 INFO     Input Land Images from /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/assessor_images/land: 
-2018-03-14 01:49:09,781 INFO     Input House Images from /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/assessor_images/house: 
-2018-03-14 01:49:09,781 INFO     Output batch array to /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/assessor_images/batch_data: 
-2018-03-14 01:49:09,877 INFO     Input Data: Total Land: 5433, Total House: 5433
-2018-03-14 01:49:15,748 INFO     DATA FORMATTER: Dumping the hdf5 file cvalid to disk, dataX shape = (1086, 260, 260, 3), dataY shape = (1086,)
-2018-03-14 01:49:17,924 INFO     DATA FORMATTER: Dumping the hdf5 file train_0 to disk, dataX shape = (128, 260, 260, 3), dataY shape = (128,)
-2018-03-14 01:49:18,865 INFO     DATA FORMATTER: Dumping the hdf5 file train_1 to disk, dataX shape = (128, 260, 260, 3), dataY shape = (128,)
-2018-03-14 01:49:19,803 INFO     DATA FORMATTER: Dumping the hdf5 file train_2 to disk, dataX shape = (128, 260, 260, 3), dataY shape = (128,)
-2018-03-14 01:49:20,753 INFO     DATA FORMATTER: Dumping the hdf5 file train_3 to disk, dataX shape = (128, 260, 260, 3), dataY shape = (128,)
-2018-03-14 01:49:21,932 INFO     DATA FORMATTER: Dumping the hdf5 file train_4 to disk, dataX shape = (128, 260, 260, 3), dataY shape = (128,)
-2018-03-14 01:49:22,207 INFO     Validation Land Size: 543, Validation House Size: 543, Training Land Size: 4890, Training House Size: 4890
+2018-03-15 03:48:10,718 INFO     INITIATING TEST ........
+2018-03-15 03:48:10,719 INFO     Checkpoint LISTS .. ['resnet_epoch_1_batch_49', 'resnet_epoch_2_batch_29', 'resnet_epoch_1_batch_69', 'resnet_epoch_1_batch_29', 'resnet_epoch_2_batch_69', 'resnet_epoch_2_batch_49', 'resnet_epoch_2_batch_39', 'resnet_epoch_1_batch_59', 'resnet_epoch_2_batch_74', 'resnet_epoch_2_batch_19', 'resnet_epoch_2_batch_59', 'resnet_epoch_1_batch_74', 'resnet_epoch_1_batch_19', 'resnet_epoch_1_batch_9', 'resnet_epoch_1_batch_39', 'resnet_epoch_0_batch_74', 'resnet_epoch_2_batch_9', 'resnet_epoch_0_batch_59', 'resnet_epoch_0_batch_49', 'resnet_epoch_0_batch_69']
+2018-03-15 03:48:10,721 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 03:48:10,751 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 03:48:10,751 INFO     Performing random horizontal flip
+2018-03-15 03:48:10,772 INFO     Performing Central crop
+2018-03-15 03:48:10,830 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 03:48:10,830 INFO     Standarizing the image
+2018-03-15 03:48:10,862 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 03:48:10,862 INFO     Performing Central crop
+2018-03-15 03:48:10,919 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 03:48:10,919 INFO     Standarizing the image
+2018-03-15 03:48:10,958 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 03:48:10,963 INFO     SEED for scope: 553
+2018-03-15 03:48:10,988 INFO     Running Scope bn_1: 
+2018-03-15 03:48:11,045 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:48:11,045 INFO     SEED for scope: 292
+2018-03-15 03:48:11,072 INFO     Running Scope bn_1: 
+2018-03-15 03:48:11,126 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:48:11,126 INFO     SEED for scope: 394
+2018-03-15 03:48:11,155 INFO     Running Scope bn_2: 
+2018-03-15 03:48:11,209 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 03:48:11,211 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 03:48:11,212 INFO     SEED for scope: 874
+2018-03-15 03:48:11,239 INFO     Running Scope bn_1: 
+2018-03-15 03:48:11,288 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:48:11,288 INFO     SEED for scope: 445
+2018-03-15 03:48:11,312 INFO     Running Scope bn_2: 
+2018-03-15 03:48:11,368 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 03:48:11,371 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 03:48:11,371 INFO     SEED for scope: 191
+2018-03-15 03:48:11,395 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 03:48:11,395 INFO     SEED for scope: 161
+2018-03-15 03:48:11,517 INFO     Running Scope bn_1: 
+2018-03-15 03:48:11,571 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 03:48:11,572 INFO     SEED for scope: 141
+2018-03-15 03:48:11,595 INFO     Running Scope bn_2: 
+2018-03-15 03:48:11,647 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 03:48:11,650 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 03:48:11,650 INFO     SEED for scope: 213
+2018-03-15 03:48:11,673 INFO     Running Scope bn_1: 
+2018-03-15 03:48:11,721 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 03:48:11,721 INFO     SEED for scope: 436
+2018-03-15 03:48:11,750 INFO     Running Scope bn_2: 
+2018-03-15 03:48:11,802 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 03:48:11,805 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 03:48:11,805 INFO     SEED for scope: 754
+2018-03-15 03:48:11,829 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 03:48:11,829 INFO     SEED for scope: 991
+2018-03-15 03:48:11,858 INFO     Running Scope bn_1: 
+2018-03-15 03:48:11,912 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 03:48:11,912 INFO     SEED for scope: 302
+2018-03-15 03:48:11,940 INFO     Running Scope bn_2: 
+2018-03-15 03:48:11,994 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 03:48:11,996 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 03:48:11,996 INFO     SEED for scope: 992
+2018-03-15 03:48:12,020 INFO     Running Scope bn_1: 
+2018-03-15 03:48:12,079 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 03:48:12,080 INFO     SEED for scope: 223
+2018-03-15 03:48:12,108 INFO     Running Scope bn_2: 
+2018-03-15 03:48:12,163 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 03:48:12,166 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 03:48:12,166 INFO     SEED for scope: 645
+2018-03-15 03:48:12,194 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 03:48:12,194 INFO     SEED for scope: 724
+2018-03-15 03:48:12,223 INFO     Running Scope bn_1: 
+2018-03-15 03:48:12,284 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 03:48:12,285 INFO     SEED for scope: 944
+2018-03-15 03:48:12,313 INFO     Running Scope bn_2: 
+2018-03-15 03:48:12,371 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 03:48:12,373 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 03:48:12,374 INFO     SEED for scope: 232
+2018-03-15 03:48:12,402 INFO     Running Scope bn_1: 
+2018-03-15 03:48:12,458 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 03:48:12,458 INFO     SEED for scope: 123
+2018-03-15 03:48:12,486 INFO     Running Scope bn_2: 
+2018-03-15 03:48:12,543 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 03:48:12,545 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 03:48:13,707 INFO     X - flattened: [None, 25088]
+2018-03-15 03:48:13,707 INFO     SEED for scope: 321
+2018-03-15 03:48:13,734 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 03:48:13,746 INFO     INITIALIZING LOSS: .....
+2018-03-15 03:48:13,784 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 03:48:28,512 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 03:48:28,512 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_0_batch_49
+2018-03-15 03:50:06,655 INFO     VALIDATION METRICs : Fold: 1, epoch: 0, batch: 0, Loss: 2.825494, Accuracy: 0.87201, Precision: 0.94690, Recall: 0.78821
+2018-03-15 03:50:06,891 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 03:50:06,897 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 03:50:06,897 INFO     Performing random horizontal flip
+2018-03-15 03:50:06,920 INFO     Performing Central crop
+2018-03-15 03:50:06,974 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 03:50:06,974 INFO     Standarizing the image
+2018-03-15 03:50:07,002 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 03:50:07,002 INFO     Performing Central crop
+2018-03-15 03:50:07,065 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 03:50:07,066 INFO     Standarizing the image
+2018-03-15 03:50:07,097 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 03:50:07,102 INFO     SEED for scope: 909
+2018-03-15 03:50:07,126 INFO     Running Scope bn_1: 
+2018-03-15 03:50:07,191 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:50:07,191 INFO     SEED for scope: 784
+2018-03-15 03:50:07,214 INFO     Running Scope bn_1: 
+2018-03-15 03:50:07,271 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:50:07,272 INFO     SEED for scope: 239
+2018-03-15 03:50:07,299 INFO     Running Scope bn_2: 
+2018-03-15 03:50:07,353 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 03:50:07,356 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 03:50:07,357 INFO     SEED for scope: 337
+2018-03-15 03:50:07,382 INFO     Running Scope bn_1: 
+2018-03-15 03:50:07,430 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:50:07,430 INFO     SEED for scope: 888
+2018-03-15 03:50:07,459 INFO     Running Scope bn_2: 
+2018-03-15 03:50:07,511 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 03:50:07,513 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 03:50:07,513 INFO     SEED for scope: 666
+2018-03-15 03:50:07,543 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 03:50:07,543 INFO     SEED for scope: 400
+2018-03-15 03:50:07,573 INFO     Running Scope bn_1: 
+2018-03-15 03:50:07,625 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 03:50:07,625 INFO     SEED for scope: 912
+2018-03-15 03:50:07,655 INFO     Running Scope bn_2: 
+2018-03-15 03:50:07,710 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 03:50:07,712 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 03:50:07,713 INFO     SEED for scope: 255
+2018-03-15 03:50:07,740 INFO     Running Scope bn_1: 
+2018-03-15 03:50:07,794 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 03:50:07,794 INFO     SEED for scope: 983
+2018-03-15 03:50:07,817 INFO     Running Scope bn_2: 
+2018-03-15 03:50:07,874 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 03:50:07,876 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 03:50:07,876 INFO     SEED for scope: 902
+2018-03-15 03:50:07,899 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 03:50:07,899 INFO     SEED for scope: 846
+2018-03-15 03:50:07,923 INFO     Running Scope bn_1: 
+2018-03-15 03:50:07,983 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 03:50:07,983 INFO     SEED for scope: 345
+2018-03-15 03:50:08,006 INFO     Running Scope bn_2: 
+2018-03-15 03:50:08,059 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 03:50:08,061 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 03:50:08,062 INFO     SEED for scope: 854
+2018-03-15 03:50:08,089 INFO     Running Scope bn_1: 
+2018-03-15 03:50:08,141 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 03:50:08,141 INFO     SEED for scope: 989
+2018-03-15 03:50:08,174 INFO     Running Scope bn_2: 
+2018-03-15 03:50:08,225 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 03:50:08,228 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 03:50:08,229 INFO     SEED for scope: 291
+2018-03-15 03:50:08,258 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 03:50:08,258 INFO     SEED for scope: 486
+2018-03-15 03:50:08,282 INFO     Running Scope bn_1: 
+2018-03-15 03:50:08,331 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 03:50:08,331 INFO     SEED for scope: 444
+2018-03-15 03:50:08,361 INFO     Running Scope bn_2: 
+2018-03-15 03:50:08,409 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 03:50:08,412 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 03:50:08,412 INFO     SEED for scope: 101
+2018-03-15 03:50:08,439 INFO     Running Scope bn_1: 
+2018-03-15 03:50:08,493 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 03:50:08,493 INFO     SEED for scope: 202
+2018-03-15 03:50:08,516 INFO     Running Scope bn_2: 
+2018-03-15 03:50:08,565 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 03:50:08,568 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 03:50:08,586 INFO     X - flattened: [None, 25088]
+2018-03-15 03:50:08,586 INFO     SEED for scope: 304
+2018-03-15 03:50:08,608 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 03:50:08,619 INFO     INITIALIZING LOSS: .....
+2018-03-15 03:50:08,663 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 03:50:23,443 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 03:50:23,443 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_0_batch_59
+2018-03-15 03:52:00,942 INFO     VALIDATION METRICs : Fold: 1, epoch: 0, batch: 0, Loss: 2.855626, Accuracy: 0.86372, Precision: 0.82324, Recall: 0.92634
+2018-03-15 03:52:01,165 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 03:52:01,171 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 03:52:01,171 INFO     Performing random horizontal flip
+2018-03-15 03:52:01,195 INFO     Performing Central crop
+2018-03-15 03:52:01,245 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 03:52:01,245 INFO     Standarizing the image
+2018-03-15 03:52:01,271 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 03:52:01,271 INFO     Performing Central crop
+2018-03-15 03:52:01,329 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 03:52:01,329 INFO     Standarizing the image
+2018-03-15 03:52:01,364 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 03:52:01,368 INFO     SEED for scope: 505
+2018-03-15 03:52:01,391 INFO     Running Scope bn_1: 
+2018-03-15 03:52:01,446 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:52:01,446 INFO     SEED for scope: 607
+2018-03-15 03:52:01,475 INFO     Running Scope bn_1: 
+2018-03-15 03:52:01,526 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:52:01,526 INFO     SEED for scope: 707
+2018-03-15 03:52:01,549 INFO     Running Scope bn_2: 
+2018-03-15 03:52:01,601 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 03:52:01,603 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 03:52:01,603 INFO     SEED for scope: 808
+2018-03-15 03:52:01,627 INFO     Running Scope bn_1: 
+2018-03-15 03:52:01,683 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:52:01,683 INFO     SEED for scope: 905
+2018-03-15 03:52:01,706 INFO     Running Scope bn_2: 
+2018-03-15 03:52:01,752 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 03:52:01,754 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 03:52:01,755 INFO     SEED for scope: 900
+2018-03-15 03:52:01,782 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 03:52:01,782 INFO     SEED for scope: 774
+2018-03-15 03:52:01,808 INFO     Running Scope bn_1: 
+2018-03-15 03:52:01,861 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 03:52:01,861 INFO     SEED for scope: 553
+2018-03-15 03:52:01,884 INFO     Running Scope bn_2: 
+2018-03-15 03:52:01,931 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 03:52:01,933 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 03:52:01,934 INFO     SEED for scope: 292
+2018-03-15 03:52:01,957 INFO     Running Scope bn_1: 
+2018-03-15 03:52:02,005 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 03:52:02,005 INFO     SEED for scope: 394
+2018-03-15 03:52:02,032 INFO     Running Scope bn_2: 
+2018-03-15 03:52:02,083 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 03:52:02,086 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 03:52:02,086 INFO     SEED for scope: 874
+2018-03-15 03:52:02,109 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 03:52:02,109 INFO     SEED for scope: 445
+2018-03-15 03:52:02,132 INFO     Running Scope bn_1: 
+2018-03-15 03:52:02,180 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 03:52:02,180 INFO     SEED for scope: 191
+2018-03-15 03:52:02,203 INFO     Running Scope bn_2: 
+2018-03-15 03:52:02,250 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 03:52:02,253 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 03:52:02,253 INFO     SEED for scope: 161
+2018-03-15 03:52:02,281 INFO     Running Scope bn_1: 
+2018-03-15 03:52:02,336 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 03:52:02,336 INFO     SEED for scope: 141
+2018-03-15 03:52:02,359 INFO     Running Scope bn_2: 
+2018-03-15 03:52:02,406 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 03:52:02,408 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 03:52:02,409 INFO     SEED for scope: 213
+2018-03-15 03:52:02,436 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 03:52:02,436 INFO     SEED for scope: 436
+2018-03-15 03:52:02,464 INFO     Running Scope bn_1: 
+2018-03-15 03:52:02,512 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 03:52:02,512 INFO     SEED for scope: 754
+2018-03-15 03:52:02,535 INFO     Running Scope bn_2: 
+2018-03-15 03:52:02,586 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 03:52:02,589 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 03:52:02,589 INFO     SEED for scope: 991
+2018-03-15 03:52:02,617 INFO     Running Scope bn_1: 
+2018-03-15 03:52:02,664 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 03:52:02,664 INFO     SEED for scope: 302
+2018-03-15 03:52:02,687 INFO     Running Scope bn_2: 
+2018-03-15 03:52:02,733 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 03:52:02,736 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 03:52:02,748 INFO     X - flattened: [None, 25088]
+2018-03-15 03:52:02,748 INFO     SEED for scope: 992
+2018-03-15 03:52:02,769 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 03:52:02,780 INFO     INITIALIZING LOSS: .....
+2018-03-15 03:52:02,822 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 03:52:17,682 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 03:52:17,682 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_0_batch_69
+2018-03-15 03:53:56,894 INFO     VALIDATION METRICs : Fold: 1, epoch: 0, batch: 0, Loss: 2.412156, Accuracy: 0.77624, Precision: 0.70661, Recall: 0.94475
+2018-03-15 03:53:57,094 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 03:53:57,100 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 03:53:57,100 INFO     Performing random horizontal flip
+2018-03-15 03:53:57,120 INFO     Performing Central crop
+2018-03-15 03:53:57,174 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 03:53:57,174 INFO     Standarizing the image
+2018-03-15 03:53:57,204 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 03:53:57,204 INFO     Performing Central crop
+2018-03-15 03:53:57,260 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 03:53:57,260 INFO     Standarizing the image
+2018-03-15 03:53:57,294 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 03:53:57,298 INFO     SEED for scope: 223
+2018-03-15 03:53:57,322 INFO     Running Scope bn_1: 
+2018-03-15 03:53:57,371 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:53:57,371 INFO     SEED for scope: 645
+2018-03-15 03:53:57,394 INFO     Running Scope bn_1: 
+2018-03-15 03:53:57,447 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:53:57,447 INFO     SEED for scope: 724
+2018-03-15 03:53:57,470 INFO     Running Scope bn_2: 
+2018-03-15 03:53:57,517 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 03:53:57,520 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 03:53:57,520 INFO     SEED for scope: 944
+2018-03-15 03:53:57,548 INFO     Running Scope bn_1: 
+2018-03-15 03:53:57,601 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:53:57,601 INFO     SEED for scope: 232
+2018-03-15 03:53:57,624 INFO     Running Scope bn_2: 
+2018-03-15 03:53:57,671 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 03:53:57,673 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 03:53:57,673 INFO     SEED for scope: 123
+2018-03-15 03:53:57,702 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 03:53:57,702 INFO     SEED for scope: 321
+2018-03-15 03:53:57,725 INFO     Running Scope bn_1: 
+2018-03-15 03:53:57,784 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 03:53:57,785 INFO     SEED for scope: 909
+2018-03-15 03:53:57,807 INFO     Running Scope bn_2: 
+2018-03-15 03:53:57,858 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 03:53:57,861 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 03:53:57,861 INFO     SEED for scope: 784
+2018-03-15 03:53:57,884 INFO     Running Scope bn_1: 
+2018-03-15 03:53:57,932 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 03:53:57,932 INFO     SEED for scope: 239
+2018-03-15 03:53:57,957 INFO     Running Scope bn_2: 
+2018-03-15 03:53:58,004 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 03:53:58,007 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 03:53:58,007 INFO     SEED for scope: 337
+2018-03-15 03:53:58,029 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 03:53:58,030 INFO     SEED for scope: 888
+2018-03-15 03:53:58,060 INFO     Running Scope bn_1: 
+2018-03-15 03:53:58,111 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 03:53:58,112 INFO     SEED for scope: 666
+2018-03-15 03:53:58,134 INFO     Running Scope bn_2: 
+2018-03-15 03:53:58,187 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 03:53:58,191 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 03:53:58,191 INFO     SEED for scope: 400
+2018-03-15 03:53:58,215 INFO     Running Scope bn_1: 
+2018-03-15 03:53:58,262 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 03:53:58,262 INFO     SEED for scope: 912
+2018-03-15 03:53:58,286 INFO     Running Scope bn_2: 
+2018-03-15 03:53:58,342 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 03:53:58,344 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 03:53:58,344 INFO     SEED for scope: 255
+2018-03-15 03:53:58,367 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 03:53:58,368 INFO     SEED for scope: 983
+2018-03-15 03:53:58,395 INFO     Running Scope bn_1: 
+2018-03-15 03:53:58,448 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 03:53:58,448 INFO     SEED for scope: 902
+2018-03-15 03:53:58,472 INFO     Running Scope bn_2: 
+2018-03-15 03:53:58,525 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 03:53:58,528 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 03:53:58,529 INFO     SEED for scope: 846
+2018-03-15 03:53:58,553 INFO     Running Scope bn_1: 
+2018-03-15 03:53:58,610 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 03:53:58,610 INFO     SEED for scope: 345
+2018-03-15 03:53:58,636 INFO     Running Scope bn_2: 
+2018-03-15 03:53:58,684 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 03:53:58,686 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 03:53:58,698 INFO     X - flattened: [None, 25088]
+2018-03-15 03:53:58,698 INFO     SEED for scope: 854
+2018-03-15 03:53:58,722 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 03:53:58,736 INFO     INITIALIZING LOSS: .....
+2018-03-15 03:53:58,777 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 03:54:13,384 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 03:54:13,384 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_0_batch_74
+2018-03-15 03:55:52,874 INFO     VALIDATION METRICs : Fold: 1, epoch: 0, batch: 0, Loss: 1.428972, Accuracy: 0.78085, Precision: 0.73354, Recall: 0.88214
+2018-03-15 03:55:53,076 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 03:55:53,081 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 03:55:53,082 INFO     Performing random horizontal flip
+2018-03-15 03:55:53,105 INFO     Performing Central crop
+2018-03-15 03:55:53,161 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 03:55:53,161 INFO     Standarizing the image
+2018-03-15 03:55:53,191 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 03:55:53,191 INFO     Performing Central crop
+2018-03-15 03:55:53,252 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 03:55:53,253 INFO     Standarizing the image
+2018-03-15 03:55:53,286 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 03:55:53,290 INFO     SEED for scope: 989
+2018-03-15 03:55:53,317 INFO     Running Scope bn_1: 
+2018-03-15 03:55:53,373 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:55:53,373 INFO     SEED for scope: 291
+2018-03-15 03:55:53,396 INFO     Running Scope bn_1: 
+2018-03-15 03:55:53,443 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:55:53,444 INFO     SEED for scope: 486
+2018-03-15 03:55:53,467 INFO     Running Scope bn_2: 
+2018-03-15 03:55:53,520 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 03:55:53,523 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 03:55:53,523 INFO     SEED for scope: 444
+2018-03-15 03:55:53,546 INFO     Running Scope bn_1: 
+2018-03-15 03:55:53,599 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:55:53,599 INFO     SEED for scope: 101
+2018-03-15 03:55:53,627 INFO     Running Scope bn_2: 
+2018-03-15 03:55:53,673 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 03:55:53,676 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 03:55:53,676 INFO     SEED for scope: 202
+2018-03-15 03:55:53,708 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 03:55:53,708 INFO     SEED for scope: 304
+2018-03-15 03:55:53,732 INFO     Running Scope bn_1: 
+2018-03-15 03:55:53,787 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 03:55:53,787 INFO     SEED for scope: 505
+2018-03-15 03:55:53,813 INFO     Running Scope bn_2: 
+2018-03-15 03:55:53,865 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 03:55:53,867 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 03:55:53,867 INFO     SEED for scope: 607
+2018-03-15 03:55:53,899 INFO     Running Scope bn_1: 
+2018-03-15 03:55:53,958 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 03:55:53,958 INFO     SEED for scope: 707
+2018-03-15 03:55:53,981 INFO     Running Scope bn_2: 
+2018-03-15 03:55:54,033 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 03:55:54,036 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 03:55:54,036 INFO     SEED for scope: 808
+2018-03-15 03:55:54,062 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 03:55:54,062 INFO     SEED for scope: 905
+2018-03-15 03:55:54,085 INFO     Running Scope bn_1: 
+2018-03-15 03:55:54,138 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 03:55:54,138 INFO     SEED for scope: 900
+2018-03-15 03:55:54,162 INFO     Running Scope bn_2: 
+2018-03-15 03:55:54,209 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 03:55:54,211 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 03:55:54,211 INFO     SEED for scope: 774
+2018-03-15 03:55:54,237 INFO     Running Scope bn_1: 
+2018-03-15 03:55:54,286 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 03:55:54,286 INFO     SEED for scope: 553
+2018-03-15 03:55:54,309 INFO     Running Scope bn_2: 
+2018-03-15 03:55:54,356 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 03:55:54,359 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 03:55:54,359 INFO     SEED for scope: 292
+2018-03-15 03:55:54,383 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 03:55:54,383 INFO     SEED for scope: 394
+2018-03-15 03:55:54,406 INFO     Running Scope bn_1: 
+2018-03-15 03:55:54,460 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 03:55:54,460 INFO     SEED for scope: 874
+2018-03-15 03:55:54,484 INFO     Running Scope bn_2: 
+2018-03-15 03:55:54,531 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 03:55:54,534 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 03:55:54,534 INFO     SEED for scope: 445
+2018-03-15 03:55:54,557 INFO     Running Scope bn_1: 
+2018-03-15 03:55:54,604 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 03:55:54,604 INFO     SEED for scope: 191
+2018-03-15 03:55:54,627 INFO     Running Scope bn_2: 
+2018-03-15 03:55:54,674 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 03:55:54,676 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 03:55:54,688 INFO     X - flattened: [None, 25088]
+2018-03-15 03:55:54,688 INFO     SEED for scope: 161
+2018-03-15 03:55:54,711 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 03:55:54,722 INFO     INITIALIZING LOSS: .....
+2018-03-15 03:55:54,763 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 03:56:09,342 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 03:56:09,342 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_1_batch_19
+2018-03-15 03:57:49,882 INFO     VALIDATION METRICs : Fold: 1, epoch: 1, batch: 1, Loss: 1.691389, Accuracy: 0.87017, Precision: 0.94866, Recall: 0.78269
+2018-03-15 03:57:50,263 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 03:57:50,271 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 03:57:50,271 INFO     Performing random horizontal flip
+2018-03-15 03:57:50,296 INFO     Performing Central crop
+2018-03-15 03:57:50,353 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 03:57:50,353 INFO     Standarizing the image
+2018-03-15 03:57:50,383 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 03:57:50,383 INFO     Performing Central crop
+2018-03-15 03:57:51,061 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 03:57:51,062 INFO     Standarizing the image
+2018-03-15 03:57:51,092 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 03:57:51,097 INFO     SEED for scope: 141
+2018-03-15 03:57:51,129 INFO     Running Scope bn_1: 
+2018-03-15 03:57:51,180 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:57:51,180 INFO     SEED for scope: 213
+2018-03-15 03:57:51,203 INFO     Running Scope bn_1: 
+2018-03-15 03:57:51,259 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:57:51,259 INFO     SEED for scope: 436
+2018-03-15 03:57:51,287 INFO     Running Scope bn_2: 
+2018-03-15 03:57:51,336 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 03:57:51,338 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 03:57:51,338 INFO     SEED for scope: 754
+2018-03-15 03:57:51,367 INFO     Running Scope bn_1: 
+2018-03-15 03:57:51,415 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:57:51,415 INFO     SEED for scope: 991
+2018-03-15 03:57:51,439 INFO     Running Scope bn_2: 
+2018-03-15 03:57:51,486 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 03:57:51,489 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 03:57:51,489 INFO     SEED for scope: 302
+2018-03-15 03:57:51,512 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 03:57:51,512 INFO     SEED for scope: 992
+2018-03-15 03:57:51,536 INFO     Running Scope bn_1: 
+2018-03-15 03:57:51,585 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 03:57:51,585 INFO     SEED for scope: 223
+2018-03-15 03:57:51,609 INFO     Running Scope bn_2: 
+2018-03-15 03:57:51,657 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 03:57:51,659 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 03:57:51,659 INFO     SEED for scope: 645
+2018-03-15 03:57:51,684 INFO     Running Scope bn_1: 
+2018-03-15 03:57:51,737 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 03:57:51,738 INFO     SEED for scope: 724
+2018-03-15 03:57:51,761 INFO     Running Scope bn_2: 
+2018-03-15 03:57:51,809 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 03:57:51,812 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 03:57:51,812 INFO     SEED for scope: 944
+2018-03-15 03:57:51,839 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 03:57:51,839 INFO     SEED for scope: 232
+2018-03-15 03:57:51,863 INFO     Running Scope bn_1: 
+2018-03-15 03:57:51,921 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 03:57:51,921 INFO     SEED for scope: 123
+2018-03-15 03:57:51,944 INFO     Running Scope bn_2: 
+2018-03-15 03:57:51,991 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 03:57:51,994 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 03:57:51,994 INFO     SEED for scope: 321
+2018-03-15 03:57:52,017 INFO     Running Scope bn_1: 
+2018-03-15 03:57:52,065 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 03:57:52,065 INFO     SEED for scope: 909
+2018-03-15 03:57:52,089 INFO     Running Scope bn_2: 
+2018-03-15 03:57:52,136 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 03:57:52,139 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 03:57:52,139 INFO     SEED for scope: 784
+2018-03-15 03:57:52,162 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 03:57:52,162 INFO     SEED for scope: 239
+2018-03-15 03:57:52,186 INFO     Running Scope bn_1: 
+2018-03-15 03:57:52,235 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 03:57:52,236 INFO     SEED for scope: 337
+2018-03-15 03:57:52,259 INFO     Running Scope bn_2: 
+2018-03-15 03:57:52,307 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 03:57:52,309 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 03:57:52,309 INFO     SEED for scope: 888
+2018-03-15 03:57:52,333 INFO     Running Scope bn_1: 
+2018-03-15 03:57:52,382 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 03:57:52,382 INFO     SEED for scope: 666
+2018-03-15 03:57:52,406 INFO     Running Scope bn_2: 
+2018-03-15 03:57:52,459 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 03:57:52,462 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 03:57:52,474 INFO     X - flattened: [None, 25088]
+2018-03-15 03:57:52,474 INFO     SEED for scope: 400
+2018-03-15 03:57:52,496 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 03:57:52,508 INFO     INITIALIZING LOSS: .....
+2018-03-15 03:57:52,545 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 03:58:06,546 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 03:58:06,546 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_1_batch_29
+2018-03-15 03:59:39,810 INFO     VALIDATION METRICs : Fold: 1, epoch: 1, batch: 1, Loss: 1.046975, Accuracy: 0.88858, Precision: 0.90267, Recall: 0.87109
+2018-03-15 03:59:40,055 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 03:59:40,060 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 03:59:40,060 INFO     Performing random horizontal flip
+2018-03-15 03:59:40,084 INFO     Performing Central crop
+2018-03-15 03:59:40,134 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 03:59:40,134 INFO     Standarizing the image
+2018-03-15 03:59:40,161 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 03:59:40,161 INFO     Performing Central crop
+2018-03-15 03:59:40,212 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 03:59:40,212 INFO     Standarizing the image
+2018-03-15 03:59:40,247 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 03:59:40,251 INFO     SEED for scope: 912
+2018-03-15 03:59:40,277 INFO     Running Scope bn_1: 
+2018-03-15 03:59:40,326 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:59:40,326 INFO     SEED for scope: 255
+2018-03-15 03:59:40,349 INFO     Running Scope bn_1: 
+2018-03-15 03:59:40,399 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:59:40,400 INFO     SEED for scope: 983
+2018-03-15 03:59:40,424 INFO     Running Scope bn_2: 
+2018-03-15 03:59:40,472 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 03:59:40,474 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 03:59:40,475 INFO     SEED for scope: 902
+2018-03-15 03:59:40,497 INFO     Running Scope bn_1: 
+2018-03-15 03:59:40,545 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 03:59:40,545 INFO     SEED for scope: 846
+2018-03-15 03:59:40,568 INFO     Running Scope bn_2: 
+2018-03-15 03:59:40,614 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 03:59:40,617 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 03:59:40,617 INFO     SEED for scope: 345
+2018-03-15 03:59:40,644 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 03:59:40,644 INFO     SEED for scope: 854
+2018-03-15 03:59:40,667 INFO     Running Scope bn_1: 
+2018-03-15 03:59:40,714 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 03:59:40,714 INFO     SEED for scope: 989
+2018-03-15 03:59:40,741 INFO     Running Scope bn_2: 
+2018-03-15 03:59:40,788 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 03:59:40,790 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 03:59:40,791 INFO     SEED for scope: 291
+2018-03-15 03:59:40,813 INFO     Running Scope bn_1: 
+2018-03-15 03:59:40,860 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 03:59:40,861 INFO     SEED for scope: 486
+2018-03-15 03:59:40,883 INFO     Running Scope bn_2: 
+2018-03-15 03:59:40,929 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 03:59:40,932 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 03:59:40,932 INFO     SEED for scope: 444
+2018-03-15 03:59:40,956 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 03:59:40,956 INFO     SEED for scope: 101
+2018-03-15 03:59:40,978 INFO     Running Scope bn_1: 
+2018-03-15 03:59:41,031 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 03:59:41,031 INFO     SEED for scope: 202
+2018-03-15 03:59:41,054 INFO     Running Scope bn_2: 
+2018-03-15 03:59:41,099 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 03:59:41,102 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 03:59:41,102 INFO     SEED for scope: 304
+2018-03-15 03:59:41,124 INFO     Running Scope bn_1: 
+2018-03-15 03:59:41,171 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 03:59:41,171 INFO     SEED for scope: 505
+2018-03-15 03:59:41,194 INFO     Running Scope bn_2: 
+2018-03-15 03:59:41,240 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 03:59:41,242 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 03:59:41,243 INFO     SEED for scope: 607
+2018-03-15 03:59:41,273 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 03:59:41,273 INFO     SEED for scope: 707
+2018-03-15 03:59:41,296 INFO     Running Scope bn_1: 
+2018-03-15 03:59:41,343 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 03:59:41,343 INFO     SEED for scope: 808
+2018-03-15 03:59:41,366 INFO     Running Scope bn_2: 
+2018-03-15 03:59:41,412 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 03:59:41,414 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 03:59:41,415 INFO     SEED for scope: 905
+2018-03-15 03:59:41,442 INFO     Running Scope bn_1: 
+2018-03-15 03:59:41,489 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 03:59:41,489 INFO     SEED for scope: 900
+2018-03-15 03:59:41,512 INFO     Running Scope bn_2: 
+2018-03-15 03:59:41,558 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 03:59:41,561 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 03:59:41,572 INFO     X - flattened: [None, 25088]
+2018-03-15 03:59:41,572 INFO     SEED for scope: 774
+2018-03-15 03:59:41,594 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 03:59:41,605 INFO     INITIALIZING LOSS: .....
+2018-03-15 03:59:41,641 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 03:59:55,314 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 03:59:55,314 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_1_batch_39
+2018-03-15 04:01:27,891 INFO     VALIDATION METRICs : Fold: 1, epoch: 1, batch: 1, Loss: 1.116898, Accuracy: 0.90331, Precision: 0.92115, Recall: 0.88214
+2018-03-15 04:01:28,111 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 04:01:28,117 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 04:01:28,117 INFO     Performing random horizontal flip
+2018-03-15 04:01:28,136 INFO     Performing Central crop
+2018-03-15 04:01:28,184 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:01:28,185 INFO     Standarizing the image
+2018-03-15 04:01:28,211 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 04:01:28,211 INFO     Performing Central crop
+2018-03-15 04:01:28,261 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:01:28,262 INFO     Standarizing the image
+2018-03-15 04:01:28,291 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 04:01:28,295 INFO     SEED for scope: 553
+2018-03-15 04:01:28,319 INFO     Running Scope bn_1: 
+2018-03-15 04:01:28,368 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:01:28,368 INFO     SEED for scope: 292
+2018-03-15 04:01:28,390 INFO     Running Scope bn_1: 
+2018-03-15 04:01:28,438 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:01:28,438 INFO     SEED for scope: 394
+2018-03-15 04:01:28,460 INFO     Running Scope bn_2: 
+2018-03-15 04:01:28,507 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:01:28,509 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:01:28,509 INFO     SEED for scope: 874
+2018-03-15 04:01:28,533 INFO     Running Scope bn_1: 
+2018-03-15 04:01:28,584 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:01:28,584 INFO     SEED for scope: 445
+2018-03-15 04:01:28,607 INFO     Running Scope bn_2: 
+2018-03-15 04:01:28,658 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:01:28,660 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:01:28,661 INFO     SEED for scope: 191
+2018-03-15 04:01:28,683 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 04:01:28,683 INFO     SEED for scope: 161
+2018-03-15 04:01:28,706 INFO     Running Scope bn_1: 
+2018-03-15 04:01:28,753 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:01:28,753 INFO     SEED for scope: 141
+2018-03-15 04:01:28,775 INFO     Running Scope bn_2: 
+2018-03-15 04:01:28,821 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:01:28,823 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:01:28,824 INFO     SEED for scope: 213
+2018-03-15 04:01:28,846 INFO     Running Scope bn_1: 
+2018-03-15 04:01:28,893 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:01:28,893 INFO     SEED for scope: 436
+2018-03-15 04:01:28,916 INFO     Running Scope bn_2: 
+2018-03-15 04:01:28,962 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:01:28,964 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:01:28,964 INFO     SEED for scope: 754
+2018-03-15 04:01:28,987 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 04:01:28,987 INFO     SEED for scope: 991
+2018-03-15 04:01:29,009 INFO     Running Scope bn_1: 
+2018-03-15 04:01:29,057 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:01:29,057 INFO     SEED for scope: 302
+2018-03-15 04:01:29,079 INFO     Running Scope bn_2: 
+2018-03-15 04:01:29,125 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:01:29,128 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:01:29,128 INFO     SEED for scope: 992
+2018-03-15 04:01:29,150 INFO     Running Scope bn_1: 
+2018-03-15 04:01:29,197 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:01:29,197 INFO     SEED for scope: 223
+2018-03-15 04:01:29,220 INFO     Running Scope bn_2: 
+2018-03-15 04:01:29,272 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:01:29,274 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:01:29,275 INFO     SEED for scope: 645
+2018-03-15 04:01:29,299 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 04:01:29,299 INFO     SEED for scope: 724
+2018-03-15 04:01:29,325 INFO     Running Scope bn_1: 
+2018-03-15 04:01:29,376 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:01:29,376 INFO     SEED for scope: 944
+2018-03-15 04:01:29,401 INFO     Running Scope bn_2: 
+2018-03-15 04:01:29,448 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:01:29,450 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:01:29,450 INFO     SEED for scope: 232
+2018-03-15 04:01:29,473 INFO     Running Scope bn_1: 
+2018-03-15 04:01:29,520 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:01:29,520 INFO     SEED for scope: 123
+2018-03-15 04:01:29,543 INFO     Running Scope bn_2: 
+2018-03-15 04:01:29,592 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:01:29,594 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:01:29,606 INFO     X - flattened: [None, 25088]
+2018-03-15 04:01:29,606 INFO     SEED for scope: 321
+2018-03-15 04:01:29,628 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 04:01:29,640 INFO     INITIALIZING LOSS: .....
+2018-03-15 04:01:29,676 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 04:01:43,750 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 04:01:43,750 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_1_batch_49
+2018-03-15 04:03:17,844 INFO     VALIDATION METRICs : Fold: 1, epoch: 1, batch: 1, Loss: 1.923082, Accuracy: 0.80755, Precision: 0.96389, Recall: 0.63904
+2018-03-15 04:03:18,074 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 04:03:18,080 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 04:03:18,080 INFO     Performing random horizontal flip
+2018-03-15 04:03:18,099 INFO     Performing Central crop
+2018-03-15 04:03:18,150 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:03:18,150 INFO     Standarizing the image
+2018-03-15 04:03:18,176 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 04:03:18,176 INFO     Performing Central crop
+2018-03-15 04:03:18,231 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:03:18,231 INFO     Standarizing the image
+2018-03-15 04:03:18,261 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 04:03:18,265 INFO     SEED for scope: 909
+2018-03-15 04:03:18,288 INFO     Running Scope bn_1: 
+2018-03-15 04:03:18,336 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:03:18,336 INFO     SEED for scope: 784
+2018-03-15 04:03:18,359 INFO     Running Scope bn_1: 
+2018-03-15 04:03:18,406 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:03:18,406 INFO     SEED for scope: 239
+2018-03-15 04:03:18,428 INFO     Running Scope bn_2: 
+2018-03-15 04:03:18,475 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:03:18,477 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:03:18,478 INFO     SEED for scope: 337
+2018-03-15 04:03:18,505 INFO     Running Scope bn_1: 
+2018-03-15 04:03:18,559 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:03:18,559 INFO     SEED for scope: 888
+2018-03-15 04:03:18,581 INFO     Running Scope bn_2: 
+2018-03-15 04:03:18,632 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:03:18,634 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:03:18,634 INFO     SEED for scope: 666
+2018-03-15 04:03:18,657 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 04:03:18,657 INFO     SEED for scope: 400
+2018-03-15 04:03:18,680 INFO     Running Scope bn_1: 
+2018-03-15 04:03:18,727 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:03:18,727 INFO     SEED for scope: 912
+2018-03-15 04:03:18,750 INFO     Running Scope bn_2: 
+2018-03-15 04:03:18,796 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:03:18,799 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:03:18,799 INFO     SEED for scope: 255
+2018-03-15 04:03:18,822 INFO     Running Scope bn_1: 
+2018-03-15 04:03:18,871 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:03:18,871 INFO     SEED for scope: 983
+2018-03-15 04:03:18,896 INFO     Running Scope bn_2: 
+2018-03-15 04:03:18,942 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:03:18,944 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:03:18,945 INFO     SEED for scope: 902
+2018-03-15 04:03:18,968 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 04:03:18,968 INFO     SEED for scope: 846
+2018-03-15 04:03:18,990 INFO     Running Scope bn_1: 
+2018-03-15 04:03:19,046 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:03:19,046 INFO     SEED for scope: 345
+2018-03-15 04:03:19,069 INFO     Running Scope bn_2: 
+2018-03-15 04:03:19,115 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:03:19,118 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:03:19,118 INFO     SEED for scope: 854
+2018-03-15 04:03:19,140 INFO     Running Scope bn_1: 
+2018-03-15 04:03:19,187 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:03:19,187 INFO     SEED for scope: 989
+2018-03-15 04:03:19,211 INFO     Running Scope bn_2: 
+2018-03-15 04:03:19,263 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:03:19,266 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:03:19,266 INFO     SEED for scope: 291
+2018-03-15 04:03:19,289 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 04:03:19,289 INFO     SEED for scope: 486
+2018-03-15 04:03:19,311 INFO     Running Scope bn_1: 
+2018-03-15 04:03:19,358 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:03:19,358 INFO     SEED for scope: 444
+2018-03-15 04:03:19,381 INFO     Running Scope bn_2: 
+2018-03-15 04:03:19,428 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:03:19,430 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:03:19,431 INFO     SEED for scope: 101
+2018-03-15 04:03:19,455 INFO     Running Scope bn_1: 
+2018-03-15 04:03:19,505 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:03:19,505 INFO     SEED for scope: 202
+2018-03-15 04:03:19,528 INFO     Running Scope bn_2: 
+2018-03-15 04:03:19,588 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:03:19,593 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:03:19,605 INFO     X - flattened: [None, 25088]
+2018-03-15 04:03:19,605 INFO     SEED for scope: 304
+2018-03-15 04:03:19,631 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 04:03:19,642 INFO     INITIALIZING LOSS: .....
+2018-03-15 04:03:19,678 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 04:03:33,228 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 04:03:33,228 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_1_batch_59
+2018-03-15 04:05:12,081 INFO     VALIDATION METRICs : Fold: 1, epoch: 1, batch: 1, Loss: 1.508669, Accuracy: 0.88398, Precision: 0.88972, Recall: 0.87661
+2018-03-15 04:05:12,349 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 04:05:12,355 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 04:05:12,355 INFO     Performing random horizontal flip
+2018-03-15 04:05:12,375 INFO     Performing Central crop
+2018-03-15 04:05:12,430 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:05:12,430 INFO     Standarizing the image
+2018-03-15 04:05:12,456 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 04:05:12,456 INFO     Performing Central crop
+2018-03-15 04:05:12,514 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:05:12,514 INFO     Standarizing the image
+2018-03-15 04:05:12,547 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 04:05:12,552 INFO     SEED for scope: 505
+2018-03-15 04:05:12,576 INFO     Running Scope bn_1: 
+2018-03-15 04:05:12,631 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:05:12,631 INFO     SEED for scope: 607
+2018-03-15 04:05:12,654 INFO     Running Scope bn_1: 
+2018-03-15 04:05:12,704 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:05:12,704 INFO     SEED for scope: 707
+2018-03-15 04:05:12,729 INFO     Running Scope bn_2: 
+2018-03-15 04:05:12,778 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:05:12,781 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:05:12,781 INFO     SEED for scope: 808
+2018-03-15 04:05:12,804 INFO     Running Scope bn_1: 
+2018-03-15 04:05:12,856 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:05:12,856 INFO     SEED for scope: 905
+2018-03-15 04:05:12,878 INFO     Running Scope bn_2: 
+2018-03-15 04:05:12,931 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:05:12,934 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:05:12,935 INFO     SEED for scope: 900
+2018-03-15 04:05:12,958 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 04:05:12,958 INFO     SEED for scope: 774
+2018-03-15 04:05:12,981 INFO     Running Scope bn_1: 
+2018-03-15 04:05:13,029 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:05:13,029 INFO     SEED for scope: 553
+2018-03-15 04:05:13,053 INFO     Running Scope bn_2: 
+2018-03-15 04:05:13,099 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:05:13,102 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:05:13,102 INFO     SEED for scope: 292
+2018-03-15 04:05:13,128 INFO     Running Scope bn_1: 
+2018-03-15 04:05:13,175 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:05:13,175 INFO     SEED for scope: 394
+2018-03-15 04:05:13,199 INFO     Running Scope bn_2: 
+2018-03-15 04:05:13,246 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:05:13,249 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:05:13,249 INFO     SEED for scope: 874
+2018-03-15 04:05:13,271 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 04:05:13,272 INFO     SEED for scope: 445
+2018-03-15 04:05:13,295 INFO     Running Scope bn_1: 
+2018-03-15 04:05:13,352 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:05:13,352 INFO     SEED for scope: 191
+2018-03-15 04:05:13,375 INFO     Running Scope bn_2: 
+2018-03-15 04:05:13,429 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:05:13,431 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:05:13,431 INFO     SEED for scope: 161
+2018-03-15 04:05:13,460 INFO     Running Scope bn_1: 
+2018-03-15 04:05:13,507 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:05:13,507 INFO     SEED for scope: 141
+2018-03-15 04:05:13,530 INFO     Running Scope bn_2: 
+2018-03-15 04:05:13,576 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:05:13,579 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:05:13,579 INFO     SEED for scope: 213
+2018-03-15 04:05:13,606 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 04:05:13,606 INFO     SEED for scope: 436
+2018-03-15 04:05:13,632 INFO     Running Scope bn_1: 
+2018-03-15 04:05:13,684 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:05:13,684 INFO     SEED for scope: 754
+2018-03-15 04:05:13,710 INFO     Running Scope bn_2: 
+2018-03-15 04:05:13,766 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:05:13,768 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:05:13,768 INFO     SEED for scope: 991
+2018-03-15 04:05:13,795 INFO     Running Scope bn_1: 
+2018-03-15 04:05:13,855 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:05:13,855 INFO     SEED for scope: 302
+2018-03-15 04:05:13,884 INFO     Running Scope bn_2: 
+2018-03-15 04:05:13,939 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:05:13,942 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:05:13,956 INFO     X - flattened: [None, 25088]
+2018-03-15 04:05:13,956 INFO     SEED for scope: 992
+2018-03-15 04:05:13,981 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 04:05:13,992 INFO     INITIALIZING LOSS: .....
+2018-03-15 04:05:14,035 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 04:05:28,942 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 04:05:28,942 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_1_batch_69
+2018-03-15 04:07:12,791 INFO     VALIDATION METRICs : Fold: 1, epoch: 1, batch: 1, Loss: 1.680346, Accuracy: 0.77716, Precision: 0.70588, Recall: 0.95028
+2018-03-15 04:07:13,133 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 04:07:13,141 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 04:07:13,141 INFO     Performing random horizontal flip
+2018-03-15 04:07:13,166 INFO     Performing Central crop
+2018-03-15 04:07:13,220 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:07:13,220 INFO     Standarizing the image
+2018-03-15 04:07:13,250 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 04:07:13,250 INFO     Performing Central crop
+2018-03-15 04:07:13,308 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:07:13,308 INFO     Standarizing the image
+2018-03-15 04:07:13,339 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 04:07:13,346 INFO     SEED for scope: 223
+2018-03-15 04:07:13,373 INFO     Running Scope bn_1: 
+2018-03-15 04:07:13,433 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:07:13,433 INFO     SEED for scope: 645
+2018-03-15 04:07:13,457 INFO     Running Scope bn_1: 
+2018-03-15 04:07:13,507 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:07:13,507 INFO     SEED for scope: 724
+2018-03-15 04:07:13,530 INFO     Running Scope bn_2: 
+2018-03-15 04:07:13,582 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:07:13,584 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:07:13,584 INFO     SEED for scope: 944
+2018-03-15 04:07:13,609 INFO     Running Scope bn_1: 
+2018-03-15 04:07:13,658 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:07:13,658 INFO     SEED for scope: 232
+2018-03-15 04:07:13,681 INFO     Running Scope bn_2: 
+2018-03-15 04:07:13,731 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:07:13,733 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:07:13,734 INFO     SEED for scope: 123
+2018-03-15 04:07:13,760 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 04:07:13,760 INFO     SEED for scope: 321
+2018-03-15 04:07:13,784 INFO     Running Scope bn_1: 
+2018-03-15 04:07:13,834 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:07:13,834 INFO     SEED for scope: 909
+2018-03-15 04:07:13,858 INFO     Running Scope bn_2: 
+2018-03-15 04:07:13,912 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:07:13,914 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:07:13,914 INFO     SEED for scope: 784
+2018-03-15 04:07:13,938 INFO     Running Scope bn_1: 
+2018-03-15 04:07:13,987 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:07:13,987 INFO     SEED for scope: 239
+2018-03-15 04:07:14,012 INFO     Running Scope bn_2: 
+2018-03-15 04:07:14,064 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:07:14,066 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:07:14,066 INFO     SEED for scope: 337
+2018-03-15 04:07:14,090 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 04:07:14,090 INFO     SEED for scope: 888
+2018-03-15 04:07:14,115 INFO     Running Scope bn_1: 
+2018-03-15 04:07:14,164 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:07:14,164 INFO     SEED for scope: 666
+2018-03-15 04:07:14,187 INFO     Running Scope bn_2: 
+2018-03-15 04:07:14,237 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:07:14,240 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:07:14,240 INFO     SEED for scope: 400
+2018-03-15 04:07:14,263 INFO     Running Scope bn_1: 
+2018-03-15 04:07:14,313 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:07:14,313 INFO     SEED for scope: 912
+2018-03-15 04:07:14,338 INFO     Running Scope bn_2: 
+2018-03-15 04:07:14,387 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:07:14,390 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:07:14,390 INFO     SEED for scope: 255
+2018-03-15 04:07:14,415 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 04:07:14,416 INFO     SEED for scope: 983
+2018-03-15 04:07:14,444 INFO     Running Scope bn_1: 
+2018-03-15 04:07:14,493 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:07:14,493 INFO     SEED for scope: 902
+2018-03-15 04:07:14,516 INFO     Running Scope bn_2: 
+2018-03-15 04:07:14,564 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:07:14,567 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:07:14,567 INFO     SEED for scope: 846
+2018-03-15 04:07:14,590 INFO     Running Scope bn_1: 
+2018-03-15 04:07:14,644 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:07:14,644 INFO     SEED for scope: 345
+2018-03-15 04:07:14,672 INFO     Running Scope bn_2: 
+2018-03-15 04:07:14,723 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:07:14,726 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:07:14,742 INFO     X - flattened: [None, 25088]
+2018-03-15 04:07:14,742 INFO     SEED for scope: 854
+2018-03-15 04:07:14,767 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 04:07:14,779 INFO     INITIALIZING LOSS: .....
+2018-03-15 04:07:14,824 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 04:07:29,200 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 04:07:29,201 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_1_batch_74
+2018-03-15 04:09:13,754 INFO     VALIDATION METRICs : Fold: 1, epoch: 1, batch: 1, Loss: 1.717485, Accuracy: 0.69705, Precision: 0.63275, Recall: 0.93923
+2018-03-15 04:09:14,095 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 04:09:14,101 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 04:09:14,102 INFO     Performing random horizontal flip
+2018-03-15 04:09:14,127 INFO     Performing Central crop
+2018-03-15 04:09:14,186 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:09:14,186 INFO     Standarizing the image
+2018-03-15 04:09:14,217 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 04:09:14,217 INFO     Performing Central crop
+2018-03-15 04:09:14,281 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:09:14,281 INFO     Standarizing the image
+2018-03-15 04:09:14,316 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 04:09:14,321 INFO     SEED for scope: 989
+2018-03-15 04:09:14,346 INFO     Running Scope bn_1: 
+2018-03-15 04:09:14,403 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:09:14,404 INFO     SEED for scope: 291
+2018-03-15 04:09:14,430 INFO     Running Scope bn_1: 
+2018-03-15 04:09:14,481 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:09:14,481 INFO     SEED for scope: 486
+2018-03-15 04:09:14,508 INFO     Running Scope bn_2: 
+2018-03-15 04:09:14,559 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:09:14,562 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:09:14,562 INFO     SEED for scope: 444
+2018-03-15 04:09:14,586 INFO     Running Scope bn_1: 
+2018-03-15 04:09:14,640 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:09:14,640 INFO     SEED for scope: 101
+2018-03-15 04:09:14,667 INFO     Running Scope bn_2: 
+2018-03-15 04:09:14,718 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:09:14,721 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:09:14,721 INFO     SEED for scope: 202
+2018-03-15 04:09:14,749 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 04:09:14,749 INFO     SEED for scope: 304
+2018-03-15 04:09:14,772 INFO     Running Scope bn_1: 
+2018-03-15 04:09:14,828 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:09:14,829 INFO     SEED for scope: 505
+2018-03-15 04:09:14,856 INFO     Running Scope bn_2: 
+2018-03-15 04:09:14,904 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:09:14,906 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:09:14,907 INFO     SEED for scope: 607
+2018-03-15 04:09:14,929 INFO     Running Scope bn_1: 
+2018-03-15 04:09:14,977 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:09:14,977 INFO     SEED for scope: 707
+2018-03-15 04:09:15,000 INFO     Running Scope bn_2: 
+2018-03-15 04:09:15,047 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:09:15,049 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:09:15,050 INFO     SEED for scope: 808
+2018-03-15 04:09:15,072 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 04:09:15,072 INFO     SEED for scope: 905
+2018-03-15 04:09:15,095 INFO     Running Scope bn_1: 
+2018-03-15 04:09:15,142 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:09:15,143 INFO     SEED for scope: 900
+2018-03-15 04:09:15,168 INFO     Running Scope bn_2: 
+2018-03-15 04:09:15,214 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:09:15,217 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:09:15,217 INFO     SEED for scope: 774
+2018-03-15 04:09:15,239 INFO     Running Scope bn_1: 
+2018-03-15 04:09:15,287 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:09:15,287 INFO     SEED for scope: 553
+2018-03-15 04:09:15,310 INFO     Running Scope bn_2: 
+2018-03-15 04:09:15,356 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:09:15,358 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:09:15,359 INFO     SEED for scope: 292
+2018-03-15 04:09:15,382 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 04:09:15,382 INFO     SEED for scope: 394
+2018-03-15 04:09:15,409 INFO     Running Scope bn_1: 
+2018-03-15 04:09:15,458 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:09:15,458 INFO     SEED for scope: 874
+2018-03-15 04:09:15,481 INFO     Running Scope bn_2: 
+2018-03-15 04:09:15,527 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:09:15,529 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:09:15,529 INFO     SEED for scope: 445
+2018-03-15 04:09:15,554 INFO     Running Scope bn_1: 
+2018-03-15 04:09:15,601 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:09:15,601 INFO     SEED for scope: 191
+2018-03-15 04:09:15,623 INFO     Running Scope bn_2: 
+2018-03-15 04:09:15,670 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:09:15,673 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:09:15,685 INFO     X - flattened: [None, 25088]
+2018-03-15 04:09:15,685 INFO     SEED for scope: 161
+2018-03-15 04:09:15,707 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 04:09:15,717 INFO     INITIALIZING LOSS: .....
+2018-03-15 04:09:15,754 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 04:09:29,881 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 04:09:29,881 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_1_batch_9
+2018-03-15 04:11:14,318 INFO     VALIDATION METRICs : Fold: 1, epoch: 1, batch: 1, Loss: 1.680227, Accuracy: 0.84438, Precision: 0.81271, Recall: 0.89503
+2018-03-15 04:11:14,531 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 04:11:14,539 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 04:11:14,539 INFO     Performing random horizontal flip
+2018-03-15 04:11:14,563 INFO     Performing Central crop
+2018-03-15 04:11:14,620 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:11:14,620 INFO     Standarizing the image
+2018-03-15 04:11:14,648 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 04:11:14,648 INFO     Performing Central crop
+2018-03-15 04:11:14,700 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:11:14,700 INFO     Standarizing the image
+2018-03-15 04:11:14,731 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 04:11:14,736 INFO     SEED for scope: 141
+2018-03-15 04:11:14,762 INFO     Running Scope bn_1: 
+2018-03-15 04:11:14,815 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:11:14,815 INFO     SEED for scope: 213
+2018-03-15 04:11:14,840 INFO     Running Scope bn_1: 
+2018-03-15 04:11:14,889 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:11:14,889 INFO     SEED for scope: 436
+2018-03-15 04:11:14,913 INFO     Running Scope bn_2: 
+2018-03-15 04:11:14,966 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:11:14,968 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:11:14,968 INFO     SEED for scope: 754
+2018-03-15 04:11:14,992 INFO     Running Scope bn_1: 
+2018-03-15 04:11:15,046 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:11:15,047 INFO     SEED for scope: 991
+2018-03-15 04:11:15,071 INFO     Running Scope bn_2: 
+2018-03-15 04:11:15,124 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:11:15,126 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:11:15,127 INFO     SEED for scope: 302
+2018-03-15 04:11:15,154 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 04:11:15,155 INFO     SEED for scope: 992
+2018-03-15 04:11:15,183 INFO     Running Scope bn_1: 
+2018-03-15 04:11:15,241 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:11:15,242 INFO     SEED for scope: 223
+2018-03-15 04:11:15,268 INFO     Running Scope bn_2: 
+2018-03-15 04:11:15,324 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:11:15,327 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:11:15,327 INFO     SEED for scope: 645
+2018-03-15 04:11:15,356 INFO     Running Scope bn_1: 
+2018-03-15 04:11:15,414 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:11:15,415 INFO     SEED for scope: 724
+2018-03-15 04:11:15,442 INFO     Running Scope bn_2: 
+2018-03-15 04:11:15,497 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:11:15,500 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:11:15,500 INFO     SEED for scope: 944
+2018-03-15 04:11:15,529 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 04:11:15,529 INFO     SEED for scope: 232
+2018-03-15 04:11:15,560 INFO     Running Scope bn_1: 
+2018-03-15 04:11:15,618 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:11:15,618 INFO     SEED for scope: 123
+2018-03-15 04:11:15,644 INFO     Running Scope bn_2: 
+2018-03-15 04:11:15,699 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:11:15,702 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:11:15,702 INFO     SEED for scope: 321
+2018-03-15 04:11:15,735 INFO     Running Scope bn_1: 
+2018-03-15 04:11:15,793 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:11:15,794 INFO     SEED for scope: 909
+2018-03-15 04:11:15,821 INFO     Running Scope bn_2: 
+2018-03-15 04:11:15,879 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:11:15,881 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:11:15,882 INFO     SEED for scope: 784
+2018-03-15 04:11:15,912 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 04:11:15,912 INFO     SEED for scope: 239
+2018-03-15 04:11:15,940 INFO     Running Scope bn_1: 
+2018-03-15 04:11:16,000 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:11:16,000 INFO     SEED for scope: 337
+2018-03-15 04:11:16,026 INFO     Running Scope bn_2: 
+2018-03-15 04:11:16,085 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:11:16,087 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:11:16,088 INFO     SEED for scope: 888
+2018-03-15 04:11:16,115 INFO     Running Scope bn_1: 
+2018-03-15 04:11:16,163 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:11:16,163 INFO     SEED for scope: 666
+2018-03-15 04:11:16,190 INFO     Running Scope bn_2: 
+2018-03-15 04:11:16,240 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:11:16,242 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:11:16,255 INFO     X - flattened: [None, 25088]
+2018-03-15 04:11:16,255 INFO     SEED for scope: 400
+2018-03-15 04:11:16,284 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 04:11:16,297 INFO     INITIALIZING LOSS: .....
+2018-03-15 04:11:16,333 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 04:11:31,025 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 04:11:31,025 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_2_batch_19
+2018-03-15 04:13:21,269 INFO     VALIDATION METRICs : Fold: 1, epoch: 2, batch: 2, Loss: 1.693116, Accuracy: 0.85727, Precision: 0.93498, Recall: 0.76796
+2018-03-15 04:13:21,627 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 04:13:21,634 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 04:13:21,634 INFO     Performing random horizontal flip
+2018-03-15 04:13:21,657 INFO     Performing Central crop
+2018-03-15 04:13:21,711 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:13:21,711 INFO     Standarizing the image
+2018-03-15 04:13:21,740 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 04:13:21,740 INFO     Performing Central crop
+2018-03-15 04:13:21,793 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:13:21,793 INFO     Standarizing the image
+2018-03-15 04:13:21,825 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 04:13:21,832 INFO     SEED for scope: 912
+2018-03-15 04:13:21,858 INFO     Running Scope bn_1: 
+2018-03-15 04:13:21,917 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:13:21,917 INFO     SEED for scope: 255
+2018-03-15 04:13:21,945 INFO     Running Scope bn_1: 
+2018-03-15 04:13:22,000 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:13:22,000 INFO     SEED for scope: 983
+2018-03-15 04:13:22,026 INFO     Running Scope bn_2: 
+2018-03-15 04:13:22,084 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:13:22,087 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:13:22,087 INFO     SEED for scope: 902
+2018-03-15 04:13:22,113 INFO     Running Scope bn_1: 
+2018-03-15 04:13:22,164 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:13:22,164 INFO     SEED for scope: 846
+2018-03-15 04:13:22,188 INFO     Running Scope bn_2: 
+2018-03-15 04:13:22,235 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:13:22,237 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:13:22,237 INFO     SEED for scope: 345
+2018-03-15 04:13:22,266 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 04:13:22,266 INFO     SEED for scope: 854
+2018-03-15 04:13:22,295 INFO     Running Scope bn_1: 
+2018-03-15 04:13:22,349 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:13:22,349 INFO     SEED for scope: 989
+2018-03-15 04:13:22,377 INFO     Running Scope bn_2: 
+2018-03-15 04:13:22,425 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:13:22,427 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:13:22,427 INFO     SEED for scope: 291
+2018-03-15 04:13:22,451 INFO     Running Scope bn_1: 
+2018-03-15 04:13:22,512 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:13:22,512 INFO     SEED for scope: 486
+2018-03-15 04:13:22,536 INFO     Running Scope bn_2: 
+2018-03-15 04:13:22,587 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:13:22,590 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:13:22,590 INFO     SEED for scope: 444
+2018-03-15 04:13:22,619 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 04:13:22,619 INFO     SEED for scope: 101
+2018-03-15 04:13:22,643 INFO     Running Scope bn_1: 
+2018-03-15 04:13:22,691 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:13:22,691 INFO     SEED for scope: 202
+2018-03-15 04:13:22,716 INFO     Running Scope bn_2: 
+2018-03-15 04:13:22,764 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:13:22,766 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:13:22,766 INFO     SEED for scope: 304
+2018-03-15 04:13:22,790 INFO     Running Scope bn_1: 
+2018-03-15 04:13:22,840 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:13:22,840 INFO     SEED for scope: 505
+2018-03-15 04:13:22,864 INFO     Running Scope bn_2: 
+2018-03-15 04:13:22,913 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:13:22,915 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:13:22,915 INFO     SEED for scope: 607
+2018-03-15 04:13:22,939 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 04:13:22,939 INFO     SEED for scope: 707
+2018-03-15 04:13:22,963 INFO     Running Scope bn_1: 
+2018-03-15 04:13:23,019 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:13:23,019 INFO     SEED for scope: 808
+2018-03-15 04:13:23,044 INFO     Running Scope bn_2: 
+2018-03-15 04:13:23,096 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:13:23,099 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:13:23,099 INFO     SEED for scope: 905
+2018-03-15 04:13:23,132 INFO     Running Scope bn_1: 
+2018-03-15 04:13:23,182 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:13:23,182 INFO     SEED for scope: 900
+2018-03-15 04:13:23,209 INFO     Running Scope bn_2: 
+2018-03-15 04:13:23,259 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:13:23,262 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:13:23,276 INFO     X - flattened: [None, 25088]
+2018-03-15 04:13:23,276 INFO     SEED for scope: 774
+2018-03-15 04:13:23,302 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 04:13:23,315 INFO     INITIALIZING LOSS: .....
+2018-03-15 04:13:23,360 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 04:13:38,301 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 04:13:38,301 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_2_batch_29
+2018-03-15 04:15:23,281 INFO     VALIDATION METRICs : Fold: 1, epoch: 2, batch: 2, Loss: 1.970230, Accuracy: 0.82136, Precision: 0.75253, Recall: 0.95764
+2018-03-15 04:15:23,606 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 04:15:23,612 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 04:15:23,612 INFO     Performing random horizontal flip
+2018-03-15 04:15:23,638 INFO     Performing Central crop
+2018-03-15 04:15:23,702 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:15:23,702 INFO     Standarizing the image
+2018-03-15 04:15:23,730 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 04:15:23,730 INFO     Performing Central crop
+2018-03-15 04:15:23,796 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:15:23,796 INFO     Standarizing the image
+2018-03-15 04:15:23,830 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 04:15:23,834 INFO     SEED for scope: 553
+2018-03-15 04:15:23,859 INFO     Running Scope bn_1: 
+2018-03-15 04:15:23,920 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:15:23,920 INFO     SEED for scope: 292
+2018-03-15 04:15:23,946 INFO     Running Scope bn_1: 
+2018-03-15 04:15:23,996 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:15:23,996 INFO     SEED for scope: 394
+2018-03-15 04:15:24,019 INFO     Running Scope bn_2: 
+2018-03-15 04:15:24,074 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:15:24,076 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:15:24,077 INFO     SEED for scope: 874
+2018-03-15 04:15:24,101 INFO     Running Scope bn_1: 
+2018-03-15 04:15:24,148 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:15:24,148 INFO     SEED for scope: 445
+2018-03-15 04:15:24,175 INFO     Running Scope bn_2: 
+2018-03-15 04:15:24,223 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:15:24,225 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:15:24,225 INFO     SEED for scope: 191
+2018-03-15 04:15:24,248 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 04:15:24,248 INFO     SEED for scope: 161
+2018-03-15 04:15:24,275 INFO     Running Scope bn_1: 
+2018-03-15 04:15:24,323 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:15:24,323 INFO     SEED for scope: 141
+2018-03-15 04:15:24,345 INFO     Running Scope bn_2: 
+2018-03-15 04:15:24,392 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:15:24,394 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:15:24,395 INFO     SEED for scope: 213
+2018-03-15 04:15:24,418 INFO     Running Scope bn_1: 
+2018-03-15 04:15:24,466 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:15:24,466 INFO     SEED for scope: 436
+2018-03-15 04:15:24,489 INFO     Running Scope bn_2: 
+2018-03-15 04:15:24,541 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:15:24,544 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:15:24,544 INFO     SEED for scope: 754
+2018-03-15 04:15:24,567 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 04:15:24,567 INFO     SEED for scope: 991
+2018-03-15 04:15:24,594 INFO     Running Scope bn_1: 
+2018-03-15 04:15:24,650 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:15:24,650 INFO     SEED for scope: 302
+2018-03-15 04:15:24,675 INFO     Running Scope bn_2: 
+2018-03-15 04:15:24,727 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:15:24,730 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:15:24,730 INFO     SEED for scope: 992
+2018-03-15 04:15:24,754 INFO     Running Scope bn_1: 
+2018-03-15 04:15:24,806 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:15:24,806 INFO     SEED for scope: 223
+2018-03-15 04:15:24,834 INFO     Running Scope bn_2: 
+2018-03-15 04:15:24,888 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:15:24,890 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:15:24,890 INFO     SEED for scope: 645
+2018-03-15 04:15:24,916 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 04:15:24,916 INFO     SEED for scope: 724
+2018-03-15 04:15:24,942 INFO     Running Scope bn_1: 
+2018-03-15 04:15:24,994 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:15:24,995 INFO     SEED for scope: 944
+2018-03-15 04:15:25,019 INFO     Running Scope bn_2: 
+2018-03-15 04:15:25,070 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:15:25,073 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:15:25,073 INFO     SEED for scope: 232
+2018-03-15 04:15:25,096 INFO     Running Scope bn_1: 
+2018-03-15 04:15:25,153 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:15:25,153 INFO     SEED for scope: 123
+2018-03-15 04:15:25,178 INFO     Running Scope bn_2: 
+2018-03-15 04:15:25,225 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:15:25,227 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:15:25,242 INFO     X - flattened: [None, 25088]
+2018-03-15 04:15:25,243 INFO     SEED for scope: 321
+2018-03-15 04:15:25,265 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 04:15:25,277 INFO     INITIALIZING LOSS: .....
+2018-03-15 04:15:25,314 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 04:15:40,323 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 04:15:40,323 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_2_batch_39
+2018-03-15 04:17:24,162 INFO     VALIDATION METRICs : Fold: 1, epoch: 2, batch: 2, Loss: 0.883744, Accuracy: 0.88122, Precision: 0.85938, Recall: 0.91160
+2018-03-15 04:17:24,500 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 04:17:24,507 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 04:17:24,507 INFO     Performing random horizontal flip
+2018-03-15 04:17:24,530 INFO     Performing Central crop
+2018-03-15 04:17:24,588 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:17:24,588 INFO     Standarizing the image
+2018-03-15 04:17:24,616 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 04:17:24,617 INFO     Performing Central crop
+2018-03-15 04:17:24,672 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:17:24,672 INFO     Standarizing the image
+2018-03-15 04:17:24,704 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 04:17:24,710 INFO     SEED for scope: 909
+2018-03-15 04:17:24,735 INFO     Running Scope bn_1: 
+2018-03-15 04:17:24,789 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:17:24,790 INFO     SEED for scope: 784
+2018-03-15 04:17:24,818 INFO     Running Scope bn_1: 
+2018-03-15 04:17:24,872 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:17:24,872 INFO     SEED for scope: 239
+2018-03-15 04:17:24,899 INFO     Running Scope bn_2: 
+2018-03-15 04:17:24,955 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:17:24,958 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:17:24,958 INFO     SEED for scope: 337
+2018-03-15 04:17:24,982 INFO     Running Scope bn_1: 
+2018-03-15 04:17:25,033 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:17:25,033 INFO     SEED for scope: 888
+2018-03-15 04:17:25,056 INFO     Running Scope bn_2: 
+2018-03-15 04:17:25,108 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:17:25,111 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:17:25,111 INFO     SEED for scope: 666
+2018-03-15 04:17:25,135 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 04:17:25,135 INFO     SEED for scope: 400
+2018-03-15 04:17:25,159 INFO     Running Scope bn_1: 
+2018-03-15 04:17:25,214 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:17:25,214 INFO     SEED for scope: 912
+2018-03-15 04:17:25,237 INFO     Running Scope bn_2: 
+2018-03-15 04:17:25,285 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:17:25,287 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:17:25,288 INFO     SEED for scope: 255
+2018-03-15 04:17:25,315 INFO     Running Scope bn_1: 
+2018-03-15 04:17:25,363 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:17:25,363 INFO     SEED for scope: 983
+2018-03-15 04:17:25,387 INFO     Running Scope bn_2: 
+2018-03-15 04:17:25,443 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:17:25,445 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:17:25,446 INFO     SEED for scope: 902
+2018-03-15 04:17:25,469 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 04:17:25,469 INFO     SEED for scope: 846
+2018-03-15 04:17:25,492 INFO     Running Scope bn_1: 
+2018-03-15 04:17:25,540 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:17:25,540 INFO     SEED for scope: 345
+2018-03-15 04:17:25,564 INFO     Running Scope bn_2: 
+2018-03-15 04:17:25,611 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:17:25,613 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:17:25,614 INFO     SEED for scope: 854
+2018-03-15 04:17:25,641 INFO     Running Scope bn_1: 
+2018-03-15 04:17:25,694 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:17:25,695 INFO     SEED for scope: 989
+2018-03-15 04:17:25,718 INFO     Running Scope bn_2: 
+2018-03-15 04:17:25,769 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:17:25,771 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:17:25,772 INFO     SEED for scope: 291
+2018-03-15 04:17:25,796 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 04:17:25,796 INFO     SEED for scope: 486
+2018-03-15 04:17:25,819 INFO     Running Scope bn_1: 
+2018-03-15 04:17:25,869 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:17:25,869 INFO     SEED for scope: 444
+2018-03-15 04:17:25,895 INFO     Running Scope bn_2: 
+2018-03-15 04:17:25,944 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:17:25,946 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:17:25,947 INFO     SEED for scope: 101
+2018-03-15 04:17:25,970 INFO     Running Scope bn_1: 
+2018-03-15 04:17:26,018 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:17:26,019 INFO     SEED for scope: 202
+2018-03-15 04:17:26,041 INFO     Running Scope bn_2: 
+2018-03-15 04:17:26,090 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:17:26,092 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:17:26,105 INFO     X - flattened: [None, 25088]
+2018-03-15 04:17:26,105 INFO     SEED for scope: 304
+2018-03-15 04:17:26,129 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 04:17:26,141 INFO     INITIALIZING LOSS: .....
+2018-03-15 04:17:26,181 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 04:17:41,225 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 04:17:41,225 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_2_batch_49
+2018-03-15 04:19:27,311 INFO     VALIDATION METRICs : Fold: 1, epoch: 2, batch: 2, Loss: 0.664764, Accuracy: 0.89779, Precision: 0.92023, Recall: 0.87109
+2018-03-15 04:19:27,651 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 04:19:27,656 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 04:19:27,656 INFO     Performing random horizontal flip
+2018-03-15 04:19:27,679 INFO     Performing Central crop
+2018-03-15 04:19:27,738 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:19:27,739 INFO     Standarizing the image
+2018-03-15 04:19:27,765 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 04:19:27,765 INFO     Performing Central crop
+2018-03-15 04:19:27,823 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:19:27,824 INFO     Standarizing the image
+2018-03-15 04:19:27,856 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 04:19:27,859 INFO     SEED for scope: 505
+2018-03-15 04:19:27,883 INFO     Running Scope bn_1: 
+2018-03-15 04:19:27,933 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:19:27,933 INFO     SEED for scope: 607
+2018-03-15 04:19:27,956 INFO     Running Scope bn_1: 
+2018-03-15 04:19:28,007 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:19:28,007 INFO     SEED for scope: 707
+2018-03-15 04:19:28,032 INFO     Running Scope bn_2: 
+2018-03-15 04:19:28,085 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:19:28,088 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:19:28,089 INFO     SEED for scope: 808
+2018-03-15 04:19:28,118 INFO     Running Scope bn_1: 
+2018-03-15 04:19:28,183 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:19:28,183 INFO     SEED for scope: 905
+2018-03-15 04:19:28,206 INFO     Running Scope bn_2: 
+2018-03-15 04:19:28,254 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:19:28,256 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:19:28,256 INFO     SEED for scope: 900
+2018-03-15 04:19:28,283 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 04:19:28,283 INFO     SEED for scope: 774
+2018-03-15 04:19:28,311 INFO     Running Scope bn_1: 
+2018-03-15 04:19:28,365 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:19:28,374 INFO     SEED for scope: 553
+2018-03-15 04:19:28,402 INFO     Running Scope bn_2: 
+2018-03-15 04:19:28,453 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:19:28,455 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:19:28,455 INFO     SEED for scope: 292
+2018-03-15 04:19:28,479 INFO     Running Scope bn_1: 
+2018-03-15 04:19:28,528 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:19:28,530 INFO     SEED for scope: 394
+2018-03-15 04:19:28,558 INFO     Running Scope bn_2: 
+2018-03-15 04:19:28,609 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:19:28,612 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:19:28,612 INFO     SEED for scope: 874
+2018-03-15 04:19:28,635 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 04:19:28,635 INFO     SEED for scope: 445
+2018-03-15 04:19:28,657 INFO     Running Scope bn_1: 
+2018-03-15 04:19:28,710 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:19:28,710 INFO     SEED for scope: 191
+2018-03-15 04:19:28,734 INFO     Running Scope bn_2: 
+2018-03-15 04:19:28,781 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:19:28,783 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:19:28,784 INFO     SEED for scope: 161
+2018-03-15 04:19:28,810 INFO     Running Scope bn_1: 
+2018-03-15 04:19:28,862 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:19:28,863 INFO     SEED for scope: 141
+2018-03-15 04:19:28,886 INFO     Running Scope bn_2: 
+2018-03-15 04:19:28,937 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:19:28,939 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:19:28,940 INFO     SEED for scope: 213
+2018-03-15 04:19:28,967 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 04:19:28,967 INFO     SEED for scope: 436
+2018-03-15 04:19:28,990 INFO     Running Scope bn_1: 
+2018-03-15 04:19:29,038 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:19:29,038 INFO     SEED for scope: 754
+2018-03-15 04:19:29,061 INFO     Running Scope bn_2: 
+2018-03-15 04:19:29,108 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:19:29,111 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:19:29,111 INFO     SEED for scope: 991
+2018-03-15 04:19:29,135 INFO     Running Scope bn_1: 
+2018-03-15 04:19:29,184 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:19:29,184 INFO     SEED for scope: 302
+2018-03-15 04:19:29,206 INFO     Running Scope bn_2: 
+2018-03-15 04:19:29,254 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:19:29,256 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:19:29,268 INFO     X - flattened: [None, 25088]
+2018-03-15 04:19:29,268 INFO     SEED for scope: 992
+2018-03-15 04:19:29,290 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 04:19:29,301 INFO     INITIALIZING LOSS: .....
+2018-03-15 04:19:29,342 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 04:19:44,724 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 04:19:44,725 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_2_batch_59
+2018-03-15 04:21:34,067 INFO     VALIDATION METRICs : Fold: 1, epoch: 2, batch: 2, Loss: 0.999285, Accuracy: 0.90331, Precision: 0.93452, Recall: 0.86740
+2018-03-15 04:21:34,466 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 04:21:34,476 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 04:21:34,477 INFO     Performing random horizontal flip
+2018-03-15 04:21:34,502 INFO     Performing Central crop
+2018-03-15 04:21:34,556 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:21:34,557 INFO     Standarizing the image
+2018-03-15 04:21:34,587 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 04:21:34,587 INFO     Performing Central crop
+2018-03-15 04:21:34,644 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:21:34,644 INFO     Standarizing the image
+2018-03-15 04:21:34,675 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 04:21:34,682 INFO     SEED for scope: 223
+2018-03-15 04:21:34,714 INFO     Running Scope bn_1: 
+2018-03-15 04:21:34,769 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:21:34,770 INFO     SEED for scope: 645
+2018-03-15 04:21:34,793 INFO     Running Scope bn_1: 
+2018-03-15 04:21:34,843 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:21:34,843 INFO     SEED for scope: 724
+2018-03-15 04:21:34,867 INFO     Running Scope bn_2: 
+2018-03-15 04:21:34,920 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:21:34,922 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:21:34,923 INFO     SEED for scope: 944
+2018-03-15 04:21:34,947 INFO     Running Scope bn_1: 
+2018-03-15 04:21:34,995 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:21:34,995 INFO     SEED for scope: 232
+2018-03-15 04:21:35,020 INFO     Running Scope bn_2: 
+2018-03-15 04:21:35,072 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:21:35,074 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:21:35,074 INFO     SEED for scope: 123
+2018-03-15 04:21:35,098 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 04:21:35,098 INFO     SEED for scope: 321
+2018-03-15 04:21:35,122 INFO     Running Scope bn_1: 
+2018-03-15 04:21:35,172 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:21:35,172 INFO     SEED for scope: 909
+2018-03-15 04:21:35,198 INFO     Running Scope bn_2: 
+2018-03-15 04:21:35,251 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:21:35,253 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:21:35,254 INFO     SEED for scope: 784
+2018-03-15 04:21:35,277 INFO     Running Scope bn_1: 
+2018-03-15 04:21:35,327 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:21:35,327 INFO     SEED for scope: 239
+2018-03-15 04:21:35,353 INFO     Running Scope bn_2: 
+2018-03-15 04:21:35,406 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:21:35,409 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:21:35,409 INFO     SEED for scope: 337
+2018-03-15 04:21:35,434 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 04:21:35,434 INFO     SEED for scope: 888
+2018-03-15 04:21:35,459 INFO     Running Scope bn_1: 
+2018-03-15 04:21:35,507 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:21:35,507 INFO     SEED for scope: 666
+2018-03-15 04:21:35,535 INFO     Running Scope bn_2: 
+2018-03-15 04:21:35,587 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:21:35,589 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:21:35,590 INFO     SEED for scope: 400
+2018-03-15 04:21:35,613 INFO     Running Scope bn_1: 
+2018-03-15 04:21:35,663 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:21:35,664 INFO     SEED for scope: 912
+2018-03-15 04:21:35,692 INFO     Running Scope bn_2: 
+2018-03-15 04:21:35,750 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:21:35,754 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:21:35,754 INFO     SEED for scope: 255
+2018-03-15 04:21:35,781 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 04:21:35,781 INFO     SEED for scope: 983
+2018-03-15 04:21:35,809 INFO     Running Scope bn_1: 
+2018-03-15 04:21:35,867 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:21:35,867 INFO     SEED for scope: 902
+2018-03-15 04:21:35,897 INFO     Running Scope bn_2: 
+2018-03-15 04:21:35,957 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:21:35,960 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:21:35,960 INFO     SEED for scope: 846
+2018-03-15 04:21:35,987 INFO     Running Scope bn_1: 
+2018-03-15 04:21:36,045 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:21:36,045 INFO     SEED for scope: 345
+2018-03-15 04:21:36,074 INFO     Running Scope bn_2: 
+2018-03-15 04:21:36,130 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:21:36,132 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:21:36,150 INFO     X - flattened: [None, 25088]
+2018-03-15 04:21:36,150 INFO     SEED for scope: 854
+2018-03-15 04:21:36,180 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 04:21:36,192 INFO     INITIALIZING LOSS: .....
+2018-03-15 04:21:36,231 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 04:21:51,052 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 04:21:51,052 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_2_batch_69
+2018-03-15 04:23:36,857 INFO     VALIDATION METRICs : Fold: 1, epoch: 2, batch: 2, Loss: 0.920848, Accuracy: 0.89871, Precision: 0.90619, Recall: 0.88950
+2018-03-15 04:23:37,142 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 04:23:37,147 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 04:23:37,147 INFO     Performing random horizontal flip
+2018-03-15 04:23:37,169 INFO     Performing Central crop
+2018-03-15 04:23:37,225 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:23:37,225 INFO     Standarizing the image
+2018-03-15 04:23:37,257 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 04:23:37,257 INFO     Performing Central crop
+2018-03-15 04:23:37,319 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:23:37,319 INFO     Standarizing the image
+2018-03-15 04:23:37,357 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 04:23:37,361 INFO     SEED for scope: 989
+2018-03-15 04:23:37,386 INFO     Running Scope bn_1: 
+2018-03-15 04:23:37,438 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:23:37,438 INFO     SEED for scope: 291
+2018-03-15 04:23:37,461 INFO     Running Scope bn_1: 
+2018-03-15 04:23:37,509 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:23:37,509 INFO     SEED for scope: 486
+2018-03-15 04:23:37,532 INFO     Running Scope bn_2: 
+2018-03-15 04:23:37,580 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:23:37,583 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:23:37,583 INFO     SEED for scope: 444
+2018-03-15 04:23:37,606 INFO     Running Scope bn_1: 
+2018-03-15 04:23:37,653 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:23:37,653 INFO     SEED for scope: 101
+2018-03-15 04:23:37,675 INFO     Running Scope bn_2: 
+2018-03-15 04:23:37,722 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:23:37,724 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:23:37,725 INFO     SEED for scope: 202
+2018-03-15 04:23:37,748 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 04:23:37,748 INFO     SEED for scope: 304
+2018-03-15 04:23:37,771 INFO     Running Scope bn_1: 
+2018-03-15 04:23:37,822 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:23:37,822 INFO     SEED for scope: 505
+2018-03-15 04:23:37,845 INFO     Running Scope bn_2: 
+2018-03-15 04:23:37,892 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:23:37,894 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:23:37,895 INFO     SEED for scope: 607
+2018-03-15 04:23:37,922 INFO     Running Scope bn_1: 
+2018-03-15 04:23:37,969 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:23:37,969 INFO     SEED for scope: 707
+2018-03-15 04:23:37,996 INFO     Running Scope bn_2: 
+2018-03-15 04:23:38,043 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:23:38,045 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:23:38,046 INFO     SEED for scope: 808
+2018-03-15 04:23:38,068 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 04:23:38,068 INFO     SEED for scope: 905
+2018-03-15 04:23:38,091 INFO     Running Scope bn_1: 
+2018-03-15 04:23:38,138 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:23:38,139 INFO     SEED for scope: 900
+2018-03-15 04:23:38,161 INFO     Running Scope bn_2: 
+2018-03-15 04:23:38,213 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:23:38,215 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:23:38,215 INFO     SEED for scope: 774
+2018-03-15 04:23:38,238 INFO     Running Scope bn_1: 
+2018-03-15 04:23:38,297 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:23:38,297 INFO     SEED for scope: 553
+2018-03-15 04:23:38,324 INFO     Running Scope bn_2: 
+2018-03-15 04:23:38,376 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:23:38,378 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:23:38,378 INFO     SEED for scope: 292
+2018-03-15 04:23:38,401 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 04:23:38,401 INFO     SEED for scope: 394
+2018-03-15 04:23:38,424 INFO     Running Scope bn_1: 
+2018-03-15 04:23:38,476 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:23:38,476 INFO     SEED for scope: 874
+2018-03-15 04:23:38,499 INFO     Running Scope bn_2: 
+2018-03-15 04:23:38,545 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:23:38,548 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:23:38,548 INFO     SEED for scope: 445
+2018-03-15 04:23:38,573 INFO     Running Scope bn_1: 
+2018-03-15 04:23:38,623 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:23:38,623 INFO     SEED for scope: 191
+2018-03-15 04:23:38,646 INFO     Running Scope bn_2: 
+2018-03-15 04:23:38,692 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:23:38,695 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:23:38,706 INFO     X - flattened: [None, 25088]
+2018-03-15 04:23:38,707 INFO     SEED for scope: 161
+2018-03-15 04:23:38,728 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 04:23:38,739 INFO     INITIALIZING LOSS: .....
+2018-03-15 04:23:38,781 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 04:23:53,427 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 04:23:53,427 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_2_batch_74
+2018-03-15 04:25:41,748 INFO     VALIDATION METRICs : Fold: 1, epoch: 2, batch: 2, Loss: 0.838857, Accuracy: 0.79190, Precision: 0.73343, Recall: 0.91713
+2018-03-15 04:25:42,108 INFO     PREPROCESSING THE DATASET ..........
+2018-03-15 04:25:42,114 INFO     PREPROCESSING config: With the training Data Set
+2018-03-15 04:25:42,114 INFO     Performing random horizontal flip
+2018-03-15 04:25:42,137 INFO     Performing Central crop
+2018-03-15 04:25:42,197 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:25:42,197 INFO     Standarizing the image
+2018-03-15 04:25:42,225 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-15 04:25:42,225 INFO     Performing Central crop
+2018-03-15 04:25:42,278 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-15 04:25:42,278 INFO     Standarizing the image
+2018-03-15 04:25:42,309 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-15 04:25:42,313 INFO     SEED for scope: 141
+2018-03-15 04:25:42,337 INFO     Running Scope bn_1: 
+2018-03-15 04:25:42,389 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:25:42,390 INFO     SEED for scope: 213
+2018-03-15 04:25:42,413 INFO     Running Scope bn_1: 
+2018-03-15 04:25:42,470 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:25:42,470 INFO     SEED for scope: 436
+2018-03-15 04:25:42,492 INFO     Running Scope bn_2: 
+2018-03-15 04:25:42,548 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:25:42,551 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:25:42,551 INFO     SEED for scope: 754
+2018-03-15 04:25:42,576 INFO     Running Scope bn_1: 
+2018-03-15 04:25:42,628 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-03-15 04:25:42,628 INFO     SEED for scope: 991
+2018-03-15 04:25:42,654 INFO     Running Scope bn_2: 
+2018-03-15 04:25:42,712 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-03-15 04:25:42,716 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-03-15 04:25:42,716 INFO     SEED for scope: 302
+2018-03-15 04:25:42,741 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-03-15 04:25:42,741 INFO     SEED for scope: 992
+2018-03-15 04:25:42,766 INFO     Running Scope bn_1: 
+2018-03-15 04:25:42,816 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:25:42,816 INFO     SEED for scope: 223
+2018-03-15 04:25:42,840 INFO     Running Scope bn_2: 
+2018-03-15 04:25:42,896 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:25:42,899 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:25:42,899 INFO     SEED for scope: 645
+2018-03-15 04:25:42,922 INFO     Running Scope bn_1: 
+2018-03-15 04:25:42,972 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-03-15 04:25:42,973 INFO     SEED for scope: 724
+2018-03-15 04:25:42,996 INFO     Running Scope bn_2: 
+2018-03-15 04:25:43,047 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-03-15 04:25:43,049 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-03-15 04:25:43,050 INFO     SEED for scope: 944
+2018-03-15 04:25:43,072 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-03-15 04:25:43,072 INFO     SEED for scope: 232
+2018-03-15 04:25:43,096 INFO     Running Scope bn_1: 
+2018-03-15 04:25:43,148 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:25:43,148 INFO     SEED for scope: 123
+2018-03-15 04:25:43,171 INFO     Running Scope bn_2: 
+2018-03-15 04:25:43,217 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:25:43,220 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:25:43,220 INFO     SEED for scope: 321
+2018-03-15 04:25:43,242 INFO     Running Scope bn_1: 
+2018-03-15 04:25:43,289 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-03-15 04:25:43,289 INFO     SEED for scope: 909
+2018-03-15 04:25:43,313 INFO     Running Scope bn_2: 
+2018-03-15 04:25:43,359 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-03-15 04:25:43,361 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-03-15 04:25:43,361 INFO     SEED for scope: 784
+2018-03-15 04:25:43,384 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-03-15 04:25:43,384 INFO     SEED for scope: 239
+2018-03-15 04:25:43,407 INFO     Running Scope bn_1: 
+2018-03-15 04:25:43,455 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:25:43,455 INFO     SEED for scope: 337
+2018-03-15 04:25:43,481 INFO     Running Scope bn_2: 
+2018-03-15 04:25:43,533 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:25:43,535 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:25:43,536 INFO     SEED for scope: 888
+2018-03-15 04:25:43,563 INFO     Running Scope bn_1: 
+2018-03-15 04:25:43,615 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-03-15 04:25:43,615 INFO     SEED for scope: 666
+2018-03-15 04:25:43,638 INFO     Running Scope bn_2: 
+2018-03-15 04:25:43,683 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-03-15 04:25:43,685 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-03-15 04:25:43,697 INFO     X - flattened: [None, 25088]
+2018-03-15 04:25:43,697 INFO     SEED for scope: 400
+2018-03-15 04:25:43,719 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-03-15 04:25:43,730 INFO     INITIALIZING LOSS: .....
+2018-03-15 04:25:43,766 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-15 04:25:57,990 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-15 04:25:57,990 INFO     Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/data_models/overlayed_images/google/checkpoint/resnet/resnet_epoch_2_batch_9
+2018-03-15 04:27:34,360 INFO     VALIDATION METRICs : Fold: 1, epoch: 2, batch: 2, Loss: 1.976384, Accuracy: 0.88858, Precision: 0.87411, Recall: 0.90792
