@@ -193,8 +193,8 @@ class Train(PropertyClassification):
             self.writer.add_summary(smry, self.epoch)
 
         cv_pred = sess.run(tf.argmax(cv_prob, 1))
-        cv_recall_score = Score.recall(np.argmax(self.cvbatchY_1hot, axis=0), cv_pred, reverse=True)
-        cv_precision_score = Score.precision(np.argmax(self.cvbatchY_1hot, axis=0), cv_pred, reverse=True)
+        cv_recall_score = Score.recall(self.cvbatchY, cv_pred, reverse=True)
+        cv_precision_score = Score.precision(self.cvbatchY, cv_pred, reverse=True)
 
         logging.info("VALIDATION METRICs : Fold: %s, epoch: %s, batch: %s, Loss: %s, Accuracy: %s, Precision: %s, Recall: %s",
                      str(self.foldNUM),
@@ -230,8 +230,8 @@ class Train(PropertyClassification):
             self.max_batch += 1  # When we have already run some batches for the epoch then we need to run from
             # the next batch
             
-    def run_epoch(self):
-        saver = tf.train.Saver(max_to_keep=20)  # max_to_keep specifies the number of latest checkpoint to maintain
+    def run_epoch(self, get_stats_at):
+        saver = tf.train.Saver(max_to_keep=10)  # max_to_keep specifies the number of latest checkpoint to maintain
         self.max_batch = 0
         self.max_epoch = 0
         with tf.Session() as sess:
@@ -241,12 +241,12 @@ class Train(PropertyClassification):
             self.some_stuff(saver, sess)
             
             # CROSS-VALIDATION We load and pre-process the Cross-Validation set once, since we have to use it many times
-            cvbatchX, cvbatchY = load_batch_data(image_type=self.image_type, image_shape=self.inp_img_shape, which_data='cvalid')
+            cvbatchX, self.cvbatchY = load_batch_data(image_type=self.image_type, image_shape=self.inp_img_shape,
+                                                  which_data='cvalid')
             
-            self.cvbatchY_1hot = self.to_one_hot(cvbatchY)
+            self.cvbatchY_1hot = self.to_one_hot(self.cvbatchY)
             self.cv_preprocessed_data = self.run_preprocessor(sess, cvbatchX, self.preprocess_graph, is_training=False)
             del cvbatchX
-            del cvbatchY
 
             
             # INITIATE EXECUTION (TRAINING AND TESTING)
@@ -260,8 +260,7 @@ class Train(PropertyClassification):
             cv_recall_arr = []
             for epoch in range(self.max_epoch, self.max_epoch + self.epochs):
                 self.epoch = epoch
-                get_stats_at = 10
-
+                
                 for batch_num in range(self.max_batch, self.num_batches):
                     self.batch_num = batch_num
                     batchX, batchY = load_batch_data(image_type=self.image_type, image_shape=self.inp_img_shape, which_data='train_%s'%(batch_num))
@@ -290,14 +289,15 @@ class Train(PropertyClassification):
                             )
 
                             saver.save(sess, checkpoint_path)#, write_meta_graph=False)
+                  
         return tr_loss_arr, tr_acc_arr, tr_precision_arr, tr_recall_arr, cv_loss_arr, cv_acc_arr, cv_precision_arr, cv_recall_arr
 
-    def run(self, num_epochs, num_batches):
+    def run(self, num_epochs, num_batches, get_stats_at = 10):
         logging.info('INITIATING RUN ........')
         tf.reset_default_graph()
         self.foldNUM = 1
         self.epochs = num_epochs
-        self.num_batches = num_batches
+        self.num_batches = num_batches + 1
 
         self.preprocess_graph = Preprocessing(inp_img_shape=self.inp_img_shape,
                                               crop_shape=self.crop_shape,
@@ -311,7 +311,7 @@ class Train(PropertyClassification):
             raise ValueError('Provide a valid Net type options ={vgg, resnet}')
         ########   RUN THE SESSION
         tr_loss_arr, tr_acc_arr, tr_precision_arr, tr_recall_arr, cv_loss_arr, cv_acc_arr, cv_precision_arr, \
-            cv_recall_arr = self.run_epoch()
+            cv_recall_arr = self.run_epoch(get_stats_at)
         
         return tr_loss_arr, tr_acc_arr, tr_precision_arr, tr_recall_arr, cv_loss_arr, cv_acc_arr, cv_precision_arr, cv_recall_arr
 

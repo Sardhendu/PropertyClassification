@@ -37,7 +37,7 @@ else:
     
 batch_prepare = False
 train = False
-test = True
+test = False
 which_net = 'resnet'
 max_batches = 75
 

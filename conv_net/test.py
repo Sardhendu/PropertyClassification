@@ -61,10 +61,10 @@ class Test(PropertyClassification):
             batchX, batchY = load_batch_data(
                     image_type=self.image_type,
                     image_shape=self.inp_img_shape,
-                    which_data='cvalid')
+                    which_data=self.which_data)
             
             self.epoch = os.path.basename(checkpoint_path).split('.')[0].split('_')[2]
-            self.batch_num = os.path.basename(checkpoint_path).split('.')[0].split('_')[2]
+            self.batch_num = os.path.basename(checkpoint_path).split('.')[0].split('_')[4]
             
             self.restore_checkpoint(checkpoint_path, saver, sess)
             
@@ -73,12 +73,23 @@ class Test(PropertyClassification):
         return batchY, out_prob, tst_loss, tst_acc, ts_precsion_score, ts_recall_score
     
     
-    def run(self, dump_stats=False):
+    def run(self, which_data, dump_stats=False):
         logging.info('INITIATING TEST ........')
         tf.reset_default_graph()
         self.dump_stats = dump_stats
+        self.which_data = which_data
+        
         checkpoint_paths = self.get_checkpoint_path(which_checkpoint='all')
-        checkpoint_paths = np.sort(checkpoint_paths)
+        dir_name = os.path.dirname(checkpoint_paths[0])
+        cmn_filename = os.path.basename(checkpoint_paths[0]).split('_')
+        cmn_filename[2] = '%s'
+        cmn_filename[4] = '%s'
+        cmn_filename = ('_').join(cmn_filename)
+        
+        nums = np.array([[os.path.basename(chk).split('_')[2], os.path.basename(chk).split('_')[4]] for chk in checkpoint_paths], dtype=int)
+        nums_sort = nums[np.lexsort((nums[:,1], nums[:,0]))]
+
+        checkpoint_paths = [os.path.join(dir_name, cmn_filename%(str(i), str(j))) for i, j in nums_sort]
         
         stats_matrix = []
         colnames = []

@@ -157,8 +157,9 @@ def get_dump_image_given_path(land_paths, house_paths, img_resize_shape, label_d
 
 
 
-def dumpStratifiedBatches_balanced_class(cmn_land_pins, cmn_house_pins, img_resize_shape, image_type, cv_batch_size,
-                        tr_batch_size, shuffle_seed=873, get_stats=True, max_batches=None):
+def dumpStratifiedBatches_balanced_class(cmn_land_pins, cmn_house_pins, img_resize_shape, image_type, ts_batch_size,
+                                         cv_batch_size, tr_batch_size, shuffle_seed=873, get_stats=True,
+                                         max_batches=None):
     if image_type not in ['assessor', 'google_aerial', 'bing_aerial', 'bing_streetside', 'google_overlayed']:
         raise ValueError('Variable image_type not understood')
     
@@ -192,15 +193,27 @@ def dumpStratifiedBatches_balanced_class(cmn_land_pins, cmn_house_pins, img_resi
     ####################################################################################
     # Create the first batch as Validation and then remove the validation data from the actual dataset. This is done
     # to ensure that the none of the validation data falls under the training batches
+    ts_batch_size_per_class = ts_batch_size // 2
     cv_batch_size_per_class = cv_batch_size // 2
-    cvalid_land_pins = land_pins[0: cv_batch_size_per_class]
-    cvalid_house_pins = house_pins[0: cv_batch_size_per_class]
+    
+    test_land_pins = land_pins[0: ts_batch_size_per_class]
+    test_house_pins = house_pins[0: ts_batch_size_per_class]
+
+    cvalid_land_pins = land_pins[ts_batch_size_per_class: ts_batch_size_per_class+cv_batch_size_per_class]
+    cvalid_house_pins = house_pins[ts_batch_size_per_class: ts_batch_size_per_class+cv_batch_size_per_class]
     
     # New land pins, and house_pins
-    train_land_pins = land_pins[cv_batch_size_per_class:]
-    train_house_pins = house_pins[cv_batch_size_per_class:]
+    train_land_pins = land_pins[ts_batch_size_per_class+cv_batch_size_per_class:]
+    train_house_pins = house_pins[ts_batch_size_per_class+cv_batch_size_per_class:]
     
     # print (len(train_land_pins), len(train_house_pins), len(cvalid_land_pins), len(cvalid_house_pins))
+    ##### DUMP THE TEST DATASET
+    get_dump_image_given_path([os.path.join(land_image_path, pin + '.jpg') for pin in test_land_pins],
+                              [os.path.join(house_image_path, pin + '.jpg') for pin in test_house_pins],
+                              img_resize_shape, label_dict,
+                              labels=[land_label, house_label],
+                              outpath=output_data_path,
+                              filename='test')
 
     ##### DUMP CROSS VALIDATION DATASET
     # LOAD THE VALIDATION SET TO THE DISK
@@ -213,9 +226,13 @@ def dumpStratifiedBatches_balanced_class(cmn_land_pins, cmn_house_pins, img_resi
 
     # GATHER STATISTICS FOR CROSS VALIDATION DATASET
     if get_stats:
-        tr_cv_pins_ = np.append(cvalid_land_pins, cvalid_house_pins)
-        tr_cv_land_house = np.append(np.tile('land', len(cvalid_land_pins)), np.tile('house', len(cvalid_house_pins)))
-        tr_cv_type_info = np.tile('cvalid', cv_batch_size)
+        tr_cv_pins_ = np.append(np.append(test_land_pins, test_house_pins),
+                                np.append(cvalid_land_pins, cvalid_house_pins))
+        tr_cv_land_house = np.append(
+                np.append(np.tile('land', len(test_land_pins)), np.tile('house', len(test_house_pins))),
+                np.append(np.tile('land', len(cvalid_land_pins)), np.tile('house', len(cvalid_house_pins)))
+        )
+        tr_cv_type_info = np.append(np.tile('test', ts_batch_size), np.tile('cvalid', cv_batch_size))
 
 
     ##### DUMP TRAINING DATA IN BATCHES
