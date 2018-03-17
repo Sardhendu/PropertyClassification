@@ -151,6 +151,7 @@ def activation(X, type='relu', scope_name='relu'):
 
 
 def loss_optimization(X, y, learning_rate_decay=True, add_smry=True):
+    print ('Learning Rate: Initial: ', myNet['learning_rate'])
     globalStep = tf.Variable(0, dtype=tf.float32)
     if learning_rate_decay:
         

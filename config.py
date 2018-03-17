@@ -54,7 +54,7 @@ pp_vars['central_crop'] = True
 #####################   NET PARAMETERS
 myNet['num_labels'] = 2
 myNet['optimizer'] = 'ADAM'
-myNet['learning_rate'] = 0.0001
+myNet['learning_rate'] = 0.001
 myNet['momentum'] = 0.9
 myNet['learning_rate_decay_rate'] = 0.95
 myNet['batch_norm_decay'] = 0.9
