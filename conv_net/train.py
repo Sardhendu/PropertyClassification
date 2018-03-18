@@ -148,7 +148,7 @@ class Train(PropertyClassification):
             self.computation_graph['is_training']: True
         }
 
-        _, out_prob, tr_acc, tr_loss, l_rt = sess.run(
+        _, out_prob, tr_acc, tr_loss, l_rate = sess.run(
                 [self.computation_graph['optimizer'],
                  self.computation_graph['outProbs'],
                  self.computation_graph['accuracy'],
@@ -173,7 +173,7 @@ class Train(PropertyClassification):
                      str("{:.5f}".format(tr_precision_score)),
                      str("{:.5f}".format(tr_recall_score)))
         
-        return tr_loss, tr_acc, tr_precision_score, tr_recall_score
+        return tr_loss, tr_acc, tr_precision_score, tr_recall_score, l_rate
     
     
     def cvalid(self, sess):
@@ -258,6 +258,7 @@ class Train(PropertyClassification):
             cv_loss_arr = []
             cv_precision_arr = []
             cv_recall_arr = []
+            l_rate_arr = []
             for epoch in range(self.max_epoch, self.max_epoch + self.epochs):
                 self.epoch = epoch
                 
@@ -265,11 +266,12 @@ class Train(PropertyClassification):
                     self.batch_num = batch_num
                     batchX, batchY = load_batch_data(image_type=self.image_type, image_shape=self.inp_img_shape, which_data='train_%s'%(batch_num))
 
-                    tr_loss, tr_acc, tr_precision_score, tr_recall_score = self.train(batchX, batchY, sess)
+                    tr_loss, tr_acc, tr_precision_score, tr_recall_score, l_rate = self.train(batchX, batchY, sess)
                     tr_loss_arr.append(tr_loss)
                     tr_acc_arr.append(tr_acc)
                     tr_precision_arr.append(tr_precision_score)
                     tr_recall_arr.append(tr_recall_score)
+                    l_rate_arr.append(l_rate)
                     
                     if ((batch_num+1)%get_stats_at == 0) or (batch_num == self.num_batches -1):
                         
@@ -290,7 +292,7 @@ class Train(PropertyClassification):
 
                             saver.save(sess, checkpoint_path)#, write_meta_graph=False)
                   
-        return tr_loss_arr, tr_acc_arr, tr_precision_arr, tr_recall_arr, cv_loss_arr, cv_acc_arr, cv_precision_arr, cv_recall_arr
+        return tr_loss_arr, tr_acc_arr, tr_precision_arr, tr_recall_arr, cv_loss_arr, cv_acc_arr, cv_precision_arr, cv_recall_arr, l_rate_arr
 
     def run(self, num_epochs, num_batches, get_stats_at = 10):
         logging.info('INITIATING RUN ........')
@@ -311,9 +313,9 @@ class Train(PropertyClassification):
             raise ValueError('Provide a valid Net type options ={vgg, resnet}')
         ########   RUN THE SESSION
         tr_loss_arr, tr_acc_arr, tr_precision_arr, tr_recall_arr, cv_loss_arr, cv_acc_arr, cv_precision_arr, \
-            cv_recall_arr = self.run_epoch(get_stats_at)
+            cv_recall_arr, l_rate_arr = self.run_epoch(get_stats_at)
         
-        return tr_loss_arr, tr_acc_arr, tr_precision_arr, tr_recall_arr, cv_loss_arr, cv_acc_arr, cv_precision_arr, cv_recall_arr
+        return tr_loss_arr, tr_acc_arr, tr_precision_arr, tr_recall_arr, cv_loss_arr, cv_acc_arr, cv_precision_arr, cv_recall_arr, l_rate_arr
 
 
 
