@@ -56,6 +56,12 @@ def batch_norm(X, axis=[0,1,2], scope_name=None):
     :param scope_name:
     :param trainable:
     :return:
+    
+    Why have: exponential decay with batch norm? In real sense taking the mean and variance of the complete training set
+    makes more sense. Since we use batches we would wanna maintain a moving average of the mean and variance. This
+    after many batches would approximately equall to the overall mean. Also during the test data collecting the mean
+    and variance of the test data is not a good plan, what if test data is from  different distribution. So we apply
+    the train mean and variance (calculated by moving average) to the test data too.
     '''
     logging.info('Running Scope %s: ', str(scope_name))
     decay = config.myNet['batch_norm_decay']
