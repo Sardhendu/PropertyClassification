@@ -5,7 +5,7 @@ import logging
 import tensorflow as tf
 
 import config
-from config import netParams, myNet, vars
+from config import myNet
 
 
 def conv_layer(X, k_shape, stride=1, padding='SAME',  w_init='tn', scope_name='conv_layer'):
@@ -162,8 +162,8 @@ def loss_optimization(X, y, learning_rate_decay=True, add_smry=True):
     if learning_rate_decay:
         
         l_rate = tf.train.exponential_decay(myNet['learning_rate'],
-                                                  globalStep * vars['batch_size'],  # Used for decay computation
-                                                  vars['train_size'],  # Decay steps
+                                                  globalStep * myNet['batch_size'],  # Used for decay computation
+                                                  myNet['lr_decay_steps'],  # Decay steps,
                                                   myNet['learning_rate_decay_rate'],  # Decay rate
                                                   staircase=True)  # Will decay the learning rate in discrete interval
         

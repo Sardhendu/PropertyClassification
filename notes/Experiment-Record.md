@@ -137,3 +137,8 @@
     Epoch: 0, Batch: 69, AVG Training Accuracy= 0.89687
     Epoch: 0, Batch: 69, Validation Accuracy= 77.62431
    
+   
+#### Mar 19:
+#####LOTS AND LOTS OF CHANGES
+* Found a bug in central crop and changed the code
+* Aerial 

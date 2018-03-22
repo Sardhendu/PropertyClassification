@@ -54,20 +54,18 @@ pp_vars['central_crop'] = True
 #####################   NET PARAMETERS
 myNet['num_labels'] = 2
 myNet['optimizer'] = 'ADAM'
-myNet['learning_rate'] = 0.0001
+myNet['learning_rate'] = 0.0005
 myNet['momentum'] = 0.9
 myNet['learning_rate_decay_rate'] = 0.95
 myNet['batch_norm_decay'] = 0.9
-
+myNet['batch_size'] = 128
+myNet['lr_decay_steps'] = 3000  # how many examples to see before making a decay
+# If you are learning a very complex function then setting lr_decay_steps = train_size, makes sense. But if the
+# function is not very complex and you feet that the function can be marginally learned in 1-3 steps than set it to
+# train_size/5 or somthing like that. This would ensure that the high learning rate doesnt make the optimization just
+# from minimas.
 
 #####################   BATCH PARAMETERS
-
-vars = {}
-# vars['epochs'] = 20
-# vars['num_batches'] = 10
-vars['num_img_per_label'] = 5000
-vars['batch_size'] = 64
-vars['train_size'] = vars['num_img_per_label'] * myNet['num_labels'] - vars['batch_size']
 
 
 
