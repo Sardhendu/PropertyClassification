@@ -70,6 +70,7 @@ if train:
           which_net=which_net,  # vgg
           image_type=image_type).run(num_epochs=3,
                                      num_batches=max_batches)# + 1)
+
 if test:
     Test(params=dict(inp_img_shape=[400,400,3],
                      crop_shape=[96, 96, 3],

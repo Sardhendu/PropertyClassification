@@ -156,6 +156,7 @@ pathDict['bing_aerial_smry_path'] = os.path.join(pathDict['data_model_path'], "a
 
 
 ##### Assessor Images
+
 pathDict['assessor_image_path'] = os.path.join(pathDict['parent_path'], "input_images", "assessor_images")
 pathDict['assessor_dl_stats_path'] = os.path.join(pathDict['statistics_path'], "assessor_images", 'data_loader')
 pathDict['assessor_dp_stats_path'] = os.path.join(pathDict['statistics_path'], "assessor_images", 'data_prep')
