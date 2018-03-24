@@ -7,6 +7,7 @@ import tensorflow as tf
 from conv_net.utils import Score
 from conv_net.vgg import vgg
 from conv_net.resnet import resnet
+from conv_net.convnet import conv_net
 from config import pathDict, myNet
 from conv_net.ops import summary_builder
 from data_transformation.data_io import getH5File
@@ -32,7 +33,7 @@ def load_batch_data(image_type, image_shape, which_data='cvalid'):
 
 
 class PropertyClassification(object):
-    def __init__(self, params, which_net, image_type):
+    def __init__(self, params, device_type, which_net, image_type):
         params_keys = list(params.keys())
         self.which_net = which_net
         if 'inp_img_shape' in  params_keys:
@@ -57,6 +58,7 @@ class PropertyClassification(object):
         if image_type not in ['bing_aerial', 'google_aerial', 'assessor', 'google_streetside', 'bing_streetside', 'google_overlayed']:
             raise ValueError('Can not identify the image type %s, Please provide a valid one'%(str(image_type)))
         
+        self.device_type = device_type
         self.ckpt_path = os.path.join(pathDict['%s_ckpt_path'%(str(image_type))], self.which_net )
         self.smry_path = os.path.join(pathDict['%s_smry_path'%(str(image_type))], self.which_net )
         
@@ -309,6 +311,8 @@ class Train(PropertyClassification):
             self.computation_graph = vgg(training=True)
         elif self.which_net == 'resnet':
             self.computation_graph = resnet(img_shape=self.out_img_shape)
+        elif self.which_net == 'convnet':
+            self.computation_graph = conv_net(img_shape=self.out_img_shape, device_type=self.device_type)
         else:
             raise ValueError('Provide a valid Net type options ={vgg, resnet}')
         ########   RUN THE SESSION
@@ -318,4 +322,20 @@ class Train(PropertyClassification):
         return tr_loss_arr, tr_acc_arr, tr_precision_arr, tr_recall_arr, cv_loss_arr, cv_acc_arr, cv_precision_arr, cv_recall_arr, l_rate_arr
 
 
-
+debugg = False
+if debugg:
+    max_batches = 66
+    # if train:
+    tr_obj = Train(dict(inp_img_shape=[400, 400, 3],
+                        crop_shape=[96, 96, 3],
+                        out_img_shape=[96, 96, 3],
+                        use_checkpoint=True,
+                        save_checkpoint=True,
+                        write_tensorboard_summary=False
+                        ),
+                   device_type='cpu',
+                   which_net='convnet',  # vgg
+                   image_type='google_overlayed')
+    (tr_loss_arr, tr_acc_arr, tr_precision_arr, tr_recall_arr,
+     cv_loss_arr, cv_acc_arr, cv_precision_arr, cv_recall_arr,
+     l_rate_arr) = tr_obj.run(num_epochs=3, num_batches=max_batches, get_stats_at=10)  # + 1)
