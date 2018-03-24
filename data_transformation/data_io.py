@@ -71,11 +71,9 @@ def dumpH5File(dataX, dataY, folderPath=None, fileName=None):
 
 def getH5File(folderPath, fileName):
     path_from = os.path.join(folderPath, fileName + '.h5')
-    
-    hf = h5py.File(path_from, 'r')
-    dataX = np.array(hf.get('dataX'), dtype='float32')
-    dataY = np.array(hf.get('dataY'), dtype='float32')
-    hf.close()
+    with h5py.File(path_from,'r') as hf:
+        dataX = np.array(hf.get('dataX'), dtype='float32')
+        dataY = np.array(hf.get('dataY'), dtype='float32')
     logging.info('DATA FORMATTER: Retrieved the hdf5 file %s from disk, dataX shape = %s, dataY shape = %s',
                  str(fileName),
                  str(dataX.shape),

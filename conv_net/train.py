@@ -299,7 +299,7 @@ class Train(PropertyClassification):
         tf.reset_default_graph()
         self.foldNUM = 1
         self.epochs = num_epochs
-        self.num_batches = num_batches + 1
+        self.num_batches = num_batches
 
         self.preprocess_graph = Preprocessing(inp_img_shape=self.inp_img_shape,
                                               crop_shape=self.crop_shape,

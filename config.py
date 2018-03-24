@@ -125,7 +125,8 @@ fileNames['batch_img_file'] = 'batch_img_arr.pickle'
 
 #####################   IMAGE PATHS
 pathDict = {}
-pathDict['parent_path'] = "/Users/sam/All-Program/App-DataSet/HouseClassification/"
+#pathDict['parent_path'] = "/Users/sam/All-Program/App-DataSet/HouseClassification/"
+pathDict['parent_path'] = r"C:\Users\newline\Documents\ImageClassification\data"
 pathDict['statistics_path'] = os.path.join(pathDict['parent_path'], "statistics")
 pathDict['data_model_path'] = os.path.join(pathDict['parent_path'], 'data_models')
 pathDict['pin_batch_row_meta_path'] = os.path.join(pathDict['statistics_path'], 'pin_batch_row_meta')

@@ -272,7 +272,10 @@ def dumpStratifiedBatches_balanced_class(cmn_land_pins, cmn_house_pins, img_resi
         
     ##### DUMP TRAIN CV STATISTICS INFO
     if get_stats:
-        dump_pins_path = os.path.join(pathDict['%s_pred_stats' % str(image_type)], 'cv_train_pins_info.csv')
+        folder_path = pathDict['%s_pred_stats' % str(image_type)]
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+        dump_pins_path = os.path.join(folder_path, 'cv_train_pins_info.csv')
         dataOUT = pd.DataFrame(np.column_stack((tr_cv_pins_, tr_cv_land_house, tr_cv_type_info)),
                                columns=['property_pins', 'property_type', 'dataset_type'])
         dataOUT.to_csv(dump_pins_path, index=None)

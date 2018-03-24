@@ -8,7 +8,7 @@ import config
 from config import myNet
 
 
-def conv_layer(X, k_shape, stride=1, padding='SAME',  w_init='tn', scope_name='conv_layer'):
+def conv_layer(X, k_shape, stride=1, padding='SAME',  w_init='tn', w_decay=None, scope_name='conv_layer', add_smry=True):
     m, h, w, f = X.get_shape().as_list()
     
     if config.weight_seed_idx == len(config.seed_arr) - 1:
@@ -38,11 +38,16 @@ def conv_layer(X, k_shape, stride=1, padding='SAME',  w_init='tn', scope_name='c
                 name='b',
                 trainable=True
         )
+    
+    if w_decay:
+        weight_decay = tf.multiply(tf.nn.l2_loss(weight), w_decay, name='weight_loss')
+        tf.add_to_collection('loss_w_decay', weight_decay)
         
     config.weight_seed_idx += 1
     
-    tf.summary.histogram("conv_weights", weight)
-    tf.summary.histogram("conv_bias", bias)
+    if add_smry:
+        tf.summary.histogram("conv_weights", weight)
+        tf.summary.histogram("conv_bias", bias)
     
     return tf.nn.conv2d(X, weight, [1, stride, stride, 1], padding=padding) + bias
 
@@ -112,11 +117,11 @@ def batch_norm(X, axis=[0,1,2], scope_name=None):
         return bn
     
     
-def fc_layers(X, k_shape, w_init='tn', scope_name='fc_layer'):
+def fc_layers(X, k_shape, w_init='tn', scope_name='fc_layer', add_smry=True):
     if config.weight_seed_idx == len(config.seed_arr) - 1:
         config.weight_seed_idx = 0
         
-    logging.info('SEED for scope: %s', str(config.seed_arr[config.weight_seed_idx]))
+    #logging.info('SEED for scope: %s', str(config.seed_arr[config.weight_seed_idx]))
     
     if w_init == 'gu':
         wght_init = tf.glorot_uniform_initializer(seed=config.seed_arr[config.weight_seed_idx])
@@ -143,8 +148,9 @@ def fc_layers(X, k_shape, w_init='tn', scope_name='fc_layer'):
     
     X = tf.add(tf.matmul(X, weight), bias)
 
-    tf.summary.histogram("fc_weights", weight)
-    tf.summary.histogram("fc_bias", bias)
+    if add_smry:
+        tf.summary.histogram("fc_weights", weight)
+        tf.summary.histogram("fc_bias", bias)
     return X
     
 
