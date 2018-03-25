@@ -1,112 +1,1281 @@
-2018-03-24 19:12:22,874 INFO     INITIATING RUN ........
-2018-03-24 19:12:22,874 INFO     PREPROCESSING THE DATASET ..........
-2018-03-24 19:12:22,899 INFO     PREPROCESSING config: With the training Data Set
-2018-03-24 19:12:22,899 INFO     Performing random horizontal flip
-2018-03-24 19:12:22,916 INFO     Performing Central crop
-2018-03-24 19:12:22,956 INFO     Image shape after central crop: (?, ?, 3)
-2018-03-24 19:12:22,957 INFO     Standarizing the image
-2018-03-24 19:12:22,980 INFO     PREPROCESSING config: With the Test Data Set
-2018-03-24 19:12:22,980 INFO     Performing Central crop
-2018-03-24 19:12:23,021 INFO     Image shape after central crop: (?, ?, 3)
-2018-03-24 19:12:23,021 INFO     Standarizing the image
-2018-03-24 19:12:23,046 INFO     Input shape: (?, 96, 96, 3)
-2018-03-24 19:12:23,046 INFO     SEED for scope: 553
-2018-03-24 19:12:23,064 INFO     Running Scope bn_1: 
-2018-03-24 19:12:23,108 INFO     Conv1 shape: (?, 96, 96, 64)
-2018-03-24 19:12:23,110 INFO     Pool1 shape: (?, 48, 48, 64)
-2018-03-24 19:12:23,110 INFO     SEED for scope: 292
-2018-03-24 19:12:23,127 INFO     Running Scope bn_2: 
-2018-03-24 19:12:23,168 INFO     Conv2 shape: (?, 48, 48, 64)
-2018-03-24 19:12:23,169 INFO     Pool2 shape: (?, 24, 24, 64)
-2018-03-24 19:12:23,169 INFO     SEED for scope: 394
-2018-03-24 19:12:23,187 INFO     Running Scope bn_3: 
-2018-03-24 19:12:23,228 INFO     Conv3 shape: (?, 24, 24, 64)
-2018-03-24 19:12:23,230 INFO     Pool3 shape: (?, 12, 12, 64)
-2018-03-24 19:12:23,960 INFO     Flattened shape: (?, 9216)
-2018-03-24 19:12:23,977 INFO     Dense1 shape: (?, 384)
-2018-03-24 19:12:23,993 INFO     Dense2 shape: (?, 192)
-2018-03-24 19:12:24,009 INFO     Output shape: (?, 192)
-2018-03-24 19:12:24,020 INFO     INITIALIZING LOSS: .....
-2018-03-24 19:12:24,255 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
-2018-03-24 19:12:26,943 INFO     Checkpoint LISTS .. ['convnet_epoch_0_batch_2', 'convnet_epoch_1_batch_2', 'convnet_epoch_2_batch_2']
-2018-03-24 19:12:29,516 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
-2018-03-24 19:12:31,395 INFO     DATA FORMATTER: Retrieved the hdf5 file train_0 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:12:46,383 INFO     Fold: 1, epoch: 3, batch: 0, Loss: 0.887487, Accuracy: 0.88281, Precision: 0.84507, Recall: 0.93750
-2018-03-24 19:12:46,692 INFO     DATA FORMATTER: Retrieved the hdf5 file train_1 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:12:47,417 INFO     Fold: 1, epoch: 3, batch: 1, Loss: 0.887104, Accuracy: 0.88281, Precision: 0.83562, Recall: 0.95312
-2018-03-24 19:12:47,719 INFO     DATA FORMATTER: Retrieved the hdf5 file train_2 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:12:48,434 INFO     Fold: 1, epoch: 3, batch: 2, Loss: 0.260265, Accuracy: 0.94531, Precision: 0.91304, Recall: 0.98438
-2018-03-24 19:12:51,121 INFO     VALIDATION METRICs : Fold: 1, epoch: 3, batch: 2, Loss: 1.318051, Accuracy: 0.85727, Precision: 0.83916, Recall: 0.88398
-2018-03-24 19:12:51,121 INFO     CHECKPOINT SAVER: Saving model updated parameters
-2018-03-24 19:12:53,621 INFO     DATA FORMATTER: Retrieved the hdf5 file train_0 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:12:54,310 INFO     Fold: 1, epoch: 4, batch: 0, Loss: 0.394490, Accuracy: 0.92188, Precision: 0.92188, Recall: 0.92188
-2018-03-24 19:12:54,624 INFO     DATA FORMATTER: Retrieved the hdf5 file train_1 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:12:55,329 INFO     Fold: 1, epoch: 4, batch: 1, Loss: 0.454448, Accuracy: 0.93750, Precision: 0.95161, Recall: 0.92188
-2018-03-24 19:12:55,639 INFO     DATA FORMATTER: Retrieved the hdf5 file train_2 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:12:56,348 INFO     Fold: 1, epoch: 4, batch: 2, Loss: 0.426698, Accuracy: 0.95312, Precision: 1.00000, Recall: 0.90625
-2018-03-24 19:12:57,113 INFO     VALIDATION METRICs : Fold: 1, epoch: 4, batch: 2, Loss: 1.287105, Accuracy: 0.87017, Precision: 0.89881, Recall: 0.83425
-2018-03-24 19:12:57,114 INFO     CHECKPOINT SAVER: Saving model updated parameters
-2018-03-24 19:12:58,886 INFO     DATA FORMATTER: Retrieved the hdf5 file train_0 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:12:59,589 INFO     Fold: 1, epoch: 5, batch: 0, Loss: 0.495038, Accuracy: 0.91406, Precision: 0.98182, Recall: 0.84375
-2018-03-24 19:12:59,897 INFO     DATA FORMATTER: Retrieved the hdf5 file train_1 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:13:00,585 INFO     Fold: 1, epoch: 5, batch: 1, Loss: 0.306146, Accuracy: 0.96875, Precision: 0.98387, Recall: 0.95312
-2018-03-24 19:13:00,889 INFO     DATA FORMATTER: Retrieved the hdf5 file train_2 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:13:01,588 INFO     Fold: 1, epoch: 5, batch: 2, Loss: 0.022328, Accuracy: 0.99219, Precision: 1.00000, Recall: 0.98438
-2018-03-24 19:13:02,349 INFO     VALIDATION METRICs : Fold: 1, epoch: 5, batch: 2, Loss: 1.471695, Accuracy: 0.81952, Precision: 0.76090, Recall: 0.93186
-2018-03-24 19:13:02,349 INFO     CHECKPOINT SAVER: Saving model updated parameters
-2018-03-24 19:13:12,710 INFO     INITIATING RUN ........
-2018-03-24 19:13:12,710 INFO     PREPROCESSING THE DATASET ..........
-2018-03-24 19:13:12,716 INFO     PREPROCESSING config: With the training Data Set
-2018-03-24 19:13:12,716 INFO     Performing random horizontal flip
-2018-03-24 19:13:12,735 INFO     Performing Central crop
-2018-03-24 19:13:12,779 INFO     Image shape after central crop: (?, ?, 3)
-2018-03-24 19:13:12,779 INFO     Standarizing the image
-2018-03-24 19:13:12,803 INFO     PREPROCESSING config: With the Test Data Set
-2018-03-24 19:13:12,803 INFO     Performing Central crop
-2018-03-24 19:13:12,845 INFO     Image shape after central crop: (?, ?, 3)
-2018-03-24 19:13:12,845 INFO     Standarizing the image
-2018-03-24 19:13:12,871 INFO     Input shape: (?, 96, 96, 3)
-2018-03-24 19:13:12,871 INFO     SEED for scope: 161
-2018-03-24 19:13:12,888 INFO     Running Scope bn_1: 
-2018-03-24 19:13:12,932 INFO     Conv1 shape: (?, 96, 96, 64)
-2018-03-24 19:13:12,933 INFO     Pool1 shape: (?, 48, 48, 64)
-2018-03-24 19:13:12,933 INFO     SEED for scope: 141
-2018-03-24 19:13:12,951 INFO     Running Scope bn_2: 
-2018-03-24 19:13:12,993 INFO     Conv2 shape: (?, 48, 48, 64)
-2018-03-24 19:13:12,994 INFO     Pool2 shape: (?, 24, 24, 64)
-2018-03-24 19:13:12,994 INFO     SEED for scope: 213
-2018-03-24 19:13:13,013 INFO     Running Scope bn_3: 
-2018-03-24 19:13:13,057 INFO     Conv3 shape: (?, 24, 24, 64)
-2018-03-24 19:13:13,058 INFO     Pool3 shape: (?, 12, 12, 64)
-2018-03-24 19:13:13,068 INFO     Flattened shape: (?, 9216)
-2018-03-24 19:13:13,085 INFO     Dense1 shape: (?, 384)
-2018-03-24 19:13:13,102 INFO     Dense2 shape: (?, 192)
-2018-03-24 19:13:13,117 INFO     Output shape: (?, 192)
-2018-03-24 19:13:13,128 INFO     INITIALIZING LOSS: .....
-2018-03-24 19:13:13,168 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
-2018-03-24 19:13:15,008 INFO     Checkpoint LISTS .. ['convnet_epoch_0_batch_2', 'convnet_epoch_1_batch_2', 'convnet_epoch_2_batch_2', 'convnet_epoch_3_batch_2', 'convnet_epoch_4_batch_2', 'convnet_epoch_5_batch_2']
-2018-03-24 19:13:17,610 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
-2018-03-24 19:13:19,609 INFO     DATA FORMATTER: Retrieved the hdf5 file train_0 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:13:27,279 INFO     Fold: 1, epoch: 6, batch: 0, Loss: 0.221810, Accuracy: 0.91406, Precision: 0.86301, Recall: 0.98438
-2018-03-24 19:13:27,586 INFO     DATA FORMATTER: Retrieved the hdf5 file train_1 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:13:35,154 INFO     Fold: 1, epoch: 6, batch: 1, Loss: 0.375041, Accuracy: 0.91406, Precision: 0.86301, Recall: 0.98438
-2018-03-24 19:13:35,473 INFO     DATA FORMATTER: Retrieved the hdf5 file train_2 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:13:43,173 INFO     Fold: 1, epoch: 6, batch: 2, Loss: 0.014713, Accuracy: 1.00000, Precision: 1.00000, Recall: 1.00000
-2018-03-24 19:14:07,842 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 2, Loss: 1.083422, Accuracy: 0.85912, Precision: 0.87938, Recall: 0.83241
-2018-03-24 19:14:07,843 INFO     CHECKPOINT SAVER: Saving model updated parameters
-2018-03-24 19:14:10,269 INFO     DATA FORMATTER: Retrieved the hdf5 file train_0 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:14:18,069 INFO     Fold: 1, epoch: 7, batch: 0, Loss: 0.078813, Accuracy: 0.97656, Precision: 0.98413, Recall: 0.96875
-2018-03-24 19:14:18,395 INFO     DATA FORMATTER: Retrieved the hdf5 file train_1 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:14:26,153 INFO     Fold: 1, epoch: 7, batch: 1, Loss: 0.113165, Accuracy: 0.96875, Precision: 1.00000, Recall: 0.93750
-2018-03-24 19:14:26,476 INFO     DATA FORMATTER: Retrieved the hdf5 file train_2 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:14:34,245 INFO     Fold: 1, epoch: 7, batch: 2, Loss: 0.189019, Accuracy: 0.95312, Precision: 1.00000, Recall: 0.90625
-2018-03-24 19:14:59,210 INFO     VALIDATION METRICs : Fold: 1, epoch: 7, batch: 2, Loss: 1.039457, Accuracy: 0.85359, Precision: 0.87209, Recall: 0.82873
-2018-03-24 19:14:59,210 INFO     CHECKPOINT SAVER: Saving model updated parameters
-2018-03-24 19:15:02,047 INFO     DATA FORMATTER: Retrieved the hdf5 file train_0 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:15:10,002 INFO     Fold: 1, epoch: 8, batch: 0, Loss: 0.049328, Accuracy: 0.98438, Precision: 1.00000, Recall: 0.96875
-2018-03-24 19:15:10,339 INFO     DATA FORMATTER: Retrieved the hdf5 file train_1 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:15:18,077 INFO     Fold: 1, epoch: 8, batch: 1, Loss: 0.075023, Accuracy: 0.97656, Precision: 0.96923, Recall: 0.98438
-2018-03-24 19:15:18,411 INFO     DATA FORMATTER: Retrieved the hdf5 file train_2 from disk, dataX shape = (128, 400, 400, 3), dataY shape = (128,)
-2018-03-24 19:15:26,164 INFO     Fold: 1, epoch: 8, batch: 2, Loss: 0.034554, Accuracy: 0.99219, Precision: 0.98462, Recall: 1.00000
-2018-03-24 19:15:50,965 INFO     VALIDATION METRICs : Fold: 1, epoch: 8, batch: 2, Loss: 1.154385, Accuracy: 0.84254, Precision: 0.79245, Recall: 0.92818
-2018-03-24 19:15:50,966 INFO     CHECKPOINT SAVER: Saving model updated parameters
+2018-03-24 20:22:06,570 INFO     INITIATING TEST ........
+2018-03-24 20:22:06,570 INFO     Checkpoint LISTS .. ['convnet_epoch_5_batch_49', 'convnet_epoch_5_batch_59', 'convnet_epoch_5_batch_65', 'convnet_epoch_6_batch_19', 'convnet_epoch_6_batch_29', 'convnet_epoch_6_batch_39', 'convnet_epoch_6_batch_49', 'convnet_epoch_6_batch_59', 'convnet_epoch_6_batch_65', 'convnet_epoch_6_batch_9']
+2018-03-24 20:22:06,572 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:22:06,596 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:22:06,596 INFO     Performing random horizontal flip
+2018-03-24 20:22:06,614 INFO     Performing Central crop
+2018-03-24 20:22:06,653 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:22:06,654 INFO     Standarizing the image
+2018-03-24 20:22:06,677 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:22:06,677 INFO     Performing Central crop
+2018-03-24 20:22:06,718 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:22:06,718 INFO     Standarizing the image
+2018-03-24 20:22:06,743 INFO     Image shape after Zero Padding crop: (?, ?, 3)
+2018-03-24 20:22:06,747 INFO     Input shape: (?, 224, 224, 3)
+2018-03-24 20:22:06,747 INFO     SEED for scope: 553
+2018-03-24 20:22:06,764 INFO     Running Scope bn_1: 
+2018-03-24 20:22:06,809 INFO     Conv1 shape: (?, 224, 224, 64)
+2018-03-24 20:22:06,811 INFO     Pool1 shape: (?, 112, 112, 64)
+2018-03-24 20:22:06,811 INFO     SEED for scope: 292
+2018-03-24 20:22:06,828 INFO     Running Scope bn_2: 
+2018-03-24 20:22:06,870 INFO     Conv2 shape: (?, 112, 112, 64)
+2018-03-24 20:22:06,871 INFO     Pool2 shape: (?, 56, 56, 64)
+2018-03-24 20:22:06,872 INFO     SEED for scope: 394
+2018-03-24 20:22:06,889 INFO     Running Scope bn_3: 
+2018-03-24 20:22:06,929 INFO     Conv3 shape: (?, 56, 56, 64)
+2018-03-24 20:22:06,932 INFO     Pool3 shape: (?, 28, 28, 64)
+2018-03-24 20:22:07,678 INFO     Flattened shape: (?, 50176)
+2018-03-24 20:22:07,694 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:22:07,711 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:22:07,726 INFO     Output shape: (?, 192)
+2018-03-24 20:22:07,738 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:22:07,982 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:22:13,230 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:24:44,344 INFO     INITIATING TEST ........
+2018-03-24 20:24:44,345 INFO     Checkpoint LISTS .. ['convnet_epoch_5_batch_49', 'convnet_epoch_5_batch_59', 'convnet_epoch_5_batch_65', 'convnet_epoch_6_batch_19', 'convnet_epoch_6_batch_29', 'convnet_epoch_6_batch_39', 'convnet_epoch_6_batch_49', 'convnet_epoch_6_batch_59', 'convnet_epoch_6_batch_65', 'convnet_epoch_6_batch_9']
+2018-03-24 20:24:44,346 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:24:44,351 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:24:44,351 INFO     Performing random horizontal flip
+2018-03-24 20:24:44,369 INFO     Performing Central crop
+2018-03-24 20:24:44,412 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:24:44,412 INFO     Standarizing the image
+2018-03-24 20:24:44,438 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:24:44,438 INFO     Performing Central crop
+2018-03-24 20:24:44,621 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:24:44,621 INFO     Standarizing the image
+2018-03-24 20:24:44,647 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:24:44,647 INFO     SEED for scope: 161
+2018-03-24 20:24:44,664 INFO     Running Scope bn_1: 
+2018-03-24 20:24:44,704 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:24:44,706 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:24:44,706 INFO     SEED for scope: 141
+2018-03-24 20:24:44,723 INFO     Running Scope bn_2: 
+2018-03-24 20:24:44,763 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:24:44,765 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:24:44,765 INFO     SEED for scope: 213
+2018-03-24 20:24:44,781 INFO     Running Scope bn_3: 
+2018-03-24 20:24:44,823 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:24:44,824 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:24:44,834 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:24:44,851 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:24:44,868 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:24:44,884 INFO     Output shape: (?, 192)
+2018-03-24 20:24:44,895 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:24:44,927 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:24:49,172 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:24:54,256 INFO     VALIDATION METRICs : Fold: 1, epoch: 5, batch: 49, Loss: 0.423737, Accuracy: 0.87017, Precision: 0.84068, Recall: 0.91344
+2018-03-24 20:24:54,355 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:24:54,364 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:24:54,364 INFO     Performing random horizontal flip
+2018-03-24 20:24:54,401 INFO     Performing Central crop
+2018-03-24 20:24:54,482 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:24:54,482 INFO     Standarizing the image
+2018-03-24 20:24:54,507 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:24:54,507 INFO     Performing Central crop
+2018-03-24 20:24:54,550 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:24:54,550 INFO     Standarizing the image
+2018-03-24 20:24:54,576 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:24:54,576 INFO     SEED for scope: 302
+2018-03-24 20:24:54,594 INFO     Running Scope bn_1: 
+2018-03-24 20:24:54,635 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:24:54,637 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:24:54,637 INFO     SEED for scope: 992
+2018-03-24 20:24:54,655 INFO     Running Scope bn_2: 
+2018-03-24 20:24:54,702 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:24:54,703 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:24:54,704 INFO     SEED for scope: 223
+2018-03-24 20:24:54,721 INFO     Running Scope bn_3: 
+2018-03-24 20:24:54,762 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:24:54,764 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:24:54,774 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:24:54,791 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:24:54,809 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:24:54,826 INFO     Output shape: (?, 192)
+2018-03-24 20:24:54,838 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:24:54,872 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:24:59,176 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:25:01,729 INFO     VALIDATION METRICs : Fold: 1, epoch: 5, batch: 59, Loss: 0.393553, Accuracy: 0.88766, Precision: 0.87657, Recall: 0.90239
+2018-03-24 20:25:01,836 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:25:01,846 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:25:01,846 INFO     Performing random horizontal flip
+2018-03-24 20:25:01,879 INFO     Performing Central crop
+2018-03-24 20:25:01,956 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:01,956 INFO     Standarizing the image
+2018-03-24 20:25:01,979 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:25:01,979 INFO     Performing Central crop
+2018-03-24 20:25:02,020 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:02,020 INFO     Standarizing the image
+2018-03-24 20:25:02,046 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:25:02,047 INFO     SEED for scope: 232
+2018-03-24 20:25:02,064 INFO     Running Scope bn_1: 
+2018-03-24 20:25:02,106 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:25:02,108 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:25:02,108 INFO     SEED for scope: 123
+2018-03-24 20:25:02,125 INFO     Running Scope bn_2: 
+2018-03-24 20:25:02,166 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:25:02,167 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:25:02,167 INFO     SEED for scope: 321
+2018-03-24 20:25:02,184 INFO     Running Scope bn_3: 
+2018-03-24 20:25:02,226 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:25:02,227 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:25:02,237 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:25:02,254 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:25:02,271 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:25:02,288 INFO     Output shape: (?, 192)
+2018-03-24 20:25:02,299 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:25:02,332 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:25:06,667 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:25:09,207 INFO     VALIDATION METRICs : Fold: 1, epoch: 5, batch: 65, Loss: 0.392871, Accuracy: 0.88858, Precision: 0.87679, Recall: 0.90424
+2018-03-24 20:25:09,308 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:25:09,317 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:25:09,317 INFO     Performing random horizontal flip
+2018-03-24 20:25:09,350 INFO     Performing Central crop
+2018-03-24 20:25:09,428 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:09,428 INFO     Standarizing the image
+2018-03-24 20:25:09,451 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:25:09,451 INFO     Performing Central crop
+2018-03-24 20:25:09,490 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:09,491 INFO     Standarizing the image
+2018-03-24 20:25:09,516 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:25:09,516 INFO     SEED for scope: 337
+2018-03-24 20:25:09,533 INFO     Running Scope bn_1: 
+2018-03-24 20:25:09,574 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:25:09,576 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:25:09,576 INFO     SEED for scope: 888
+2018-03-24 20:25:09,593 INFO     Running Scope bn_2: 
+2018-03-24 20:25:09,643 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:25:09,645 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:25:09,645 INFO     SEED for scope: 666
+2018-03-24 20:25:09,662 INFO     Running Scope bn_3: 
+2018-03-24 20:25:09,703 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:25:09,705 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:25:09,715 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:25:09,733 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:25:09,750 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:25:09,766 INFO     Output shape: (?, 192)
+2018-03-24 20:25:09,778 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:25:09,812 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:25:14,137 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:25:16,622 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 9, Loss: 0.383767, Accuracy: 0.88490, Precision: 0.89434, Recall: 0.87293
+2018-03-24 20:25:16,725 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:25:16,734 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:25:16,735 INFO     Performing random horizontal flip
+2018-03-24 20:25:16,768 INFO     Performing Central crop
+2018-03-24 20:25:16,847 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:16,847 INFO     Standarizing the image
+2018-03-24 20:25:16,869 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:25:16,869 INFO     Performing Central crop
+2018-03-24 20:25:16,910 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:16,910 INFO     Standarizing the image
+2018-03-24 20:25:16,936 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:25:16,936 INFO     SEED for scope: 983
+2018-03-24 20:25:16,953 INFO     Running Scope bn_1: 
+2018-03-24 20:25:16,992 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:25:16,996 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:25:16,996 INFO     SEED for scope: 902
+2018-03-24 20:25:17,012 INFO     Running Scope bn_2: 
+2018-03-24 20:25:17,054 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:25:17,056 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:25:17,056 INFO     SEED for scope: 846
+2018-03-24 20:25:17,075 INFO     Running Scope bn_3: 
+2018-03-24 20:25:17,119 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:25:17,121 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:25:17,130 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:25:17,148 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:25:17,164 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:25:17,180 INFO     Output shape: (?, 192)
+2018-03-24 20:25:17,192 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:25:17,223 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:25:21,534 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:25:23,994 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 19, Loss: 0.374682, Accuracy: 0.88766, Precision: 0.89642, Recall: 0.87661
+2018-03-24 20:25:24,097 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:25:24,106 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:25:24,107 INFO     Performing random horizontal flip
+2018-03-24 20:25:24,141 INFO     Performing Central crop
+2018-03-24 20:25:24,219 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:24,219 INFO     Standarizing the image
+2018-03-24 20:25:24,242 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:25:24,242 INFO     Performing Central crop
+2018-03-24 20:25:24,283 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:24,283 INFO     Standarizing the image
+2018-03-24 20:25:24,309 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:25:24,309 INFO     SEED for scope: 291
+2018-03-24 20:25:24,326 INFO     Running Scope bn_1: 
+2018-03-24 20:25:24,367 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:25:24,369 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:25:24,369 INFO     SEED for scope: 486
+2018-03-24 20:25:24,386 INFO     Running Scope bn_2: 
+2018-03-24 20:25:24,427 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:25:24,429 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:25:24,429 INFO     SEED for scope: 444
+2018-03-24 20:25:24,446 INFO     Running Scope bn_3: 
+2018-03-24 20:25:24,486 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:25:24,488 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:25:24,498 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:25:24,515 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:25:24,531 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:25:24,547 INFO     Output shape: (?, 192)
+2018-03-24 20:25:24,559 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:25:24,591 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:25:28,945 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:25:31,410 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 29, Loss: 0.369240, Accuracy: 0.89042, Precision: 0.90304, Recall: 0.87477
+2018-03-24 20:25:31,515 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:25:31,524 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:25:31,524 INFO     Performing random horizontal flip
+2018-03-24 20:25:31,555 INFO     Performing Central crop
+2018-03-24 20:25:31,635 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:31,635 INFO     Standarizing the image
+2018-03-24 20:25:31,657 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:25:31,657 INFO     Performing Central crop
+2018-03-24 20:25:31,697 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:31,697 INFO     Standarizing the image
+2018-03-24 20:25:31,723 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:25:31,723 INFO     SEED for scope: 505
+2018-03-24 20:25:31,739 INFO     Running Scope bn_1: 
+2018-03-24 20:25:31,779 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:25:31,781 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:25:31,781 INFO     SEED for scope: 607
+2018-03-24 20:25:31,798 INFO     Running Scope bn_2: 
+2018-03-24 20:25:31,837 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:25:31,839 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:25:31,839 INFO     SEED for scope: 707
+2018-03-24 20:25:31,856 INFO     Running Scope bn_3: 
+2018-03-24 20:25:32,109 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:25:32,111 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:25:32,121 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:25:32,138 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:25:32,157 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:25:32,173 INFO     Output shape: (?, 192)
+2018-03-24 20:25:32,186 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:25:32,217 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:25:36,346 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:25:38,808 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 39, Loss: 0.389830, Accuracy: 0.88029, Precision: 0.88598, Recall: 0.87293
+2018-03-24 20:25:38,915 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:25:38,924 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:25:38,924 INFO     Performing random horizontal flip
+2018-03-24 20:25:39,188 INFO     Performing Central crop
+2018-03-24 20:25:39,227 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:39,227 INFO     Standarizing the image
+2018-03-24 20:25:39,248 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:25:39,249 INFO     Performing Central crop
+2018-03-24 20:25:39,290 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:39,290 INFO     Standarizing the image
+2018-03-24 20:25:39,317 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:25:39,317 INFO     SEED for scope: 774
+2018-03-24 20:25:39,334 INFO     Running Scope bn_1: 
+2018-03-24 20:25:39,376 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:25:39,377 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:25:39,377 INFO     SEED for scope: 553
+2018-03-24 20:25:39,394 INFO     Running Scope bn_2: 
+2018-03-24 20:25:39,435 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:25:39,437 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:25:39,437 INFO     SEED for scope: 292
+2018-03-24 20:25:39,453 INFO     Running Scope bn_3: 
+2018-03-24 20:25:39,495 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:25:39,496 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:25:39,505 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:25:39,523 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:25:39,540 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:25:39,556 INFO     Output shape: (?, 192)
+2018-03-24 20:25:39,568 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:25:39,599 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:25:43,948 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:25:46,447 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 49, Loss: 0.399877, Accuracy: 0.87293, Precision: 0.85589, Recall: 0.89687
+2018-03-24 20:25:46,558 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:25:46,568 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:25:46,568 INFO     Performing random horizontal flip
+2018-03-24 20:25:46,604 INFO     Performing Central crop
+2018-03-24 20:25:46,681 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:46,682 INFO     Standarizing the image
+2018-03-24 20:25:46,705 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:25:46,705 INFO     Performing Central crop
+2018-03-24 20:25:46,747 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:46,747 INFO     Standarizing the image
+2018-03-24 20:25:46,776 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:25:46,776 INFO     SEED for scope: 191
+2018-03-24 20:25:46,794 INFO     Running Scope bn_1: 
+2018-03-24 20:25:46,837 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:25:46,838 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:25:46,838 INFO     SEED for scope: 161
+2018-03-24 20:25:46,856 INFO     Running Scope bn_2: 
+2018-03-24 20:25:46,896 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:25:46,898 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:25:46,898 INFO     SEED for scope: 141
+2018-03-24 20:25:46,915 INFO     Running Scope bn_3: 
+2018-03-24 20:25:46,958 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:25:46,959 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:25:46,967 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:25:46,977 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:25:46,991 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:25:47,019 INFO     Output shape: (?, 192)
+2018-03-24 20:25:47,031 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:25:47,064 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:25:51,378 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:25:53,931 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 59, Loss: 0.378917, Accuracy: 0.89227, Precision: 0.90962, Recall: 0.87109
+2018-03-24 20:25:54,039 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:25:54,049 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:25:54,049 INFO     Performing random horizontal flip
+2018-03-24 20:25:54,082 INFO     Performing Central crop
+2018-03-24 20:25:54,163 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:54,163 INFO     Standarizing the image
+2018-03-24 20:25:54,185 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:25:54,185 INFO     Performing Central crop
+2018-03-24 20:25:54,226 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:25:54,226 INFO     Standarizing the image
+2018-03-24 20:25:54,253 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:25:54,253 INFO     SEED for scope: 991
+2018-03-24 20:25:54,270 INFO     Running Scope bn_1: 
+2018-03-24 20:25:54,311 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:25:54,312 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:25:54,312 INFO     SEED for scope: 302
+2018-03-24 20:25:54,329 INFO     Running Scope bn_2: 
+2018-03-24 20:25:54,370 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:25:54,372 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:25:54,372 INFO     SEED for scope: 992
+2018-03-24 20:25:54,389 INFO     Running Scope bn_3: 
+2018-03-24 20:25:54,429 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:25:54,430 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:25:54,440 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:25:54,457 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:25:54,473 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:25:54,489 INFO     Output shape: (?, 192)
+2018-03-24 20:25:54,501 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:25:54,533 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:25:58,825 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:26:01,358 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 65, Loss: 0.400791, Accuracy: 0.87937, Precision: 0.85640, Recall: 0.91160
+2018-03-24 20:26:18,842 INFO     INITIATING TEST ........
+2018-03-24 20:26:18,842 INFO     Checkpoint LISTS .. ['convnet_epoch_5_batch_49', 'convnet_epoch_5_batch_59', 'convnet_epoch_5_batch_65', 'convnet_epoch_6_batch_19', 'convnet_epoch_6_batch_29', 'convnet_epoch_6_batch_39', 'convnet_epoch_6_batch_49', 'convnet_epoch_6_batch_59', 'convnet_epoch_6_batch_65', 'convnet_epoch_6_batch_9']
+2018-03-24 20:26:18,843 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:26:18,848 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:26:18,848 INFO     Performing random horizontal flip
+2018-03-24 20:26:18,865 INFO     Performing Central crop
+2018-03-24 20:26:18,905 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:26:18,905 INFO     Standarizing the image
+2018-03-24 20:26:18,928 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:26:18,928 INFO     Performing Central crop
+2018-03-24 20:26:18,969 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:26:18,969 INFO     Standarizing the image
+2018-03-24 20:26:18,995 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:26:18,995 INFO     SEED for scope: 944
+2018-03-24 20:26:19,012 INFO     Running Scope bn_1: 
+2018-03-24 20:26:19,055 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:26:19,056 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:26:19,057 INFO     SEED for scope: 232
+2018-03-24 20:26:19,073 INFO     Running Scope bn_2: 
+2018-03-24 20:26:19,116 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:26:19,118 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:26:19,118 INFO     SEED for scope: 123
+2018-03-24 20:26:19,134 INFO     Running Scope bn_3: 
+2018-03-24 20:26:19,176 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:26:19,177 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:26:19,187 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:26:19,203 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:26:19,219 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:26:19,236 INFO     Output shape: (?, 192)
+2018-03-24 20:26:19,247 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:26:19,276 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:26:23,649 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:26:26,155 INFO     VALIDATION METRICs : Fold: 1, epoch: 5, batch: 49, Loss: 0.403738, Accuracy: 0.87201, Precision: 0.84948, Recall: 0.90424
+2018-03-24 20:26:26,270 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:26:26,278 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:26:26,279 INFO     Performing random horizontal flip
+2018-03-24 20:26:26,312 INFO     Performing Central crop
+2018-03-24 20:26:26,385 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:26:26,385 INFO     Standarizing the image
+2018-03-24 20:26:26,408 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:26:26,408 INFO     Performing Central crop
+2018-03-24 20:26:26,450 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:26:26,450 INFO     Standarizing the image
+2018-03-24 20:26:26,478 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:26:26,478 INFO     SEED for scope: 239
+2018-03-24 20:26:26,496 INFO     Running Scope bn_1: 
+2018-03-24 20:26:26,535 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:26:26,537 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:26:26,537 INFO     SEED for scope: 337
+2018-03-24 20:26:26,553 INFO     Running Scope bn_2: 
+2018-03-24 20:26:26,593 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:26:26,595 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:26:26,595 INFO     SEED for scope: 888
+2018-03-24 20:26:26,611 INFO     Running Scope bn_3: 
+2018-03-24 20:26:26,651 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:26:26,653 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:26:26,662 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:26:26,678 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:26:26,695 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:26:26,711 INFO     Output shape: (?, 192)
+2018-03-24 20:26:26,723 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:26:26,938 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:26:31,027 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:26:33,532 INFO     VALIDATION METRICs : Fold: 1, epoch: 5, batch: 59, Loss: 0.384873, Accuracy: 0.88582, Precision: 0.88160, Recall: 0.89134
+2018-03-24 20:26:33,640 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:26:33,649 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:26:33,649 INFO     Performing random horizontal flip
+2018-03-24 20:26:33,683 INFO     Performing Central crop
+2018-03-24 20:26:33,764 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:26:33,764 INFO     Standarizing the image
+2018-03-24 20:26:33,791 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:26:33,791 INFO     Performing Central crop
+2018-03-24 20:26:33,833 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:26:33,833 INFO     Standarizing the image
+2018-03-24 20:26:33,859 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:26:33,859 INFO     SEED for scope: 255
+2018-03-24 20:26:33,876 INFO     Running Scope bn_1: 
+2018-03-24 20:26:33,919 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:26:34,131 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:26:34,131 INFO     SEED for scope: 983
+2018-03-24 20:26:34,148 INFO     Running Scope bn_2: 
+2018-03-24 20:26:34,190 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:26:34,191 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:26:34,192 INFO     SEED for scope: 902
+2018-03-24 20:26:34,209 INFO     Running Scope bn_3: 
+2018-03-24 20:26:34,251 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:26:34,252 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:26:34,262 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:26:34,278 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:26:34,295 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:26:34,311 INFO     Output shape: (?, 192)
+2018-03-24 20:26:34,322 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:26:34,354 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:26:38,747 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:26:41,196 INFO     VALIDATION METRICs : Fold: 1, epoch: 5, batch: 65, Loss: 0.385679, Accuracy: 0.88858, Precision: 0.87950, Recall: 0.90055
+2018-03-24 20:26:41,302 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:26:41,311 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:26:41,311 INFO     Performing random horizontal flip
+2018-03-24 20:26:41,343 INFO     Performing Central crop
+2018-03-24 20:26:41,423 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:26:41,423 INFO     Standarizing the image
+2018-03-24 20:26:41,450 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:26:41,450 INFO     Performing Central crop
+2018-03-24 20:26:41,490 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:26:41,490 INFO     Standarizing the image
+2018-03-24 20:26:41,515 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:26:41,515 INFO     SEED for scope: 989
+2018-03-24 20:26:41,533 INFO     Running Scope bn_1: 
+2018-03-24 20:26:41,573 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:26:41,575 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:26:41,575 INFO     SEED for scope: 291
+2018-03-24 20:26:41,592 INFO     Running Scope bn_2: 
+2018-03-24 20:26:41,634 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:26:41,636 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:26:41,636 INFO     SEED for scope: 486
+2018-03-24 20:26:41,653 INFO     Running Scope bn_3: 
+2018-03-24 20:26:41,694 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:26:41,695 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:26:41,705 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:26:41,722 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:26:41,739 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:26:41,755 INFO     Output shape: (?, 192)
+2018-03-24 20:26:41,767 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:26:41,800 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:26:46,113 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:26:48,593 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 9, Loss: 0.378237, Accuracy: 0.88858, Precision: 0.90114, Recall: 0.87293
+2018-03-24 20:26:48,701 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:26:48,710 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:26:48,711 INFO     Performing random horizontal flip
+2018-03-24 20:26:48,744 INFO     Performing Central crop
+2018-03-24 20:26:48,824 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:26:48,824 INFO     Standarizing the image
+2018-03-24 20:26:48,846 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:26:48,846 INFO     Performing Central crop
+2018-03-24 20:26:48,887 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:26:48,887 INFO     Standarizing the image
+2018-03-24 20:26:48,913 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:26:48,913 INFO     SEED for scope: 304
+2018-03-24 20:26:48,930 INFO     Running Scope bn_1: 
+2018-03-24 20:26:48,971 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:26:48,973 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:26:48,973 INFO     SEED for scope: 505
+2018-03-24 20:26:48,990 INFO     Running Scope bn_2: 
+2018-03-24 20:26:49,031 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:26:49,032 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:26:49,032 INFO     SEED for scope: 607
+2018-03-24 20:26:49,049 INFO     Running Scope bn_3: 
+2018-03-24 20:26:49,091 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:26:49,092 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:26:49,102 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:26:49,118 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:26:49,135 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:26:49,151 INFO     Output shape: (?, 192)
+2018-03-24 20:26:49,163 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:26:49,195 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:26:53,537 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:26:55,992 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 19, Loss: 0.375095, Accuracy: 0.89134, Precision: 0.90944, Recall: 0.86924
+2018-03-24 20:26:56,100 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:26:56,109 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:26:56,109 INFO     Performing random horizontal flip
+2018-03-24 20:26:56,143 INFO     Performing Central crop
+2018-03-24 20:26:56,225 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:26:56,225 INFO     Standarizing the image
+2018-03-24 20:26:56,249 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:26:56,249 INFO     Performing Central crop
+2018-03-24 20:26:56,290 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:26:56,290 INFO     Standarizing the image
+2018-03-24 20:26:56,317 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:26:56,317 INFO     SEED for scope: 900
+2018-03-24 20:26:56,335 INFO     Running Scope bn_1: 
+2018-03-24 20:26:56,375 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:26:56,377 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:26:56,377 INFO     SEED for scope: 774
+2018-03-24 20:26:56,394 INFO     Running Scope bn_2: 
+2018-03-24 20:26:56,435 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:26:56,437 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:26:56,437 INFO     SEED for scope: 553
+2018-03-24 20:26:56,453 INFO     Running Scope bn_3: 
+2018-03-24 20:26:56,494 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:26:56,495 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:26:56,505 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:26:56,522 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:26:56,540 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:26:56,556 INFO     Output shape: (?, 192)
+2018-03-24 20:26:56,568 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:26:56,600 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:27:00,883 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:27:03,349 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 29, Loss: 0.374432, Accuracy: 0.89319, Precision: 0.90667, Recall: 0.87661
+2018-03-24 20:27:03,460 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:27:03,469 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:27:03,469 INFO     Performing random horizontal flip
+2018-03-24 20:27:03,507 INFO     Performing Central crop
+2018-03-24 20:27:03,584 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:27:03,584 INFO     Standarizing the image
+2018-03-24 20:27:03,607 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:27:03,607 INFO     Performing Central crop
+2018-03-24 20:27:03,649 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:27:03,649 INFO     Standarizing the image
+2018-03-24 20:27:03,675 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:27:03,675 INFO     SEED for scope: 445
+2018-03-24 20:27:03,693 INFO     Running Scope bn_1: 
+2018-03-24 20:27:03,733 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:27:03,735 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:27:03,735 INFO     SEED for scope: 191
+2018-03-24 20:27:03,752 INFO     Running Scope bn_2: 
+2018-03-24 20:27:03,791 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:27:03,793 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:27:03,793 INFO     SEED for scope: 161
+2018-03-24 20:27:03,810 INFO     Running Scope bn_3: 
+2018-03-24 20:27:03,850 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:27:03,852 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:27:03,862 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:27:03,879 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:27:03,898 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:27:03,916 INFO     Output shape: (?, 192)
+2018-03-24 20:27:03,928 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:27:03,961 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:27:08,311 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:27:10,819 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 39, Loss: 0.379334, Accuracy: 0.87937, Precision: 0.89015, Recall: 0.86556
+2018-03-24 20:27:10,926 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:27:10,935 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:27:10,935 INFO     Performing random horizontal flip
+2018-03-24 20:27:10,969 INFO     Performing Central crop
+2018-03-24 20:27:11,049 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:27:11,049 INFO     Standarizing the image
+2018-03-24 20:27:11,071 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:27:11,071 INFO     Performing Central crop
+2018-03-24 20:27:11,112 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:27:11,112 INFO     Standarizing the image
+2018-03-24 20:27:11,137 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:27:11,138 INFO     SEED for scope: 754
+2018-03-24 20:27:11,155 INFO     Running Scope bn_1: 
+2018-03-24 20:27:11,194 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:27:11,195 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:27:11,196 INFO     SEED for scope: 991
+2018-03-24 20:27:11,212 INFO     Running Scope bn_2: 
+2018-03-24 20:27:11,252 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:27:11,253 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:27:11,254 INFO     SEED for scope: 302
+2018-03-24 20:27:11,270 INFO     Running Scope bn_3: 
+2018-03-24 20:27:11,309 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:27:11,311 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:27:11,320 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:27:11,336 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:27:11,353 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:27:11,368 INFO     Output shape: (?, 192)
+2018-03-24 20:27:11,380 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:27:11,412 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:27:15,779 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:27:18,374 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 49, Loss: 0.387825, Accuracy: 0.87201, Precision: 0.86201, Recall: 0.88582
+2018-03-24 20:27:18,484 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:27:18,493 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:27:18,493 INFO     Performing random horizontal flip
+2018-03-24 20:27:18,526 INFO     Performing Central crop
+2018-03-24 20:27:18,605 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:27:18,605 INFO     Standarizing the image
+2018-03-24 20:27:18,627 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:27:18,627 INFO     Performing Central crop
+2018-03-24 20:27:18,670 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:27:18,670 INFO     Standarizing the image
+2018-03-24 20:27:18,697 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:27:18,697 INFO     SEED for scope: 724
+2018-03-24 20:27:18,714 INFO     Running Scope bn_1: 
+2018-03-24 20:27:18,755 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:27:18,757 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:27:18,757 INFO     SEED for scope: 944
+2018-03-24 20:27:18,773 INFO     Running Scope bn_2: 
+2018-03-24 20:27:18,813 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:27:18,814 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:27:18,814 INFO     SEED for scope: 232
+2018-03-24 20:27:18,831 INFO     Running Scope bn_3: 
+2018-03-24 20:27:18,871 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:27:18,873 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:27:18,882 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:27:18,898 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:27:18,915 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:27:18,930 INFO     Output shape: (?, 192)
+2018-03-24 20:27:18,943 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:27:18,975 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:27:23,309 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:27:25,777 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 59, Loss: 0.379803, Accuracy: 0.88950, Precision: 0.91881, Recall: 0.85451
+2018-03-24 20:27:25,885 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:27:25,894 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:27:25,894 INFO     Performing random horizontal flip
+2018-03-24 20:27:25,927 INFO     Performing Central crop
+2018-03-24 20:27:26,006 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:27:26,006 INFO     Standarizing the image
+2018-03-24 20:27:26,029 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:27:26,029 INFO     Performing Central crop
+2018-03-24 20:27:26,069 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:27:26,069 INFO     Standarizing the image
+2018-03-24 20:27:26,096 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:27:26,096 INFO     SEED for scope: 784
+2018-03-24 20:27:26,114 INFO     Running Scope bn_1: 
+2018-03-24 20:27:26,156 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:27:26,158 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:27:26,158 INFO     SEED for scope: 239
+2018-03-24 20:27:26,175 INFO     Running Scope bn_2: 
+2018-03-24 20:27:26,216 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:27:26,217 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:27:26,217 INFO     SEED for scope: 337
+2018-03-24 20:27:26,234 INFO     Running Scope bn_3: 
+2018-03-24 20:27:26,275 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:27:26,276 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:27:26,286 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:27:26,303 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:27:26,319 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:27:26,335 INFO     Output shape: (?, 192)
+2018-03-24 20:27:26,347 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:27:26,379 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:27:30,739 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:27:33,166 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 65, Loss: 0.392376, Accuracy: 0.88122, Precision: 0.85813, Recall: 0.91344
+2018-03-24 20:27:54,737 INFO     INITIATING TEST ........
+2018-03-24 20:27:54,738 INFO     Checkpoint LISTS .. ['convnet_epoch_5_batch_49', 'convnet_epoch_5_batch_59', 'convnet_epoch_5_batch_65', 'convnet_epoch_6_batch_19', 'convnet_epoch_6_batch_29', 'convnet_epoch_6_batch_39', 'convnet_epoch_6_batch_49', 'convnet_epoch_6_batch_59', 'convnet_epoch_6_batch_65', 'convnet_epoch_6_batch_9']
+2018-03-24 20:27:54,738 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:27:54,743 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:27:54,743 INFO     Performing random horizontal flip
+2018-03-24 20:27:54,760 INFO     Performing Central crop
+2018-03-24 20:27:54,804 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:27:54,804 INFO     Standarizing the image
+2018-03-24 20:27:55,271 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:27:55,271 INFO     Performing Central crop
+2018-03-24 20:27:55,337 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:27:55,337 INFO     Standarizing the image
+2018-03-24 20:27:55,364 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:27:55,364 INFO     SEED for scope: 912
+2018-03-24 20:27:55,381 INFO     Running Scope bn_1: 
+2018-03-24 20:27:55,422 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:27:55,424 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:27:55,424 INFO     SEED for scope: 255
+2018-03-24 20:27:55,441 INFO     Running Scope bn_2: 
+2018-03-24 20:27:55,484 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:27:55,486 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:27:55,486 INFO     SEED for scope: 983
+2018-03-24 20:27:55,503 INFO     Running Scope bn_3: 
+2018-03-24 20:27:55,545 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:27:55,546 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:27:55,556 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:27:55,577 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:27:55,594 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:27:55,610 INFO     Output shape: (?, 192)
+2018-03-24 20:27:55,622 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:27:55,654 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:27:59,888 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:28:02,341 INFO     VALIDATION METRICs : Fold: 1, epoch: 5, batch: 49, Loss: 0.423737, Accuracy: 0.87017, Precision: 0.84068, Recall: 0.91344
+2018-03-24 20:28:02,447 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:28:02,462 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:28:02,463 INFO     Performing random horizontal flip
+2018-03-24 20:28:02,497 INFO     Performing Central crop
+2018-03-24 20:28:02,577 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:02,577 INFO     Standarizing the image
+2018-03-24 20:28:02,600 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:28:02,600 INFO     Performing Central crop
+2018-03-24 20:28:02,643 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:02,643 INFO     Standarizing the image
+2018-03-24 20:28:02,669 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:28:02,669 INFO     SEED for scope: 854
+2018-03-24 20:28:02,686 INFO     Running Scope bn_1: 
+2018-03-24 20:28:02,725 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:28:02,727 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:28:02,727 INFO     SEED for scope: 989
+2018-03-24 20:28:02,744 INFO     Running Scope bn_2: 
+2018-03-24 20:28:02,785 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:28:02,787 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:28:02,787 INFO     SEED for scope: 291
+2018-03-24 20:28:02,804 INFO     Running Scope bn_3: 
+2018-03-24 20:28:02,992 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:28:02,994 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:28:03,004 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:28:03,020 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:28:03,037 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:28:03,053 INFO     Output shape: (?, 192)
+2018-03-24 20:28:03,065 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:28:03,098 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:28:07,390 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:28:09,986 INFO     VALIDATION METRICs : Fold: 1, epoch: 5, batch: 59, Loss: 0.393553, Accuracy: 0.88766, Precision: 0.87657, Recall: 0.90239
+2018-03-24 20:28:10,091 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:28:10,100 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:28:10,101 INFO     Performing random horizontal flip
+2018-03-24 20:28:10,134 INFO     Performing Central crop
+2018-03-24 20:28:10,213 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:10,213 INFO     Standarizing the image
+2018-03-24 20:28:10,235 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:28:10,235 INFO     Performing Central crop
+2018-03-24 20:28:10,275 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:10,275 INFO     Standarizing the image
+2018-03-24 20:28:10,300 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:28:10,300 INFO     SEED for scope: 202
+2018-03-24 20:28:10,317 INFO     Running Scope bn_1: 
+2018-03-24 20:28:10,357 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:28:10,359 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:28:10,359 INFO     SEED for scope: 304
+2018-03-24 20:28:10,375 INFO     Running Scope bn_2: 
+2018-03-24 20:28:10,417 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:28:10,418 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:28:10,418 INFO     SEED for scope: 505
+2018-03-24 20:28:10,435 INFO     Running Scope bn_3: 
+2018-03-24 20:28:10,475 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:28:10,476 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:28:10,486 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:28:10,503 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:28:10,519 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:28:10,535 INFO     Output shape: (?, 192)
+2018-03-24 20:28:10,546 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:28:10,577 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:28:14,895 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:28:17,374 INFO     VALIDATION METRICs : Fold: 1, epoch: 5, batch: 65, Loss: 0.392871, Accuracy: 0.88858, Precision: 0.87679, Recall: 0.90424
+2018-03-24 20:28:17,485 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:28:17,494 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:28:17,494 INFO     Performing random horizontal flip
+2018-03-24 20:28:17,528 INFO     Performing Central crop
+2018-03-24 20:28:17,611 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:17,611 INFO     Standarizing the image
+2018-03-24 20:28:17,635 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:28:17,635 INFO     Performing Central crop
+2018-03-24 20:28:17,676 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:17,676 INFO     Standarizing the image
+2018-03-24 20:28:17,702 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:28:17,702 INFO     SEED for scope: 905
+2018-03-24 20:28:17,719 INFO     Running Scope bn_1: 
+2018-03-24 20:28:17,759 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:28:17,761 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:28:17,761 INFO     SEED for scope: 900
+2018-03-24 20:28:17,777 INFO     Running Scope bn_2: 
+2018-03-24 20:28:17,817 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:28:17,819 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:28:17,819 INFO     SEED for scope: 774
+2018-03-24 20:28:17,835 INFO     Running Scope bn_3: 
+2018-03-24 20:28:17,876 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:28:17,878 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:28:17,887 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:28:17,903 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:28:17,919 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:28:17,934 INFO     Output shape: (?, 192)
+2018-03-24 20:28:17,947 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:28:17,978 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:28:22,299 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:28:24,784 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 9, Loss: 0.383767, Accuracy: 0.88490, Precision: 0.89434, Recall: 0.87293
+2018-03-24 20:28:24,894 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:28:24,903 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:28:24,903 INFO     Performing random horizontal flip
+2018-03-24 20:28:24,937 INFO     Performing Central crop
+2018-03-24 20:28:25,019 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:25,019 INFO     Standarizing the image
+2018-03-24 20:28:25,042 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:28:25,042 INFO     Performing Central crop
+2018-03-24 20:28:25,083 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:25,083 INFO     Standarizing the image
+2018-03-24 20:28:25,109 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:28:25,109 INFO     SEED for scope: 874
+2018-03-24 20:28:25,126 INFO     Running Scope bn_1: 
+2018-03-24 20:28:25,357 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:28:25,358 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:28:25,359 INFO     SEED for scope: 445
+2018-03-24 20:28:25,375 INFO     Running Scope bn_2: 
+2018-03-24 20:28:25,416 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:28:25,418 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:28:25,418 INFO     SEED for scope: 191
+2018-03-24 20:28:25,435 INFO     Running Scope bn_3: 
+2018-03-24 20:28:25,476 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:28:25,477 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:28:25,487 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:28:25,503 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:28:25,520 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:28:25,535 INFO     Output shape: (?, 192)
+2018-03-24 20:28:25,546 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:28:25,578 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:28:29,882 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:28:32,322 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 19, Loss: 0.374682, Accuracy: 0.88766, Precision: 0.89642, Recall: 0.87661
+2018-03-24 20:28:32,432 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:28:32,442 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:28:32,442 INFO     Performing random horizontal flip
+2018-03-24 20:28:32,475 INFO     Performing Central crop
+2018-03-24 20:28:32,557 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:32,557 INFO     Standarizing the image
+2018-03-24 20:28:32,582 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:28:32,582 INFO     Performing Central crop
+2018-03-24 20:28:32,622 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:32,622 INFO     Standarizing the image
+2018-03-24 20:28:32,649 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:28:32,649 INFO     SEED for scope: 436
+2018-03-24 20:28:32,666 INFO     Running Scope bn_1: 
+2018-03-24 20:28:32,706 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:28:32,707 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:28:32,707 INFO     SEED for scope: 754
+2018-03-24 20:28:32,724 INFO     Running Scope bn_2: 
+2018-03-24 20:28:32,764 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:28:32,766 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:28:32,766 INFO     SEED for scope: 991
+2018-03-24 20:28:32,783 INFO     Running Scope bn_3: 
+2018-03-24 20:28:32,825 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:28:32,826 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:28:32,836 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:28:32,855 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:28:32,871 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:28:32,887 INFO     Output shape: (?, 192)
+2018-03-24 20:28:32,899 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:28:32,932 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:28:37,273 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:28:39,724 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 29, Loss: 0.369240, Accuracy: 0.89042, Precision: 0.90304, Recall: 0.87477
+2018-03-24 20:28:39,839 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:28:39,855 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:28:39,855 INFO     Performing random horizontal flip
+2018-03-24 20:28:39,890 INFO     Performing Central crop
+2018-03-24 20:28:39,962 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:39,962 INFO     Standarizing the image
+2018-03-24 20:28:39,984 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:28:39,984 INFO     Performing Central crop
+2018-03-24 20:28:40,025 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:40,025 INFO     Standarizing the image
+2018-03-24 20:28:40,051 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:28:40,051 INFO     SEED for scope: 645
+2018-03-24 20:28:40,068 INFO     Running Scope bn_1: 
+2018-03-24 20:28:40,111 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:28:40,112 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:28:40,112 INFO     SEED for scope: 724
+2018-03-24 20:28:40,129 INFO     Running Scope bn_2: 
+2018-03-24 20:28:40,171 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:28:40,173 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:28:40,173 INFO     SEED for scope: 944
+2018-03-24 20:28:40,190 INFO     Running Scope bn_3: 
+2018-03-24 20:28:40,231 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:28:40,233 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:28:40,243 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:28:40,260 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:28:40,277 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:28:40,293 INFO     Output shape: (?, 192)
+2018-03-24 20:28:40,305 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:28:40,338 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:28:44,828 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:28:47,271 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 39, Loss: 0.389830, Accuracy: 0.88029, Precision: 0.88598, Recall: 0.87293
+2018-03-24 20:28:47,393 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:28:47,402 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:28:47,402 INFO     Performing random horizontal flip
+2018-03-24 20:28:47,436 INFO     Performing Central crop
+2018-03-24 20:28:47,521 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:47,521 INFO     Standarizing the image
+2018-03-24 20:28:47,544 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:28:47,544 INFO     Performing Central crop
+2018-03-24 20:28:47,584 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:47,584 INFO     Standarizing the image
+2018-03-24 20:28:47,611 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:28:47,612 INFO     SEED for scope: 909
+2018-03-24 20:28:47,628 INFO     Running Scope bn_1: 
+2018-03-24 20:28:47,672 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:28:47,674 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:28:47,674 INFO     SEED for scope: 784
+2018-03-24 20:28:47,691 INFO     Running Scope bn_2: 
+2018-03-24 20:28:47,732 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:28:47,734 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:28:47,734 INFO     SEED for scope: 239
+2018-03-24 20:28:47,751 INFO     Running Scope bn_3: 
+2018-03-24 20:28:47,794 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:28:47,796 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:28:47,806 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:28:47,823 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:28:47,839 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:28:47,855 INFO     Output shape: (?, 192)
+2018-03-24 20:28:47,866 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:28:47,898 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:28:52,182 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:28:54,722 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 49, Loss: 0.399877, Accuracy: 0.87293, Precision: 0.85589, Recall: 0.89687
+2018-03-24 20:28:54,836 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:28:54,846 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:28:54,846 INFO     Performing random horizontal flip
+2018-03-24 20:28:54,880 INFO     Performing Central crop
+2018-03-24 20:28:54,959 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:54,959 INFO     Standarizing the image
+2018-03-24 20:28:54,982 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:28:54,982 INFO     Performing Central crop
+2018-03-24 20:28:55,024 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:28:55,024 INFO     Standarizing the image
+2018-03-24 20:28:55,050 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:28:55,050 INFO     SEED for scope: 400
+2018-03-24 20:28:55,067 INFO     Running Scope bn_1: 
+2018-03-24 20:28:55,108 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:28:55,110 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:28:55,110 INFO     SEED for scope: 912
+2018-03-24 20:28:55,127 INFO     Running Scope bn_2: 
+2018-03-24 20:28:55,168 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:28:55,170 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:28:55,170 INFO     SEED for scope: 255
+2018-03-24 20:28:55,188 INFO     Running Scope bn_3: 
+2018-03-24 20:28:55,228 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:28:55,230 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:28:55,240 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:28:55,257 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:28:55,274 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:28:55,290 INFO     Output shape: (?, 192)
+2018-03-24 20:28:55,301 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:28:55,334 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:28:59,571 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:29:02,069 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 59, Loss: 0.378917, Accuracy: 0.89227, Precision: 0.90962, Recall: 0.87109
+2018-03-24 20:29:02,178 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:29:02,187 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:29:02,187 INFO     Performing random horizontal flip
+2018-03-24 20:29:02,222 INFO     Performing Central crop
+2018-03-24 20:29:02,304 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:02,304 INFO     Standarizing the image
+2018-03-24 20:29:02,328 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:29:02,328 INFO     Performing Central crop
+2018-03-24 20:29:02,368 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:02,369 INFO     Standarizing the image
+2018-03-24 20:29:02,395 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:29:02,395 INFO     SEED for scope: 345
+2018-03-24 20:29:02,606 INFO     Running Scope bn_1: 
+2018-03-24 20:29:02,648 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:29:02,650 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:29:02,650 INFO     SEED for scope: 854
+2018-03-24 20:29:02,667 INFO     Running Scope bn_2: 
+2018-03-24 20:29:02,710 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:29:02,711 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:29:02,711 INFO     SEED for scope: 989
+2018-03-24 20:29:02,728 INFO     Running Scope bn_3: 
+2018-03-24 20:29:02,770 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:29:02,772 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:29:02,782 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:29:02,799 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:29:02,816 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:29:02,832 INFO     Output shape: (?, 192)
+2018-03-24 20:29:02,843 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:29:02,876 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:29:07,210 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:29:09,692 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 65, Loss: 0.400791, Accuracy: 0.87937, Precision: 0.85640, Recall: 0.91160
+2018-03-24 20:29:15,249 INFO     INITIATING TEST ........
+2018-03-24 20:29:15,250 INFO     Checkpoint LISTS .. ['convnet_epoch_5_batch_49', 'convnet_epoch_5_batch_59', 'convnet_epoch_5_batch_65', 'convnet_epoch_6_batch_19', 'convnet_epoch_6_batch_29', 'convnet_epoch_6_batch_39', 'convnet_epoch_6_batch_49', 'convnet_epoch_6_batch_59', 'convnet_epoch_6_batch_65', 'convnet_epoch_6_batch_9']
+2018-03-24 20:29:15,250 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:29:15,256 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:29:15,256 INFO     Performing random horizontal flip
+2018-03-24 20:29:15,273 INFO     Performing Central crop
+2018-03-24 20:29:15,312 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:15,312 INFO     Standarizing the image
+2018-03-24 20:29:15,334 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:29:15,334 INFO     Performing Central crop
+2018-03-24 20:29:15,375 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:15,376 INFO     Standarizing the image
+2018-03-24 20:29:15,402 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:29:15,402 INFO     SEED for scope: 101
+2018-03-24 20:29:15,418 INFO     Running Scope bn_1: 
+2018-03-24 20:29:15,459 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:29:15,461 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:29:15,461 INFO     SEED for scope: 202
+2018-03-24 20:29:15,478 INFO     Running Scope bn_2: 
+2018-03-24 20:29:15,520 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:29:15,522 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:29:15,522 INFO     SEED for scope: 304
+2018-03-24 20:29:15,540 INFO     Running Scope bn_3: 
+2018-03-24 20:29:15,581 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:29:15,582 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:29:15,592 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:29:15,608 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:29:15,625 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:29:15,641 INFO     Output shape: (?, 192)
+2018-03-24 20:29:15,653 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:29:15,684 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:29:20,068 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:29:22,558 INFO     VALIDATION METRICs : Fold: 1, epoch: 5, batch: 49, Loss: 0.403738, Accuracy: 0.87201, Precision: 0.84948, Recall: 0.90424
+2018-03-24 20:29:22,667 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:29:22,676 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:29:22,677 INFO     Performing random horizontal flip
+2018-03-24 20:29:22,710 INFO     Performing Central crop
+2018-03-24 20:29:22,791 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:22,791 INFO     Standarizing the image
+2018-03-24 20:29:22,814 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:29:22,814 INFO     Performing Central crop
+2018-03-24 20:29:22,854 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:22,854 INFO     Standarizing the image
+2018-03-24 20:29:22,880 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:29:22,880 INFO     SEED for scope: 808
+2018-03-24 20:29:22,897 INFO     Running Scope bn_1: 
+2018-03-24 20:29:22,938 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:29:22,940 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:29:22,940 INFO     SEED for scope: 905
+2018-03-24 20:29:22,957 INFO     Running Scope bn_2: 
+2018-03-24 20:29:22,998 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:29:22,999 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:29:22,999 INFO     SEED for scope: 900
+2018-03-24 20:29:23,016 INFO     Running Scope bn_3: 
+2018-03-24 20:29:23,058 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:29:23,059 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:29:23,069 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:29:23,085 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:29:23,102 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:29:23,120 INFO     Output shape: (?, 192)
+2018-03-24 20:29:23,131 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:29:23,163 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:29:27,410 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:29:29,893 INFO     VALIDATION METRICs : Fold: 1, epoch: 5, batch: 59, Loss: 0.384873, Accuracy: 0.88582, Precision: 0.88160, Recall: 0.89134
+2018-03-24 20:29:30,001 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:29:30,010 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:29:30,011 INFO     Performing random horizontal flip
+2018-03-24 20:29:30,044 INFO     Performing Central crop
+2018-03-24 20:29:30,122 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:30,122 INFO     Standarizing the image
+2018-03-24 20:29:30,145 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:29:30,145 INFO     Performing Central crop
+2018-03-24 20:29:30,185 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:30,185 INFO     Standarizing the image
+2018-03-24 20:29:30,211 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:29:30,211 INFO     SEED for scope: 394
+2018-03-24 20:29:30,228 INFO     Running Scope bn_1: 
+2018-03-24 20:29:30,270 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:29:30,272 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:29:30,272 INFO     SEED for scope: 874
+2018-03-24 20:29:30,289 INFO     Running Scope bn_2: 
+2018-03-24 20:29:30,329 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:29:30,330 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:29:30,330 INFO     SEED for scope: 445
+2018-03-24 20:29:30,348 INFO     Running Scope bn_3: 
+2018-03-24 20:29:30,388 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:29:30,389 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:29:30,399 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:29:30,416 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:29:30,432 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:29:30,448 INFO     Output shape: (?, 192)
+2018-03-24 20:29:30,460 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:29:30,491 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:29:34,722 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:29:37,228 INFO     VALIDATION METRICs : Fold: 1, epoch: 5, batch: 65, Loss: 0.385679, Accuracy: 0.88858, Precision: 0.87950, Recall: 0.90055
+2018-03-24 20:29:37,339 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:29:37,348 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:29:37,348 INFO     Performing random horizontal flip
+2018-03-24 20:29:37,383 INFO     Performing Central crop
+2018-03-24 20:29:37,462 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:37,463 INFO     Standarizing the image
+2018-03-24 20:29:37,487 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:29:37,487 INFO     Performing Central crop
+2018-03-24 20:29:37,527 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:37,527 INFO     Standarizing the image
+2018-03-24 20:29:37,554 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:29:37,554 INFO     SEED for scope: 213
+2018-03-24 20:29:37,572 INFO     Running Scope bn_1: 
+2018-03-24 20:29:37,615 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:29:37,617 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:29:37,617 INFO     SEED for scope: 436
+2018-03-24 20:29:37,634 INFO     Running Scope bn_2: 
+2018-03-24 20:29:37,861 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:29:37,863 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:29:37,863 INFO     SEED for scope: 754
+2018-03-24 20:29:37,881 INFO     Running Scope bn_3: 
+2018-03-24 20:29:37,921 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:29:37,923 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:29:37,941 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:29:37,958 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:29:37,974 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:29:37,991 INFO     Output shape: (?, 192)
+2018-03-24 20:29:38,003 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:29:38,036 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:29:42,342 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:29:44,830 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 9, Loss: 0.378237, Accuracy: 0.88858, Precision: 0.90114, Recall: 0.87293
+2018-03-24 20:29:44,936 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:29:44,946 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:29:44,946 INFO     Performing random horizontal flip
+2018-03-24 20:29:44,979 INFO     Performing Central crop
+2018-03-24 20:29:45,063 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:45,063 INFO     Standarizing the image
+2018-03-24 20:29:45,085 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:29:45,085 INFO     Performing Central crop
+2018-03-24 20:29:45,128 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:45,128 INFO     Standarizing the image
+2018-03-24 20:29:45,154 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:29:45,154 INFO     SEED for scope: 223
+2018-03-24 20:29:45,171 INFO     Running Scope bn_1: 
+2018-03-24 20:29:45,213 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:29:45,215 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:29:45,215 INFO     SEED for scope: 645
+2018-03-24 20:29:45,232 INFO     Running Scope bn_2: 
+2018-03-24 20:29:45,273 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:29:45,274 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:29:45,275 INFO     SEED for scope: 724
+2018-03-24 20:29:45,292 INFO     Running Scope bn_3: 
+2018-03-24 20:29:45,333 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:29:45,335 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:29:45,345 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:29:45,361 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:29:45,379 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:29:45,396 INFO     Output shape: (?, 192)
+2018-03-24 20:29:45,408 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:29:45,440 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:29:49,736 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:29:52,184 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 19, Loss: 0.375095, Accuracy: 0.89134, Precision: 0.90944, Recall: 0.86924
+2018-03-24 20:29:52,295 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:29:52,304 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:29:52,305 INFO     Performing random horizontal flip
+2018-03-24 20:29:52,338 INFO     Performing Central crop
+2018-03-24 20:29:52,419 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:52,419 INFO     Standarizing the image
+2018-03-24 20:29:52,442 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:29:52,442 INFO     Performing Central crop
+2018-03-24 20:29:52,484 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:52,484 INFO     Standarizing the image
+2018-03-24 20:29:52,511 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:29:52,511 INFO     SEED for scope: 321
+2018-03-24 20:29:52,528 INFO     Running Scope bn_1: 
+2018-03-24 20:29:52,571 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:29:52,573 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:29:52,573 INFO     SEED for scope: 909
+2018-03-24 20:29:52,590 INFO     Running Scope bn_2: 
+2018-03-24 20:29:52,631 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:29:52,632 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:29:52,632 INFO     SEED for scope: 784
+2018-03-24 20:29:52,649 INFO     Running Scope bn_3: 
+2018-03-24 20:29:52,690 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:29:52,691 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:29:52,701 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:29:52,718 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:29:52,734 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:29:52,749 INFO     Output shape: (?, 192)
+2018-03-24 20:29:52,761 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:29:52,793 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:29:57,111 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:29:59,643 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 29, Loss: 0.374432, Accuracy: 0.89319, Precision: 0.90667, Recall: 0.87661
+2018-03-24 20:29:59,752 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:29:59,761 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:29:59,761 INFO     Performing random horizontal flip
+2018-03-24 20:29:59,794 INFO     Performing Central crop
+2018-03-24 20:29:59,873 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:29:59,874 INFO     Standarizing the image
+2018-03-24 20:29:59,895 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:29:59,895 INFO     Performing Central crop
+2018-03-24 20:30:00,117 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:30:00,118 INFO     Standarizing the image
+2018-03-24 20:30:00,143 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:30:00,143 INFO     SEED for scope: 666
+2018-03-24 20:30:00,160 INFO     Running Scope bn_1: 
+2018-03-24 20:30:00,201 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:30:00,202 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:30:00,202 INFO     SEED for scope: 400
+2018-03-24 20:30:00,219 INFO     Running Scope bn_2: 
+2018-03-24 20:30:00,259 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:30:00,260 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:30:00,260 INFO     SEED for scope: 912
+2018-03-24 20:30:00,276 INFO     Running Scope bn_3: 
+2018-03-24 20:30:00,317 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:30:00,319 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:30:00,328 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:30:00,344 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:30:00,361 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:30:00,377 INFO     Output shape: (?, 192)
+2018-03-24 20:30:00,388 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:30:00,421 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:30:04,708 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:30:07,167 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 39, Loss: 0.379334, Accuracy: 0.87937, Precision: 0.89015, Recall: 0.86556
+2018-03-24 20:30:07,280 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:30:07,289 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:30:07,289 INFO     Performing random horizontal flip
+2018-03-24 20:30:07,328 INFO     Performing Central crop
+2018-03-24 20:30:07,408 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:30:07,408 INFO     Standarizing the image
+2018-03-24 20:30:07,431 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:30:07,431 INFO     Performing Central crop
+2018-03-24 20:30:07,472 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:30:07,472 INFO     Standarizing the image
+2018-03-24 20:30:07,498 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:30:07,498 INFO     SEED for scope: 846
+2018-03-24 20:30:07,516 INFO     Running Scope bn_1: 
+2018-03-24 20:30:07,555 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:30:07,557 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:30:07,557 INFO     SEED for scope: 345
+2018-03-24 20:30:07,573 INFO     Running Scope bn_2: 
+2018-03-24 20:30:07,614 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:30:07,616 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:30:07,616 INFO     SEED for scope: 854
+2018-03-24 20:30:07,632 INFO     Running Scope bn_3: 
+2018-03-24 20:30:07,672 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:30:07,673 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:30:07,683 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:30:07,701 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:30:07,718 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:30:07,734 INFO     Output shape: (?, 192)
+2018-03-24 20:30:07,745 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:30:07,778 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:30:12,056 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:30:14,552 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 49, Loss: 0.387825, Accuracy: 0.87201, Precision: 0.86201, Recall: 0.88582
+2018-03-24 20:30:14,663 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:30:14,672 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:30:14,672 INFO     Performing random horizontal flip
+2018-03-24 20:30:14,706 INFO     Performing Central crop
+2018-03-24 20:30:14,784 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:30:14,784 INFO     Standarizing the image
+2018-03-24 20:30:14,806 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:30:14,806 INFO     Performing Central crop
+2018-03-24 20:30:14,848 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:30:14,849 INFO     Standarizing the image
+2018-03-24 20:30:14,876 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:30:14,876 INFO     SEED for scope: 444
+2018-03-24 20:30:14,893 INFO     Running Scope bn_1: 
+2018-03-24 20:30:14,934 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:30:14,935 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:30:14,935 INFO     SEED for scope: 101
+2018-03-24 20:30:14,951 INFO     Running Scope bn_2: 
+2018-03-24 20:30:14,991 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:30:14,993 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:30:14,993 INFO     SEED for scope: 202
+2018-03-24 20:30:15,010 INFO     Running Scope bn_3: 
+2018-03-24 20:30:15,236 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:30:15,237 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:30:15,247 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:30:15,263 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:30:15,279 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:30:15,295 INFO     Output shape: (?, 192)
+2018-03-24 20:30:15,307 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:30:15,339 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:30:19,635 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:30:22,168 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 59, Loss: 0.379803, Accuracy: 0.88950, Precision: 0.91881, Recall: 0.85451
+2018-03-24 20:30:22,280 INFO     PREPROCESSING THE DATASET ..........
+2018-03-24 20:30:22,289 INFO     PREPROCESSING config: With the training Data Set
+2018-03-24 20:30:22,289 INFO     Performing random horizontal flip
+2018-03-24 20:30:22,323 INFO     Performing Central crop
+2018-03-24 20:30:22,402 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:30:22,402 INFO     Standarizing the image
+2018-03-24 20:30:22,426 INFO     PREPROCESSING config: With the Test Data Set
+2018-03-24 20:30:22,426 INFO     Performing Central crop
+2018-03-24 20:30:22,468 INFO     Image shape after central crop: (?, ?, 3)
+2018-03-24 20:30:22,468 INFO     Standarizing the image
+2018-03-24 20:30:22,495 INFO     Input shape: (?, 96, 96, 3)
+2018-03-24 20:30:22,495 INFO     SEED for scope: 707
+2018-03-24 20:30:22,514 INFO     Running Scope bn_1: 
+2018-03-24 20:30:22,555 INFO     Conv1 shape: (?, 96, 96, 64)
+2018-03-24 20:30:22,556 INFO     Pool1 shape: (?, 48, 48, 64)
+2018-03-24 20:30:22,556 INFO     SEED for scope: 808
+2018-03-24 20:30:22,568 INFO     Running Scope bn_2: 
+2018-03-24 20:30:22,616 INFO     Conv2 shape: (?, 48, 48, 64)
+2018-03-24 20:30:22,618 INFO     Pool2 shape: (?, 24, 24, 64)
+2018-03-24 20:30:22,618 INFO     SEED for scope: 905
+2018-03-24 20:30:22,636 INFO     Running Scope bn_3: 
+2018-03-24 20:30:22,678 INFO     Conv3 shape: (?, 24, 24, 64)
+2018-03-24 20:30:22,680 INFO     Pool3 shape: (?, 12, 12, 64)
+2018-03-24 20:30:22,689 INFO     Flattened shape: (?, 9216)
+2018-03-24 20:30:22,707 INFO     Dense1 shape: (?, 384)
+2018-03-24 20:30:22,725 INFO     Dense2 shape: (?, 192)
+2018-03-24 20:30:22,741 INFO     Output shape: (?, 192)
+2018-03-24 20:30:22,753 INFO     INITIALIZING LOSS: .....
+2018-03-24 20:30:22,786 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-03-24 20:30:27,097 INFO     DATA FORMATTER: Retrieved the hdf5 file test from disk, dataX shape = (1086, 400, 400, 3), dataY shape = (1086,)
+2018-03-24 20:30:29,550 INFO     VALIDATION METRICs : Fold: 1, epoch: 6, batch: 65, Loss: 0.392376, Accuracy: 0.88122, Precision: 0.85813, Recall: 0.91344

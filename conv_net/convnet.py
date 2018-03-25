@@ -19,7 +19,7 @@ def conv_net(img_shape, device_type):
                           name='Y')
     is_training = tf.placeholder(tf.bool)
     
-    filters = [64, 64, 384, 192, 2]
+    filters = [64, 64, 128, 384, 192, 2]
     
     with tf.device(device_type):
         ## LAYER 1
@@ -40,10 +40,12 @@ def conv_net(img_shape, device_type):
         logging.info('Pool2 shape: %s', str(X.shape))
 
         ## LAYER 3
-        X = ops.conv_layer(X, k_shape=[5, 5, filters[0], filters[1]], stride=1, padding='SAME', w_init='tn', w_decay=None, scope_name='conv_3', add_smry=False)
+        X = ops.conv_layer(X, k_shape=[5, 5, filters[1], filters[2]], stride=1, padding='SAME', w_init='tn',
+                           w_decay=None, scope_name='conv_3', add_smry=False)
         X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_3')
         X = ops.activation(X, 'relu', 'relu_3')
         logging.info('Conv3 shape: %s', str(X.shape))
+
         X = tf.nn.max_pool(X, ksize=[1, 3, 3, 1], strides=[1, 2, 2, 1], padding='SAME', name='pool_3')
         logging.info('Pool3 shape: %s', str(X.shape))
         
@@ -53,17 +55,19 @@ def conv_net(img_shape, device_type):
         
         
         ## LAYER 4
-        X = ops.fc_layers(X, k_shape=[X.get_shape().as_list()[-1], filters[2]], w_init='tn', scope_name='fc_layer_1', add_smry=False)
+        X = ops.fc_layers(X, k_shape=[X.get_shape().as_list()[-1], filters[3]], w_init='tn', scope_name='fc_layer_1',
+                          add_smry=False)
         X = ops.activation(X, 'relu', 'relu_4')
         logging.info('Dense1 shape: %s', str(X.shape))
         
         ## LAYER 5
-        X = ops.fc_layers(X, k_shape=[filters[2], filters[3]], w_init='tn', scope_name='fc_layer_2', add_smry=False)
+        X = ops.fc_layers(X, k_shape=[filters[3], filters[4]], w_init='tn', scope_name='fc_layer_2', add_smry=False)
         X = ops.activation(X, 'relu', 'relu_4')
         logging.info('Dense2 shape: %s', str(X.shape))
         
         ## LAYER 6
-        X_logits = ops.fc_layers(X, k_shape=[filters[3], filters[4]], w_init='tn', scope_name='fc_layer_4', add_smry=False)
+        X_logits = ops.fc_layers(X, k_shape=[filters[4], filters[5]], w_init='tn', scope_name='fc_layer_4',
+                                 add_smry=False)
         logging.info('Output shape: %s', str(X.shape))
         
         Y_probs = tf.nn.softmax(X_logits)

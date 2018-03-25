@@ -36,6 +36,10 @@ class PropertyClassification(object):
     def __init__(self, params, device_type, which_net, image_type):
         params_keys = list(params.keys())
         self.which_net = which_net
+        
+        if 'learning_rate' in params_keys:
+            myNet['learning_rate'] = params['learning_rate']
+            
         if 'inp_img_shape' in  params_keys:
             self.inp_img_shape = params['inp_img_shape']
 

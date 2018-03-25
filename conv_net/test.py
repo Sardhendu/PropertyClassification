@@ -8,6 +8,7 @@ import tensorflow as tf
 from conv_net.utils import Score
 from conv_net.vgg import vgg
 from conv_net.resnet import resnet
+from conv_net.convnet import conv_net
 from config import pathDict
 
 
@@ -55,7 +56,9 @@ class Test(PropertyClassification):
     def test(self,  checkpoint_path):
         saver = tf.train.Saver()
         self.max_checkpoint_num = 0
-        with tf.Session() as sess:
+        
+        config_ = tf.ConfigProto(allow_soft_placement = True)
+        with tf.Session(config = config_) as sess:
             sess.run(tf.global_variables_initializer())
             
             batchX, batchY = load_batch_data(
@@ -102,15 +105,19 @@ class Test(PropertyClassification):
             self.preprocess_graph = Preprocessing(inp_img_shape=self.inp_img_shape,
                                                   crop_shape=self.crop_shape,
                                                   out_img_shape=self.out_img_shape).preprocessImageGraph()
+
             if self.which_net == 'vgg':
-                print ('Test Graph: VGG')
+                print('Test Graphs: VGG')
                 self.computation_graph = vgg(training=False)
             elif self.which_net == 'resnet':
                 print('Test Graphs: RESNET')
                 self.computation_graph = resnet(img_shape=self.out_img_shape)
+            elif self.which_net == 'convnet':
+                print('Test Graphs: CONVNET')
+                self.computation_graph = conv_net(img_shape=self.out_img_shape, device_type=self.device_type)
             else:
                 raise ValueError('Provide a valid Net type options ={vgg, resnet}')
-
+            
             # ########   RUN THE SESSION
             batchY, out_prob, tst_loss, tst_acc, tr_precision_score, ts_recall_score = self.test(chk_path)
             ts_loss_arr.append(tst_loss)
