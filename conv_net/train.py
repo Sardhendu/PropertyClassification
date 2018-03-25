@@ -236,7 +236,9 @@ class Train(PropertyClassification):
         saver = tf.train.Saver(max_to_keep=10)  # max_to_keep specifies the number of latest checkpoint to maintain
         self.max_batch = 0
         self.max_epoch = 0
-        with tf.Session() as sess:
+        
+        config_ = tf.ConfigProto(allow_soft_placement = True)
+        with tf.Session(config = config_) as sess:
             sess.run(tf.global_variables_initializer())
 
             # GET LATEST CHECKPOINT, BATCH NUMBER TO START FROM AND ETC
