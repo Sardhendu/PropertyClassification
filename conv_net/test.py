@@ -6,7 +6,6 @@ import pandas as pd
 import tensorflow as tf
 
 from conv_net.utils import Score
-from conv_net.vgg import vgg
 from conv_net.resnet import resnet
 from conv_net.convnet import conv_net
 from config import pathDict
@@ -63,7 +62,6 @@ class Test(PropertyClassification):
             
             batchX, batchY = load_batch_data(
                     image_type=self.image_type,
-                    image_shape=self.inp_img_shape,
                     which_data=self.which_data)
             
             self.epoch = os.path.basename(checkpoint_path).split('.')[0].split('_')[2]
@@ -106,12 +104,10 @@ class Test(PropertyClassification):
                                                   crop_shape=self.crop_shape,
                                                   out_img_shape=self.out_img_shape).preprocessImageGraph()
 
-            if self.which_net == 'vgg':
-                print('Test Graphs: VGG')
-                self.computation_graph = vgg(training=False)
-            elif self.which_net == 'resnet':
+
+            if self.which_net == 'resnet':
                 print('Test Graphs: RESNET')
-                self.computation_graph = resnet(img_shape=self.out_img_shape)
+                self.computation_graph = resnet(img_shape=self.out_img_shape, device_type=self.device_type)
             elif self.which_net == 'convnet':
                 print('Test Graphs: CONVNET')
                 self.computation_graph = conv_net(img_shape=self.out_img_shape, device_type=self.device_type)

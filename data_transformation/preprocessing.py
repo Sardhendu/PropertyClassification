@@ -107,7 +107,8 @@ class Preprocessing():
     
     def standardize(self, imageIN):
         logging.info('Standarizing the image')
-        return tf.image.per_image_standardization(imageIN)
+        return tf.divide(imageIN,  255.0)
+        # return tf.image.per_image_standardization(imageIN)
     
     
     def preprocess_for_train(self, img):
@@ -170,11 +171,12 @@ class Preprocessing():
             operations like brightness, contrast and whitening that doest arithmatic operation which many make the
             pixels value as floating point.
         '''
+        # print (self.inp_img_shape[0], self.inp_img_shape[1], self.inp_img_shape[2])
+        
         logging.info('PREPROCESSING THE DATASET ..........')
         imageIN = tf.placeholder(dtype=tf.float32,
                                  shape=[self.inp_img_shape[0], self.inp_img_shape[1], self.inp_img_shape[2]],
                                  name="Preprocessor-variableHolder")
-        # print (imageIN.shape)
         is_training = tf.placeholder(tf.bool)
         
         # Add random contrast
@@ -182,18 +184,16 @@ class Preprocessing():
         
         imageOUT = tf.cond(is_training, lambda: self.preprocess_for_train(imageOUT),
                            lambda : self.preprocess_for_test(imageOUT))
-        # print (imageOUT.get_shape().as_list() , self.out_img_shape)
-
-        # if imageOUT.get_shape().as_list()[0] - self.out_img_shape[0] < 0:#) == [0,0,0]:
-        #     imageOUT = zero_pad(inp=imageOUT, out_shape=self.out_img_shape)
+        
+        # If the out_image_size is larger than the crop_image_size, then we pad the image with zeros to make it of out_image shape,
+        # If the out_image_size is smaller than the crop_image_sze, then we resize the image to the out_image_size
         
         if self.crop_shape[0] - self.out_img_shape[0] < 0:
             imageOUT = zero_pad(inp=imageOUT, crop_shape=self.crop_shape, out_shape=self.out_img_shape)
-
-        # imageOUT = tf.cond(imageOUT.get_shape().as_list()[0] - self.out_img_shape[0] < 0,
-        #                     zero_pad(inp=imageOUT, out_shape=self.out_img_shape),
-        #                     imageOUT)
             
+        else:
+            imageOUT = tf.image.resize_images(imageOUT, size=tf.stack([self.out_img_shape[0], self.out_img_shape[1]]))
+
         return dict(imageIN=imageIN, imageOUT=imageOUT, is_training=is_training)
     
   

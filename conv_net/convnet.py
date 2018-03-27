@@ -72,17 +72,19 @@ def conv_net(img_shape, device_type):
         
         Y_probs = tf.nn.softmax(X_logits)
 
-        # with tf.device('/cpu:0'):
-        lossCE, optimizer, l_rate = ops.loss_optimization(X=X_logits, y=inpY, learning_rate_decay=True, add_smry=False)
+        loss, _ = ops.get_loss(y_true=inpY, y_logits=X_logits,
+                               which_loss='softmax_cross_entropy', lamda=None)
+
+        optimizer, l_rate = ops.optimize(loss=loss, learning_rate_decay=True, add_smry=False)
 
         acc = tf.cond(is_training,
-                      lambda: ops.accuracy(labels=inpY, logits=X_logits, type='training', add_smry=True),
-                      lambda: ops.accuracy(labels=inpY, logits=X_logits, type='validation', add_smry=True)
+                      lambda: ops.accuracy(labels=inpY, logits=X_logits, type='training', add_smry=False),
+                      lambda: ops.accuracy(labels=inpY, logits=X_logits, type='validation', add_smry=False)
                       )
 
 
     return dict(inpX=inpX, inpY=inpY, is_training=is_training,
-                outProbs=Y_probs, accuracy=acc, loss=lossCE, optimizer=optimizer, l_rate=l_rate)
+                outProbs=Y_probs, accuracy=acc, loss=loss, optimizer=optimizer, l_rate=l_rate)
 
 
 

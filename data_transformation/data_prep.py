@@ -2,11 +2,10 @@ import logging
 import os
 
 import numpy as np
-import random
 import pandas as pd
 from scipy import misc, ndimage
 
-from config import pathDict, fileNames
+from config import pathDict
 from data_transformation.data_io import dumpH5File, getH5File#, dumpPickleFile, getPickleFile
 
 logging.basicConfig(level=logging.DEBUG, filename="logfile.log", filemode="w",
@@ -160,11 +159,12 @@ def get_dump_image_given_path(land_paths, house_paths, img_resize_shape, label_d
 def dumpStratifiedBatches_balanced_class(cmn_land_pins, cmn_house_pins, img_resize_shape, image_type, ts_batch_size,
                                          cv_batch_size, tr_batch_size, shuffle_seed=873, get_stats=True,
                                          max_batches=None):
-    if image_type not in ['assessor', 'google_aerial', 'bing_aerial', 'bing_streetside', 'google_overlayed']:
+    if image_type not in ['assessor', 'google_aerial', 'bing_aerial', 'bing_streetside', 'google_overlayed', 'assessor_code']:
         raise ValueError('Variable image_type not understood')
     
     land_image_path = os.path.join(pathDict['%s_image_path' % (image_type)], 'land')
     house_image_path = os.path.join(pathDict['%s_image_path' % (image_type)], 'house')
+    
     output_data_path = pathDict['%s_batch_path' % (image_type)]
     # print (output_batch_path)
     logging.info('Input Land Images from %s: ', str(land_image_path))
