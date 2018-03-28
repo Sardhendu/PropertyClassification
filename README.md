@@ -93,8 +93,7 @@ Let us now discuss all different models emplopyed for different types of images.
     
 ---------------
 
-#### [AUTOENCODER](https://github.com/Sardhendu/PropertyClassification/blob/master/conv_net/conv_autoencoder.py) [TO 
-WORK ON]
+#### [AUTOENCODER](https://github.com/Sardhendu/PropertyClassification/blob/master/conv_net/conv_autoencoder.py) [TO WORK ON]
 
 <div id="wrapper">
     <div class="twoColumn">
