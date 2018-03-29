@@ -342,7 +342,7 @@ class TrainConvEnc(PropertyClassification):
         fig, ax = plt.subplots(2, n, figsize=(20, 4))
         ax = ax.ravel()
     
-        imaga_indexlist = np.arange(25, 35)
+        imaga_indexlist = np.arange(120, 130)
         for i in range(0, n):
             ax[i].imshow(X_true[imaga_indexlist[i]])
     
