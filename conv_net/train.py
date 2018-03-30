@@ -459,8 +459,8 @@ class TrainConvEnc(PropertyClassification):
                     ## VALIDATION ACCURACY
                     (cv_encodings, cv_decodings, cv_sigmoid_logits, cv_reconstruction_mse,
                     cv_reconstruction_entropy, cv_loss) = self.cvalid(sess)
-                    
-                    cv_loss_arr.append(cv_loss)
+                    # print (cv_encodings)
+                    # cv_loss_arr.append(cv_loss)
 
                     if plot:
                         self.plot(X_true=self.cv_preprocessed_data, X_reconstructed=cv_sigmoid_logits)
@@ -476,7 +476,7 @@ class TrainConvEnc(PropertyClassification):
                     
                         saver.save(sess, checkpoint_path)  # , write_meta_graph=False)
                 
-        return tr_loss_arr, cv_loss_arr, l_rate_arr, cv_reconstruction_mse, cv_reconstruction_entropy
+        return tr_loss_arr, cv_loss_arr, l_rate_arr, cv_reconstruction_mse, cv_reconstruction_entropy, cv_encodings
 
     def run(self, num_epochs, num_batches, get_stats_at=10, plot=False):
         logging.info('INITIATING RUN ........')
@@ -493,9 +493,9 @@ class TrainConvEnc(PropertyClassification):
         else:
             raise ValueError('Net type not understood, Make sure you typed : "autoencoder"')
         ########   RUN THE SESSION
-        tr_loss_arr, cv_loss_arr, l_rate_arr, cv_reconstruction_mse, reconstruction_entropy = self.run_epoch(get_stats_at, plot=plot)
+        tr_loss_arr, cv_loss_arr, l_rate_arr, cv_reconstruction_mse, reconstruction_entropy, cv_encodings = self.run_epoch(get_stats_at, plot=plot)
 
-        return tr_loss_arr, cv_loss_arr, l_rate_arr, cv_reconstruction_mse, reconstruction_entropy, self.cvbatchY
+        return tr_loss_arr, cv_loss_arr, l_rate_arr, cv_reconstruction_mse, reconstruction_entropy, self.cvbatchY, cv_encodings
 
 
 

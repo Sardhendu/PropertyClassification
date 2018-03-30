@@ -1,4 +1,5 @@
 from sklearn import metrics
+import numpy as np
 
 class Score():
     '''
@@ -29,3 +30,13 @@ class Score():
     @staticmethod
     def auc(y_true, y_pred):
         return metrics.roc_auc_score(y_true, y_pred)
+    
+    
+    
+
+def to_one_hot(y):
+    y = np.array(y, dtype=int)
+    n_values = int(np.max(y)) + 1
+    y = np.eye(n_values)[y]
+    return y
+

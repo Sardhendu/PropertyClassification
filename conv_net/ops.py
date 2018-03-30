@@ -225,6 +225,10 @@ def activation(X, type='relu', scope_name='relu'):
         return tf.nn.relu(X, name=scope_name)
     elif type == 'sigmoid':
         return tf.nn.sigmoid(X, name=scope_name)
+    elif type == 'tanh':
+        return tf.nn.tanh(X, name=scope_name)
+    else:
+        raise ValueError('Provide proper Activation function')
 
 
 def get_loss(y_true, y_logits, which_loss, lamda=None):
