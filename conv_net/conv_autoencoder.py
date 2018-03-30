@@ -29,7 +29,7 @@ def encoder(X, encoding_filters):
     # Downsampling 1
     X = ops.conv_layer(X, k_shape=[3, 3, encoding_filters[0], encoding_filters[1]], stride=1, padding='SAME',
                        w_init='tn', w_decay=None, scope_name='conv_1', add_smry=False)
-    X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_1')
+    # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_1')
     logging.info('%s : conv_1 shape: %s', 'ENCODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_1')
     # print(X.shape)
@@ -40,7 +40,7 @@ def encoder(X, encoding_filters):
     # Downsampling 2
     X = ops.conv_layer(X, k_shape=[3, 3, encoding_filters[1], encoding_filters[2]], stride=1, padding='SAME',
                        w_init='tn', w_decay=None, scope_name='conv_2', add_smry=False)
-    X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_2')
+    # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_2')
     logging.info('%s : conv_2 shape: %s', 'ENCODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_2')
     # print(X.shape)
@@ -51,7 +51,7 @@ def encoder(X, encoding_filters):
     # Downsampling 3
     X = ops.conv_layer(X, k_shape=[3, 3, encoding_filters[2], encoding_filters[3]], stride=1, padding='SAME',
                        w_init='tn', w_decay=None, scope_name='conv_3', add_smry=False)
-    X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_3')
+    # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_3')
     logging.info('%s : conv_3 shape: %s', 'ENCODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_3')
     # print(X.shape)
@@ -62,7 +62,7 @@ def encoder(X, encoding_filters):
     # Downsampling 4
     X = ops.conv_layer(X, k_shape=[3, 3, encoding_filters[3], encoding_filters[4]], stride=1, padding='SAME',
                        w_init='tn', w_decay=None, scope_name='conv_4', add_smry=False)
-    X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_4')
+    # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_4')
     logging.info('%s : conv_4 shape: %s', 'ENCODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_4')
     # print(X.shape)
@@ -72,7 +72,7 @@ def encoder(X, encoding_filters):
     # Downloading 5
     X = ops.conv_layer(X, k_shape=[3, 3, encoding_filters[4], encoding_filters[5]], stride=1, padding='SAME',
                        w_init='tn', w_decay=None, scope_name='conv_5', add_smry=False)
-    X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_5')
+    # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_5')
     logging.info('%s : conv_5 shape: %s', 'ENCODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_5')
     # print(X.shape)
@@ -82,7 +82,7 @@ def encoder(X, encoding_filters):
     # Downloading 5
     X = ops.conv_layer(X, k_shape=[3, 3, encoding_filters[5], encoding_filters[6]], stride=1, padding='SAME',
                        w_init='tn', w_decay=None, scope_name='conv_6', add_smry=False)
-    X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_6')
+    # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_6')
     logging.info('%s : conv_6 shape: %s', 'ENCODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_5')
     # print(X.shape)
@@ -108,7 +108,7 @@ def decoder(X, enc_fn, decoding_filters):
     # print (X.shape)
     X = ops.conv2D_transposed_strided(X, k_shape=[3 ,3, enc_fn, decoding_filters[0]], stride=2, padding='SAME',
                                       w_init='tn', out_shape=None, scope_name='dconv_1', add_smry=False)
-    X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_7')
+    # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_7')
     logging.info('%s : dconv_1 shape: %s', 'DECODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_6')
     print (X.shape)
@@ -119,7 +119,7 @@ def decoder(X, enc_fn, decoding_filters):
     # print(X.shape)
     X = ops.conv2D_transposed_strided(X, k_shape=[3, 3, decoding_filters[0], decoding_filters[1]], stride=2,
                                       padding='SAME', w_init='tn', out_shape=None, scope_name='dconv_2', add_smry=False)
-    X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_8')
+    # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_8')
     logging.info('%s : dconv_2 shape: %s', 'DECODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_7')
     # print(X.shape)
@@ -130,7 +130,7 @@ def decoder(X, enc_fn, decoding_filters):
     # print(X.shape)
     X = ops.conv2D_transposed_strided(X, k_shape=[3, 3, decoding_filters[1], decoding_filters[2]], stride=2,
                                       padding='SAME', w_init='tn', out_shape=None, scope_name='dconv_3', add_smry=False)
-    X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_9')
+    # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_9')
     logging.info('%s : dconv_3 shape: %s', 'DECODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_8')
     # print(X.shape)
@@ -138,21 +138,21 @@ def decoder(X, enc_fn, decoding_filters):
     # Upsampling 4
     X = ops.conv2D_transposed_strided(X, k_shape=[3, 3, decoding_filters[2], decoding_filters[3]], stride=2,
                                       padding='SAME', w_init='tn', out_shape=None, scope_name='dconv_4', add_smry=False)
-    X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_10')
+    # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_10')
     logging.info('%s : dconv_4 shape: %s', 'DECODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_9')
 
     # Upsampling 5
     X = ops.conv2D_transposed_strided(X, k_shape=[3, 3, decoding_filters[3], decoding_filters[4]], stride=2,
                                       padding='SAME', w_init='tn', out_shape=None, scope_name='dconv_5', add_smry=False)
-    X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_11')
+    # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_11')
     logging.info('%s : dconv_5 shape: %s', 'DECODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_10')
 
     # Upsampling 6
     X = ops.conv2D_transposed_strided(X, k_shape=[3, 3, decoding_filters[4], decoding_filters[5]], stride=2,
                                       padding='SAME', w_init='tn', out_shape=None, scope_name='dconv_6', add_smry=False)
-    X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_12')
+    # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_12')
     logging.info('%s : dconv_6 shape: %s', 'DECODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_11')
     
@@ -160,7 +160,7 @@ def decoder(X, enc_fn, decoding_filters):
     # Decoding
     X = ops.conv_layer(X, k_shape=[3, 3, decoding_filters[5], decoding_filters[6]], stride=1, padding='SAME',
                        w_init='tn', w_decay=None, scope_name='conv_7', add_smry=False)
-    X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_13')
+    # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_13')
     logging.info('%s : conv_7 shape: %s', 'DECODER: ', str(X.shape))
     
     sigmoid_logits = ops.activation(X, 'sigmoid', 'sigmoid_1')
@@ -192,7 +192,7 @@ def conv_autoencoder(img_shape, device_type=None):
         
         optimizer, l_rate = ops.optimize(loss=loss, learning_rate_decay=True, add_smry=False)
 
-        encoded = ops.activation(encoded, 'tanh', 'tanh_1')
+        # encoded = ops.activation(encoded, 'tanh', 'tanh_1')
         encoded_flattened =tf.layers.flatten(encoded)
         print (encoded_flattened.shape)
     

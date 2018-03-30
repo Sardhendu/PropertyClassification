@@ -460,7 +460,7 @@ class TrainConvEnc(PropertyClassification):
                     (cv_encodings, cv_decodings, cv_sigmoid_logits, cv_reconstruction_mse,
                     cv_reconstruction_entropy, cv_loss) = self.cvalid(sess)
                     # print (cv_encodings)
-                    # cv_loss_arr.append(cv_loss)
+                    cv_loss_arr.append(cv_loss)
 
                     if plot:
                         self.plot(X_true=self.cv_preprocessed_data, X_reconstructed=cv_sigmoid_logits)
