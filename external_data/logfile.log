@@ -1,0 +1,100 @@
+2018-04-01 19:16:04,443 INFO     Metadata shape: (259195, 18)
+2018-04-01 19:16:05,420 INFO     Metadata after removing test data set shape: (220364, 18)
+2018-04-01 19:16:05,494 INFO     Metadata after retaining last_reviewed_timestamp: (126389, 18)
+2018-04-01 19:16:05,504 INFO     Metadata Head: 
+     row_id  removed  property_id state county_name                 pin  \
+3        3        0       499854    IL        Cook  01-01-109-001-0000   
+7        7        0       499858    IL        Cook  01-01-122-010-0000   
+12      12        0       499865    IL        Cook  01-01-208-004-0000   
+13      13        0       499866    IL        Cook  01-01-211-033-1011   
+14      14        0       499867    IL        Cook  01-01-212-038-0000   
+
+        address_line1 address_line2 address_city  address_zip       zoning  \
+3         323 MAIN ST           nan   BARRINGTON  600104305.0  Residential   
+7      540 S HOUGH ST           nan   BARRINGTON      60010.0  Residential   
+12    215 KAINER AVE            nan   BARRINGTON  600104644.0  Residential   
+13    354 EASTERN AVE           nan   BARRINGTON      60010.0  Residential   
+14  407 E RUSSELL ST            nan   BARRINGTON      60010.0  Residential   
+
+   improvement_level           type exterior  last_reviewed_timestamp  \
+3           Improved         2 Flat    Frame  2017-05-25 04:42:26.850   
+7           Improved  Single Family    Frame  2017-02-22 14:36:17.880   
+12          Improved            nan      nan  2016-09-16 12:54:41.260   
+13       Condominium     Condo Unit    Brick  2017-02-10 21:21:30.520   
+14          Improved  Single Family    Frame  2017-02-10 21:21:30.520   
+
+   gone_timestamp     indicator  \
+3             nan  Likely House   
+7             nan  Likely House   
+12            nan  Likely House   
+13            nan  Likely House   
+14            nan  Likely House   
+
+                                       assessor_photo  
+3   http://www.cookcountyassessor.com/PropertyImag...  
+7   http://www.cookcountyassessor.com/PropertyImag...  
+12  http://www.cookcountyassessor.com/PropertyImag...  
+13  http://www.cookcountyassessor.com/PropertyImag...  
+14  http://www.cookcountyassessor.com/PropertyImag...  
+2018-04-01 19:16:06,294 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:06,992 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.140115%20-88.131782&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 127176
+2018-04-01 19:16:07,817 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:08,328 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.139593%20-88.13178599999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 142682
+2018-04-01 19:16:09,251 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:09,671 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.1427696%20-88.1285588&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 89924
+2018-04-01 19:16:10,479 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:10,971 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.1414825%20-88.12760220000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 133328
+2018-04-01 19:16:11,878 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:12,324 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.15353899999999%20-88.17434899999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 122547
+2018-04-01 19:16:13,242 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:13,713 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.113987%20-88.1777721&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 102710
+2018-04-01 19:16:14,575 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:15,037 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.142756%20-88.133442&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 119266
+2018-04-01 19:16:15,841 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:16,246 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.0465866%20-88.240445&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 118095
+2018-04-01 19:16:17,013 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:17,406 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.16114899999999%20-88.147268&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 120255
+2018-04-01 19:16:18,211 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:18,636 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.12157699999999%20-88.229556&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 141402
+2018-04-01 19:16:19,422 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:19,835 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.0959434%20-88.2362035&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 116627
+2018-04-01 19:16:20,601 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:21,182 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.0964164%20-88.1571067&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 131746
+2018-04-01 19:16:21,922 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:22,388 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.0988859%20-88.2684801&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 119140
+2018-04-01 19:16:23,193 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:23,609 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.07143000000001%20-88.16260299999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 96078
+2018-04-01 19:16:24,522 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:25,042 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.14432499999999%20-88.011504&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 120988
+2018-04-01 19:16:25,895 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:26,315 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.140389%20-88.03210899999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 134021
+2018-04-01 19:16:27,203 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:27,669 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.1024582%20-88.0067622&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 121594
+2018-04-01 19:16:28,502 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:29,049 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.1392979%20-88.09954499999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 126010
+2018-04-01 19:16:29,913 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:30,339 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.1353251%20-88.0780529&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 121656
+2018-04-01 19:16:31,222 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:31,640 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.1359048%20-88.0735964&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 132618
+2018-04-01 19:16:32,041 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:32,394 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.1359048%20-88.0735964&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 132618
+2018-04-01 19:16:33,396 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:33,679 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.1359048%20-88.0735964&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 132618
+2018-04-01 19:16:34,463 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:34,862 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.135426%20-88.073279&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 140543
+2018-04-01 19:16:35,613 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:35,989 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.1353042%20-88.08007599999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 124909
+2018-04-01 19:16:36,802 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:37,266 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.1327849%20-88.0807122&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 128875
+2018-04-01 19:16:38,026 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:38,475 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.133674%20-88.07313599999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 119972
+2018-04-01 19:16:39,263 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:39,667 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.1186302%20-88.0347087&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 116305
+2018-04-01 19:16:40,278 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:40,590 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.1186302%20-88.0347087&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 116305
+2018-04-01 19:16:41,322 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:41,802 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.13870199999999%20-88.05991&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 141664
+2018-04-01 19:16:42,603 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:43,065 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.138907%20-88.038103&zoom=20&size=400x400&maptype=satellite&key=AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU HTTP/1.1" 200 129457
+2018-04-01 19:16:43,863 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-04-01 19:16:44,068 INFO     GET_AERIAL_IMAGE: Response error

@@ -78,14 +78,14 @@ Let us now discuss all different models emplopyed for different types of images.
     </div>
     <div class="twoColumn">
          <p>
-            Convnet model is trained with Overlayed Images i.e. The idea here is expicitely provide the model with 
+            Convnet model is trained with Overlayed Images i.e. The idea here is to expicitely provide the model with 
             the knowledge of house and land. The roof top of the houses are colored red. This allows the model to 
             learn very quickly in few steps. Our experiment shows that the model was able to learn a good distinction in just 2-3 steps. We use a simple Conv-net architecture becasue now due to the colors the model no longer needs
-             a deep architecture to learn simple features. We havent tried, but judging be the overlayed pictures we 
-             think even a simple could do a descent job classifying the image.<br><br><b>Challange</b>: The building 
-             boundaries required to create overlayed images are collected from <b>Open Street map</b>. These may not 
-             be updated as frequently as Google maps. Moreover, getting building boundaries for all location may not 
-             be feasible. One way to generate colored image given an satellite view is to use <b>Fully 
+             a deep architecture to learn simple features. We havent tried, but judging by the overlayed pictures we 
+             think even a simple model could do a descent job classifying the image.<br><br><b>Challange</b>: The 
+             building boundaries required to create overlayed images are collected from <b>Open Street map</b>. These may not 
+             be updated as frequently as Google maps. Moreover, getting building boundaries for all the location may 
+             not be feasible. One way to generate colored image given an satellite view is to use <b>Fully 
              Convolutional Networks for semantic segmenting</b>[TODO]. <br>     
          </p>
     </div>
@@ -101,14 +101,7 @@ Let us now discuss all different models emplopyed for different types of images.
     </div>
     <div class="twoColumn">
          <p>
-            Autoencoders are used for Assessor Images. Assessor images are 5-9 years old and a there are high chance 
-            that a Land property then would be a house now. This means that despite the label might say house the image
-             might indicate a house. So we could either trust the labels or the image. Autoencoder are unsupervised 
-             techniques that do not require a label to make a classification. We feed in the autoencoder with images 
-             of house and land and leave it for the autoencoder to find an encoding that could distinguish between 
-             land and house. <br><br><b>Challange:</b> Assessor images might be expensive to obtain, since these 
-             images are manually collected by organization/individuals. In a real scenario, finding assessor image 
-             for every address is overstated.<br>    
+            Autoencoders are used for Assessor Images. Assessor images are 5-9 years old and there is a high chance that a Land property then would be a house now. This means that despite the label might say house, the imagemight indicate a land. So we could either trust the labels or the image. Autoencoder are unsupervised techniques that do not require a label to make a distinction between two labels. We feed in the autoencoder with images of house and land and leave it for the autoencoder to find an encoding that could distinguish between land and house. <br><br><b>Challange:</b> Assessor images might be expensive to obtain, since these images are manually collected by organization/individuals. In a real scenario, finding assessor image for every address is overstated.<br>    
          </p>
     </div>
 </div>

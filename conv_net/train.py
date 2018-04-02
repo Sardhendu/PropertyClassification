@@ -4,11 +4,14 @@ import os
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from conv_net.utils import Score
 
 from conv_net.utils import Score
 from conv_net.resnet import resnet
 from conv_net.convnet import conv_net
 from conv_net.conv_autoencoder import conv_autoencoder
+# from conv_net.new_autoencoder import conv_autoencoder
 from config import pathDict, myNet
 from conv_net.ops import summary_builder
 from data_transformation.data_io import getH5File
@@ -331,83 +334,276 @@ class Train(PropertyClassification):
 
 
 
+# class TrainConvEnc(PropertyClassification):
+#     def _init__(self, params, which_net, image_type):
+#         PropertyClassification.__init__(self, params, which_net, image_type)
+#
+#     def plot(self, X_true, X_reconstructed):
+#         print (X_true.shape, X_reconstructed.shape)
+#         n = 10
+#         fig, ax = plt.subplots(2, n, figsize=(20, 4))
+#         ax = ax.ravel()
+#
+#         imaga_indexlist = np.arange(120, 130)
+#         for i in range(0, n):
+#             ax[i].imshow(X_true[imaga_indexlist[i]])
+#
+#         for i in range(n, n+n):
+#             ax[i].imshow(X_reconstructed[imaga_indexlist[i - n]])
+#
+#         fig.show()
+#         plt.pause(6)
+#         plt.close()
+#
+#     def cluster_score(self, out):
+#         for i in range(0, 2):
+#             kmeans = KMeans(n_clusters=2, n_init=100, random_state=443)
+#             kmeans = kmeans.fit(out)
+#             labels = kmeans.predict(out)
+#             centroids = kmeans.cluster_centers_
+#
+#
+#             scr = Score.accuracy(self.cvbatchY, labels)
+#             print('i = %s Score = ' % str(i), scr)
+#
+#
+#     def train(self, batchX, batchY, sess):
+#         batchX, batchY = unison_shuffled_copies(batchX, batchY)
+#         preprocessed_data = self.run_preprocessor(sess, batchX, self.preprocess_graph, is_training=True)
+#
+#         # batchY_1hot = self.to_one_hot(batchY)
+#         feed_dict = {
+#             self.computation_graph['inpX']: preprocessed_data,
+#             # self.computation_graph['inpY']: batchY_1hot,
+#         }
+#         tr_lr, tr_loss, x_ent_ls, kl_ls, _ = sess.run([self.computation_graph['learning_rate'],
+#                                 self.computation_graph['loss'],
+#                                       self.computation_graph['xent_loss'],
+#                                       self.computation_graph['kl_loss'],
+#                                self.computation_graph['optimizer']], feed_dict=feed_dict)
+#         print (tr_loss, x_ent_ls, kl_ls)
+#
+#         logging.info("Fold: %s, epoch: %s, batch: %s, Loss: %s, XENT Loss = %s, KL Loss = %s",
+#                      str(self.foldNUM),
+#                      str(self.epoch),
+#                      str(self.batch_num),
+#                      str("{:.6f}".format(tr_loss)),
+#                      str("{:.6f}".format(x_ent_ls)),
+#                      str("{:.6f}".format(kl_ls)))
+#
+#         return tr_loss, tr_lr
+#
+#     # return dict(inpX=inpX, latent_features=z_encoded_mean, reconstruction=x_reconstructed, loss=tot_ls,
+#     #             xent_loss=xent_ls, kl_loss=kl_ls, optimizer=opt, learning_rate=l_rate)
+#     def cvalid(self, sess):
+#         feed_dict = {self.computation_graph['inpX']: self.cv_preprocessed_data}
+#         cv_latent, cv_out, cv_ls, cv_xent_ls, cv_kl_ls= sess.run([self.computation_graph['latent_features'],
+#                                               self.computation_graph['reconstruction'],
+#                                               self.computation_graph['loss'],
+#                                               self.computation_graph['xent_loss'],
+#                                               self.computation_graph['kl_loss']], feed_dict=feed_dict)
+#
+#         logging.info(
+#             "VALIDATION METRICs : Fold: %s, epoch: %s, batch: %s, Loss: %s, XENT Loss = %s, KL Loss = %s",
+#             str(self.foldNUM),
+#             str(self.epoch),
+#             str(self.batch_num),
+#             str("{:.6f}".format(cv_ls)),
+#             str("{:.6f}".format(cv_xent_ls)),
+#             str("{:.6f}".format(cv_kl_ls)))
+#
+#         return cv_latent, cv_out, cv_ls, cv_xent_ls, cv_kl_ls
+#
+#     def some_stuff(self, saver, sess):
+#         # LOAD CHECKPOINTS (WEIGHTS IF NEEDED)
+#         if self.use_checkpoint:
+#             checkpoint_path = self.get_checkpoint_path(which_checkpoint='max')
+#             if len(checkpoint_path) > 0:
+#                 self.restore_checkpoint(checkpoint_path, saver, sess)
+#
+#         # CREATE TENSOR BOARD SUMMARY WRITER (Writer opens up a file and starts writing summary for every epoch
+#         if self.write_tensorboard_summary:
+#             logging.info('TENSOR BOARD SUMMARY: Dumping Tensorboard summary')
+#             self.merged_summary, self.writer = summary_builder(sess, self.smry_path)
+#
+#         # When we have already processed all the batches then we need to start a new epoch
+#         if self.max_batch == self.num_batches - 1:
+#             self.max_batch = 0
+#             self.max_epoch += 1
+#         elif self.max_batch == 0:
+#             self.max_batch = 0
+#         else:
+#             self.max_batch += 1  # When we have already run some batches for the epoch then we need to run from
+#             # the next batch
+#
+#     def run_epoch(self, get_stats_at, plot=False, cluster_score=True):
+#         saver = tf.train.Saver(max_to_keep=10)  # max_to_keep specifies the number of latest checkpoint to maintain
+#         self.max_batch = 0
+#         self.max_epoch = 0
+#
+#         config_ = tf.ConfigProto(allow_soft_placement=True)
+#         with tf.Session(config=config_) as sess:
+#             sess.run(tf.global_variables_initializer())
+#
+#             # GET LATEST CHECKPOINT, BATCH NUMBER TO START FROM AND ETC
+#             self.some_stuff(saver, sess)
+#
+#             # CROSS-VALIDATION We load and pre-process the Cross-Validation set once, since we have to use it many times
+#             cvbatchX, self.cvbatchY = load_batch_data(image_type=self.image_type, which_data='cvalid')
+#             print('cvalid_shape: ', cvbatchX.shape)
+#             self.cv_preprocessed_data = self.run_preprocessor(sess, cvbatchX, self.preprocess_graph, is_training=False)
+#             del cvbatchX
+#
+#             # INITIATE EXECUTION (TRAINING AND TESTING)
+#             tr_loss_arr = []
+#             cv_loss_arr = []
+#             l_rate_arr = []
+#             cv_sigmoid_logits = []
+#             cv_reconstruction_mse = []
+#             cv_reconstruction_entropy = []
+#             for epoch in range(self.max_epoch, self.max_epoch + self.epochs):
+#                 self.epoch = epoch
+#
+#                 for batch_num in range(self.max_batch, self.num_batches):
+#                     self.batch_num = batch_num
+#                     batchX, batchY = load_batch_data(image_type=self.image_type, which_data='train_%s' % (batch_num))
+#
+#                     tr_loss, l_rate = self.train(batchX, batchY, sess)
+#                     tr_loss_arr.append(tr_loss)
+#                     l_rate_arr.append(l_rate)
+#                     # break
+#
+#                 if ((epoch) % get_stats_at == 0) or (epoch == self.max_epoch + self.epochs - 1):
+#
+#                     ## VALIDATION ACCURACY
+#                     cv_latent_fratures, cv_reconstruction, cv_loss, cv_xent_loss, cv_kl_loss = self.cvalid(sess)
+#                     # print (cv_encodings)
+#                     cv_loss_arr.append(cv_loss)
+#
+#                     if plot:
+#                         self.plot(X_true=self.cv_preprocessed_data, X_reconstructed=cv_reconstruction)
+#
+#                     if cluster_score:
+#                         self.cluster_score(out=cv_latent_fratures)
+#
+#                     # SAVE CHECKPOINTS TO THE PATH FOR EVERY EPOCH
+#                     if self.save_checkpoint:
+#                         logging.info('CHECKPOINT SAVER: Saving model updated parameters')
+#                         checkpoint_path = os.path.join(
+#                                 self.ckpt_path,
+#                                 '%s_epoch_%s_batch_%s' % (self.which_net, str(epoch), str(batch_num))
+#                         )
+#
+#                         saver.save(sess, checkpoint_path)  # , write_meta_graph=False)
+#
+#         return tr_loss_arr, cv_loss_arr, l_rate_arr
+#
+#     def run(self, num_epochs, num_batches, get_stats_at=10, plot=False, cluster_score=True):
+#         logging.info('INITIATING RUN ........')
+#         tf.reset_default_graph()
+#         self.foldNUM = 1
+#         self.epochs = num_epochs
+#         self.num_batches = num_batches
+#
+#         self.preprocess_graph = Preprocessing(inp_img_shape=self.inp_img_shape,
+#                                               crop_shape=self.crop_shape,
+#                                               out_img_shape=self.out_img_shape).preprocessImageGraph()
+#         if self.which_net == 'autoencoder':
+#             self.computation_graph = conv_autoencoder(img_shape=self.out_img_shape, device_type=self.device_type)
+#         else:
+#             raise ValueError('Net type not understood, Make sure you typed : "autoencoder"')
+#         ########   RUN THE SESSION
+#         tr_loss_arr, cv_loss_arr, l_rate_arr =  self.run_epoch(get_stats_at, plot=plot, cluster_score=cluster_score)
+#
+#         return tr_loss_arr, cv_loss_arr, l_rate_arr
+#
 
 
 class TrainConvEnc(PropertyClassification):
     def _init__(self, params, which_net, image_type):
         PropertyClassification.__init__(self, params, which_net, image_type)
-
+    
     def plot(self, X_true, X_reconstructed):
         n = 10
         fig, ax = plt.subplots(2, n, figsize=(20, 4))
         ax = ax.ravel()
-    
+        
         imaga_indexlist = np.arange(120, 130)
         for i in range(0, n):
             ax[i].imshow(X_true[imaga_indexlist[i]])
-    
-        for i in range(n, n+n):
+        
+        for i in range(n, n + n):
             ax[i].imshow(X_reconstructed[imaga_indexlist[i - n]])
-    
+        
         fig.show()
         plt.pause(6)
         plt.close()
-        
+
+    def cluster_score(self, out):
+        random_state_arr = [443, 882]
+        for i in range(0, 2):
+            kmeans = KMeans(n_clusters=2, n_init=100, random_state=random_state_arr[i])
+            kmeans = kmeans.fit(out)
+            labels = kmeans.predict(out)
+            centroids = kmeans.cluster_centers_
+
+
+            scr = Score.accuracy(self.cvbatchY, labels)
+            print('i = %s Score = ' % str(i), scr)
         
     def train(self, batchX, batchY, sess):
         batchX, batchY = unison_shuffled_copies(batchX, batchY)
         preprocessed_data = self.run_preprocessor(sess, batchX, self.preprocess_graph, is_training=True)
-    
+        
         # batchY_1hot = self.to_one_hot(batchY)
         feed_dict = {
             self.computation_graph['inpX']: preprocessed_data,
             # self.computation_graph['inpY']: batchY_1hot,
         }
-
+        
         tr_lr, tr_loss, _ = sess.run([self.computation_graph['learning_rate'],
-                                self.computation_graph['loss'],
-                               self.computation_graph['optimizer']], feed_dict=feed_dict)
-    
-    
+                                      self.computation_graph['loss'],
+                                      self.computation_graph['optimizer']], feed_dict=feed_dict)
+        
         logging.info("Fold: %s, epoch: %s, batch: %s, Loss: %s",
                      str(self.foldNUM),
                      str(self.epoch),
                      str(self.batch_num),
                      str("{:.6f}".format(tr_loss)))
-    
+        
         return tr_loss, tr_lr
-
+    
     def cvalid(self, sess):
         feed_dict = {self.computation_graph['inpX']: self.cv_preprocessed_data}
         (cv_enc, cv_dec, sig_logits, rec_mse,
-            rec_entrpy, cv_loss) = sess.run([self.computation_graph['encoded'],
-                                            self.computation_graph['decoded'],
-                                            self.computation_graph['sigmoid_logits'],
-                                            self.computation_graph['reconstructionMSE'],
-                                            self.computation_graph['reconstructionEntropy'],
-                                            self.computation_graph['loss']], feed_dict=feed_dict)
-            
+         rec_entrpy, cv_loss) = sess.run([self.computation_graph['encoded'],
+                                          self.computation_graph['decoded'],
+                                          self.computation_graph['sigmoid_logits'],
+                                          self.computation_graph['reconstructionMSE'],
+                                          self.computation_graph['reconstructionEntropy'],
+                                          self.computation_graph['loss']], feed_dict=feed_dict)
+        
         logging.info(
-            "VALIDATION METRICs : Fold: %s, epoch: %s, batch: %s, Loss: %s",
-            str(self.foldNUM),
-            str(self.epoch),
-            str(self.batch_num),
-            str("{:.6f}".format(cv_loss)))
-    
+                "VALIDATION METRICs : Fold: %s, epoch: %s, batch: %s, Loss: %s",
+                str(self.foldNUM),
+                str(self.epoch),
+                str(self.batch_num),
+                str("{:.6f}".format(cv_loss)))
+        
         return cv_enc, cv_dec, sig_logits, rec_mse, rec_entrpy, cv_loss
-
+    
     def some_stuff(self, saver, sess):
         # LOAD CHECKPOINTS (WEIGHTS IF NEEDED)
         if self.use_checkpoint:
             checkpoint_path = self.get_checkpoint_path(which_checkpoint='max')
             if len(checkpoint_path) > 0:
                 self.restore_checkpoint(checkpoint_path, saver, sess)
-    
+        
         # CREATE TENSOR BOARD SUMMARY WRITER (Writer opens up a file and starts writing summary for every epoch
         if self.write_tensorboard_summary:
             logging.info('TENSOR BOARD SUMMARY: Dumping Tensorboard summary')
             self.merged_summary, self.writer = summary_builder(sess, self.smry_path)
-    
+        
         # When we have already processed all the batches then we need to start a new epoch
         if self.max_batch == self.num_batches - 1:
             self.max_batch = 0
@@ -417,25 +613,25 @@ class TrainConvEnc(PropertyClassification):
         else:
             self.max_batch += 1  # When we have already run some batches for the epoch then we need to run from
             # the next batch
-
-    def run_epoch(self, get_stats_at, plot=False):
+    
+    def run_epoch(self, get_stats_at, plot=False, cluster_score=True):
         saver = tf.train.Saver(max_to_keep=10)  # max_to_keep specifies the number of latest checkpoint to maintain
         self.max_batch = 0
         self.max_epoch = 0
-    
+        
         config_ = tf.ConfigProto(allow_soft_placement=True)
         with tf.Session(config=config_) as sess:
             sess.run(tf.global_variables_initializer())
-        
+            
             # GET LATEST CHECKPOINT, BATCH NUMBER TO START FROM AND ETC
             self.some_stuff(saver, sess)
-        
+            
             # CROSS-VALIDATION We load and pre-process the Cross-Validation set once, since we have to use it many times
             cvbatchX, self.cvbatchY = load_batch_data(image_type=self.image_type, which_data='cvalid')
             print('cvalid_shape: ', cvbatchX.shape)
             self.cv_preprocessed_data = self.run_preprocessor(sess, cvbatchX, self.preprocess_graph, is_training=False)
             del cvbatchX
-        
+            
             # INITIATE EXECUTION (TRAINING AND TESTING)
             tr_loss_arr = []
             cv_loss_arr = []
@@ -445,27 +641,29 @@ class TrainConvEnc(PropertyClassification):
             cv_reconstruction_entropy = []
             for epoch in range(self.max_epoch, self.max_epoch + self.epochs):
                 self.epoch = epoch
-            
+                
                 for batch_num in range(self.max_batch, self.num_batches):
                     self.batch_num = batch_num
                     batchX, batchY = load_batch_data(image_type=self.image_type, which_data='train_%s' % (batch_num))
-                
+                    
                     tr_loss, l_rate = self.train(batchX, batchY, sess)
                     tr_loss_arr.append(tr_loss)
                     l_rate_arr.append(l_rate)
                 
                 if ((epoch) % get_stats_at == 0) or (epoch == self.max_epoch + self.epochs - 1):
-                
+                    
                     ## VALIDATION ACCURACY
                     (cv_encodings, cv_decodings, cv_sigmoid_logits, cv_reconstruction_mse,
-                    cv_reconstruction_entropy, cv_loss) = self.cvalid(sess)
+                     cv_reconstruction_entropy, cv_loss) = self.cvalid(sess)
                     # print (cv_encodings)
                     cv_loss_arr.append(cv_loss)
-
+                    
                     if plot:
                         self.plot(X_true=self.cv_preprocessed_data, X_reconstructed=cv_sigmoid_logits)
+
+                    if cluster_score:
+                        self.cluster_score(out=cv_encodings)
                     
-                
                     # SAVE CHECKPOINTS TO THE PATH FOR EVERY EPOCH
                     if self.save_checkpoint:
                         logging.info('CHECKPOINT SAVER: Saving model updated parameters')
@@ -473,18 +671,18 @@ class TrainConvEnc(PropertyClassification):
                                 self.ckpt_path,
                                 '%s_epoch_%s_batch_%s' % (self.which_net, str(epoch), str(batch_num))
                         )
-                    
+                        
                         saver.save(sess, checkpoint_path)  # , write_meta_graph=False)
-                
+        
         return tr_loss_arr, cv_loss_arr, l_rate_arr, cv_reconstruction_mse, cv_reconstruction_entropy, cv_encodings
-
-    def run(self, num_epochs, num_batches, get_stats_at=10, plot=False):
+    
+    def run(self, num_epochs, num_batches, get_stats_at=10, plot=False, cluster_score=True):
         logging.info('INITIATING RUN ........')
         tf.reset_default_graph()
         self.foldNUM = 1
         self.epochs = num_epochs
         self.num_batches = num_batches
-    
+        
         self.preprocess_graph = Preprocessing(inp_img_shape=self.inp_img_shape,
                                               crop_shape=self.crop_shape,
                                               out_img_shape=self.out_img_shape).preprocessImageGraph()
@@ -493,14 +691,12 @@ class TrainConvEnc(PropertyClassification):
         else:
             raise ValueError('Net type not understood, Make sure you typed : "autoencoder"')
         ########   RUN THE SESSION
-        tr_loss_arr, cv_loss_arr, l_rate_arr, cv_reconstruction_mse, reconstruction_entropy, cv_encodings = self.run_epoch(get_stats_at, plot=plot)
-
-        return tr_loss_arr, cv_loss_arr, l_rate_arr, cv_reconstruction_mse, reconstruction_entropy, self.cvbatchY, cv_encodings
-
-
-
-
-
+        tr_loss_arr, cv_loss_arr, l_rate_arr, cv_reconstruction_mse, reconstruction_entropy, cv_encodings = \
+            self.run_epoch(
+            get_stats_at, plot=plot, cluster_score=cluster_score)
+        
+        return tr_loss_arr, cv_loss_arr, l_rate_arr, cv_reconstruction_mse, reconstruction_entropy, self.cvbatchY, \
+               cv_encodings
 
 
 debugg = False
@@ -521,8 +717,7 @@ if debugg:
                        which_net='autoencoder',  # vgg
                        image_type='assessor_code')
         (tr_loss_arr, cv_loss_arr, l_rate_arr, cv_reconstruction_mse,
-         cv_reconstruction_entropy, cvY_label) = tr_obj.run(num_epochs=100, num_batches=max_batches+1, get_stats_at=3,
-                                                            plot=True)  # + 1)
+         cv_reconstruction_entropy, cvY_label) = tr_obj.run(num_epochs=100, num_batches=max_batches+1, get_stats_at=3, plot=True)  # + 1)
         print ('')
         print ('')
         print (cv_reconstruction_mse)

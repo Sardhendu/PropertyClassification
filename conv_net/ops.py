@@ -9,7 +9,7 @@ from config import myNet
 
 
 def conv_layer(X, k_shape, stride=1, padding='SAME',  w_init='tn', w_decay=None, scope_name='conv_layer', add_smry=True):
-    m, h, w, f = X.get_shape().as_list()
+    # m, h, w, f = X.get_shape().as_list()
     
     if config.weight_seed_idx == len(config.seed_arr) - 1:
         config.weight_seed_idx = 0
@@ -236,7 +236,7 @@ def get_loss(y_true, y_logits, which_loss, lamda=None):
     loss = None
     with tf.name_scope("Loss"):
         if which_loss == 'sigmoid_cross_entropy':
-            # -[y_true log(y_logit) + (1-y_true) log(1-y_logit)]
+            # - reduce_mean[y_true log(y_logit) + (1-y_true) log(1-y_logit)]
             loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=y_logits, labels=y_true))
         elif which_loss == 'softmax_cross_entropy':
             # An extension of sigmoid_cross_entropy for multiple class
@@ -261,21 +261,21 @@ def optimize(loss, learning_rate_decay=True, add_smry=True):
                                                   staircase=True)  # Will decay the learning rate in discrete interval
         
     else:
-        l_rate = myNet['learning_rate']
+        l_rate = tf.constant(myNet['learning_rate'])
     
     # We would like to store the summary of the loss to watch the decrease in loss.
 
     logging.info('INITIALIZING OPTIMIZATION WITH %s: .....', str(myNet['optimizer']))
     with tf.name_scope("Optimizer"):
         if myNet['optimizer'] == 'ADAM':
-            optimizer = (tf.train.AdamOptimizer(learning_rate=l_rate)
-                         .minimize(loss, global_step=globalStep))
+            optimizer = tf.train.AdamOptimizer(learning_rate=l_rate).minimize(loss, global_step=globalStep)
         
         elif myNet['optimizer'] == 'RMSPROP':
-            optimizer = (tf.train.RMSPropOptimizer(learning_rate=l_rate,
-                                                   momentum=myNet['momentum'])
-                         .minimize(loss, global_step=globalStep)
-                         )
+            # keras.optimizers.RMSprop(lr=0.001, rho=0.9, epsilon=None, decay=0.0)
+            
+            optimizer = tf.train.RMSPropOptimizer(learning_rate=l_rate, momentum=tf.constant(myNet['momentum'])).minimize(
+                    loss,  global_step=globalStep)
+            
         else:
             optimizer = None
             raise ValueError('Your provided optimizers do not match with any of the initialized optimizers')

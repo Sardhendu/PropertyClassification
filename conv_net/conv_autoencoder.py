@@ -24,74 +24,79 @@ logging.basicConfig(level=logging.DEBUG, filename="logfile.log", filemode="w",
 # distribution. Since we divide the input by 255 we bound the input space between [0,1]. So we use a sigmoid
 # activation function to bound the output (logits) at the range [0,1].
 
-def encoder(X, encoding_filters):
+def encoder(X, encoding_filters, latent_dim):
     logging.info('INPUT shape: %s', str(X.shape))
     # Downsampling 1
     X = ops.conv_layer(X, k_shape=[3, 3, encoding_filters[0], encoding_filters[1]], stride=1, padding='SAME',
-                       w_init='tn', w_decay=None, scope_name='conv_1', add_smry=False)
+                       w_init='gu', w_decay=None, scope_name='conv_1', add_smry=False)
     # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_1')
-    logging.info('%s : conv_1 shape: %s', 'ENCODER: ', str(X.shape))
+    logging.info('ENCODER: conv_1 shape: %s' % (str(X.shape)))
     X = ops.activation(X, 'relu', 'relu_1')
     # print(X.shape)
     X = tf.nn.max_pool(X, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME', name='pool_1')
-    logging.info('%s : pool_1 shape: %s', 'ENCODER: ', str(X.shape))
+    logging.info('ENCODER : pool_1 shape: %s' % (str(X.shape)))
     # print(X.shape)
     
     # Downsampling 2
     X = ops.conv_layer(X, k_shape=[3, 3, encoding_filters[1], encoding_filters[2]], stride=1, padding='SAME',
-                       w_init='tn', w_decay=None, scope_name='conv_2', add_smry=False)
+                       w_init='gu', w_decay=None, scope_name='conv_2', add_smry=False)
     # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_2')
-    logging.info('%s : conv_2 shape: %s', 'ENCODER: ', str(X.shape))
+    logging.info('ENCODER : conv_2 shape: %s' % (str(X.shape)))
     X = ops.activation(X, 'relu', 'relu_2')
     # print(X.shape)
     X = tf.nn.max_pool(X, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME', name='pool_2')
-    logging.info('%s : pool_2 shape: %s', 'ENCODER: ', str(X.shape))
+    logging.info('ENCODER : pool_2 shape: %s' % (str(X.shape)))
     # print(X.shape)
     
     # Downsampling 3
     X = ops.conv_layer(X, k_shape=[3, 3, encoding_filters[2], encoding_filters[3]], stride=1, padding='SAME',
-                       w_init='tn', w_decay=None, scope_name='conv_3', add_smry=False)
+                       w_init='gu', w_decay=None, scope_name='conv_3', add_smry=False)
     # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_3')
-    logging.info('%s : conv_3 shape: %s', 'ENCODER: ', str(X.shape))
+    logging.info('ENCODER : conv_3 shape: %s' % (str(X.shape)))
     X = ops.activation(X, 'relu', 'relu_3')
     # print(X.shape)
     X = tf.nn.max_pool(X, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME', name='pool_3')
-    logging.info('%s : pool_3 shape: %s', 'ENCODER: ', str(X.shape))
+    logging.info('ENCODER : pool_3 shape: %s' % (str(X.shape)))
     # print(X.shape)
 
     # Downsampling 4
     X = ops.conv_layer(X, k_shape=[3, 3, encoding_filters[3], encoding_filters[4]], stride=1, padding='SAME',
-                       w_init='tn', w_decay=None, scope_name='conv_4', add_smry=False)
+                       w_init='gu', w_decay=None, scope_name='conv_4', add_smry=False)
     # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_4')
-    logging.info('%s : conv_4 shape: %s', 'ENCODER: ', str(X.shape))
+    logging.info('ENCODER : conv_4 shape: %s' % (str(X.shape)))
     X = ops.activation(X, 'relu', 'relu_4')
     # print(X.shape)
     X = tf.nn.max_pool(X, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME', name='pool_4')
-    logging.info('%s : pool_4 shape: %s', 'ENCODER: ', str(X.shape))
+    logging.info('ENCODER : pool_4 shape: %s' % (str(X.shape)))
 
     # Downloading 5
     X = ops.conv_layer(X, k_shape=[3, 3, encoding_filters[4], encoding_filters[5]], stride=1, padding='SAME',
-                       w_init='tn', w_decay=None, scope_name='conv_5', add_smry=False)
+                       w_init='gu', w_decay=None, scope_name='conv_5', add_smry=False)
     # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_5')
-    logging.info('%s : conv_5 shape: %s', 'ENCODER: ', str(X.shape))
+    logging.info('ENCODER : conv_5 shape: %s' % (str(X.shape)))
     X = ops.activation(X, 'relu', 'relu_5')
     # print(X.shape)
     X = tf.nn.max_pool(X, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME', name='pool_5')
-    logging.info('%s : pool_5 shape: %s', 'ENCODER: ', str(X.shape))
+    logging.info('ENCODER : pool_5 shape: %s' % (str(X.shape)))
 
     # Downloading 5
     X = ops.conv_layer(X, k_shape=[3, 3, encoding_filters[5], encoding_filters[6]], stride=1, padding='SAME',
-                       w_init='tn', w_decay=None, scope_name='conv_6', add_smry=False)
+                       w_init='gu', w_decay=None, scope_name='conv_6', add_smry=False)
     # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_6')
-    logging.info('%s : conv_6 shape: %s', 'ENCODER: ', str(X.shape))
+    logging.info('ENCODER : conv_6 shape: %s' % (str(X.shape)))
     X = ops.activation(X, 'relu', 'relu_5')
     # print(X.shape)
     X = tf.nn.max_pool(X, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME', name='pool_6')
-    logging.info('%s : pool_6 shape: %s', 'ENCODER: ', str(X.shape))
-
-    # # Downloading 2: Downsample to 2 features, to plot data points
+    logging.info('ENCODER : pool_6 shape: %s' % (str(X.shape)))
+    
+    X_flat = tf.layers.flatten(X, 'X_flattened')
+    X = ops.fc_layers(X_flat, k_shape=[X_flat.get_shape().as_list()[-1], latent_dim], w_init='gu', scope_name='fc_layer',
+                  add_smry=False)
+    X = ops.activation(X, 'relu', 'relu_5')
+    logging.info('ENCODER : Flattened shape: %s' % (str(X.shape)))
+    # # # Downloading 2: Downsample to 2 features, to plot data points
     # X = ops.conv_layer(X, k_shape=[3, 3, encoding_filters[6], encoding_filters[7]], stride=1, padding='SAME',
-    #                    w_init='tn', w_decay=None, scope_name='conv_6', add_smry=False)
+    #                    w_init='gu', w_decay=None, scope_name='conv_6', add_smry=False)
     # logging.info('%s : conv_7 shape: %s', 'ENCODER: ', str(X.shape))
     # X = ops.activation(X, 'relu', 'relu_7')
     # # print(X.shape)
@@ -101,13 +106,22 @@ def encoder(X, encoding_filters):
     return X
 
 
-def decoder(X, enc_fn, decoding_filters):
+def decoder(X, decoding_filters, latent_dim):
+    flattened_shape = [2, 2, 64]
+    X = ops.fc_layers(X, k_shape=[latent_dim, flattened_shape[0]*flattened_shape[1]*flattened_shape[2]], w_init='gu',
+                      scope_name='dec_fc_layer',
+                      add_smry=False)
+    X = ops.activation(X, 'relu', 'relu_5')
+    print (X.shape)
+    X = tf.reshape(X, [tf.shape(X)[0], flattened_shape[0], flattened_shape[1], flattened_shape[2]])
+    print(X.shape)
     # Upsample 1
-    # X = ops.conv_layer(X, k_shape=[3,3,enc_fn,decoding_filters[0]],  stride=1, padding='SAME',  w_init='tn',
+    # X = ops.conv_layer(X, k_shape=[3,3,enc_fn,decoding_filters[0]],  stride=1, padding='SAME',  w_init='gu',
     # w_decay=None, scope_name='conv_4', add_smry=False)
-    # print (X.shape)
-    X = ops.conv2D_transposed_strided(X, k_shape=[3 ,3, enc_fn, decoding_filters[0]], stride=2, padding='SAME',
-                                      w_init='tn', out_shape=None, scope_name='dconv_1', add_smry=False)
+    print (X.get_shape().as_list()[-1])
+    X = ops.conv2D_transposed_strided(X, k_shape=[3 ,3, 64, decoding_filters[0]], stride=2,
+                                      padding='SAME',
+                                      w_init='gu', out_shape=None, scope_name='dconv_1', add_smry=False)
     # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_7')
     logging.info('%s : dconv_1 shape: %s', 'DECODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_6')
@@ -115,10 +129,10 @@ def decoder(X, enc_fn, decoding_filters):
     
     # Upsample 2
     # X = ops.conv_layer(X, k_shape=[3, 3, decoding_filters[0], decoding_filters[1]], stride=1, padding='SAME',
-    # w_init='tn', w_decay=None, scope_name='conv_5', add_smry=False)
+    # w_init='gu', w_decay=None, scope_name='conv_5', add_smry=False)
     # print(X.shape)
     X = ops.conv2D_transposed_strided(X, k_shape=[3, 3, decoding_filters[0], decoding_filters[1]], stride=2,
-                                      padding='SAME', w_init='tn', out_shape=None, scope_name='dconv_2', add_smry=False)
+                                      padding='SAME', w_init='gu', out_shape=None, scope_name='dconv_2', add_smry=False)
     # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_8')
     logging.info('%s : dconv_2 shape: %s', 'DECODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_7')
@@ -126,10 +140,10 @@ def decoder(X, enc_fn, decoding_filters):
     
     # Upsampling 3
     # X = ops.conv_layer(X, k_shape=[3, 3, decoding_filters[1], decoding_filters[2]], stride=1, padding='SAME',
-    # w_init='tn', w_decay=None, scope_name='conv_6', add_smry=False)
+    # w_init='gu', w_decay=None, scope_name='conv_6', add_smry=False)
     # print(X.shape)
     X = ops.conv2D_transposed_strided(X, k_shape=[3, 3, decoding_filters[1], decoding_filters[2]], stride=2,
-                                      padding='SAME', w_init='tn', out_shape=None, scope_name='dconv_3', add_smry=False)
+                                      padding='SAME', w_init='gu', out_shape=None, scope_name='dconv_3', add_smry=False)
     # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_9')
     logging.info('%s : dconv_3 shape: %s', 'DECODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_8')
@@ -137,21 +151,21 @@ def decoder(X, enc_fn, decoding_filters):
     
     # Upsampling 4
     X = ops.conv2D_transposed_strided(X, k_shape=[3, 3, decoding_filters[2], decoding_filters[3]], stride=2,
-                                      padding='SAME', w_init='tn', out_shape=None, scope_name='dconv_4', add_smry=False)
+                                      padding='SAME', w_init='gu', out_shape=None, scope_name='dconv_4', add_smry=False)
     # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_10')
     logging.info('%s : dconv_4 shape: %s', 'DECODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_9')
 
     # Upsampling 5
     X = ops.conv2D_transposed_strided(X, k_shape=[3, 3, decoding_filters[3], decoding_filters[4]], stride=2,
-                                      padding='SAME', w_init='tn', out_shape=None, scope_name='dconv_5', add_smry=False)
+                                      padding='SAME', w_init='gu', out_shape=None, scope_name='dconv_5', add_smry=False)
     # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_11')
     logging.info('%s : dconv_5 shape: %s', 'DECODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_10')
 
     # Upsampling 6
     X = ops.conv2D_transposed_strided(X, k_shape=[3, 3, decoding_filters[4], decoding_filters[5]], stride=2,
-                                      padding='SAME', w_init='tn', out_shape=None, scope_name='dconv_6', add_smry=False)
+                                      padding='SAME', w_init='gu', out_shape=None, scope_name='dconv_6', add_smry=False)
     # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_12')
     logging.info('%s : dconv_6 shape: %s', 'DECODER: ', str(X.shape))
     X = ops.activation(X, 'relu', 'relu_11')
@@ -159,7 +173,7 @@ def decoder(X, enc_fn, decoding_filters):
     
     # Decoding
     X = ops.conv_layer(X, k_shape=[3, 3, decoding_filters[5], decoding_filters[6]], stride=1, padding='SAME',
-                       w_init='tn', w_decay=None, scope_name='conv_7', add_smry=False)
+                       w_init='gu', w_decay=None, scope_name='conv_7', add_smry=False)
     # X = ops.batch_norm(X, axis=[0, 1, 2], scope_name='bn_13')
     logging.info('%s : conv_7 shape: %s', 'DECODER: ', str(X.shape))
     
@@ -175,27 +189,27 @@ def conv_autoencoder(img_shape, device_type=None):
     # enc_filter = [3, 16, 32, 32, 128, 256, 256]  # 3 Represents the number of channels
     # dec_filter = [256, 256, 128, 64, 32, 16, 3]
 
-    enc_filter = [3, 8, 16, 32, 64, 32, 16]  # 3 Represents the number of channels
-    dec_filter = [16, 32, 64, 32, 16, 8, 3]
+    enc_filter = [3, 8, 16, 32, 64, 64, 64]  # 3 Represents the number of channels
+    dec_filter = [64, 64, 64, 32, 16, 8, 3]
 
     
     with tf.device(device_type):
-        encoded = encoder(inpX, encoding_filters=enc_filter)
-        decoded, sigmoid_logits = decoder(encoded, enc_filter[-1], dec_filter)
-        
+        encoded = encoder(inpX, encoding_filters=enc_filter, latent_dim=64)
+        decoded, sigmoid_logits = decoder(encoded, dec_filter, latent_dim=64)
+
         loss = ops.get_loss(y_true=inpX, y_logits=decoded, which_loss='sigmoid_cross_entropy', lamda=None)
         reconstruction_mse = tf.reduce_mean(tf.pow(inpX - decoded, 2), [1, 2, 3])  # Basically we want to find for each
         reconstruction_entropy = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=decoded, labels=inpX)
                                                 , [1,2,3])
         # image a reconstruction error, so we calculate mse across [img_width, img_height, img_channel]
         # print ('sdssdsdds ', reconstructionMSE.shape)
-        
+
         optimizer, l_rate = ops.optimize(loss=loss, learning_rate_decay=True, add_smry=False)
 
         # encoded = ops.activation(encoded, 'tanh', 'tanh_1')
         encoded_flattened =tf.layers.flatten(encoded)
         print (encoded_flattened.shape)
-    
+
     return dict(inpX=inpX, encoded=encoded_flattened, decoded=decoded, sigmoid_logits=sigmoid_logits,
                 loss=loss, reconstructionMSE=reconstruction_mse, reconstructionEntropy=reconstruction_entropy,
                 optimizer=optimizer, learning_rate=l_rate)
@@ -203,6 +217,7 @@ def conv_autoencoder(img_shape, device_type=None):
 #
 #
 
+# conv_autoencoder([128,128,3], device_type=None)
 
 # import numpy as np
 # from conv_net import utils

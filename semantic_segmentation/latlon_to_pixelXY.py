@@ -81,22 +81,43 @@ class lonlatToPixel():
         lat = 180 / math.pi * (2 * math.atan(math.exp(lat * math.pi / 180.0)) - math.pi / 2.0)
         return lon, lat
 
-    def convert_map_pxl_to_img_pxl(self, pxl_at_corner00, to_convert_pxl):
+    def extend_polygon(self, x, y, x_cent, y_cent, how_many_pixels, prop_of_increase_in_x, map_size=[400,400]):
+        if x_cent > x:
+            x -= how_many_pixels * prop_of_increase_in_x
+        elif x_cent < x:
+            x += how_many_pixels * prop_of_increase_in_x
+        else:
+            pass
+    
+        if y_cent > y:
+            y -= how_many_pixels * (1 - prop_of_increase_in_x)
+        elif y_cent < y:
+            y += how_many_pixels * (1 - prop_of_increase_in_x)
+        else:
+            pass
+    
+        if x >= 0 and x <= map_size[1] and y >= 0 and y <= map_size[0]:
+            return x, y
+        else:
+            return min(map_size[1], max(int(round(x)), 0)), min(map_size[0], max(int(round(y)), 0))
+
+
+    def convert_map_pxl_to_img_pxl(self, pxl_at_corner00, to_convert_pxl, map_size=[400,400]):
         '''
         :param pxl_at_corner00:  The corner pixel value of the entire map derived using meters_to_pixels function
         :param to_convert_pxl:   The map pixel value to be converted into the static map pixel
         :return: The pixel number at range (0-image_shape(400)) of the static map
         
-        Note : There is one subtle thing to note. The x = px - px_ and y = py_ - py are different arranged
+        Note : There is one subtle thing to note. The x = px - px_ and y = py_ - py are arranged
         differently. This is because :
          
          The pixels number obtained by using ESPG projection are cornered as:
                     01     11
                     
-                    00     10
+                    00     10       # here pxl_at_00 is the left lower corner
                     
         But the way Open CV/matplotlib treats images are:
-                    00     01
+                    00     01       # here pxl_at_00 is the left upper corner
                     
                     10     11
                     
@@ -104,7 +125,42 @@ class lonlatToPixel():
         new pixel points: we do x = px - px_ and y = py_ - px . Where px_, py_ are reference point pixels.
                     
         '''
-        
+        # print ('fsdfsdfsdfds ', pxl_at_corner00, to_convert_pxl)
+        px_, py_ = pxl_at_corner00
+        px, py = to_convert_pxl
+        x = px - px_
+        y = py_ - py
+    
+        if x >= 0 and x <= map_size[1] and y >= 0 and y <= map_size[0]:
+            return x, y
+        else:
+            # print('The new pixel value is not bounded by the images shape ')
+            return min(map_size[1], max(x, 0)), min(map_size[0], max(y, 0))
+
+    def widen_a_bounding_box(self, pxl_at_corner00, to_convert_pxl):
+        '''
+        :param pxl_at_corner00:  The corner pixel value of the entire map derived using meters_to_pixels function
+        :param to_convert_pxl:   The map pixel value to be converted into the static map pixel
+        :return: The pixel number at range (0-image_shape(400)) of the static map
+
+        Note : There is one subtle thing to note. The x = px - px_ and y = py_ - py are different arranged
+        differently. This is because :
+
+         The pixels number obtained by using ESPG projection are cornered as:
+                    01     11
+
+                    00     10
+
+        But the way Open CV/matplotlib treats images are:
+                    00     01
+
+                    10     11
+
+        Hence when we use top-left corner of ESPG map projection pixel (01) as the point of reference for deriving
+        new pixel points: we do x = px - px_ and y = py_ - px . Where px_, py_ are reference point pixels.
+
+        '''
+    
         px_, py_ = pxl_at_corner00
         px, py = to_convert_pxl
         x = px - px_

@@ -4,6 +4,7 @@ import codecs
 import json
 import logging
 import os
+import time
 import urllib
 
 import numpy as np
@@ -18,8 +19,8 @@ logging.basicConfig(level=logging.DEBUG, filename="logfile.log", filemode="w",
 
 
 
-map_size = [400,400]
-zoom_lvl = 40
+# map_size = [400,400]
+# zoom_lvl = 40
 metaURL_head = 'https://maps.googleapis.com/maps/api/geocode/json?address='
 aerialURL_head = 'https://maps.googleapis.com/maps/api/staticmap?center='
 metaURL_tail = '&key=%s'%(api_call['google_meta_key'])
@@ -27,14 +28,7 @@ aerialURL_tail = '&maptype=satellite&key=%s'%(api_call['google_aerial_key'])
 reader = codecs.getreader("utf-8")
 
 # Statistic and Image Dump paths
-google_aaerial_stats_path = pathDict['google_aerial_stats_path']
-google_house_dump_path = os.path.join(pathDict['google_aerial_image_path'], 'house')
-google_land_dump_path = os.path.join(pathDict['google_aerial_image_path'], 'land')
-google_unknown_dump_path = os.path.join(pathDict['google_aerial_image_path'], 'unknown')
 
-for dir in [google_aaerial_stats_path, google_house_dump_path, google_land_dump_path, google_unknown_dump_path]:
-    if not os.path.exists(dir):
-        os.makedirs(dir)
 
 
 def metadata_prep(metadata):
@@ -129,14 +123,33 @@ class GoogleFetch_AerialMap():
 
 
 
-def fetch_google_aerial_images(dataIN, batch_size, get_stats=False):
+def fetch_google_aerial_images(dataIN, batch_size, zoom=19, state='IL', map_size = '400x400', get_stats=False, which_run='sam'):
+    
+    if which_run == 'latest':
+        new_folder_name = str(time.time()).split('.')[0]
+        stats_path = os.path.join(pathDict['aerial_stats_path'], new_folder_name)
+        house_dump_path = os.path.join(pathDict['aerial_image_path'], new_folder_name, 'house')
+        land_dump_path = os.path.join(pathDict['aerial_image_path'], new_folder_name, 'land')
+        unknown_dump_path = os.path.join(pathDict['aerial_image_path'], new_folder_name, 'unknown')
+    else:
+        stats_path = os.path.join(pathDict['aerial_stats_path'], which_run)
+        house_dump_path = os.path.join(pathDict['aerial_image_path'], which_run, 'house')
+        land_dump_path = os.path.join(pathDict['aerial_image_path'], which_run, 'land')
+        unknown_dump_path = os.path.join(pathDict['aerial_image_path'], which_run, 'unknown')
+   
+    
+
+    for dir in [stats_path, house_dump_path, land_dump_path, unknown_dump_path]:
+        if not os.path.exists(dir):
+            os.makedirs(dir)
+    
     data_arr = np.array(dataIN[['pin', 'address_line1', 'address_city', 'indicator']], dtype='str')
 
     statistics = []
     prev = 0
-    state = 'IL'
-    zoom = 19
-    map_size = '400x400'
+    # state = 'IL'
+    # zoom = 19
+    # map_size = '400x400'
     for num, (pin, add1, city, indicator) in enumerate(data_arr):
         # if num
         lat = 'nan'
@@ -159,13 +172,13 @@ def fetch_google_aerial_images(dataIN, batch_size, get_stats=False):
                                                                                           zoom=zoom, map_size=map_size)
             
                 if indicator == "Likely House":
-                    with open(os.path.join(google_house_dump_path, '%s.jpg' % str(pin)), 'wb') as handler:
+                    with open(os.path.join(house_dump_path, '%s.jpg' % str(pin)), 'wb') as handler:
                         handler.write(image_data)
                 elif indicator == 'Likely Land':
-                    with open(os.path.join(google_land_dump_path, '%s.jpg' % str(pin)),'wb') as handler:
+                    with open(os.path.join(land_dump_path, '%s.jpg' % str(pin)),'wb') as handler:
                         handler.write(image_data)
                 else:
-                    with open(os.path.join(google_unknown_dump_path, '%s.jpg' % str(pin)), 'wb') as handler:
+                    with open(os.path.join(unknown_dump_path, '%s.jpg' % str(pin)), 'wb') as handler:
                         handler.write(image_data)
     
         b = "TOTAL RECORDS PARSED: IMAGES DONE ======== %s"
@@ -176,7 +189,7 @@ def fetch_google_aerial_images(dataIN, batch_size, get_stats=False):
     
         if ((num + 1) % batch_size) == 0 or num == len(data_arr) - 1:
             if get_stats:
-                file_path = os.path.join(google_aaerial_stats_path, '%s_%s.csv' % (prev, num))
+                file_path = os.path.join(stats_path, '%s_%s.csv' % (prev, num))
                 statistics = pd.DataFrame(statistics,
                                           columns=['pin', 'address',  'city', 'lat','lon','loc_type',
                                                    'indicator','meta_url','img_url'])
@@ -217,4 +230,5 @@ if debugg:
     metadata = pd.concat([metadata[metadata['indicator'] == 'Likely Land'].head(50),
                           metadata[metadata['indicator'] == 'Likely House'].head(50)])
 
-    fetch_google_aerial_images(metadata, batch_size=50, get_stats=True)
+    fetch_google_aerial_images(dataIN=metadata, zoom=20, state='IL', map_size='400x400', batch_size=10,
+                                             get_stats=True, which_run='latest')
