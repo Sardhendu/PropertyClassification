@@ -57,26 +57,36 @@ class Preprocessing():
         batch.
     '''
     
-    def __init__(self, inp_img_shape, crop_shape, out_img_shape):
+    def __init__(self, pprocessor_inp_img_shape, pprocessor_inp_crop_shape, model_inp_img_shape):
         '''
-        :param out_img_shape: If the output cropped shape is smaller than the required image shape, then we pad the
+        :param model_inp_img_shape: If the output cropped shape is smaller than the required image shape, then we pad the
         cropped image shape with 0's to make it equall to the output image shape
         '''
-        self.inp_img_shape =  inp_img_shape
-        self.out_img_shape = out_img_shape
-        self.crop_shape = crop_shape
+        # self.pprocessor_inp_img_shape =  pprocessor_inp_img_shape
+        # self.model_inp_img_shape = model_inp_img_shape
+        # self.crop_shape = crop_shape
+        #
+        self.pprocessor_inp_img_shape = pprocessor_inp_img_shape
+        self.model_inp_img_shape = model_inp_img_shape
+
+        if pprocessor_inp_crop_shape is not None:
+            self.pprocessor_inp_crop_shape = pprocessor_inp_crop_shape
+        else:
+            self.pprocessor_inp_crop_shape = []
+
+        
         
     
     def randomCrop(self, imageIN):
         logging.info('Performing random crop')
         if config.preprocess_seed_idx == len(config.seed_arr) - 1:
             config.preprocess_seed_idx = 0
-        return tf.random_crop(imageIN, self.crop_shape,
+        return tf.random_crop(imageIN, self.pprocessor_inp_crop_shape,
                               seed=config.seed_arr[config.preprocess_seed_idx])
     
     def centralCrop(self, imageIN):
         logging.info('Performing Central crop')
-        return tf.image.central_crop(imageIN, self.crop_shape[0]/self.inp_img_shape[0])#tf.random_crop(imageIN, self.crop_shape)
+        return tf.image.central_crop(imageIN, self.pprocessor_inp_crop_shape[0]/self.pprocessor_inp_img_shape[0])#tf.random_crop(imageIN, self.crop_shape)
     
     def randomFlip(self, imageIN):
         logging.info('Performing random horizontal flip')
@@ -133,14 +143,16 @@ class Preprocessing():
         if config.pp_vars['rand_crop']:
             imageOUT = self.randomCrop(imageOUT)
             logging.info('Image shape after random crop: %s', str(imageOUT.shape))
-        elif config.pp_vars['central_crop']:
+            
+        if config.pp_vars['central_crop']:
             imageOUT = self.centralCrop(imageOUT)
             logging.info('Image shape after central crop: %s', str(imageOUT.shape))
-        else:
-            imageOUT = tf.image.resize_image_with_crop_or_pad(
-                    imageOUT, self.crop_shape[0],
-                    self.crop_shape[1]
-            )
+        #
+        # else:
+        #     imageOUT = tf.image.resize_image_with_crop_or_pad(
+        #             imageOUT, self.pprocessor_inp_crop_shape[0],
+        #             self.pprocessor_inp_crop_shape[1]
+        #     )
             
         if config.pp_vars['standardise']:
             imageOUT = self.standardize(imageOUT)
@@ -171,11 +183,11 @@ class Preprocessing():
             operations like brightness, contrast and whitening that doest arithmatic operation which many make the
             pixels value as floating point.
         '''
-        # print (self.inp_img_shape[0], self.inp_img_shape[1], self.inp_img_shape[2])
+        # print (self.pprocessor_inp_img_shape[0], self.pprocessor_inp_img_shape[1], self.pprocessor_inp_img_shape[2])
         
-        logging.info('PREPROCESSING THE DATASET ..........')
+        logging.info('PREPROCESSING THE DATASET of shape %s..........', str(self.pprocessor_inp_img_shape))
         imageIN = tf.placeholder(dtype=tf.float32,
-                                 shape=[self.inp_img_shape[0], self.inp_img_shape[1], self.inp_img_shape[2]],
+                                 shape=[self.pprocessor_inp_img_shape[0], self.pprocessor_inp_img_shape[1], self.pprocessor_inp_img_shape[2]],
                                  name="Preprocessor-variableHolder")
         is_training = tf.placeholder(tf.bool)
         
@@ -187,12 +199,16 @@ class Preprocessing():
         
         # If the out_image_size is larger than the crop_image_size, then we pad the image with zeros to make it of out_image shape,
         # If the out_image_size is smaller than the crop_image_sze, then we resize the image to the out_image_size
-        
-        if self.crop_shape[0] - self.out_img_shape[0] < 0:
-            imageOUT = zero_pad(inp=imageOUT, crop_shape=self.crop_shape, out_shape=self.out_img_shape)
-            
+        if len(self.pprocessor_inp_crop_shape)>0:
+            if self.pprocessor_inp_crop_shape[0] - self.model_inp_img_shape[0] < 0:
+                imageOUT = zero_pad(inp=imageOUT, crop_shape=self.pprocessor_inp_crop_shape, out_shape=self.model_inp_img_shape)
+                
+            else:
+                imageOUT = tf.image.resize_images(imageOUT, size=tf.stack([self.model_inp_img_shape[0], self.model_inp_img_shape[1]]))
+        elif self.model_inp_img_shape[0] != self.pprocessor_inp_img_shape[0]:
+            imageOUT = tf.image.resize_images(imageOUT, size=tf.stack([self.model_inp_img_shape[0],self.model_inp_img_shape[1]]))
         else:
-            imageOUT = tf.image.resize_images(imageOUT, size=tf.stack([self.out_img_shape[0], self.out_img_shape[1]]))
+            pass
 
         return dict(imageIN=imageIN, imageOUT=imageOUT, is_training=is_training)
     
@@ -205,7 +221,7 @@ if debugg:
     # X = zero_pad(X, out_shape = [200,200,3])
     # print (X.shape)
     # X = np.random.random((100,100))
-    obj = Preprocessing(inp_img_shape=[400,400,3], crop_shape=[100,100,3], out_img_shape=[200,200,3])
+    obj = Preprocessing(pprocessor_inp_img_shape=[400,400,3], pprocessor_inp_crop_shape=[100,100,3], model_inp_img_shape=[200,200,3])
     Xout_graph = obj.preprocessImageGraph()
     print (Xout_graph['imageOUT'].get_shape().as_list())
 

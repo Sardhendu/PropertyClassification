@@ -202,7 +202,7 @@ def get_cropped_bbox(parcels_in_image, tl_pxl, img, zoom=19, map_size=[400,400])
     return img
 
 
-def overlay_parcel_on_images(data_to_model, zoom, map_size, which_run):
+def overlay_parcel_on_images(data_to_model, aerial_img_path, overlayed_img_path, zoom, map_size):
     '''
     
     :param data_to_model:
@@ -215,22 +215,21 @@ def overlay_parcel_on_images(data_to_model, zoom, map_size, which_run):
             Step 3.2: For that image get the corner pixels
     '''
     
-    aerial_land_path =  os.path.join(pathDict['aerial_image_path'], which_run, 'land')
-    aerial_house_path = os.path.join(pathDict['aerial_image_path'], which_run, 'house')
-    overlayed_land_path = os.path.join(pathDict['overlayed_image_path'], which_run, 'land')
-    overlayed_house_path = os.path.join(pathDict['overlayed_image_path'], which_run, 'house')
-    
+    aerial_land_path =  os.path.join(aerial_img_path, 'land')
+    aerial_house_path = os.path.join(aerial_img_path, 'house')
+    overlayed_land_path = os.path.join(overlayed_img_path, 'land')
+    overlayed_house_path = os.path.join(overlayed_img_path, 'house')
+
+    processed_pins = []
     for dir in [overlayed_land_path, overlayed_house_path]:
         if not os.path.exists(dir):
             os.makedirs(dir)
+        else:
+            processed_pins += [img.split('.')[0] for img in os.listdir(dir) if img != '.DS_Store']
     
-    
-    
+
     for sc_cnt,scoop in enumerate(scoop_arr):
-        # if sc_cnt == 0:
-        #     continue
-        
-        
+
         min_lat, max_lon, max_lat, min_lon = [float(i.strip()) for i in lat_scoop[scoop].split(',')]
         # print(min_lat, max_lon, max_lat, min_lon)
 
@@ -244,6 +243,10 @@ def overlay_parcel_on_images(data_to_model, zoom, map_size, which_run):
         print('Initiating Run for scoop %s : DATA SHAPE %s'%(scoop, str(property_parcel.shape)))
 
         ################ Step 3.
+        if len(processed_pins) > 0:
+            data_ = data_[~data_['pin'].isin(processed_pins)]
+            print('Total images to be processed are ', data_.shape)
+        
         dataIN = np.array(data_[['pin', 'lat', 'lon', 'indicator']])
         for rcnt, (pin, lat, lon, label) in enumerate(dataIN):
             # if rcnt<700:
@@ -291,13 +294,15 @@ def overlay_parcel_on_images(data_to_model, zoom, map_size, which_run):
 
             cv2.imwrite(overlayed_dump_path, overlayed_image)
 
-            if ((rcnt+1) % 100) == 0 or rcnt == len(dataIN)-1:
-                print("TOTAL IMAGES PARSED ======== %s"%(str(rcnt)))
+            b = "TOTAL RECORDS PARSED: IMAGES DONE ======== %s"
+            print(b % (rcnt), end="\r")
+            # if ((rcnt+1) % 100) == 0 or rcnt == len(dataIN)-1:
+            #     print("TOTAL IMAGES PARSED ======== %s"%(str(rcnt)))
 
         print('')
 
 
-def crop_parcel_on_images(data_to_model, zoom, map_size, which_run):
+def crop_parcel_from_images(data_to_model, aerial_img_path, aerial_cropped_img_path, zoom, map_size):
     '''
 
     :param data_to_model:
@@ -311,15 +316,17 @@ def crop_parcel_on_images(data_to_model, zoom, map_size, which_run):
             Step 3.1: Load the image from disk or specified path
             Step 3.2: For that image get the corner pixels
     '''
+    aerial_land_path = os.path.join(aerial_img_path, 'land')
+    aerial_house_path = os.path.join(aerial_img_path, 'house')
+    aerial_cropped_land_path = os.path.join(aerial_cropped_img_path, 'land')
+    aerial_cropped_house_path = os.path.join(aerial_cropped_img_path, 'house')
     
-    aerial_land_path = os.path.join(pathDict['aerial_image_path'], which_run, 'land')
-    aerial_house_path = os.path.join(pathDict['aerial_image_path'], which_run, 'house')
-    aerial_cropped_land_path = os.path.join(pathDict['aerial_cropped_image_path'], which_run, 'land')
-    aerial_cropped_house_path = os.path.join(pathDict['aerial_cropped_image_path'], which_run, 'house')
-    
+    processed_pins = []
     for dir in [aerial_cropped_land_path, aerial_cropped_house_path]:
         if not os.path.exists(dir):
             os.makedirs(dir)
+        else:
+            processed_pins += [img.split('.')[0] for img in os.listdir(dir) if img!='.DS_Store']
     
     for sc_cnt, scoop in enumerate(scoop_arr):
         min_lat, max_lon, max_lat, min_lon = [float(i.strip()) for i in lat_scoop[scoop].split(',')]
@@ -335,11 +342,13 @@ def crop_parcel_on_images(data_to_model, zoom, map_size, which_run):
         print('Initiating Run for scoop %s : DATA SHAPE %s' % (scoop, str(property_parcel.shape)))
 
         ################ Step 3.
+        if len(processed_pins) > 0:
+            data_ = data_[~data_['pin'].isin(processed_pins)]
+            print ('Total images to be processed are ', data_.shape)
+            
         dataIN = np.array(data_[['pin', 'lat', 'lon', 'indicator']])
         for rcnt, (pin, lat, lon, label) in enumerate(dataIN):
-        #     # if rcnt<700:
-        #     #     continue
-        #
+
         #     ################ Step 3.1.
         #     # Get the Google map static images using Pin from the disk
             if label == 'Likely Land':
@@ -391,10 +400,10 @@ def crop_parcel_on_images(data_to_model, zoom, map_size, which_run):
         
             cv2.imwrite(aerial_cropped_dump_path, cropped_aerial_image)
 
-            if ((rcnt + 1) % 100) == 0 or rcnt == len(dataIN) - 1:
-                print("TOTAL IMAGES PARSED ======== %s" % (str(rcnt)))
+            b = "TOTAL RECORDS PARSED: IMAGES DONE ======== %s"
+            print(b % (rcnt), end="\r")
 
-        print('')
+        # print('')
 
 
 
@@ -403,7 +412,7 @@ def crop_parcel_on_images(data_to_model, zoom, map_size, which_run):
 which_run = '1522630301'
 debugg = True
 overlayed = False
-aerial_cropped = True
+aerial_cropped = False
 
 if debugg:
     

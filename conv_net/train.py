@@ -16,19 +16,15 @@ from config import pathDict, myNet
 from conv_net.ops import summary_builder
 from data_transformation.data_io import getH5File
 from data_transformation.preprocessing import Preprocessing
-from data_transformation.data_prep import unison_shuffled_copies
+from conv_net.utils import unison_shuffled_copies
 
 
 logging.basicConfig(level=logging.DEBUG, filename="logfile.log", filemode="w",
                     format="%(asctime)-15s %(levelname)-8s %(message)s")
 
 
-def load_batch_data(image_type, which_data='cvalid'):
-    if image_type not in ['bing_aerial', 'google_aerial', 'assessor', 'google_streetside', 'bing_streetside',
-                          'google_overlayed', 'assessor_code']:
-        raise ValueError('Can not identify the image type %s, Please provide a valid one' % (str(image_type)))
-    
-    data_path = pathDict['%s_batch_path' % (str(image_type))]
+def load_batch_data(which_data='cvalid'):
+    data_path = pathDict['batch_path']# % (str(image_type))]
     batch_file_name = '%s' % (which_data)
     
     # LOAD THE TRAINING DATA FROM DISK
@@ -38,48 +34,61 @@ def load_batch_data(image_type, which_data='cvalid'):
 
 
 class PropertyClassification(object):
-    def __init__(self, params, device_type, which_net, image_type):
+    def __init__(self, params, device_type, which_net):
         params_keys = list(params.keys())
         self.which_net = which_net
+        self.device_type = device_type
         
         if 'learning_rate' in params_keys:
             myNet['learning_rate'] = params['learning_rate']
             
-        if 'inp_img_shape' in  params_keys:
-            self.inp_img_shape = params['inp_img_shape']
+        if 'pprocessor_inp_img_shape' in  params_keys:
+            self.pprocessor_inp_img_shape = params['pprocessor_inp_img_shape']
+        else:
+            raise ValueError('You should provide the input image shape')
+        
+        if 'model_inp_img_shape' in params_keys:
+            self.model_inp_img_shape = params['model_inp_img_shape']
+        else:
+            raise ValueError('You should provide the input image shape')
+       
 
-        if 'crop_shape' in params_keys:
-            self.crop_shape = params['crop_shape']
-
-        if 'out_img_shape' in params_keys:
-            self.out_img_shape = params['out_img_shape']
-
+        if 'pprocessor_inp_crop_shape' in params_keys:
+            self.pprocessor_inp_crop_shape = params['pprocessor_inp_crop_shape']
+        else:
+            self.pprocessor_inp_crop_shape = []
 
         if 'use_checkpoint' in params_keys:
             self.use_checkpoint = params['use_checkpoint']
-        
+        else:
+            self.use_checkpoint = False
+            
         if 'save_checkpoint' in params_keys:
             self.save_checkpoint = params['save_checkpoint']
+        else:
+            self.save_checkpoint = False
         
         if 'write_tensorboard_summary' in params_keys:
             self.write_tensorboard_summary = params['write_tensorboard_summary']
-        
-        if image_type not in ['bing_aerial', 'google_aerial', 'assessor', 'google_streetside', 'bing_streetside', 'google_overlayed', 'assessor_code']:
-            raise ValueError('Can not identify the image type %s, Please provide a valid one'%(str(image_type)))
-        
-        self.device_type = device_type
-        self.ckpt_path = os.path.join(pathDict['%s_ckpt_path'%(str(image_type))], self.which_net )
-        self.smry_path = os.path.join(pathDict['%s_smry_path'%(str(image_type))], self.which_net )
+        else:
+            self.write_tensorboard_summary = False
+            
+            
+        if self.save_checkpoint or self.use_checkpoint:
+            self.ckpt_path = os.path.join(pathDict['checkpoint_path'], self.which_net)
+            print('Dumping/Retreiving Checkpoints to %s', self.ckpt_path)
+            
+        if self.write_tensorboard_summary:
+            self.smry_path = os.path.join(pathDict['summary_path'], self.which_net)
+            if not os.path.exists(self.smry_path):
+                os.makedirs(self.smry_path)
+            print('Dumping Tensorboard Summary to %s', self.smry_path)
         
         if not os.path.exists(self.ckpt_path):
             os.makedirs(self.ckpt_path)
             
-        if not os.path.exists(self.smry_path):
-            os.makedirs(self.smry_path)
         
-        self.image_type = image_type
-        print('Dumping Checkpoints to %s', self.ckpt_path)
-        print('Dumping Tensorboard Summary to %s', self.smry_path)
+        
         
 
     def reshape(self, x, y):
@@ -127,7 +136,7 @@ class PropertyClassification(object):
 
 
     def run_preprocessor(self, sess, dataIN, preprocess_graph, is_training):
-        out_shape = [dataIN.shape[0]] + self.out_img_shape
+        out_shape = [dataIN.shape[0]] + self.model_inp_img_shape
         pp_imgs = np.ndarray(shape=(out_shape), dtype='float32')
         for img_no in np.arange(dataIN.shape[0]):
             feed_dict = {
@@ -232,7 +241,7 @@ class Train(PropertyClassification):
             self.merged_summary, self.writer = summary_builder(sess, self.smry_path)
         
         # When we have already processed all the batches then we need to start a new epoch
-        if self.max_batch == self.num_batches - 1:
+        if self.max_batch == self.num_batches:
             self.max_batch = 0
             self.max_epoch += 1
         elif self.max_batch == 0:
@@ -254,7 +263,7 @@ class Train(PropertyClassification):
             self.some_stuff(saver, sess)
             
             # CROSS-VALIDATION We load and pre-process the Cross-Validation set once, since we have to use it many times
-            cvbatchX, self.cvbatchY = load_batch_data(image_type=self.image_type, which_data='cvalid')
+            cvbatchX, self.cvbatchY = load_batch_data(which_data='cvalid')
             
             self.cvbatchY_1hot = self.to_one_hot(self.cvbatchY)
             self.cv_preprocessed_data = self.run_preprocessor(sess, cvbatchX, self.preprocess_graph, is_training=False)
@@ -274,9 +283,9 @@ class Train(PropertyClassification):
             for epoch in range(self.max_epoch, self.max_epoch + self.epochs):
                 self.epoch = epoch
                 
-                for batch_num in range(self.max_batch, self.num_batches):
+                for batch_num in range(self.max_batch, self.num_batches + 1):
                     self.batch_num = batch_num
-                    batchX, batchY = load_batch_data(image_type=self.image_type,which_data='train_%s'%(batch_num))
+                    batchX, batchY = load_batch_data(which_data='train_%s'%(batch_num))
 
                     tr_loss, tr_acc, tr_precision_score, tr_recall_score, l_rate = self.train(batchX, batchY, sess)
                     tr_loss_arr.append(tr_loss)
@@ -285,7 +294,7 @@ class Train(PropertyClassification):
                     tr_recall_arr.append(tr_recall_score)
                     l_rate_arr.append(l_rate)
                     
-                    if ((batch_num+1)%get_stats_at == 0) or (batch_num == self.num_batches -1):
+                    if ((batch_num+1)%get_stats_at == 0) or (batch_num == self.num_batches):
                         
                         ## VALIDATION ACCURACY
                         cv_loss, cv_acc, cv_precision_score, cv_recall_score = self.cvalid(sess)
@@ -313,16 +322,16 @@ class Train(PropertyClassification):
         self.epochs = num_epochs
         self.num_batches = num_batches
 
-        self.preprocess_graph = Preprocessing(inp_img_shape=self.inp_img_shape,
-                                              crop_shape=self.crop_shape,
-                                              out_img_shape=self.out_img_shape).preprocessImageGraph()
+        self.preprocess_graph = Preprocessing(pprocessor_inp_img_shape=self.pprocessor_inp_img_shape,
+                                              pprocessor_inp_crop_shape=self.pprocessor_inp_crop_shape,
+                                              model_inp_img_shape=self.model_inp_img_shape).preprocessImageGraph()
         
         # if self.which_net == 'vgg':
         #     self.computation_graph = vgg(training=True)
         if self.which_net == 'resnet':
-            self.computation_graph = resnet(img_shape=self.out_img_shape, device_type=self.device_type)
+            self.computation_graph = resnet(img_shape=self.model_inp_img_shape, device_type=self.device_type)
         elif self.which_net == 'convnet':
-            self.computation_graph = conv_net(img_shape=self.out_img_shape, device_type=self.device_type)
+            self.computation_graph = conv_net(img_shape=self.model_inp_img_shape, device_type=self.device_type)
         else:
             raise ValueError('Provide a valid Net type options ={vgg, resnet}')
         ########   RUN THE SESSION
@@ -505,11 +514,11 @@ class Train(PropertyClassification):
 #         self.epochs = num_epochs
 #         self.num_batches = num_batches
 #
-#         self.preprocess_graph = Preprocessing(inp_img_shape=self.inp_img_shape,
-#                                               crop_shape=self.crop_shape,
-#                                               out_img_shape=self.out_img_shape).preprocessImageGraph()
+#         self.preprocess_graph = Preprocessing(pprocessor_inp_img_shape=self.pprocessor_inp_img_shape,
+#                                               pprocessor_inp_crop_shape=self.pprocessor_inp_crop_shape,
+#                                               model_inp_img_shape=self.model_inp_img_shape).preprocessImageGraph()
 #         if self.which_net == 'autoencoder':
-#             self.computation_graph = conv_autoencoder(img_shape=self.out_img_shape, device_type=self.device_type)
+#             self.computation_graph = conv_autoencoder(img_shape=self.model_inp_img_shape, device_type=self.device_type)
 #         else:
 #             raise ValueError('Net type not understood, Make sure you typed : "autoencoder"')
 #         ########   RUN THE SESSION
@@ -683,11 +692,11 @@ class TrainConvEnc(PropertyClassification):
         self.epochs = num_epochs
         self.num_batches = num_batches
         
-        self.preprocess_graph = Preprocessing(inp_img_shape=self.inp_img_shape,
-                                              crop_shape=self.crop_shape,
-                                              out_img_shape=self.out_img_shape).preprocessImageGraph()
+        self.preprocess_graph = Preprocessing(pprocessor_inp_img_shape=self.pprocessor_inp_img_shape,
+                                              pprocessor_inp_crop_shape=self.pprocessor_inp_crop_shape,
+                                              model_inp_img_shape=self.model_inp_img_shape).preprocessImageGraph()
         if self.which_net == 'autoencoder':
-            self.computation_graph = conv_autoencoder(img_shape=self.out_img_shape, device_type=self.device_type)
+            self.computation_graph = conv_autoencoder(img_shape=self.model_inp_img_shape, device_type=self.device_type)
         else:
             raise ValueError('Net type not understood, Make sure you typed : "autoencoder"')
         ########   RUN THE SESSION
@@ -706,9 +715,9 @@ if debugg:
     if encoder:
         max_batches = 2
         # if train:
-        tr_obj = TrainConvEnc(dict(inp_img_shape=[224, 400, 3],
-                            crop_shape=[128, 128, 3],
-                            out_img_shape=[128, 128, 3],
+        tr_obj = TrainConvEnc(dict(pprocessor_inp_img_shape=[224, 400, 3],
+                            pprocessor_inp_crop_shape=[128, 128, 3],
+                            model_inp_img_shape=[128, 128, 3],
                             use_checkpoint=True,
                             save_checkpoint=True,
                             write_tensorboard_summary=False
@@ -728,9 +737,9 @@ if debugg:
     else:
         max_batches = 66
         # if train:
-        tr_obj = Train(dict(inp_img_shape=[400, 400, 3],
-                            crop_shape=[96, 96, 3],
-                            out_img_shape=[96, 96, 3],
+        tr_obj = Train(dict(pprocessor_inp_img_shape=[400, 400, 3],
+                            pprocessor_inp_crop_shape=[96, 96, 3],
+                            model_inp_img_shape=[96, 96, 3],
                             use_checkpoint=True,
                             save_checkpoint=True,
                             write_tensorboard_summary=False

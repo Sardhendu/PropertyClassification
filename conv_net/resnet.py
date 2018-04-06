@@ -124,8 +124,8 @@ def resnet(img_shape, device_type):
         Y_probs = tf.nn.softmax(X_logits)
         logging.info('Softmax Y-Prob shape: shape %s', str(Y_probs.shape))
 
-        loss, _ = ops.get_loss(y_true=inpY, y_logits=X_logits,
-                                               which_loss='softmax_cross_entropy', lamda=None)
+        loss = ops.get_loss(y_true=inpY, y_logits=X_logits,
+                                               which_loss='sigmoid_cross_entropy', lamda=None)
 
         optimizer, l_rate = ops.optimize(loss=loss, learning_rate_decay=True, add_smry=False)
         

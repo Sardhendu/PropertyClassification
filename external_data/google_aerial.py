@@ -4,7 +4,6 @@ import codecs
 import json
 import logging
 import os
-import time
 import urllib
 
 import numpy as np
@@ -119,27 +118,22 @@ class GoogleFetch_AerialMap():
 
         except:
             logging.info('GET_AERIAL_IMAGE: Response error')
-            return None, None, None
+            return None, None
 
 
 
-def fetch_google_aerial_images(dataIN, batch_size, zoom=19, state='IL', map_size = '400x400', get_stats=False, which_run='sam'):
+def fetch_dump_google_aerial_images(dataIN, stats_path, batch_size, zoom=19, state='IL', map_size = '400x400',
+                                        get_stats=False):
     
-    if which_run == 'latest':
-        new_folder_name = str(time.time()).split('.')[0]
-        stats_path = os.path.join(pathDict['aerial_stats_path'], new_folder_name)
-        house_dump_path = os.path.join(pathDict['aerial_image_path'], new_folder_name, 'house')
-        land_dump_path = os.path.join(pathDict['aerial_image_path'], new_folder_name, 'land')
-        unknown_dump_path = os.path.join(pathDict['aerial_image_path'], new_folder_name, 'unknown')
-    else:
-        stats_path = os.path.join(pathDict['aerial_stats_path'], which_run)
-        house_dump_path = os.path.join(pathDict['aerial_image_path'], which_run, 'house')
-        land_dump_path = os.path.join(pathDict['aerial_image_path'], which_run, 'land')
-        unknown_dump_path = os.path.join(pathDict['aerial_image_path'], which_run, 'unknown')
-   
+    # if which_run == 'latest':
+    # new_folder_name = str(time.time()).split('.')[0]
     
+    house_dump_path = os.path.join(pathDict['image_path'], 'house')
+    land_dump_path = os.path.join(pathDict['image_path'], 'land')
+    unknown_dump_path = os.path.join(pathDict['image_path'], 'unknown')
 
-    for dir in [stats_path, house_dump_path, land_dump_path, unknown_dump_path]:
+
+    for dir in [house_dump_path, land_dump_path, unknown_dump_path]:
         if not os.path.exists(dir):
             os.makedirs(dir)
     
@@ -197,10 +191,19 @@ def fetch_google_aerial_images(dataIN, batch_size, zoom=19, state='IL', map_size
                 prev = num + 1
             
                 statistics = []
-    
-        
-        
 
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+###########################  ROUGH RUN
 
 
 debugg1 = False
@@ -230,5 +233,4 @@ if debugg:
     metadata = pd.concat([metadata[metadata['indicator'] == 'Likely Land'].head(50),
                           metadata[metadata['indicator'] == 'Likely House'].head(50)])
 
-    fetch_google_aerial_images(dataIN=metadata, zoom=20, state='IL', map_size='400x400', batch_size=10,
-                                             get_stats=True, which_run='latest')
+    fetch_google_aerial_images(dataIN=metadata, zoom=20, state='IL', map_size='400x400', batch_size=10, get_stats=True)
