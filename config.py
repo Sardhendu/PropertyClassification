@@ -75,7 +75,7 @@ if image_type in ['assessor', 'aerial', 'streetside', 'overlayed']:
     pp_vars['rand_rotate'] = False
     pp_vars['rand_flip'] = True
     pp_vars['rand_crop'] = False
-    pp_vars['central_crop'] = True
+    pp_vars['central_crop'] = False
 
     myNet['num_labels'] = 2
     myNet['optimizer'] = 'ADAM'

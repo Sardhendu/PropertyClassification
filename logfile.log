@@ -1,173 +1,26 @@
-2018-04-05 21:14:32,788 INFO     INITIATING RUN ........
-2018-04-05 21:14:32,788 INFO     PREPROCESSING THE DATASET of shape [224, 224, 3]..........
-2018-04-05 21:14:32,817 INFO     PREPROCESSING config: With the training Data Set
-2018-04-05 21:14:32,817 INFO     Performing random horizontal flip
-2018-04-05 21:14:32,841 INFO     Standarizing the image
-2018-04-05 21:14:32,843 INFO     PREPROCESSING config: With the Test Data Set
-2018-04-05 21:14:32,844 INFO     Standarizing the image
-2018-04-05 21:14:32,854 INFO     SEED for scope: 553
-2018-04-05 21:14:32,878 INFO     Running Scope bn_1: 
-2018-04-05 21:14:32,943 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
-2018-04-05 21:14:32,943 INFO     SEED for scope: 292
-2018-04-05 21:14:32,963 INFO     Running Scope bn_1: 
-2018-04-05 21:14:33,021 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
-2018-04-05 21:14:33,021 INFO     SEED for scope: 394
-2018-04-05 21:14:33,047 INFO     Running Scope bn_2: 
-2018-04-05 21:14:33,095 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
-2018-04-05 21:14:33,097 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
-2018-04-05 21:14:33,097 INFO     SEED for scope: 874
-2018-04-05 21:14:33,122 INFO     Running Scope bn_1: 
-2018-04-05 21:14:33,172 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
-2018-04-05 21:14:33,172 INFO     SEED for scope: 445
-2018-04-05 21:14:33,197 INFO     Running Scope bn_2: 
-2018-04-05 21:14:33,249 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
-2018-04-05 21:14:33,253 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
-2018-04-05 21:14:33,253 INFO     SEED for scope: 191
-2018-04-05 21:14:33,277 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
-2018-04-05 21:14:33,277 INFO     SEED for scope: 161
-2018-04-05 21:14:33,298 INFO     Running Scope bn_1: 
-2018-04-05 21:14:33,360 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
-2018-04-05 21:14:33,360 INFO     SEED for scope: 141
-2018-04-05 21:14:33,383 INFO     Running Scope bn_2: 
-2018-04-05 21:14:33,436 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
-2018-04-05 21:14:33,438 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
-2018-04-05 21:14:33,439 INFO     SEED for scope: 213
-2018-04-05 21:14:33,459 INFO     Running Scope bn_1: 
-2018-04-05 21:14:33,619 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
-2018-04-05 21:14:33,619 INFO     SEED for scope: 436
-2018-04-05 21:14:33,639 INFO     Running Scope bn_2: 
-2018-04-05 21:14:33,686 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
-2018-04-05 21:14:33,689 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
-2018-04-05 21:14:33,689 INFO     SEED for scope: 754
-2018-04-05 21:14:33,716 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
-2018-04-05 21:14:33,716 INFO     SEED for scope: 991
-2018-04-05 21:14:33,740 INFO     Running Scope bn_1: 
-2018-04-05 21:14:33,794 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
-2018-04-05 21:14:33,794 INFO     SEED for scope: 302
-2018-04-05 21:14:33,818 INFO     Running Scope bn_2: 
-2018-04-05 21:14:33,867 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
-2018-04-05 21:14:33,870 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
-2018-04-05 21:14:33,870 INFO     SEED for scope: 992
-2018-04-05 21:14:33,890 INFO     Running Scope bn_1: 
-2018-04-05 21:14:33,948 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
-2018-04-05 21:14:33,949 INFO     SEED for scope: 223
-2018-04-05 21:14:33,969 INFO     Running Scope bn_2: 
-2018-04-05 21:14:34,020 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
-2018-04-05 21:14:34,023 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
-2018-04-05 21:14:34,023 INFO     SEED for scope: 645
-2018-04-05 21:14:34,049 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
-2018-04-05 21:14:34,049 INFO     SEED for scope: 724
-2018-04-05 21:14:34,074 INFO     Running Scope bn_1: 
-2018-04-05 21:14:34,128 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
-2018-04-05 21:14:34,128 INFO     SEED for scope: 944
-2018-04-05 21:14:34,149 INFO     Running Scope bn_2: 
-2018-04-05 21:14:34,202 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
-2018-04-05 21:14:34,205 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
-2018-04-05 21:14:34,206 INFO     SEED for scope: 232
-2018-04-05 21:14:34,233 INFO     Running Scope bn_1: 
-2018-04-05 21:14:34,287 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
-2018-04-05 21:14:34,287 INFO     SEED for scope: 123
-2018-04-05 21:14:34,310 INFO     Running Scope bn_2: 
-2018-04-05 21:14:34,361 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
-2018-04-05 21:14:34,363 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
-2018-04-05 21:14:35,550 INFO     X - flattened: [None, 25088]
-2018-04-05 21:14:35,575 INFO     Softmax Y-Prob shape: shape (?, 2)
-2018-04-05 21:14:35,575 INFO     INITIALIZING LOSS: .....
-2018-04-05 21:14:35,601 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
-2018-04-05 21:14:47,360 INFO     Checkpoint LISTS .. ['resnet_epoch_0_batch_9']
-2018-04-05 21:14:48,966 INFO     DATA FORMATTER: Retrieved the hdf5 file cvalid from disk, dataX shape = (1146, 224, 224, 3), dataY shape = (1146,)
-2018-04-05 21:14:50,003 INFO     DATA FORMATTER: Retrieved the hdf5 file train_10 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:15:23,571 INFO     Fold: 1, epoch: 0, batch: 10, Loss: 8.455136, Accuracy: 0.82812, Precision: 0.81818, Recall: 0.84375
-2018-04-05 21:15:23,653 INFO     DATA FORMATTER: Retrieved the hdf5 file train_11 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:15:56,857 INFO     Fold: 1, epoch: 0, batch: 11, Loss: 11.321763, Accuracy: 0.75000, Precision: 0.69048, Recall: 0.90625
-2018-04-05 21:15:56,954 INFO     DATA FORMATTER: Retrieved the hdf5 file train_12 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:16:27,570 INFO     Fold: 1, epoch: 0, batch: 12, Loss: 17.392338, Accuracy: 0.64062, Precision: 0.59000, Recall: 0.92188
-2018-04-05 21:16:27,661 INFO     DATA FORMATTER: Retrieved the hdf5 file train_13 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:16:59,837 INFO     Fold: 1, epoch: 0, batch: 13, Loss: 18.922646, Accuracy: 0.63281, Precision: 0.58586, Recall: 0.90625
-2018-04-05 21:16:59,919 INFO     DATA FORMATTER: Retrieved the hdf5 file train_14 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:17:33,720 INFO     Fold: 1, epoch: 0, batch: 14, Loss: 14.115911, Accuracy: 0.72656, Precision: 0.65263, Recall: 0.96875
-2018-04-05 21:17:33,806 INFO     DATA FORMATTER: Retrieved the hdf5 file train_15 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:18:04,188 INFO     Fold: 1, epoch: 0, batch: 15, Loss: 10.432139, Accuracy: 0.77344, Precision: 0.70115, Recall: 0.95312
-2018-04-05 21:18:04,274 INFO     DATA FORMATTER: Retrieved the hdf5 file train_16 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:18:34,871 INFO     Fold: 1, epoch: 0, batch: 16, Loss: 14.008376, Accuracy: 0.71094, Precision: 0.64835, Recall: 0.92188
-2018-04-05 21:18:34,955 INFO     DATA FORMATTER: Retrieved the hdf5 file train_17 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:19:05,780 INFO     Fold: 1, epoch: 0, batch: 17, Loss: 8.299258, Accuracy: 0.82031, Precision: 0.82540, Recall: 0.81250
-2018-04-05 21:19:05,893 INFO     DATA FORMATTER: Retrieved the hdf5 file train_18 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:19:36,316 INFO     Fold: 1, epoch: 0, batch: 18, Loss: 5.981292, Accuracy: 0.84375, Precision: 0.87931, Recall: 0.79688
-2018-04-05 21:19:36,438 INFO     DATA FORMATTER: Retrieved the hdf5 file train_19 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:20:06,630 INFO     Fold: 1, epoch: 0, batch: 19, Loss: 8.275150, Accuracy: 0.74219, Precision: 0.86047, Recall: 0.57812
-2018-04-05 21:22:00,348 INFO     VALIDATION METRICs : Fold: 1, epoch: 0, batch: 19, Loss: 11.341955, Accuracy: 0.70942, Precision: 0.87736, Recall: 0.48691
-2018-04-05 21:22:00,349 INFO     CHECKPOINT SAVER: Saving model updated parameters
-2018-04-05 21:22:08,288 INFO     DATA FORMATTER: Retrieved the hdf5 file train_20 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:22:40,051 INFO     Fold: 1, epoch: 0, batch: 20, Loss: 10.630024, Accuracy: 0.68750, Precision: 0.90000, Recall: 0.42188
-2018-04-05 21:22:40,175 INFO     DATA FORMATTER: Retrieved the hdf5 file train_21 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:23:11,231 INFO     Fold: 1, epoch: 0, batch: 21, Loss: 9.798098, Accuracy: 0.73438, Precision: 0.96875, Recall: 0.48438
-2018-04-05 21:23:11,349 INFO     DATA FORMATTER: Retrieved the hdf5 file train_22 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:23:43,705 INFO     Fold: 1, epoch: 0, batch: 22, Loss: 7.326087, Accuracy: 0.71094, Precision: 0.88571, Recall: 0.48438
-2018-04-05 21:23:43,827 INFO     DATA FORMATTER: Retrieved the hdf5 file train_23 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:24:16,401 INFO     Fold: 1, epoch: 0, batch: 23, Loss: 7.994959, Accuracy: 0.79688, Precision: 0.83929, Recall: 0.73438
-2018-04-05 21:24:16,515 INFO     DATA FORMATTER: Retrieved the hdf5 file train_24 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:24:49,019 INFO     Fold: 1, epoch: 0, batch: 24, Loss: 5.293179, Accuracy: 0.85156, Precision: 0.89474, Recall: 0.79688
-2018-04-05 21:24:49,142 INFO     DATA FORMATTER: Retrieved the hdf5 file train_25 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:25:20,567 INFO     Fold: 1, epoch: 0, batch: 25, Loss: 7.596327, Accuracy: 0.77344, Precision: 0.73333, Recall: 0.85938
-2018-04-05 21:25:20,685 INFO     DATA FORMATTER: Retrieved the hdf5 file train_26 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:25:51,717 INFO     Fold: 1, epoch: 0, batch: 26, Loss: 6.243559, Accuracy: 0.78906, Precision: 0.74026, Recall: 0.89062
-2018-04-05 21:25:51,826 INFO     DATA FORMATTER: Retrieved the hdf5 file train_27 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:26:23,185 INFO     Fold: 1, epoch: 0, batch: 27, Loss: 7.707402, Accuracy: 0.74219, Precision: 0.67033, Recall: 0.95312
-2018-04-05 21:26:23,298 INFO     DATA FORMATTER: Retrieved the hdf5 file train_28 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:26:55,011 INFO     Fold: 1, epoch: 0, batch: 28, Loss: 4.141065, Accuracy: 0.82812, Precision: 0.75000, Recall: 0.98438
-2018-04-05 21:26:55,126 INFO     DATA FORMATTER: Retrieved the hdf5 file train_29 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:27:25,197 INFO     Fold: 1, epoch: 0, batch: 29, Loss: 3.644107, Accuracy: 0.85156, Precision: 0.80822, Recall: 0.92188
-2018-04-05 21:29:23,384 INFO     VALIDATION METRICs : Fold: 1, epoch: 0, batch: 29, Loss: 4.390574, Accuracy: 0.82548, Precision: 0.82435, Recall: 0.82723
-2018-04-05 21:29:23,384 INFO     CHECKPOINT SAVER: Saving model updated parameters
-2018-04-05 21:29:30,892 INFO     DATA FORMATTER: Retrieved the hdf5 file train_30 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:30:01,795 INFO     Fold: 1, epoch: 0, batch: 30, Loss: 4.329809, Accuracy: 0.86719, Precision: 0.92727, Recall: 0.79688
-2018-04-05 21:30:01,901 INFO     DATA FORMATTER: Retrieved the hdf5 file train_31 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:30:32,558 INFO     Fold: 1, epoch: 0, batch: 31, Loss: 5.946243, Accuracy: 0.81250, Precision: 0.84483, Recall: 0.76562
-2018-04-05 21:30:32,672 INFO     DATA FORMATTER: Retrieved the hdf5 file train_32 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:31:02,557 INFO     Fold: 1, epoch: 0, batch: 32, Loss: 5.391049, Accuracy: 0.82031, Precision: 0.87273, Recall: 0.75000
-2018-04-05 21:31:02,673 INFO     DATA FORMATTER: Retrieved the hdf5 file train_33 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:31:32,858 INFO     Fold: 1, epoch: 0, batch: 33, Loss: 3.974229, Accuracy: 0.85156, Precision: 0.90909, Recall: 0.78125
-2018-04-05 21:31:32,974 INFO     DATA FORMATTER: Retrieved the hdf5 file train_34 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:32:02,875 INFO     Fold: 1, epoch: 0, batch: 34, Loss: 5.465536, Accuracy: 0.75781, Precision: 0.78947, Recall: 0.70312
-2018-04-05 21:32:02,998 INFO     DATA FORMATTER: Retrieved the hdf5 file train_35 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:32:32,871 INFO     Fold: 1, epoch: 0, batch: 35, Loss: 4.170118, Accuracy: 0.82812, Precision: 0.87500, Recall: 0.76562
-2018-04-05 21:32:32,991 INFO     DATA FORMATTER: Retrieved the hdf5 file train_36 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:33:02,940 INFO     Fold: 1, epoch: 0, batch: 36, Loss: 2.593912, Accuracy: 0.85156, Precision: 0.82609, Recall: 0.89062
-2018-04-05 21:33:03,045 INFO     DATA FORMATTER: Retrieved the hdf5 file train_37 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:33:33,048 INFO     Fold: 1, epoch: 0, batch: 37, Loss: 2.804231, Accuracy: 0.85156, Precision: 0.79221, Recall: 0.95312
-2018-04-05 21:33:33,158 INFO     DATA FORMATTER: Retrieved the hdf5 file train_38 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:34:03,680 INFO     Fold: 1, epoch: 0, batch: 38, Loss: 3.567392, Accuracy: 0.78906, Precision: 0.72289, Recall: 0.93750
-2018-04-05 21:34:03,789 INFO     DATA FORMATTER: Retrieved the hdf5 file train_39 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:34:35,618 INFO     Fold: 1, epoch: 0, batch: 39, Loss: 2.089590, Accuracy: 0.84375, Precision: 0.80556, Recall: 0.90625
-2018-04-05 21:36:41,214 INFO     VALIDATION METRICs : Fold: 1, epoch: 0, batch: 39, Loss: 2.933395, Accuracy: 0.80279, Precision: 0.80279, Recall: 0.80279
-2018-04-05 21:36:41,215 INFO     CHECKPOINT SAVER: Saving model updated parameters
-2018-04-05 21:36:49,792 INFO     DATA FORMATTER: Retrieved the hdf5 file train_40 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:37:23,208 INFO     Fold: 1, epoch: 0, batch: 40, Loss: 2.607329, Accuracy: 0.79688, Precision: 0.79688, Recall: 0.79688
-2018-04-05 21:37:23,318 INFO     DATA FORMATTER: Retrieved the hdf5 file train_41 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:37:55,271 INFO     Fold: 1, epoch: 0, batch: 41, Loss: 2.862761, Accuracy: 0.85156, Precision: 0.95918, Recall: 0.73438
-2018-04-05 21:37:55,373 INFO     DATA FORMATTER: Retrieved the hdf5 file train_42 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:38:25,743 INFO     Fold: 1, epoch: 0, batch: 42, Loss: 3.260067, Accuracy: 0.78906, Precision: 0.95122, Recall: 0.60938
-2018-04-05 21:38:25,855 INFO     DATA FORMATTER: Retrieved the hdf5 file train_43 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:38:56,763 INFO     Fold: 1, epoch: 0, batch: 43, Loss: 3.590299, Accuracy: 0.76562, Precision: 0.85417, Recall: 0.64062
-2018-04-05 21:38:56,876 INFO     DATA FORMATTER: Retrieved the hdf5 file train_44 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:39:27,565 INFO     Fold: 1, epoch: 0, batch: 44, Loss: 2.360137, Accuracy: 0.86719, Precision: 0.89831, Recall: 0.82812
-2018-04-05 21:39:27,693 INFO     DATA FORMATTER: Retrieved the hdf5 file train_45 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:40:00,760 INFO     Fold: 1, epoch: 0, batch: 45, Loss: 2.588898, Accuracy: 0.79688, Precision: 0.80645, Recall: 0.78125
-2018-04-05 21:40:00,880 INFO     DATA FORMATTER: Retrieved the hdf5 file train_46 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:40:31,751 INFO     Fold: 1, epoch: 0, batch: 46, Loss: 1.961296, Accuracy: 0.87500, Precision: 0.82432, Recall: 0.95312
-2018-04-05 21:40:31,869 INFO     DATA FORMATTER: Retrieved the hdf5 file train_47 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:41:03,213 INFO     Fold: 1, epoch: 0, batch: 47, Loss: 3.608393, Accuracy: 0.79688, Precision: 0.73171, Recall: 0.93750
-2018-04-05 21:41:03,325 INFO     DATA FORMATTER: Retrieved the hdf5 file train_48 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:41:34,220 INFO     Fold: 1, epoch: 0, batch: 48, Loss: 3.489012, Accuracy: 0.82031, Precision: 0.77333, Recall: 0.90625
-2018-04-05 21:41:34,336 INFO     DATA FORMATTER: Retrieved the hdf5 file train_49 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:42:12,619 INFO     Fold: 1, epoch: 0, batch: 49, Loss: 2.343212, Accuracy: 0.85156, Precision: 0.82609, Recall: 0.89062
-2018-04-05 21:44:32,633 INFO     VALIDATION METRICs : Fold: 1, epoch: 0, batch: 49, Loss: 2.787457, Accuracy: 0.84729, Precision: 0.85921, Recall: 0.83072
-2018-04-05 21:44:32,634 INFO     CHECKPOINT SAVER: Saving model updated parameters
-2018-04-05 21:44:39,831 INFO     DATA FORMATTER: Retrieved the hdf5 file train_50 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:45:17,217 INFO     Fold: 1, epoch: 0, batch: 50, Loss: 4.252962, Accuracy: 0.82031, Precision: 0.83607, Recall: 0.79688
-2018-04-05 21:45:17,350 INFO     DATA FORMATTER: Retrieved the hdf5 file train_51 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:45:54,502 INFO     Fold: 1, epoch: 0, batch: 51, Loss: 3.437621, Accuracy: 0.79688, Precision: 0.82759, Recall: 0.75000
-2018-04-05 21:45:54,624 INFO     DATA FORMATTER: Retrieved the hdf5 file train_52 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-2018-04-05 21:46:34,548 INFO     Fold: 1, epoch: 0, batch: 52, Loss: 3.450631, Accuracy: 0.78125, Precision: 0.82143, Recall: 0.71875
-2018-04-05 21:46:34,673 INFO     DATA FORMATTER: Retrieved the hdf5 file train_53 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-04-06 21:29:42,672 INFO     INITIATING RUN ........
+2018-04-06 21:29:42,672 INFO     PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+2018-04-06 21:29:42,697 INFO     PREPROCESSING config: With the training Data Set
+2018-04-06 21:29:42,697 INFO     Performing random horizontal flip
+2018-04-06 21:29:42,715 INFO     Standarizing the image
+2018-04-06 21:29:42,716 INFO     PREPROCESSING config: With the Test Data Set
+2018-04-06 21:29:42,717 INFO     Standarizing the image
+2018-04-06 21:29:42,723 INFO     Input shape: (?, 224, 224, 3)
+2018-04-06 21:29:42,723 INFO     SEED for scope: 553
+2018-04-06 21:29:42,741 INFO     Running Scope bn_1: 
+2018-04-06 21:29:42,783 INFO     Conv1 shape: (?, 224, 224, 64)
+2018-04-06 21:29:42,784 INFO     Pool1 shape: (?, 112, 112, 64)
+2018-04-06 21:29:42,784 INFO     SEED for scope: 292
+2018-04-06 21:29:42,801 INFO     Running Scope bn_2: 
+2018-04-06 21:29:42,843 INFO     Conv2 shape: (?, 112, 112, 64)
+2018-04-06 21:29:42,844 INFO     Pool2 shape: (?, 56, 56, 64)
+2018-04-06 21:29:42,844 INFO     SEED for scope: 394
+2018-04-06 21:29:42,861 INFO     Running Scope bn_3: 
+2018-04-06 21:29:42,905 INFO     Conv3 shape: (?, 56, 56, 128)
+2018-04-06 21:29:42,907 INFO     Pool3 shape: (?, 28, 28, 128)
+2018-04-06 21:29:43,644 INFO     Flattened shape: (?, 100352)
+2018-04-06 21:29:43,660 INFO     Dense1 shape: (?, 384)
+2018-04-06 21:29:43,676 INFO     Dense2 shape: (?, 192)
+2018-04-06 21:29:43,693 INFO     Output shape: (?, 192)
+2018-04-06 21:29:43,694 INFO     INITIALIZING LOSS: .....
+2018-04-06 21:29:43,963 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
