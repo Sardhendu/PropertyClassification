@@ -72,7 +72,9 @@ class PropertyClassification(object):
         
         if self.save_checkpoint or self.use_checkpoint:
             self.ckpt_path = os.path.join(pathDict['checkpoint_path'], self.which_net)
-            print('Dumping/Retreiving Checkpoints to %s', self.ckpt_path)
+            if not os.path.exists(self.ckpt_path):
+                os.makedirs(self.ckpt_path)
+            print('Dumping/Retreiving Checkpoints to/from %s', self.ckpt_path)
         
         if self.write_tensorboard_summary:
             self.smry_path = os.path.join(pathDict['summary_path'], self.which_net)

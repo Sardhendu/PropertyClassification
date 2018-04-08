@@ -78,9 +78,9 @@ def residual_block_first(X, filters, block_num, dropout, scope_name):
         X = ops.activation(X, 'relu', scope_name='relu_1')
         logging.info('%s : conv_1 shape: %s', str(scope_name), str(X.shape))
         
-        if dropout is not None:
-            logging.info('%s : dropout = %s shape: %s', str(scope_name), str(dropout), str(X.shape))
-            X = tf.nn.dropout(X, dropout)
+        #if dropout is not None:
+         #   logging.info('%s : dropout = %s shape: %s', str(scope_name), str(dropout), str(X.shape))
+          #  X = tf.nn.dropout(X, dropout)
         
         X = ops.conv_layer(X, [3, 3, f1, f2], stride=1, padding='SAME', w_init='tn', scope_name='conv_2',
                            add_smry=False)
@@ -144,11 +144,14 @@ def resnet(img_shape, device_type, use_dropout):
         #     logging.info('Flattened : dropout = %s shape: %s', str(0.7), str(X.shape))
         
         # FC-Layer : Get a good 512 encoding to build ensemble
-        X = ops.fc_layers(X, [X.get_shape().as_list()[-1], 512], w_init='tn', scope_name='fc_layer1')
+        X = ops.fc_layers(X, [X.get_shape().as_list()[-1], 512], w_init='tn', scope_name='fc_layer1', add_smry=False)
         X = ops.activation(X, 'relu', scope_name='relu_fc')
+        logging.info('X - FC Layer: %s', str(X.get_shape().as_list()))
         
         # SOFTMAX Layer
-        X_logits = ops.fc_layers(X, [X.get_shape().as_list()[-1], 2], w_init='tn', scope_name='fc_layer2')
+        X_logits = ops.fc_layers(X, [512, 2], w_init='tn', scope_name='fc_layer2', add_smry=False)
+        logging.info('LOGITS - Softmax Layer: %s', str(X_logits.get_shape().as_list()))
+        
         Y_probs = tf.nn.softmax(X_logits)
         logging.info('Softmax Y-Prob shape: shape %s', str(Y_probs.shape))
         
