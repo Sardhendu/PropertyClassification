@@ -1,6 +1,7 @@
 import logging
 import os
 
+import imutils
 import numpy as np
 import pandas as pd
 from scipy import misc, ndimage
@@ -134,27 +135,6 @@ def central_crop(image, height, width):
     return img
 
 
-# def zero_pad(inp, out_shape):
-#     m, n, c = inp.shape
-#     out_m, out_n, out_c = out_shape
-#
-#     to_pad_m = max(out_m - m, 0)
-#     to_pad_n = max(out_n - n, 0)
-#     to_pad_c = max(out_c - c, 0)
-#
-#     pad_m1 = to_pad_m // 2
-#     pad_m2 = to_pad_m - pad_m1
-#
-#     pad_n1 = to_pad_n // 2
-#     pad_n2 = to_pad_n - pad_n1
-#
-#     pad_c1 = to_pad_c // 2
-#     pad_c2 = to_pad_c - pad_c1
-#
-#     inp = np.pad(inp, ((pad_m1, pad_m2), (pad_n1, pad_n2), (pad_c1, pad_c2)), 'constant')
-#     return inp
-
-
 def zero_pad(inp, crop_shape, out_shape):
     '''
     :param inp:
@@ -185,21 +165,33 @@ def zero_pad(inp, crop_shape, out_shape):
 
 
 class DumpBatches():
-    def __init__(self, outpath, img_in_shape, img_out_shape, img_crop_shape, img_resize_shape, image_type):
+    def __init__(self, outpath, img_in_shape, img_out_shape, img_crop_shape, img_resize_shape, image_type, enable_rotation=True):
         # print(img_in_shape, img_out_shape, img_crop_shape, img_resize_shape)
         self.outpath = outpath
         self.img_in_shape = img_in_shape
         self.img_out_shape = img_out_shape
 
+        logging.info('Image Shape: %s', str(img_in_shape))
+
         if img_crop_shape is not None:
+            logging.info('Enabling Crop: %s', str(img_crop_shape))
             self.img_crop_shape = img_crop_shape
         else:
             self.img_crop_shape = []
         
         if img_resize_shape is not None:
+            logging.info('Enabling Resize: %s', str(img_resize_shape))
             self.img_resize_shape = img_resize_shape
         else:
             self.img_resize_shape = []
+            
+        if enable_rotation:
+            logging.info('Enabling Rotation angle = 90:')
+            self.angle = 90
+            self.enable_rotation = enable_rotation
+        else:
+            self.enable_rotation = False
+
         self.image_type = image_type
     
     def process_images_given_path(self, pic_path):
@@ -211,7 +203,12 @@ class DumpBatches():
             # then we don't crop further. But if no bounding box was found then we perform a central crop.
             if len(self.img_crop_shape) > 0:
                 image = central_crop(image, height=self.img_crop_shape[0], width=self.img_crop_shape[1])
-        
+
+        # If the height is greater than width then we rotate the image by 90%
+        if self.enable_rotation:
+            if image.shape[0] > image.shape[1]:
+                image = imutils.rotate_bound(image, self.angle)
+                
         if len(self.img_resize_shape) > 0:
             image = misc.imresize(image, self.img_resize_shape)
             
@@ -265,7 +262,7 @@ class DumpBatches():
 
 def dumpStratifiedBatches_balanced_class(cmn_land_pins, cmn_house_pins, ts_batch_size, cv_batch_size, tr_batch_size,
                                          image_type, img_in_shape, img_out_shape, img_resize_shape=None,
-                                         img_crop_shape=None,
+                                         img_crop_shape=None, enable_rotation=True,
                                          shuffle_seed=873, get_stats=True, max_batches=None,
                                          is_training=True):
     land_image_path = os.path.join(pathDict['image_path'], 'land')
@@ -296,7 +293,8 @@ def dumpStratifiedBatches_balanced_class(cmn_land_pins, cmn_house_pins, ts_batch
     logging.info('Input Data: Total Land: %s, Total House: %s', str(len(land_pins)), str(len(house_pins)))
     
     obj_dump = DumpBatches(outpath=output_data_path, img_in_shape=img_in_shape, img_out_shape=img_out_shape,
-                           img_crop_shape=img_crop_shape, img_resize_shape=img_resize_shape, image_type=image_type)
+                           img_crop_shape=img_crop_shape, img_resize_shape=img_resize_shape, image_type=image_type,
+                           enable_rotation=enable_rotation)
     
     tr_cv_ts_pins_ = []
     tr_cv_ts_land_house = []
