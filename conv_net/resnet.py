@@ -27,7 +27,7 @@ def conv_1(X, filters, scope_name):
     return X
 
 
-def residual_block(X, filters, block_num, scope_name):
+def residual_block(X, filters, block_num, dropout, scope_name):
     f0 = X.get_shape().as_list()[-1]
     f1, f2 = filters
     X_shortcut = X
@@ -38,6 +38,10 @@ def residual_block(X, filters, block_num, scope_name):
         X = ops.batch_norm(X, scope_name='bn_1')
         X = ops.activation(X, "relu")
         logging.info('%s : conv_1 shape: %s', str(scope_name), str(X.shape))
+        
+        if dropout is not None:
+            logging.info('%s : dropout = %s shape: %s', str(scope_name), str(dropout), str(X.shape))
+            X = tf.nn.dropout(X, dropout)
         
         X = ops.conv_layer(X, k_shape=[3, 3, f1, f2], stride=1, padding='SAME', w_init='tn', scope_name='conv_2',
                            add_smry=False)
@@ -52,7 +56,7 @@ def residual_block(X, filters, block_num, scope_name):
         return X
 
 
-def residual_block_first(X, filters, block_num, scope_name):
+def residual_block_first(X, filters, block_num, dropout, scope_name):
     '''
     Why need this? Normally we have skip connections between 2 layers in one residual block.
     When going from 1 residual block to another we decrease in the image size, In-order to maintain skip connection
@@ -74,6 +78,10 @@ def residual_block_first(X, filters, block_num, scope_name):
         X = ops.activation(X, 'relu', scope_name='relu_1')
         logging.info('%s : conv_1 shape: %s', str(scope_name), str(X.shape))
         
+        if dropout is not None:
+            logging.info('%s : dropout = %s shape: %s', str(scope_name), str(dropout), str(X.shape))
+            X = tf.nn.dropout(X, dropout)
+        
         X = ops.conv_layer(X, [3, 3, f1, f2], stride=1, padding='SAME', w_init='tn', scope_name='conv_2',
                            add_smry=False)
         X = ops.batch_norm(X, scope_name='bn_2')
@@ -86,56 +94,71 @@ def residual_block_first(X, filters, block_num, scope_name):
     return X
 
 
-def resnet(img_shape, device_type):
+def resnet(img_shape, device_type, use_dropout):
     inpX = tf.placeholder(dtype=tf.float32,
                           shape=[None, img_shape[0], img_shape[1], img_shape[2]],
                           name='X')
     inpY = tf.placeholder(dtype=tf.float32,
                           shape=[None, myNet['num_labels']],
                           name='Y')
-    is_training = tf.placeholder(tf.bool)
     
     filters = [64, 64, 128, 256, 512]
+    
+    if use_dropout:
+        dropout_prob = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+    else:
+        dropout_prob = [None, None, None, None, None, None, None, None]
     
     with tf.device(device_type):
         # Convolution Layer
         X = conv_1(inpX, filters[0], scope_name='conv_layer')
+        logging.info('conv_layer : conv shape: %s', str(X.get_shape().as_list()))
         
         # Residual Block 1,2
-        X = residual_block(X, [filters[1], filters[1]], block_num=1, scope_name='residual_block_1_1')
-        X = residual_block(X, [filters[1], filters[1]], block_num=2, scope_name='residual_block_1_2')
+        X = residual_block(X, [filters[1], filters[1]], block_num=1, dropout=dropout_prob[0],
+                           scope_name='residual_block_1_1')
+        X = residual_block(X, [filters[1], filters[1]], block_num=2, dropout=dropout_prob[1],
+                           scope_name='residual_block_1_2')
         
         # Residual Block 3,4
-        X = residual_block_first(X, [filters[2], filters[2]], block_num=3, scope_name='residual_block_2_1')
-        X = residual_block(X, [filters[2], filters[2]], block_num=4, scope_name='residual_block_2_2')
+        X = residual_block_first(X, [filters[2], filters[2]], block_num=3, dropout=dropout_prob[2], scope_name='residual_block_2_1')
+        X = residual_block(X, [filters[2], filters[2]], block_num=4, dropout=dropout_prob[3],
+                           scope_name='residual_block_2_2')
         
         # Residual block 5,6
-        X = residual_block_first(X, [filters[3], filters[3]], block_num=5, scope_name='residual_block_3_1')
-        X = residual_block(X, [filters[3], filters[3]], block_num=6, scope_name='residual_block_3_2')
+        X = residual_block_first(X, [filters[3], filters[3]], block_num=5, dropout=dropout_prob[4], scope_name='residual_block_3_1')
+        X = residual_block(X, [filters[3], filters[3]], block_num=6, dropout=dropout_prob[5],
+                           scope_name='residual_block_3_2')
         
         # Residual block 7,8
-        X = residual_block_first(X, [filters[4], filters[4]], block_num=7, scope_name='residual_block_4_1')
-        X = residual_block(X, [filters[4], filters[4]], block_num=8, scope_name='residual_block_4_2')
+        X = residual_block_first(X, [filters[4], filters[4]], block_num=7, dropout=dropout_prob[6], scope_name='residual_block_4_1')
+        X = residual_block(X, [filters[4], filters[4]], block_num=8, dropout=dropout_prob[7],
+                           scope_name='residual_block_4_2')
         
-        # Softmax - Logits and Probabilities
+        # Flatten (dropout?)
         X = tf.contrib.layers.flatten(X, scope='flatten')
         logging.info('X - flattened: %s', str(X.get_shape().as_list()))
-        X_logits = ops.fc_layers(X, [X.get_shape().as_list()[-1], 2], w_init='tn', scope_name='fc_layer')
+        
+        # if use_dropout:
+        #     X = tf.nn.dropout(X, 0.7)
+        #     logging.info('Flattened : dropout = %s shape: %s', str(0.7), str(X.shape))
+        
+        # FC-Layer : Get a good 512 encoding to build ensemble
+        X = ops.fc_layers(X, [X.get_shape().as_list()[-1], 512], w_init='tn', scope_name='fc_layer1')
+        X = ops.activation(X, 'relu', scope_name='relu_fc')
+        
+        # SOFTMAX Layer
+        X_logits = ops.fc_layers(X, [X.get_shape().as_list()[-1], 2], w_init='tn', scope_name='fc_layer2')
         Y_probs = tf.nn.softmax(X_logits)
         logging.info('Softmax Y-Prob shape: shape %s', str(Y_probs.shape))
-
-        loss = ops.get_loss(y_true=inpY, y_logits=X_logits,
-                                               which_loss='sigmoid_cross_entropy', lamda=None)
-
+        
+        loss = ops.get_loss(y_true=inpY, y_logits=X_logits, which_loss='sigmoid_cross_entropy', lamda=None)
+        
         optimizer, l_rate = ops.optimize(loss=loss, learning_rate_decay=True, add_smry=False)
         
-        acc = tf.cond(is_training,
-                      lambda: ops.accuracy(labels=inpY, logits=X_logits, type='training', add_smry=False),
-                      lambda: ops.accuracy(labels=inpY, logits=X_logits, type='validation', add_smry=False)
-                      )
-    
-    return dict(inpX=inpX, inpY=inpY, is_training=is_training,
-                outProbs=Y_probs, accuracy=acc, loss=loss, optimizer=optimizer, l_rate=l_rate)
+        acc = ops.accuracy(labels=inpY, logits=X_logits, type='training', add_smry=False)
+       
+    return dict(inpX=inpX, inpY=inpY, outProbs=Y_probs, accuracy=acc, loss=loss, optimizer=optimizer, l_rate=l_rate)
     
     
     # if training:

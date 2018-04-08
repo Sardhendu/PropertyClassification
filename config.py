@@ -73,7 +73,8 @@ if image_type in ['assessor', 'aerial', 'streetside', 'overlayed']:
     pp_vars['rand_brightness'] = False
     pp_vars['rand_contrast'] = False
     pp_vars['rand_rotate'] = False
-    pp_vars['rand_flip'] = True
+    pp_vars['rand_Hflip'] = True
+    pp_vars['rand_Vflip'] = True
     pp_vars['rand_crop'] = False
     pp_vars['central_crop'] = False
 
@@ -94,7 +95,8 @@ elif image_type == 'aerial_cropped':
     pp_vars['rand_brightness'] = False
     pp_vars['rand_contrast'] = False
     pp_vars['rand_rotate'] = False
-    pp_vars['rand_flip'] = True
+    pp_vars['rand_Hflip'] = True
+    pp_vars['rand_Vflip'] = True
     pp_vars['rand_crop'] = False
     pp_vars['central_crop'] = False
 
@@ -145,6 +147,10 @@ if platform.platform().split('-')[0] == 'Darwin':
 else:
     pathDict['parent_path'] = r"C:\Users\newline\Documents\ImageClassification\data"
 
+
+######## Parent Paths
+pathDict['parent_checkpoint_path'] = os.path.join(pathDict['parent_path'], "checkpoints")
+pathDict['parent_statistics_path'] = os.path.join(pathDict['parent_path'], "statistics")
 
 ######## COMMON PATHS
 pathDict['chicago_bbox_shp_files'] = os.path.join(pathDict['parent_path'], "shape_files", "building_bbox")

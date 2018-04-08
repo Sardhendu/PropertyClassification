@@ -17,7 +17,7 @@ def conv_net(img_shape, device_type):
     inpY = tf.placeholder(dtype=tf.float32,
                           shape=[None, myNet['num_labels']],
                           name='Y')
-    is_training = tf.placeholder(tf.bool)
+    # is_training = tf.placeholder(tf.bool)
     
     filters = [64, 64, 128, 384, 192, 2]
     
@@ -77,14 +77,10 @@ def conv_net(img_shape, device_type):
 
         optimizer, l_rate = ops.optimize(loss=loss, learning_rate_decay=True, add_smry=False)
 
-        acc = tf.cond(is_training,
-                      lambda: ops.accuracy(labels=inpY, logits=X_logits, type='training', add_smry=False),
-                      lambda: ops.accuracy(labels=inpY, logits=X_logits, type='validation', add_smry=False)
-                      )
+        acc = lambda: ops.accuracy(labels=inpY, logits=X_logits, type='training', add_smry=False)
 
 
-    return dict(inpX=inpX, inpY=inpY, is_training=is_training,
-                outProbs=Y_probs, accuracy=acc, loss=loss, optimizer=optimizer, l_rate=l_rate)
+    return dict(inpX=inpX, inpY=inpY, outProbs=Y_probs, accuracy=acc, loss=loss, optimizer=optimizer, l_rate=l_rate)
 
 
 

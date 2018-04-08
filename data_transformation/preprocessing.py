@@ -88,12 +88,19 @@ class Preprocessing():
         logging.info('Performing Central crop')
         return tf.image.central_crop(imageIN, self.pprocessor_inp_crop_shape[0]/self.pprocessor_inp_img_shape[0])#tf.random_crop(imageIN, self.crop_shape)
     
-    def randomFlip(self, imageIN):
+    def randomHFlip(self, imageIN):
         logging.info('Performing random horizontal flip')
         if config.preprocess_seed_idx == len(config.seed_arr) - 1:
             config.preprocess_seed_idx = 0
         # Given an image this operation may or may not flip the image
         return tf.image.random_flip_left_right(imageIN, seed=config.seed_arr[config.preprocess_seed_idx])
+    
+    def randomVFlip(self, imageIN):
+        logging.info('Performing random Vertical flip')
+        if config.preprocess_seed_idx == len(config.seed_arr) - 1:
+            config.preprocess_seed_idx = 0
+        # Given an image this operation may or may not flip the image
+        return tf.image.random_flip_up_down(imageIN, seed=config.seed_arr[config.preprocess_seed_idx])
     
     def randomRotate(self, imageIN):
         logging.info('Performing Random Rotation')
@@ -137,8 +144,11 @@ class Preprocessing():
         if config.pp_vars['rand_rotate']:
             imageOUT = self.randomRotate(imageOUT)
     
-        if config.pp_vars['rand_flip']:
-            imageOUT = self.randomFlip(imageOUT)
+        if config.pp_vars['rand_Hflip']:
+            imageOUT = self.randomHFlip(imageOUT)
+            
+        if config.pp_vars['rand_Vflip']:
+            imageOUT = self.randomVFlip(imageOUT)
             
         if config.pp_vars['rand_crop']:
             imageOUT = self.randomCrop(imageOUT)
@@ -147,12 +157,7 @@ class Preprocessing():
         if config.pp_vars['central_crop']:
             imageOUT = self.centralCrop(imageOUT)
             logging.info('Image shape after central crop: %s', str(imageOUT.shape))
-        #
-        # else:
-        #     imageOUT = tf.image.resize_image_with_crop_or_pad(
-        #             imageOUT, self.pprocessor_inp_crop_shape[0],
-        #             self.pprocessor_inp_crop_shape[1]
-        #     )
+       
             
         if config.pp_vars['standardise']:
             imageOUT = self.standardize(imageOUT)
@@ -172,7 +177,7 @@ class Preprocessing():
         return imageOUT
     
     
-    def preprocessImageGraph(self):
+    def preprocessImageGraph(self, is_training):
         """
         :param imageSize:   The size of image
         :param numChannels: The number of channels
@@ -189,13 +194,18 @@ class Preprocessing():
         imageIN = tf.placeholder(dtype=tf.float32,
                                  shape=[self.pprocessor_inp_img_shape[0], self.pprocessor_inp_img_shape[1], self.pprocessor_inp_img_shape[2]],
                                  name="Preprocessor-variableHolder")
-        is_training = tf.placeholder(tf.bool)
+        # is_training = tf.placeholder(tf.bool)
         
         # Add random contrast
         imageOUT = imageIN
         
-        imageOUT = tf.cond(is_training, lambda: self.preprocess_for_train(imageOUT),
-                           lambda : self.preprocess_for_test(imageOUT))
+        # imageOUT = tf.cond(is_training, lambda: self.preprocess_for_train(imageOUT),
+        #                    lambda : self.preprocess_for_test(imageOUT))
+        
+        if is_training:
+            imageOUT = self.preprocess_for_train(imageOUT)
+        else:
+            imageOUT = self.preprocess_for_test(imageOUT)
         
         # If the out_image_size is larger than the crop_image_size, then we pad the image with zeros to make it of out_image shape,
         # If the out_image_size is smaller than the crop_image_sze, then we resize the image to the out_image_size
