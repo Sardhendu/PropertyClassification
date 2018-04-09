@@ -270,7 +270,7 @@ class Train(PropertyClassification):
             # the next batch
     
     def run_epoch(self, get_stats_at):
-        saver = tf.train.Saver(max_to_keep=10)  # max_to_keep specifies the number of latest checkpoint to maintain
+        saver = tf.train.Saver(max_to_keep=5)  # max_to_keep specifies the number of latest checkpoint to maintain
         self.max_batch = 0
         self.max_epoch = 0
         
