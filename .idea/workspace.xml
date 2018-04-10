@@ -4,10 +4,11 @@
     <list default="true" id="73474898-f241-419a-9841-3f571f14b794" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Model_eval-Aerial_cropped-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Model_eval-Aerial_cropped-checkpoint.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Model_eval-Overlayed-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Model_eval-Overlayed-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Model_eval-Aerial_cropped.ipynb" afterPath="$PROJECT_DIR$/Model_eval-Aerial_cropped.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_loader-Aerial.ipynb" afterPath="$PROJECT_DIR$/data_loader-Aerial.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_transformation/data_prep.py" afterPath="$PROJECT_DIR$/data_transformation/data_prep.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Model_eval-Overlayed.ipynb" afterPath="$PROJECT_DIR$/Model_eval-Overlayed.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logfile.log" afterPath="$PROJECT_DIR$/logfile.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viz_analysis/.ipynb_checkpoints/Images-FeatureDescriptor-checkpoint.ipynb" afterPath="$PROJECT_DIR$/viz_analysis/.ipynb_checkpoints/Images-FeatureDescriptor-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viz_analysis/Images-FeatureDescriptor.ipynb" afterPath="$PROJECT_DIR$/viz_analysis/Images-FeatureDescriptor.ipynb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,14 +23,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data_prep.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data_prep.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_transformation/data_prep.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="199" column="10" lean-forward="false" selection-start-line="199" selection-start-column="10" selection-end-line="199" selection-end-column="10" />
+            <state relative-caret-position="3420">
+              <caret line="179" column="20" lean-forward="false" selection-start-line="179" selection-start-column="20" selection-end-line="179" selection-end-column="20" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/conv_net/train.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2208">
+              <caret line="519" column="25" lean-forward="true" selection-start-line="519" selection-start-column="25" selection-end-line="519" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -163,10 +174,10 @@
         <option value="$PROJECT_DIR$/data_transformation/preprocessing.py" />
         <option value="$PROJECT_DIR$/conv_net/test.py" />
         <option value="$PROJECT_DIR$/conv_net/convnet.py" />
-        <option value="$PROJECT_DIR$/conv_net/train.py" />
         <option value="$PROJECT_DIR$/logfile.log" />
         <option value="$PROJECT_DIR$/conv_net/resnet.py" />
         <option value="$PROJECT_DIR$/data_transformation/data_prep.py" />
+        <option value="$PROJECT_DIR$/conv_net/train.py" />
       </list>
     </option>
   </component>
@@ -208,6 +219,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,7 +251,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -398,35 +409,24 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17836677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1969914" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32020056" sideWeight="0.5085324" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295562" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37678856" sideWeight="0.49146757" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27936962" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="667" y="431" width="105" height="38" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3672496" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14326647" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32020056" sideWeight="0.5085324" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295562" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37678856" sideWeight="0.49146757" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6074498" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="667" y="431" width="105" height="38" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20200573" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3672496" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14326647" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -782,20 +782,19 @@
             <marker date="1523222403729" expanded="true" signature="11375:11627" ph="..." />
             <marker date="1523222403729" expanded="true" signature="11411:11535" ph="..." />
             <marker date="1523222403729" expanded="true" signature="11540:11612" ph="..." />
-            <marker date="1523222403729" expanded="true" signature="11669:11845" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/conv_net/logfile.log">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="-725">
           <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -804,89 +803,6 @@
         <state relative-caret-position="1120">
           <caret line="62" column="18" lean-forward="false" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conv_net/train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9780">
-          <caret line="491" column="71" lean-forward="false" selection-start-line="491" selection-start-column="55" selection-end-line="491" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-            <marker date="1523222403731" expanded="true" signature="1038:5909" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="1094:3147" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="2897:3147" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="3181:3321" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="3198:3320" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="3355:3477" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="3516:3687" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="3756:3801" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="3859:5378" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="3883:4005" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="4104:5169" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="4283:5050" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="4324:4438" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="5183:5378" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="5447:5909" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="5627:5877" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="5653:5729" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="5948:16734" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="6003:6081" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="6129:7794" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="6357:6486" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="6571:6812" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="7093:7248" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="7827:10837" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="8135:10088" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="8197:8313" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="8331:8471" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="8819:8937" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="9001:9201" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="9284:9515" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="9332:9434" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="10325:10448" ph="&quot;...&quot;" />
-            <marker date="1523222403731" expanded="true" signature="10881:11907" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="10960:11150" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="11314:11477" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="11624:11687" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="11766:11907" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="11951:15212" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="12239:15044" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="13382:15044" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="14036:15044" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="14582:15044" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="15069:15212" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="15294:16734" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="15840:15927" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="16386:16522" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="16591:16734" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="16783:25250" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="16838:16916" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="16966:17375" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="17414:17816" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="17482:17816" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="17864:18766" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="18094:18225" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="18274:18458" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="18799:19782" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="18889:18954" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="18968:19414" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="19826:20856" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="19905:20095" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="20259:20422" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="20573:20636" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="20715:20856" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="20932:23990" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="21220:23865" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="22139:23865" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="22265:22588" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="22702:23865" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="22788:22913" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="23431:23865" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="24088:25250" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="25121:25250" ph="..." />
-            <marker date="1523222403731" expanded="true" signature="25252:27291" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -931,11 +847,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data_transformation/data_prep.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="199" column="10" lean-forward="false" selection-start-line="199" selection-start-column="10" selection-end-line="199" selection-end-column="10" />
+        <state relative-caret-position="3420">
+          <caret line="179" column="20" lean-forward="false" selection-start-line="179" selection-start-column="20" selection-end-line="179" selection-end-column="20" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conv_net/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2208">
+          <caret line="519" column="25" lean-forward="true" selection-start-line="519" selection-start-column="25" selection-end-line="519" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
