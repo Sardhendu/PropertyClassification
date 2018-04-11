@@ -21,8 +21,12 @@ logging.basicConfig(level=logging.DEBUG, filename="logfile.log", filemode="w",
                     format="%(asctime)-15s %(levelname)-8s %(message)s")
 
 
-def load_batch_data(which_data='cvalid'):
-    data_path = pathDict['batch_path']  # % (str(image_type))]
+def load_batch_data(which_data='cvalid', force_dir_fetch=None):
+    if force_dir_fetch:
+        data_path =force_dir_fetch
+    else:
+        data_path = pathDict['batch_path']  # % (str(image_type))]
+        
     batch_file_name = '%s' % (which_data)
     
     # LOAD THE TRAINING DATA FROM DISK

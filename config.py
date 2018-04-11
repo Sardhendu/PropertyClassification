@@ -64,11 +64,12 @@ which_run = input('INPUT the RUN NAME: Options : ("A new run name" or "Any Previ
 image_type = input('INPUT: Image-type OPTIONS: (assessor, assessor_code, aerial, overlayed, aerial_cropped, '
                    'streetside and ensemble \n '
                    'IMAGE_TYPE = ')
-if image_type not in ['assessor', 'aerial', 'overlayed', 'aerial_cropped', 'assessor_encode', 'streetside']:
+if image_type not in ['assessor', 'aerial', 'overlayed', 'aerial_cropped', 'assessor_encode', 'streetside',
+                      'mixture_model']:
     raise ValueError("The image type doesnt match the used types, Here are few options options: ('assessor', 'aerial', 'overlayed', 'aerial_cropped', 'assessor_encode', 'streetside')")
 
 # image_type = 'aerial'
-if image_type in ['assessor', 'aerial', 'streetside', 'overlayed']:
+if image_type in ['assessor', 'aerial', 'streetside', 'overlayed', 'aerial_cropped', 'mixture_model']:
     pp_vars['standardise'] = True
     pp_vars['rand_brightness'] = False
     pp_vars['rand_contrast'] = False
@@ -90,24 +91,6 @@ if image_type in ['assessor', 'aerial', 'streetside', 'overlayed']:
     # function is not very complex and you feet that the function can be marginally learned in 1-3 steps than set it to
     # train_size/5 or somthing like that. This would ensure that the high learning rate doesnt make the optimization
     # just from minimas.
-elif image_type == 'aerial_cropped':
-    pp_vars['standardise'] = True
-    pp_vars['rand_brightness'] = False
-    pp_vars['rand_contrast'] = False
-    pp_vars['rand_rotate'] = False
-    pp_vars['rand_Hflip'] = True
-    pp_vars['rand_Vflip'] = True
-    pp_vars['rand_crop'] = False
-    pp_vars['central_crop'] = False
-
-    myNet['num_labels'] = 2
-    myNet['optimizer'] = 'ADAM'
-    myNet['learning_rate'] = 0.005
-    myNet['momentum'] = 0.9
-    myNet['learning_rate_decay_rate'] = 0.95
-    myNet['batch_norm_decay'] = 0.9
-    myNet['batch_size'] = 128
-    myNet['lr_decay_steps'] = 5000
 
 elif image_type == 'assessor_code':
     pp_vars['standardise'] = True
@@ -156,11 +139,13 @@ pathDict['parent_statistics_path'] = os.path.join(pathDict['parent_path'], "stat
 pathDict['chicago_bbox_shp_files'] = os.path.join(pathDict['parent_path'], "shape_files", "building_bbox")
 pathDict['input_image_run_dir'] = os.path.join(pathDict['parent_path'], "input_images", which_run)
 pathDict['general_stats_path'] = os.path.join(pathDict['parent_path'], "statistics", which_run)
+pathDict['general_batch_path'] = os.path.join(pathDict['parent_path'], "batch_data", which_run)
+
 
 ######### INPUT IMAGES PATH
-pathDict['image_path'] = os.path.join(pathDict['parent_path'], "input_images", which_run, image_type)
-pathDict['batch_path'] = os.path.join(pathDict['parent_path'],"batch_data", which_run, image_type)
-pathDict['checkpoint_path'] = os.path.join(pathDict['parent_path'],"checkpoints", which_run, image_type)
+pathDict['image_path'] = os.path.join(pathDict['input_image_run_dir'], image_type)
+pathDict['batch_path'] = os.path.join(pathDict['general_batch_path'], image_type)
+pathDict['checkpoint_path'] = os.path.join(pathDict['parent_checkpoint_path'], which_run, image_type)
 pathDict['summary_path'] = os.path.join(pathDict['parent_path'],"summary", which_run, image_type)
 pathDict['statistics_path'] = os.path.join(pathDict['parent_path'],"statistics", which_run, image_type)
 

@@ -94,6 +94,53 @@ def residual_block_first(X, filters, block_num, dropout, scope_name):
     return X
 
 
+def embeddings(inpX, use_dropout):
+    filters = [64, 64, 128, 256, 512]
+    
+    if use_dropout:
+        dropout_prob = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+    else:
+        dropout_prob = [None, None, None, None, None, None, None, None]
+    
+   
+    # Convolution Layer
+    X = conv_1(inpX, filters[0], scope_name='conv_layer')
+    logging.info('conv_layer : conv shape: %s', str(X.get_shape().as_list()))
+    
+    # Residual Block 1,2
+    X = residual_block(X, [filters[1], filters[1]], block_num=1, dropout=dropout_prob[0],
+                       scope_name='residual_block_1_1')
+    X = residual_block(X, [filters[1], filters[1]], block_num=2, dropout=dropout_prob[1],
+                       scope_name='residual_block_1_2')
+    
+    # Residual Block 3,4
+    X = residual_block_first(X, [filters[2], filters[2]], block_num=3, dropout=dropout_prob[2], scope_name='residual_block_2_1')
+    X = residual_block(X, [filters[2], filters[2]], block_num=4, dropout=dropout_prob[3],
+                       scope_name='residual_block_2_2')
+    
+    # Residual block 5,6
+    X = residual_block_first(X, [filters[3], filters[3]], block_num=5, dropout=dropout_prob[4], scope_name='residual_block_3_1')
+    X = residual_block(X, [filters[3], filters[3]], block_num=6, dropout=dropout_prob[5],
+                       scope_name='residual_block_3_2')
+    
+    # Residual block 7,8
+    X = residual_block_first(X, [filters[4], filters[4]], block_num=7, dropout=dropout_prob[6], scope_name='residual_block_4_1')
+    X = residual_block(X, [filters[4], filters[4]], block_num=8, dropout=dropout_prob[7],
+                       scope_name='residual_block_4_2')
+    
+    # Flatten (dropout?)
+    X = tf.contrib.layers.flatten(X, scope='flatten')
+    logging.info('X - flattened: %s', str(X.get_shape().as_list()))
+    
+    # if use_dropout:
+    #     X = tf.nn.dropout(X, 0.7)
+    #     logging.info('Flattened : dropout = %s shape: %s', str(0.7), str(X.shape))
+    
+    # FC-Layer : Get a good 512 encoding to build ensemble
+    embeddings = ops.fc_layers(X, [X.get_shape().as_list()[-1], 512], w_init='tn', scope_name='fc_layer1', add_smry=False)
+    return embeddings
+
+
 def resnet(img_shape, device_type, use_dropout):
     inpX = tf.placeholder(dtype=tf.float32,
                           shape=[None, img_shape[0], img_shape[1], img_shape[2]],
@@ -102,54 +149,13 @@ def resnet(img_shape, device_type, use_dropout):
                           shape=[None, myNet['num_labels']],
                           name='Y')
     
-    filters = [64, 64, 128, 256, 512]
-    
-    if use_dropout:
-        dropout_prob = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
-    else:
-        dropout_prob = [None, None, None, None, None, None, None, None]
-    
     with tf.device(device_type):
-        # Convolution Layer
-        X = conv_1(inpX, filters[0], scope_name='conv_layer')
-        logging.info('conv_layer : conv shape: %s', str(X.get_shape().as_list()))
-        
-        # Residual Block 1,2
-        X = residual_block(X, [filters[1], filters[1]], block_num=1, dropout=dropout_prob[0],
-                           scope_name='residual_block_1_1')
-        X = residual_block(X, [filters[1], filters[1]], block_num=2, dropout=dropout_prob[1],
-                           scope_name='residual_block_1_2')
-        
-        # Residual Block 3,4
-        X = residual_block_first(X, [filters[2], filters[2]], block_num=3, dropout=dropout_prob[2], scope_name='residual_block_2_1')
-        X = residual_block(X, [filters[2], filters[2]], block_num=4, dropout=dropout_prob[3],
-                           scope_name='residual_block_2_2')
-        
-        # Residual block 5,6
-        X = residual_block_first(X, [filters[3], filters[3]], block_num=5, dropout=dropout_prob[4], scope_name='residual_block_3_1')
-        X = residual_block(X, [filters[3], filters[3]], block_num=6, dropout=dropout_prob[5],
-                           scope_name='residual_block_3_2')
-        
-        # Residual block 7,8
-        X = residual_block_first(X, [filters[4], filters[4]], block_num=7, dropout=dropout_prob[6], scope_name='residual_block_4_1')
-        X = residual_block(X, [filters[4], filters[4]], block_num=8, dropout=dropout_prob[7],
-                           scope_name='residual_block_4_2')
-        
-        # Flatten (dropout?)
-        X = tf.contrib.layers.flatten(X, scope='flatten')
-        logging.info('X - flattened: %s', str(X.get_shape().as_list()))
-        
-        # if use_dropout:
-        #     X = tf.nn.dropout(X, 0.7)
-        #     logging.info('Flattened : dropout = %s shape: %s', str(0.7), str(X.shape))
-        
-        # FC-Layer : Get a good 512 encoding to build ensemble
-        X = ops.fc_layers(X, [X.get_shape().as_list()[-1], 512], w_init='tn', scope_name='fc_layer1', add_smry=False)
-        X = ops.activation(X, 'relu', scope_name='relu_fc')
-        logging.info('X - FC Layer: %s', str(X.get_shape().as_list()))
+        X_embeddings = embeddings(inpX, use_dropout)
+        X_embeddings = ops.activation(X_embeddings, 'relu', scope_name='relu_fc')
+        logging.info('X - FC Layer (RELU): %s', str(X_embeddings.get_shape().as_list()))
         
         # SOFTMAX Layer
-        X_logits = ops.fc_layers(X, [512, 2], w_init='tn', scope_name='fc_layer2', add_smry=False)
+        X_logits = ops.fc_layers(X_embeddings, [512, 2], w_init='tn', scope_name='fc_layer2', add_smry=False)
         logging.info('LOGITS - Softmax Layer: %s', str(X_logits.get_shape().as_list()))
         
         Y_probs = tf.nn.softmax(X_logits)
@@ -162,14 +168,45 @@ def resnet(img_shape, device_type, use_dropout):
         acc = ops.accuracy(labels=inpY, logits=X_logits, type='training', add_smry=False)
        
     return dict(inpX=inpX, inpY=inpY, outProbs=Y_probs, accuracy=acc, loss=loss, optimizer=optimizer, l_rate=l_rate)
+
+
+def mixture_of_experts(img_shape, device_type, use_dropout):
+    inpX1 = tf.placeholder(dtype=tf.float32,
+                          shape=[None, img_shape[0], img_shape[1], img_shape[2]],
+                          name='expert1')
+    inpX2 = tf.placeholder(dtype=tf.float32,
+                          shape=[None, img_shape[0], img_shape[1], img_shape[2]],
+                          name='expert2')
+    inpY = tf.placeholder(dtype=tf.float32,
+                          shape=[None, myNet['num_labels']],
+                          name='Y')
+
+    with tf.device(device_type):
+        logging.info('Expert 1: Creating Computation graph for Expert 1 ............... ')
+        with tf.variable_scope('Expert1'):
+            embeddings_m1 = embeddings(inpX1, use_dropout)
+        
+        logging.info('Expert 2: Creating Computation graph for Expert 2 ............... ')
+        with tf.variable_scope('Expert2'):
+            embeddings_m2 = embeddings(inpX2, use_dropout)
+
+        expert_embeddings = tf.concat(values=[embeddings_m1, embeddings_m2], axis=-1)
+        expert_embeddings = ops.activation(expert_embeddings, type='sigmoid', scope_name='sigmoid')
+        logging.info('EMBEDDINGS: Stacked (sigmoid Gate) %s', str(expert_embeddings.get_shape().as_list()))
     
+        # SOFTMAX Layer
+        X_logits = ops.fc_layers(expert_embeddings, [1024, 2], w_init='tn', scope_name='softmax', add_smry=False)
+        logging.info('LOGITS - Softmax Layer: %s', str(X_logits.get_shape().as_list()))
     
-    # if training:
-    #     accuracy = ops.accuracy(labels=inpY, logits=X_logits, type='training', add_smry=True)
-    #     lossCE, optimizer, l_rate = ops.loss_optimization(X=X_logits, y=inpY, learning_rate_decay=True)
-    #
-    #     return dict(inpX=inpX, inpY=inpY, outProbs=Y_probs, acc=accuracy,
-    #                 loss=lossCE, optimizer=optimizer, l_rate=l_rate)
-    # else:
-    #     accuracy = ops.accuracy(labels=inpY, logits=X_logits, type='validation', add_smry=True)
-    #     return dict(inpX=inpX, inpY=inpY, outProbs=Y_probs, acc=accuracy,)
+        Y_probs = tf.nn.softmax(X_logits)
+        logging.info('Softmax Y-Prob shape: shape %s', str(Y_probs.shape))
+    
+        loss = ops.get_loss(y_true=inpY, y_logits=X_logits, which_loss='sigmoid_cross_entropy', lamda=None)
+    
+        optimizer, l_rate = ops.optimize(loss=loss, learning_rate_decay=True, add_smry=False)
+    
+        acc = ops.accuracy(labels=inpY, logits=X_logits, type='training', add_smry=False)
+
+    return dict(inpX1=inpX1, inpX2=inpX2, inpY=inpY, outProbs=Y_probs, accuracy=acc, loss=loss,
+         optimizer=optimizer, l_rate=l_rate)
+    
