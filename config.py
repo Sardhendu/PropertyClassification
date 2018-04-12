@@ -69,7 +69,7 @@ if image_type not in ['assessor', 'aerial', 'overlayed', 'aerial_cropped', 'asse
     raise ValueError("The image type doesnt match the used types, Here are few options options: ('assessor', 'aerial', 'overlayed', 'aerial_cropped', 'assessor_encode', 'streetside')")
 
 # image_type = 'aerial'
-if image_type in ['assessor', 'aerial', 'streetside', 'overlayed', 'aerial_cropped', 'mixture_model']:
+if image_type in ['assessor', 'aerial', 'streetside', 'overlayed', 'aerial_cropped']:
     pp_vars['standardise'] = True
     pp_vars['rand_brightness'] = False
     pp_vars['rand_contrast'] = False
@@ -81,7 +81,7 @@ if image_type in ['assessor', 'aerial', 'streetside', 'overlayed', 'aerial_cropp
 
     myNet['num_labels'] = 2
     myNet['optimizer'] = 'ADAM'
-    myNet['learning_rate'] = 0.005
+    myNet['learning_rate'] = 0.0005
     myNet['momentum'] = 0.9
     myNet['learning_rate_decay_rate'] = 0.95
     myNet['batch_norm_decay'] = 0.9
@@ -91,7 +91,25 @@ if image_type in ['assessor', 'aerial', 'streetside', 'overlayed', 'aerial_cropp
     # function is not very complex and you feet that the function can be marginally learned in 1-3 steps than set it to
     # train_size/5 or somthing like that. This would ensure that the high learning rate doesnt make the optimization
     # just from minimas.
+elif image_type =='mixture_model':
+    pp_vars['standardise'] = True
+    pp_vars['rand_brightness'] = False
+    pp_vars['rand_contrast'] = False
+    pp_vars['rand_rotate'] = False
+    pp_vars['rand_Hflip'] = True
+    pp_vars['rand_Vflip'] = True
+    pp_vars['rand_crop'] = False
+    pp_vars['central_crop'] = False
 
+    myNet['num_labels'] = 2
+    myNet['optimizer'] = 'ADAM'
+    myNet['learning_rate'] = 0.0005
+    myNet['momentum'] = 0.9
+    myNet['learning_rate_decay_rate'] = 0.95
+    myNet['batch_norm_decay'] = 0.9
+    myNet['batch_size'] = 128
+    myNet['lr_decay_steps'] = 9000
+    
 elif image_type == 'assessor_code':
     pp_vars['standardise'] = True
     pp_vars['rand_brightness'] = False

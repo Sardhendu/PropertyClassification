@@ -157,16 +157,16 @@ def resnet(img_shape, device_type, use_dropout):
         # SOFTMAX Layer
         X_logits = ops.fc_layers(X_embeddings, [512, 2], w_init='tn', scope_name='fc_layer2', add_smry=False)
         logging.info('LOGITS - Softmax Layer: %s', str(X_logits.get_shape().as_list()))
-        
+
         Y_probs = tf.nn.softmax(X_logits)
         logging.info('Softmax Y-Prob shape: shape %s', str(Y_probs.shape))
-        
+
         loss = ops.get_loss(y_true=inpY, y_logits=X_logits, which_loss='sigmoid_cross_entropy', lamda=None)
-        
+
         optimizer, l_rate = ops.optimize(loss=loss, learning_rate_decay=True, add_smry=False)
-        
+
         acc = ops.accuracy(labels=inpY, logits=X_logits, type='training', add_smry=False)
-       
+
     return dict(inpX=inpX, inpY=inpY, outProbs=Y_probs, accuracy=acc, loss=loss, optimizer=optimizer, l_rate=l_rate)
 
 
