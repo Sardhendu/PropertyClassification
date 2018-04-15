@@ -96,7 +96,7 @@ class Test(PropertyClassification):
             #
     
     def run(self, use_checkpoint_for_run, use_checkpoint_for_imageType, optional_batch_name=None,
-            which_checkpoint='max', dump_stats=False):
+            which_checkpoint='max', which_data='cvalid', dump_stats=False):
         logging.info('INITIATING TEST ........')
         self.stats_path = os.path.join(pathDict['statistics_path'], 'prediction_stats')
         # Override the checkpoint path.
@@ -167,11 +167,11 @@ class Test(PropertyClassification):
 
         if self.dump_stats:
             fnl_true_pred_prob_df = pd.DataFrame(fnl_true_pred_prob_stack, columns=colnames1)
-            pred_path = os.path.join(self.stats_path, 'pred_outcomes.csv')
+            pred_path = os.path.join(self.stats_path, which_data+'_pred_outcomes.csv')
             fnl_true_pred_prob_df.to_csv(pred_path, index=None)
 
             fnl_tst_stats_df = pd.DataFrame(fnl_tst_metric_stack, columns=colnames2)
-            metric_path = os.path.join(self.stats_path, 'pred_metrics.csv')
+            metric_path = os.path.join(self.stats_path, which_data+'_pred_metrics.csv')
             fnl_tst_stats_df.to_csv(metric_path, index=None)
         #
         return fnl_tst_metric_stack

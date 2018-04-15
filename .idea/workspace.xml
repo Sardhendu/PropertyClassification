@@ -5,11 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Model_eval-Aerial_cropped-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Model_eval-Aerial_cropped-checkpoint.ipynb" />
       <change beforePath="$PROJECT_DIR$/Model_eval-Aerial_cropped.ipynb" afterPath="$PROJECT_DIR$/Model_eval-Aerial_cropped.ipynb" />
-      <change beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
-      <change beforePath="$PROJECT_DIR$/conv_net/resnet.py" afterPath="$PROJECT_DIR$/conv_net/resnet.py" />
-      <change beforePath="$PROJECT_DIR$/conv_net/trainMoE.py" afterPath="$PROJECT_DIR$/conv_net/trainMoE.py" />
-      <change beforePath="$PROJECT_DIR$/conv_net/utils.py" afterPath="$PROJECT_DIR$/conv_net/utils.py" />
+      <change beforePath="$PROJECT_DIR$/conv_net/test.py" afterPath="$PROJECT_DIR$/conv_net/test.py" />
+      <change beforePath="$PROJECT_DIR$/data_transformation/data_prep.py" afterPath="$PROJECT_DIR$/data_transformation/data_prep.py" />
       <change beforePath="$PROJECT_DIR$/logfile.log" afterPath="$PROJECT_DIR$/logfile.log" />
+      <change beforePath="$PROJECT_DIR$/viz_analysis/.ipynb_checkpoints/WrongPrediction-Analysis-checkpoint.ipynb" afterPath="$PROJECT_DIR$/viz_analysis/.ipynb_checkpoints/WrongPrediction-Analysis-checkpoint.ipynb" />
+      <change beforePath="$PROJECT_DIR$/viz_analysis/WrongPrediction-Analysis.ipynb" afterPath="$PROJECT_DIR$/viz_analysis/WrongPrediction-Analysis.ipynb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +26,7 @@
       <file leaf-file-name="ops.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conv_net/ops.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="3655">
               <caret line="222" column="49" lean-forward="false" selection-start-line="222" selection-start-column="4" selection-end-line="222" selection-end-column="49" />
               <folding />
             </state>
@@ -65,11 +65,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="701">
-              <caret line="74" column="36" lean-forward="true" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
+            <state relative-caret-position="378">
+              <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data_prep.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data_transformation/data_prep.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="671">
+              <caret line="543" column="0" lean-forward="false" selection-start-line="543" selection-start-column="0" selection-end-line="543" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -99,8 +109,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>drop</find>
-      <find>preprocessed_data</find>
       <find>standardize</find>
       <find>preproce</find>
       <find>run_preprocessor</find>
@@ -129,6 +137,8 @@
       <find>get_cvalid_data</find>
       <find>batchY_m2</find>
       <find>train</find>
+      <find>dataOUT = pd.DataFrame(np.column_stack((tr_cv_ts_pins_, tr_cv_ts_land_house, tr_cv_ts_type_info)</find>
+      <find>tr_cv_ts_land_house</find>
     </findStrings>
     <replaceStrings>
       <replace>variable_scope</replace>
@@ -211,7 +221,6 @@
         <option value="$PROJECT_DIR$/conv_net/test.py" />
         <option value="$PROJECT_DIR$/conv_net/convnet.py" />
         <option value="$PROJECT_DIR$/logfile.log" />
-        <option value="$PROJECT_DIR$/data_transformation/data_prep.py" />
         <option value="$PROJECT_DIR$/conv_net/train.py" />
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/config.py" />
@@ -220,10 +229,11 @@
         <option value="$PROJECT_DIR$/conv_net/resnet.py" />
         <option value="$PROJECT_DIR$/conv_net/utils.py" />
         <option value="$PROJECT_DIR$/conv_net/trainMoE.py" />
+        <option value="$PROJECT_DIR$/data_transformation/data_prep.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="2560" />
     <option name="height" value="1080" />
   </component>
@@ -261,7 +271,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -274,11 +283,17 @@
               <item name="image_classification" type="462c0819:PsiDirectoryNode" />
               <item name="conv_net" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="image_classification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="image_classification" type="462c0819:PsiDirectoryNode" />
+              <item name="data_transformation" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -439,10 +454,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1080" extended-state="1" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10576541" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16917562" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32020056" sideWeight="0.5085324" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295562" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -754,16 +769,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_transformation/data_prep.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="179" column="20" lean-forward="false" selection-start-line="179" selection-start-column="20" selection-end-line="179" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conv_net/ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="3655">
           <caret line="222" column="49" lean-forward="false" selection-start-line="222" selection-start-column="4" selection-end-line="222" selection-end-column="49" />
           <folding />
         </state>
@@ -809,16 +817,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="238" column="47" lean-forward="false" selection-start-line="238" selection-start-column="47" selection-end-line="238" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
-          <caret line="74" column="36" lean-forward="true" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
+        <state relative-caret-position="378">
+          <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_transformation/data_prep.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="543" column="0" lean-forward="false" selection-start-line="543" selection-start-column="0" selection-end-line="543" selection-end-column="0" />
           <folding />
         </state>
       </provider>
