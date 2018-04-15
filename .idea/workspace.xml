@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73474898-f241-419a-9841-3f571f14b794" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/viz_analysis/mislabels_correction.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/other_models/__init__.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Model_eval-Aerial_cropped.ipynb" afterPath="$PROJECT_DIR$/Model_eval-Aerial_cropped.ipynb" />
-      <change beforePath="$PROJECT_DIR$/data_transformation/data_prep.py" afterPath="$PROJECT_DIR$/data_transformation/data_prep.py" />
-      <change beforePath="$PROJECT_DIR$/logfile.log" afterPath="$PROJECT_DIR$/logfile.log" />
-      <change beforePath="$PROJECT_DIR$/viz_analysis/.ipynb_checkpoints/MislabelStatistics-checkpoint.ipynb" afterPath="$PROJECT_DIR$/viz_analysis/.ipynb_checkpoints/MislabelStatistics-checkpoint.ipynb" />
-      <change beforePath="$PROJECT_DIR$/viz_analysis/MislabelStatistics.ipynb" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/data_loader-Aerial-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/data_loader-Aerial-checkpoint.ipynb" />
+      <change beforePath="$PROJECT_DIR$/Model-eval-VAE-Copy1.ipynb" afterPath="$PROJECT_DIR$/other_models/Model-eval-VAE-Copy1.ipynb" />
+      <change beforePath="$PROJECT_DIR$/Model-eval-VAE.ipynb" afterPath="$PROJECT_DIR$/other_models/Model-eval-VAE.ipynb" />
+      <change beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
+      <change beforePath="$PROJECT_DIR$/conv_net/conv_var_encoder.py" afterPath="$PROJECT_DIR$/other_models/conv_var_encoder.py" />
+      <change beforePath="$PROJECT_DIR$/conv_net/just_me.py" afterPath="$PROJECT_DIR$/other_models/just_me.py" />
+      <change beforePath="$PROJECT_DIR$/conv_net/new_autoencoder.py" afterPath="$PROJECT_DIR$/other_models/new_autoencoder.py" />
+      <change beforePath="$PROJECT_DIR$/conv_net/var_autoencoder.py" afterPath="$PROJECT_DIR$/other_models/var_autoencoder.py" />
+      <change beforePath="$PROJECT_DIR$/conv_net/variational_autoencoder.py" afterPath="$PROJECT_DIR$/other_models/variational_autoencoder.py" />
+      <change beforePath="$PROJECT_DIR$/data_loader-Aerial.ipynb" afterPath="$PROJECT_DIR$/data_loader-Aerial.ipynb" />
+      <change beforePath="$PROJECT_DIR$/data_loader.ipynb" afterPath="$PROJECT_DIR$/data_loader.ipynb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +31,7 @@
       <file leaf-file-name="ops.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conv_net/ops.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="3655">
               <caret line="222" column="49" lean-forward="false" selection-start-line="222" selection-start-column="4" selection-end-line="222" selection-end-column="49" />
               <folding />
             </state>
@@ -64,12 +70,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="config.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="33" column="30" lean-forward="false" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="679">
+              <caret line="184" column="20" lean-forward="false" selection-start-line="184" selection-start-column="20" selection-end-line="184" selection-end-column="20" />
+              <folding>
+                <element signature="e#2#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,18 +85,18 @@
       <file leaf-file-name="data_prep.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_transformation/data_prep.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5121">
+            <state relative-caret-position="9010">
               <caret line="538" column="71" lean-forward="false" selection-start-line="538" selection-start-column="71" selection-end-line="538" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mislabels_correction.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mislabels_correction.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/viz_analysis/mislabels_correction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="718">
-              <caret line="108" column="104" lean-forward="false" selection-start-line="108" selection-start-column="104" selection-end-line="108" selection-end-column="104" />
+            <state relative-caret-position="259">
+              <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -252,8 +260,6 @@
         <option value="$PROJECT_DIR$/conv_net/convnet.py" />
         <option value="$PROJECT_DIR$/logfile.log" />
         <option value="$PROJECT_DIR$/conv_net/train.py" />
-        <option value="$PROJECT_DIR$/config.py" />
-        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/conv_net/logfile.log" />
         <option value="$PROJECT_DIR$/conv_net/logfile.log" />
         <option value="$PROJECT_DIR$/conv_net/resnet.py" />
@@ -261,6 +267,8 @@
         <option value="$PROJECT_DIR$/conv_net/trainMoE.py" />
         <option value="$PROJECT_DIR$/data_transformation/data_prep.py" />
         <option value="$PROJECT_DIR$/viz_analysis/mislabels_correction.py" />
+        <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/config.py" />
       </list>
     </option>
   </component>
@@ -302,6 +310,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -314,16 +323,10 @@
               <item name="image_classification" type="462c0819:PsiDirectoryNode" />
               <item name="data_transformation" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="image_classification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="image_classification" type="462c0819:PsiDirectoryNode" />
-              <item name="viz_analysis" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -341,11 +344,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\newline\Documents\ImageClassification\image_classification\other_models" />
       <recent name="$PROJECT_DIR$/rough" />
       <recent name="$PROJECT_DIR$/ROUGH" />
       <recent name="$PROJECT_DIR$/semantic_segmentation" />
       <recent name="$PROJECT_DIR$/Notes" />
-      <recent name="$PROJECT_DIR$/viz_analysis" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -488,7 +491,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12688172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22078852" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32020056" sideWeight="0.5085324" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295562" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -539,7 +542,7 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/conv_net/variational_autoencoder.py</url>
+          <url>file://$PROJECT_DIR$/other_models/variational_autoencoder.py</url>
           <line>131</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
@@ -620,7 +623,7 @@
     </entry>
     <entry file="file://$USER_HOME$/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/tensorflow/python/training/optimizer.py" />
     <entry file="file://$USER_HOME$/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/IPython/core/interactiveshell.py" />
-    <entry file="file://$PROJECT_DIR$/conv_net/var_autoencoder.py">
+    <entry file="file://$PROJECT_DIR$/other_models/var_autoencoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="473">
           <caret line="219" column="22" lean-forward="true" selection-start-line="219" selection-start-column="22" selection-end-line="219" selection-end-column="22" />
@@ -634,7 +637,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conv_net/variational_autoencoder.py">
+    <entry file="file://$PROJECT_DIR$/other_models/variational_autoencoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-565">
           <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
@@ -644,14 +647,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conv_net/conv_var_encoder.py">
+    <entry file="file://$PROJECT_DIR$/other_models/conv_var_encoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="34" column="10" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conv_net/new_autoencoder.py">
+    <entry file="file://$PROJECT_DIR$/other_models/new_autoencoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-253">
           <caret line="644" column="71" lean-forward="true" selection-start-line="644" selection-start-column="6" selection-end-line="644" selection-end-column="71" />
@@ -672,7 +675,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conv_net/just_me.py">
+    <entry file="file://$PROJECT_DIR$/other_models/just_me.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
@@ -750,7 +753,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conv_net/ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="3655">
           <caret line="222" column="49" lean-forward="false" selection-start-line="222" selection-start-column="4" selection-end-line="222" selection-end-column="49" />
           <folding />
         </state>
@@ -799,13 +802,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="32" column="18" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py" />
     <entry file="file://$PROJECT_DIR$/data_transformation/data_load.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1717">
@@ -822,17 +819,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="33" column="30" lean-forward="false" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_transformation/data_prep.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5121">
+        <state relative-caret-position="9010">
           <caret line="538" column="71" lean-forward="false" selection-start-line="538" selection-start-column="71" selection-end-line="538" selection-end-column="71" />
           <folding />
         </state>
@@ -840,10 +829,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/viz_analysis/mislabels_correction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
-          <caret line="108" column="104" lean-forward="false" selection-start-line="108" selection-start-column="104" selection-end-line="108" selection-end-column="104" />
+        <state relative-caret-position="259">
+          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="184" column="20" lean-forward="false" selection-start-line="184" selection-start-column="20" selection-end-line="184" selection-end-column="20" />
+          <folding>
+            <element signature="e#2#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

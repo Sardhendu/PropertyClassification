@@ -40,8 +40,8 @@ api_call['google_meta_key'] = ['AIzaSyBNuNNCBN1QyzLPGQQC54iqgxxa7LtFFIw', 'AIzaS
 
 
 
-api_call['google_aerial_key'] = str(api_call['google_aerial_key'][3])
-api_call['google_meta_key'] = str(api_call['google_meta_key'][3])
+api_call['google_aerial_key'] = str(api_call['google_aerial_key'][0])
+api_call['google_meta_key'] = str(api_call['google_meta_key'][0])
 
 
 
@@ -182,7 +182,7 @@ for paths in path_arr:
 
 #
 #
-# ##### Assessor Images
+# ##### Assessor Imxages
 #
 # # pathDict['assessor_rsized_path'] = os.path.join(pathDict['data_model_path'], "assessor_images")
 # pathDict['assessor_batch_path'] = os.path.join(pathDict['run_folder'], image_type, 'batch_data')
