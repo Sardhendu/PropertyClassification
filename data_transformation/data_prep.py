@@ -167,6 +167,43 @@ def zero_pad(inp, crop_shape, out_shape):
     return inp
 
 
+def process_images_given_path(pic_path, img_in_shape, img_crop_shape, img_resize_shape, img_out_shape,
+                              enable_rotation, angle):
+    bbox_cropped = None
+    image = ndimage.imread(pic_path, mode='RGB')
+
+    # if self.image_type == 'aerial_cropped':
+    if image.shape[0] == img_in_shape[0] and image.shape[1] == img_in_shape[1]:
+        bbox_cropped = 0
+        # The above condition takes care of the different sizes. If a bounding box was already cropped
+        # then we don't crop further. But if no bounding box was found then we perform a central crop.
+        if len(img_crop_shape) > 0:
+            image = central_crop(image, height=img_crop_shape[0], width=img_crop_shape[1])
+    else:
+        # If the image shape is not 400x400, then it means that the image was cropped using building polygons
+        bbox_cropped = 1
+        # If the height is greater than width then we rotate the image by 90%
+    if enable_rotation:
+        if image.shape[0] > image.shape[1]:
+            image = imutils.rotate_bound(image, angle)
+
+    if len(img_resize_shape) > 0:
+        image = misc.imresize(image, img_resize_shape)
+
+    if image.shape[0] - img_out_shape[0] < 0:
+        image = zero_pad(inp=image, crop_shape=img_crop_shape, out_shape=img_out_shape)
+    elif len(img_out_shape) > 0:
+        image = misc.imresize(image, img_out_shape)
+
+    # if image.shape[0] < self.img_out_shape[0] or image.shape[1] < self.img_out_shape[1]:
+    #     # IF the image does not fit the out shape then we pad the image with zeros
+    #     image = zero_pad(inp=image, out_shape=self.img_out_shape)
+    # else:
+    #     # IF the image is larger than the out shape then we resize it fit the out_shape
+    #     image = misc.imresize(image, self.img_out_shape)
+    return image, bbox_cropped
+
+
 class DumpBatches():
     def __init__(self, params):
         # print(img_in_shape, img_out_shape, img_crop_shape, img_resize_shape)
@@ -225,32 +262,10 @@ class DumpBatches():
 
         logging.info('Running Seed for batch creation: %s', str(self.shuffle_seed))
 
-    def process_images_given_path(self, pic_path):
-        bbox_cropped = None
-        image = ndimage.imread(pic_path, mode='RGB')
-
-        # if self.image_type == 'aerial_cropped':
-        if image.shape[0] == self.img_in_shape[0] and image.shape[1] == self.img_in_shape[1]:
-            bbox_cropped = 0
-            # The above condition takes care of the different sizes. If a bounding box was already cropped
-            # then we don't crop further. But if no bounding box was found then we perform a central crop.
-            if len(self.img_crop_shape) > 0:
-                image = central_crop(image, height=self.img_crop_shape[0], width=self.img_crop_shape[1])
-        else:
-            # If the image shape is not 400x400, then it means that the image was cropped using building polygons
-            bbox_cropped = 1
-            # If the height is greater than width then we rotate the image by 90%
-        if self.enable_rotation:
-            if image.shape[0] > image.shape[1]:
-                image = imutils.rotate_bound(image, self.angle)
-
-        if len(self.img_resize_shape) > 0:
-            image = misc.imresize(image, self.img_resize_shape)
-
-        if image.shape[0] - self.img_out_shape[0] < 0:
-            image = zero_pad(inp=image, crop_shape=self.img_crop_shape, out_shape=self.img_out_shape)
-        elif len(self.img_out_shape) > 0:
-            image = misc.imresize(image, self.img_out_shape)
+    def process_images_given_path_wrapper(self, pic_path):
+        return process_images_given_path(pic_path, self.img_in_shape, self.img_crop_shape, self.img_resize_shape,
+                                         self.img_out_shape,
+                                         self.enable_rotation, self.angle)
 
         # if image.shape[0] < self.img_out_shape[0] or image.shape[1] < self.img_out_shape[1]:
         #     # IF the image does not fit the out shape then we pad the image with zeros
@@ -258,7 +273,7 @@ class DumpBatches():
         # else:
         #     # IF the image is larger than the out shape then we resize it fit the out_shape
         #     image = misc.imresize(image, self.img_out_shape)
-        return image, bbox_cropped
+        # return image, bbox_cropped
 
     def dump_train_validate_test_batches(self, land_paths, house_paths, labels, filename):
         dataBatchX = np.ndarray(shape=(len(land_paths) + len(house_paths),
@@ -266,7 +281,7 @@ class DumpBatches():
                                        self.img_out_shape[1], 3), dtype='int32')
         bbox_cropped_arr = []
         for num, pic_path in enumerate(land_paths + house_paths):
-            image, bbox_cropped = self.process_images_given_path(pic_path)
+            image, bbox_cropped = self.process_images_given_path_wrapper(pic_path)
             bbox_cropped_arr.append(bbox_cropped)
             dataBatchX[num, :] = image
 
@@ -286,7 +301,7 @@ class DumpBatches():
                                        self.img_out_shape[0],
                                        self.img_out_shape[1], 3), dtype='int32')
         for num, pic_path in enumerate(paths):
-            image = self.process_images_given_path(pic_path)
+            image = self.process_images_given_path_wrapper(pic_path)
             dataBatchX[num, :] = image
 
         dumpH5File(dataX=dataBatchX,
@@ -323,7 +338,6 @@ class DumpBatches():
             land_paths=[os.path.join(self.land_image_path, pin + '.jpg') for pin in self.test_land_pins],
             house_paths=[os.path.join(self.house_image_path, pin + '.jpg') for pin in self.test_house_pins],
             labels=[land_label, house_label], filename='test')
-
 
         ##### DUMP CROSS VALIDATION DATASET
         # LOAD THE VALIDATION SET TO THE DISK
@@ -416,7 +430,7 @@ class DumpBatches():
 
                 b = "TOTAL BATCH DONE:  ======== %s"
                 print(b % (batch_num), end="\r")
-                
+
                 if self.max_batches:
                     if self.max_batches == batch_num + 1:
                         break
@@ -427,8 +441,9 @@ class DumpBatches():
                 if not os.path.exists(folder_path):
                     os.makedirs(folder_path)
                 dump_pins_path = os.path.join(folder_path, 'tr_cv_ts_pins_info.csv')
-                dataOUT = pd.DataFrame(np.column_stack((tr_cv_ts_pins_, tr_cv_ts_land_house, tr_cv_ts_type_info, tr_cv_ts_bbox_crpd)),
-                                       columns=['property_pins', 'property_type', 'dataset_type', 'bbox_cropped'])
+                dataOUT = pd.DataFrame(
+                    np.column_stack((tr_cv_ts_pins_, tr_cv_ts_land_house, tr_cv_ts_type_info, tr_cv_ts_bbox_crpd)),
+                    columns=['property_pins', 'property_type', 'dataset_type', 'bbox_cropped'])
                 dataOUT.to_csv(dump_pins_path, index=None)
 
                 logging.info(
