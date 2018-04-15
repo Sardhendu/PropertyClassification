@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73474898-f241-419a-9841-3f571f14b794" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Model_eval-Aerial_cropped-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Model_eval-Aerial_cropped-checkpoint.ipynb" />
-      <change beforePath="$PROJECT_DIR$/Model_eval-Aerial_cropped.ipynb" afterPath="$PROJECT_DIR$/Model_eval-Aerial_cropped.ipynb" />
-      <change beforePath="$PROJECT_DIR$/conv_net/test.py" afterPath="$PROJECT_DIR$/conv_net/test.py" />
-      <change beforePath="$PROJECT_DIR$/data_transformation/data_prep.py" afterPath="$PROJECT_DIR$/data_transformation/data_prep.py" />
-      <change beforePath="$PROJECT_DIR$/logfile.log" afterPath="$PROJECT_DIR$/logfile.log" />
-      <change beforePath="$PROJECT_DIR$/viz_analysis/.ipynb_checkpoints/WrongPrediction-Analysis-checkpoint.ipynb" afterPath="$PROJECT_DIR$/viz_analysis/.ipynb_checkpoints/WrongPrediction-Analysis-checkpoint.ipynb" />
-      <change beforePath="$PROJECT_DIR$/viz_analysis/WrongPrediction-Analysis.ipynb" afterPath="$PROJECT_DIR$/viz_analysis/WrongPrediction-Analysis.ipynb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/GPU-.ipynb" afterPath="$PROJECT_DIR$/rough/GPU-.ipynb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/GPUVsCPU.ipynb" afterPath="$PROJECT_DIR$/rough/GPUVsCPU.ipynb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Model_eval-Aerial.ipynb" afterPath="$PROJECT_DIR$/rough/Model_eval-Aerial.ipynb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Model_eval-Ensemble.ipynb" afterPath="$PROJECT_DIR$/rough/Model_eval-Ensemble.ipynb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Model_eval-Overlayed-Convnet.ipynb" afterPath="$PROJECT_DIR$/rough/Model_eval-Overlayed-Convnet.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Model_eval-Aerial_cropped.ipynb" afterPath="$PROJECT_DIR$/Model_eval-Aerial_cropped.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_transformation/data_prep.py" afterPath="$PROJECT_DIR$/data_transformation/data_prep.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logfile.log" afterPath="$PROJECT_DIR$/logfile.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viz_analysis/.ipynb_checkpoints/MislabelStatistics-checkpoint.ipynb" afterPath="$PROJECT_DIR$/viz_analysis/.ipynb_checkpoints/MislabelStatistics-checkpoint.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viz_analysis/MislabelStatistics.ipynb" afterPath="$PROJECT_DIR$/viz_analysis/MislabelStatistics.ipynb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +30,7 @@
       <file leaf-file-name="ops.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conv_net/ops.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3655">
+            <state relative-caret-position="0">
               <caret line="222" column="49" lean-forward="false" selection-start-line="222" selection-start-column="4" selection-end-line="222" selection-end-column="49" />
               <folding />
             </state>
@@ -36,7 +40,7 @@
       <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conv_net/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="340">
               <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
@@ -46,7 +50,7 @@
       <file leaf-file-name="resnet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conv_net/resnet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2618">
+            <state relative-caret-position="3080">
               <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
@@ -57,10 +61,9 @@
       </file>
       <file leaf-file-name="logfile.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conv_net/logfile.log">
-          <provider selected="true" editor-type-id="text-editor">
+          <provider selected="true" editor-type-id="LogFileEditorProvider">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -68,7 +71,7 @@
       <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="1120">
               <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
               <folding />
             </state>
@@ -78,8 +81,28 @@
       <file leaf-file-name="data_prep.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_transformation/data_prep.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
-              <caret line="543" column="0" lean-forward="false" selection-start-line="543" selection-start-column="0" selection-end-line="543" selection-end-column="0" />
+            <state relative-caret-position="-431">
+              <caret line="410" column="39" lean-forward="false" selection-start-line="410" selection-start-column="39" selection-end-line="410" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data_load.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_transformation/data_load.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1659">
+              <caret line="114" column="34" lean-forward="false" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="google_aerial.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/external_data/google_aerial.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="173" column="21" lean-forward="true" selection-start-line="173" selection-start-column="21" selection-end-line="173" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -88,7 +111,7 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conv_net/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="280">
               <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
@@ -109,7 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>standardize</find>
       <find>preproce</find>
       <find>run_preprocessor</find>
       <find>Preprocessing</find>
@@ -120,7 +142,6 @@
       <find>self.computation_graph['is_training']: False</find>
       <find>residual_block_3_2</find>
       <find>self.num_batches</find>
-      <find>process_images_given_path</find>
       <find>enable_rotation</find>
       <find>DumpBatches</find>
       <find>computation_graph</find>
@@ -139,6 +160,8 @@
       <find>train</find>
       <find>dataOUT = pd.DataFrame(np.column_stack((tr_cv_ts_pins_, tr_cv_ts_land_house, tr_cv_ts_type_info)</find>
       <find>tr_cv_ts_land_house</find>
+      <find>process_images_given_path</find>
+      <find>tr_cv_ts_pins_</find>
     </findStrings>
     <replaceStrings>
       <replace>variable_scope</replace>
@@ -271,28 +294,33 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="image_classification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="image_classification" type="462c0819:PsiDirectoryNode" />
+              <item name="PropertyClassification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PropertyClassification" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="image_classification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="image_classification" type="462c0819:PsiDirectoryNode" />
+              <item name="PropertyClassification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PropertyClassification" type="462c0819:PsiDirectoryNode" />
               <item name="conv_net" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="image_classification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="image_classification" type="462c0819:PsiDirectoryNode" />
+              <item name="PropertyClassification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PropertyClassification" type="462c0819:PsiDirectoryNode" />
               <item name="data_transformation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PropertyClassification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PropertyClassification" type="462c0819:PsiDirectoryNode" />
+              <item name="external_data" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -310,11 +338,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rough" />
       <recent name="$PROJECT_DIR$/ROUGH" />
       <recent name="$PROJECT_DIR$/semantic_segmentation" />
       <recent name="$PROJECT_DIR$/Notes" />
       <recent name="$PROJECT_DIR$/viz_analysis" />
-      <recent name="$PROJECT_DIR$/code" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -346,7 +374,6 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="data_prep" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -364,7 +391,6 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="overlay_building_bbox" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -382,7 +408,6 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -400,7 +425,6 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="trainMoE" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -418,7 +442,6 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.config" />
@@ -457,24 +480,24 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16917562" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12750717" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32020056" sideWeight="0.5085324" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295562" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37678856" sideWeight="0.49146757" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4228935" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24970178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="667" y="431" width="105" height="38" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3672496" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14326647" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4228935" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14326647" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3672496" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -537,13 +560,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/semantic_segmentation/FCN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2600">
-          <caret line="136" column="47" lean-forward="false" selection-start-line="136" selection-start-column="47" selection-end-line="136" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/semantic_segmentation/FCN.py" />
     <entry file="file://$PROJECT_DIR$/notes/resnet.md" />
     <entry file="file://$PROJECT_DIR$/TODOS.md">
       <provider editor-type-id="text-editor">
@@ -559,7 +576,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GPU-.ipynb">
+    <entry file="file://$PROJECT_DIR$/rough/GPU-.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="2" />
@@ -662,13 +679,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/semantic_segmentation/ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/semantic_segmentation/ops.py" />
     <entry file="file://$PROJECT_DIR$/data_loader.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -691,13 +702,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/semantic_segmentation/latlon_to_pixelXY.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="21" column="11" lean-forward="true" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/semantic_segmentation/latlon_to_pixelXY.py" />
     <entry file="file://$PROJECT_DIR$/external_data/osm_bbox_jsonToshp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -705,20 +710,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/semantic_segmentation/overlay_building_bbox.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1824">
-          <caret line="244" column="32" lean-forward="true" selection-start-line="244" selection-start-column="32" selection-end-line="244" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/external_data/google_aerial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-453">
-          <caret line="108" column="16" lean-forward="true" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/semantic_segmentation/overlay_building_bbox.py" />
     <entry file="file://$PROJECT_DIR$/data_transformation/ROUGH.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -726,27 +718,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_transformation/data_load.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="62" column="20" lean-forward="false" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="32" column="18" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/semantic_segmentation/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/semantic_segmentation/utils.py" />
     <entry file="file://$PROJECT_DIR$/conv_net/convnet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1120">
@@ -771,23 +743,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conv_net/ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3655">
+        <state relative-caret-position="0">
           <caret line="222" column="49" lean-forward="false" selection-start-line="222" selection-start-column="4" selection-end-line="222" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/conv_net/logfile.log">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/conv_net/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="340">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
@@ -795,7 +772,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conv_net/resnet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2618">
+        <state relative-caret-position="3080">
           <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
@@ -805,7 +782,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conv_net/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="280">
           <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
@@ -822,16 +799,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="1120">
           <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="32" column="18" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_transformation/data_load.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1659">
+          <caret line="114" column="34" lean-forward="false" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/external_data/google_aerial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="173" column="21" lean-forward="true" selection-start-line="173" selection-start-column="21" selection-end-line="173" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_transformation/data_prep.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="543" column="0" lean-forward="false" selection-start-line="543" selection-start-column="0" selection-end-line="543" selection-end-column="0" />
+        <state relative-caret-position="-431">
+          <caret line="410" column="39" lean-forward="false" selection-start-line="410" selection-start-column="39" selection-end-line="410" selection-end-column="39" />
           <folding />
         </state>
       </provider>

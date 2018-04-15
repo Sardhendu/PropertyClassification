@@ -226,16 +226,20 @@ class DumpBatches():
         logging.info('Running Seed for batch creation: %s', str(self.shuffle_seed))
 
     def process_images_given_path(self, pic_path):
+        bbox_cropped = None
         image = ndimage.imread(pic_path, mode='RGB')
 
         # if self.image_type == 'aerial_cropped':
         if image.shape[0] == self.img_in_shape[0] and image.shape[1] == self.img_in_shape[1]:
+            bbox_cropped = 0
             # The above condition takes care of the different sizes. If a bounding box was already cropped
             # then we don't crop further. But if no bounding box was found then we perform a central crop.
             if len(self.img_crop_shape) > 0:
                 image = central_crop(image, height=self.img_crop_shape[0], width=self.img_crop_shape[1])
-
-        # If the height is greater than width then we rotate the image by 90%
+        else:
+            # If the image shape is not 400x400, then it means that the image was cropped using building polygons
+            bbox_cropped = 1
+            # If the height is greater than width then we rotate the image by 90%
         if self.enable_rotation:
             if image.shape[0] > image.shape[1]:
                 image = imutils.rotate_bound(image, self.angle)
@@ -254,14 +258,16 @@ class DumpBatches():
         # else:
         #     # IF the image is larger than the out shape then we resize it fit the out_shape
         #     image = misc.imresize(image, self.img_out_shape)
-        return image
+        return image, bbox_cropped
 
     def dump_train_validate_test_batches(self, land_paths, house_paths, labels, filename):
         dataBatchX = np.ndarray(shape=(len(land_paths) + len(house_paths),
                                        self.img_out_shape[0],
                                        self.img_out_shape[1], 3), dtype='int32')
+        bbox_cropped_arr = []
         for num, pic_path in enumerate(land_paths + house_paths):
-            image = self.process_images_given_path(pic_path)
+            image, bbox_cropped = self.process_images_given_path(pic_path)
+            bbox_cropped_arr.append(bbox_cropped)
             dataBatchX[num, :] = image
 
         dataBatchY = np.append(
@@ -273,6 +279,7 @@ class DumpBatches():
                    # labelDict=label_dict,
                    folderPath=self.output_data_path,
                    fileName=filename)
+        return bbox_cropped_arr
 
     def dump_new_data_batches(self, paths, filename):
         dataBatchX = np.ndarray(shape=(len(paths),
@@ -312,17 +319,15 @@ class DumpBatches():
 
         # print (len(train_land_pins), len(train_house_pins), len(cvalid_land_pins), len(cvalid_house_pins))
         ##### DUMP THE TEST DATASET
-        self.dump_train_validate_test_batches(
+        ts_bbox_cropped_arr = self.dump_train_validate_test_batches(
             land_paths=[os.path.join(self.land_image_path, pin + '.jpg') for pin in self.test_land_pins],
             house_paths=[os.path.join(self.house_image_path, pin + '.jpg') for pin in self.test_house_pins],
             labels=[land_label, house_label], filename='test')
 
-        # get_dump_image_given_path(land_paths, house_paths, label_dict, labels, outpath, filename,
-        #                           img_out_shape, img_crop_shape, img_resize_shape, image_type)
-        #
+
         ##### DUMP CROSS VALIDATION DATASET
         # LOAD THE VALIDATION SET TO THE DISK
-        self.dump_train_validate_test_batches(
+        cv_bbox_cropped_arr = self.dump_train_validate_test_batches(
             land_paths=[os.path.join(self.land_image_path, pin + '.jpg') for pin in self.cvalid_land_pins],
             house_paths=[os.path.join(self.house_image_path, pin + '.jpg') for pin in self.cvalid_house_pins],
             labels=[land_label, house_label],
@@ -332,6 +337,7 @@ class DumpBatches():
         if self.get_stats:
             tr_cv_ts_pins_ = np.append(np.append(self.test_land_pins, self.test_house_pins),
                                        np.append(self.cvalid_land_pins, self.cvalid_house_pins))
+            tr_cv_ts_bbox_crpd = np.append(np.array(ts_bbox_cropped_arr), np.array(cv_bbox_cropped_arr))
             tr_cv_ts_land_house = np.append(
                 np.append(np.tile('land', len(self.test_land_pins)), np.tile('house', len(self.test_house_pins))),
                 np.append(np.tile('land', len(self.cvalid_land_pins)),
@@ -342,8 +348,9 @@ class DumpBatches():
             tr_cv_ts_pins_ = []
             tr_cv_ts_land_house = []
             tr_cv_ts_type_info = []
+            tr_cv_ts_bbox_crpd = []
 
-        return tr_cv_ts_pins_, tr_cv_ts_land_house, tr_cv_ts_type_info
+        return tr_cv_ts_pins_, tr_cv_ts_land_house, tr_cv_ts_type_info, tr_cv_ts_bbox_crpd
 
     def dumpStratifiedBatches_balanced_class(self, cmn_land_pins, cmn_house_pins, is_training=True):
 
@@ -370,8 +377,8 @@ class DumpBatches():
 
         if is_training:
 
-            tr_cv_ts_pins_, tr_cv_ts_land_house, tr_cv_ts_type_info = self.dump_cv_test_data(land_pins, house_pins,
-                                                                                             land_label, house_label)
+            (tr_cv_ts_pins_, tr_cv_ts_land_house, tr_cv_ts_type_info,
+             tr_cv_ts_bbox_crpd) = self.dump_cv_test_data(land_pins, house_pins, land_label, house_label)
 
             ##### DUMP TRAINING DATA IN BATCHES
             num_batches = int(np.ceil(len(self.train_land_pins) + len(self.train_house_pins)) / self.tr_batch_size)
@@ -391,7 +398,7 @@ class DumpBatches():
                 batch_land_pins = self.train_land_pins[from_idx:to_idx]
                 batch_house_pins = self.train_house_pins[from_idx:to_idx]
 
-                self.dump_train_validate_test_batches(
+                tr_bbox_cropped_arr = self.dump_train_validate_test_batches(
                     land_paths=[os.path.join(self.land_image_path, pin + '.jpg') for pin in batch_land_pins],
                     house_paths=[os.path.join(self.house_image_path, pin + '.jpg') for pin in batch_house_pins],
                     labels=[land_label, house_label],
@@ -400,11 +407,16 @@ class DumpBatches():
                 # GATHER STATISTICS ABOUT PINS AND THEIR BATCH NUMBER
                 if self.get_stats:
                     tr_cv_ts_pins_ = np.append(tr_cv_ts_pins_, np.append(batch_land_pins, batch_house_pins))
+                    tr_cv_ts_bbox_crpd = np.append(tr_cv_ts_bbox_crpd, np.array(tr_bbox_cropped_arr))
                     tr_cv_ts_land_house = np.append(tr_cv_ts_land_house,
                                                     np.append(np.tile('land', len(batch_land_pins)),
                                                               np.tile('house', len(batch_house_pins))))
                     tr_cv_ts_type_info = np.append(tr_cv_ts_type_info,
                                                    np.tile('batch_%s' % str(batch_num), element_count * 2))
+
+                b = "TOTAL BATCH DONE:  ======== %s"
+                print(b % (batch_num), end="\r")
+                
                 if self.max_batches:
                     if self.max_batches == batch_num + 1:
                         break
@@ -415,8 +427,8 @@ class DumpBatches():
                 if not os.path.exists(folder_path):
                     os.makedirs(folder_path)
                 dump_pins_path = os.path.join(folder_path, 'tr_cv_ts_pins_info.csv')
-                dataOUT = pd.DataFrame(np.column_stack((tr_cv_ts_pins_, tr_cv_ts_land_house, tr_cv_ts_type_info)),
-                                       columns=['property_pins', 'property_type', 'dataset_type'])
+                dataOUT = pd.DataFrame(np.column_stack((tr_cv_ts_pins_, tr_cv_ts_land_house, tr_cv_ts_type_info, tr_cv_ts_bbox_crpd)),
+                                       columns=['property_pins', 'property_type', 'dataset_type', 'bbox_cropped'])
                 dataOUT.to_csv(dump_pins_path, index=None)
 
                 logging.info(
