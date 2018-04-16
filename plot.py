@@ -19,8 +19,7 @@ class GlobalPlot(object):
     
     def help(self):
         help_string = ''
-        help_string = help_string + 'ROC_CURVE: Plot().vizualize(data=pd.DataFrame({"fpr":fpr,"tpr":tpr}), ' \
-                                    'colX="fpr", colY="tpr", label_col=None, viz_type="roc", ' \
+        help_string = help_string + 'ROC_CURVE: Plot().vizualize(data=pd.DataFrame({"y_true":y_true,"y_pred":y_pred}), colX="y_true", colY="y_pred", label_col=None, viz_type="roc", ' \
                                     'params={"title":"your_title"})   '
         help_string = help_string + 'LINE_PLOT: Plot().vizualize(data=pd.DataFrame(your_array, ' \
                                     'columns=["your_column_name"]), ' \
@@ -130,7 +129,8 @@ class Plot(GlobalPlot):
             2) array of true positive values
         '''
         ax = self.axs[self.axs_ind]
-        ax.plot(np.array(data[colX]), np.array(data[colY]), 'b',
+        fpr, tpr, threshold = metrics.roc_curve(np.array(data[colX]), np.array(data[colY]))
+        ax.plot(fpr, tpr, 'b',
                 label='AUC = %0.2f' % metrics.auc(np.array(data[colX]), np.array(data[colY])))
         
         ax.legend(loc='lower right')

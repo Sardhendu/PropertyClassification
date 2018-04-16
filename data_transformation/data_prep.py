@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.DEBUG, filename="logfile.log", filemode="w",
 
 
 def get_intersecting_images_pin(is_assessor=True, is_aerial=True, is_streetside=True, is_overlayed=True,
-                                is_aerial_cropped=True, is_training=True, equal_proportion=True):
+                                is_aerial_cropped=True, equal_proportion=True):
     '''
     :param aerial_img_type:
     :param streetside_img_type:
@@ -114,15 +114,13 @@ def get_intersecting_images_pin(is_assessor=True, is_aerial=True, is_streetside=
     np.random.shuffle(cmn_land_pins)
     np.random.shuffle(cmn_house_pins)
 
-    if is_training:
-        # For Training, in the return we ensure that the output PIN counts are balanced (equal for each class)
-        if equal_proportion:
-            images_per_label = min(len(cmn_land_pins), len(cmn_house_pins))
-            return cmn_land_pins[0:images_per_label], cmn_house_pins[0:images_per_label]
-        else:
-            return cmn_land_pins, cmn_house_pins
+    # For Training, in the return we ensure that the output PIN counts are balanced (equal for each class)
+    if equal_proportion:
+        images_per_label = min(len(cmn_land_pins), len(cmn_house_pins))
+        return cmn_land_pins[0:images_per_label], cmn_house_pins[0:images_per_label]
     else:
         return cmn_land_pins, cmn_house_pins
+   
 
 
 def central_crop(image, height, width):
@@ -255,10 +253,8 @@ class DumpBatches():
 
         if self.cv_batch_size % 2 != 0:
             self.cv_batch_size -= 1
-
-        logging.info("Training Batch Size = %s", str(self.tr_batch_size))
-        logging.info("CrossValidation Batch Size = %s", str(self.cv_batch_size))
-        logging.info("Test Batch Size = %s", str(self.ts_batch_size))
+        
+        
 
         logging.info('Running Seed for batch creation: %s', str(self.shuffle_seed))
 
@@ -300,8 +296,10 @@ class DumpBatches():
         dataBatchX = np.ndarray(shape=(len(paths),
                                        self.img_out_shape[0],
                                        self.img_out_shape[1], 3), dtype='int32')
+        bbox_cropped_arr = []
         for num, pic_path in enumerate(paths):
-            image = self.process_images_given_path_wrapper(pic_path)
+            image, bbox_cropped = self.process_images_given_path_wrapper(pic_path)
+            bbox_cropped_arr.append(bbox_cropped)
             dataBatchX[num, :] = image
 
         dumpH5File(dataX=dataBatchX,
@@ -309,7 +307,7 @@ class DumpBatches():
                    # labelDict=label_dict,
                    folderPath=self.output_data_path,
                    fileName=filename)
-
+        return bbox_cropped_arr
     #
     def dump_cv_test_data(self, land_pins, house_pins, land_label, house_label):
         ####################################################################################
@@ -318,55 +316,116 @@ class DumpBatches():
         self.ts_batch_size_per_class = self.ts_batch_size // 2
         self.cv_batch_size_per_class = self.cv_batch_size // 2
 
-        self.test_land_pins = land_pins[0: self.ts_batch_size_per_class]
-        self.test_house_pins = house_pins[0: self.ts_batch_size_per_class]
+        test_land_pins = land_pins[0: self.ts_batch_size_per_class]
+        test_house_pins = house_pins[0: self.ts_batch_size_per_class]
 
-        self.cvalid_land_pins = land_pins[
+        cvalid_land_pins = land_pins[
                                 self.ts_batch_size_per_class: self.ts_batch_size_per_class +
                                                               self.cv_batch_size_per_class]
-        self.cvalid_house_pins = house_pins[
+        cvalid_house_pins = house_pins[
                                  self.ts_batch_size_per_class: self.ts_batch_size_per_class +
                                                                self.cv_batch_size_per_class]
-
-        # New land pins, and house_pins
-        self.train_land_pins = land_pins[self.ts_batch_size_per_class + self.cv_batch_size_per_class:]
-        self.train_house_pins = house_pins[self.ts_batch_size_per_class + self.cv_batch_size_per_class:]
 
         # print (len(train_land_pins), len(train_house_pins), len(cvalid_land_pins), len(cvalid_house_pins))
         ##### DUMP THE TEST DATASET
         ts_bbox_cropped_arr = self.dump_train_validate_test_batches(
-            land_paths=[os.path.join(self.land_image_path, pin + '.jpg') for pin in self.test_land_pins],
-            house_paths=[os.path.join(self.house_image_path, pin + '.jpg') for pin in self.test_house_pins],
+            land_paths=[os.path.join(self.land_image_path, pin + '.jpg') for pin in test_land_pins],
+            house_paths=[os.path.join(self.house_image_path, pin + '.jpg') for pin in test_house_pins],
             labels=[land_label, house_label], filename='test')
 
         ##### DUMP CROSS VALIDATION DATASET
         # LOAD THE VALIDATION SET TO THE DISK
         cv_bbox_cropped_arr = self.dump_train_validate_test_batches(
-            land_paths=[os.path.join(self.land_image_path, pin + '.jpg') for pin in self.cvalid_land_pins],
-            house_paths=[os.path.join(self.house_image_path, pin + '.jpg') for pin in self.cvalid_house_pins],
+            land_paths=[os.path.join(self.land_image_path, pin + '.jpg') for pin in cvalid_land_pins],
+            house_paths=[os.path.join(self.house_image_path, pin + '.jpg') for pin in cvalid_house_pins],
             labels=[land_label, house_label],
             filename='cvalid')
 
         # GATHER STATISTICS FOR CROSS VALIDATION DATASET
         if self.get_stats:
-            tr_cv_ts_pins_ = np.append(np.append(self.test_land_pins, self.test_house_pins),
-                                       np.append(self.cvalid_land_pins, self.cvalid_house_pins))
-            tr_cv_ts_bbox_crpd = np.append(np.array(ts_bbox_cropped_arr), np.array(cv_bbox_cropped_arr))
-            tr_cv_ts_land_house = np.append(
-                np.append(np.tile('land', len(self.test_land_pins)), np.tile('house', len(self.test_house_pins))),
-                np.append(np.tile('land', len(self.cvalid_land_pins)),
-                          np.tile('house', len(self.cvalid_house_pins)))
+            self.tr_cv_ts_pins_ = np.append(np.append(test_land_pins, test_house_pins),
+                                       np.append(cvalid_land_pins, cvalid_house_pins))
+            self.tr_cv_ts_bbox_crpd = np.append(np.array(ts_bbox_cropped_arr), np.array(cv_bbox_cropped_arr))
+            self.tr_cv_ts_land_house = np.append(
+                np.append(np.tile('land', len(test_land_pins)), np.tile('house', len(test_house_pins))),
+                np.append(np.tile('land', len(cvalid_land_pins)),
+                          np.tile('house', len(cvalid_house_pins)))
             )
-            tr_cv_ts_type_info = np.append(np.tile('test', self.ts_batch_size), np.tile('cvalid', self.cv_batch_size))
-        else:
-            tr_cv_ts_pins_ = []
-            tr_cv_ts_land_house = []
-            tr_cv_ts_type_info = []
-            tr_cv_ts_bbox_crpd = []
+            self.tr_cv_ts_type_info = np.append(np.tile('test', self.ts_batch_size), np.tile('cvalid', self.cv_batch_size))
 
-        return tr_cv_ts_pins_, tr_cv_ts_land_house, tr_cv_ts_type_info, tr_cv_ts_bbox_crpd
+        logging.info(
+                'Validation Land Size: %s, Validation House Size: %s, Test Land Size: %s, Test House '
+                'Size: %s',
+                str(len(cvalid_land_pins)), str(len(cvalid_house_pins)),
+                str(len(test_land_pins)),
+                str(len(test_house_pins)))
+            
+    
+    def dump_training_batches(self, land_pins, house_pins, land_label, house_label):
+        # New land pins, and house_pins
+        train_land_pins = land_pins[self.ts_batch_size_per_class + self.cv_batch_size_per_class:]
+        train_house_pins = house_pins[self.ts_batch_size_per_class + self.cv_batch_size_per_class:]
+        
+        num_batches = int(np.ceil(len(train_land_pins) + len(train_house_pins)) / self.tr_batch_size)
+        tr_batch_size_per_class = self.tr_batch_size // 2
+    
+        for batch_num in range(0, num_batches):
+            if batch_num != (num_batches - 1):
+                from_idx = batch_num * tr_batch_size_per_class
+                to_idx = (batch_num * tr_batch_size_per_class) + tr_batch_size_per_class
+            else:
+                from_idx = batch_num * tr_batch_size_per_class
+                to_idx = (batch_num * tr_batch_size_per_class) + (
+                    len(train_land_pins) - (batch_num * tr_batch_size_per_class))
+        
+            element_count = to_idx - from_idx
+        
+            batch_land_pins = train_land_pins[from_idx:to_idx]
+            batch_house_pins = train_house_pins[from_idx:to_idx]
+        
+            tr_bbox_cropped_arr = self.dump_train_validate_test_batches(
+                    land_paths=[os.path.join(self.land_image_path, pin + '.jpg') for pin in batch_land_pins],
+                    house_paths=[os.path.join(self.house_image_path, pin + '.jpg') for pin in batch_house_pins],
+                    labels=[land_label, house_label],
+                    filename='train_%s' % str(batch_num))
+        
+            # GATHER STATISTICS ABOUT PINS AND THEIR BATCH NUMBER
+            if self.get_stats:
+                if len(self.tr_cv_ts_pins_) > 0:
+                    self.tr_cv_ts_pins_ = np.append(self.tr_cv_ts_pins_, np.append(batch_land_pins, batch_house_pins))
+                else:
+                    self.tr_cv_ts_pins_ = np.append(batch_land_pins, batch_house_pins)
+                
+                if len(self.tr_cv_ts_bbox_crpd) > 0:
+                    self.tr_cv_ts_bbox_crpd = np.append(self.tr_cv_ts_bbox_crpd, np.array(tr_bbox_cropped_arr))
+                else:
+                    self.tr_cv_ts_bbox_crpd = np.array(tr_bbox_cropped_arr)
+                
+                if len(self.tr_cv_ts_land_house) > 0:
+                    self.tr_cv_ts_land_house = np.append(self.tr_cv_ts_land_house,
+                                                    np.append(np.tile('land',len(batch_land_pins)),np.tile('house', len(batch_house_pins))))
+                else:
+                    self.tr_cv_ts_land_house = np.append(np.tile('land',len(batch_land_pins)),
+                                                         np.tile('house',len(batch_house_pins)))
+                    
+                if len(self.tr_cv_ts_type_info)>0:
+                    self.tr_cv_ts_type_info = np.append(self.tr_cv_ts_type_info,
+                                                        np.tile('batch_%s' % str(batch_num), element_count * 2))
+                else:
+                    self.tr_cv_ts_type_info = np.tile('batch_%s' % str(batch_num), element_count * 2)
+        
+            b = "TOTAL BATCH DONE:  ======== %s"
+            print(b % (batch_num), end="\r")
+        
+            if self.max_batches:
+                if self.max_batches == batch_num + 1:
+                    break
+                    
+        logging.info(
+                'Training Land Size: %s, Training House Size: %s', str(len(train_land_pins)),
+                str(len(train_house_pins)))
 
-    def dumpStratifiedBatches_balanced_class(self, cmn_land_pins, cmn_house_pins, is_training=True):
+    def dumpStratifiedBatches_balanced_class(self, cmn_land_pins, cmn_house_pins, is_cvalid_test=True):
 
         land_label = 0
         house_label = 1
@@ -389,88 +448,62 @@ class DumpBatches():
 
         logging.info('Input Data: Total Land: %s, Total House: %s', str(len(land_pins)), str(len(house_pins)))
 
-        if is_training:
+        self.tr_cv_ts_pins_ = []
+        self.tr_cv_ts_land_house = []
+        self.tr_cv_ts_type_info = []
+        self.tr_cv_ts_bbox_crpd = []
+        self.ts_batch_size_per_class = 0
+        self.cv_batch_size_per_class = 0
+        
+        if is_cvalid_test:
+            logging.info("Training Batch Size = %s", str(self.tr_batch_size))
+            logging.info("CrossValidation Batch Size = %s", str(self.cv_batch_size))
+            logging.info("Test Batch Size = %s", str(self.ts_batch_size))
 
-            (tr_cv_ts_pins_, tr_cv_ts_land_house, tr_cv_ts_type_info,
-             tr_cv_ts_bbox_crpd) = self.dump_cv_test_data(land_pins, house_pins, land_label, house_label)
+            ##### DUMP TEST AND CROSS-VALIDATION DATA
+            self.dump_cv_test_data(land_pins, house_pins, land_label, house_label)
 
-            ##### DUMP TRAINING DATA IN BATCHES
-            num_batches = int(np.ceil(len(self.train_land_pins) + len(self.train_house_pins)) / self.tr_batch_size)
-            self.tr_batch_size_per_class = self.tr_batch_size // 2
-
-            for batch_num in range(0, num_batches):
-                if batch_num != (num_batches - 1):
-                    from_idx = batch_num * self.tr_batch_size_per_class
-                    to_idx = (batch_num * self.tr_batch_size_per_class) + self.tr_batch_size_per_class
-                else:
-                    from_idx = batch_num * self.tr_batch_size_per_class
-                    to_idx = (batch_num * self.tr_batch_size_per_class) + (
-                            len(self.train_land_pins) - (batch_num * self.tr_batch_size_per_class))
-
-                element_count = to_idx - from_idx
-
-                batch_land_pins = self.train_land_pins[from_idx:to_idx]
-                batch_house_pins = self.train_house_pins[from_idx:to_idx]
-
-                tr_bbox_cropped_arr = self.dump_train_validate_test_batches(
-                    land_paths=[os.path.join(self.land_image_path, pin + '.jpg') for pin in batch_land_pins],
-                    house_paths=[os.path.join(self.house_image_path, pin + '.jpg') for pin in batch_house_pins],
-                    labels=[land_label, house_label],
-                    filename='train_%s' % str(batch_num))
-
-                # GATHER STATISTICS ABOUT PINS AND THEIR BATCH NUMBER
-                if self.get_stats:
-                    tr_cv_ts_pins_ = np.append(tr_cv_ts_pins_, np.append(batch_land_pins, batch_house_pins))
-                    tr_cv_ts_bbox_crpd = np.append(tr_cv_ts_bbox_crpd, np.array(tr_bbox_cropped_arr))
-                    tr_cv_ts_land_house = np.append(tr_cv_ts_land_house,
-                                                    np.append(np.tile('land', len(batch_land_pins)),
-                                                              np.tile('house', len(batch_house_pins))))
-                    tr_cv_ts_type_info = np.append(tr_cv_ts_type_info,
-                                                   np.tile('batch_%s' % str(batch_num), element_count * 2))
-
-                b = "TOTAL BATCH DONE:  ======== %s"
-                print(b % (batch_num), end="\r")
-
-                if self.max_batches:
-                    if self.max_batches == batch_num + 1:
-                        break
+        ##### DUMP TRAINING DATA IN BATCHES
+        self.dump_training_batches(land_pins, house_pins, land_label, house_label)
 
             ##### DUMP TRAIN CV STATISTICS INFO
-            if self.get_stats:
-                folder_path = os.path.join(pathDict['statistics_path'], 'prediction_stats')
-                if not os.path.exists(folder_path):
-                    os.makedirs(folder_path)
-                dump_pins_path = os.path.join(folder_path, 'tr_cv_ts_pins_info.csv')
-                dataOUT = pd.DataFrame(
-                    np.column_stack((tr_cv_ts_pins_, tr_cv_ts_land_house, tr_cv_ts_type_info, tr_cv_ts_bbox_crpd)),
-                    columns=['property_pins', 'property_type', 'dataset_type', 'bbox_cropped'])
-                dataOUT.to_csv(dump_pins_path, index=None)
+        if self.get_stats:
+            folder_path = os.path.join(pathDict['statistics_path'], 'prediction_stats')
+            if not os.path.exists(folder_path):
+                os.makedirs(folder_path)
+            dump_pins_path = os.path.join(folder_path, 'tr_cv_ts_pins_info.csv')
+            
+            print (len(self.tr_cv_ts_pins_), len(self.tr_cv_ts_land_house), len(self.tr_cv_ts_type_info),
+                                 len(self.tr_cv_ts_bbox_crpd))
+            dataOUT = pd.DataFrame(
+                np.column_stack((self.tr_cv_ts_pins_, self.tr_cv_ts_land_house, self.tr_cv_ts_type_info,
+                                 self.tr_cv_ts_bbox_crpd)),
+                columns=['property_pins', 'property_type', 'dataset_type', 'bbox_cropped'])
+            dataOUT.to_csv(dump_pins_path, index=None)
 
-                logging.info(
-                    'Validation Land Size: %s, Validation House Size: %s, Training Land Size: %s, Training House '
-                    'Size: %s',
-                    str(len(self.cvalid_land_pins)), str(len(self.cvalid_house_pins)),
-                    str(len(self.train_land_pins)),
-                    str(len(self.train_house_pins)))
-        else:
-            img_paths = np.append([os.path.join(self.land_image_path, pin + '.jpg') for pin in land_pins],
-                                  [os.path.join(self.land_image_path, pin + '.jpg') for pin in house_pins])
-
-            # for paths in img_paths:
-            num_batches = int(np.ceil(len(img_paths) / self.ts_batch_size))
-            for batch_num in range(0, num_batches):
-                if batch_num != (num_batches - 1):
-                    from_idx = batch_num * self.ts_batch_size
-                    to_idx = (batch_num * self.ts_batch_size) + self.ts_batch_size
-                else:
-                    from_idx = batch_num * self.ts_batch_size
-                    to_idx = (batch_num * self.ts_batch_size) + (len(img_paths) - (batch_num * self.ts_batch_size))
-
-                element_count = to_idx - from_idx
-
-                batch_paths = img_paths[from_idx:to_idx]
-
-                self.dump_new_data_batches(batch_paths, filename='test_%s' % str(batch_num))
+                
+        # else:
+        #     land_image_paths = [os.path.join(self.land_image_path, pin + '.jpg') for pin in land_pins]
+        #     house_image_paths = [os.path.join(self.land_image_path, pin + '.jpg') for pin in house_pins]
+        #     logging.info('# Land Images: %s', str(len(land_image_paths)))
+        #     logging.info('# House Images: %s', str(len(house_image_paths)))
+        #     img_paths = np.append(land_image_paths,house_image_paths)
+        #
+        #     # for paths in img_paths:
+        #     num_batches = int(np.ceil(len(img_paths) / self.ts_batch_size))
+        #     for batch_num in range(0, num_batches):
+        #         if batch_num != (num_batches - 1):
+        #             from_idx = batch_num * self.ts_batch_size
+        #             to_idx = (batch_num * self.ts_batch_size) + self.ts_batch_size
+        #         else:
+        #             from_idx = batch_num * self.ts_batch_size
+        #             to_idx = (batch_num * self.ts_batch_size) + (len(img_paths) - (batch_num * self.ts_batch_size))
+        #
+        #         element_count = to_idx - from_idx
+        #
+        #         batch_paths = img_paths[from_idx:to_idx]
+        #
+        #         self.dump_new_data_batches(batch_paths, filename='test_%s' % str(batch_num))
 
 
 debugg = False
@@ -479,10 +512,7 @@ if debugg:
 
     start_time = time.time()
 
-    cmn_land_pins, cmn_house_pins = get_intersecting_images_pin(is_assessor=False, is_aerial=True, is_streetside=False,
-                                                                is_overlayed=True, is_aerial_cropped=True,
-                                                                is_training=True,
-                                                                equal_proportion=True)
+    cmn_land_pins, cmn_house_pins = get_intersecting_images_pin(is_assessor=False, is_aerial=True, is_streetside=False,is_overlayed=True, is_aerial_cropped=True,equal_proportion=True)
     print(len(cmn_land_pins), len(cmn_house_pins))
 
     tr_batch_size = 128
@@ -504,7 +534,7 @@ if debugg:
         max_batches=None)
 
     obj_cb = DumpBatches(params)
-    obj_cb.dumpStratifiedBatches_balanced_class(cmn_land_pins, cmn_house_pins, is_training=True)
+    obj_cb.dumpStratifiedBatches_balanced_class(cmn_land_pins, cmn_house_pins, is_cvalid_test=True)
 
     print('--------------- %s seconds ------------------' % (time.time() - start_time))
 
