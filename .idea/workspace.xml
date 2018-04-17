@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73474898-f241-419a-9841-3f571f14b794" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viz_analysis/WrongPrediction-Analysis.ipynb" afterPath="$PROJECT_DIR$/viz_analysis/WrongPrediction-Analysis.ipynb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,8 +44,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="424">
-                <caret line="63" column="222" lean-forward="false" selection-start-line="63" selection-start-column="222" selection-end-line="63" selection-end-column="222" />
+              <first_editor relative-caret-position="648">
+                <caret line="76" column="128" lean-forward="false" selection-start-line="76" selection-start-column="128" selection-end-line="76" selection-end-column="128" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -137,7 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>preproce</find>
       <find>run_preprocessor</find>
       <find>Preprocessing</find>
       <find>is_training</find>
@@ -167,6 +163,7 @@
       <find>tr_cv_ts_land_house</find>
       <find>process_images_given_path</find>
       <find>tr_cv_ts_pins_</find>
+      <find>overlayed</find>
     </findStrings>
     <replaceStrings>
       <replace>variable_scope</replace>
@@ -256,8 +253,8 @@
         <option value="$PROJECT_DIR$/data_transformation/data_prep.py" />
         <option value="$PROJECT_DIR$/viz_analysis/mislabels_correction.py" />
         <option value="$PROJECT_DIR$/config.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -901,8 +898,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="424">
-            <caret line="63" column="222" lean-forward="false" selection-start-line="63" selection-start-column="222" selection-end-line="63" selection-end-column="222" />
+          <first_editor relative-caret-position="648">
+            <caret line="76" column="128" lean-forward="false" selection-start-line="76" selection-start-column="128" selection-end-line="76" selection-end-column="128" />
             <folding />
           </first_editor>
           <second_editor />

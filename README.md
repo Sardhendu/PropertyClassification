@@ -22,11 +22,9 @@ assessor images.
 
 Aerial, streetside images from google maps and bing maps are updated every 1-2 years and are more recent. A model would be more reliable in these images. However, due to the 1-2 years of lag, we may still end
 
-  * **Aerial** images from Bing and Google maps. Best source of image readily available and most recent when compared to others.
-  * **Streetside** images from Bing and Google maps. These images are not always clear.
-  * **Building boundary coordinates** for chicago from Open Street Map: The OSM data is an open source contribution and hence the data may not be updted so frequently.
-    
-  * Overlay building boundaries (collected from OSM) on satellite static images collected from google maps. For details look here [Overlay building boundary on static images](https://github.com/Sardhendu/PropertyClassification/tree/master/semantic_segmentation)    
+* **Aerial** images from Bing and Google maps. Best source of image readily available and most recent when compared to others.
+* **Streetside** images from Bing and Google maps. These images are not always clear.
+* **Building boundary coordinates** for chicago from Open Street Map: The OSM data is an open source contribution and hence the data may not be updted so frequently. Overlay building boundaries (collected from OSM) on satellite static images collected from google maps. For details look here [Overlay building boundary on static images](https://github.com/Sardhendu/PropertyClassification/tree/master/semantic_segmentation)    
 
 ### Problem Continued:
 Even with the external data we see lots of our labels not consistent with the image picture. So we typically have a data issue. We plan to use best all the images (Mixture of experts model). Since, there is a good chance that at least one image type would be consistent with the label. Also, we use bootstrapping techniques to correct the labels and augment them per iteration.
@@ -70,13 +68,13 @@ Let us now discuss all different models employed for different types of images.
     <table>
 	    <tr>
     	    <td style="padding:5px">
-        	    <img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/home_cropped.jpg" width="200" height="100"><figcaption>House bbox cropped</figcaption>
+        	    <img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/home_cropped.jpg" width="300" height="150"><figcaption>House bbox cropped</figcaption>
       	    </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/home_resized.png" width="200" height="200"><figcaption>Home Resized/Pad</figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/home_resized.png" width="300" height="300"><figcaption>Home Resized/Pad</figcaption>
              </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/land.png" width="200" height="200"><figcaption>Land central crop</figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/land.png" width="300" height="300"><figcaption>Land central crop</figcaption>
              </td>
         </tr>
     </table>
