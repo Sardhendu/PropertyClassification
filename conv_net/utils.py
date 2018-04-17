@@ -38,10 +38,37 @@ class Score():
         return fpr, tpr, threshold
 
     @staticmethod
-    def precision_recall_curve(y_true, y_pred):
+    def precision_recall_curve(y_true, y_pred, reverse=False):
+        if reverse:
+            y_true = 1 - y_true
+            y_pred = 1 - y_pred
         precision, recall, threshold = metrics.precision_recall_curve(y_true, y_pred)
         return precision, recall, threshold
+    
+    @staticmethod
+    def prec_rec_acc_for_thresh(y_true, y_pred, y_pred_prob, num_thres, reverse=False):
+        '''
+            Only Valid for Binary Class problem
+        '''
+        if reverse:
+            y_true = 1 - y_true
+            y_pred = 1 - y_pred
 
+        indices_0 = np.where(y_pred == 0)[0]
+        y_pred_prob[indices_0] = 1 - y_pred_prob[indices_0]
+
+        thresholds = np.linspace(0,1,num_thres)
+        acc_arr = []
+        prscn_arr = []
+        rcall_arr = []
+        for th in thresholds:
+            y_prob_copy = y_pred_prob.copy()
+            y_prob_copy[y_prob_copy >= th] = 1
+            y_prob_copy[y_prob_copy < th] = 0
+            acc_arr += [metrics.accuracy_score(y_true, y_prob_copy)]
+            prscn_arr += [metrics.precision_score(y_true, y_prob_copy)]
+            rcall_arr += [metrics.recall_score(y_true, y_prob_copy)]
+        return acc_arr, prscn_arr, rcall_arr, thresholds
 
 def to_one_hot(y):
     y = np.array(y, dtype=int)
