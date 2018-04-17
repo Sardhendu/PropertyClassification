@@ -86,11 +86,16 @@ class Test(PropertyClassification):
                 out_pred_prob = np.maximum(out_prob[:, 0], out_prob[:, 1]).round(decimals=3).reshape(-1, 1)
                 
                 if batch_num == 0:
-                    true_pred_prob_stack = np.column_stack((np.tile(batch_name, len(out_prob)), batchY.reshape(-1 ,1), y_hat,out_pred_prob))
+                    true_pred_prob_stack = np.column_stack((np.arange(len(out_prob)), 
+                                                            np.tile(batch_name, len(out_prob)), 
+                                                            batchY.reshape(-1 ,1), y_hat,out_pred_prob))
                 else:
                     true_pred_prob_stack = np.vstack((
                         true_pred_prob_stack,
-                        np.column_stack((np.tile(batch_name, len(out_prob)), batchY.reshape(-1 ,1), y_hat, out_pred_prob))))
+                        np.column_stack((np.arange(len(out_prob)),
+                                         np.tile(batch_name, len(out_prob)), 
+                                         batchY.reshape(-1 ,1), y_hat, out_pred_prob))
+                    ))
 
             return true_pred_prob_stack, tst_metric_stack
             #
@@ -127,8 +132,8 @@ class Test(PropertyClassification):
 
         fnl_true_pred_prob_stack = []
         fnl_tst_metric_stack = []
-        colnames1 = ['checkpoint', 'test_batch', 'true_label', 'pred_label', 'pred_prob']
-        colnames2 = ['checkpoint', 'test_batch', 'test_loss', 'test_acc', 'test_precsion', 'test_recall']
+        colnames1 = ['checkpoint', 'rownum', 'dataset_type', 'true_label', 'pred_label', 'pred_prob']
+        colnames2 = ['checkpoint', 'dataset_type', 'test_loss', 'test_acc', 'test_precsion', 'test_recall']
 
         for path_num, chk_path in enumerate(checkpoint_paths):
             ########## Create Grephs
@@ -166,6 +171,8 @@ class Test(PropertyClassification):
             tf.reset_default_graph()
 
         if self.dump_stats:
+            if not os.path.exists(self.stats_path):
+                os.makedirs(self.stats_path)
             fnl_true_pred_prob_df = pd.DataFrame(fnl_true_pred_prob_stack, columns=colnames1)
             pred_path = os.path.join(self.stats_path, which_data+'_pred_outcomes.csv')
             fnl_true_pred_prob_df.to_csv(pred_path, index=None)

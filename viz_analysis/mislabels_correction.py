@@ -4,6 +4,12 @@ import pandas as pd
 from config import pathDict
 
 
+import os
+import numpy as np
+import pandas as pd
+from config import pathDict
+
+
 class GetMislabels():
     def __init__(self, which_data):
         self.which_data = which_data
@@ -13,37 +19,46 @@ class GetMislabels():
         if which_data == 'cvalid':
             self.pred_stats_path = os.path.join(pathDict['statistics_path'], 'prediction_stats',
                                                 'cvalid_pred_outcomes.csv')
-        elif which_data == 'test':
+        else:
             self.pred_stats_path = os.path.join(pathDict['statistics_path'], 'prediction_stats',
                                                 'test_pred_outcomes.csv')
-        else:
-            raise ValueError('Provide proper data name: Option: cvalid, test')
+#         else:
+#             raise ValueError('Provide proper data name: Option: cvalid, test')
 
     def concat_meta_n_pred_stats(self, pred_stats, meta_stats, checkpoint_name_arr, which_data):
-        column_names = ["true_label"]
+        pred_meta_mrgd = pred_stats.merge(meta_stats, left_on=['rownum', "dataset_type"], right_on=['rownum', "dataset_type"], how='outer')
+        if which_data:
+            pred_meta_mrgd = pred_meta_mrgd[pred_meta_mrgd["dataset_type"] == which_data]
+      
+        column_names = ["property_pins", "property_type", "bbox_cropped", "true_label"]
         pred_prob_data = []
         for num, checkpoint_name in enumerate(checkpoint_name_arr):
             column_names += ['%s_pred_label' % (checkpoint_name), '%s_pred_prob' % (checkpoint_name)]
             if num == 0:
                 pred_prob_data = np.array(
-                    pred_stats[pred_stats["checkpoint"] == checkpoint_name][["true_label", "pred_label", "pred_prob"]]
-                ).reshape(-1, 3)
+                    pred_meta_mrgd[pred_meta_mrgd["checkpoint"] == checkpoint_name][
+                        ["property_pins", "property_type", "bbox_cropped", "true_label", "pred_label", "pred_prob"]
+                    ]
+                ).reshape(-1, 6)
             else:
                 pred_prob_data = np.column_stack((
                     pred_prob_data,
                     np.array(
-                        pred_stats[pred_stats["checkpoint"] == checkpoint_name][["pred_label", "pred_prob"]]).reshape(
+                        pred_meta_mrgd[pred_meta_mrgd["checkpoint"] == checkpoint_name][["pred_label", "pred_prob"]]).reshape(
                         -1, 2)
                 ))
-
         pred_prob_data = pd.DataFrame(pred_prob_data, columns=column_names)
-        meta_stats = meta_stats[meta_stats["dataset_type"] == which_data][
-            ["property_pins", "property_type", "bbox_cropped"]]
-        print(pred_prob_data.shape, meta_stats.shape, meta_stats.reset_index().loc[0:1119, :].shape)
-        concat_data = pd.concat([meta_stats.reset_index().drop('index', axis=1), pred_prob_data], axis=1)
-        if concat_data.isnull().values.any():
+        float_columns = [col for col in column_names 
+                         if col not in ['property_pins', 'property_type', 'bbox_cropped', 'true_label']]
+       
+        pred_prob_data['bbox_cropped'] = pred_prob_data['bbox_cropped'].astype('int')
+        pred_prob_data['true_label'] = pred_prob_data['true_label'].astype('int')
+        for cols in float_columns:
+            pred_prob_data[cols] = pred_prob_data[cols].astype('float')
+
+        if pred_prob_data.isnull().values.any():
             raise ValueError('NaN Found! Seems the concat operation did merge properly (Check dataframe shapes)')
-        return concat_data
+        return pred_prob_data
 
     def dynamic_rule_based_mislabel_correction(self, min_pred_prob, checkpoint_arr, bbox_cropped=True):
         '''
@@ -56,14 +71,14 @@ class GetMislabels():
 
         dynamic_query = ''
         for num, (prob, checkpoint_name) in enumerate(zip(min_pred_prob, checkpoint_arr)):
-            dynamic_query += ' %s_pred_prob >= %s & true_label-%s_pred_label!=0 &' % (
+            q = ' %s_pred_prob >= %s & true_label-%s_pred_label!=0 &' % (
                 checkpoint_name, prob, checkpoint_name)
+            dynamic_query += q
         dynamic_query = dynamic_query.strip('&').strip(' ')
 
         if bbox_cropped:
-            dynamic_query += " & ((property_type=='land' & bbox_cropped==1) | (property_type=='house' & bbox_cropped==0))"
-        print(dynamic_query)
-
+            q = "((property_type=='land' & bbox_cropped==1) | (property_type=='house' & bbox_cropped==0))"
+            dynamic_query += " & " + q
         return dynamic_query
 
     def get_pin_path(self, dataIN):
@@ -92,17 +107,19 @@ class GetMislabels():
         print(len(land_title_arr), len(house_title_arr))
         return land_title_arr, house_title_arr
 
-    def main(self, checkpoint_name_arr, bbox_cropped=True):
+    def main(self, checkpoint_min_prob_dict, bbox_cropped=True):
+        min_pred_prob = list(checkpoint_min_prob_dict.values())
+        checkpoint_name_arr = list(checkpoint_min_prob_dict.keys())
         pred_stats = pd.read_csv(self.pred_stats_path)
         meta_stats = pd.read_csv(self.meta_stats_path, index_col=None)
+        print (pred_stats.shape, meta_stats.shape)
         concat_meta_pred_data = self.concat_meta_n_pred_stats(pred_stats=pred_stats, meta_stats=meta_stats,
                                                               checkpoint_name_arr=checkpoint_name_arr,
                                                               which_data=self.which_data)
-        # concat_meta_pred_data.head()
-        dynamic_query = self.dynamic_rule_based_mislabel_correction(min_pred_prob=[1, 1],
+        dynamic_query = self.dynamic_rule_based_mislabel_correction(min_pred_prob=min_pred_prob,
                                                                     checkpoint_arr=checkpoint_name_arr,
                                                                     bbox_cropped=bbox_cropped)
-
+        print (dynamic_query)
         mislabeled_data = concat_meta_pred_data.query(dynamic_query)
         land_mis_pins_path, house_mis_pins_path = self.get_pin_path(dataIN=mislabeled_data)
         land_title_arr, house_title_arr = self.get_title_array(dataIN=mislabeled_data)

@@ -343,6 +343,9 @@ class DumpBatches():
 
         # GATHER STATISTICS FOR CROSS VALIDATION DATASET
         if self.get_stats:
+            self.keep_rownum = np.append(np.arange(len(test_land_pins)+ len(test_house_pins)),
+                                        np.arange(len(cvalid_land_pins)+ len(cvalid_house_pins)))
+            
             self.tr_cv_ts_pins_ = np.append(np.append(test_land_pins, test_house_pins),
                                        np.append(cvalid_land_pins, cvalid_house_pins))
             self.tr_cv_ts_bbox_crpd = np.append(np.array(ts_bbox_cropped_arr), np.array(cv_bbox_cropped_arr))
@@ -387,10 +390,15 @@ class DumpBatches():
                     land_paths=[os.path.join(self.land_image_path, pin + '.jpg') for pin in batch_land_pins],
                     house_paths=[os.path.join(self.house_image_path, pin + '.jpg') for pin in batch_house_pins],
                     labels=[land_label, house_label],
-                    filename='train_%s' % str(batch_num))
+                    filename='batch_%s' % str(batch_num))
         
             # GATHER STATISTICS ABOUT PINS AND THEIR BATCH NUMBER
             if self.get_stats:
+                if len(self.keep_rownum) > 0:
+                    self.keep_rownum = np.append(self.keep_rownum, np.arange(len(batch_land_pins)+ len(batch_house_pins)))
+                else:
+                    self.keep_rownum = np.arange(len(batch_land_pins)+ len(batch_house_pins))
+                
                 if len(self.tr_cv_ts_pins_) > 0:
                     self.tr_cv_ts_pins_ = np.append(self.tr_cv_ts_pins_, np.append(batch_land_pins, batch_house_pins))
                 else:
@@ -448,6 +456,7 @@ class DumpBatches():
 
         logging.info('Input Data: Total Land: %s, Total House: %s', str(len(land_pins)), str(len(house_pins)))
 
+        self.keep_rownum = []
         self.tr_cv_ts_pins_ = []
         self.tr_cv_ts_land_house = []
         self.tr_cv_ts_type_info = []
@@ -473,12 +482,12 @@ class DumpBatches():
                 os.makedirs(folder_path)
             dump_pins_path = os.path.join(folder_path, 'tr_cv_ts_pins_info.csv')
             
-            print (len(self.tr_cv_ts_pins_), len(self.tr_cv_ts_land_house), len(self.tr_cv_ts_type_info),
+            print (len(self.keep_rownum), len(self.tr_cv_ts_pins_), len(self.tr_cv_ts_land_house), len(self.tr_cv_ts_type_info),
                                  len(self.tr_cv_ts_bbox_crpd))
             dataOUT = pd.DataFrame(
-                np.column_stack((self.tr_cv_ts_pins_, self.tr_cv_ts_land_house, self.tr_cv_ts_type_info,
+                np.column_stack((self.keep_rownum, self.tr_cv_ts_pins_, self.tr_cv_ts_land_house, self.tr_cv_ts_type_info,
                                  self.tr_cv_ts_bbox_crpd)),
-                columns=['property_pins', 'property_type', 'dataset_type', 'bbox_cropped'])
+                columns=['rownum','property_pins', 'property_type', 'dataset_type', 'bbox_cropped'])
             dataOUT.to_csv(dump_pins_path, index=None)
 
                 

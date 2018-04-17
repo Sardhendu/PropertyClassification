@@ -281,17 +281,14 @@ class Train(PropertyClassification):
         config_ = tf.ConfigProto(allow_soft_placement=True)
         with tf.Session(config=config_) as sess:
             sess.run(tf.global_variables_initializer())
-            
             # GET LATEST CHECKPOINT, BATCH NUMBER TO START FROM AND ETC
             self.some_stuff(saver, sess)
-            
             # CROSS-VALIDATION We load and pre-process the Cross-Validation set once, since we have to use it many times
             cvbatchX, self.cvbatchY = load_batch_data(which_data='cvalid')
-            
             self.cvbatchY_1hot = self.to_one_hot(self.cvbatchY)
             self.cv_preprocessed_data = self.run_preprocessor(sess, cvbatchX, self.preprocess_graph)
             del cvbatchX
-            
+
             # INITIATE EXECUTION (TRAINING AND TESTING)
             tr_acc_arr = []
             tr_loss_arr = []
@@ -304,10 +301,9 @@ class Train(PropertyClassification):
             l_rate_arr = []
             for epoch in range(self.max_epoch, self.max_epoch + self.epochs):
                 self.epoch = epoch
-                
                 for batch_num in range(self.max_batch, self.num_batches + 1):
                     self.batch_num = batch_num
-                    batchX, batchY = load_batch_data(which_data='train_%s' % (batch_num))
+                    batchX, batchY = load_batch_data(which_data='batch_%s' % (batch_num))
                     
                     tr_loss, tr_acc, tr_precision_score, tr_recall_score, l_rate = self.train(batchX, batchY, sess)
                     tr_loss_arr.append(tr_loss)
