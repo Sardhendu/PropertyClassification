@@ -54,7 +54,7 @@ Here's a snapshot of the images:
 ### Models (Deep Nets) 
 Let us now discuss all different models employed for different types of images.
 
-#### [RESNET-18](https://github.com/Sardhendu/PropertyClassification/blob/master/conv_net/resnet.py)
+#### [RESNET-18](https://github.com/Sardhendu/PropertyClassification/blob/master/conv_net/resnet.py) + a little variation
 
 <div id="wrapper">
     <div class="twoColumn">
