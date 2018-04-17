@@ -71,10 +71,10 @@ Let us now discuss all different models employed for different types of images.
         	    <img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/home_cropped.jpg" width="300" height="150"><figcaption>House bbox cropped</figcaption>
       	    </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/home_resized.png" width="300" height="300"><figcaption>Home Resized/Pad</figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/home_resized.png" width="200" height="200"><figcaption>Home Resized/Pad</figcaption>
              </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/land.png" width="300" height="300"><figcaption>Land central crop</figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/land.png" width="200" height="200"><figcaption>Land central crop</figcaption>
              </td>
         </tr>
     </table>
