@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn import metrics
 
+
 sns.set_style("whitegrid")
 
 
@@ -25,9 +26,10 @@ class GlobalPlot(object):
                                     'columns=["your_column_name"]), ' \
                                     'colX=None, colY=None, label_col=None, viz_type="line",  ' \
                                     'params={"title":"your_title"})   '
+        help_string = help_string + "Plot().vizualize(data=pd.DataFrame({'y_true':y_true,'y_pred':y_pred}), colX='true_label', colY='pred_label', label_col=None, viz_type='prc', params={'title':'Precision Recall Curve', reverse':True})"
         
         return help_string
-
+    
 
 class Plot(GlobalPlot):
     def __init__(self, rows=1, columns=1, fig_size=[8, 8]):
@@ -103,6 +105,11 @@ class Plot(GlobalPlot):
         return ax
     
     def line(self, data, colX, params, params_keys):
+        '''
+            data: data frame with one x column and one or multiple y columns.
+            colX: the column name for the x axis
+        '''
+        
         ax = self.axs[self.axs_ind]
         
         if 'color' in params_keys:
@@ -116,6 +123,8 @@ class Plot(GlobalPlot):
             else:
                 ax.plot(np.array(data[col_names]), linewidth=4.0, color=c[idx])
         
+        if 'xlabel' in params_keys and 'ylabel' in params_keys:
+            ax.set(xlabel=params['xlabel'], ylabel=params['ylabel'])
         ax.legend([cols for cols in list(data.columns) if cols != colX], loc=4)
         
         if 'title' in params_keys:
@@ -125,8 +134,8 @@ class Plot(GlobalPlot):
     def roc(self, data, colX, colY, params, params_keys):
         '''
         Send a data frame with two columns
-            1) array of false positive values and
-            2) array of true positive values
+            1) array of actual labels
+            2) array of predicted labels
         '''
         ax = self.axs[self.axs_ind]
         fpr, tpr, threshold = metrics.roc_curve(np.array(data[colX]), np.array(data[colY]))
@@ -136,6 +145,34 @@ class Plot(GlobalPlot):
         ax.legend(loc='lower right')
         ax.plot([0, 1], [0, 1], 'r--')
         ax.set(xlabel='False Positive Rate', ylabel='True Positive Rate')
+        
+        if 'title' in params_keys:
+            ax.set_title(params['title'])
+        
+        return ax
+    
+    def pr_curve(self, data, colX, colY, params, params_keys):
+        '''
+        Precision Recall curve
+        Send a data frame with two columns
+            1) array of actual labels
+            2) array of predicted labels
+        '''
+        ax = self.axs[self.axs_ind]
+        if 'reverse' in params_keys:
+            y_true = 1 - np.array(data[colX])
+            y_pred = 1 - np.array(data[colY])
+        else:
+            y_true = np.array(data[colX])
+            y_pred = np.array(data[colY])
+            
+        precision, recall, _ = metrics.precision_recall_curve(y_true,y_pred)
+        ax.plot(recall, precision, 'b',
+                label='Precision = %0.2f, recall = %0.2f'%(metrics.precision_score(y_true, y_pred), metrics.recall_score(y_true, y_pred)))
+        
+        ax.legend(loc='lower left')
+        ax.plot([0, 1], [1, 0], 'r--')
+        ax.set(xlabel='Recall', ylabel='Precision')
         
         if 'title' in params_keys:
             ax.set_title(params['title'])
@@ -169,6 +206,9 @@ class Plot(GlobalPlot):
         
         if viz_type == 'roc':
             ax = self.roc(data, colX, colY, params, params_keys)
+            
+        if viz_type == 'pr_curve':
+            ax = self.pr_curve(data, colX, colY, params, params_keys)
         
         for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
                          ax.get_xticklabels() + ax.get_yticklabels()):

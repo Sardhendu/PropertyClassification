@@ -126,13 +126,17 @@ class GetAerialCropped():
             raise ValueError("Is seems you haven't, dumped the Aerial Images, fetching Aerial image is a prerequite "
                              "to creating overlayed images ", )
     
-    def parse_dump_aerial_cropped(self):
+    def parse_dump_aerial_cropped(self, condition_apply=False):
         aerial_stats_data = collateData(self.stats_path)
         # print('Number of Images to be processed = ', len(aerial_stats_data))
         
-        data_to_model = aerial_stats_data[(aerial_stats_data['loc_type'] != 'RANGE_INTERPOLATED') & (
-            aerial_stats_data['city'].str.lower().str.strip().str.match('chicago')) & (~aerial_stats_data[
-            'address'].str.lower().str.strip().str.match('0'))]
+        if condition_apply:
+            print ('Apply Condition: RANGE_INTERPOLATED and CHICAGO')
+            data_to_model = aerial_stats_data[(aerial_stats_data['loc_type'] != 'RANGE_INTERPOLATED') & (
+                aerial_stats_data['city'].str.lower().str.strip().str.match('chicago')) & (~aerial_stats_data[
+                'address'].str.lower().str.strip().str.match('0'))]
+        else:
+            data_to_model = aerial_stats_data[~aerial_stats_data['address'].str.lower().str.strip().str.match('0')]
         # print('Shape: Images for Overlaying: ', data_to_model.shape)
         crop_parcel_from_images(data_to_model, self.aerial_image_path, self.aerial_cropped_img_path, zoom=20,
                                  map_size=[400, 400])
