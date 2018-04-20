@@ -86,6 +86,8 @@ def vgg_net(weights, image):
 
     return net
 
+
+
 # get_variable(weights, name)
 def vgg_fcn_addition(net, keep_prob, img_shape):
     
