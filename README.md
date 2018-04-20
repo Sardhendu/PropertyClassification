@@ -35,16 +35,16 @@ Here's a snapshot of the images:
     <table>
 	    <tr>
     	    <td style="padding:5px">
-        	    <img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/assessor.png" width="200" height="200"><figcaption>Assessor Image</figcaption>
+        	    <img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/assessor.png" width="200" height="200"><figcaption><center>Assessor Image</center></figcaption>
       	    </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/streetside.jpg" width="200" height="200"><figcaption>Streetside Image</figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/streetside.jpg" width="200" height="200"><figcaption><center>Streetside Image</center></figcaption>
              </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/aerial.png" width="200" height="200"><figcaption>Aerial Image</figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/aerial.png" width="200" height="200"><figcaption><center>Aerial Image</center></figcaption>
              </td>
              <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/overlayed.jpg" width="200" height="200"><figcaption>Overlayed Image</figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/overlayed.jpg" width="200" height="200"><figcaption></center>Overlayed Image</center></figcaption>
              </td>
         </tr>
     </table>
@@ -68,21 +68,28 @@ Let us now discuss all different models employed for different types of images.
     <table>
 	    <tr>
     	    <td style="padding:5px">
-        	    <img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/home_cropped.jpg" width="300" height="150"><figcaption>House bbox cropped</figcaption>
+        	    <img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/home_cropped.jpg" width="300" height="150"><figcaption><center>House bbox cropped</center></figcaption>
       	    </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/home_resized.png" width="200" height="200"><figcaption>Home Resized/Pad</figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/home_resized.png" width="200" height="200"><figcaption><center>Home Resized/Pad</center></figcaption>
              </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/land.png" width="200" height="200"><figcaption>Land central crop</figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/land.png" width="200" height="200"><figcaption><center>Land central crop</center></figcaption>
              </td>
         </tr>
     </table>
+    <table>
+        <tr>
+            <td style="padding:5px">
+            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/prec_recall_curve.png" width="600" height="200"><figcaption><center>Precision Recall Plot</center></figcaption>
+            </td>
+        </tr>
+    </table>
+
 </div>
 
-<div class="twoColumn">
-    <img align="right" width="500" height="200" src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/prec_recall_curve.png">
-</div>
+
+
 --------------
 
 #### [CONV-NET](https://github.com/Sardhendu/PropertyClassification/blob/master/conv_net/convnet.py)
