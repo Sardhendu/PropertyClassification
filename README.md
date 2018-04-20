@@ -80,6 +80,9 @@ Let us now discuss all different models employed for different types of images.
     </table>
 </div>
 
+<div class="twoColumn">
+    <img align="right" width="500" height="200" src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/prec_recall_curve.png">
+</div>
 --------------
 
 #### [CONV-NET](https://github.com/Sardhendu/PropertyClassification/blob/master/conv_net/convnet.py)

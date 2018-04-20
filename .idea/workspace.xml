@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73474898-f241-419a-9841-3f571f14b794" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Store_manually_reviewed_properties-checkpoint.ipynb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Store_manually_reviewed_properties.ipynb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic_segmentation/var_autoencoder.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Model_eval-Aerial_cropped-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Model_eval-Aerial_cropped-checkpoint.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Model_test-Aerial_cropped-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Model_test-Aerial_cropped-checkpoint.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/data_loader-Aerial-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/data_loader-Aerial-checkpoint.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Model_eval-Aerial_cropped.ipynb" afterPath="$PROJECT_DIR$/Model_eval-Aerial_cropped.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Model_test-Aerial_cropped.ipynb" afterPath="$PROJECT_DIR$/Model_test-Aerial_cropped.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conv_net/utils.py" afterPath="$PROJECT_DIR$/conv_net/utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_loader-Aerial.ipynb" afterPath="$PROJECT_DIR$/data_loader-Aerial.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_transformation/data_load.py" afterPath="$PROJECT_DIR$/data_transformation/data_load.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logfile.log" afterPath="$PROJECT_DIR$/logfile.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plot.py" afterPath="$PROJECT_DIR$/plot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viz_analysis/Analysis.ipynb" afterPath="$PROJECT_DIR$/viz_analysis/Analysis.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,12 +16,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="349">
-                <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <first_editor relative-caret-position="701">
+                <caret line="76" column="38" lean-forward="true" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -114,8 +99,8 @@
       <file leaf-file-name="var_autoencoder.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/semantic_segmentation/var_autoencoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+            <state relative-caret-position="37">
+              <caret line="39" column="12" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
               <folding>
                 <element signature="e#1#26#0" expanded="true" />
               </folding>
@@ -123,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conv_net/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="48" column="79" lean-forward="false" selection-start-line="48" selection-start-column="72" selection-end-line="48" selection-end-column="79" />
+            <state relative-caret-position="409">
+              <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
               <folding>
                 <marker date="1524202265694" expanded="true" signature="63:2233" ph="..." />
               </folding>
@@ -147,7 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>run_preprocessor</find>
       <find>Preprocessing</find>
       <find>is_training</find>
       <find>preprocessImageGraph</find>
@@ -177,6 +161,7 @@
       <find>process_images_given_path</find>
       <find>tr_cv_ts_pins_</find>
       <find>overlayed</find>
+      <find>reverse</find>
     </findStrings>
     <replaceStrings>
       <replace>variable_scope</replace>
@@ -879,21 +864,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="349">
-            <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/semantic_segmentation/var_autoencoder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+        <state relative-caret-position="37">
+          <caret line="39" column="12" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
           <folding>
             <element signature="e#1#26#0" expanded="true" />
           </folding>
@@ -902,11 +876,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conv_net/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="48" column="79" lean-forward="false" selection-start-line="48" selection-start-column="72" selection-end-line="48" selection-end-column="79" />
+        <state relative-caret-position="409">
+          <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
           <folding>
             <marker date="1524202265694" expanded="true" signature="63:2233" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="701">
+            <caret line="76" column="38" lean-forward="true" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
