@@ -75,13 +75,14 @@ def vgg_net(weights, image):
             
             w = ops.get_variable(np.transpose(kernels, (1, 0, 2, 3)), name=name + "_w")
             b = ops.get_variable(bias.reshape(-1), name=name + "_b")
-            current = ops.conv2d(current, w, b, s=[1,1,1,1])
+            current = ops.conv2d_basic(current, w, b)
         elif kind == 'relu':
             current = tf.nn.relu(current, name=name)
             if FLAGS.debug:
                 ops.add_activation_summary(current)
         elif kind == 'pool':
             current = tf.nn.avg_pool(current, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding="SAME")
+        logging.info('%s shape: %s', str(name), str(current.shape))
         net[name] = current
 
     return net
@@ -97,9 +98,9 @@ def vgg_fcn_addition(net, keep_prob, img_shape):
     logging.info('pool5 shape: %s', str(pool5.shape))
     
     # Lyer 7x7x4096
-    W6 = ops.init_weights(shape = [7, 7, 512, 4096],  name = 'w6')
-    b6 = ops.init_bias(shape=[4096], name='b6')
-    conv6 = ops.conv2d(pool5, W6, b6, s=[1,1,1,1])
+    W6 = ops.weight_variable(shape = [7, 7, 512, 4096],  name = 'w6')
+    b6 = ops.bias_variable(shape=[4096], name='b6')
+    conv6 = ops.conv2d_basic(pool5, W6, b6)
     logging.info('conv6 shape: %s', str(conv6.shape))
     relu6 = tf.nn.relu(conv6, name="relu6")
     if FLAGS.debug:
@@ -107,9 +108,9 @@ def vgg_fcn_addition(net, keep_prob, img_shape):
     relu_dropout6 = tf.nn.dropout(relu6, keep_prob=keep_prob)
     
     # Layer 1x1x4096
-    W7 = ops.init_weights(shape=[1, 1, 4096, 4096], name='w7')
-    b7 = ops.init_bias(shape=[4096], name='b7')
-    conv7 = ops.conv2d(relu_dropout6, W7, b7, s=[1,1,1,1])
+    W7 = ops.weight_variable(shape=[1, 1, 4096, 4096], name='w7')
+    b7 = ops.bias_variable(shape=[4096], name='b7')
+    conv7 = ops.conv2d_basic(relu_dropout6, W7, b7)
     logging.info('conv7 shape: %s', str(conv7.shape))
     relu7 = tf.nn.relu(conv7)
     if FLAGS.debug:
@@ -117,32 +118,37 @@ def vgg_fcn_addition(net, keep_prob, img_shape):
     relu_dropout7 = tf.nn.dropout(relu7, keep_prob=keep_prob)
 
     # Layer 1x1xnum_of_classes
-    W8 = ops.init_weights(shape=[1, 1, 4096, num_classes], name='w8')
-    b8 = ops.init_bias(shape=[num_classes], name='b8')
-    conv8 = ops.conv2d(relu_dropout7, W8, b8, s=[1,1,1,1])
+    W8 = ops.weight_variable(shape=[1, 1, 4096, num_classes], name='w8')
+    b8 = ops.bias_variable(shape=[num_classes], name='b8')
+    conv8 = ops.conv2d_basic(relu_dropout7, W8, b8)
     logging.info('conv8 shape: %s', str(conv8.shape))
     
 
     
     ############ Upscale - Transposed
     deconv1_shape = net["pool4"].get_shape()
-    W_t1 = ops.init_weights([4, 4, deconv1_shape[3].value, num_classes], name="w_t1")
-    b_t1 = ops.init_bias([deconv1_shape[3].value], name="b_t1")
+    logging.info('deconv1_shape shape: %s', str(deconv1_shape))
+    W_t1 = ops.weight_variable([4, 4, deconv1_shape[3].value, num_classes], name="w_t1")
+    b_t1 = ops.bias_variable([deconv1_shape[3].value], name="b_t1")
     conv_t1 = ops.conv2d_transpose_strided(conv8, W_t1, b_t1, output_shape=tf.shape(net["pool4"]))
+    logging.info('conv_t1 output shape: %s', str(tf.shape(net["pool4"])))
     logging.info('conv_t1 shape: %s', str(conv_t1.shape))
     fuse_1 = tf.add(conv_t1, net["pool4"], name="fuse_1")
+    logging.info('fuse_1 shape: %s', str(fuse_1.shape))
 
     deconv2_shape = net["pool3"].get_shape()
-    W_t2 = ops.init_weights([4, 4, deconv2_shape[3].value, deconv1_shape[3].value], name="w_t2")
-    b_t2 = ops.init_bias([deconv2_shape[3].value], name="b_t2")
+    W_t2 = ops.weight_variable([4, 4, deconv2_shape[3].value, deconv1_shape[3].value], name="w_t2")
+    b_t2 = ops.bias_variable([deconv2_shape[3].value], name="b_t2")
     conv_t2 = ops.conv2d_transpose_strided(fuse_1, W_t2, b_t2, output_shape=tf.shape(net["pool3"]))
+    logging.info('conv_t1 output shape: %s', str(tf.shape(net["pool3"])))
     logging.info('conv_t2 shape: %s', str(conv_t2.shape))
     fuse_2 = tf.add(conv_t2, net["pool3"], name="fuse_2")
+    logging.info('fuse_2 shape: %s', str(fuse_2.shape))
     
     
     deconv3_shape = tf.stack([img_shape[0], img_shape[1], img_shape[2], num_classes])
-    W_t3 = ops.init_weights([16, 16, num_classes, deconv2_shape[3].value], name="W_t3")
-    b_t3 = ops.init_bias([num_classes], name="b_t3")
+    W_t3 = ops.weight_variable([16, 16, num_classes, deconv2_shape[3].value], name="W_t3")
+    b_t3 = ops.bias_variable([num_classes], name="b_t3")
     conv_t3 = ops.conv2d_transpose_strided(fuse_2, W_t3, b_t3, output_shape=deconv3_shape, stride=8)
     logging.info('conv_t3 shape: %s', str(conv_t3.shape))
     annotation_pred = tf.argmax(conv_t3, dimension=3, name="prediction")

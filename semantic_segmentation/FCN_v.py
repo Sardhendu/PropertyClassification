@@ -87,7 +87,7 @@ def vgg_net(X):
 
 
 # get_variable(weights, name)
-def vgg_fcn_addition(net, keep_prob):
+def vgg_fcn_addition(net, keep_prob, inp_shape):
     
     conv5 =  ops.conv_layer(net['pool_4'], [3,3,512,4096], stride=1, padding='SAME', scope_name='conv5')
     conv5 = ops.activation(conv5, 'relu', 'relu_5')
@@ -98,79 +98,101 @@ def vgg_fcn_addition(net, keep_prob):
     conv6 = ops.activation(conv5, 'relu', 'relu_6')
     logging.info('conv6 shape: %s', str(conv6.shape))
     
-    #
-    # conv4_3_layer = net["conv4_3"]
-    # logging.info('conv5_3 shape: %s', str(conv4_3_layer.shape))
-    # pool5 = tf.nn.max_pool(conv5_3_layer, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding="SAME")
-    # logging.info('pool5 shape: %s', str(pool5.shape))
-    #
-    # # Lyer 7x7x4096
-    # W6 = ops.init_weights(shape = [7, 7, 512, 4096],  name = 'w6')
-    # b6 = ops.init_bias(shape=[4096], name='b6')
-    # conv6 = ops.conv2d(pool5, W6, b6, s=[1 ,1 ,1 ,1])
-    # logging.info('conv6 shape: %s', str(conv6.shape))
-    # relu6 = tf.nn.relu(conv6, name="relu6")
-    # if FLAGS.debug:
-    #     ops.add_activation_summary(relu6)
-    # relu_dropout6 = tf.nn.dropout(relu6, keep_prob=keep_prob)
-    #
-    # # Layer 1x1x4096
-    # W7 = ops.init_weights(shape=[1, 1, 4096, 4096], name='w7')
-    # b7 = ops.init_bias(shape=[4096], name='b7')
-    # conv7 = ops.conv2d(relu_dropout6, W7, b7, s=[1 ,1 ,1 ,1])
-    # logging.info('conv7 shape: %s', str(conv7.shape))
-    # relu7 = tf.nn.relu(conv7)
-    # if FLAGS.debug:
-    #     ops.add_activation_summary(relu7)
-    # relu_dropout7 = tf.nn.dropout(relu7, keep_prob=keep_prob)
-    #
-    # # Layer 1x1xnum_of_classes
-    # W8 = ops.init_weights(shape=[1, 1, 4096, num_classes], name='w8')
-    # b8 = ops.init_bias(shape=[num_classes], name='b8')
-    # conv8 = ops.conv2d(relu_dropout7, W8, b8, s=[1 ,1 ,1 ,1])
-    # logging.info('conv8 shape: %s', str(conv8.shape))
-    #
-    #
-    #
-    # ############ Upscale - Transposed
-    # deconv1_shape = net["pool4"].get_shape()
-    # W_t1 = ops.init_weights([4, 4, deconv1_shape[3].value, num_classes], name="w_t1")
-    # b_t1 = ops.init_bias([deconv1_shape[3].value], name="b_t1")
-    # conv_t1 = ops.conv2d_transpose_strided(conv8, W_t1, b_t1, output_shape=tf.shape(net["pool4"]))
-    # logging.info('conv_t1 shape: %s', str(conv_t1.shape))
-    # fuse_1 = tf.add(conv_t1, net["pool4"], name="fuse_1")
-    #
-    # deconv2_shape = net["pool3"].get_shape()
-    # W_t2 = ops.init_weights([4, 4, deconv2_shape[3].value, deconv1_shape[3].value], name="w_t2")
-    # b_t2 = ops.init_bias([deconv2_shape[3].value], name="b_t2")
-    # conv_t2 = ops.conv2d_transpose_strided(fuse_1, W_t2, b_t2, output_shape=tf.shape(net["pool3"]))
-    # logging.info('conv_t2 shape: %s', str(conv_t2.shape))
-    # fuse_2 = tf.add(conv_t2, net["pool3"], name="fuse_2")
-    #
-    #
-    # deconv3_shape = tf.stack([img_shape[0], img_shape[1], img_shape[2], num_classes])
-    # W_t3 = ops.init_weights([16, 16, num_classes, deconv2_shape[3].value], name="W_t3")
-    # b_t3 = ops.init_bias([num_classes], name="b_t3")
-    # conv_t3 = ops.conv2d_transpose_strided(fuse_2, W_t3, b_t3, output_shape=deconv3_shape, stride=8)
-    # logging.info('conv_t3 shape: %s', str(conv_t3.shape))
-    # annotation_pred = tf.argmax(conv_t3, dimension=3, name="prediction")
-    #
-    # return tf.expand_dims(annotation_pred, dim=3) ,conv_t3
 
-def inference(image, keep_prob):
+
+    # Additional CONV layers for UPSCALE
+    conv_u1 = ops.conv_layer(net['pool_2'], [3,3,128,3], stride=1, padding='SAME', scope_name='up_conv1')
+    logging.info('conv_u1 shape: %s', str(conv_u1.shape))
+    conv_u2 = ops.conv_layer(net['pool_3'], [3,3,256,3], stride=1, padding='SAME', scope_name='up_conv2')
+    logging.info('conv_u2 shape: %s', str(conv_u2.shape))
+    conv_u3 = ops.conv_layer(net['pool_4'], [3,3,512,3], stride=1, padding='SAME', scope_name='up_conv3')
+    logging.info('conv_u3 shape: %s', str(conv_u3.shape))
+    conv_u4 = ops.conv_layer(conv6, [3,3,4096,3], stride=1, padding='SAME', scope_name='conv_u4')
+    logging.info('conv_u4 shape: %s', str(conv_u4.shape))
+    
+    
+    # Fractionally Strided Convolutions:
+    # dconv_u1 = ops.conv2d_transpose_strided(conv_u4, W_t1, b_t1, output_shape=tf.shape(net["pool4"]))
+    # We deconv on con_u4 and make a outshape of conv_u3 becase we would like to fuse their activation
+    dconv_u1 = ops.conv2D_transposed_strided(conv_u4, k_shape=[3,3,3,3], stride=2, padding='SAME', w_init='tn',
+                                             out_shape=conv_u3.get_shape().as_list(), scope_name='dconv_layer1',
+                                             add_smry=True)
+    logging.info('dconv_u1 shape: %s', str(dconv_u1.shape))
+    fuse_1 = tf.add(conv_u3, dconv_u1, name="fuse_1")
+    logging.info('fuse_1 shape: %s', str(fuse_1.shape))
+
+    dconv_u2 = ops.conv2D_transposed_strided(fuse_1, k_shape=[3, 3, 3, 3], stride=2, padding='SAME', w_init='tn',
+                                             out_shape=conv_u2.get_shape().as_list(), scope_name='dconv_layer2',
+                                             add_smry=True)
+    logging.info('dconv_u2 shape: %s', str(dconv_u2.shape))
+    fuse_2 = tf.add(conv_u2, dconv_u2, name="fuse_2")
+    logging.info('fuse_2 shape: %s', str(fuse_2.shape))
+
+    dconv_u3 = ops.conv2D_transposed_strided(fuse_2, k_shape=[3, 3, 3, 3], stride=2, padding='SAME', w_init='tn',
+                                             out_shape=conv_u1.get_shape().as_list(), scope_name='dconv_layer3',
+                                             add_smry=True)
+    logging.info('dconv_u2 shape: %s', str(dconv_u3.shape))
+    fuse_3 = tf.add(conv_u1, dconv_u3, name="fuse_2")
+    logging.info('fuse_3 shape: %s', str(fuse_3.shape))
+
+    dconv_u4 = ops.conv2D_transposed_strided(fuse_3, k_shape=[3, 3, 3, 3], stride=2, padding='SAME', w_init='tn',
+                                             out_shape=inp_shape, scope_name='dconv_layer4',
+                                             add_smry=True)
+    logging.info('dconv_u4 shape: %s', str(dconv_u4.shape))
+    
+    
+    return dconv_u4
+
+
+def optimize(loss, l_rate):
+    
+    # We would like to store the summary of the loss to watch the decrease in loss.
+    
+    logging.info('INITIALIZING OPTIMIZATION WITH %s: .....', str('ADAM'))
+    with tf.name_scope("Optimizer"):
+        optimizer = tf.train.AdamOptimizer(learning_rate=l_rate).minimize(loss)
+
+    return optimizer
+
+def inference(inp_shape, annotation_shape):
+    keep_prob = tf.placeholder(tf.float32, name="keep_probabilty")
+    image = tf.placeholder(tf.float32, shape=inp_shape, name="input_image")
+    annotation = tf.placeholder(tf.float32, shape=annotation_shape, name="annotation")
+    
     with tf.variable_scope("inference"):
         image_net = vgg_net(image)
-        vgg_fcn_addition(image_net, keep_prob)
-        # print (image_net)
+        print (image_net)
+        logits = vgg_fcn_addition(image_net, keep_prob, inp_shape=[None, 400, 400, 3])
+        print ('asdadadas ', logits.shape, annotation.shape)
+        loss = tf.reduce_mean((tf.nn.sigmoid_cross_entropy_with_logits(logits=logits,
+                                                                              labels=annotation,
+                                                                              name="entropy")))
+        opt = optimize(loss, l_rate=0.005)
+        
+    return dict(image=image, annotation=annotation, out_img=logits, loss=loss, optimizer=opt)
 
 
 
 
 def main():
-    keep_prob = tf.placeholder(tf.float32, name="keep_probabilty")
-    image = tf.placeholder(tf.float32, shape=[None, 400, 400, 3], name="input_image")
-    annotation = tf.placeholder(tf.int32, shape=[None, 224, 224, 1], name="annotation")
-    inference(image, keep_prob)
+    computation_graph = inference(inp_shape=[None, 400, 400, 3], annotation_shape=[None, 400, 400, 3])
+
+    inp_image = np.random.random((5, 400, 400, 3))
+    seg_image = np.random.random((5, 400, 400, 3))
+    
+    epochs = 10
+    with tf.Session() as sess:
+        
+        for _ in epochs:
+            feed_dict = {computation_graph['image']:inp_image, computation_graph['annotation']:seg_image}
+            out_image, ls, _ = sess.run([computation_graph['out_img'], computation_graph['loss'],
+                                           computation_graph['optimizer']], feed_dict=feed_dict)
+            print(out_image)
+            print (ls)
+            
+        
+    
+    
 
 
 main()
