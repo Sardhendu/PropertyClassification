@@ -1,0 +1,69 @@
+[2018-05-07 01:21:42,027] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-07 01:21:45,221] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline create_batches_new_test 2018-05-07T01:19:09.954656 --job_id 172 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-07 01:21:45,647] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:21:45,647] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-07 01:21:46,077] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:21:46,077] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-07 01:21:49,350] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:21:49,350] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_batches_new_test 2018-05-07 01:19:09.954656 [queued]>
+[2018-05-07 01:21:49,355] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:21:49,354] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_batches_new_test 2018-05-07 01:19:09.954656 [queued]>
+[2018-05-07 01:21:49,355] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:21:49,355] {models.py:1318} INFO - 
+[2018-05-07 01:21:49,355] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-07 01:21:49,355] {base_task_runner.py:95} INFO - Subtask: Starting attempt 1 of 2
+[2018-05-07 01:21:49,355] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-07 01:21:49,355] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-07 01:21:49,364] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:21:49,364] {models.py:1342} INFO - Executing <Task(PythonOperator): create_batches_new_test> on 2018-05-07 01:19:09.954656
+[2018-05-07 01:21:49,388] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:21:49,386] {models.py:1417} ERROR - get_intersecting_images_pin() got an unexpected keyword argument 'is_overlayed'
+[2018-05-07 01:21:49,388] {base_task_runner.py:95} INFO - Subtask: Traceback (most recent call last):
+[2018-05-07 01:21:49,388] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 1374, in run
+[2018-05-07 01:21:49,388] {base_task_runner.py:95} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-05-07 01:21:49,388] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 80, in execute
+[2018-05-07 01:21:49,388] {base_task_runner.py:95} INFO - Subtask:     return_value = self.python_callable(*self.op_args, **self.op_kwargs)
+[2018-05-07 01:21:49,388] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/batch_create.py", line 51, in prepare_batches
+[2018-05-07 01:21:49,388] {base_task_runner.py:95} INFO - Subtask:     equal_proportion=True
+[2018-05-07 01:21:49,388] {base_task_runner.py:95} INFO - Subtask: TypeError: get_intersecting_images_pin() got an unexpected keyword argument 'is_overlayed'
+[2018-05-07 01:21:49,389] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:21:49,389] {models.py:1433} INFO - Marking task as UP_FOR_RETRY
+[2018-05-07 01:21:49,398] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:21:49,397] {models.py:1462} ERROR - get_intersecting_images_pin() got an unexpected keyword argument 'is_overlayed'
+[2018-05-07 01:21:49,398] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+[2018-05-07 01:21:49,398] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-07 01:21:49,399] {base_task_runner.py:95} INFO - Subtask: Traceback (most recent call last):
+[2018-05-07 01:21:49,399] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/bin/airflow", line 28, in <module>
+[2018-05-07 01:21:49,399] {base_task_runner.py:95} INFO - Subtask:     args.func(args)
+[2018-05-07 01:21:49,399] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/bin/cli.py", line 422, in run
+[2018-05-07 01:21:49,399] {base_task_runner.py:95} INFO - Subtask:     pool=args.pool,
+[2018-05-07 01:21:49,399] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/utils/db.py", line 53, in wrapper
+[2018-05-07 01:21:49,399] {base_task_runner.py:95} INFO - Subtask:     result = func(*args, **kwargs)
+[2018-05-07 01:21:49,399] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 1374, in run
+[2018-05-07 01:21:49,399] {base_task_runner.py:95} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-05-07 01:21:49,399] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 80, in execute
+[2018-05-07 01:21:49,399] {base_task_runner.py:95} INFO - Subtask:     return_value = self.python_callable(*self.op_args, **self.op_kwargs)
+[2018-05-07 01:21:49,400] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/batch_create.py", line 51, in prepare_batches
+[2018-05-07 01:21:49,400] {base_task_runner.py:95} INFO - Subtask:     equal_proportion=True
+[2018-05-07 01:21:49,400] {base_task_runner.py:95} INFO - Subtask: TypeError: get_intersecting_images_pin() got an unexpected keyword argument 'is_overlayed'
+[2018-05-07 01:21:50,227] {jobs.py:2083} INFO - Task exited with return code 1
+[2018-05-07 01:24:17,964] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-07 01:24:21,778] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline create_batches_new_test 2018-05-07T01:19:09.954656 --job_id 174 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-07 01:24:22,130] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:22,130] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-07 01:24:22,553] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:22,553] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-07 01:24:25,741] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:25,741] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_batches_new_test 2018-05-07 01:19:09.954656 [queued]>
+[2018-05-07 01:24:25,746] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:25,746] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_batches_new_test 2018-05-07 01:19:09.954656 [queued]>
+[2018-05-07 01:24:25,746] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:25,746] {models.py:1318} INFO - 
+[2018-05-07 01:24:25,746] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-07 01:24:25,746] {base_task_runner.py:95} INFO - Subtask: Starting attempt 2 of 2
+[2018-05-07 01:24:25,746] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-07 01:24:25,746] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-07 01:24:25,755] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:25,755] {models.py:1342} INFO - Executing <Task(PythonOperator): create_batches_new_test> on 2018-05-07 01:19:09.954656
+[2018-05-07 01:24:25,775] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:25,775] {batch_create.py:54} INFO - Shape: cmn_land_pins = 83, cmn_house_pins = 83 
+[2018-05-07 01:24:25,777] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:25,775] {data_prep.py:212} INFO - Input Land Images from /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/PreTestRun/overlaid/land: 
+[2018-05-07 01:24:25,777] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:25,776] {data_prep.py:213} INFO - Input House Images from /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/PreTestRun/overlaid/house: 
+[2018-05-07 01:24:25,777] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:25,777] {data_prep.py:214} INFO - Output batch array to /Users/sam/All-Program/App-DataSet/HouseClassification/batch_data/PreTestRun/overlaid: 
+[2018-05-07 01:24:25,777] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:25,777] {data_prep.py:220} INFO - Image Shape: [400, 400, 3]
+[2018-05-07 01:24:25,777] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:25,777] {data_prep.py:224} INFO - Enabling Crop: [128, 128, 3]
+[2018-05-07 01:24:25,777] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:25,777] {data_prep.py:230} INFO - Enabling Resize: [128, 128, 3]
+[2018-05-07 01:24:25,777] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:25,777] {data_prep.py:235} INFO - Enabling Rotation angle = 90:
+[2018-05-07 01:24:25,777] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:25,777] {data_prep.py:258} INFO - Running Seed for batch creation: 881
+[2018-05-07 01:24:25,778] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:25,778] {data_prep.py:456} INFO - Input Data: Total Land: 83, Total House: 83
+[2018-05-07 01:24:26,616] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:26,615] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_0 to disk, dataX shape = (166, 224, 224, 3), dataY shape = (166,)
+[2018-05-07 01:24:27,039] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 0[2018-05-07 01:24:27,039] {data_prep.py:433} INFO - Training Land Size: 83, Training House Size: 83
+[2018-05-07 01:24:27,042] {base_task_runner.py:95} INFO - Subtask: 166 166 166 166 166
+[2018-05-07 01:24:27,042] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 01:24:27,042] {python_operator.py:81} INFO - Done. Returned value was: COMPLETE
+[2018-05-07 01:24:27,056] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+[2018-05-07 01:24:27,056] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-07 01:24:31,788] {jobs.py:2083} INFO - Task exited with return code 0

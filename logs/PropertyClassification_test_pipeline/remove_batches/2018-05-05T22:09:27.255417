@@ -1,0 +1,18 @@
+[2018-05-05 22:14:31,125] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-05 22:14:34,173] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline remove_batches 2018-05-05T22:09:27.255417 --job_id 74 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-05 22:14:34,500] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 22:14:34,500] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-05 22:14:34,896] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 22:14:34,896] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-05 22:14:37,830] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 22:14:37,830] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.remove_batches 2018-05-05 22:09:27.255417 [queued]>
+[2018-05-05 22:14:37,835] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 22:14:37,835] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.remove_batches 2018-05-05 22:09:27.255417 [queued]>
+[2018-05-05 22:14:37,835] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 22:14:37,835] {models.py:1318} INFO - 
+[2018-05-05 22:14:37,835] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-05 22:14:37,835] {base_task_runner.py:95} INFO - Subtask: Starting attempt 1 of 2
+[2018-05-05 22:14:37,836] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-05 22:14:37,836] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-05 22:14:37,843] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 22:14:37,843] {models.py:1342} INFO - Executing <Task(PythonOperator): remove_batches> on 2018-05-05 22:09:27.255417
+[2018-05-05 22:14:37,852] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 22:14:37,852] {batch_create.py:82} INFO - Removing Batches for RUN: PreTestRun, img_type: aerial_cropped
+[2018-05-05 22:14:37,862] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 22:14:37,861] {batch_create.py:95} INFO - Removed Batches ...................
+[2018-05-05 22:14:37,862] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 22:14:37,862] {python_operator.py:81} INFO - Done. Returned value was: None
+[2018-05-05 22:14:37,870] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+[2018-05-05 22:14:37,870] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-05 22:14:39,178] {jobs.py:2083} INFO - Task exited with return code 0

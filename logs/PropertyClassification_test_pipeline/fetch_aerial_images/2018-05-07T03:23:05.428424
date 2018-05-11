@@ -1,0 +1,17 @@
+[2018-05-07 03:23:36,070] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-07 03:23:39,210] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline fetch_aerial_images 2018-05-07T03:23:05.428424 --job_id 226 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-07 03:23:39,559] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 03:23:39,559] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-07 03:23:39,991] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 03:23:39,991] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-07 03:23:43,132] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 03:23:43,132] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-07 03:23:05.428424 [queued]>
+[2018-05-07 03:23:43,138] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 03:23:43,138] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-07 03:23:05.428424 [queued]>
+[2018-05-07 03:23:43,138] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 03:23:43,138] {models.py:1318} INFO - 
+[2018-05-07 03:23:43,138] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-07 03:23:43,138] {base_task_runner.py:95} INFO - Subtask: Starting attempt 1 of 2
+[2018-05-07 03:23:43,138] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-07 03:23:43,138] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-07 03:23:43,146] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 03:23:43,146] {models.py:1342} INFO - Executing <Task(PythonOperator): fetch_aerial_images> on 2018-05-07 03:23:05.428424
+[2018-05-07 03:23:43,171] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 03:23:43,171] {data_load.py:51} INFO - Initiating Aerial Dump ...............................
+[2018-05-07 03:23:43,173] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 03:23:43,171] {data_load.py:52} INFO - Input data path: /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/new_test/aerial
+[2018-05-07 03:23:43,173] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 03:23:43,173] {data_load.py:53} INFO - Stats dump path: /Users/sam/All-Program/App-DataSet/HouseClassification/statistics/new_test/aerial/aerial_collected_data_stats
+[2018-05-07 03:23:43,210] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 03:23:43,209] {data_load.py:62} INFO - Number of images already parsed and dumped 3814
+[2018-05-07 03:23:43,261] {base_task_runner.py:95} INFO - Subtask: [2018-05-07 03:23:43,261] {data_load.py:79} INFO - Number of new images to be parsed and dumped: 264

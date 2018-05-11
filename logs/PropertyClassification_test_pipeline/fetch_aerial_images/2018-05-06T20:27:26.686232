@@ -1,0 +1,21 @@
+[2018-05-06 20:28:27,686] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-06 20:28:31,051] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline fetch_aerial_images 2018-05-06T20:27:26.686232 --job_id 145 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-06 20:28:31,403] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 20:28:31,403] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-06 20:28:31,808] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 20:28:31,807] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-06 20:28:37,865] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 20:28:37,865] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-06 20:27:26.686232 [queued]>
+[2018-05-06 20:28:37,871] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 20:28:37,871] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-06 20:27:26.686232 [queued]>
+[2018-05-06 20:28:37,871] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 20:28:37,871] {models.py:1318} INFO - 
+[2018-05-06 20:28:37,872] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-06 20:28:37,872] {base_task_runner.py:95} INFO - Subtask: Starting attempt 1 of 2
+[2018-05-06 20:28:37,872] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-06 20:28:37,872] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-06 20:28:37,880] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 20:28:37,880] {models.py:1342} INFO - Executing <Task(PythonOperator): fetch_aerial_images> on 2018-05-06 20:27:26.686232
+[2018-05-06 20:28:37,908] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 20:28:37,908] {data_load.py:51} INFO - Initiating Aerial Dump ...............................
+[2018-05-06 20:28:37,910] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 20:28:37,908] {data_load.py:52} INFO - Input data path: /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/PreTestRun/aerial
+[2018-05-06 20:28:37,910] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 20:28:37,910] {data_load.py:53} INFO - Stats dump path: /Users/sam/All-Program/App-DataSet/HouseClassification/statistics/PreTestRun/aerial/aerial_collected_data_stats
+[2018-05-06 20:28:37,922] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 20:28:37,922] {data_load.py:62} INFO - Number of images already parsed and dumped 264
+[2018-05-06 20:28:37,930] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 20:28:37,930] {data_load.py:79} INFO - Number of new images to be parsed and dumped: 0
+[2018-05-06 20:28:37,931] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 20:28:37,931] {python_operator.py:81} INFO - Done. Returned value was: COMPLETE
+[2018-05-06 20:28:37,944] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+[2018-05-06 20:28:37,944] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-06 20:28:41,061] {jobs.py:2083} INFO - Task exited with return code 0

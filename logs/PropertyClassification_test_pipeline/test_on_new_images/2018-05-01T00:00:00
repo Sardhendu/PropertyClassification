@@ -1,0 +1,98 @@
+[2018-05-04 10:53:38,792] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-04 10:53:41,829] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline test_on_new_images 2018-05-01T00:00:00 --job_id 15 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-04 10:53:42,160] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:53:42,159] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-04 10:53:42,572] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:53:42,572] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-04 10:53:45,983] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:53:45,982] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-01 00:00:00 [queued]>
+[2018-05-04 10:53:45,988] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:53:45,988] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-01 00:00:00 [queued]>
+[2018-05-04 10:53:45,988] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:53:45,988] {models.py:1318} INFO - 
+[2018-05-04 10:53:45,989] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-04 10:53:45,989] {base_task_runner.py:95} INFO - Subtask: Starting attempt 1 of 2
+[2018-05-04 10:53:45,989] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-04 10:53:45,989] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-04 10:53:45,997] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:53:45,997] {models.py:1342} INFO - Executing <Task(PythonOperator): test_on_new_images> on 2018-05-01 00:00:00
+[2018-05-04 10:53:46,015] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:53:46,015] {test.py:103} INFO - INITIATING TEST ........
+[2018-05-04 10:53:46,017] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:53:46,016] {models.py:1417} ERROR - [Errno 2] No such file or directory: '/Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resent'
+[2018-05-04 10:53:46,017] {base_task_runner.py:95} INFO - Subtask: Traceback (most recent call last):
+[2018-05-04 10:53:46,017] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 1374, in run
+[2018-05-04 10:53:46,017] {base_task_runner.py:95} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-05-04 10:53:46,017] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 80, in execute
+[2018-05-04 10:53:46,017] {base_task_runner.py:95} INFO - Subtask:     return_value = self.python_callable(*self.op_args, **self.op_kwargs)
+[2018-05-04 10:53:46,018] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/train_cv_test.py", line 193, in test_new
+[2018-05-04 10:53:46,018] {base_task_runner.py:95} INFO - Subtask:     dump_stats=True)
+[2018-05-04 10:53:46,018] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/src/conv_net/test.py", line 113, in run
+[2018-05-04 10:53:46,018] {base_task_runner.py:95} INFO - Subtask:     checkpoint_paths = self.get_checkpoint_path(which_checkpoint)
+[2018-05-04 10:53:46,018] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/src/conv_net/train.py", line 106, in get_checkpoint_path
+[2018-05-04 10:53:46,018] {base_task_runner.py:95} INFO - Subtask:     checkpoints = [str(filename.split('.')[0]) for filename in os.listdir(self.ckpt_path)
+[2018-05-04 10:53:46,018] {base_task_runner.py:95} INFO - Subtask: FileNotFoundError: [Errno 2] No such file or directory: '/Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resent'
+[2018-05-04 10:53:46,018] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:53:46,018] {models.py:1433} INFO - Marking task as UP_FOR_RETRY
+[2018-05-04 10:53:46,026] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:53:46,026] {models.py:1462} ERROR - [Errno 2] No such file or directory: '/Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resent'
+[2018-05-04 10:53:46,026] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+[2018-05-04 10:53:46,027] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-04 10:53:46,028] {base_task_runner.py:95} INFO - Subtask: Traceback (most recent call last):
+[2018-05-04 10:53:46,028] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/bin/airflow", line 28, in <module>
+[2018-05-04 10:53:46,028] {base_task_runner.py:95} INFO - Subtask:     args.func(args)
+[2018-05-04 10:53:46,028] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/bin/cli.py", line 422, in run
+[2018-05-04 10:53:46,028] {base_task_runner.py:95} INFO - Subtask:     pool=args.pool,
+[2018-05-04 10:53:46,028] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/utils/db.py", line 53, in wrapper
+[2018-05-04 10:53:46,028] {base_task_runner.py:95} INFO - Subtask:     result = func(*args, **kwargs)
+[2018-05-04 10:53:46,028] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 1374, in run
+[2018-05-04 10:53:46,028] {base_task_runner.py:95} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-05-04 10:53:46,029] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 80, in execute
+[2018-05-04 10:53:46,029] {base_task_runner.py:95} INFO - Subtask:     return_value = self.python_callable(*self.op_args, **self.op_kwargs)
+[2018-05-04 10:53:46,029] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/train_cv_test.py", line 193, in test_new
+[2018-05-04 10:53:46,029] {base_task_runner.py:95} INFO - Subtask:     dump_stats=True)
+[2018-05-04 10:53:46,029] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/src/conv_net/test.py", line 113, in run
+[2018-05-04 10:53:46,029] {base_task_runner.py:95} INFO - Subtask:     checkpoint_paths = self.get_checkpoint_path(which_checkpoint)
+[2018-05-04 10:53:46,029] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/src/conv_net/train.py", line 106, in get_checkpoint_path
+[2018-05-04 10:53:46,029] {base_task_runner.py:95} INFO - Subtask:     checkpoints = [str(filename.split('.')[0]) for filename in os.listdir(self.ckpt_path)
+[2018-05-04 10:53:46,029] {base_task_runner.py:95} INFO - Subtask: FileNotFoundError: [Errno 2] No such file or directory: '/Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resent'
+[2018-05-04 10:53:46,833] {jobs.py:2083} INFO - Task exited with return code 1
+[2018-05-04 10:56:01,249] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-04 10:56:04,722] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline test_on_new_images 2018-05-01T00:00:00 --job_id 20 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-04 10:56:05,068] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:56:05,067] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-04 10:56:05,478] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:56:05,478] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-04 10:56:08,576] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:56:08,576] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-01 00:00:00 [queued]>
+[2018-05-04 10:56:08,581] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:56:08,581] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-01 00:00:00 [queued]>
+[2018-05-04 10:56:08,581] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:56:08,581] {models.py:1318} INFO - 
+[2018-05-04 10:56:08,582] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-04 10:56:08,582] {base_task_runner.py:95} INFO - Subtask: Starting attempt 2 of 2
+[2018-05-04 10:56:08,582] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-04 10:56:08,582] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-04 10:56:08,591] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:56:08,590] {models.py:1342} INFO - Executing <Task(PythonOperator): test_on_new_images> on 2018-05-01 00:00:00
+[2018-05-04 10:56:08,610] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:56:08,609] {test.py:103} INFO - INITIATING TEST ........
+[2018-05-04 10:56:08,611] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:56:08,610] {models.py:1417} ERROR - [Errno 2] No such file or directory: '/Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resent'
+[2018-05-04 10:56:08,611] {base_task_runner.py:95} INFO - Subtask: Traceback (most recent call last):
+[2018-05-04 10:56:08,611] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 1374, in run
+[2018-05-04 10:56:08,611] {base_task_runner.py:95} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-05-04 10:56:08,611] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 80, in execute
+[2018-05-04 10:56:08,611] {base_task_runner.py:95} INFO - Subtask:     return_value = self.python_callable(*self.op_args, **self.op_kwargs)
+[2018-05-04 10:56:08,611] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/train_cv_test.py", line 193, in test_new
+[2018-05-04 10:56:08,611] {base_task_runner.py:95} INFO - Subtask:     dump_stats=True)
+[2018-05-04 10:56:08,611] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/src/conv_net/test.py", line 113, in run
+[2018-05-04 10:56:08,612] {base_task_runner.py:95} INFO - Subtask:     checkpoint_paths = self.get_checkpoint_path(which_checkpoint)
+[2018-05-04 10:56:08,612] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/src/conv_net/train.py", line 106, in get_checkpoint_path
+[2018-05-04 10:56:08,612] {base_task_runner.py:95} INFO - Subtask:     checkpoints = [str(filename.split('.')[0]) for filename in os.listdir(self.ckpt_path)
+[2018-05-04 10:56:08,612] {base_task_runner.py:95} INFO - Subtask: FileNotFoundError: [Errno 2] No such file or directory: '/Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resent'
+[2018-05-04 10:56:08,612] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:56:08,612] {models.py:1439} INFO - All retries failed; marking task as FAILED
+[2018-05-04 10:56:08,621] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:56:08,621] {models.py:1462} ERROR - [Errno 2] No such file or directory: '/Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resent'
+[2018-05-04 10:56:08,621] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+[2018-05-04 10:56:08,621] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-04 10:56:08,622] {base_task_runner.py:95} INFO - Subtask: Traceback (most recent call last):
+[2018-05-04 10:56:08,622] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/bin/airflow", line 28, in <module>
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:     args.func(args)
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/bin/cli.py", line 422, in run
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:     pool=args.pool,
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/utils/db.py", line 53, in wrapper
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:     result = func(*args, **kwargs)
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 1374, in run
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 80, in execute
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:     return_value = self.python_callable(*self.op_args, **self.op_kwargs)
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/train_cv_test.py", line 193, in test_new
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:     dump_stats=True)
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/src/conv_net/test.py", line 113, in run
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:     checkpoint_paths = self.get_checkpoint_path(which_checkpoint)
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/src/conv_net/train.py", line 106, in get_checkpoint_path
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask:     checkpoints = [str(filename.split('.')[0]) for filename in os.listdir(self.ckpt_path)
+[2018-05-04 10:56:08,623] {base_task_runner.py:95} INFO - Subtask: FileNotFoundError: [Errno 2] No such file or directory: '/Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resent'
+[2018-05-04 10:56:09,727] {jobs.py:2083} INFO - Task exited with return code 1

@@ -1,2 +1,0 @@
-mu0=b0, mu1=b1,mu2=b2, mu3=b3,mu4=b4, mu=b1,mu0=b0, mu1=b1,mu0=b0, mu1=b1,mu0=b0, mu1=b1,mu0=b0, mu1=b1,mu0=b0,\
-mu1=b1,mu0=b0, mu1=b1,mu0=b0, mu1=b1,mu0=b0, mu1=b1,mu0=b0, mu1=b1,mu0=b0, mu1=b1,mu0=b0, mu1=b1,mu0=b0, mu1=b1

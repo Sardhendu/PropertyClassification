@@ -1,0 +1,35 @@
+[2018-05-05 18:51:34,262] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-05 18:51:40,318] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline fetch_aerial_cropped_images 2018-05-05T18:50:57.843200 --job_id 58 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-05 18:51:40,652] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 18:51:40,652] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-05 18:51:41,054] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 18:51:41,054] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-05 18:51:44,047] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 18:51:44,046] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_cropped_images 2018-05-05 18:50:57.843200 [queued]>
+[2018-05-05 18:51:44,053] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 18:51:44,053] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_cropped_images 2018-05-05 18:50:57.843200 [queued]>
+[2018-05-05 18:51:44,053] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 18:51:44,053] {models.py:1318} INFO - 
+[2018-05-05 18:51:44,053] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-05 18:51:44,053] {base_task_runner.py:95} INFO - Subtask: Starting attempt 1 of 2
+[2018-05-05 18:51:44,053] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-05 18:51:44,053] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-05 18:51:44,060] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 18:51:44,059] {models.py:1342} INFO - Executing <Task(PythonOperator): fetch_aerial_cropped_images> on 2018-05-05 18:50:57.843200
+[2018-05-05 18:51:44,077] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 18:51:44,077] {data_load.py:152} INFO - Initiating Aerial Crop ...............................
+[2018-05-05 18:51:44,078] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 18:51:44,077] {data_load.py:153} INFO - Input data path: /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/PreTestRun/aerial
+[2018-05-05 18:51:44,079] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 18:51:44,078] {data_load.py:154} INFO - Output data path: /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/PreTestRun/aerial_cropped
+[2018-05-05 18:51:44,085] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 18:51:44,085] {data_load.py:162} INFO - Apply Condition: RANGE_INTERPOLATED and CHICAGO
+[2018-05-05 18:52:19,810] {base_task_runner.py:95} INFO - Subtask: Initiating Run for scoop scoop_738_768 : DATA SHAPE (93246, 13)
+[2018-05-05 18:52:19,811] {base_task_runner.py:95} INFO - Subtask: Total images to be processed are  (0, 9)
+[2018-05-05 18:52:19,811] {base_task_runner.py:95} INFO - Subtask: Initiating Run for scoop scoop_768_798 : DATA SHAPE (94331, 13)
+[2018-05-05 18:52:19,811] {base_task_runner.py:95} INFO - Subtask: Total images to be processed are  (0, 9)
+[2018-05-05 18:52:19,811] {base_task_runner.py:95} INFO - Subtask: Initiating Run for scoop scoop_798_848 : DATA SHAPE (80697, 13)
+[2018-05-05 18:52:19,811] {base_task_runner.py:95} INFO - Subtask: Total images to be processed are  (0, 9)
+[2018-05-05 18:52:19,811] {base_task_runner.py:95} INFO - Subtask: Initiating Run for scoop scoop_848_908 : DATA SHAPE (90177, 13)
+[2018-05-05 18:52:19,811] {base_task_runner.py:95} INFO - Subtask: Total images to be processed are  (0, 9)
+[2018-05-05 18:52:19,811] {base_task_runner.py:95} INFO - Subtask: Initiating Run for scoop scoop_908_938 : DATA SHAPE (92080, 13)
+[2018-05-05 18:52:19,811] {base_task_runner.py:95} INFO - Subtask: Total images to be processed are  (0, 9)
+[2018-05-05 18:52:19,811] {base_task_runner.py:95} INFO - Subtask: Initiating Run for scoop scoop_938_968 : DATA SHAPE (91240, 13)
+[2018-05-05 18:52:19,811] {base_task_runner.py:95} INFO - Subtask: Total images to be processed are  (0, 9)
+[2018-05-05 18:52:19,811] {base_task_runner.py:95} INFO - Subtask: Initiating Run for scoop scoop_968_028 : DATA SHAPE (86448, 13)
+[2018-05-05 18:52:19,811] {base_task_runner.py:95} INFO - Subtask: Total images to be processed are  (0, 9)
+[2018-05-05 18:52:19,811] {base_task_runner.py:95} INFO - Subtask: [2018-05-05 18:52:19,810] {python_operator.py:81} INFO - Done. Returned value was: COMPLETE
+[2018-05-05 18:52:19,823] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+[2018-05-05 18:52:19,823] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-05 18:52:20,348] {jobs.py:2155} WARNING - State of this instance has been externally set to success. Taking the poison pill. So long.
+[2018-05-05 18:52:25,350] {jobs.py:2083} INFO - Task exited with return code 0

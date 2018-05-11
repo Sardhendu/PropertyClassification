@@ -1,0 +1,118 @@
+[2018-05-04 16:29:15,485] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-04 16:29:18,526] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline fetch_aerial_cropped_images 2018-05-04T16:28:40.969594 --job_id 29 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-04 16:29:18,901] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:29:18,901] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-04 16:29:19,289] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:29:19,289] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-04 16:29:22,207] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:29:22,207] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_cropped_images 2018-05-04 16:28:40.969594 [queued]>
+[2018-05-04 16:29:22,211] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:29:22,211] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_cropped_images 2018-05-04 16:28:40.969594 [queued]>
+[2018-05-04 16:29:22,212] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:29:22,211] {models.py:1318} INFO - 
+[2018-05-04 16:29:22,212] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-04 16:29:22,212] {base_task_runner.py:95} INFO - Subtask: Starting attempt 1 of 2
+[2018-05-04 16:29:22,212] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-04 16:29:22,212] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-04 16:29:22,220] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:29:22,220] {models.py:1342} INFO - Executing <Task(PythonOperator): fetch_aerial_cropped_images> on 2018-05-04 16:28:40.969594
+[2018-05-04 16:29:22,238] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:29:22,238] {data_load.py:152} INFO - Initiating Aerial Crop ...............................
+[2018-05-04 16:29:22,240] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:29:22,238] {data_load.py:153} INFO - Input data path: /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/jordan/aerial
+[2018-05-04 16:29:22,240] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:29:22,240] {data_load.py:154} INFO - Output data path: /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/jordan/aerial_cropped
+[2018-05-04 16:29:22,241] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:29:22,240] {models.py:1417} ERROR - No objects to concatenate
+[2018-05-04 16:29:22,241] {base_task_runner.py:95} INFO - Subtask: Traceback (most recent call last):
+[2018-05-04 16:29:22,241] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 1374, in run
+[2018-05-04 16:29:22,241] {base_task_runner.py:95} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-05-04 16:29:22,241] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 80, in execute
+[2018-05-04 16:29:22,242] {base_task_runner.py:95} INFO - Subtask:     return_value = self.python_callable(*self.op_args, **self.op_kwargs)
+[2018-05-04 16:29:22,242] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/data_load.py", line 309, in dump_aerial_cropped
+[2018-05-04 16:29:22,242] {base_task_runner.py:95} INFO - Subtask:     obj_cropped.parse_dump_aerial_cropped(condition_apply=True)
+[2018-05-04 16:29:22,242] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/data_load.py", line 158, in parse_dump_aerial_cropped
+[2018-05-04 16:29:22,242] {base_task_runner.py:95} INFO - Subtask:     aerial_stats_data = collateData(self.stats_path)
+[2018-05-04 16:29:22,242] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/data_load.py", line 30, in collateData
+[2018-05-04 16:29:22,242] {base_task_runner.py:95} INFO - Subtask:     return pd.concat(rowList)
+[2018-05-04 16:29:22,242] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/pandas/core/reshape/concat.py", line 206, in concat
+[2018-05-04 16:29:22,242] {base_task_runner.py:95} INFO - Subtask:     copy=copy)
+[2018-05-04 16:29:22,242] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/pandas/core/reshape/concat.py", line 239, in __init__
+[2018-05-04 16:29:22,242] {base_task_runner.py:95} INFO - Subtask:     raise ValueError('No objects to concatenate')
+[2018-05-04 16:29:22,242] {base_task_runner.py:95} INFO - Subtask: ValueError: No objects to concatenate
+[2018-05-04 16:29:22,242] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:29:22,242] {models.py:1433} INFO - Marking task as UP_FOR_RETRY
+[2018-05-04 16:29:22,250] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:29:22,250] {models.py:1462} ERROR - No objects to concatenate
+[2018-05-04 16:29:22,250] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+[2018-05-04 16:29:22,250] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-04 16:29:22,252] {base_task_runner.py:95} INFO - Subtask: Traceback (most recent call last):
+[2018-05-04 16:29:22,252] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/bin/airflow", line 28, in <module>
+[2018-05-04 16:29:22,252] {base_task_runner.py:95} INFO - Subtask:     args.func(args)
+[2018-05-04 16:29:22,252] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/bin/cli.py", line 422, in run
+[2018-05-04 16:29:22,252] {base_task_runner.py:95} INFO - Subtask:     pool=args.pool,
+[2018-05-04 16:29:22,252] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/utils/db.py", line 53, in wrapper
+[2018-05-04 16:29:22,252] {base_task_runner.py:95} INFO - Subtask:     result = func(*args, **kwargs)
+[2018-05-04 16:29:22,252] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 1374, in run
+[2018-05-04 16:29:22,252] {base_task_runner.py:95} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-05-04 16:29:22,252] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 80, in execute
+[2018-05-04 16:29:22,252] {base_task_runner.py:95} INFO - Subtask:     return_value = self.python_callable(*self.op_args, **self.op_kwargs)
+[2018-05-04 16:29:22,253] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/data_load.py", line 309, in dump_aerial_cropped
+[2018-05-04 16:29:22,253] {base_task_runner.py:95} INFO - Subtask:     obj_cropped.parse_dump_aerial_cropped(condition_apply=True)
+[2018-05-04 16:29:22,253] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/data_load.py", line 158, in parse_dump_aerial_cropped
+[2018-05-04 16:29:22,253] {base_task_runner.py:95} INFO - Subtask:     aerial_stats_data = collateData(self.stats_path)
+[2018-05-04 16:29:22,253] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/data_load.py", line 30, in collateData
+[2018-05-04 16:29:22,253] {base_task_runner.py:95} INFO - Subtask:     return pd.concat(rowList)
+[2018-05-04 16:29:22,253] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/pandas/core/reshape/concat.py", line 206, in concat
+[2018-05-04 16:29:22,253] {base_task_runner.py:95} INFO - Subtask:     copy=copy)
+[2018-05-04 16:29:22,253] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/pandas/core/reshape/concat.py", line 239, in __init__
+[2018-05-04 16:29:22,253] {base_task_runner.py:95} INFO - Subtask:     raise ValueError('No objects to concatenate')
+[2018-05-04 16:29:22,253] {base_task_runner.py:95} INFO - Subtask: ValueError: No objects to concatenate
+[2018-05-04 16:29:23,532] {jobs.py:2083} INFO - Task exited with return code 1
+[2018-05-04 16:31:35,462] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-04 16:31:38,368] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline fetch_aerial_cropped_images 2018-05-04T16:28:40.969594 --job_id 30 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-04 16:31:38,707] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:31:38,707] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-04 16:31:39,098] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:31:39,098] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-04 16:31:42,018] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:31:42,018] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_cropped_images 2018-05-04 16:28:40.969594 [queued]>
+[2018-05-04 16:31:42,023] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:31:42,023] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_cropped_images 2018-05-04 16:28:40.969594 [queued]>
+[2018-05-04 16:31:42,023] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:31:42,023] {models.py:1318} INFO - 
+[2018-05-04 16:31:42,023] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-04 16:31:42,023] {base_task_runner.py:95} INFO - Subtask: Starting attempt 2 of 2
+[2018-05-04 16:31:42,023] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-04 16:31:42,023] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-04 16:31:42,032] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:31:42,032] {models.py:1342} INFO - Executing <Task(PythonOperator): fetch_aerial_cropped_images> on 2018-05-04 16:28:40.969594
+[2018-05-04 16:31:42,051] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:31:42,051] {data_load.py:152} INFO - Initiating Aerial Crop ...............................
+[2018-05-04 16:31:42,053] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:31:42,051] {data_load.py:153} INFO - Input data path: /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/jordan/aerial
+[2018-05-04 16:31:42,053] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:31:42,053] {data_load.py:154} INFO - Output data path: /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/jordan/aerial_cropped
+[2018-05-04 16:31:42,054] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:31:42,053] {models.py:1417} ERROR - No objects to concatenate
+[2018-05-04 16:31:42,054] {base_task_runner.py:95} INFO - Subtask: Traceback (most recent call last):
+[2018-05-04 16:31:42,054] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 1374, in run
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 80, in execute
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask:     return_value = self.python_callable(*self.op_args, **self.op_kwargs)
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/data_load.py", line 309, in dump_aerial_cropped
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask:     obj_cropped.parse_dump_aerial_cropped(condition_apply=True)
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/data_load.py", line 158, in parse_dump_aerial_cropped
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask:     aerial_stats_data = collateData(self.stats_path)
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/data_load.py", line 30, in collateData
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask:     return pd.concat(rowList)
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/pandas/core/reshape/concat.py", line 206, in concat
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask:     copy=copy)
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/pandas/core/reshape/concat.py", line 239, in __init__
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask:     raise ValueError('No objects to concatenate')
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask: ValueError: No objects to concatenate
+[2018-05-04 16:31:42,055] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:31:42,055] {models.py:1439} INFO - All retries failed; marking task as FAILED
+[2018-05-04 16:31:42,063] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 16:31:42,063] {models.py:1462} ERROR - No objects to concatenate
+[2018-05-04 16:31:42,063] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+[2018-05-04 16:31:42,063] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-04 16:31:42,065] {base_task_runner.py:95} INFO - Subtask: Traceback (most recent call last):
+[2018-05-04 16:31:42,065] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/bin/airflow", line 28, in <module>
+[2018-05-04 16:31:42,065] {base_task_runner.py:95} INFO - Subtask:     args.func(args)
+[2018-05-04 16:31:42,065] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/bin/cli.py", line 422, in run
+[2018-05-04 16:31:42,065] {base_task_runner.py:95} INFO - Subtask:     pool=args.pool,
+[2018-05-04 16:31:42,065] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/utils/db.py", line 53, in wrapper
+[2018-05-04 16:31:42,065] {base_task_runner.py:95} INFO - Subtask:     result = func(*args, **kwargs)
+[2018-05-04 16:31:42,065] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 1374, in run
+[2018-05-04 16:31:42,065] {base_task_runner.py:95} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-05-04 16:31:42,065] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 80, in execute
+[2018-05-04 16:31:42,065] {base_task_runner.py:95} INFO - Subtask:     return_value = self.python_callable(*self.op_args, **self.op_kwargs)
+[2018-05-04 16:31:42,065] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/data_load.py", line 309, in dump_aerial_cropped
+[2018-05-04 16:31:42,065] {base_task_runner.py:95} INFO - Subtask:     obj_cropped.parse_dump_aerial_cropped(condition_apply=True)
+[2018-05-04 16:31:42,066] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/data_load.py", line 158, in parse_dump_aerial_cropped
+[2018-05-04 16:31:42,066] {base_task_runner.py:95} INFO - Subtask:     aerial_stats_data = collateData(self.stats_path)
+[2018-05-04 16:31:42,066] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/All-Program/App/PropertyClassification/jobs/data_load.py", line 30, in collateData
+[2018-05-04 16:31:42,066] {base_task_runner.py:95} INFO - Subtask:     return pd.concat(rowList)
+[2018-05-04 16:31:42,066] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/pandas/core/reshape/concat.py", line 206, in concat
+[2018-05-04 16:31:42,066] {base_task_runner.py:95} INFO - Subtask:     copy=copy)
+[2018-05-04 16:31:42,066] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/pandas/core/reshape/concat.py", line 239, in __init__
+[2018-05-04 16:31:42,066] {base_task_runner.py:95} INFO - Subtask:     raise ValueError('No objects to concatenate')
+[2018-05-04 16:31:42,066] {base_task_runner.py:95} INFO - Subtask: ValueError: No objects to concatenate
+[2018-05-04 16:31:43,373] {jobs.py:2083} INFO - Task exited with return code 1

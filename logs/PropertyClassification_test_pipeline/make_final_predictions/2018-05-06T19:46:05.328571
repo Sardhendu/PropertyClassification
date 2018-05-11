@@ -1,0 +1,19 @@
+[2018-05-06 19:58:21,288] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-06 19:58:24,890] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline make_final_predictions 2018-05-06T19:46:05.328571 --job_id 128 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-06 19:58:25,225] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:58:25,225] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-06 19:58:25,616] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:58:25,616] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-06 19:58:28,614] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:58:28,613] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.make_final_predictions 2018-05-06 19:46:05.328571 [queued]>
+[2018-05-06 19:58:28,618] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:58:28,618] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.make_final_predictions 2018-05-06 19:46:05.328571 [queued]>
+[2018-05-06 19:58:28,618] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:58:28,618] {models.py:1318} INFO - 
+[2018-05-06 19:58:28,618] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-06 19:58:28,618] {base_task_runner.py:95} INFO - Subtask: Starting attempt 1 of 2
+[2018-05-06 19:58:28,618] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-06 19:58:28,618] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-06 19:58:28,628] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:58:28,628] {models.py:1342} INFO - Executing <Task(PythonOperator): make_final_predictions> on 2018-05-06 19:46:05.328571
+[2018-05-06 19:58:28,733] {base_task_runner.py:95} INFO - Subtask: Checkpoint LISTS .. %s ['resnet_epoch_16_batch_69', 'resnet_epoch_16_batch_59', 'resnet_epoch_17_batch_59', 'resnet_epoch_15_batch_70', 'resnet_epoch_16_batch_70']
+[2018-05-06 19:58:28,733] {base_task_runner.py:95} INFO - Subtask: pred_stats.shape = (830, 6), meta_stats.shape = (166, 5)
+[2018-05-06 19:58:28,733] {base_task_runner.py:95} INFO - Subtask: The accuracy using predictions from multiple checkpoint is:  0.89156626506
+[2018-05-06 19:58:28,733] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:58:28,733] {python_operator.py:81} INFO - Done. Returned value was: COMPLETE
+[2018-05-06 19:58:28,745] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+[2018-05-06 19:58:28,746] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-06 19:58:29,895] {jobs.py:2083} INFO - Task exited with return code 0

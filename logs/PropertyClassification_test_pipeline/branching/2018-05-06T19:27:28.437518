@@ -1,0 +1,77 @@
+[2018-05-06 19:38:21,751] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-06 19:38:24,773] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline branching 2018-05-06T19:27:28.437518 --job_id 99 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-06 19:38:25,105] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:38:25,105] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-06 19:38:25,499] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:38:25,498] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-06 19:38:28,474] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:38:28,474] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-06 19:27:28.437518 [queued]>
+[2018-05-06 19:38:28,479] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:38:28,478] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-06 19:27:28.437518 [queued]>
+[2018-05-06 19:38:28,479] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:38:28,479] {models.py:1318} INFO - 
+[2018-05-06 19:38:28,479] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-06 19:38:28,479] {base_task_runner.py:95} INFO - Subtask: Starting attempt 1 of 2
+[2018-05-06 19:38:28,479] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-06 19:38:28,479] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-06 19:38:28,488] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:38:28,487] {models.py:1342} INFO - Executing <Task(BranchPythonOperator): branching> on 2018-05-06 19:27:28.437518
+[2018-05-06 19:38:28,495] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:38:28,495] {python_operator.py:81} INFO - Done. Returned value was: <Task(BranchPythonOperator): create_aerial_cropped_images>
+[2018-05-06 19:38:28,495] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:38:28,495] {models.py:1417} ERROR - Can't convert 'BranchPythonOperator' object to str implicitly
+[2018-05-06 19:38:28,495] {base_task_runner.py:95} INFO - Subtask: Traceback (most recent call last):
+[2018-05-06 19:38:28,495] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 1374, in run
+[2018-05-06 19:38:28,495] {base_task_runner.py:95} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-05-06 19:38:28,495] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 106, in execute
+[2018-05-06 19:38:28,496] {base_task_runner.py:95} INFO - Subtask:     logging.info("Following branch " + branch)
+[2018-05-06 19:38:28,496] {base_task_runner.py:95} INFO - Subtask: TypeError: Can't convert 'BranchPythonOperator' object to str implicitly
+[2018-05-06 19:38:28,496] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:38:28,495] {models.py:1433} INFO - Marking task as UP_FOR_RETRY
+[2018-05-06 19:38:28,503] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:38:28,503] {models.py:1462} ERROR - Can't convert 'BranchPythonOperator' object to str implicitly
+[2018-05-06 19:38:28,503] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+[2018-05-06 19:38:28,503] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-06 19:38:28,504] {base_task_runner.py:95} INFO - Subtask: Traceback (most recent call last):
+[2018-05-06 19:38:28,504] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/bin/airflow", line 28, in <module>
+[2018-05-06 19:38:28,504] {base_task_runner.py:95} INFO - Subtask:     args.func(args)
+[2018-05-06 19:38:28,504] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/bin/cli.py", line 422, in run
+[2018-05-06 19:38:28,504] {base_task_runner.py:95} INFO - Subtask:     pool=args.pool,
+[2018-05-06 19:38:28,504] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/utils/db.py", line 53, in wrapper
+[2018-05-06 19:38:28,504] {base_task_runner.py:95} INFO - Subtask:     result = func(*args, **kwargs)
+[2018-05-06 19:38:28,505] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 1374, in run
+[2018-05-06 19:38:28,505] {base_task_runner.py:95} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-05-06 19:38:28,505] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 106, in execute
+[2018-05-06 19:38:28,505] {base_task_runner.py:95} INFO - Subtask:     logging.info("Following branch " + branch)
+[2018-05-06 19:38:28,505] {base_task_runner.py:95} INFO - Subtask: TypeError: Can't convert 'BranchPythonOperator' object to str implicitly
+[2018-05-06 19:38:29,780] {jobs.py:2083} INFO - Task exited with return code 1
+[2018-05-06 19:41:13,858] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-06 19:41:16,999] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline branching 2018-05-06T19:27:28.437518 --job_id 103 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-06 19:41:17,321] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:41:17,321] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-06 19:41:17,720] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:41:17,720] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-06 19:41:20,662] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:41:20,662] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-06 19:27:28.437518 [queued]>
+[2018-05-06 19:41:20,667] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:41:20,667] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-06 19:27:28.437518 [queued]>
+[2018-05-06 19:41:20,667] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:41:20,667] {models.py:1318} INFO - 
+[2018-05-06 19:41:20,667] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-06 19:41:20,667] {base_task_runner.py:95} INFO - Subtask: Starting attempt 2 of 2
+[2018-05-06 19:41:20,667] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-06 19:41:20,667] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-06 19:41:20,676] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:41:20,676] {models.py:1342} INFO - Executing <Task(BranchPythonOperator): branching> on 2018-05-06 19:27:28.437518
+[2018-05-06 19:41:20,684] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:41:20,684] {models.py:1417} ERROR - 'BranchPythonOperator' object is not callable
+[2018-05-06 19:41:20,684] {base_task_runner.py:95} INFO - Subtask: Traceback (most recent call last):
+[2018-05-06 19:41:20,684] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 1374, in run
+[2018-05-06 19:41:20,684] {base_task_runner.py:95} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-05-06 19:41:20,684] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 105, in execute
+[2018-05-06 19:41:20,685] {base_task_runner.py:95} INFO - Subtask:     branch = super(BranchPythonOperator, self).execute(context)
+[2018-05-06 19:41:20,685] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 80, in execute
+[2018-05-06 19:41:20,685] {base_task_runner.py:95} INFO - Subtask:     return_value = self.python_callable(*self.op_args, **self.op_kwargs)
+[2018-05-06 19:41:20,685] {base_task_runner.py:95} INFO - Subtask: TypeError: 'BranchPythonOperator' object is not callable
+[2018-05-06 19:41:20,685] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:41:20,684] {models.py:1439} INFO - All retries failed; marking task as FAILED
+[2018-05-06 19:41:20,691] {base_task_runner.py:95} INFO - Subtask: [2018-05-06 19:41:20,691] {models.py:1462} ERROR - 'BranchPythonOperator' object is not callable
+[2018-05-06 19:41:20,691] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+[2018-05-06 19:41:20,691] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-06 19:41:20,692] {base_task_runner.py:95} INFO - Subtask: Traceback (most recent call last):
+[2018-05-06 19:41:20,692] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/bin/airflow", line 28, in <module>
+[2018-05-06 19:41:20,692] {base_task_runner.py:95} INFO - Subtask:     args.func(args)
+[2018-05-06 19:41:20,692] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/bin/cli.py", line 422, in run
+[2018-05-06 19:41:20,692] {base_task_runner.py:95} INFO - Subtask:     pool=args.pool,
+[2018-05-06 19:41:20,692] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/utils/db.py", line 53, in wrapper
+[2018-05-06 19:41:20,692] {base_task_runner.py:95} INFO - Subtask:     result = func(*args, **kwargs)
+[2018-05-06 19:41:20,692] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 1374, in run
+[2018-05-06 19:41:20,692] {base_task_runner.py:95} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-05-06 19:41:20,692] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 105, in execute
+[2018-05-06 19:41:20,692] {base_task_runner.py:95} INFO - Subtask:     branch = super(BranchPythonOperator, self).execute(context)
+[2018-05-06 19:41:20,692] {base_task_runner.py:95} INFO - Subtask:   File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/operators/python_operator.py", line 80, in execute
+[2018-05-06 19:41:20,693] {base_task_runner.py:95} INFO - Subtask:     return_value = self.python_callable(*self.op_args, **self.op_kwargs)
+[2018-05-06 19:41:20,693] {base_task_runner.py:95} INFO - Subtask: TypeError: 'BranchPythonOperator' object is not callable
+[2018-05-06 19:41:22,009] {jobs.py:2083} INFO - Task exited with return code 1
