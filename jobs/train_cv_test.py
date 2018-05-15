@@ -1,4 +1,3 @@
-
 import os
 import numpy as np
 import pandas as pd
@@ -214,6 +213,9 @@ def predictions(**kwargs):
     if 'which_net' not in inp_params.keys():
         raise ValueError('You should provide, which net to use')
     
+    if 'classification_threshold' not in inp_params.keys():
+        raise ValueError('Provide the Classification threshold for classification range: (0 to 1), best : 0.68')
+    
     if 'use_checkpoint_for_prediction' not in inp_params.keys():
         raise ValueError('You should provide, whether you want prediction based on "all" checkpoints or "max"')
 
@@ -223,6 +225,7 @@ def predictions(**kwargs):
                                    inp_params['use_checkpoint_for_imageType'], inp_params['which_net'])
     
     get_predictions_using_multiple_checkpoints(conf, which_data='test_new', checkpoint_path=checkpoint_path,
-                                               use_checkpoint_for_prediction='all')
+                                               use_checkpoint_for_prediction='all',
+                                               threshold=inp_params['classification_threshold'])
     return 'COMPLETE'
     

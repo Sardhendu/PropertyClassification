@@ -162,6 +162,8 @@ def get_cropped_bbox(parcels_in_image, tl_pxl, img, zoom=19, map_size=[400,400])
     '''
     obj_ll_to_pxl = lonlatToPixel(zoom=zoom)
     for parcel_id, polygon_geom in np.array(parcels_in_image[['parcel_id', 'geometry']]):
+        
+        # FOR THE CENTER POINT (CENTER OF THE BOUNDARY)
         center_of_polygon = polygon_geom.centroid.coords.xy
         lon_cent, lat_cent = list(center_of_polygon[0])[0], list(center_of_polygon[1])[0]
         mx_cent, my_cent = obj_ll_to_pxl.lonlat_to_meters(lon_cent, lat_cent)
@@ -169,6 +171,7 @@ def get_cropped_bbox(parcels_in_image, tl_pxl, img, zoom=19, map_size=[400,400])
         img_x_cent, img_y_cent = obj_ll_to_pxl.convert_map_pxl_to_img_pxl(tl_pxl, [px_cent, py_cent], map_size=map_size)
         img_x_cent, img_y_cent = int(round(img_x_cent)), int(round(img_y_cent))
         
+        # FOR THE EXTERIOR POINTS (BOUNDARY POINTS OF THE POLYGON)
         points_tuple = polygon_geom.exterior.coords.xy
         lon_arr, lat_arr = list(points_tuple[0]), list(points_tuple[1])
         parcel_xy_arr = []
@@ -183,6 +186,7 @@ def get_cropped_bbox(parcels_in_image, tl_pxl, img, zoom=19, map_size=[400,400])
         parcel_xy_arr = np.array(parcel_xy_arr, dtype=int)
         # print(parcel_xy_arr)
         
+        # GET THE LENGTH OF THE PROPERTY TO AUGMENT THE CROPPED REGION USING THE ASPECT RATIO
         min_x, min_y = min(parcel_xy_arr[:,0]), min(parcel_xy_arr[:,1])
         max_x, max_y = max(parcel_xy_arr[:, 0]), max(parcel_xy_arr[:, 1])
         legth_property = max_x - min_x
@@ -207,11 +211,21 @@ def overlay_parcel_on_images(conf, data_to_model, aerial_img_path, overlaid_img_
     :param data_to_model:
     :return:
     
-    Step 1: Load the csv file that contains the google download information such as pin, lat, lon, indicator. This file is created while downloading google static images. For a given scoop extract all the records with lat lon within that scoop
-    Step 2: Load the property shape file for that scoop.
-    Step 3: Iterate through each record.
-            Step 3.1: Load the image from disk or specified path
-            Step 3.2: For that image get the corner pixels
+    Step 1: Load the csv file that contains the google downloaded information such as pin, lat, lon, indicator. This
+    file is created while downloading google static images. For a given scoop extract all the records with lat lon within that scoop
+    Step 2: Iterate over all "larger scoop"
+            Step 2.1: Load all the properties in the "larger scoop"., For example: '41.738, -87.803, 41.768, -87.510'.
+            Step 2.2: Fetch all the property images from teh disk that belongs to the scoop. For example: '41.738, -87.803, 41.768, -87.510'.
+            Step 2.3: Iterate through each image.
+                    Step 2.3.1: Load the image from disk
+                    Step 2.3.2: We have the center lat-lon of the image
+                    Step 2.3.3: For that image get the corner pixels values and corner lat-lon values.
+                    Step 2.3.4: Initiate another scoop search based on the center lat-lon of the image
+                    Step 2.3.5: Get all the building polygons from the scoop that were found to be under the image
+                    corner. Basically check if the lat-lon of the building polygon center is within the lat-lon of
+                    the image corner.
+                    Step 2.3.6: For all building polygons present inside the image corner, convert the lat-lon into
+                    meters and meters into pixels and color the polygon_pixels as red
     '''
     
     aerial_land_path =  os.path.join(aerial_img_path, 'land')
@@ -276,8 +290,8 @@ def overlay_parcel_on_images(conf, data_to_model, aerial_img_path, overlaid_img_
             image_polygon, tl_pxl = image_corner_polygon_wraper(lat, lon, zoom)
             # print(image_polygon)
             
-            scoop_lon, scooop_lat = utl.getscoopLonLat(lonIN=lon, latIN=lat, decimalPlaces=1000)
-            scoop_latlon = utl.getscoopSearchItems(scoopLon=scoop_lon, scoopLat=scooop_lat, decimalPlaces=1000)
+            scoop_lon, scoop_lat = utl.getscoopLonLat(lonIN=lon, latIN=lat, decimalPlaces=1000)
+            scoop_latlon = utl.getscoopSearchItems(scoopLon=scoop_lon, scoopLat=scoop_lat, decimalPlaces=1000)
             
             search_polygons = get_search_polygons(property_parcel, scoop_latlon)
             # print(search_polygons.shape)
@@ -301,17 +315,22 @@ def overlay_parcel_on_images(conf, data_to_model, aerial_img_path, overlaid_img_
 
 def crop_parcel_from_images(conf, data_to_model, aerial_img_path, aerial_cropped_img_path, zoom, map_size):
     '''
-
-    :param data_to_model:
-    :return:
-
-    Step 1: Load the csv file that contains the google download information such as pin, lat, lon, indicator. This
-    file is created while downloading google static images. For a given scoop extract all the records with lat lon
-    within that scoop
-    Step 2: Load the property shape file for that scoop.
-    Step 3: Iterate through each record.
-            Step 3.1: Load the image from disk or specified path
-            Step 3.2: For that image get the corner pixels
+    Step 1: Load the csv file that contains the google downloaded information such as pin, lat, lon, indicator. This
+    file is created while downloading google static images. For a given scoop extract all the records with lat lon within that scoop
+    Step 2: Iterate over all "larger scoop"
+            Step 2.1: Load all the properties in the "larger scoop"., For example: '41.738, -87.803, 41.768, -87.510'.
+            Step 2.2: Fetch all the property images from teh disk that belongs to the scoop. For example: '41.738, -87.803, 41.768, -87.510'.
+            Step 2.3: Iterate through each image.
+                    Step 2.3.1: Load the image from disk
+                    Step 2.3.2: We have the center lat-lon of the image
+                    Step 2.3.3: For that image get the corner pixels values and corner lat-lon values.
+                    Step 2.3.4: Initiate another scoop search based on the center lat-lon of the image
+                    Step 2.3.5: Get all the building polygons from the scoop that were found to be under the image
+                    corner. Basically check if the lat-lon of the building polygon center is within the lat-lon of
+                    the image corner.
+                    Step 2.3.6: For all building polygons present inside the image corner, check which building
+                    polygon contains the center of the image. If found then crop and augment the center of the image
+                    with the aspect ratio.
     '''
     aerial_land_path = os.path.join(aerial_img_path, 'land')
     aerial_house_path = os.path.join(aerial_img_path, 'house')
@@ -373,8 +392,8 @@ def crop_parcel_from_images(conf, data_to_model, aerial_img_path, aerial_cropped
             # print(image_polygon)
             
 
-            scoop_lon, scooop_lat = utl.getscoopLonLat(lonIN=lon, latIN=lat, decimalPlaces=1000)
-            scoop_latlon = [[scoop_lon, scooop_lat]]#utl.getscoopSearchItems(scoopLon=scoop_lon, scoopLat=scooop_lat,
+            scoop_lon, scoop_lat = utl.getscoopLonLat(lonIN=lon, latIN=lat, decimalPlaces=1000)
+            scoop_latlon = [[scoop_lon, scoop_lat]]#utl.getscoopSearchItems(scoopLon=scoop_lon, scoopLat=scoop_lat,
                             # decimalPlaces=1000)
             # print (scoop_latlon)
 

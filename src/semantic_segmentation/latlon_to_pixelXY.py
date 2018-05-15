@@ -28,7 +28,6 @@ class lonlatToPixel():
     
         return lon_cnvrt, lat_cnvrt
 
-
     def lonlat_to_meters(self,lon,lat):
         '''
         :param lat: Center lat value
@@ -48,7 +47,6 @@ class lonlatToPixel():
         # print (mx, my)
         return mx, my
     
-    
     def meters_to_pixels(self, mx, my):
         '''
         :param mx:   Input ESPG projection of Longitude
@@ -61,7 +59,6 @@ class lonlatToPixel():
         px = (mx + self.origin_shift) / res
         py = (my + self.origin_shift) / res
         return px, py
-    
     
     def pixels_to_meters(self, px, py):
         # print ('px, py: ', px, py)
@@ -101,7 +98,6 @@ class lonlatToPixel():
             return x, y
         else:
             return min(map_size[1], max(int(round(x)), 0)), min(map_size[0], max(int(round(y)), 0))
-
 
     def convert_map_pxl_to_img_pxl(self, pxl_at_corner00, to_convert_pxl, map_size=[400,400]):
         '''

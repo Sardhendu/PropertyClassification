@@ -175,7 +175,7 @@ def get_misclassified_images(which_data, input_img_path, input_stats_path, check
     return concat_meta_pred_data, mislabeled_data, land_mis_pins_path, house_mis_pins_path, land_title_arr, house_title_arr
 
 
-def get_predictions_using_multiple_checkpoints(conf, which_data, checkpoint_path, use_checkpoint_for_prediction):
+def get_predictions_using_multiple_checkpoints(conf, which_data, checkpoint_path, use_checkpoint_for_prediction, threshold):
     ## GET CHECKPOINTS
     checkpoints = [str(filename.split('.')[0]) for filename in os.listdir(checkpoint_path)
                    if filename.endswith('meta')]
@@ -201,7 +201,7 @@ def get_predictions_using_multiple_checkpoints(conf, which_data, checkpoint_path
     
     ## GET THE COMBINED DATA
     obj_ms = GetPrediction_N_Mislabels(conf, which_data=which_data, inp_img_path=None, inp_stats_path=None)
-    obj_ms.reform_labels_matrix_on_threshold(threshold = 0.68)
+    obj_ms.reform_labels_matrix_on_threshold(threshold = threshold)
     meta_join_pred = obj_ms.concat_meta_n_pred_stats(checkpoint_arr, which_data)
     
     ## GET THE PREDICTION SUPPORTED BY MOST CHECKPOINTS

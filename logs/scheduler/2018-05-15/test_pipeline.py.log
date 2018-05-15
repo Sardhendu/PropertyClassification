@@ -1,0 +1,503 @@
+[2018-05-15 14:13:47,556] {jobs.py:343} DagFileProcessor1 INFO - Started process (PID=14412) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:13:47,561] {jobs.py:534} DagFileProcessor1 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 14:13:47,563] {jobs.py:1521} DagFileProcessor1 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 14:13:47,563] {models.py:167} DagFileProcessor1 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:13:50,873] {jobs.py:1535} DagFileProcessor1 INFO - DAG(s) dict_keys(['example_bash_operator', 'latest_only_with_trigger', 'example_subdag_operator.section-2', 'example_python_operator', 'example_subdag_operator', 'example_trigger_controller_dag', 'PropertyClassification_test_pipeline', 'example_trigger_target_dag', 'tutorial', 'example_passing_params_via_test_command', 'example_skip_dag', 'latest_only', 'example_short_circuit_operator', 'example_subdag_operator.section-1', 'test_utils', 'example_branch_operator', 'example_branch_dop_operator_v3', 'example_xcom', 'example_http_operator']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:13:51,009] {jobs.py:1169} DagFileProcessor1 INFO - Processing PropertyClassification_test_pipeline
+[2018-05-15 14:13:51,040] {jobs.py:1173} DagFileProcessor1 INFO - Created <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False>
+[2018-05-15 14:13:51,042] {jobs.py:860} DagFileProcessor1 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False>
+[2018-05-15 14:13:51,048] {models.py:4024} DagFileProcessor1 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False> considering 11 task(s)
+[2018-05-15 14:13:51,053] {jobs.py:860} DagFileProcessor1 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True>
+[2018-05-15 14:13:51,059] {models.py:4024} DagFileProcessor1 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True> considering 9 task(s)
+[2018-05-15 14:13:51,065] {jobs.py:860} DagFileProcessor1 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False>
+[2018-05-15 14:13:51,070] {models.py:4024} DagFileProcessor1 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False> considering 9 task(s)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+  for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-15 14:13:51,086] {jobs.py:860} DagFileProcessor1 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True>
+[2018-05-15 14:13:51,092] {models.py:4024} DagFileProcessor1 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True> considering 9 task(s)
+[2018-05-15 14:13:51,180] {jobs.py:566} DagFileProcessor1 INFO - Skipping SLA check for <DAG: PropertyClassification_test_pipeline> because no tasks in DAG have SLAs
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py:1140: PendingDeprecationWarning: generator 'get_dep_statuses' raised StopIteration
+  dep_context):
+[2018-05-15 14:13:51,191] {models.py:1126} DagFileProcessor1 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-07 00:00:00 [None]>
+[2018-05-15 14:13:51,192] {jobs.py:1608} DagFileProcessor1 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-07 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:13:51,200] {models.py:1126} DagFileProcessor1 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-07 03:23:05.428424 [up_for_retry]>
+[2018-05-15 14:13:51,201] {jobs.py:1608} DagFileProcessor1 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-07 03:23:05.428424 [scheduled]> in ORM
+[2018-05-15 14:13:51,218] {models.py:322} DagFileProcessor1 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 14:13:51,218] {models.py:328} DagFileProcessor1 INFO - Failing jobs without heartbeat after 2018-05-15 14:08:51.218770
+[2018-05-15 14:13:51,222] {jobs.py:351} DagFileProcessor1 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 3.666 seconds
+[2018-05-15 14:18:31,455] {jobs.py:343} DagFileProcessor3 INFO - Started process (PID=14562) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:18:31,460] {jobs.py:534} DagFileProcessor3 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 14:18:31,462] {jobs.py:1521} DagFileProcessor3 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 14:18:31,462] {models.py:167} DagFileProcessor3 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:18:34,677] {jobs.py:1535} DagFileProcessor3 INFO - DAG(s) dict_keys(['example_bash_operator', 'latest_only_with_trigger', 'example_subdag_operator.section-2', 'example_python_operator', 'example_subdag_operator', 'example_trigger_controller_dag', 'PropertyClassification_test_pipeline', 'example_trigger_target_dag', 'tutorial', 'example_passing_params_via_test_command', 'example_skip_dag', 'latest_only', 'example_short_circuit_operator', 'example_subdag_operator.section-1', 'test_utils', 'example_branch_operator', 'example_branch_dop_operator_v3', 'example_xcom', 'example_http_operator']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:18:34,809] {jobs.py:1169} DagFileProcessor3 INFO - Processing PropertyClassification_test_pipeline
+[2018-05-15 14:18:34,842] {jobs.py:1173} DagFileProcessor3 INFO - Created <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False>
+[2018-05-15 14:18:34,844] {jobs.py:860} DagFileProcessor3 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False>
+[2018-05-15 14:18:34,850] {models.py:4024} DagFileProcessor3 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False> considering 11 task(s)
+[2018-05-15 14:18:34,854] {jobs.py:860} DagFileProcessor3 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True>
+[2018-05-15 14:18:34,859] {models.py:4024} DagFileProcessor3 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True> considering 9 task(s)
+[2018-05-15 14:18:34,864] {jobs.py:860} DagFileProcessor3 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False>
+[2018-05-15 14:18:34,869] {models.py:4024} DagFileProcessor3 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False> considering 9 task(s)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+  for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-15 14:18:34,900] {jobs.py:860} DagFileProcessor3 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True>
+[2018-05-15 14:18:34,905] {models.py:4024} DagFileProcessor3 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True> considering 9 task(s)
+[2018-05-15 14:18:34,913] {jobs.py:860} DagFileProcessor3 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False>
+[2018-05-15 14:18:34,918] {models.py:4024} DagFileProcessor3 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:18:35,006] {jobs.py:566} DagFileProcessor3 INFO - Skipping SLA check for <DAG: PropertyClassification_test_pipeline> because no tasks in DAG have SLAs
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py:1140: PendingDeprecationWarning: generator 'get_dep_statuses' raised StopIteration
+  dep_context):
+[2018-05-15 14:18:35,021] {models.py:1126} DagFileProcessor3 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-07 00:00:00 [None]>
+[2018-05-15 14:18:35,021] {jobs.py:1608} DagFileProcessor3 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-07 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:18:35,030] {models.py:1126} DagFileProcessor3 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-07 03:23:05.428424 [None]>
+[2018-05-15 14:18:35,030] {jobs.py:1608} DagFileProcessor3 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-07 03:23:05.428424 [scheduled]> in ORM
+[2018-05-15 14:18:35,038] {models.py:1126} DagFileProcessor3 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-08 00:00:00 [None]>
+[2018-05-15 14:18:35,038] {jobs.py:1608} DagFileProcessor3 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-08 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:18:35,052] {models.py:322} DagFileProcessor3 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 14:18:35,053] {models.py:328} DagFileProcessor3 INFO - Failing jobs without heartbeat after 2018-05-15 14:13:35.052925
+[2018-05-15 14:18:35,057] {jobs.py:351} DagFileProcessor3 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 3.602 seconds
+[2018-05-15 14:19:13,936] {jobs.py:343} DagFileProcessor5 INFO - Started process (PID=14628) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:19:13,941] {jobs.py:534} DagFileProcessor5 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 14:19:13,942] {jobs.py:1521} DagFileProcessor5 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 14:19:13,943] {models.py:167} DagFileProcessor5 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:19:17,027] {jobs.py:1535} DagFileProcessor5 INFO - DAG(s) dict_keys(['example_bash_operator', 'latest_only_with_trigger', 'example_subdag_operator.section-2', 'example_python_operator', 'example_subdag_operator', 'example_trigger_controller_dag', 'PropertyClassification_test_pipeline', 'example_trigger_target_dag', 'tutorial', 'example_passing_params_via_test_command', 'example_skip_dag', 'latest_only', 'example_short_circuit_operator', 'example_subdag_operator.section-1', 'test_utils', 'example_branch_operator', 'example_branch_dop_operator_v3', 'example_xcom', 'example_http_operator']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:19:17,154] {jobs.py:1169} DagFileProcessor5 INFO - Processing PropertyClassification_test_pipeline
+[2018-05-15 14:19:17,189] {jobs.py:1173} DagFileProcessor5 INFO - Created <DagRun PropertyClassification_test_pipeline @ 2018-05-09 00:00:00: scheduled__2018-05-09T00:00:00, externally triggered: False>
+[2018-05-15 14:19:17,191] {jobs.py:860} DagFileProcessor5 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False>
+[2018-05-15 14:19:17,197] {models.py:4024} DagFileProcessor5 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False> considering 11 task(s)
+[2018-05-15 14:19:17,202] {jobs.py:860} DagFileProcessor5 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True>
+[2018-05-15 14:19:17,207] {models.py:4024} DagFileProcessor5 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True> considering 9 task(s)
+[2018-05-15 14:19:17,211] {jobs.py:860} DagFileProcessor5 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False>
+[2018-05-15 14:19:17,216] {models.py:4024} DagFileProcessor5 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False> considering 9 task(s)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+  for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-15 14:19:17,224] {jobs.py:860} DagFileProcessor5 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True>
+[2018-05-15 14:19:17,229] {models.py:4024} DagFileProcessor5 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True> considering 9 task(s)
+[2018-05-15 14:19:17,239] {jobs.py:860} DagFileProcessor5 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False>
+[2018-05-15 14:19:17,245] {models.py:4024} DagFileProcessor5 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:19:17,271] {jobs.py:860} DagFileProcessor5 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-09 00:00:00: scheduled__2018-05-09T00:00:00, externally triggered: False>
+[2018-05-15 14:19:17,276] {models.py:4024} DagFileProcessor5 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-09 00:00:00: scheduled__2018-05-09T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:19:17,381] {jobs.py:566} DagFileProcessor5 INFO - Skipping SLA check for <DAG: PropertyClassification_test_pipeline> because no tasks in DAG have SLAs
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py:1140: PendingDeprecationWarning: generator 'get_dep_statuses' raised StopIteration
+  dep_context):
+[2018-05-15 14:19:17,395] {models.py:1126} DagFileProcessor5 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-07 00:00:00 [None]>
+[2018-05-15 14:19:17,396] {jobs.py:1608} DagFileProcessor5 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-07 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:19:17,402] {models.py:1126} DagFileProcessor5 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_aerial_cropped_images 2018-05-07 03:23:05.428424 [None]>
+[2018-05-15 14:19:17,402] {jobs.py:1608} DagFileProcessor5 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.create_aerial_cropped_images 2018-05-07 03:23:05.428424 [scheduled]> in ORM
+[2018-05-15 14:19:17,408] {models.py:1126} DagFileProcessor5 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-08 00:00:00 [None]>
+[2018-05-15 14:19:17,409] {jobs.py:1608} DagFileProcessor5 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-08 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:19:17,416] {models.py:1126} DagFileProcessor5 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-09 00:00:00 [None]>
+[2018-05-15 14:19:17,416] {jobs.py:1608} DagFileProcessor5 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-09 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:19:17,427] {models.py:322} DagFileProcessor5 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 14:19:17,428] {models.py:328} DagFileProcessor5 INFO - Failing jobs without heartbeat after 2018-05-15 14:14:17.427972
+[2018-05-15 14:19:17,431] {jobs.py:351} DagFileProcessor5 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 3.495 seconds
+[2018-05-15 14:20:50,847] {jobs.py:343} DagFileProcessor7 INFO - Started process (PID=14734) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:20:50,852] {jobs.py:534} DagFileProcessor7 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 14:20:50,854] {jobs.py:1521} DagFileProcessor7 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 14:20:50,854] {models.py:167} DagFileProcessor7 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:20:54,136] {jobs.py:1535} DagFileProcessor7 INFO - DAG(s) dict_keys(['example_bash_operator', 'latest_only_with_trigger', 'example_subdag_operator.section-2', 'example_python_operator', 'example_subdag_operator', 'example_trigger_controller_dag', 'PropertyClassification_test_pipeline', 'example_trigger_target_dag', 'tutorial', 'example_passing_params_via_test_command', 'example_skip_dag', 'latest_only', 'example_short_circuit_operator', 'example_subdag_operator.section-1', 'test_utils', 'example_branch_operator', 'example_branch_dop_operator_v3', 'example_xcom', 'example_http_operator']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:20:54,301] {jobs.py:1169} DagFileProcessor7 INFO - Processing PropertyClassification_test_pipeline
+[2018-05-15 14:20:54,330] {jobs.py:1173} DagFileProcessor7 INFO - Created <DagRun PropertyClassification_test_pipeline @ 2018-05-10 00:00:00: scheduled__2018-05-10T00:00:00, externally triggered: False>
+[2018-05-15 14:20:54,333] {jobs.py:860} DagFileProcessor7 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False>
+[2018-05-15 14:20:54,340] {models.py:4024} DagFileProcessor7 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False> considering 11 task(s)
+[2018-05-15 14:20:54,346] {jobs.py:860} DagFileProcessor7 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True>
+[2018-05-15 14:20:54,352] {models.py:4024} DagFileProcessor7 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True> considering 9 task(s)
+[2018-05-15 14:20:54,358] {jobs.py:860} DagFileProcessor7 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False>
+[2018-05-15 14:20:54,365] {models.py:4024} DagFileProcessor7 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False> considering 9 task(s)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+  for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-15 14:20:54,378] {jobs.py:860} DagFileProcessor7 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True>
+[2018-05-15 14:20:54,384] {models.py:4024} DagFileProcessor7 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True> considering 9 task(s)
+[2018-05-15 14:20:54,396] {jobs.py:860} DagFileProcessor7 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False>
+[2018-05-15 14:20:54,401] {models.py:4024} DagFileProcessor7 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:20:54,410] {jobs.py:860} DagFileProcessor7 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-09 00:00:00: scheduled__2018-05-09T00:00:00, externally triggered: False>
+[2018-05-15 14:20:54,416] {models.py:4024} DagFileProcessor7 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-09 00:00:00: scheduled__2018-05-09T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:20:54,448] {jobs.py:860} DagFileProcessor7 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-10 00:00:00: scheduled__2018-05-10T00:00:00, externally triggered: False>
+[2018-05-15 14:20:54,454] {models.py:4024} DagFileProcessor7 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-10 00:00:00: scheduled__2018-05-10T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:20:54,593] {jobs.py:566} DagFileProcessor7 INFO - Skipping SLA check for <DAG: PropertyClassification_test_pipeline> because no tasks in DAG have SLAs
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py:1140: PendingDeprecationWarning: generator 'get_dep_statuses' raised StopIteration
+  dep_context):
+[2018-05-15 14:20:54,607] {models.py:1126} DagFileProcessor7 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_aerial_cropped_images 2018-05-07 00:00:00 [None]>
+[2018-05-15 14:20:54,607] {jobs.py:1608} DagFileProcessor7 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.create_aerial_cropped_images 2018-05-07 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:20:54,615] {models.py:1126} DagFileProcessor7 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_batches_new_test 2018-05-07 03:23:05.428424 [None]>
+[2018-05-15 14:20:54,615] {jobs.py:1608} DagFileProcessor7 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.create_batches_new_test 2018-05-07 03:23:05.428424 [scheduled]> in ORM
+[2018-05-15 14:20:54,622] {models.py:1126} DagFileProcessor7 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-08 00:00:00 [None]>
+[2018-05-15 14:20:54,622] {jobs.py:1608} DagFileProcessor7 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-08 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:20:54,629] {models.py:1126} DagFileProcessor7 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-09 00:00:00 [None]>
+[2018-05-15 14:20:54,629] {jobs.py:1608} DagFileProcessor7 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-09 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:20:54,636] {models.py:1126} DagFileProcessor7 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-10 00:00:00 [None]>
+[2018-05-15 14:20:54,636] {jobs.py:1608} DagFileProcessor7 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-10 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:20:54,650] {models.py:322} DagFileProcessor7 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 14:20:54,650] {models.py:328} DagFileProcessor7 INFO - Failing jobs without heartbeat after 2018-05-15 14:15:54.650416
+[2018-05-15 14:20:54,654] {jobs.py:351} DagFileProcessor7 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 3.807 seconds
+[2018-05-15 14:22:46,540] {jobs.py:343} DagFileProcessor9 INFO - Started process (PID=14854) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:22:46,545] {jobs.py:534} DagFileProcessor9 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 14:22:46,547] {jobs.py:1521} DagFileProcessor9 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 14:22:46,547] {models.py:167} DagFileProcessor9 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:22:49,698] {jobs.py:1535} DagFileProcessor9 INFO - DAG(s) dict_keys(['example_bash_operator', 'latest_only_with_trigger', 'example_subdag_operator.section-2', 'example_python_operator', 'example_subdag_operator', 'example_trigger_controller_dag', 'PropertyClassification_test_pipeline', 'example_trigger_target_dag', 'tutorial', 'example_passing_params_via_test_command', 'example_skip_dag', 'latest_only', 'example_short_circuit_operator', 'example_subdag_operator.section-1', 'test_utils', 'example_branch_operator', 'example_branch_dop_operator_v3', 'example_xcom', 'example_http_operator']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:22:49,830] {jobs.py:1169} DagFileProcessor9 INFO - Processing PropertyClassification_test_pipeline
+[2018-05-15 14:22:49,861] {jobs.py:1173} DagFileProcessor9 INFO - Created <DagRun PropertyClassification_test_pipeline @ 2018-05-11 00:00:00: scheduled__2018-05-11T00:00:00, externally triggered: False>
+[2018-05-15 14:22:49,864] {jobs.py:860} DagFileProcessor9 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False>
+[2018-05-15 14:22:49,870] {models.py:4024} DagFileProcessor9 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False> considering 11 task(s)
+[2018-05-15 14:22:49,875] {jobs.py:860} DagFileProcessor9 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True>
+[2018-05-15 14:22:49,881] {models.py:4024} DagFileProcessor9 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True> considering 9 task(s)
+[2018-05-15 14:22:49,885] {jobs.py:860} DagFileProcessor9 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False>
+[2018-05-15 14:22:49,891] {models.py:4024} DagFileProcessor9 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False> considering 9 task(s)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+  for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-15 14:22:49,903] {jobs.py:860} DagFileProcessor9 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True>
+[2018-05-15 14:22:49,909] {models.py:4024} DagFileProcessor9 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True> considering 9 task(s)
+[2018-05-15 14:22:49,920] {jobs.py:860} DagFileProcessor9 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False>
+[2018-05-15 14:22:49,925] {models.py:4024} DagFileProcessor9 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:22:49,936] {jobs.py:860} DagFileProcessor9 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-09 00:00:00: scheduled__2018-05-09T00:00:00, externally triggered: False>
+[2018-05-15 14:22:49,941] {models.py:4024} DagFileProcessor9 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-09 00:00:00: scheduled__2018-05-09T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:22:49,949] {jobs.py:860} DagFileProcessor9 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-10 00:00:00: scheduled__2018-05-10T00:00:00, externally triggered: False>
+[2018-05-15 14:22:49,954] {models.py:4024} DagFileProcessor9 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-10 00:00:00: scheduled__2018-05-10T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:22:49,984] {jobs.py:860} DagFileProcessor9 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-11 00:00:00: scheduled__2018-05-11T00:00:00, externally triggered: False>
+[2018-05-15 14:22:49,990] {models.py:4024} DagFileProcessor9 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-11 00:00:00: scheduled__2018-05-11T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:22:50,136] {jobs.py:566} DagFileProcessor9 INFO - Skipping SLA check for <DAG: PropertyClassification_test_pipeline> because no tasks in DAG have SLAs
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py:1140: PendingDeprecationWarning: generator 'get_dep_statuses' raised StopIteration
+  dep_context):
+[2018-05-15 14:22:50,150] {models.py:1126} DagFileProcessor9 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_batches_new_test 2018-05-07 00:00:00 [None]>
+[2018-05-15 14:22:50,150] {jobs.py:1608} DagFileProcessor9 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.create_batches_new_test 2018-05-07 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:22:50,158] {models.py:1126} DagFileProcessor9 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-07 03:23:05.428424 [None]>
+[2018-05-15 14:22:50,158] {jobs.py:1608} DagFileProcessor9 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-07 03:23:05.428424 [scheduled]> in ORM
+[2018-05-15 14:22:50,165] {models.py:1126} DagFileProcessor9 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_aerial_cropped_images 2018-05-08 00:00:00 [None]>
+[2018-05-15 14:22:50,165] {jobs.py:1608} DagFileProcessor9 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.create_aerial_cropped_images 2018-05-08 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:22:50,172] {models.py:1126} DagFileProcessor9 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-09 00:00:00 [None]>
+[2018-05-15 14:22:50,172] {jobs.py:1608} DagFileProcessor9 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-09 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:22:50,178] {models.py:1126} DagFileProcessor9 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-10 00:00:00 [None]>
+[2018-05-15 14:22:50,179] {jobs.py:1608} DagFileProcessor9 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-10 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:22:50,184] {models.py:1126} DagFileProcessor9 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-11 00:00:00 [None]>
+[2018-05-15 14:22:50,185] {jobs.py:1608} DagFileProcessor9 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-11 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:22:50,196] {models.py:322} DagFileProcessor9 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 14:22:50,197] {models.py:328} DagFileProcessor9 INFO - Failing jobs without heartbeat after 2018-05-15 14:17:50.197139
+[2018-05-15 14:22:50,200] {jobs.py:351} DagFileProcessor9 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 3.660 seconds
+[2018-05-15 14:42:38,925] {jobs.py:343} DagFileProcessor11 INFO - Started process (PID=15433) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:42:38,930] {jobs.py:534} DagFileProcessor11 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 14:42:38,933] {jobs.py:1521} DagFileProcessor11 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 14:42:38,934] {models.py:167} DagFileProcessor11 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:42:42,535] {jobs.py:1535} DagFileProcessor11 INFO - DAG(s) dict_keys(['example_bash_operator', 'latest_only_with_trigger', 'example_subdag_operator.section-2', 'example_python_operator', 'example_subdag_operator', 'example_trigger_controller_dag', 'PropertyClassification_test_pipeline', 'example_trigger_target_dag', 'tutorial', 'example_passing_params_via_test_command', 'example_skip_dag', 'latest_only', 'example_short_circuit_operator', 'example_subdag_operator.section-1', 'test_utils', 'example_branch_operator', 'example_branch_dop_operator_v3', 'example_xcom', 'example_http_operator']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 14:42:42,665] {jobs.py:1169} DagFileProcessor11 INFO - Processing PropertyClassification_test_pipeline
+[2018-05-15 14:42:42,696] {jobs.py:1173} DagFileProcessor11 INFO - Created <DagRun PropertyClassification_test_pipeline @ 2018-05-12 00:00:00: scheduled__2018-05-12T00:00:00, externally triggered: False>
+[2018-05-15 14:42:42,698] {jobs.py:860} DagFileProcessor11 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False>
+[2018-05-15 14:42:42,704] {models.py:4024} DagFileProcessor11 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False> considering 11 task(s)
+[2018-05-15 14:42:42,710] {jobs.py:860} DagFileProcessor11 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True>
+[2018-05-15 14:42:42,716] {models.py:4024} DagFileProcessor11 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True> considering 9 task(s)
+[2018-05-15 14:42:42,721] {jobs.py:860} DagFileProcessor11 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False>
+[2018-05-15 14:42:42,727] {models.py:4024} DagFileProcessor11 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False> considering 9 task(s)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+  for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-15 14:42:42,750] {jobs.py:860} DagFileProcessor11 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True>
+[2018-05-15 14:42:42,756] {models.py:4024} DagFileProcessor11 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True> considering 9 task(s)
+[2018-05-15 14:42:42,768] {jobs.py:860} DagFileProcessor11 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False>
+[2018-05-15 14:42:42,778] {models.py:4024} DagFileProcessor11 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:42:42,799] {jobs.py:860} DagFileProcessor11 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-09 00:00:00: scheduled__2018-05-09T00:00:00, externally triggered: False>
+[2018-05-15 14:42:42,810] {models.py:4024} DagFileProcessor11 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-09 00:00:00: scheduled__2018-05-09T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:42:42,827] {jobs.py:860} DagFileProcessor11 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-10 00:00:00: scheduled__2018-05-10T00:00:00, externally triggered: False>
+[2018-05-15 14:42:42,835] {models.py:4024} DagFileProcessor11 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-10 00:00:00: scheduled__2018-05-10T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:42:42,847] {jobs.py:860} DagFileProcessor11 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-11 00:00:00: scheduled__2018-05-11T00:00:00, externally triggered: False>
+[2018-05-15 14:42:42,852] {models.py:4024} DagFileProcessor11 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-11 00:00:00: scheduled__2018-05-11T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:42:42,881] {jobs.py:860} DagFileProcessor11 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-12 00:00:00: scheduled__2018-05-12T00:00:00, externally triggered: False>
+[2018-05-15 14:42:42,886] {models.py:4024} DagFileProcessor11 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-12 00:00:00: scheduled__2018-05-12T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 14:42:43,047] {jobs.py:566} DagFileProcessor11 INFO - Skipping SLA check for <DAG: PropertyClassification_test_pipeline> because no tasks in DAG have SLAs
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py:1140: PendingDeprecationWarning: generator 'get_dep_statuses' raised StopIteration
+  dep_context):
+[2018-05-15 14:42:43,060] {models.py:1126} DagFileProcessor11 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-07 00:00:00 [None]>
+[2018-05-15 14:42:43,060] {jobs.py:1608} DagFileProcessor11 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-07 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:42:43,067] {models.py:1126} DagFileProcessor11 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.make_final_predictions 2018-05-07 03:23:05.428424 [None]>
+[2018-05-15 14:42:43,067] {jobs.py:1608} DagFileProcessor11 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.make_final_predictions 2018-05-07 03:23:05.428424 [scheduled]> in ORM
+[2018-05-15 14:42:43,073] {models.py:1126} DagFileProcessor11 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_batches_new_test 2018-05-08 00:00:00 [None]>
+[2018-05-15 14:42:43,074] {jobs.py:1608} DagFileProcessor11 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.create_batches_new_test 2018-05-08 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:42:43,081] {models.py:1126} DagFileProcessor11 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_aerial_cropped_images 2018-05-09 00:00:00 [None]>
+[2018-05-15 14:42:43,081] {jobs.py:1608} DagFileProcessor11 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.create_aerial_cropped_images 2018-05-09 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:42:43,087] {models.py:1126} DagFileProcessor11 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-10 00:00:00 [None]>
+[2018-05-15 14:42:43,087] {jobs.py:1608} DagFileProcessor11 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-10 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:42:43,093] {models.py:1126} DagFileProcessor11 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-11 00:00:00 [None]>
+[2018-05-15 14:42:43,094] {jobs.py:1608} DagFileProcessor11 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-11 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:42:43,101] {models.py:1126} DagFileProcessor11 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-12 00:00:00 [None]>
+[2018-05-15 14:42:43,101] {jobs.py:1608} DagFileProcessor11 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-12 00:00:00 [scheduled]> in ORM
+[2018-05-15 14:42:43,114] {models.py:322} DagFileProcessor11 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 14:42:43,114] {models.py:328} DagFileProcessor11 INFO - Failing jobs without heartbeat after 2018-05-15 14:37:43.114489
+[2018-05-15 14:42:43,118] {jobs.py:351} DagFileProcessor11 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 4.193 seconds
+[2018-05-15 15:39:16,864] {jobs.py:343} DagFileProcessor1 INFO - Started process (PID=17110) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:39:19,889] {jobs.py:534} DagFileProcessor1 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 15:39:19,891] {jobs.py:1521} DagFileProcessor1 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 15:39:19,891] {models.py:167} DagFileProcessor1 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:39:22,932] {models.py:266} DagFileProcessor1 ERROR - Failed to import: /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+Traceback (most recent call last):
+  File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 263, in process_file
+    m = imp.load_source(mod_name, filepath)
+  File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/imp.py", line 172, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 693, in _load
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 697, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py", line 35, in <module>
+    prediction_threshold = int(Variable.get('prediction_threshold'))
+ValueError: invalid literal for int() with base 10: '0.68'
+[2018-05-15 15:39:22,932] {jobs.py:1535} DagFileProcessor1 INFO - DAG(s) dict_keys(['example_subdag_operator', 'latest_only', 'example_branch_operator', 'example_http_operator', 'example_xcom', 'example_short_circuit_operator', 'example_trigger_controller_dag', 'example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_bash_operator', 'example_skip_dag', 'example_python_operator', 'example_branch_dop_operator_v3', 'example_trigger_target_dag', 'tutorial', 'latest_only_with_trigger', 'example_passing_params_via_test_command', 'test_utils']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/sqlalchemy/sql/default_comparator.py:161: SAWarning: The IN-predicate on "dag_stats.dag_id" was invoked with an empty sequence. This results in a contradiction, which nonetheless can be expensive to evaluate.  Consider alternative strategies for improved performance.
+  'strategies for improved performance.' % expr)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/sqlalchemy/sql/default_comparator.py:161: SAWarning: The IN-predicate on "dag_run.dag_id" was invoked with an empty sequence. This results in a contradiction, which nonetheless can be expensive to evaluate.  Consider alternative strategies for improved performance.
+  'strategies for improved performance.' % expr)
+[2018-05-15 15:39:23,070] {models.py:322} DagFileProcessor1 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 15:39:23,070] {models.py:328} DagFileProcessor1 INFO - Failing jobs without heartbeat after 2018-05-15 15:34:23.070758
+[2018-05-15 15:39:23,076] {jobs.py:351} DagFileProcessor1 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 6.212 seconds
+[2018-05-15 15:39:28,655] {jobs.py:343} DagFileProcessor3 INFO - Started process (PID=17125) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:39:28,660] {jobs.py:534} DagFileProcessor3 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 15:39:28,661] {jobs.py:1521} DagFileProcessor3 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 15:39:28,662] {models.py:167} DagFileProcessor3 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:39:31,742] {models.py:266} DagFileProcessor3 ERROR - Failed to import: /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+Traceback (most recent call last):
+  File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 263, in process_file
+    m = imp.load_source(mod_name, filepath)
+  File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/imp.py", line 172, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 693, in _load
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 697, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py", line 35, in <module>
+    prediction_threshold = int(Variable.get('prediction_threshold'))
+ValueError: invalid literal for int() with base 10: '0.68'
+[2018-05-15 15:39:31,743] {jobs.py:1535} DagFileProcessor3 INFO - DAG(s) dict_keys(['example_subdag_operator', 'latest_only', 'example_branch_operator', 'example_http_operator', 'example_xcom', 'example_short_circuit_operator', 'example_trigger_controller_dag', 'example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_bash_operator', 'example_skip_dag', 'example_python_operator', 'example_branch_dop_operator_v3', 'example_trigger_target_dag', 'tutorial', 'latest_only_with_trigger', 'example_passing_params_via_test_command', 'test_utils']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/sqlalchemy/sql/default_comparator.py:161: SAWarning: The IN-predicate on "dag_stats.dag_id" was invoked with an empty sequence. This results in a contradiction, which nonetheless can be expensive to evaluate.  Consider alternative strategies for improved performance.
+  'strategies for improved performance.' % expr)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/sqlalchemy/sql/default_comparator.py:161: SAWarning: The IN-predicate on "dag_run.dag_id" was invoked with an empty sequence. This results in a contradiction, which nonetheless can be expensive to evaluate.  Consider alternative strategies for improved performance.
+  'strategies for improved performance.' % expr)
+[2018-05-15 15:39:31,879] {models.py:322} DagFileProcessor3 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 15:39:31,880] {models.py:328} DagFileProcessor3 INFO - Failing jobs without heartbeat after 2018-05-15 15:34:31.880036
+[2018-05-15 15:39:31,885] {jobs.py:351} DagFileProcessor3 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 3.230 seconds
+[2018-05-15 15:39:37,529] {jobs.py:343} DagFileProcessor5 INFO - Started process (PID=17144) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:39:37,534] {jobs.py:534} DagFileProcessor5 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 15:39:37,535] {jobs.py:1521} DagFileProcessor5 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 15:39:37,536] {models.py:167} DagFileProcessor5 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:39:40,679] {models.py:266} DagFileProcessor5 ERROR - Failed to import: /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+Traceback (most recent call last):
+  File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 263, in process_file
+    m = imp.load_source(mod_name, filepath)
+  File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/imp.py", line 172, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 693, in _load
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 697, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py", line 35, in <module>
+    prediction_threshold = int(Variable.get('prediction_threshold'))
+ValueError: invalid literal for int() with base 10: '0.68'
+[2018-05-15 15:39:40,680] {jobs.py:1535} DagFileProcessor5 INFO - DAG(s) dict_keys(['example_subdag_operator', 'latest_only', 'example_branch_operator', 'example_http_operator', 'example_xcom', 'example_short_circuit_operator', 'example_trigger_controller_dag', 'example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_bash_operator', 'example_skip_dag', 'example_python_operator', 'example_branch_dop_operator_v3', 'example_trigger_target_dag', 'tutorial', 'latest_only_with_trigger', 'example_passing_params_via_test_command', 'test_utils']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/sqlalchemy/sql/default_comparator.py:161: SAWarning: The IN-predicate on "dag_stats.dag_id" was invoked with an empty sequence. This results in a contradiction, which nonetheless can be expensive to evaluate.  Consider alternative strategies for improved performance.
+  'strategies for improved performance.' % expr)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/sqlalchemy/sql/default_comparator.py:161: SAWarning: The IN-predicate on "dag_run.dag_id" was invoked with an empty sequence. This results in a contradiction, which nonetheless can be expensive to evaluate.  Consider alternative strategies for improved performance.
+  'strategies for improved performance.' % expr)
+[2018-05-15 15:39:40,831] {models.py:322} DagFileProcessor5 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 15:39:40,832] {models.py:328} DagFileProcessor5 INFO - Failing jobs without heartbeat after 2018-05-15 15:34:40.831846
+[2018-05-15 15:39:40,838] {jobs.py:351} DagFileProcessor5 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 3.309 seconds
+[2018-05-15 15:39:46,444] {jobs.py:343} DagFileProcessor7 INFO - Started process (PID=17161) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:39:46,449] {jobs.py:534} DagFileProcessor7 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 15:39:46,451] {jobs.py:1521} DagFileProcessor7 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 15:39:46,451] {models.py:167} DagFileProcessor7 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:39:49,290] {models.py:266} DagFileProcessor7 ERROR - Failed to import: /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+Traceback (most recent call last):
+  File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 263, in process_file
+    m = imp.load_source(mod_name, filepath)
+  File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/imp.py", line 172, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 693, in _load
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 697, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py", line 35, in <module>
+    prediction_threshold = int(Variable.get('prediction_threshold'))
+ValueError: invalid literal for int() with base 10: '0.68'
+[2018-05-15 15:39:49,290] {jobs.py:1535} DagFileProcessor7 INFO - DAG(s) dict_keys(['example_subdag_operator', 'latest_only', 'example_branch_operator', 'example_http_operator', 'example_xcom', 'example_short_circuit_operator', 'example_trigger_controller_dag', 'example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_bash_operator', 'example_skip_dag', 'example_python_operator', 'example_branch_dop_operator_v3', 'example_trigger_target_dag', 'tutorial', 'latest_only_with_trigger', 'example_passing_params_via_test_command', 'test_utils']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/sqlalchemy/sql/default_comparator.py:161: SAWarning: The IN-predicate on "dag_stats.dag_id" was invoked with an empty sequence. This results in a contradiction, which nonetheless can be expensive to evaluate.  Consider alternative strategies for improved performance.
+  'strategies for improved performance.' % expr)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/sqlalchemy/sql/default_comparator.py:161: SAWarning: The IN-predicate on "dag_run.dag_id" was invoked with an empty sequence. This results in a contradiction, which nonetheless can be expensive to evaluate.  Consider alternative strategies for improved performance.
+  'strategies for improved performance.' % expr)
+[2018-05-15 15:39:49,435] {models.py:322} DagFileProcessor7 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 15:39:49,436] {models.py:328} DagFileProcessor7 INFO - Failing jobs without heartbeat after 2018-05-15 15:34:49.435870
+[2018-05-15 15:39:49,440] {jobs.py:351} DagFileProcessor7 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 2.996 seconds
+[2018-05-15 15:39:55,161] {jobs.py:343} DagFileProcessor9 INFO - Started process (PID=17176) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:39:55,166] {jobs.py:534} DagFileProcessor9 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 15:39:55,167] {jobs.py:1521} DagFileProcessor9 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 15:39:55,167] {models.py:167} DagFileProcessor9 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:39:58,196] {models.py:266} DagFileProcessor9 ERROR - Failed to import: /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+Traceback (most recent call last):
+  File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 263, in process_file
+    m = imp.load_source(mod_name, filepath)
+  File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/imp.py", line 172, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 693, in _load
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 697, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py", line 35, in <module>
+    prediction_threshold = int(Variable.get('prediction_threshold'))
+ValueError: invalid literal for int() with base 10: '0.68'
+[2018-05-15 15:39:58,197] {jobs.py:1535} DagFileProcessor9 INFO - DAG(s) dict_keys(['example_subdag_operator', 'latest_only', 'example_branch_operator', 'example_http_operator', 'example_xcom', 'example_short_circuit_operator', 'example_trigger_controller_dag', 'example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_bash_operator', 'example_skip_dag', 'example_python_operator', 'example_branch_dop_operator_v3', 'example_trigger_target_dag', 'tutorial', 'latest_only_with_trigger', 'example_passing_params_via_test_command', 'test_utils']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/sqlalchemy/sql/default_comparator.py:161: SAWarning: The IN-predicate on "dag_stats.dag_id" was invoked with an empty sequence. This results in a contradiction, which nonetheless can be expensive to evaluate.  Consider alternative strategies for improved performance.
+  'strategies for improved performance.' % expr)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/sqlalchemy/sql/default_comparator.py:161: SAWarning: The IN-predicate on "dag_run.dag_id" was invoked with an empty sequence. This results in a contradiction, which nonetheless can be expensive to evaluate.  Consider alternative strategies for improved performance.
+  'strategies for improved performance.' % expr)
+[2018-05-15 15:39:58,338] {models.py:322} DagFileProcessor9 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 15:39:58,338] {models.py:328} DagFileProcessor9 INFO - Failing jobs without heartbeat after 2018-05-15 15:34:58.338830
+[2018-05-15 15:39:58,343] {jobs.py:351} DagFileProcessor9 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 3.183 seconds
+[2018-05-15 15:40:04,157] {jobs.py:343} DagFileProcessor11 INFO - Started process (PID=17191) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:40:04,162] {jobs.py:534} DagFileProcessor11 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 15:40:04,163] {jobs.py:1521} DagFileProcessor11 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 15:40:04,164] {models.py:167} DagFileProcessor11 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:40:07,388] {models.py:266} DagFileProcessor11 ERROR - Failed to import: /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+Traceback (most recent call last):
+  File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 263, in process_file
+    m = imp.load_source(mod_name, filepath)
+  File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/imp.py", line 172, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 693, in _load
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 697, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py", line 35, in <module>
+    prediction_threshold = int(Variable.get('prediction_threshold'))
+ValueError: invalid literal for int() with base 10: '0.68'
+[2018-05-15 15:40:07,389] {jobs.py:1535} DagFileProcessor11 INFO - DAG(s) dict_keys(['example_subdag_operator', 'latest_only', 'example_branch_operator', 'example_http_operator', 'example_xcom', 'example_short_circuit_operator', 'example_trigger_controller_dag', 'example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_bash_operator', 'example_skip_dag', 'example_python_operator', 'example_branch_dop_operator_v3', 'example_trigger_target_dag', 'tutorial', 'latest_only_with_trigger', 'example_passing_params_via_test_command', 'test_utils']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/sqlalchemy/sql/default_comparator.py:161: SAWarning: The IN-predicate on "dag_stats.dag_id" was invoked with an empty sequence. This results in a contradiction, which nonetheless can be expensive to evaluate.  Consider alternative strategies for improved performance.
+  'strategies for improved performance.' % expr)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/sqlalchemy/sql/default_comparator.py:161: SAWarning: The IN-predicate on "dag_run.dag_id" was invoked with an empty sequence. This results in a contradiction, which nonetheless can be expensive to evaluate.  Consider alternative strategies for improved performance.
+  'strategies for improved performance.' % expr)
+[2018-05-15 15:40:07,541] {models.py:322} DagFileProcessor11 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 15:40:07,542] {models.py:328} DagFileProcessor11 INFO - Failing jobs without heartbeat after 2018-05-15 15:35:07.541998
+[2018-05-15 15:40:07,547] {jobs.py:351} DagFileProcessor11 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 3.390 seconds
+[2018-05-15 15:40:13,238] {jobs.py:343} DagFileProcessor13 INFO - Started process (PID=17206) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:40:13,244] {jobs.py:534} DagFileProcessor13 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 15:40:13,245] {jobs.py:1521} DagFileProcessor13 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 15:40:13,245] {models.py:167} DagFileProcessor13 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:40:16,276] {models.py:266} DagFileProcessor13 ERROR - Failed to import: /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+Traceback (most recent call last):
+  File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py", line 263, in process_file
+    m = imp.load_source(mod_name, filepath)
+  File "/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/imp.py", line 172, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 693, in _load
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 697, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py", line 35, in <module>
+    prediction_threshold = int(Variable.get('prediction_threshold'))
+ValueError: invalid literal for int() with base 10: '0.68'
+[2018-05-15 15:40:16,277] {jobs.py:1535} DagFileProcessor13 INFO - DAG(s) dict_keys(['example_subdag_operator', 'latest_only', 'example_branch_operator', 'example_http_operator', 'example_xcom', 'example_short_circuit_operator', 'example_trigger_controller_dag', 'example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_bash_operator', 'example_skip_dag', 'example_python_operator', 'example_branch_dop_operator_v3', 'example_trigger_target_dag', 'tutorial', 'latest_only_with_trigger', 'example_passing_params_via_test_command', 'test_utils']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/sqlalchemy/sql/default_comparator.py:161: SAWarning: The IN-predicate on "dag_stats.dag_id" was invoked with an empty sequence. This results in a contradiction, which nonetheless can be expensive to evaluate.  Consider alternative strategies for improved performance.
+  'strategies for improved performance.' % expr)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/sqlalchemy/sql/default_comparator.py:161: SAWarning: The IN-predicate on "dag_run.dag_id" was invoked with an empty sequence. This results in a contradiction, which nonetheless can be expensive to evaluate.  Consider alternative strategies for improved performance.
+  'strategies for improved performance.' % expr)
+[2018-05-15 15:40:16,457] {models.py:322} DagFileProcessor13 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 15:40:16,457] {models.py:328} DagFileProcessor13 INFO - Failing jobs without heartbeat after 2018-05-15 15:35:16.457602
+[2018-05-15 15:40:16,462] {jobs.py:351} DagFileProcessor13 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 3.224 seconds
+[2018-05-15 15:40:22,267] {jobs.py:343} DagFileProcessor15 INFO - Started process (PID=17225) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:40:22,272] {jobs.py:534} DagFileProcessor15 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 15:40:22,274] {jobs.py:1521} DagFileProcessor15 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 15:40:22,274] {models.py:167} DagFileProcessor15 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:40:25,657] {jobs.py:1535} DagFileProcessor15 INFO - DAG(s) dict_keys(['example_subdag_operator', 'latest_only', 'example_branch_operator', 'example_http_operator', 'example_xcom', 'example_short_circuit_operator', 'example_trigger_controller_dag', 'example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_bash_operator', 'example_skip_dag', 'example_python_operator', 'example_branch_dop_operator_v3', 'example_trigger_target_dag', 'tutorial', 'latest_only_with_trigger', 'PropertyClassification_test_pipeline', 'example_passing_params_via_test_command', 'test_utils']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:40:25,825] {jobs.py:1169} DagFileProcessor15 INFO - Processing PropertyClassification_test_pipeline
+[2018-05-15 15:40:25,865] {jobs.py:1173} DagFileProcessor15 INFO - Created <DagRun PropertyClassification_test_pipeline @ 2018-05-13 00:00:00: scheduled__2018-05-13T00:00:00, externally triggered: False>
+[2018-05-15 15:40:25,867] {jobs.py:860} DagFileProcessor15 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False>
+[2018-05-15 15:40:25,874] {models.py:4024} DagFileProcessor15 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False> considering 11 task(s)
+[2018-05-15 15:40:25,880] {jobs.py:860} DagFileProcessor15 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True>
+[2018-05-15 15:40:25,888] {models.py:4024} DagFileProcessor15 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True> considering 9 task(s)
+[2018-05-15 15:40:25,894] {jobs.py:860} DagFileProcessor15 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False>
+[2018-05-15 15:40:25,903] {models.py:4024} DagFileProcessor15 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False> considering 9 task(s)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+  for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-15 15:40:25,926] {jobs.py:860} DagFileProcessor15 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True>
+[2018-05-15 15:40:25,937] {models.py:4024} DagFileProcessor15 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True> considering 9 task(s)
+[2018-05-15 15:40:25,956] {jobs.py:860} DagFileProcessor15 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False>
+[2018-05-15 15:40:25,964] {models.py:4024} DagFileProcessor15 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 15:40:25,987] {jobs.py:860} DagFileProcessor15 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-09 00:00:00: scheduled__2018-05-09T00:00:00, externally triggered: False>
+[2018-05-15 15:40:25,996] {models.py:4024} DagFileProcessor15 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-09 00:00:00: scheduled__2018-05-09T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 15:40:26,009] {jobs.py:860} DagFileProcessor15 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-10 00:00:00: scheduled__2018-05-10T00:00:00, externally triggered: False>
+[2018-05-15 15:40:26,019] {models.py:4024} DagFileProcessor15 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-10 00:00:00: scheduled__2018-05-10T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 15:40:26,033] {jobs.py:860} DagFileProcessor15 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-11 00:00:00: scheduled__2018-05-11T00:00:00, externally triggered: False>
+[2018-05-15 15:40:26,038] {models.py:4024} DagFileProcessor15 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-11 00:00:00: scheduled__2018-05-11T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 15:40:26,049] {jobs.py:860} DagFileProcessor15 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-12 00:00:00: scheduled__2018-05-12T00:00:00, externally triggered: False>
+[2018-05-15 15:40:26,058] {models.py:4024} DagFileProcessor15 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-12 00:00:00: scheduled__2018-05-12T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 15:40:26,094] {jobs.py:860} DagFileProcessor15 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-13 00:00:00: scheduled__2018-05-13T00:00:00, externally triggered: False>
+[2018-05-15 15:40:26,102] {models.py:4024} DagFileProcessor15 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-13 00:00:00: scheduled__2018-05-13T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 15:40:26,300] {jobs.py:566} DagFileProcessor15 INFO - Skipping SLA check for <DAG: PropertyClassification_test_pipeline> because no tasks in DAG have SLAs
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py:1140: PendingDeprecationWarning: generator 'get_dep_statuses' raised StopIteration
+  dep_context):
+[2018-05-15 15:40:26,311] {models.py:1126} DagFileProcessor15 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-07 00:00:00 [up_for_retry]>
+[2018-05-15 15:40:26,312] {jobs.py:1608} DagFileProcessor15 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-07 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:26,320] {models.py:1126} DagFileProcessor15 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.make_final_predictions 2018-05-07 03:23:05.428424 [None]>
+[2018-05-15 15:40:26,320] {jobs.py:1608} DagFileProcessor15 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.make_final_predictions 2018-05-07 03:23:05.428424 [scheduled]> in ORM
+[2018-05-15 15:40:26,327] {models.py:1126} DagFileProcessor15 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-08 00:00:00 [None]>
+[2018-05-15 15:40:26,327] {jobs.py:1608} DagFileProcessor15 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-08 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:26,334] {models.py:1126} DagFileProcessor15 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_batches_new_test 2018-05-09 00:00:00 [None]>
+[2018-05-15 15:40:26,334] {jobs.py:1608} DagFileProcessor15 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.create_batches_new_test 2018-05-09 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:26,340] {models.py:1126} DagFileProcessor15 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_aerial_cropped_images 2018-05-10 00:00:00 [None]>
+[2018-05-15 15:40:26,340] {jobs.py:1608} DagFileProcessor15 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.create_aerial_cropped_images 2018-05-10 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:26,347] {models.py:1126} DagFileProcessor15 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-11 00:00:00 [None]>
+[2018-05-15 15:40:26,347] {jobs.py:1608} DagFileProcessor15 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-11 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:26,356] {models.py:1126} DagFileProcessor15 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-12 00:00:00 [None]>
+[2018-05-15 15:40:26,356] {jobs.py:1608} DagFileProcessor15 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-12 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:26,362] {models.py:1126} DagFileProcessor15 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-13 00:00:00 [None]>
+[2018-05-15 15:40:26,363] {jobs.py:1608} DagFileProcessor15 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-13 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:26,377] {models.py:322} DagFileProcessor15 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 15:40:26,377] {models.py:328} DagFileProcessor15 INFO - Failing jobs without heartbeat after 2018-05-15 15:35:26.377621
+[2018-05-15 15:40:26,381] {jobs.py:351} DagFileProcessor15 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 4.114 seconds
+[2018-05-15 15:40:42,705] {jobs.py:343} DagFileProcessor0 INFO - Started process (PID=17297) to work on /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:40:42,710] {jobs.py:534} DagFileProcessor0 ERROR - Cannot use more than 1 thread when using sqlite. Setting max_threads to 1
+[2018-05-15 15:40:42,711] {jobs.py:1521} DagFileProcessor0 INFO - Processing file /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py for tasks to queue
+[2018-05-15 15:40:42,712] {models.py:167} DagFileProcessor0 INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:40:46,047] {jobs.py:1535} DagFileProcessor0 INFO - DAG(s) dict_keys(['example_trigger_target_dag', 'example_xcom', 'example_bash_operator', 'example_branch_operator', 'example_http_operator', 'example_subdag_operator', 'example_skip_dag', 'PropertyClassification_test_pipeline', 'example_branch_dop_operator_v3', 'example_python_operator', 'example_subdag_operator.section-1', 'example_short_circuit_operator', 'example_trigger_controller_dag', 'tutorial', 'example_subdag_operator.section-2', 'latest_only', 'example_passing_params_via_test_command', 'test_utils', 'latest_only_with_trigger']) retrieved from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 15:40:46,189] {jobs.py:1169} DagFileProcessor0 INFO - Processing PropertyClassification_test_pipeline
+[2018-05-15 15:40:46,219] {jobs.py:1173} DagFileProcessor0 INFO - Created <DagRun PropertyClassification_test_pipeline @ 2018-05-14 00:00:00: scheduled__2018-05-14T00:00:00, externally triggered: False>
+[2018-05-15 15:40:46,222] {jobs.py:860} DagFileProcessor0 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False>
+[2018-05-15 15:40:46,229] {models.py:4024} DagFileProcessor0 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-05 00:00:00: scheduled__2018-05-05T00:00:00, externally triggered: False> considering 11 task(s)
+[2018-05-15 15:40:46,234] {jobs.py:860} DagFileProcessor0 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True>
+[2018-05-15 15:40:46,240] {models.py:4024} DagFileProcessor0 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-06 19:19:00.939526: manual__2018-05-06T19:19:00.939526, externally triggered: True> considering 9 task(s)
+[2018-05-15 15:40:46,246] {jobs.py:860} DagFileProcessor0 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False>
+[2018-05-15 15:40:46,252] {models.py:4024} DagFileProcessor0 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 00:00:00: scheduled__2018-05-07T00:00:00, externally triggered: False> considering 9 task(s)
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+  for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-15 15:40:46,268] {jobs.py:860} DagFileProcessor0 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True>
+[2018-05-15 15:40:46,275] {models.py:4024} DagFileProcessor0 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-07 03:23:05.428424: manual__2018-05-07T03:23:05.428424, externally triggered: True> considering 9 task(s)
+[2018-05-15 15:40:46,286] {jobs.py:860} DagFileProcessor0 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False>
+[2018-05-15 15:40:46,293] {models.py:4024} DagFileProcessor0 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-08 00:00:00: scheduled__2018-05-08T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 15:40:46,308] {jobs.py:860} DagFileProcessor0 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-09 00:00:00: scheduled__2018-05-09T00:00:00, externally triggered: False>
+[2018-05-15 15:40:46,314] {models.py:4024} DagFileProcessor0 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-09 00:00:00: scheduled__2018-05-09T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 15:40:46,327] {jobs.py:860} DagFileProcessor0 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-10 00:00:00: scheduled__2018-05-10T00:00:00, externally triggered: False>
+[2018-05-15 15:40:46,332] {models.py:4024} DagFileProcessor0 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-10 00:00:00: scheduled__2018-05-10T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 15:40:46,344] {jobs.py:860} DagFileProcessor0 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-11 00:00:00: scheduled__2018-05-11T00:00:00, externally triggered: False>
+[2018-05-15 15:40:46,349] {models.py:4024} DagFileProcessor0 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-11 00:00:00: scheduled__2018-05-11T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 15:40:46,358] {jobs.py:860} DagFileProcessor0 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-12 00:00:00: scheduled__2018-05-12T00:00:00, externally triggered: False>
+[2018-05-15 15:40:46,364] {models.py:4024} DagFileProcessor0 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-12 00:00:00: scheduled__2018-05-12T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 15:40:46,394] {jobs.py:860} DagFileProcessor0 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-13 00:00:00: scheduled__2018-05-13T00:00:00, externally triggered: False>
+[2018-05-15 15:40:46,400] {models.py:4024} DagFileProcessor0 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-13 00:00:00: scheduled__2018-05-13T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 15:40:46,428] {jobs.py:860} DagFileProcessor0 INFO - Examining DAG run <DagRun PropertyClassification_test_pipeline @ 2018-05-14 00:00:00: scheduled__2018-05-14T00:00:00, externally triggered: False>
+[2018-05-15 15:40:46,434] {models.py:4024} DagFileProcessor0 INFO - Updating state for <DagRun PropertyClassification_test_pipeline @ 2018-05-14 00:00:00: scheduled__2018-05-14T00:00:00, externally triggered: False> considering 9 task(s)
+[2018-05-15 15:40:46,653] {jobs.py:566} DagFileProcessor0 INFO - Skipping SLA check for <DAG: PropertyClassification_test_pipeline> because no tasks in DAG have SLAs
+/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/models.py:1140: PendingDeprecationWarning: generator 'get_dep_statuses' raised StopIteration
+  dep_context):
+[2018-05-15 15:40:46,665] {models.py:1126} DagFileProcessor0 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-07 00:00:00 [None]>
+[2018-05-15 15:40:46,665] {jobs.py:1608} DagFileProcessor0 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-07 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:46,673] {models.py:1126} DagFileProcessor0 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.make_final_predictions 2018-05-07 03:23:05.428424 [None]>
+[2018-05-15 15:40:46,673] {jobs.py:1608} DagFileProcessor0 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.make_final_predictions 2018-05-07 03:23:05.428424 [scheduled]> in ORM
+[2018-05-15 15:40:46,682] {models.py:1126} DagFileProcessor0 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-08 00:00:00 [None]>
+[2018-05-15 15:40:46,682] {jobs.py:1608} DagFileProcessor0 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-08 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:46,691] {models.py:1126} DagFileProcessor0 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_batches_new_test 2018-05-09 00:00:00 [None]>
+[2018-05-15 15:40:46,691] {jobs.py:1608} DagFileProcessor0 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.create_batches_new_test 2018-05-09 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:46,698] {models.py:1126} DagFileProcessor0 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_aerial_cropped_images 2018-05-10 00:00:00 [None]>
+[2018-05-15 15:40:46,699] {jobs.py:1608} DagFileProcessor0 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.create_aerial_cropped_images 2018-05-10 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:46,705] {models.py:1126} DagFileProcessor0 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-11 00:00:00 [None]>
+[2018-05-15 15:40:46,706] {jobs.py:1608} DagFileProcessor0 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-11 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:46,712] {models.py:1126} DagFileProcessor0 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-12 00:00:00 [None]>
+[2018-05-15 15:40:46,713] {jobs.py:1608} DagFileProcessor0 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.fetch_aerial_images 2018-05-12 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:46,719] {models.py:1126} DagFileProcessor0 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-13 00:00:00 [None]>
+[2018-05-15 15:40:46,719] {jobs.py:1608} DagFileProcessor0 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-13 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:46,725] {models.py:1126} DagFileProcessor0 INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-14 00:00:00 [None]>
+[2018-05-15 15:40:46,726] {jobs.py:1608} DagFileProcessor0 INFO - Creating / updating <TaskInstance: PropertyClassification_test_pipeline.clean_filter_records 2018-05-14 00:00:00 [scheduled]> in ORM
+[2018-05-15 15:40:46,738] {models.py:322} DagFileProcessor0 INFO - Finding 'running' jobs without a recent heartbeat
+[2018-05-15 15:40:46,738] {models.py:328} DagFileProcessor0 INFO - Failing jobs without heartbeat after 2018-05-15 15:35:46.738539
+[2018-05-15 15:40:46,742] {jobs.py:351} DagFileProcessor0 INFO - Processing /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py took 4.037 seconds
