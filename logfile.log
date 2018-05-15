@@ -1,0 +1,1009 @@
+2018-05-15 17:17:21,827 DEBUG    Trying `CDLL(C:\Anaconda\lib\site-packages\shapely\DLLs\geos_c.dll)`
+2018-05-15 17:17:21,828 DEBUG    Library path: 'C:\\Anaconda\\lib\\site-packages\\shapely\\DLLs\\geos_c.dll'
+2018-05-15 17:17:21,828 DEBUG    DLL: <CDLL 'C:\Anaconda\lib\site-packages\shapely\DLLs\geos_c.dll', handle 7ff936670000 at 0x1733d1bf780>
+2018-05-15 17:17:21,867 WARNING  GDAL data files not located, GDAL_DATA not set
+2018-05-15 17:17:21,867 WARNING  PROJ data files not located, PROJ_LIB not set
+2018-05-15 17:17:25,646 INFO     Initiating Aerial Dump ...............................
+2018-05-15 17:17:25,646 INFO     Input data path: C:\Users\newline\Documents\ImageClassification\data\input_images\session_new\aerial
+2018-05-15 17:17:25,647 INFO     Stats dump path: C:\Users\newline\Documents\ImageClassification\data\statistics\session_new\aerial\aerial_collected_data_stats
+2018-05-15 17:17:25,648 INFO     Number of new images to be parsed and dumped: 264
+2018-05-15 17:17:27,070 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:27,219 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.6884753%20-87.6280665&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120322
+2018-05-15 17:17:27,675 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:27,828 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7562574%20-87.58003579999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 118853
+2018-05-15 17:17:28,271 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:28,410 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7247216%20-87.6091922&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123794
+2018-05-15 17:17:28,841 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:28,966 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.6809889%20-87.64653700000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 121403
+2018-05-15 17:17:29,361 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:29,478 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.773386%20-87.607438&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 129416
+2018-05-15 17:17:29,603 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:29,728 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7126058%20-87.56456589999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 129187
+2018-05-15 17:17:30,213 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:30,334 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7896049%20-87.73741419999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 119284
+2018-05-15 17:17:30,837 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:30,967 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.759607%20-87.602102&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123577
+2018-05-15 17:17:31,350 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:31,477 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.6947213%20-87.663411&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123334
+2018-05-15 17:17:31,903 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:32,031 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7810904%20-87.64233089999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123215
+2018-05-15 17:17:32,424 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:32,537 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8035%20-87.65701399999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 114372
+2018-05-15 17:17:33,050 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:33,172 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.69385880000001%20-87.6535081&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 113875
+2018-05-15 17:17:33,308 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:33,428 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7774125%20-87.66198539999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 119212
+2018-05-15 17:17:33,809 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:33,926 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7876784%20-87.6435259&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122923
+2018-05-15 17:17:34,330 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:34,478 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7605781%20-87.6651833&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 119658
+2018-05-15 17:17:34,860 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:34,999 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.776067%20-87.6122649&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126797
+2018-05-15 17:17:35,361 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:35,515 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.6802672%20-87.63679959999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 117122
+2018-05-15 17:17:35,972 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:36,100 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7539407%20-87.7307287&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 127257
+2018-05-15 17:17:36,704 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:36,816 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.756015%20-87.557266&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 124875
+2018-05-15 17:17:37,298 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:37,439 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.50685199999999%20-87.62924799999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120063
+2018-05-15 17:17:37,798 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:37,921 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.503275%20-87.62430599999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 125021
+2018-05-15 17:17:38,044 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:38,174 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8379679%20-87.722807&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 117392
+2018-05-15 17:17:38,836 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:38,953 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.767288%20-87.61978839999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 115626
+2018-05-15 17:17:39,315 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:39,471 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.6923156%20-87.62941599999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 113361
+2018-05-15 17:17:40,008 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:40,147 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7757497%20-87.60008979999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 127260
+2018-05-15 17:17:40,590 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:40,718 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.74814600000001%20-87.654009&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 125963
+2018-05-15 17:17:41,086 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:41,200 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7378613%20-87.61903319999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 114826
+2018-05-15 17:17:41,591 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:41,732 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.765614%20-87.63353699999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120415
+2018-05-15 17:17:42,190 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:42,319 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7640134%20-87.64117449999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 117983
+2018-05-15 17:17:42,696 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:42,830 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.67108899999999%20-87.639625&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122269
+2018-05-15 17:17:43,240 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:43,381 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.78274%20-87.6413287&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123843
+2018-05-15 17:17:43,759 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:43,876 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.6832132%20-87.6242972&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 119191
+2018-05-15 17:17:44,324 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:44,442 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.94910309999999%20-87.7597079&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 113356
+2018-05-15 17:17:44,996 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:45,109 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7795318%20-87.6006817&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 116724
+2018-05-15 17:17:45,591 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:45,711 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.772834%20-87.640323&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 116851
+2018-05-15 17:17:46,262 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:46,386 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.683757%20-87.623205&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 129949
+2018-05-15 17:17:47,042 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:47,168 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7736115%20-87.6140839&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120730
+2018-05-15 17:17:47,669 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:47,805 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7524912%20-87.60249499999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 121104
+2018-05-15 17:17:48,226 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:48,359 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.875596%20-87.746531&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126783
+2018-05-15 17:17:48,928 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:49,161 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.505161%20-87.6226049&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 130263
+2018-05-15 17:17:49,639 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:49,780 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.923998%20-87.678719&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 114222
+2018-05-15 17:17:50,324 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:50,446 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7774969%20-87.666264&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 118958
+2018-05-15 17:17:50,949 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:51,181 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.889175%20-87.72431499999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 125352
+2018-05-15 17:17:51,701 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:51,830 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.783795%20-87.635582&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 117953
+2018-05-15 17:17:52,816 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:52,953 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.89711510000001%20-87.7124317&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123516
+2018-05-15 17:17:53,539 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:53,656 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.779037%20-87.653633&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 131233
+2018-05-15 17:17:54,182 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:54,366 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.879974%20-87.709981&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 121778
+2018-05-15 17:17:54,845 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:54,956 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.67398%20-87.634902&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 132219
+2018-05-15 17:17:55,401 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:55,524 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.764619%20-87.666657&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122179
+2018-05-15 17:17:56,092 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:56,225 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.723937%20-87.63998199999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 114268
+2018-05-15 17:17:56,737 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:56,868 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.77372099999999%20-87.672203&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122225
+2018-05-15 17:17:57,445 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:57,569 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.770185%20-87.5918499&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126106
+2018-05-15 17:17:58,056 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:58,180 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.76127200000001%20-87.59659099999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 125069
+2018-05-15 17:17:58,654 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:58,770 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7538672%20-87.6523519&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 118239
+2018-05-15 17:17:59,235 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:17:59,356 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.6882942%20-87.628722&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120517
+2018-05-15 17:17:59,882 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:00,027 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.872647%20-87.74399&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 119742
+2018-05-15 17:18:00,575 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:00,702 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=42.00657560000001%20-87.6864301&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 124463
+2018-05-15 17:18:01,272 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:01,409 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.89717599999999%20-87.714794&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 111271
+2018-05-15 17:18:01,961 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:02,115 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.778713%20-87.6571689&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 117648
+2018-05-15 17:18:02,672 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:02,798 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.86618929999999%20-87.723968&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 103155
+2018-05-15 17:18:03,224 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:03,359 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7392973%20-87.61657459999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120266
+2018-05-15 17:18:03,950 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:04,104 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7263618%20-87.61760509999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120306
+2018-05-15 17:18:04,498 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:04,612 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8981986%20-87.76766579999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 125407
+2018-05-15 17:18:05,169 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:05,285 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7637474%20-87.6720407&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120357
+2018-05-15 17:18:05,841 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:05,973 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.694048%20-87.63085199999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126252
+2018-05-15 17:18:06,485 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:06,604 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.6927712%20-87.541575&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 109223
+2018-05-15 17:18:07,171 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:07,296 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7818602%20-87.6500685&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123543
+2018-05-15 17:18:07,840 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:07,956 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.503603%20-87.63033899999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 129382
+2018-05-15 17:18:08,522 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:08,822 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.690098%20-87.625473&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120333
+2018-05-15 17:18:09,312 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:09,444 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.88959%20-87.725025&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120218
+2018-05-15 17:18:10,032 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:10,174 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8335409%20-87.7197429&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 118558
+2018-05-15 17:18:10,686 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:10,832 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.69262%20-87.6366642&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120647
+2018-05-15 17:18:12,172 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:12,297 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.503145%20-87.62309400000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120515
+2018-05-15 17:18:12,853 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:12,980 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7391341%20-87.6556165&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 121942
+2018-05-15 17:18:13,370 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:13,486 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.780305%20-87.652444&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122135
+2018-05-15 17:18:14,111 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:14,249 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7965799%20-87.5830271&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 114495
+2018-05-15 17:18:14,750 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:14,868 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8004611%20-87.6730326&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 114776
+2018-05-15 17:18:15,288 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:15,432 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7613086%20-87.6324234&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 129074
+2018-05-15 17:18:15,943 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:16,055 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.836559%20-87.612826&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126773
+2018-05-15 17:18:16,521 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:16,644 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.755377%20-87.586756&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122307
+2018-05-15 17:18:17,122 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:17,252 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7619789%20-87.65903999999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120908
+2018-05-15 17:18:17,766 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:17,964 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.747727%20-87.63459&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 132056
+2018-05-15 17:18:18,445 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:18,555 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7732848%20-87.67107759999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 124601
+2018-05-15 17:18:19,007 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:19,118 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.81044600000001%20-87.746026&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126462
+2018-05-15 17:18:19,640 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:19,761 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7030506%20-87.53740669999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 107770
+2018-05-15 17:18:20,419 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:20,546 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8385246%20-87.62190290000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 116588
+2018-05-15 17:18:21,115 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:21,232 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.774504%20-87.643901&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 116276
+2018-05-15 17:18:21,782 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:21,899 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.88400499999999%20-87.7628299&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 116925
+2018-05-15 17:18:22,422 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:22,533 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.785374%20-87.653796&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122958
+2018-05-15 17:18:22,996 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:23,123 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.77400960000001%20-87.6455687&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122817
+2018-05-15 17:18:23,716 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:23,860 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7845751%20-87.62414129999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 133124
+2018-05-15 17:18:24,256 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:24,371 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.505104%20-87.62560800000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126032
+2018-05-15 17:18:24,852 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:24,991 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.773138%20-87.6423598&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 129571
+2018-05-15 17:18:25,568 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:25,683 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.5040053%20-87.6518895&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120749
+2018-05-15 17:18:26,246 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:26,371 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7753206%20-87.6723392&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122266
+2018-05-15 17:18:26,799 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:26,915 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.6696079%20-87.63475&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 127624
+2018-05-15 17:18:27,414 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:27,530 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.762573%20-87.654899&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123773
+2018-05-15 17:18:28,067 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:28,189 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.751357%20-87.641268&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 118795
+2018-05-15 17:18:28,740 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:29,025 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8013078%20-87.64923019999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126696
+2018-05-15 17:18:29,508 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:29,641 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.76953%20-87.67087599999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 129998
+2018-05-15 17:18:29,680 INFO     Total images Parsed/Dumped: 99
+2018-05-15 17:18:29,680 INFO     Dumping statistics 0_99.csv at C:\Users\newline\Documents\ImageClassification\data\statistics\session_new\aerial\aerial_collected_data_stats
+2018-05-15 17:18:30,109 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:30,229 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7838009%20-87.65253899999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123363
+2018-05-15 17:18:30,744 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:30,874 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.70721349999999%20-87.6389002&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 127988
+2018-05-15 17:18:31,408 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:31,531 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.797165%20-87.66125339999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123066
+2018-05-15 17:18:31,989 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:32,250 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.75007799999999%20-87.599936&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 124174
+2018-05-15 17:18:32,674 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:32,794 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8772058%20-87.63176440000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122139
+2018-05-15 17:18:33,296 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:33,419 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7725984%20-87.66738889999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 115988
+2018-05-15 17:18:33,990 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:34,140 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8720949%20-87.70036929999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122528
+2018-05-15 17:18:34,478 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:34,592 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.763234%20-87.669494&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120539
+2018-05-15 17:18:35,175 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:35,295 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8152194%20-87.7057729&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 112154
+2018-05-15 17:18:35,830 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:35,946 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.688669%20-87.6245689&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122341
+2018-05-15 17:18:36,486 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:36,595 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.872512%20-87.70666&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120810
+2018-05-15 17:18:37,057 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:37,185 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.870834%20-87.755084&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126821
+2018-05-15 17:18:37,989 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:38,176 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8043229%20-87.617091&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123680
+2018-05-15 17:18:38,533 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:38,651 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.678303%20-87.6181919&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122275
+2018-05-15 17:18:39,109 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:39,241 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.778986%20-87.676128&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 127893
+2018-05-15 17:18:39,933 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:40,064 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8719481%20-87.7159724&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 115983
+2018-05-15 17:18:40,591 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:40,718 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.9627259%20-87.7043872&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126751
+2018-05-15 17:18:41,083 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:41,200 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8932728%20-87.72285959999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120910
+2018-05-15 17:18:41,787 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:41,913 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.747917%20-87.628478&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 113976
+2018-05-15 17:18:42,358 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:42,477 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.767718%20-87.591965&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 124028
+2018-05-15 17:18:42,848 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:42,975 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.6942155%20-87.6239116&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 131065
+2018-05-15 17:18:43,355 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:43,489 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7113939%20-87.5343382&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122920
+2018-05-15 17:18:43,869 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:43,978 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.769919%20-87.60848399999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120879
+2018-05-15 17:18:44,340 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:44,453 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7742415%20-87.6018276&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 118748
+2018-05-15 17:18:44,944 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:45,062 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.695532%20-87.6265559&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 129361
+2018-05-15 17:18:45,477 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:45,586 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7032736%20-87.6255505&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120089
+2018-05-15 17:18:45,990 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:46,101 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.744551%20-87.601007&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 117972
+2018-05-15 17:18:46,523 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:46,646 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7713004%20-87.6618024&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123778
+2018-05-15 17:18:47,143 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:47,297 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7624607%20-87.5637248&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122860
+2018-05-15 17:18:47,784 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:47,904 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.791117%20-87.6540861&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 119006
+2018-05-15 17:18:48,252 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:48,376 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.6932032%20-87.63095829999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 118164
+2018-05-15 17:18:48,778 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:48,896 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.748339%20-87.619225&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 127244
+2018-05-15 17:18:49,332 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:49,459 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.85818%20-87.680037&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120263
+2018-05-15 17:18:49,951 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:50,077 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.50591%20-87.62420999999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122986
+2018-05-15 17:18:50,496 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:50,603 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.5015239%20-87.62497619999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126431
+2018-05-15 17:18:51,062 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:51,189 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.751925%20-87.66676&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 115309
+2018-05-15 17:18:51,581 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:51,711 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7555775%20-87.6600204&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 112300
+2018-05-15 17:18:52,072 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:52,199 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.679226%20-87.63747699999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120514
+2018-05-15 17:18:52,599 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:52,726 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.784797%20-87.643558&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 127980
+2018-05-15 17:18:53,270 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:53,384 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.762496%20-87.65958499999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 113422
+2018-05-15 17:18:53,937 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:54,050 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.777032%20-87.68880899999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 127590
+2018-05-15 17:18:54,430 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:54,557 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.673272%20-87.63890900000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 133725
+2018-05-15 17:18:54,941 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:55,056 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7769256%20-87.60797300000002&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 116176
+2018-05-15 17:18:55,410 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:55,526 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.678281%20-87.64591899999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126494
+2018-05-15 17:18:55,909 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:56,023 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.80516%20-87.6687662&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 119789
+2018-05-15 17:18:56,401 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:56,513 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7746986%20-87.66799569999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 127118
+2018-05-15 17:18:56,874 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:56,973 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.811878%20-87.598691&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122319
+2018-05-15 17:18:57,452 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:57,584 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.783464%20-87.6635266&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 127857
+2018-05-15 17:18:58,008 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:58,127 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.681282%20-87.632138&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 129816
+2018-05-15 17:18:58,557 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:58,679 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7735214%20-87.6236706&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120313
+2018-05-15 17:18:59,028 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:59,150 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.9926433%20-87.8169387&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120332
+2018-05-15 17:18:59,496 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:18:59,618 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.744413%20-87.60100299999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 121911
+2018-05-15 17:18:59,972 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:00,088 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.732631%20-87.63149299999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 131137
+2018-05-15 17:19:00,480 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:00,597 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7643504%20-87.6519666&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120005
+2018-05-15 17:19:01,000 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:01,127 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.9684811%20-87.67387040000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123969
+2018-05-15 17:19:01,485 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:01,606 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.872656%20-87.743301&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 118945
+2018-05-15 17:19:02,189 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:02,296 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7615259%20-87.55994059999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 133042
+2018-05-15 17:19:02,690 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:02,809 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.759047%20-87.583834&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 111522
+2018-05-15 17:19:03,274 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:03,405 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8791749%20-87.721632&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 127711
+2018-05-15 17:19:03,872 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:03,983 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.758342%20-87.60124599999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 130998
+2018-05-15 17:19:04,507 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:04,617 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8659568%20-87.7172361&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 116668
+2018-05-15 17:19:04,951 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:05,069 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.778738%20-87.67475999999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 115245
+2018-05-15 17:19:05,562 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:05,710 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7541069%20-87.6162726&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 121016
+2018-05-15 17:19:06,079 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:06,189 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.908501%20-87.755026&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 121375
+2018-05-15 17:19:06,608 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:06,741 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.772712%20-87.6108275&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 130220
+2018-05-15 17:19:07,102 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:07,220 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7910329%20-87.5935049&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 125716
+2018-05-15 17:19:07,566 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:07,683 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7333%20-87.668729&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 117139
+2018-05-15 17:19:08,034 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:08,166 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7674182%20-87.63132929999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 132013
+2018-05-15 17:19:08,751 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:08,869 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.777793%20-87.66926699999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 115318
+2018-05-15 17:19:09,237 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:09,372 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7671%20-87.58678800000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 131431
+2018-05-15 17:19:09,776 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:09,909 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.871513%20-87.713949&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 118293
+2018-05-15 17:19:10,268 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:10,379 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8942361%20-87.7472878&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 121422
+2018-05-15 17:19:10,760 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:10,878 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.781971%20-87.64934799999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126056
+2018-05-15 17:19:11,567 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:11,674 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.50193300000001%20-87.632874&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120378
+2018-05-15 17:19:12,209 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:12,324 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8018069%20-87.59778299999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 129913
+2018-05-15 17:19:12,840 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:12,959 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7949635%20-87.6810538&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 124417
+2018-05-15 17:19:13,479 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:13,614 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7961317%20-87.6624767&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 111187
+2018-05-15 17:19:14,184 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:14,311 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7439544%20-87.584542&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 118694
+2018-05-15 17:19:14,807 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:14,924 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.80082669999999%20-87.6637578&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 119823
+2018-05-15 17:19:15,308 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:15,426 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.751953%20-87.66745600000002&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 113535
+2018-05-15 17:19:15,814 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:15,926 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.891139%20-87.74478599999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 130360
+2018-05-15 17:19:16,449 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:16,564 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7698618%20-87.62139529999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120600
+2018-05-15 17:19:17,021 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:17,154 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.501404%20-87.62958599999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126462
+2018-05-15 17:19:17,303 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:17,417 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7742415%20-87.6018276&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 118748
+2018-05-15 17:19:17,783 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:17,901 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8055774%20-87.63353180000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 117286
+2018-05-15 17:19:18,260 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:18,371 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.756556%20-87.648676&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 112518
+2018-05-15 17:19:18,751 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:18,891 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7713549%20-87.6793977&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 115600
+2018-05-15 17:19:19,318 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:19,426 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.675078%20-87.6180401&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 119897
+2018-05-15 17:19:19,778 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:19,886 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.771868%20-87.669297&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 121849
+2018-05-15 17:19:20,399 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:20,534 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8052388%20-87.65781439999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 115841
+2018-05-15 17:19:21,154 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:21,273 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.76863600000001%20-87.68184099999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 117029
+2018-05-15 17:19:21,653 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:21,787 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.73102%20-87.561888&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 113827
+2018-05-15 17:19:22,225 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:22,552 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7203945%20-87.5643875&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 121591
+2018-05-15 17:19:23,128 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:23,269 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.657755%20-87.55723599999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 114756
+2018-05-15 17:19:23,616 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:23,864 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.691437%20-87.633044&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 125665
+2018-05-15 17:19:24,413 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:24,528 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.757368%20-87.574535&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 116197
+2018-05-15 17:19:25,034 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:25,169 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.761071%20-87.659127&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 121553
+2018-05-15 17:19:25,728 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:25,854 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7563076%20-87.6735333&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 114714
+2018-05-15 17:19:26,536 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:26,649 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.502127%20-87.62618990000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122620
+2018-05-15 17:19:27,016 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:27,199 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.669458%20-87.6359499&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126286
+2018-05-15 17:19:27,240 INFO     Total images Parsed/Dumped: 199
+2018-05-15 17:19:27,240 INFO     Dumping statistics 100_199.csv at C:\Users\newline\Documents\ImageClassification\data\statistics\session_new\aerial\aerial_collected_data_stats
+2018-05-15 17:19:27,566 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:27,679 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.888913%20-87.748632&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 116468
+2018-05-15 17:19:28,147 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:28,426 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.746841%20-87.56096199999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123201
+2018-05-15 17:19:28,925 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:29,042 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.507625%20-87.623834&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126343
+2018-05-15 17:19:29,489 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:29,619 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.67548559999999%20-87.6217617&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123419
+2018-05-15 17:19:30,011 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:30,210 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8772058%20-87.63176440000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122139
+2018-05-15 17:19:30,739 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:31,082 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.811307%20-87.75269&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 117432
+2018-05-15 17:19:31,511 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:31,807 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.767091%20-87.65682210000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 112912
+2018-05-15 17:19:32,275 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:32,548 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.674788%20-87.61868799999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 133033
+2018-05-15 17:19:32,942 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:33,152 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.89249119999999%20-87.725554&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 114287
+2018-05-15 17:19:33,519 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:33,728 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7126058%20-87.56456589999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 129187
+2018-05-15 17:19:34,094 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:34,232 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.694655%20-87.656429&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126998
+2018-05-15 17:19:34,743 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:35,067 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.504005%20-87.631547&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126255
+2018-05-15 17:19:35,457 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:35,614 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7725111%20-87.60910129999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 125196
+2018-05-15 17:19:36,022 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:36,148 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7987981%20-87.6844429&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 116229
+2018-05-15 17:19:36,710 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:36,827 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7444699%20-87.7244382&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 107662
+2018-05-15 17:19:37,244 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:37,360 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.771483%20-87.6096317&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 132797
+2018-05-15 17:19:37,798 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:38,076 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.780552%20-87.636701&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 125378
+2018-05-15 17:19:38,532 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:38,640 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.711542%20-87.650626&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 112454
+2018-05-15 17:19:39,101 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:39,246 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.686467%20-87.624374&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 127115
+2018-05-15 17:19:39,626 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:39,908 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.733777%20-87.605164&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 131617
+2018-05-15 17:19:40,459 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:40,586 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.505927%20-87.6204939&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120366
+2018-05-15 17:19:41,259 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:41,388 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8036699%20-87.61894799999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 114952
+2018-05-15 17:19:41,821 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:42,075 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.747266%20-87.642555&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 124795
+2018-05-15 17:19:42,626 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:42,763 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.684567%20-87.630912&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 130609
+2018-05-15 17:19:43,259 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:43,419 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.861406%20-87.725899&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 124816
+2018-05-15 17:19:43,990 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:44,251 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7842897%20-87.66162899999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 124041
+2018-05-15 17:19:44,792 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:45,058 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.498092%20-87.66637759999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 117939
+2018-05-15 17:19:45,495 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:45,781 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.6922687%20-87.6309197&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 119338
+2018-05-15 17:19:46,183 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:46,293 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.67033300000001%20-87.636182&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 125564
+2018-05-15 17:19:46,812 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:47,029 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.503282%20-87.62309599999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 121861
+2018-05-15 17:19:47,377 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:47,496 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7469561%20-87.6989207&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120427
+2018-05-15 17:19:47,880 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:48,009 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.505626%20-87.631549&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123198
+2018-05-15 17:19:48,619 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:48,747 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.776234%20-87.67477559999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122390
+2018-05-15 17:19:49,133 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:49,253 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.5017179%20-87.627916&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 114849
+2018-05-15 17:19:49,607 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:49,739 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.677584%20-87.616924&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 131480
+2018-05-15 17:19:50,108 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:50,250 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.505484%20-87.63104&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 128326
+2018-05-15 17:19:50,717 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:51,014 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.68113899999999%20-87.6381229&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 119340
+2018-05-15 17:19:51,571 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:51,683 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7634973%20-87.59551139999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 120542
+2018-05-15 17:19:52,212 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:52,341 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7721305%20-87.6127561&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 131015
+2018-05-15 17:19:52,889 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:53,028 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.739123%20-87.641876&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122494
+2018-05-15 17:19:53,565 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:53,698 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.815187%20-87.598083&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126742
+2018-05-15 17:19:54,146 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:54,254 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7864076%20-87.64595419999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 121547
+2018-05-15 17:19:54,730 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:54,875 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.504534%20-87.62138999999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 114864
+2018-05-15 17:19:55,296 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:55,440 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.8772058%20-87.63176440000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 122139
+2018-05-15 17:19:55,790 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:55,910 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7766469%20-87.643396&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 107987
+2018-05-15 17:19:56,277 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:56,432 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7040373%20-87.635739&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 125429
+2018-05-15 17:19:57,048 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:57,179 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7116011%20-87.6239161&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123584
+2018-05-15 17:19:57,571 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:57,707 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7487818%20-87.6035899&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123031
+2018-05-15 17:19:58,238 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:58,502 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7633184%20-87.5583573&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 115049
+2018-05-15 17:19:58,872 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:58,997 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.730308%20-87.635288&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 128575
+2018-05-15 17:19:59,630 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:19:59,744 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.501405%20-87.629493&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 128255
+2018-05-15 17:20:00,129 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:20:00,407 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.770262%20-87.60849100000001&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126465
+2018-05-15 17:20:00,912 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:20:01,018 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.50146%20-87.624286&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 131994
+2018-05-15 17:20:01,411 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:20:01,697 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.676648%20-87.616806&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 116062
+2018-05-15 17:20:02,178 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:20:02,306 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.9736377%20-87.7503066&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 113397
+2018-05-15 17:20:02,679 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:20:02,806 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.81954380000001%20-87.6910278&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 115181
+2018-05-15 17:20:03,384 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:20:03,505 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.954255%20-87.702341&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126664
+2018-05-15 17:20:03,904 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:20:04,048 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.748413%20-87.65523499999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 110982
+2018-05-15 17:20:04,516 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:20:04,657 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.759603%20-87.665757&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 113095
+2018-05-15 17:20:05,056 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:20:05,351 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.752234%20-87.601917&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 123577
+2018-05-15 17:20:05,780 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:20:05,915 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7007827%20-87.63635579999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 126002
+2018-05-15 17:20:06,301 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:20:06,466 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7668066%20-87.6753919&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 127666
+2018-05-15 17:20:06,896 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:20:07,053 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7893333%20-87.72393799999999&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 115399
+2018-05-15 17:20:07,412 DEBUG    Starting new HTTPS connection (1): maps.googleapis.com
+2018-05-15 17:20:07,536 DEBUG    https://maps.googleapis.com:443 "GET /maps/api/staticmap?center=41.7014029%20-87.6324619&zoom=20&size=400x400&maptype=satellite&key=AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0 HTTP/1.1" 200 121542
+2018-05-15 17:20:07,575 INFO     Total images Parsed/Dumped: 263
+2018-05-15 17:20:07,576 INFO     Dumping statistics 200_263.csv at C:\Users\newline\Documents\ImageClassification\data\statistics\session_new\aerial\aerial_collected_data_stats
+2018-05-15 17:20:07,592 INFO     Initiating Aerial Crop ...............................
+2018-05-15 17:20:07,592 INFO     Input data path: C:\Users\newline\Documents\ImageClassification\data\input_images\session_new\aerial
+2018-05-15 17:20:07,592 INFO     Output data path: C:\Users\newline\Documents\ImageClassification\data\input_images\session_new\aerial_cropped
+2018-05-15 17:20:07,600 INFO     Apply Condition: RANGE_INTERPOLATED and CHICAGO
+2018-05-15 17:20:07,607 WARNING  GDAL data files not located, GDAL_DATA not set
+2018-05-15 17:20:07,607 WARNING  PROJ data files not located, PROJ_LIB not set
+2018-05-15 17:20:07,607 DEBUG    Userencoding: None
+2018-05-15 17:20:07,610 DEBUG    Projection not found (cogr_crs was NULL)
+2018-05-15 17:20:07,610 DEBUG    Index: 0
+2018-05-15 17:20:12,655 DEBUG    Projection not found (cogr_crs was NULL)
+2018-05-15 17:20:12,682 DEBUG    Flushed buffer
+2018-05-15 17:20:12,682 DEBUG    Stopped session
+2018-05-15 17:20:14,502 WARNING  GDAL data files not located, GDAL_DATA not set
+2018-05-15 17:20:14,503 WARNING  PROJ data files not located, PROJ_LIB not set
+2018-05-15 17:20:14,503 DEBUG    Userencoding: None
+2018-05-15 17:20:14,505 DEBUG    Projection not found (cogr_crs was NULL)
+2018-05-15 17:20:14,505 DEBUG    Index: 0
+2018-05-15 17:20:19,855 DEBUG    Projection not found (cogr_crs was NULL)
+2018-05-15 17:20:19,884 DEBUG    Flushed buffer
+2018-05-15 17:20:19,885 DEBUG    Stopped session
+2018-05-15 17:20:22,095 WARNING  GDAL data files not located, GDAL_DATA not set
+2018-05-15 17:20:22,095 WARNING  PROJ data files not located, PROJ_LIB not set
+2018-05-15 17:20:22,095 DEBUG    Userencoding: None
+2018-05-15 17:20:22,098 DEBUG    Projection not found (cogr_crs was NULL)
+2018-05-15 17:20:22,098 DEBUG    Index: 0
+2018-05-15 17:20:26,552 DEBUG    Projection not found (cogr_crs was NULL)
+2018-05-15 17:20:26,577 DEBUG    Flushed buffer
+2018-05-15 17:20:26,577 DEBUG    Stopped session
+2018-05-15 17:20:27,409 WARNING  GDAL data files not located, GDAL_DATA not set
+2018-05-15 17:20:27,409 WARNING  PROJ data files not located, PROJ_LIB not set
+2018-05-15 17:20:27,409 DEBUG    Userencoding: None
+2018-05-15 17:20:27,412 DEBUG    Projection not found (cogr_crs was NULL)
+2018-05-15 17:20:27,412 DEBUG    Index: 0
+2018-05-15 17:20:32,510 DEBUG    Projection not found (cogr_crs was NULL)
+2018-05-15 17:20:32,538 DEBUG    Flushed buffer
+2018-05-15 17:20:32,538 DEBUG    Stopped session
+2018-05-15 17:20:33,527 WARNING  GDAL data files not located, GDAL_DATA not set
+2018-05-15 17:20:33,528 WARNING  PROJ data files not located, PROJ_LIB not set
+2018-05-15 17:20:33,528 DEBUG    Userencoding: None
+2018-05-15 17:20:33,530 DEBUG    Projection not found (cogr_crs was NULL)
+2018-05-15 17:20:33,530 DEBUG    Index: 0
+2018-05-15 17:20:38,819 DEBUG    Projection not found (cogr_crs was NULL)
+2018-05-15 17:20:38,848 DEBUG    Flushed buffer
+2018-05-15 17:20:38,848 DEBUG    Stopped session
+2018-05-15 17:20:39,149 WARNING  GDAL data files not located, GDAL_DATA not set
+2018-05-15 17:20:39,149 WARNING  PROJ data files not located, PROJ_LIB not set
+2018-05-15 17:20:39,149 DEBUG    Userencoding: None
+2018-05-15 17:20:39,152 DEBUG    Projection not found (cogr_crs was NULL)
+2018-05-15 17:20:39,152 DEBUG    Index: 0
+2018-05-15 17:20:44,259 DEBUG    Projection not found (cogr_crs was NULL)
+2018-05-15 17:20:44,287 DEBUG    Flushed buffer
+2018-05-15 17:20:44,287 DEBUG    Stopped session
+2018-05-15 17:20:44,613 WARNING  GDAL data files not located, GDAL_DATA not set
+2018-05-15 17:20:44,613 WARNING  PROJ data files not located, PROJ_LIB not set
+2018-05-15 17:20:44,614 DEBUG    Userencoding: None
+2018-05-15 17:20:44,616 DEBUG    Projection not found (cogr_crs was NULL)
+2018-05-15 17:20:44,616 DEBUG    Index: 0
+2018-05-15 17:20:49,430 DEBUG    Projection not found (cogr_crs was NULL)
+2018-05-15 17:20:49,457 DEBUG    Flushed buffer
+2018-05-15 17:20:49,458 DEBUG    Stopped session
+2018-05-15 17:20:49,885 INFO     Shape: cmn_land_pins = 83, cmn_house_pins = 83 
+2018-05-15 17:20:49,886 INFO     Input Land Images from C:\Users\newline\Documents\ImageClassification\data\input_images\session_new\aerial_cropped\land: 
+2018-05-15 17:20:49,886 INFO     Input House Images from C:\Users\newline\Documents\ImageClassification\data\input_images\session_new\aerial_cropped\house: 
+2018-05-15 17:20:49,886 INFO     Output batch array to C:\Users\newline\Documents\ImageClassification\data\batch_data\session_new\aerial_cropped: 
+2018-05-15 17:20:49,886 INFO     Image Shape: [400, 400, 3]
+2018-05-15 17:20:49,886 INFO     Enabling Crop: [128, 128, 3]
+2018-05-15 17:20:49,886 INFO     Enabling Resize: [128, 128, 3]
+2018-05-15 17:20:49,886 INFO     Enabling Rotation angle = 90:
+2018-05-15 17:20:49,886 INFO     Running Seed for batch creation: 881
+2018-05-15 17:20:49,888 INFO     Input Data: Total Land: 83, Total House: 83
+2018-05-15 17:20:50,765 INFO     DATA FORMATTER: Dumping the hdf5 file batch_0 to disk, dataX shape = (166, 224, 224, 3), dataY shape = (166,)
+2018-05-15 17:20:51,673 INFO     Training Land Size: 83, Training House Size: 83
+2018-05-15 17:20:51,687 INFO     INITIATING TEST ........
+2018-05-15 17:20:51,687 INFO     Checkpoint LISTS .. ['resnet_epoch_29_batch_109', 'resnet_epoch_29_batch_116', 'resnet_epoch_29_batch_79', 'resnet_epoch_29_batch_89', 'resnet_epoch_29_batch_99']
+2018-05-15 17:20:51,687 INFO     PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+2018-05-15 17:20:51,709 INFO     PREPROCESSING self.config: With the Test Data Set
+2018-05-15 17:20:51,709 INFO     Standarizing the image
+2018-05-15 17:20:51,714 INFO     SEED for scope: 553
+2018-05-15 17:20:51,807 INFO     Running Scope bn_1: 
+2018-05-15 17:20:51,851 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:20:51,851 INFO     conv_layer : conv shape: [None, 56, 56, 64]
+2018-05-15 17:20:51,851 INFO     SEED for scope: 292
+2018-05-15 17:20:51,868 INFO     Running Scope bn_1: 
+2018-05-15 17:20:51,909 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:20:51,909 INFO     SEED for scope: 394
+2018-05-15 17:20:51,927 INFO     Running Scope bn_2: 
+2018-05-15 17:20:51,966 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-05-15 17:20:51,969 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-05-15 17:20:51,969 INFO     SEED for scope: 874
+2018-05-15 17:20:51,986 INFO     Running Scope bn_1: 
+2018-05-15 17:20:52,027 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:20:52,027 INFO     SEED for scope: 445
+2018-05-15 17:20:52,044 INFO     Running Scope bn_2: 
+2018-05-15 17:20:52,084 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-05-15 17:20:52,086 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-05-15 17:20:52,086 INFO     SEED for scope: 191
+2018-05-15 17:20:52,103 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-05-15 17:20:52,103 INFO     SEED for scope: 161
+2018-05-15 17:20:52,128 INFO     Running Scope bn_1: 
+2018-05-15 17:20:52,176 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-05-15 17:20:52,177 INFO     SEED for scope: 141
+2018-05-15 17:20:52,194 INFO     Running Scope bn_2: 
+2018-05-15 17:20:52,234 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-05-15 17:20:52,236 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-05-15 17:20:52,237 INFO     SEED for scope: 213
+2018-05-15 17:20:52,253 INFO     Running Scope bn_1: 
+2018-05-15 17:20:52,295 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-05-15 17:20:52,295 INFO     SEED for scope: 436
+2018-05-15 17:20:52,312 INFO     Running Scope bn_2: 
+2018-05-15 17:20:52,353 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-05-15 17:20:52,355 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-05-15 17:20:52,355 INFO     SEED for scope: 754
+2018-05-15 17:20:52,372 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-05-15 17:20:52,372 INFO     SEED for scope: 991
+2018-05-15 17:20:52,390 INFO     Running Scope bn_1: 
+2018-05-15 17:20:52,432 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-05-15 17:20:52,433 INFO     SEED for scope: 302
+2018-05-15 17:20:52,449 INFO     Running Scope bn_2: 
+2018-05-15 17:20:52,489 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-05-15 17:20:52,491 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-05-15 17:20:52,491 INFO     SEED for scope: 992
+2018-05-15 17:20:52,508 INFO     Running Scope bn_1: 
+2018-05-15 17:20:52,548 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-05-15 17:20:52,548 INFO     SEED for scope: 223
+2018-05-15 17:20:52,565 INFO     Running Scope bn_2: 
+2018-05-15 17:20:52,605 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-05-15 17:20:52,607 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-05-15 17:20:52,607 INFO     SEED for scope: 645
+2018-05-15 17:20:52,624 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-05-15 17:20:52,624 INFO     SEED for scope: 724
+2018-05-15 17:20:52,640 INFO     Running Scope bn_1: 
+2018-05-15 17:20:52,681 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-05-15 17:20:52,681 INFO     SEED for scope: 944
+2018-05-15 17:20:52,698 INFO     Running Scope bn_2: 
+2018-05-15 17:20:52,737 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-05-15 17:20:52,740 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-05-15 17:20:52,740 INFO     SEED for scope: 232
+2018-05-15 17:20:52,852 INFO     Running Scope bn_1: 
+2018-05-15 17:20:52,893 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-05-15 17:20:52,893 INFO     SEED for scope: 123
+2018-05-15 17:20:52,909 INFO     Running Scope bn_2: 
+2018-05-15 17:20:52,949 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-05-15 17:20:52,951 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-05-15 17:20:53,599 INFO     X - flattened: [None, 25088]
+2018-05-15 17:20:53,615 INFO     X - FC Layer (RELU): [None, 512]
+2018-05-15 17:20:53,631 INFO     LOGITS - Softmax Layer: [None, 2]
+2018-05-15 17:20:53,632 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-05-15 17:20:53,632 INFO     INITIALIZING LOSS: .....
+2018-05-15 17:20:53,654 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-05-15 17:21:02,540 INFO     Restoring parameters from C:\Users\newline\Documents\ImageClassification\data\checkpoints\sam_new\aerial_cropped\resnet\resnet_epoch_29_batch_79
+2018-05-15 17:21:03,205 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (166, 224, 224, 3), dataY shape = (166,)
+2018-05-15 17:21:05,740 INFO     VALIDATION METRICs : Fold: 1, epoch: 29, batch: 79, Loss: 0.414921, Accuracy: 0.87349, Precision: 0.84444, Recall: 0.91566
+2018-05-15 17:21:05,782 INFO     PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+2018-05-15 17:21:05,785 INFO     PREPROCESSING self.config: With the Test Data Set
+2018-05-15 17:21:05,785 INFO     Standarizing the image
+2018-05-15 17:21:05,790 INFO     SEED for scope: 784
+2018-05-15 17:21:05,807 INFO     Running Scope bn_1: 
+2018-05-15 17:21:05,851 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:21:05,851 INFO     conv_layer : conv shape: [None, 56, 56, 64]
+2018-05-15 17:21:05,851 INFO     SEED for scope: 239
+2018-05-15 17:21:05,869 INFO     Running Scope bn_1: 
+2018-05-15 17:21:05,912 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:21:05,912 INFO     SEED for scope: 337
+2018-05-15 17:21:05,929 INFO     Running Scope bn_2: 
+2018-05-15 17:21:05,969 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-05-15 17:21:05,971 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-05-15 17:21:05,971 INFO     SEED for scope: 888
+2018-05-15 17:21:05,988 INFO     Running Scope bn_1: 
+2018-05-15 17:21:06,031 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:21:06,031 INFO     SEED for scope: 666
+2018-05-15 17:21:06,049 INFO     Running Scope bn_2: 
+2018-05-15 17:21:06,089 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-05-15 17:21:06,091 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-05-15 17:21:06,091 INFO     SEED for scope: 400
+2018-05-15 17:21:06,109 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-05-15 17:21:06,109 INFO     SEED for scope: 912
+2018-05-15 17:21:06,126 INFO     Running Scope bn_1: 
+2018-05-15 17:21:06,166 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-05-15 17:21:06,166 INFO     SEED for scope: 255
+2018-05-15 17:21:06,183 INFO     Running Scope bn_2: 
+2018-05-15 17:21:06,222 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-05-15 17:21:06,224 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-05-15 17:21:06,224 INFO     SEED for scope: 983
+2018-05-15 17:21:06,241 INFO     Running Scope bn_1: 
+2018-05-15 17:21:06,281 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-05-15 17:21:06,281 INFO     SEED for scope: 902
+2018-05-15 17:21:06,297 INFO     Running Scope bn_2: 
+2018-05-15 17:21:06,336 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-05-15 17:21:06,338 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-05-15 17:21:06,338 INFO     SEED for scope: 846
+2018-05-15 17:21:06,613 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-05-15 17:21:06,613 INFO     SEED for scope: 345
+2018-05-15 17:21:06,630 INFO     Running Scope bn_1: 
+2018-05-15 17:21:06,670 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-05-15 17:21:06,670 INFO     SEED for scope: 854
+2018-05-15 17:21:06,686 INFO     Running Scope bn_2: 
+2018-05-15 17:21:06,727 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-05-15 17:21:06,729 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-05-15 17:21:06,729 INFO     SEED for scope: 989
+2018-05-15 17:21:06,745 INFO     Running Scope bn_1: 
+2018-05-15 17:21:06,787 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-05-15 17:21:06,787 INFO     SEED for scope: 291
+2018-05-15 17:21:06,803 INFO     Running Scope bn_2: 
+2018-05-15 17:21:06,843 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-05-15 17:21:06,844 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-05-15 17:21:06,845 INFO     SEED for scope: 486
+2018-05-15 17:21:06,863 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-05-15 17:21:06,863 INFO     SEED for scope: 444
+2018-05-15 17:21:06,880 INFO     Running Scope bn_1: 
+2018-05-15 17:21:06,922 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-05-15 17:21:06,922 INFO     SEED for scope: 101
+2018-05-15 17:21:06,938 INFO     Running Scope bn_2: 
+2018-05-15 17:21:06,979 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-05-15 17:21:06,981 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-05-15 17:21:06,981 INFO     SEED for scope: 202
+2018-05-15 17:21:06,998 INFO     Running Scope bn_1: 
+2018-05-15 17:21:07,039 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-05-15 17:21:07,039 INFO     SEED for scope: 304
+2018-05-15 17:21:07,057 INFO     Running Scope bn_2: 
+2018-05-15 17:21:07,096 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-05-15 17:21:07,099 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-05-15 17:21:07,108 INFO     X - flattened: [None, 25088]
+2018-05-15 17:21:07,125 INFO     X - FC Layer (RELU): [None, 512]
+2018-05-15 17:21:07,140 INFO     LOGITS - Softmax Layer: [None, 2]
+2018-05-15 17:21:07,141 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-05-15 17:21:07,141 INFO     INITIALIZING LOSS: .....
+2018-05-15 17:21:07,163 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-05-15 17:21:15,301 INFO     Restoring parameters from C:\Users\newline\Documents\ImageClassification\data\checkpoints\sam_new\aerial_cropped\resnet\resnet_epoch_29_batch_89
+2018-05-15 17:21:15,943 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (166, 224, 224, 3), dataY shape = (166,)
+2018-05-15 17:21:16,983 INFO     VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.418936, Accuracy: 0.87349, Precision: 0.84444, Recall: 0.91566
+2018-05-15 17:21:17,025 INFO     PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+2018-05-15 17:21:17,028 INFO     PREPROCESSING self.config: With the Test Data Set
+2018-05-15 17:21:17,028 INFO     Standarizing the image
+2018-05-15 17:21:17,033 INFO     SEED for scope: 707
+2018-05-15 17:21:17,050 INFO     Running Scope bn_1: 
+2018-05-15 17:21:17,094 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:21:17,094 INFO     conv_layer : conv shape: [None, 56, 56, 64]
+2018-05-15 17:21:17,094 INFO     SEED for scope: 808
+2018-05-15 17:21:17,111 INFO     Running Scope bn_1: 
+2018-05-15 17:21:17,153 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:21:17,153 INFO     SEED for scope: 905
+2018-05-15 17:21:17,171 INFO     Running Scope bn_2: 
+2018-05-15 17:21:17,211 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-05-15 17:21:17,213 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-05-15 17:21:17,213 INFO     SEED for scope: 900
+2018-05-15 17:21:17,230 INFO     Running Scope bn_1: 
+2018-05-15 17:21:17,272 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:21:17,272 INFO     SEED for scope: 774
+2018-05-15 17:21:17,290 INFO     Running Scope bn_2: 
+2018-05-15 17:21:17,332 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-05-15 17:21:17,334 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-05-15 17:21:17,334 INFO     SEED for scope: 553
+2018-05-15 17:21:17,352 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-05-15 17:21:17,352 INFO     SEED for scope: 292
+2018-05-15 17:21:17,369 INFO     Running Scope bn_1: 
+2018-05-15 17:21:17,410 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-05-15 17:21:17,410 INFO     SEED for scope: 394
+2018-05-15 17:21:17,680 INFO     Running Scope bn_2: 
+2018-05-15 17:21:17,720 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-05-15 17:21:17,721 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-05-15 17:21:17,722 INFO     SEED for scope: 874
+2018-05-15 17:21:17,739 INFO     Running Scope bn_1: 
+2018-05-15 17:21:17,781 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-05-15 17:21:17,781 INFO     SEED for scope: 445
+2018-05-15 17:21:17,798 INFO     Running Scope bn_2: 
+2018-05-15 17:21:17,838 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-05-15 17:21:17,840 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-05-15 17:21:17,840 INFO     SEED for scope: 191
+2018-05-15 17:21:17,858 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-05-15 17:21:17,858 INFO     SEED for scope: 161
+2018-05-15 17:21:17,874 INFO     Running Scope bn_1: 
+2018-05-15 17:21:17,915 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-05-15 17:21:17,915 INFO     SEED for scope: 141
+2018-05-15 17:21:17,932 INFO     Running Scope bn_2: 
+2018-05-15 17:21:17,971 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-05-15 17:21:17,973 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-05-15 17:21:17,973 INFO     SEED for scope: 213
+2018-05-15 17:21:17,990 INFO     Running Scope bn_1: 
+2018-05-15 17:21:18,032 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-05-15 17:21:18,032 INFO     SEED for scope: 436
+2018-05-15 17:21:18,048 INFO     Running Scope bn_2: 
+2018-05-15 17:21:18,088 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-05-15 17:21:18,090 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-05-15 17:21:18,090 INFO     SEED for scope: 754
+2018-05-15 17:21:18,107 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-05-15 17:21:18,107 INFO     SEED for scope: 991
+2018-05-15 17:21:18,124 INFO     Running Scope bn_1: 
+2018-05-15 17:21:18,164 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-05-15 17:21:18,165 INFO     SEED for scope: 302
+2018-05-15 17:21:18,182 INFO     Running Scope bn_2: 
+2018-05-15 17:21:18,221 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-05-15 17:21:18,223 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-05-15 17:21:18,223 INFO     SEED for scope: 992
+2018-05-15 17:21:18,240 INFO     Running Scope bn_1: 
+2018-05-15 17:21:18,280 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-05-15 17:21:18,280 INFO     SEED for scope: 223
+2018-05-15 17:21:18,297 INFO     Running Scope bn_2: 
+2018-05-15 17:21:18,337 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-05-15 17:21:18,338 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-05-15 17:21:18,349 INFO     X - flattened: [None, 25088]
+2018-05-15 17:21:18,365 INFO     X - FC Layer (RELU): [None, 512]
+2018-05-15 17:21:18,380 INFO     LOGITS - Softmax Layer: [None, 2]
+2018-05-15 17:21:18,381 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-05-15 17:21:18,381 INFO     INITIALIZING LOSS: .....
+2018-05-15 17:21:18,402 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-05-15 17:21:26,456 INFO     Restoring parameters from C:\Users\newline\Documents\ImageClassification\data\checkpoints\sam_new\aerial_cropped\resnet\resnet_epoch_29_batch_99
+2018-05-15 17:21:27,122 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (166, 224, 224, 3), dataY shape = (166,)
+2018-05-15 17:21:28,078 INFO     VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.417821, Accuracy: 0.87349, Precision: 0.84444, Recall: 0.91566
+2018-05-15 17:21:28,122 INFO     PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+2018-05-15 17:21:28,124 INFO     PREPROCESSING self.config: With the Test Data Set
+2018-05-15 17:21:28,124 INFO     Standarizing the image
+2018-05-15 17:21:28,129 INFO     SEED for scope: 944
+2018-05-15 17:21:28,147 INFO     Running Scope bn_1: 
+2018-05-15 17:21:28,189 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:21:28,189 INFO     conv_layer : conv shape: [None, 56, 56, 64]
+2018-05-15 17:21:28,190 INFO     SEED for scope: 232
+2018-05-15 17:21:28,206 INFO     Running Scope bn_1: 
+2018-05-15 17:21:28,247 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:21:28,247 INFO     SEED for scope: 123
+2018-05-15 17:21:28,265 INFO     Running Scope bn_2: 
+2018-05-15 17:21:28,305 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-05-15 17:21:28,307 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-05-15 17:21:28,307 INFO     SEED for scope: 321
+2018-05-15 17:21:28,323 INFO     Running Scope bn_1: 
+2018-05-15 17:21:28,612 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:21:28,612 INFO     SEED for scope: 909
+2018-05-15 17:21:28,629 INFO     Running Scope bn_2: 
+2018-05-15 17:21:28,672 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-05-15 17:21:28,674 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-05-15 17:21:28,674 INFO     SEED for scope: 784
+2018-05-15 17:21:28,692 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-05-15 17:21:28,692 INFO     SEED for scope: 239
+2018-05-15 17:21:28,710 INFO     Running Scope bn_1: 
+2018-05-15 17:21:28,751 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-05-15 17:21:28,751 INFO     SEED for scope: 337
+2018-05-15 17:21:28,769 INFO     Running Scope bn_2: 
+2018-05-15 17:21:28,811 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-05-15 17:21:28,814 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-05-15 17:21:28,814 INFO     SEED for scope: 888
+2018-05-15 17:21:28,832 INFO     Running Scope bn_1: 
+2018-05-15 17:21:28,874 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-05-15 17:21:28,874 INFO     SEED for scope: 666
+2018-05-15 17:21:28,891 INFO     Running Scope bn_2: 
+2018-05-15 17:21:28,934 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-05-15 17:21:28,936 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-05-15 17:21:28,936 INFO     SEED for scope: 400
+2018-05-15 17:21:28,953 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-05-15 17:21:28,954 INFO     SEED for scope: 912
+2018-05-15 17:21:28,971 INFO     Running Scope bn_1: 
+2018-05-15 17:21:29,014 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-05-15 17:21:29,014 INFO     SEED for scope: 255
+2018-05-15 17:21:29,031 INFO     Running Scope bn_2: 
+2018-05-15 17:21:29,072 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-05-15 17:21:29,074 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-05-15 17:21:29,074 INFO     SEED for scope: 983
+2018-05-15 17:21:29,091 INFO     Running Scope bn_1: 
+2018-05-15 17:21:29,134 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-05-15 17:21:29,134 INFO     SEED for scope: 902
+2018-05-15 17:21:29,151 INFO     Running Scope bn_2: 
+2018-05-15 17:21:29,192 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-05-15 17:21:29,194 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-05-15 17:21:29,194 INFO     SEED for scope: 846
+2018-05-15 17:21:29,211 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-05-15 17:21:29,211 INFO     SEED for scope: 345
+2018-05-15 17:21:29,228 INFO     Running Scope bn_1: 
+2018-05-15 17:21:29,271 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-05-15 17:21:29,271 INFO     SEED for scope: 854
+2018-05-15 17:21:29,288 INFO     Running Scope bn_2: 
+2018-05-15 17:21:29,333 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-05-15 17:21:29,335 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-05-15 17:21:29,336 INFO     SEED for scope: 989
+2018-05-15 17:21:29,355 INFO     Running Scope bn_1: 
+2018-05-15 17:21:29,396 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-05-15 17:21:29,396 INFO     SEED for scope: 291
+2018-05-15 17:21:29,413 INFO     Running Scope bn_2: 
+2018-05-15 17:21:29,455 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-05-15 17:21:29,457 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-05-15 17:21:29,465 INFO     X - flattened: [None, 25088]
+2018-05-15 17:21:29,483 INFO     X - FC Layer (RELU): [None, 512]
+2018-05-15 17:21:29,500 INFO     LOGITS - Softmax Layer: [None, 2]
+2018-05-15 17:21:29,500 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-05-15 17:21:29,500 INFO     INITIALIZING LOSS: .....
+2018-05-15 17:21:29,523 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-05-15 17:21:37,796 INFO     Restoring parameters from C:\Users\newline\Documents\ImageClassification\data\checkpoints\sam_new\aerial_cropped\resnet\resnet_epoch_29_batch_109
+2018-05-15 17:21:38,427 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (166, 224, 224, 3), dataY shape = (166,)
+2018-05-15 17:21:39,391 INFO     VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.417436, Accuracy: 0.87349, Precision: 0.84444, Recall: 0.91566
+2018-05-15 17:21:39,433 INFO     PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+2018-05-15 17:21:39,436 INFO     PREPROCESSING self.config: With the Test Data Set
+2018-05-15 17:21:39,436 INFO     Standarizing the image
+2018-05-15 17:21:39,441 INFO     SEED for scope: 101
+2018-05-15 17:21:39,458 INFO     Running Scope bn_1: 
+2018-05-15 17:21:39,501 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:21:39,501 INFO     conv_layer : conv shape: [None, 56, 56, 64]
+2018-05-15 17:21:39,501 INFO     SEED for scope: 202
+2018-05-15 17:21:39,519 INFO     Running Scope bn_1: 
+2018-05-15 17:21:39,562 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:21:39,562 INFO     SEED for scope: 304
+2018-05-15 17:21:39,578 INFO     Running Scope bn_2: 
+2018-05-15 17:21:39,620 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-05-15 17:21:39,622 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-05-15 17:21:39,622 INFO     SEED for scope: 505
+2018-05-15 17:21:39,639 INFO     Running Scope bn_1: 
+2018-05-15 17:21:39,682 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-05-15 17:21:39,682 INFO     SEED for scope: 607
+2018-05-15 17:21:39,698 INFO     Running Scope bn_2: 
+2018-05-15 17:21:39,739 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-05-15 17:21:39,741 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-05-15 17:21:39,741 INFO     SEED for scope: 707
+2018-05-15 17:21:39,758 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-05-15 17:21:39,758 INFO     SEED for scope: 808
+2018-05-15 17:21:39,775 INFO     Running Scope bn_1: 
+2018-05-15 17:21:39,815 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-05-15 17:21:39,816 INFO     SEED for scope: 905
+2018-05-15 17:21:39,832 INFO     Running Scope bn_2: 
+2018-05-15 17:21:39,872 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-05-15 17:21:39,873 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-05-15 17:21:39,874 INFO     SEED for scope: 900
+2018-05-15 17:21:39,890 INFO     Running Scope bn_1: 
+2018-05-15 17:21:39,931 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-05-15 17:21:39,931 INFO     SEED for scope: 774
+2018-05-15 17:21:39,947 INFO     Running Scope bn_2: 
+2018-05-15 17:21:39,988 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-05-15 17:21:39,990 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-05-15 17:21:39,990 INFO     SEED for scope: 553
+2018-05-15 17:21:40,007 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-05-15 17:21:40,007 INFO     SEED for scope: 292
+2018-05-15 17:21:40,024 INFO     Running Scope bn_1: 
+2018-05-15 17:21:40,064 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-05-15 17:21:40,064 INFO     SEED for scope: 394
+2018-05-15 17:21:40,081 INFO     Running Scope bn_2: 
+2018-05-15 17:21:40,120 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-05-15 17:21:40,122 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-05-15 17:21:40,122 INFO     SEED for scope: 874
+2018-05-15 17:21:40,139 INFO     Running Scope bn_1: 
+2018-05-15 17:21:40,180 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-05-15 17:21:40,180 INFO     SEED for scope: 445
+2018-05-15 17:21:40,196 INFO     Running Scope bn_2: 
+2018-05-15 17:21:40,236 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-05-15 17:21:40,238 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-05-15 17:21:40,238 INFO     SEED for scope: 191
+2018-05-15 17:21:40,255 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-05-15 17:21:40,255 INFO     SEED for scope: 161
+2018-05-15 17:21:40,271 INFO     Running Scope bn_1: 
+2018-05-15 17:21:40,312 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-05-15 17:21:40,312 INFO     SEED for scope: 141
+2018-05-15 17:21:40,328 INFO     Running Scope bn_2: 
+2018-05-15 17:21:40,368 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-05-15 17:21:40,370 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-05-15 17:21:40,370 INFO     SEED for scope: 213
+2018-05-15 17:21:40,386 INFO     Running Scope bn_1: 
+2018-05-15 17:21:40,427 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-05-15 17:21:40,427 INFO     SEED for scope: 436
+2018-05-15 17:21:40,444 INFO     Running Scope bn_2: 
+2018-05-15 17:21:40,484 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-05-15 17:21:40,486 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-05-15 17:21:40,496 INFO     X - flattened: [None, 25088]
+2018-05-15 17:21:40,512 INFO     X - FC Layer (RELU): [None, 512]
+2018-05-15 17:21:40,527 INFO     LOGITS - Softmax Layer: [None, 2]
+2018-05-15 17:21:40,528 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-05-15 17:21:40,528 INFO     INITIALIZING LOSS: .....
+2018-05-15 17:21:40,549 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-05-15 17:21:48,897 INFO     Restoring parameters from C:\Users\newline\Documents\ImageClassification\data\checkpoints\sam_new\aerial_cropped\resnet\resnet_epoch_29_batch_116
+2018-05-15 17:21:49,537 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (166, 224, 224, 3), dataY shape = (166,)
+2018-05-15 17:21:50,492 INFO     VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.417075, Accuracy: 0.87349, Precision: 0.84444, Recall: 0.91566
+2018-05-15 17:21:50,666 INFO     Removing Batches for RUN: session_new, img_type: aerial_cropped
+2018-05-15 17:21:50,677 INFO     Removed Batches ...................

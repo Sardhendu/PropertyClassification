@@ -1,0 +1,9 @@
+2018-05-04 16:48:45,694 DEBUG    Found GEOS DLL: <CDLL '/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/shapely/.dylibs/libgeos_c.1.dylib', handle 7fd4d327f030 at 0x1513efe9e8>, using it.
+2018-05-04 16:48:45,695 DEBUG    Trying `CDLL(/usr/lib/libc.dylib)`
+2018-05-04 16:48:45,695 DEBUG    Library path: '/usr/lib/libc.dylib'
+2018-05-04 16:48:45,695 DEBUG    DLL: <CDLL '/usr/lib/libc.dylib', handle 108c02700 at 0x150d801ac8>
+2018-05-04 16:48:45,749 DEBUG    Set GDAL_DATA = '/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/fiona/gdal_data'
+2018-05-04 16:48:45,750 DEBUG    Set PROJ_LIB = '/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/fiona/proj_data'
+2018-05-04 16:48:47,764 INFO     Shape: Metadata table (220364, 18)
+2018-05-04 16:48:48,254 INFO     Shape: Land Property table (4265, 18)
+2018-05-04 16:48:48,258 INFO     Shape: House Property table (4897, 18)

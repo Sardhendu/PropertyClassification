@@ -1,0 +1,573 @@
+2018-05-06 21:35:27,975 INFO     Input Land Images from C:\Users\newline\Documents\ImageClassification\data\input_images\new_test\overlayed\land: 
+2018-05-06 21:35:27,976 INFO     Input House Images from C:\Users\newline\Documents\ImageClassification\data\input_images\new_test\overlayed\house: 
+2018-05-06 21:35:27,976 INFO     Output batch array to C:\Users\newline\Documents\ImageClassification\data\batch_data\new_test\overlayed: 
+2018-05-06 21:35:27,977 INFO     Image Shape: [400, 400, 3]
+2018-05-06 21:35:27,977 INFO     Enabling Crop: [128, 128, 3]
+2018-05-06 21:35:27,977 INFO     Enabling Resize: [128, 128, 3]
+2018-05-06 21:35:27,977 INFO     Enabling Rotation angle = 90:
+2018-05-06 21:35:27,977 INFO     Running Seed for batch creation: 881
+2018-05-06 21:35:27,987 INFO     Input Data: Total Land: 0, Total House: 0
+2018-05-06 21:35:27,987 INFO     Training Land Size: 0, Training House Size: 0
+2018-05-06 21:35:35,822 INFO     Input Land Images from C:\Users\newline\Documents\ImageClassification\data\input_images\new_test\overlayed\land: 
+2018-05-06 21:35:35,823 INFO     Input House Images from C:\Users\newline\Documents\ImageClassification\data\input_images\new_test\overlayed\house: 
+2018-05-06 21:35:35,823 INFO     Output batch array to C:\Users\newline\Documents\ImageClassification\data\batch_data\new_test\overlayed: 
+2018-05-06 21:35:35,823 INFO     Image Shape: [400, 400, 3]
+2018-05-06 21:35:35,823 INFO     Enabling Crop: [128, 128, 3]
+2018-05-06 21:35:35,823 INFO     Enabling Resize: [128, 128, 3]
+2018-05-06 21:35:35,823 INFO     Enabling Rotation angle = 90:
+2018-05-06 21:35:35,823 INFO     Running Seed for batch creation: 881
+2018-05-06 21:35:35,833 INFO     Input Data: Total Land: 1084, Total House: 1084
+2018-05-06 21:35:37,048 INFO     DATA FORMATTER: Dumping the hdf5 file batch_0 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:35:39,079 INFO     DATA FORMATTER: Dumping the hdf5 file batch_1 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:35:41,084 INFO     DATA FORMATTER: Dumping the hdf5 file batch_2 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:35:43,288 INFO     DATA FORMATTER: Dumping the hdf5 file batch_3 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:35:45,719 INFO     DATA FORMATTER: Dumping the hdf5 file batch_4 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:35:47,940 INFO     DATA FORMATTER: Dumping the hdf5 file batch_5 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:35:50,107 INFO     DATA FORMATTER: Dumping the hdf5 file batch_6 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:35:52,204 INFO     DATA FORMATTER: Dumping the hdf5 file batch_7 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:35:54,361 INFO     DATA FORMATTER: Dumping the hdf5 file batch_8 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:35:56,407 INFO     DATA FORMATTER: Dumping the hdf5 file batch_9 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:35:58,872 INFO     DATA FORMATTER: Dumping the hdf5 file batch_10 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:36:01,127 INFO     DATA FORMATTER: Dumping the hdf5 file batch_11 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:36:03,264 INFO     DATA FORMATTER: Dumping the hdf5 file batch_12 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:36:05,539 INFO     DATA FORMATTER: Dumping the hdf5 file batch_13 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:36:07,732 INFO     DATA FORMATTER: Dumping the hdf5 file batch_14 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:36:10,478 INFO     DATA FORMATTER: Dumping the hdf5 file batch_15 to disk, dataX shape = (248, 224, 224, 3), dataY shape = (248,)
+2018-05-06 21:36:13,717 INFO     Training Land Size: 1084, Training House Size: 1084
+2018-05-06 21:37:03,644 INFO     INITIATING TEST ........
+2018-05-06 21:37:03,644 INFO     Checkpoint LISTS .. ['resnet_epoch_14_batch_109', 'resnet_epoch_14_batch_116', 'resnet_epoch_14_batch_79', 'resnet_epoch_14_batch_89', 'resnet_epoch_14_batch_99']
+2018-05-06 21:37:03,645 INFO     PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+2018-05-06 21:37:03,680 INFO     PREPROCESSING config: With the Test Data Set
+2018-05-06 21:37:03,680 INFO     Standarizing the image
+2018-05-06 21:37:03,685 INFO     SEED for scope: 553
+2018-05-06 21:37:03,705 INFO     Running Scope bn_1: 
+2018-05-06 21:37:03,788 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:37:03,789 INFO     conv_layer : conv shape: [None, 56, 56, 64]
+2018-05-06 21:37:03,789 INFO     SEED for scope: 292
+2018-05-06 21:37:03,806 INFO     Running Scope bn_1: 
+2018-05-06 21:37:03,847 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:37:03,847 INFO     SEED for scope: 394
+2018-05-06 21:37:03,865 INFO     Running Scope bn_2: 
+2018-05-06 21:37:03,906 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-05-06 21:37:03,908 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-05-06 21:37:03,908 INFO     SEED for scope: 874
+2018-05-06 21:37:03,925 INFO     Running Scope bn_1: 
+2018-05-06 21:37:03,965 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:37:03,965 INFO     SEED for scope: 445
+2018-05-06 21:37:03,982 INFO     Running Scope bn_2: 
+2018-05-06 21:37:04,022 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-05-06 21:37:04,024 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-05-06 21:37:04,024 INFO     SEED for scope: 191
+2018-05-06 21:37:04,040 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-05-06 21:37:04,040 INFO     SEED for scope: 161
+2018-05-06 21:37:04,057 INFO     Running Scope bn_1: 
+2018-05-06 21:37:04,097 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-05-06 21:37:04,097 INFO     SEED for scope: 141
+2018-05-06 21:37:04,114 INFO     Running Scope bn_2: 
+2018-05-06 21:37:04,156 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-05-06 21:37:04,158 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-05-06 21:37:04,158 INFO     SEED for scope: 213
+2018-05-06 21:37:04,175 INFO     Running Scope bn_1: 
+2018-05-06 21:37:04,216 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-05-06 21:37:04,216 INFO     SEED for scope: 436
+2018-05-06 21:37:04,234 INFO     Running Scope bn_2: 
+2018-05-06 21:37:04,364 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-05-06 21:37:04,366 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-05-06 21:37:04,366 INFO     SEED for scope: 754
+2018-05-06 21:37:04,383 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-05-06 21:37:04,383 INFO     SEED for scope: 991
+2018-05-06 21:37:04,401 INFO     Running Scope bn_1: 
+2018-05-06 21:37:04,441 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-05-06 21:37:04,441 INFO     SEED for scope: 302
+2018-05-06 21:37:04,458 INFO     Running Scope bn_2: 
+2018-05-06 21:37:04,498 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-05-06 21:37:04,500 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-05-06 21:37:04,500 INFO     SEED for scope: 992
+2018-05-06 21:37:04,517 INFO     Running Scope bn_1: 
+2018-05-06 21:37:04,557 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-05-06 21:37:04,557 INFO     SEED for scope: 223
+2018-05-06 21:37:04,574 INFO     Running Scope bn_2: 
+2018-05-06 21:37:04,615 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-05-06 21:37:04,617 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-05-06 21:37:04,617 INFO     SEED for scope: 645
+2018-05-06 21:37:04,634 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-05-06 21:37:04,634 INFO     SEED for scope: 724
+2018-05-06 21:37:04,651 INFO     Running Scope bn_1: 
+2018-05-06 21:37:04,691 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-05-06 21:37:04,691 INFO     SEED for scope: 944
+2018-05-06 21:37:04,709 INFO     Running Scope bn_2: 
+2018-05-06 21:37:04,750 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-05-06 21:37:04,751 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-05-06 21:37:04,752 INFO     SEED for scope: 232
+2018-05-06 21:37:04,769 INFO     Running Scope bn_1: 
+2018-05-06 21:37:04,809 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-05-06 21:37:04,809 INFO     SEED for scope: 123
+2018-05-06 21:37:04,826 INFO     Running Scope bn_2: 
+2018-05-06 21:37:04,866 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-05-06 21:37:04,868 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-05-06 21:37:15,891 INFO     X - flattened: [None, 25088]
+2018-05-06 21:37:15,908 INFO     X - FC Layer (RELU): [None, 512]
+2018-05-06 21:37:15,923 INFO     LOGITS - Softmax Layer: [None, 2]
+2018-05-06 21:37:15,925 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-05-06 21:37:15,925 INFO     INITIALIZING LOSS: .....
+2018-05-06 21:37:15,946 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-05-06 21:37:33,564 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:37:49,555 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.215458, Accuracy: 0.93750, Precision: 0.95161, Recall: 0.92188
+2018-05-06 21:37:49,684 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_1 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:37:50,351 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.332002, Accuracy: 0.89844, Precision: 0.90476, Recall: 0.89062
+2018-05-06 21:37:50,477 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_10 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:37:51,163 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.460357, Accuracy: 0.89062, Precision: 0.87879, Recall: 0.90625
+2018-05-06 21:37:51,288 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_11 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:37:51,959 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.247350, Accuracy: 0.92969, Precision: 0.93651, Recall: 0.92188
+2018-05-06 21:37:52,086 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_12 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:37:52,749 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.454874, Accuracy: 0.88281, Precision: 0.92982, Recall: 0.82812
+2018-05-06 21:37:52,875 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_13 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:37:53,532 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.311423, Accuracy: 0.90625, Precision: 0.88235, Recall: 0.93750
+2018-05-06 21:37:53,658 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_14 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:37:54,320 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.307060, Accuracy: 0.92188, Precision: 0.93548, Recall: 0.90625
+2018-05-06 21:37:54,552 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_15 from disk, dataX shape = (248, 224, 224, 3), dataY shape = (248,)
+2018-05-06 21:37:56,851 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.231823, Accuracy: 0.92742, Precision: 0.91406, Recall: 0.94355
+2018-05-06 21:37:56,982 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_2 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:37:57,640 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.491513, Accuracy: 0.85938, Precision: 0.83824, Recall: 0.89062
+2018-05-06 21:37:57,766 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_3 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:37:58,426 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.287460, Accuracy: 0.92969, Precision: 0.95082, Recall: 0.90625
+2018-05-06 21:37:58,551 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_4 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:37:59,211 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.432909, Accuracy: 0.85938, Precision: 0.85938, Recall: 0.85938
+2018-05-06 21:37:59,339 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_5 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:00,005 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.303791, Accuracy: 0.89062, Precision: 0.90323, Recall: 0.87500
+2018-05-06 21:38:00,130 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_6 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:00,808 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.537120, Accuracy: 0.87500, Precision: 0.86364, Recall: 0.89062
+2018-05-06 21:38:00,936 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_7 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:01,588 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.397772, Accuracy: 0.87500, Precision: 0.90000, Recall: 0.84375
+2018-05-06 21:38:01,719 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_8 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:02,386 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.290350, Accuracy: 0.90625, Precision: 0.91935, Recall: 0.89062
+2018-05-06 21:38:02,513 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_9 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:03,187 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 79, Loss: 0.280675, Accuracy: 0.92188, Precision: 0.93548, Recall: 0.90625
+2018-05-06 21:38:03,246 INFO     PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+2018-05-06 21:38:03,249 INFO     PREPROCESSING config: With the Test Data Set
+2018-05-06 21:38:03,249 INFO     Standarizing the image
+2018-05-06 21:38:03,253 INFO     SEED for scope: 784
+2018-05-06 21:38:03,271 INFO     Running Scope bn_1: 
+2018-05-06 21:38:03,314 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:38:03,314 INFO     conv_layer : conv shape: [None, 56, 56, 64]
+2018-05-06 21:38:03,314 INFO     SEED for scope: 239
+2018-05-06 21:38:03,332 INFO     Running Scope bn_1: 
+2018-05-06 21:38:03,375 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:38:03,375 INFO     SEED for scope: 337
+2018-05-06 21:38:03,391 INFO     Running Scope bn_2: 
+2018-05-06 21:38:03,432 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-05-06 21:38:03,433 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-05-06 21:38:03,434 INFO     SEED for scope: 888
+2018-05-06 21:38:03,451 INFO     Running Scope bn_1: 
+2018-05-06 21:38:03,492 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:38:03,493 INFO     SEED for scope: 666
+2018-05-06 21:38:03,510 INFO     Running Scope bn_2: 
+2018-05-06 21:38:03,551 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-05-06 21:38:03,553 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-05-06 21:38:03,553 INFO     SEED for scope: 400
+2018-05-06 21:38:03,570 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-05-06 21:38:03,570 INFO     SEED for scope: 912
+2018-05-06 21:38:03,587 INFO     Running Scope bn_1: 
+2018-05-06 21:38:03,628 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-05-06 21:38:03,628 INFO     SEED for scope: 255
+2018-05-06 21:38:03,645 INFO     Running Scope bn_2: 
+2018-05-06 21:38:03,685 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-05-06 21:38:03,687 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-05-06 21:38:03,687 INFO     SEED for scope: 983
+2018-05-06 21:38:03,704 INFO     Running Scope bn_1: 
+2018-05-06 21:38:03,744 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-05-06 21:38:03,744 INFO     SEED for scope: 902
+2018-05-06 21:38:03,761 INFO     Running Scope bn_2: 
+2018-05-06 21:38:03,801 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-05-06 21:38:03,803 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-05-06 21:38:03,803 INFO     SEED for scope: 846
+2018-05-06 21:38:03,814 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-05-06 21:38:03,814 INFO     SEED for scope: 345
+2018-05-06 21:38:03,837 INFO     Running Scope bn_1: 
+2018-05-06 21:38:03,879 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-05-06 21:38:03,879 INFO     SEED for scope: 854
+2018-05-06 21:38:03,895 INFO     Running Scope bn_2: 
+2018-05-06 21:38:03,935 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-05-06 21:38:03,937 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-05-06 21:38:03,938 INFO     SEED for scope: 989
+2018-05-06 21:38:03,954 INFO     Running Scope bn_1: 
+2018-05-06 21:38:03,994 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-05-06 21:38:03,994 INFO     SEED for scope: 291
+2018-05-06 21:38:04,012 INFO     Running Scope bn_2: 
+2018-05-06 21:38:04,051 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-05-06 21:38:04,053 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-05-06 21:38:04,053 INFO     SEED for scope: 486
+2018-05-06 21:38:04,070 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-05-06 21:38:04,070 INFO     SEED for scope: 444
+2018-05-06 21:38:04,087 INFO     Running Scope bn_1: 
+2018-05-06 21:38:04,127 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-05-06 21:38:04,127 INFO     SEED for scope: 101
+2018-05-06 21:38:04,144 INFO     Running Scope bn_2: 
+2018-05-06 21:38:04,185 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-05-06 21:38:04,187 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-05-06 21:38:04,187 INFO     SEED for scope: 202
+2018-05-06 21:38:04,204 INFO     Running Scope bn_1: 
+2018-05-06 21:38:04,245 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-05-06 21:38:04,245 INFO     SEED for scope: 304
+2018-05-06 21:38:04,263 INFO     Running Scope bn_2: 
+2018-05-06 21:38:04,303 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-05-06 21:38:04,305 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-05-06 21:38:04,314 INFO     X - flattened: [None, 25088]
+2018-05-06 21:38:04,330 INFO     X - FC Layer (RELU): [None, 512]
+2018-05-06 21:38:04,347 INFO     LOGITS - Softmax Layer: [None, 2]
+2018-05-06 21:38:04,347 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-05-06 21:38:04,348 INFO     INITIALIZING LOSS: .....
+2018-05-06 21:38:04,369 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-05-06 21:38:13,415 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:14,345 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.202839, Accuracy: 0.93750, Precision: 0.95161, Recall: 0.92188
+2018-05-06 21:38:14,470 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_1 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:15,152 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.327918, Accuracy: 0.89844, Precision: 0.91803, Recall: 0.87500
+2018-05-06 21:38:15,280 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_10 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:15,951 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.458094, Accuracy: 0.89844, Precision: 0.88060, Recall: 0.92188
+2018-05-06 21:38:16,077 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_11 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:16,740 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.245829, Accuracy: 0.93750, Precision: 0.93750, Recall: 0.93750
+2018-05-06 21:38:16,866 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_12 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:17,538 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.445407, Accuracy: 0.87500, Precision: 0.92857, Recall: 0.81250
+2018-05-06 21:38:17,664 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_13 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:18,336 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.309737, Accuracy: 0.90625, Precision: 0.88235, Recall: 0.93750
+2018-05-06 21:38:18,461 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_14 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:19,117 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.296669, Accuracy: 0.92188, Precision: 0.93548, Recall: 0.90625
+2018-05-06 21:38:19,353 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_15 from disk, dataX shape = (248, 224, 224, 3), dataY shape = (248,)
+2018-05-06 21:38:20,487 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.233026, Accuracy: 0.92742, Precision: 0.91406, Recall: 0.94355
+2018-05-06 21:38:20,618 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_2 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:21,295 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.495588, Accuracy: 0.86719, Precision: 0.84058, Recall: 0.90625
+2018-05-06 21:38:21,421 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_3 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:22,092 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.303006, Accuracy: 0.93750, Precision: 0.96667, Recall: 0.90625
+2018-05-06 21:38:22,218 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_4 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:22,873 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.431670, Accuracy: 0.87500, Precision: 0.87500, Recall: 0.87500
+2018-05-06 21:38:23,001 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_5 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:23,661 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.306941, Accuracy: 0.89062, Precision: 0.87879, Recall: 0.90625
+2018-05-06 21:38:23,787 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_6 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:24,461 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.531424, Accuracy: 0.87500, Precision: 0.86364, Recall: 0.89062
+2018-05-06 21:38:24,587 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_7 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:25,240 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.403311, Accuracy: 0.87500, Precision: 0.90000, Recall: 0.84375
+2018-05-06 21:38:25,365 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_8 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:26,031 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.285662, Accuracy: 0.92188, Precision: 0.92188, Recall: 0.92188
+2018-05-06 21:38:26,162 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_9 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:26,835 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 89, Loss: 0.270242, Accuracy: 0.92969, Precision: 0.95082, Recall: 0.90625
+2018-05-06 21:38:26,888 INFO     PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+2018-05-06 21:38:26,890 INFO     PREPROCESSING config: With the Test Data Set
+2018-05-06 21:38:26,890 INFO     Standarizing the image
+2018-05-06 21:38:26,894 INFO     SEED for scope: 707
+2018-05-06 21:38:26,911 INFO     Running Scope bn_1: 
+2018-05-06 21:38:26,953 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:38:26,953 INFO     conv_layer : conv shape: [None, 56, 56, 64]
+2018-05-06 21:38:26,953 INFO     SEED for scope: 808
+2018-05-06 21:38:26,970 INFO     Running Scope bn_1: 
+2018-05-06 21:38:27,009 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:38:27,009 INFO     SEED for scope: 905
+2018-05-06 21:38:27,026 INFO     Running Scope bn_2: 
+2018-05-06 21:38:27,066 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-05-06 21:38:27,067 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-05-06 21:38:27,068 INFO     SEED for scope: 900
+2018-05-06 21:38:27,084 INFO     Running Scope bn_1: 
+2018-05-06 21:38:27,126 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:38:27,127 INFO     SEED for scope: 774
+2018-05-06 21:38:27,143 INFO     Running Scope bn_2: 
+2018-05-06 21:38:27,184 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-05-06 21:38:27,186 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-05-06 21:38:27,186 INFO     SEED for scope: 553
+2018-05-06 21:38:27,204 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-05-06 21:38:27,204 INFO     SEED for scope: 292
+2018-05-06 21:38:27,220 INFO     Running Scope bn_1: 
+2018-05-06 21:38:27,261 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-05-06 21:38:27,261 INFO     SEED for scope: 394
+2018-05-06 21:38:27,278 INFO     Running Scope bn_2: 
+2018-05-06 21:38:27,318 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-05-06 21:38:27,319 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-05-06 21:38:27,320 INFO     SEED for scope: 874
+2018-05-06 21:38:27,336 INFO     Running Scope bn_1: 
+2018-05-06 21:38:27,377 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-05-06 21:38:27,377 INFO     SEED for scope: 445
+2018-05-06 21:38:27,394 INFO     Running Scope bn_2: 
+2018-05-06 21:38:27,433 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-05-06 21:38:27,435 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-05-06 21:38:27,435 INFO     SEED for scope: 191
+2018-05-06 21:38:27,452 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-05-06 21:38:27,452 INFO     SEED for scope: 161
+2018-05-06 21:38:27,469 INFO     Running Scope bn_1: 
+2018-05-06 21:38:27,509 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-05-06 21:38:27,509 INFO     SEED for scope: 141
+2018-05-06 21:38:27,526 INFO     Running Scope bn_2: 
+2018-05-06 21:38:27,566 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-05-06 21:38:27,568 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-05-06 21:38:27,568 INFO     SEED for scope: 213
+2018-05-06 21:38:27,584 INFO     Running Scope bn_1: 
+2018-05-06 21:38:27,625 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-05-06 21:38:27,625 INFO     SEED for scope: 436
+2018-05-06 21:38:27,641 INFO     Running Scope bn_2: 
+2018-05-06 21:38:27,680 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-05-06 21:38:27,682 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-05-06 21:38:27,682 INFO     SEED for scope: 754
+2018-05-06 21:38:27,698 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-05-06 21:38:27,699 INFO     SEED for scope: 991
+2018-05-06 21:38:27,716 INFO     Running Scope bn_1: 
+2018-05-06 21:38:27,757 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-05-06 21:38:27,757 INFO     SEED for scope: 302
+2018-05-06 21:38:27,774 INFO     Running Scope bn_2: 
+2018-05-06 21:38:27,815 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-05-06 21:38:27,817 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-05-06 21:38:27,817 INFO     SEED for scope: 992
+2018-05-06 21:38:27,833 INFO     Running Scope bn_1: 
+2018-05-06 21:38:27,874 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-05-06 21:38:27,874 INFO     SEED for scope: 223
+2018-05-06 21:38:27,891 INFO     Running Scope bn_2: 
+2018-05-06 21:38:27,931 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-05-06 21:38:27,933 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-05-06 21:38:27,942 INFO     X - flattened: [None, 25088]
+2018-05-06 21:38:27,959 INFO     X - FC Layer (RELU): [None, 512]
+2018-05-06 21:38:27,974 INFO     LOGITS - Softmax Layer: [None, 2]
+2018-05-06 21:38:27,975 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-05-06 21:38:27,975 INFO     INITIALIZING LOSS: .....
+2018-05-06 21:38:27,995 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-05-06 21:38:36,964 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:37,793 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.201965, Accuracy: 0.94531, Precision: 0.95238, Recall: 0.93750
+2018-05-06 21:38:37,920 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_1 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:38,583 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.327099, Accuracy: 0.89844, Precision: 0.90476, Recall: 0.89062
+2018-05-06 21:38:38,709 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_10 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:39,374 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.456343, Accuracy: 0.89844, Precision: 0.88060, Recall: 0.92188
+2018-05-06 21:38:39,502 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_11 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:40,168 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.249638, Accuracy: 0.93750, Precision: 0.93750, Recall: 0.93750
+2018-05-06 21:38:40,294 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_12 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:40,959 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.437675, Accuracy: 0.87500, Precision: 0.92857, Recall: 0.81250
+2018-05-06 21:38:41,085 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_13 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:41,752 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.311357, Accuracy: 0.90625, Precision: 0.88235, Recall: 0.93750
+2018-05-06 21:38:41,878 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_14 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:42,526 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.293113, Accuracy: 0.92188, Precision: 0.93548, Recall: 0.90625
+2018-05-06 21:38:42,761 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_15 from disk, dataX shape = (248, 224, 224, 3), dataY shape = (248,)
+2018-05-06 21:38:43,906 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.234058, Accuracy: 0.93145, Precision: 0.91473, Recall: 0.95161
+2018-05-06 21:38:44,038 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_2 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:44,724 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.496564, Accuracy: 0.85938, Precision: 0.82857, Recall: 0.90625
+2018-05-06 21:38:44,850 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_3 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:45,525 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.304660, Accuracy: 0.92188, Precision: 0.93548, Recall: 0.90625
+2018-05-06 21:38:45,652 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_4 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:46,312 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.429584, Accuracy: 0.87500, Precision: 0.87500, Recall: 0.87500
+2018-05-06 21:38:46,439 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_5 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:47,107 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.311302, Accuracy: 0.89062, Precision: 0.87879, Recall: 0.90625
+2018-05-06 21:38:47,233 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_6 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:47,897 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.526677, Accuracy: 0.87500, Precision: 0.86364, Recall: 0.89062
+2018-05-06 21:38:48,024 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_7 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:48,682 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.396618, Accuracy: 0.87500, Precision: 0.90000, Recall: 0.84375
+2018-05-06 21:38:48,809 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_8 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:49,478 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.284981, Accuracy: 0.92188, Precision: 0.92188, Recall: 0.92188
+2018-05-06 21:38:49,604 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_9 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:38:50,273 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 99, Loss: 0.266962, Accuracy: 0.92188, Precision: 0.93548, Recall: 0.90625
+2018-05-06 21:38:50,326 INFO     PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+2018-05-06 21:38:50,328 INFO     PREPROCESSING config: With the Test Data Set
+2018-05-06 21:38:50,328 INFO     Standarizing the image
+2018-05-06 21:38:50,332 INFO     SEED for scope: 944
+2018-05-06 21:38:50,349 INFO     Running Scope bn_1: 
+2018-05-06 21:38:50,391 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:38:50,391 INFO     conv_layer : conv shape: [None, 56, 56, 64]
+2018-05-06 21:38:50,391 INFO     SEED for scope: 232
+2018-05-06 21:38:50,408 INFO     Running Scope bn_1: 
+2018-05-06 21:38:50,448 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:38:50,448 INFO     SEED for scope: 123
+2018-05-06 21:38:50,466 INFO     Running Scope bn_2: 
+2018-05-06 21:38:50,506 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-05-06 21:38:50,508 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-05-06 21:38:50,508 INFO     SEED for scope: 321
+2018-05-06 21:38:50,525 INFO     Running Scope bn_1: 
+2018-05-06 21:38:50,567 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:38:50,567 INFO     SEED for scope: 909
+2018-05-06 21:38:50,585 INFO     Running Scope bn_2: 
+2018-05-06 21:38:50,625 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-05-06 21:38:50,627 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-05-06 21:38:50,627 INFO     SEED for scope: 784
+2018-05-06 21:38:50,644 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-05-06 21:38:50,644 INFO     SEED for scope: 239
+2018-05-06 21:38:50,661 INFO     Running Scope bn_1: 
+2018-05-06 21:38:50,704 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-05-06 21:38:50,704 INFO     SEED for scope: 337
+2018-05-06 21:38:50,721 INFO     Running Scope bn_2: 
+2018-05-06 21:38:50,761 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-05-06 21:38:50,763 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-05-06 21:38:50,763 INFO     SEED for scope: 888
+2018-05-06 21:38:50,779 INFO     Running Scope bn_1: 
+2018-05-06 21:38:50,820 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-05-06 21:38:50,821 INFO     SEED for scope: 666
+2018-05-06 21:38:50,843 INFO     Running Scope bn_2: 
+2018-05-06 21:38:50,882 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-05-06 21:38:50,885 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-05-06 21:38:50,885 INFO     SEED for scope: 400
+2018-05-06 21:38:50,901 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-05-06 21:38:50,902 INFO     SEED for scope: 912
+2018-05-06 21:38:50,919 INFO     Running Scope bn_1: 
+2018-05-06 21:38:50,959 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-05-06 21:38:50,959 INFO     SEED for scope: 255
+2018-05-06 21:38:50,976 INFO     Running Scope bn_2: 
+2018-05-06 21:38:51,016 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-05-06 21:38:51,018 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-05-06 21:38:51,018 INFO     SEED for scope: 983
+2018-05-06 21:38:51,035 INFO     Running Scope bn_1: 
+2018-05-06 21:38:51,076 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-05-06 21:38:51,076 INFO     SEED for scope: 902
+2018-05-06 21:38:51,094 INFO     Running Scope bn_2: 
+2018-05-06 21:38:51,135 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-05-06 21:38:51,137 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-05-06 21:38:51,138 INFO     SEED for scope: 846
+2018-05-06 21:38:51,154 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-05-06 21:38:51,154 INFO     SEED for scope: 345
+2018-05-06 21:38:51,172 INFO     Running Scope bn_1: 
+2018-05-06 21:38:51,212 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-05-06 21:38:51,213 INFO     SEED for scope: 854
+2018-05-06 21:38:51,229 INFO     Running Scope bn_2: 
+2018-05-06 21:38:51,269 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-05-06 21:38:51,271 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-05-06 21:38:51,271 INFO     SEED for scope: 989
+2018-05-06 21:38:51,287 INFO     Running Scope bn_1: 
+2018-05-06 21:38:51,334 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-05-06 21:38:51,334 INFO     SEED for scope: 291
+2018-05-06 21:38:51,351 INFO     Running Scope bn_2: 
+2018-05-06 21:38:51,390 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-05-06 21:38:51,393 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-05-06 21:38:51,402 INFO     X - flattened: [None, 25088]
+2018-05-06 21:38:51,418 INFO     X - FC Layer (RELU): [None, 512]
+2018-05-06 21:38:51,433 INFO     LOGITS - Softmax Layer: [None, 2]
+2018-05-06 21:38:51,434 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-05-06 21:38:51,434 INFO     INITIALIZING LOSS: .....
+2018-05-06 21:38:51,454 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-05-06 21:39:00,490 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:01,407 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.207269, Accuracy: 0.93750, Precision: 0.95161, Recall: 0.92188
+2018-05-06 21:39:01,533 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_1 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:02,217 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.334370, Accuracy: 0.88281, Precision: 0.88889, Recall: 0.87500
+2018-05-06 21:39:02,344 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_10 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:03,009 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.457579, Accuracy: 0.89062, Precision: 0.87879, Recall: 0.90625
+2018-05-06 21:39:03,137 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_11 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:03,786 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.250859, Accuracy: 0.92969, Precision: 0.93651, Recall: 0.92188
+2018-05-06 21:39:03,913 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_12 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:04,584 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.436826, Accuracy: 0.86719, Precision: 0.89831, Recall: 0.82812
+2018-05-06 21:39:04,714 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_13 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:05,375 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.310160, Accuracy: 0.90625, Precision: 0.88235, Recall: 0.93750
+2018-05-06 21:39:05,501 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_14 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:06,153 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.293472, Accuracy: 0.92188, Precision: 0.93548, Recall: 0.90625
+2018-05-06 21:39:06,390 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_15 from disk, dataX shape = (248, 224, 224, 3), dataY shape = (248,)
+2018-05-06 21:39:07,549 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.227014, Accuracy: 0.93145, Precision: 0.91473, Recall: 0.95161
+2018-05-06 21:39:07,680 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_2 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:08,357 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.486816, Accuracy: 0.85938, Precision: 0.82857, Recall: 0.90625
+2018-05-06 21:39:08,484 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_3 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:09,143 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.302300, Accuracy: 0.92969, Precision: 0.95082, Recall: 0.90625
+2018-05-06 21:39:09,270 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_4 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:09,921 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.424474, Accuracy: 0.86719, Precision: 0.86154, Recall: 0.87500
+2018-05-06 21:39:10,054 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_5 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:10,725 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.305395, Accuracy: 0.90625, Precision: 0.90625, Recall: 0.90625
+2018-05-06 21:39:10,853 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_6 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:11,531 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.518429, Accuracy: 0.86719, Precision: 0.85075, Recall: 0.89062
+2018-05-06 21:39:11,661 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_7 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:12,312 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.395434, Accuracy: 0.86719, Precision: 0.88525, Recall: 0.84375
+2018-05-06 21:39:12,440 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_8 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:13,108 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.291965, Accuracy: 0.89062, Precision: 0.90323, Recall: 0.87500
+2018-05-06 21:39:13,236 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_9 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:13,891 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 109, Loss: 0.270089, Accuracy: 0.91406, Precision: 0.92063, Recall: 0.90625
+2018-05-06 21:39:13,951 INFO     PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+2018-05-06 21:39:13,953 INFO     PREPROCESSING config: With the Test Data Set
+2018-05-06 21:39:13,953 INFO     Standarizing the image
+2018-05-06 21:39:13,957 INFO     SEED for scope: 101
+2018-05-06 21:39:13,975 INFO     Running Scope bn_1: 
+2018-05-06 21:39:14,019 INFO     conv_layer : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:39:14,019 INFO     conv_layer : conv shape: [None, 56, 56, 64]
+2018-05-06 21:39:14,020 INFO     SEED for scope: 202
+2018-05-06 21:39:14,036 INFO     Running Scope bn_1: 
+2018-05-06 21:39:14,077 INFO     residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:39:14,077 INFO     SEED for scope: 304
+2018-05-06 21:39:14,094 INFO     Running Scope bn_2: 
+2018-05-06 21:39:14,134 INFO     residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+2018-05-06 21:39:14,136 INFO     residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+2018-05-06 21:39:14,136 INFO     SEED for scope: 505
+2018-05-06 21:39:14,155 INFO     Running Scope bn_1: 
+2018-05-06 21:39:14,198 INFO     residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+2018-05-06 21:39:14,198 INFO     SEED for scope: 607
+2018-05-06 21:39:14,215 INFO     Running Scope bn_2: 
+2018-05-06 21:39:14,255 INFO     residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+2018-05-06 21:39:14,257 INFO     residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+2018-05-06 21:39:14,258 INFO     SEED for scope: 707
+2018-05-06 21:39:14,275 INFO     residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+2018-05-06 21:39:14,275 INFO     SEED for scope: 808
+2018-05-06 21:39:14,292 INFO     Running Scope bn_1: 
+2018-05-06 21:39:14,347 INFO     residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+2018-05-06 21:39:14,347 INFO     SEED for scope: 905
+2018-05-06 21:39:14,366 INFO     Running Scope bn_2: 
+2018-05-06 21:39:14,406 INFO     residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+2018-05-06 21:39:14,406 INFO     residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+2018-05-06 21:39:14,406 INFO     SEED for scope: 900
+2018-05-06 21:39:14,425 INFO     Running Scope bn_1: 
+2018-05-06 21:39:14,467 INFO     residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+2018-05-06 21:39:14,467 INFO     SEED for scope: 774
+2018-05-06 21:39:14,484 INFO     Running Scope bn_2: 
+2018-05-06 21:39:14,524 INFO     residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+2018-05-06 21:39:14,526 INFO     residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+2018-05-06 21:39:14,526 INFO     SEED for scope: 553
+2018-05-06 21:39:14,542 INFO     residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+2018-05-06 21:39:14,543 INFO     SEED for scope: 292
+2018-05-06 21:39:14,559 INFO     Running Scope bn_1: 
+2018-05-06 21:39:14,600 INFO     residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+2018-05-06 21:39:14,600 INFO     SEED for scope: 394
+2018-05-06 21:39:14,618 INFO     Running Scope bn_2: 
+2018-05-06 21:39:14,658 INFO     residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+2018-05-06 21:39:14,659 INFO     residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+2018-05-06 21:39:14,660 INFO     SEED for scope: 874
+2018-05-06 21:39:14,677 INFO     Running Scope bn_1: 
+2018-05-06 21:39:14,718 INFO     residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+2018-05-06 21:39:14,718 INFO     SEED for scope: 445
+2018-05-06 21:39:14,734 INFO     Running Scope bn_2: 
+2018-05-06 21:39:14,774 INFO     residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+2018-05-06 21:39:14,776 INFO     residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+2018-05-06 21:39:14,777 INFO     SEED for scope: 191
+2018-05-06 21:39:14,793 INFO     residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+2018-05-06 21:39:14,793 INFO     SEED for scope: 161
+2018-05-06 21:39:14,810 INFO     Running Scope bn_1: 
+2018-05-06 21:39:14,851 INFO     residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+2018-05-06 21:39:14,851 INFO     SEED for scope: 141
+2018-05-06 21:39:14,868 INFO     Running Scope bn_2: 
+2018-05-06 21:39:14,907 INFO     residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+2018-05-06 21:39:14,909 INFO     residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+2018-05-06 21:39:14,909 INFO     SEED for scope: 213
+2018-05-06 21:39:14,926 INFO     Running Scope bn_1: 
+2018-05-06 21:39:14,966 INFO     residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+2018-05-06 21:39:14,966 INFO     SEED for scope: 436
+2018-05-06 21:39:14,983 INFO     Running Scope bn_2: 
+2018-05-06 21:39:15,023 INFO     residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+2018-05-06 21:39:15,025 INFO     residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+2018-05-06 21:39:15,034 INFO     X - flattened: [None, 25088]
+2018-05-06 21:39:15,051 INFO     X - FC Layer (RELU): [None, 512]
+2018-05-06 21:39:15,067 INFO     LOGITS - Softmax Layer: [None, 2]
+2018-05-06 21:39:15,068 INFO     Softmax Y-Prob shape: shape (?, 2)
+2018-05-06 21:39:15,068 INFO     INITIALIZING LOSS: .....
+2018-05-06 21:39:15,090 INFO     INITIALIZING OPTIMIZATION WITH ADAM: .....
+2018-05-06 21:39:24,156 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:24,978 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.204553, Accuracy: 0.93750, Precision: 0.95161, Recall: 0.92188
+2018-05-06 21:39:25,115 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_1 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:25,761 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.330954, Accuracy: 0.89844, Precision: 0.90476, Recall: 0.89062
+2018-05-06 21:39:25,888 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_10 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:26,549 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.453020, Accuracy: 0.89844, Precision: 0.88060, Recall: 0.92188
+2018-05-06 21:39:26,676 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_11 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:27,333 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.250034, Accuracy: 0.92969, Precision: 0.93651, Recall: 0.92188
+2018-05-06 21:39:27,460 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_12 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:28,115 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.436515, Accuracy: 0.86719, Precision: 0.91228, Recall: 0.81250
+2018-05-06 21:39:28,243 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_13 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:28,903 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.306498, Accuracy: 0.90625, Precision: 0.88235, Recall: 0.93750
+2018-05-06 21:39:29,034 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_14 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:29,702 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.290854, Accuracy: 0.92188, Precision: 0.93548, Recall: 0.90625
+2018-05-06 21:39:29,939 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_15 from disk, dataX shape = (248, 224, 224, 3), dataY shape = (248,)
+2018-05-06 21:39:31,078 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.228652, Accuracy: 0.93145, Precision: 0.91473, Recall: 0.95161
+2018-05-06 21:39:31,210 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_2 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:31,867 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.486490, Accuracy: 0.85938, Precision: 0.82857, Recall: 0.90625
+2018-05-06 21:39:31,994 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_3 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:32,668 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.299974, Accuracy: 0.92969, Precision: 0.95082, Recall: 0.90625
+2018-05-06 21:39:32,796 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_4 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:33,456 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.424074, Accuracy: 0.87500, Precision: 0.87500, Recall: 0.87500
+2018-05-06 21:39:33,583 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_5 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:34,237 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.303280, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+2018-05-06 21:39:34,365 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_6 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:35,035 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.518142, Accuracy: 0.88281, Precision: 0.87692, Recall: 0.89062
+2018-05-06 21:39:35,164 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_7 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:35,828 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.394184, Accuracy: 0.86719, Precision: 0.88525, Recall: 0.84375
+2018-05-06 21:39:35,958 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_8 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:36,621 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.286769, Accuracy: 0.90625, Precision: 0.91935, Recall: 0.89062
+2018-05-06 21:39:36,754 INFO     DATA FORMATTER: Retrieved the hdf5 file batch_9 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+2018-05-06 21:39:37,425 INFO     VALIDATION METRICs : Fold: 1, epoch: 14, batch: 116, Loss: 0.268156, Accuracy: 0.92188, Precision: 0.93548, Recall: 0.90625

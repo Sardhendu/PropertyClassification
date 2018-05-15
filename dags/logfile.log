@@ -1,0 +1,7 @@
+2018-05-03 21:09:44,946 DEBUG    Found GEOS DLL: <CDLL '/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/shapely/.dylibs/libgeos_c.1.dylib', handle 7fb2dd7cf030 at 0x1172bcd68>, using it.
+2018-05-03 21:09:44,946 DEBUG    Trying `CDLL(/usr/lib/libc.dylib)`
+2018-05-03 21:09:44,947 DEBUG    Library path: '/usr/lib/libc.dylib'
+2018-05-03 21:09:44,947 DEBUG    DLL: <CDLL '/usr/lib/libc.dylib', handle 119912700 at 0x1172bcf98>
+2018-05-03 21:09:45,002 DEBUG    Set GDAL_DATA = '/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/fiona/gdal_data'
+2018-05-03 21:09:45,002 DEBUG    Set PROJ_LIB = '/Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/fiona/proj_data'
+2018-05-03 21:09:46,052 INFO     Reading the config from /Users/sam/All-Program/App/PropertyClassification//airflow.cfg
