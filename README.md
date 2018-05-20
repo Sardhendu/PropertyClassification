@@ -136,3 +136,4 @@ Let us now discuss all different models employed for different types of images.
 Below is a view of Data pipeline that is achieved using Apache Airflow Framework.
 
  
+<img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/pipeline.jpg" width="400" height="200"><figcaption></center>Airflow Pipeline</center></figcaption>
