@@ -8,7 +8,7 @@ Here we use four different types of images.
 
 * Assessor Image (property images (manually collected) released once in 5 years)
 * Aerial/Satellite Images extracted from Bing and Google
-* Sblobtside Images extracted from Bing and Google 
+* Streetside Images extracted from Bing and Google 
 * OSM building corners (parcel boundary).
 
 ## Overview:
@@ -20,11 +20,11 @@ assessor images.
 
 ### External Data Collection and Preparation:
 
-Aerial, sblobtside images from google maps and bing maps are updated every 1-2 years and are more recent. A model would be more reliable in these images. However, due to the 1-2 years of lag, we may still end
+Aerial, streetside images from google maps and bing maps are updated every 1-2 years and are more recent. A model would be more reliable in these images. However, due to the 1-2 years of lag, we may still end
 
 * **Aerial** images from Bing and Google maps. Best source of image readily available and most recent when compared to others.
-* **Sblobtside** images from Bing and Google maps. These images are not always clear.
-* **Building boundary coordinates** for chicago from Open Sblobt Map: The OSM data is an open source contribution and hence the data may not be updted so frequently. Overlay building boundaries (collected from OSM) on satellite static images collected from google maps. For details look here [Overlay building boundary on static images](https://github.com/Sardhendu/PropertyClassification/blob/master/src/semantic_segmentation)
+* **Streetside** images from Bing and Google maps. These images are not always clear.
+* **Building boundary coordinates** for chicago from Open Street Map: The OSM data is an open source contribution and hence the data may not be updted so frequently. Overlay building boundaries (collected from OSM) on satellite static images collected from google maps. For details look here [Overlay building boundary on static images](https://github.com/Sardhendu/PropertyClassification/src/tree/master/semantic_segmentation)    
 
 ### Problem Continued:
 Even with the external data we see lots of our labels not consistent with the image picture. So we typically have a data issue. We plan to use best all the images (Mixture of experts model). Since, there is a good chance that at least one image type would be consistent with the label. Also, we use bootstrapping techniques to correct the labels and augment them per iteration.
@@ -35,16 +35,16 @@ Here's a snapshot of the images:
     <table>
 	    <tr>
     	    <td style="padding:5px">
-        	    <img src="blobhttps://github.com/Sardhendu/PropertyClassification/blob/master/images/assessor.png" width="200" height="200"><figcaption><center>Assessor Image</center></figcaption>
+        	    <img src="https://github.com/Sardhendu/PropertyClassification/src/blob/master/images/assessor.png" width="200" height="200"><figcaption><center>Assessor Image</center></figcaption>
       	    </td>
             <td style="padding:5px">
-            	<img src="blobhttps://github.com/Sardhendu/PropertyClassification/blob/master/images/sblobtside.jpg" width="200" height="200"><figcaption><center>Sblobtside Image</center></figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/src/blob/master/images/streetside.jpg" width="200" height="200"><figcaption><center>Streetside Image</center></figcaption>
              </td>
             <td style="padding:5px">
-            	<img src="blobhttps://github.com/Sardhendu/PropertyClassification/blob/master/images/aerial.png" width="200" height="200"><figcaption><center>Aerial Image</center></figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/src/blob/master/images/aerial.png" width="200" height="200"><figcaption><center>Aerial Image</center></figcaption>
              </td>
              <td style="padding:5px">
-            	<img src="blobhttps://github.com/Sardhendu/PropertyClassification/blob/master/images/overlayed.jpg" width="200" height="200"><figcaption></center>Overlayed Image</center></figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/src/blob/master/images/overlayed.jpg" width="200" height="200"><figcaption></center>Overlayed Image</center></figcaption>
              </td>
         </tr>
     </table>
@@ -54,7 +54,7 @@ Here's a snapshot of the images:
 ### Models (Deep Nets) 
 Let us now discuss all different models employed for different types of images.
 
-#### [RESNET-18](https://github.com/Sardhendu/PropertyClassification/blob/master/src/conv_net/resnet.py) + a little variation
+#### [RESNET-18](https://github.com/Sardhendu/PropertyClassification/src/blob/master/conv_net/resnet.py) + a little variation
 
 <div id="wrapper">
     <div class="twoColumn">
@@ -68,20 +68,20 @@ Let us now discuss all different models employed for different types of images.
     <table>
 	    <tr>
     	    <td style="padding:5px">
-        	    <img src="blobhttps://github.com/Sardhendu/PropertyClassification/blob/master/images/home_cropped.jpg" width="300" height="150"><figcaption><center>House bbox cropped</center></figcaption>
+        	    <img src="https://github.com/Sardhendu/PropertyClassification/src/blob/master/images/home_cropped.jpg" width="300" height="150"><figcaption><center>House bbox cropped</center></figcaption>
       	    </td>
             <td style="padding:5px">
-            	<img src="blobhttps://github.com/Sardhendu/PropertyClassification/blob/master/images/home_resized.png" width="200" height="200"><figcaption><center>Home Resized/Pad</center></figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/src/blob/master/images/home_resized.png" width="200" height="200"><figcaption><center>Home Resized/Pad</center></figcaption>
              </td>
             <td style="padding:5px">
-            	<img src="blobhttps://github.com/Sardhendu/PropertyClassification/blob/master/images/land.png" width="200" height="200"><figcaption><center>Land central crop</center></figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/src/blob/master/images/land.png" width="200" height="200"><figcaption><center>Land central crop</center></figcaption>
              </td>
         </tr>
     </table>
     <table>
         <tr>
             <td style="padding:5px">
-            	<img src="blobhttps://github.com/Sardhendu/PropertyClassification/blob/master/images/prec_recall_curve.png" width="600" height="200"><figcaption><center>Precision Recall Plot</center></figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/src/blob/master/images/prec_recall_curve.png" width="600" height="200"><figcaption><center>Precision Recall Plot</center></figcaption>
             </td>
         </tr>
     </table>
@@ -92,7 +92,7 @@ Let us now discuss all different models employed for different types of images.
 
 --------------
 
-#### [CONV-NET](https://github.com/Sardhendu/PropertyClassification/blob/master/src/conv_net/convnet.py)
+#### [CONV-NET](https://github.com/Sardhendu/PropertyClassification/src/blob/master/conv_net/convnet.py)
 
 <div id="wrapper">
     <div class="twoColumn">
@@ -105,7 +105,7 @@ Let us now discuss all different models employed for different types of images.
             learn very quickly in few steps. Our experiment shows that the model was able to learn a good distinction in just 2-3 steps. We use a simple Conv-net architecture becasue now due to the colors the model no longer needs
              a deep architecture to learn simple features. We havent tried, but judging by the overlayed pictures we 
              think even a simple model could do a descent job classifying the image.<br><br><b>Challange</b>: The 
-             building boundaries required to create overlayed images are collected from <b>Open Sblobt map</b>. These may not 
+             building boundaries required to create overlayed images are collected from <b>Open Street map</b>. These may not 
              be updated as frequently as Google maps. Moreover, getting building boundaries for all the location may 
              not be feasible. One way to generate colored image given an satellite view is to use <b>Fully 
              Convolutional Networks for semantic segmenting</b>[TODO]. <br>     
@@ -115,11 +115,11 @@ Let us now discuss all different models employed for different types of images.
     
 ---------------
 
-#### [CONV AUTOENCODER](https://github.com/Sardhendu/PropertyClassification/blob/master/src/conv_net/conv_autoencoder.py)
+#### [CONV AUTOENCODER](https://github.com/Sardhendu/PropertyClassification/src/blob/master/conv_net/conv_autoencoder.py)
 
 <div id="wrapper">
     <div class="twoColumn">
-        <img align="right" width="200" height="200" src="blobhttps://github.com/Sardhendu/PropertyClassification/blob/master/images/assessor2.png">
+        <img align="right" width="200" height="200" src="https://github.com/Sardhendu/PropertyClassification/src/blob/master/images/assessor2.png">
     </div>
     <div class="twoColumn">
          <p>
@@ -135,5 +135,4 @@ Let us now discuss all different models employed for different types of images.
 
 Below is a view of Data pipeline that is achieved using Apache Airflow Framework.
 
- 
-<img src="blobhttps://github.com/Sardhendu/PropertyClassification/blob/master/images/pipeline.jpg" width="800" height="200"><figcaption></center>Airflow Pipeline</center></figcaption>
+<img src="https://github.com/Sardhendu/PropertyClassification/src/blob/master/images/pipeline.png" width="800" height="200"><figcaption><center>Data Pipeline</center></figcaption>
