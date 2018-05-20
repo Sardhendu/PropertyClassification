@@ -75,16 +75,12 @@ def get_config(which_run, img_type):
                         905, 900, 774, 272]
     
     # API's
-
-    conf['api_call']['zillow_zid'] = 'X1-ZWz18st70ok00b_4ye7m'
-    conf['api_call']['bing_key'] = 'As1SMhbktDgHnBoak6XDezSKFHbgjCqLW4CAVx2s2601KLW_y6cM6vk5qb2C-wFA'
-    conf['api_call']['google_streetside_key'] = 'AIzaSyC3X54Yp0C8xXlQSSCdkCjgVjR0ji3A8UE'
-    conf['api_call']['google_aerial_key'] = ['AIzaSyAKs5HIZPt-dCHaglfjpqTGSNYOhMj4GVU',
-                                     'AIzaSyBWHYW00wx7fEXb-oyn9vpN1KESxOr0Zk0',
-                                     'AIzaSyDsMC4eYSHbGOPUEdd4m2723H5_moOSpw4',
-                                     'AIzaSyD8bsWWu0xGNVdsiX7-zBJ9XSvwNJTmcDg']
-    conf['api_call']['google_meta_key'] = ['AIzaSyBNuNNCBN1QyzLPGQQC54iqgxxa7LtFFIw', 'AIzaSyDh7EDZiMAhTq6xe6Gy5Ki59EpJ-xe0dFY',
-                                   'AIzaSyAsLK1Xp3px6ncE6JW_C46Tr6vMCPqIM_k', 'AIzaSyD7Tghxf1U80d0bqMKHn1FImycYGXw-bXo']
+    conf['api_call']['zillow_zid'] = 'xyz'
+    conf['api_call']['bing_key'] = 'xyz'
+    conf['api_call']['google_streetside_key'] = 'xyz'
+    conf['api_call']['google_aerial_key'] = 'xyz'
+    conf['api_call']['google_meta_key'] = 'xyz'
+    
 
     conf['api_call']['google_aerial_key'] = str(conf['api_call']['google_aerial_key'][1])
     conf['api_call']['google_meta_key'] = str(conf['api_call']['google_meta_key'][1])

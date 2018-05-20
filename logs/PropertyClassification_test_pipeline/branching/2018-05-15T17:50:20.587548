@@ -1,0 +1,19 @@
+[2018-05-15 19:27:49,410] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 19:27:52,480] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline branching 2018-05-15T17:50:20.587548 --job_id 302 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-15 19:27:52,813] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:27:52,813] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-15 19:27:53,223] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:27:53,223] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 19:27:56,270] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:27:56,269] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-15 17:50:20.587548 [queued]>
+[2018-05-15 19:27:56,275] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:27:56,274] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.branching 2018-05-15 17:50:20.587548 [queued]>
+[2018-05-15 19:27:56,275] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:27:56,275] {models.py:1318} INFO - 
+[2018-05-15 19:27:56,275] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-15 19:27:56,275] {base_task_runner.py:95} INFO - Subtask: Starting attempt 1 of 2
+[2018-05-15 19:27:56,275] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-15 19:27:56,275] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-15 19:27:56,283] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:27:56,283] {models.py:1342} INFO - Executing <Task(BranchPythonOperator): branching> on 2018-05-15 17:50:20.587548
+[2018-05-15 19:27:56,293] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:27:56,293] {python_operator.py:81} INFO - Done. Returned value was: create_aerial_cropped_images
+[2018-05-15 19:27:56,293] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:27:56,293] {python_operator.py:106} INFO - Following branch create_aerial_cropped_images
+[2018-05-15 19:27:56,293] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:27:56,293] {python_operator.py:107} INFO - Marking other directly downstream tasks as skipped
+[2018-05-15 19:27:56,298] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:27:56,298] {python_operator.py:119} INFO - Done.
+[2018-05-15 19:27:56,304] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+[2018-05-15 19:27:56,305] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-15 19:27:57,496] {jobs.py:2083} INFO - Task exited with return code 0

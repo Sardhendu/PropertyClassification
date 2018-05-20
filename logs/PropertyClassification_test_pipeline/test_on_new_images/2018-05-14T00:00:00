@@ -1,0 +1,594 @@
+[2018-05-15 19:29:12,642] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 19:29:15,692] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline test_on_new_images 2018-05-14T00:00:00 --job_id 305 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
+[2018-05-15 19:29:16,025] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:16,025] {__init__.py:57} INFO - Using executor SequentialExecutor
+[2018-05-15 19:29:16,437] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:16,437] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
+[2018-05-15 19:29:19,500] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,500] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-14 00:00:00 [queued]>
+[2018-05-15 19:29:19,506] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,505] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.test_on_new_images 2018-05-14 00:00:00 [queued]>
+[2018-05-15 19:29:19,506] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,506] {models.py:1318} INFO - 
+[2018-05-15 19:29:19,506] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-15 19:29:19,506] {base_task_runner.py:95} INFO - Subtask: Starting attempt 1 of 2
+[2018-05-15 19:29:19,506] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
+[2018-05-15 19:29:19,506] {base_task_runner.py:95} INFO - Subtask: 
+[2018-05-15 19:29:19,514] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,514] {models.py:1342} INFO - Executing <Task(PythonOperator): test_on_new_images> on 2018-05-14 00:00:00
+[2018-05-15 19:29:19,533] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,533] {test.py:103} INFO - INITIATING TEST ........
+[2018-05-15 19:29:19,535] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,533] {train.py:108} INFO - Checkpoint LISTS .. ['resnet_epoch_30_batch_9', 'resnet_epoch_29_batch_89', 'resnet_epoch_29_batch_116', 'resnet_epoch_29_batch_99', 'resnet_epoch_29_batch_109']
+[2018-05-15 19:29:19,535] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,535] {preprocessing.py:192} INFO - PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+[2018-05-15 19:29:19,556] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,555] {preprocessing.py:167} INFO - PREPROCESSING self.config: With the Test Data Set
+[2018-05-15 19:29:19,556] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,556] {preprocessing.py:125} INFO - Standarizing the image
+[2018-05-15 19:29:19,561] {base_task_runner.py:95} INFO - Subtask: Test Graphs: RESNET
+[2018-05-15 19:29:19,561] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,561] {ops.py:12} INFO - SEED for scope: 553
+[2018-05-15 19:29:19,583] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,583] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:29:19,641] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,641] {resnet.py:25} INFO - conv_layer : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:29:19,642] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,641] {resnet.py:108} INFO - conv_layer : conv shape: [None, 56, 56, 64]
+[2018-05-15 19:29:19,642] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,642] {ops.py:12} INFO - SEED for scope: 292
+[2018-05-15 19:29:19,663] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,662] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:29:19,713] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,713] {resnet.py:40} INFO - residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:29:19,713] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,713] {ops.py:12} INFO - SEED for scope: 394
+[2018-05-15 19:29:19,735] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,734] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:29:19,783] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,782] {resnet.py:49} INFO - residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+[2018-05-15 19:29:19,785] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,785] {resnet.py:54} INFO - residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+[2018-05-15 19:29:19,785] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,785] {ops.py:12} INFO - SEED for scope: 874
+[2018-05-15 19:29:19,806] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,806] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:29:19,856] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,856] {resnet.py:40} INFO - residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:29:19,856] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,856] {ops.py:12} INFO - SEED for scope: 445
+[2018-05-15 19:29:19,876] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,876] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:29:19,924] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,924] {resnet.py:49} INFO - residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+[2018-05-15 19:29:19,927] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,927] {resnet.py:54} INFO - residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+[2018-05-15 19:29:19,927] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,927] {ops.py:12} INFO - SEED for scope: 191
+[2018-05-15 19:29:19,948] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,948] {resnet.py:73} INFO - residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+[2018-05-15 19:29:19,948] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,948] {ops.py:12} INFO - SEED for scope: 161
+[2018-05-15 19:29:19,970] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:19,970] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:29:20,019] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,019] {resnet.py:79} INFO - residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+[2018-05-15 19:29:20,019] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,019] {ops.py:12} INFO - SEED for scope: 141
+[2018-05-15 19:29:20,040] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,040] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:29:20,088] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,088] {resnet.py:88} INFO - residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+[2018-05-15 19:29:20,090] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,090] {resnet.py:92} INFO - residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+[2018-05-15 19:29:20,091] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,090] {ops.py:12} INFO - SEED for scope: 213
+[2018-05-15 19:29:20,111] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,111] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:29:20,161] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,160] {resnet.py:40} INFO - residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+[2018-05-15 19:29:20,161] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,161] {ops.py:12} INFO - SEED for scope: 436
+[2018-05-15 19:29:20,181] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,181] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:29:20,232] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,231] {resnet.py:49} INFO - residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+[2018-05-15 19:29:20,234] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,234] {resnet.py:54} INFO - residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+[2018-05-15 19:29:20,234] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,234] {ops.py:12} INFO - SEED for scope: 754
+[2018-05-15 19:29:20,255] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,255] {resnet.py:73} INFO - residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+[2018-05-15 19:29:20,255] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,255] {ops.py:12} INFO - SEED for scope: 991
+[2018-05-15 19:29:20,276] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,276] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:29:20,325] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,325] {resnet.py:79} INFO - residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+[2018-05-15 19:29:20,325] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,325] {ops.py:12} INFO - SEED for scope: 302
+[2018-05-15 19:29:20,349] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,349] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:29:20,398] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,398] {resnet.py:88} INFO - residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+[2018-05-15 19:29:20,401] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,401] {resnet.py:92} INFO - residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+[2018-05-15 19:29:20,401] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,401] {ops.py:12} INFO - SEED for scope: 992
+[2018-05-15 19:29:20,422] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,422] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:29:20,473] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,473] {resnet.py:40} INFO - residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+[2018-05-15 19:29:20,474] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,473] {ops.py:12} INFO - SEED for scope: 223
+[2018-05-15 19:29:20,494] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,494] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:29:20,544] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,544] {resnet.py:49} INFO - residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+[2018-05-15 19:29:20,547] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,547] {resnet.py:54} INFO - residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+[2018-05-15 19:29:20,547] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,547] {ops.py:12} INFO - SEED for scope: 645
+[2018-05-15 19:29:20,570] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,570] {resnet.py:73} INFO - residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+[2018-05-15 19:29:20,570] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,570] {ops.py:12} INFO - SEED for scope: 724
+[2018-05-15 19:29:20,592] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,591] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:29:20,642] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,642] {resnet.py:79} INFO - residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+[2018-05-15 19:29:20,642] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,642] {ops.py:12} INFO - SEED for scope: 944
+[2018-05-15 19:29:20,663] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,663] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:29:20,713] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,713] {resnet.py:88} INFO - residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+[2018-05-15 19:29:20,715] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,715] {resnet.py:92} INFO - residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+[2018-05-15 19:29:20,716] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,716] {ops.py:12} INFO - SEED for scope: 232
+[2018-05-15 19:29:20,852] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,852] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:29:20,902] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,902] {resnet.py:40} INFO - residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+[2018-05-15 19:29:20,902] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,902] {ops.py:12} INFO - SEED for scope: 123
+[2018-05-15 19:29:20,922] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,922] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:29:20,971] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,971] {resnet.py:49} INFO - residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+[2018-05-15 19:29:20,974] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:20,973] {resnet.py:54} INFO - residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+[2018-05-15 19:29:22,032] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:22,032] {resnet.py:133} INFO - X - flattened: [None, 25088]
+[2018-05-15 19:29:22,052] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:22,052] {resnet.py:155} INFO - X - FC Layer (RELU): [None, 512]
+[2018-05-15 19:29:22,070] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:22,070] {resnet.py:159} INFO - LOGITS - Softmax Layer: [None, 2]
+[2018-05-15 19:29:22,071] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:22,071] {resnet.py:162} INFO - Softmax Y-Prob shape: shape (?, 2)
+[2018-05-15 19:29:22,071] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:22,071] {ops.py:230} INFO - INITIALIZING LOSS: .....
+[2018-05-15 19:29:22,096] {base_task_runner.py:95} INFO - Subtask: Learning Rate: Initial:  0.0005
+[2018-05-15 19:29:22,096] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:22,096] {ops.py:263} INFO - INITIALIZING OPTIMIZATION WITH ADAM: .....
+[2018-05-15 19:29:29,054] {base_task_runner.py:95} INFO - Subtask: 2018-05-15 19:29:29.054013: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+[2018-05-15 19:29:33,112] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
+[2018-05-15 19:29:33,112] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
+[2018-05-15 19:29:33,112] {base_task_runner.py:95} INFO - Subtask: INFO:tensorflow:Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resnet/resnet_epoch_29_batch_89
+[2018-05-15 19:29:33,112] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:33,111] {tf_logging.py:82} INFO - Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resnet/resnet_epoch_29_batch_89
+[2018-05-15 19:29:33,698] {base_task_runner.py:95} INFO - Subtask: Batch path /Users/sam/All-Program/App-DataSet/HouseClassification/batch_data/new_test/aerial_cropped, batch_names: ['batch_17', 'batch_6', 'batch_13', 'batch_2', 'batch_12', 'batch_3', 'batch_16', 'batch_7', 'batch_8', 'batch_9', 'batch_11', 'batch_0', 'batch_15', 'batch_4', 'batch_14', 'batch_5', 'batch_10', 'batch_1']
+[2018-05-15 19:29:33,698] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:33,698] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_17 from disk, dataX shape = (198, 224, 224, 3), dataY shape = (198,)
+[2018-05-15 19:29:48,960] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:48,960] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.315920, Accuracy: 0.93434, Precision: 0.93878, Recall: 0.92929
+[2018-05-15 19:29:49,055] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:49,054] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_6 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:29:59,287] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:59,287] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.318834, Accuracy: 0.92969, Precision: 0.89855, Recall: 0.96875
+[2018-05-15 19:29:59,394] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:29:59,394] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_13 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:30:10,317] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:30:10,317] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.307656, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:30:10,404] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:30:10,404] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_2 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:30:21,460] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:30:21,460] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.470113, Accuracy: 0.87500, Precision: 0.86364, Recall: 0.89062
+[2018-05-15 19:30:21,563] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:30:21,563] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_12 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:30:32,213] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:30:32,213] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.556010, Accuracy: 0.83594, Precision: 0.84127, Recall: 0.82812
+[2018-05-15 19:30:32,316] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:30:32,316] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_3 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:30:42,829] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:30:42,829] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.428969, Accuracy: 0.89062, Precision: 0.90323, Recall: 0.87500
+[2018-05-15 19:30:42,943] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:30:42,942] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_16 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:30:53,138] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:30:53,138] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.433918, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:30:53,239] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:30:53,238] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_7 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:31:03,281] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:31:03,281] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.263113, Accuracy: 0.90625, Precision: 0.88235, Recall: 0.93750
+[2018-05-15 19:31:03,388] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:31:03,388] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_8 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:31:14,131] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:31:14,131] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.373406, Accuracy: 0.89062, Precision: 0.89062, Recall: 0.89062
+[2018-05-15 19:31:14,246] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:31:14,246] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_9 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:31:24,836] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:31:24,836] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.487631, Accuracy: 0.82031, Precision: 0.80597, Recall: 0.84375
+[2018-05-15 19:31:24,941] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:31:24,941] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_11 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:31:35,211] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:31:35,211] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.266129, Accuracy: 0.94531, Precision: 0.96721, Recall: 0.92188
+[2018-05-15 19:31:35,292] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:31:35,292] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:31:45,494] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:31:45,494] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.433862, Accuracy: 0.86719, Precision: 0.85075, Recall: 0.89062
+[2018-05-15 19:31:45,598] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:31:45,598] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_15 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:31:55,632] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:31:55,632] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.255308, Accuracy: 0.92969, Precision: 0.89855, Recall: 0.96875
+[2018-05-15 19:31:55,735] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:31:55,735] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_4 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:32:05,838] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:05,837] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.654247, Accuracy: 0.86719, Precision: 0.89831, Recall: 0.82812
+[2018-05-15 19:32:05,945] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:05,945] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_14 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:32:16,659] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:16,659] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.387578, Accuracy: 0.90625, Precision: 0.88235, Recall: 0.93750
+[2018-05-15 19:32:16,768] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:16,767] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_5 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:32:27,142] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:27,142] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.438788, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:32:27,247] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:27,247] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_10 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:32:37,495] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:37,495] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.609042, Accuracy: 0.84375, Precision: 0.84375, Recall: 0.84375
+[2018-05-15 19:32:37,579] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:37,579] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_1 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:32:47,682] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:47,682] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 89, Loss: 0.384903, Accuracy: 0.90625, Precision: 0.89394, Recall: 0.92188
+[2018-05-15 19:32:47,846] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:47,845] {preprocessing.py:192} INFO - PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+[2018-05-15 19:32:47,847] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:47,847] {preprocessing.py:167} INFO - PREPROCESSING self.config: With the Test Data Set
+[2018-05-15 19:32:47,847] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:47,847] {preprocessing.py:125} INFO - Standarizing the image
+[2018-05-15 19:32:47,852] {base_task_runner.py:95} INFO - Subtask: Test Graphs: RESNET
+[2018-05-15 19:32:47,852] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:47,852] {ops.py:12} INFO - SEED for scope: 784
+[2018-05-15 19:32:47,875] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:47,875] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:32:47,928] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:47,928] {resnet.py:25} INFO - conv_layer : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:32:47,928] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:47,928] {resnet.py:108} INFO - conv_layer : conv shape: [None, 56, 56, 64]
+[2018-05-15 19:32:47,928] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:47,928] {ops.py:12} INFO - SEED for scope: 239
+[2018-05-15 19:32:47,949] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:47,948] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:32:47,999] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:47,999] {resnet.py:40} INFO - residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:32:47,999] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:47,999] {ops.py:12} INFO - SEED for scope: 337
+[2018-05-15 19:32:48,020] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,020] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:32:48,069] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,068] {resnet.py:49} INFO - residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+[2018-05-15 19:32:48,071] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,071] {resnet.py:54} INFO - residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+[2018-05-15 19:32:48,071] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,071] {ops.py:12} INFO - SEED for scope: 888
+[2018-05-15 19:32:48,091] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,091] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:32:48,141] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,141] {resnet.py:40} INFO - residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:32:48,141] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,141] {ops.py:12} INFO - SEED for scope: 666
+[2018-05-15 19:32:48,161] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,161] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:32:48,208] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,207] {resnet.py:49} INFO - residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+[2018-05-15 19:32:48,210] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,210] {resnet.py:54} INFO - residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+[2018-05-15 19:32:48,210] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,210] {ops.py:12} INFO - SEED for scope: 400
+[2018-05-15 19:32:48,231] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,231] {resnet.py:73} INFO - residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+[2018-05-15 19:32:48,231] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,231] {ops.py:12} INFO - SEED for scope: 912
+[2018-05-15 19:32:48,252] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,252] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:32:48,299] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,299] {resnet.py:79} INFO - residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+[2018-05-15 19:32:48,299] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,299] {ops.py:12} INFO - SEED for scope: 255
+[2018-05-15 19:32:48,319] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,319] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:32:48,368] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,368] {resnet.py:88} INFO - residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+[2018-05-15 19:32:48,371] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,370] {resnet.py:92} INFO - residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+[2018-05-15 19:32:48,371] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,371] {ops.py:12} INFO - SEED for scope: 983
+[2018-05-15 19:32:48,391] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,391] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:32:48,441] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,441] {resnet.py:40} INFO - residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+[2018-05-15 19:32:48,441] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,441] {ops.py:12} INFO - SEED for scope: 902
+[2018-05-15 19:32:48,462] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,462] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:32:48,511] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,511] {resnet.py:49} INFO - residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+[2018-05-15 19:32:48,514] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,514] {resnet.py:54} INFO - residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+[2018-05-15 19:32:48,514] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,514] {ops.py:12} INFO - SEED for scope: 846
+[2018-05-15 19:32:48,535] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,535] {resnet.py:73} INFO - residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+[2018-05-15 19:32:48,535] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,535] {ops.py:12} INFO - SEED for scope: 345
+[2018-05-15 19:32:48,559] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,559] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:32:48,608] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,608] {resnet.py:79} INFO - residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+[2018-05-15 19:32:48,608] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,608] {ops.py:12} INFO - SEED for scope: 854
+[2018-05-15 19:32:48,629] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,628] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:32:48,676] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,676] {resnet.py:88} INFO - residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+[2018-05-15 19:32:48,679] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,679] {resnet.py:92} INFO - residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+[2018-05-15 19:32:48,679] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,679] {ops.py:12} INFO - SEED for scope: 989
+[2018-05-15 19:32:48,699] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,699] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:32:48,751] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,751] {resnet.py:40} INFO - residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+[2018-05-15 19:32:48,751] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,751] {ops.py:12} INFO - SEED for scope: 291
+[2018-05-15 19:32:48,771] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,771] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:32:48,820] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,819] {resnet.py:49} INFO - residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+[2018-05-15 19:32:48,823] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,823] {resnet.py:54} INFO - residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+[2018-05-15 19:32:48,824] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,824] {ops.py:12} INFO - SEED for scope: 486
+[2018-05-15 19:32:48,846] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,846] {resnet.py:73} INFO - residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+[2018-05-15 19:32:48,846] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,846] {ops.py:12} INFO - SEED for scope: 444
+[2018-05-15 19:32:48,868] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,868] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:32:48,916] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,916] {resnet.py:79} INFO - residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+[2018-05-15 19:32:48,916] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,916] {ops.py:12} INFO - SEED for scope: 101
+[2018-05-15 19:32:48,942] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:48,942] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:32:49,241] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,241] {resnet.py:88} INFO - residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+[2018-05-15 19:32:49,244] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,244] {resnet.py:92} INFO - residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+[2018-05-15 19:32:49,244] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,244] {ops.py:12} INFO - SEED for scope: 202
+[2018-05-15 19:32:49,265] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,265] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:32:49,314] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,314] {resnet.py:40} INFO - residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+[2018-05-15 19:32:49,314] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,314] {ops.py:12} INFO - SEED for scope: 304
+[2018-05-15 19:32:49,337] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,337] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:32:49,385] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,385] {resnet.py:49} INFO - residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+[2018-05-15 19:32:49,387] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,387] {resnet.py:54} INFO - residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+[2018-05-15 19:32:49,400] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,400] {resnet.py:133} INFO - X - flattened: [None, 25088]
+[2018-05-15 19:32:49,421] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,420] {resnet.py:155} INFO - X - FC Layer (RELU): [None, 512]
+[2018-05-15 19:32:49,440] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,440] {resnet.py:159} INFO - LOGITS - Softmax Layer: [None, 2]
+[2018-05-15 19:32:49,441] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,440] {resnet.py:162} INFO - Softmax Y-Prob shape: shape (?, 2)
+[2018-05-15 19:32:49,441] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,441] {ops.py:230} INFO - INITIALIZING LOSS: .....
+[2018-05-15 19:32:49,465] {base_task_runner.py:95} INFO - Subtask: Learning Rate: Initial:  0.0005
+[2018-05-15 19:32:49,465] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:32:49,465] {ops.py:263} INFO - INITIALIZING OPTIMIZATION WITH ADAM: .....
+[2018-05-15 19:33:00,401] {base_task_runner.py:95} INFO - Subtask: INFO:tensorflow:Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resnet/resnet_epoch_29_batch_99
+[2018-05-15 19:33:00,401] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:33:00,401] {tf_logging.py:82} INFO - Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resnet/resnet_epoch_29_batch_99
+[2018-05-15 19:33:00,972] {base_task_runner.py:95} INFO - Subtask: Batch path /Users/sam/All-Program/App-DataSet/HouseClassification/batch_data/new_test/aerial_cropped, batch_names: ['batch_17', 'batch_6', 'batch_13', 'batch_2', 'batch_12', 'batch_3', 'batch_16', 'batch_7', 'batch_8', 'batch_9', 'batch_11', 'batch_0', 'batch_15', 'batch_4', 'batch_14', 'batch_5', 'batch_10', 'batch_1']
+[2018-05-15 19:33:00,972] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:33:00,972] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_17 from disk, dataX shape = (198, 224, 224, 3), dataY shape = (198,)
+[2018-05-15 19:33:17,450] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:33:17,450] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.312478, Accuracy: 0.92929, Precision: 0.92929, Recall: 0.92929
+[2018-05-15 19:33:17,531] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:33:17,531] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_6 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:33:27,382] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:33:27,382] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.322219, Accuracy: 0.92969, Precision: 0.89855, Recall: 0.96875
+[2018-05-15 19:33:27,471] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:33:27,471] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_13 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:33:37,468] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:33:37,468] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.306022, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:33:37,557] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:33:37,557] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_2 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:33:47,616] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:33:47,616] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.466934, Accuracy: 0.86719, Precision: 0.85075, Recall: 0.89062
+[2018-05-15 19:33:47,703] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:33:47,702] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_12 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:33:57,598] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:33:57,597] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.547615, Accuracy: 0.83594, Precision: 0.84127, Recall: 0.82812
+[2018-05-15 19:33:57,686] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:33:57,686] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_3 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:34:07,633] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:34:07,632] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.426543, Accuracy: 0.89062, Precision: 0.90323, Recall: 0.87500
+[2018-05-15 19:34:07,722] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:34:07,722] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_16 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:34:17,974] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:34:17,973] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.432948, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:34:18,060] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:34:18,060] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_7 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:34:28,714] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:34:28,714] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.262172, Accuracy: 0.91406, Precision: 0.88406, Recall: 0.95312
+[2018-05-15 19:34:28,807] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:34:28,807] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_8 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:34:38,979] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:34:38,979] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.367702, Accuracy: 0.88281, Precision: 0.87692, Recall: 0.89062
+[2018-05-15 19:34:39,073] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:34:39,073] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_9 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:34:49,240] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:34:49,240] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.483061, Accuracy: 0.81250, Precision: 0.79412, Recall: 0.84375
+[2018-05-15 19:34:49,327] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:34:49,327] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_11 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:34:59,477] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:34:59,477] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.260192, Accuracy: 0.94531, Precision: 0.96721, Recall: 0.92188
+[2018-05-15 19:34:59,562] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:34:59,562] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:35:09,795] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:35:09,795] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.430894, Accuracy: 0.86719, Precision: 0.85075, Recall: 0.89062
+[2018-05-15 19:35:09,877] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:35:09,876] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_15 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:35:20,114] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:35:20,114] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.254709, Accuracy: 0.92188, Precision: 0.88571, Recall: 0.96875
+[2018-05-15 19:35:20,198] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:35:20,198] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_4 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:35:30,196] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:35:30,195] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.646410, Accuracy: 0.86719, Precision: 0.89831, Recall: 0.82812
+[2018-05-15 19:35:30,286] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:35:30,286] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_14 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:35:40,402] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:35:40,402] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.386299, Accuracy: 0.90625, Precision: 0.88235, Recall: 0.93750
+[2018-05-15 19:35:40,491] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:35:40,491] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_5 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:35:51,022] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:35:51,022] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.431415, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:35:51,109] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:35:51,109] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_10 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:36:01,625] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:01,625] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.603303, Accuracy: 0.84375, Precision: 0.84375, Recall: 0.84375
+[2018-05-15 19:36:01,714] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:01,714] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_1 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:36:12,032] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,032] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 99, Loss: 0.382255, Accuracy: 0.90625, Precision: 0.89394, Recall: 0.92188
+[2018-05-15 19:36:12,185] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,185] {preprocessing.py:192} INFO - PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+[2018-05-15 19:36:12,187] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,187] {preprocessing.py:167} INFO - PREPROCESSING self.config: With the Test Data Set
+[2018-05-15 19:36:12,187] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,187] {preprocessing.py:125} INFO - Standarizing the image
+[2018-05-15 19:36:12,192] {base_task_runner.py:95} INFO - Subtask: Test Graphs: RESNET
+[2018-05-15 19:36:12,192] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,191] {ops.py:12} INFO - SEED for scope: 707
+[2018-05-15 19:36:12,212] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,212] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:36:12,267] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,266] {resnet.py:25} INFO - conv_layer : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:36:12,267] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,267] {resnet.py:108} INFO - conv_layer : conv shape: [None, 56, 56, 64]
+[2018-05-15 19:36:12,267] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,267] {ops.py:12} INFO - SEED for scope: 808
+[2018-05-15 19:36:12,290] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,290] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:36:12,340] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,340] {resnet.py:40} INFO - residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:36:12,341] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,340] {ops.py:12} INFO - SEED for scope: 905
+[2018-05-15 19:36:12,361] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,361] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:36:12,410] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,410] {resnet.py:49} INFO - residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+[2018-05-15 19:36:12,413] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,413] {resnet.py:54} INFO - residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+[2018-05-15 19:36:12,413] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,413] {ops.py:12} INFO - SEED for scope: 900
+[2018-05-15 19:36:12,434] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,434] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:36:12,482] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,482] {resnet.py:40} INFO - residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:36:12,482] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,482] {ops.py:12} INFO - SEED for scope: 774
+[2018-05-15 19:36:12,504] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,504] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:36:12,552] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,552] {resnet.py:49} INFO - residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+[2018-05-15 19:36:12,554] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,554] {resnet.py:54} INFO - residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+[2018-05-15 19:36:12,555] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,555] {ops.py:12} INFO - SEED for scope: 553
+[2018-05-15 19:36:12,575] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,575] {resnet.py:73} INFO - residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+[2018-05-15 19:36:12,575] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,575] {ops.py:12} INFO - SEED for scope: 292
+[2018-05-15 19:36:12,595] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,595] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:36:12,645] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,645] {resnet.py:79} INFO - residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+[2018-05-15 19:36:12,645] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,645] {ops.py:12} INFO - SEED for scope: 394
+[2018-05-15 19:36:12,665] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,665] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:36:12,711] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,711] {resnet.py:88} INFO - residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+[2018-05-15 19:36:12,714] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,714] {resnet.py:92} INFO - residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+[2018-05-15 19:36:12,714] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,714] {ops.py:12} INFO - SEED for scope: 874
+[2018-05-15 19:36:12,735] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,735] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:36:12,784] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,784] {resnet.py:40} INFO - residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+[2018-05-15 19:36:12,784] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,784] {ops.py:12} INFO - SEED for scope: 445
+[2018-05-15 19:36:12,804] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,804] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:36:12,852] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,852] {resnet.py:49} INFO - residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+[2018-05-15 19:36:12,854] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,854] {resnet.py:54} INFO - residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+[2018-05-15 19:36:12,855] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,854] {ops.py:12} INFO - SEED for scope: 191
+[2018-05-15 19:36:12,874] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,874] {resnet.py:73} INFO - residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+[2018-05-15 19:36:12,874] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,874] {ops.py:12} INFO - SEED for scope: 161
+[2018-05-15 19:36:12,894] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,894] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:36:12,943] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,943] {resnet.py:79} INFO - residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+[2018-05-15 19:36:12,943] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,943] {ops.py:12} INFO - SEED for scope: 141
+[2018-05-15 19:36:12,962] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:12,962] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:36:13,011] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,011] {resnet.py:88} INFO - residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+[2018-05-15 19:36:13,014] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,013] {resnet.py:92} INFO - residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+[2018-05-15 19:36:13,014] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,014] {ops.py:12} INFO - SEED for scope: 213
+[2018-05-15 19:36:13,035] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,034] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:36:13,084] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,083] {resnet.py:40} INFO - residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+[2018-05-15 19:36:13,084] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,084] {ops.py:12} INFO - SEED for scope: 436
+[2018-05-15 19:36:13,105] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,105] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:36:13,154] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,154] {resnet.py:49} INFO - residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+[2018-05-15 19:36:13,156] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,156] {resnet.py:54} INFO - residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+[2018-05-15 19:36:13,157] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,157] {ops.py:12} INFO - SEED for scope: 754
+[2018-05-15 19:36:13,177] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,177] {resnet.py:73} INFO - residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+[2018-05-15 19:36:13,177] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,177] {ops.py:12} INFO - SEED for scope: 991
+[2018-05-15 19:36:13,198] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,197] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:36:13,249] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,249] {resnet.py:79} INFO - residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+[2018-05-15 19:36:13,250] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,249] {ops.py:12} INFO - SEED for scope: 302
+[2018-05-15 19:36:13,270] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,270] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:36:13,318] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,318] {resnet.py:88} INFO - residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+[2018-05-15 19:36:13,320] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,320] {resnet.py:92} INFO - residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+[2018-05-15 19:36:13,321] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,320] {ops.py:12} INFO - SEED for scope: 992
+[2018-05-15 19:36:13,342] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,342] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:36:13,394] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,394] {resnet.py:40} INFO - residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+[2018-05-15 19:36:13,394] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,394] {ops.py:12} INFO - SEED for scope: 223
+[2018-05-15 19:36:13,415] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,415] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:36:13,464] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,464] {resnet.py:49} INFO - residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+[2018-05-15 19:36:13,466] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,466] {resnet.py:54} INFO - residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+[2018-05-15 19:36:13,479] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,479] {resnet.py:133} INFO - X - flattened: [None, 25088]
+[2018-05-15 19:36:13,499] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,499] {resnet.py:155} INFO - X - FC Layer (RELU): [None, 512]
+[2018-05-15 19:36:13,517] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,517] {resnet.py:159} INFO - LOGITS - Softmax Layer: [None, 2]
+[2018-05-15 19:36:13,518] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,518] {resnet.py:162} INFO - Softmax Y-Prob shape: shape (?, 2)
+[2018-05-15 19:36:13,518] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,518] {ops.py:230} INFO - INITIALIZING LOSS: .....
+[2018-05-15 19:36:13,542] {base_task_runner.py:95} INFO - Subtask: Learning Rate: Initial:  0.0005
+[2018-05-15 19:36:13,543] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:13,542] {ops.py:263} INFO - INITIALIZING OPTIMIZATION WITH ADAM: .....
+[2018-05-15 19:36:24,753] {base_task_runner.py:95} INFO - Subtask: INFO:tensorflow:Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resnet/resnet_epoch_29_batch_109
+[2018-05-15 19:36:24,753] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:24,753] {tf_logging.py:82} INFO - Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resnet/resnet_epoch_29_batch_109
+[2018-05-15 19:36:25,313] {base_task_runner.py:95} INFO - Subtask: Batch path /Users/sam/All-Program/App-DataSet/HouseClassification/batch_data/new_test/aerial_cropped, batch_names: ['batch_17', 'batch_6', 'batch_13', 'batch_2', 'batch_12', 'batch_3', 'batch_16', 'batch_7', 'batch_8', 'batch_9', 'batch_11', 'batch_0', 'batch_15', 'batch_4', 'batch_14', 'batch_5', 'batch_10', 'batch_1']
+[2018-05-15 19:36:25,313] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:25,312] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_17 from disk, dataX shape = (198, 224, 224, 3), dataY shape = (198,)
+[2018-05-15 19:36:40,504] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:40,503] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.311351, Accuracy: 0.92929, Precision: 0.92929, Recall: 0.92929
+[2018-05-15 19:36:40,585] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:40,585] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_6 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:36:50,593] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:50,593] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.322121, Accuracy: 0.92969, Precision: 0.89855, Recall: 0.96875
+[2018-05-15 19:36:50,699] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:36:50,699] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_13 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:37:01,086] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:37:01,086] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.305598, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:37:01,174] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:37:01,174] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_2 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:37:11,247] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:37:11,247] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.466740, Accuracy: 0.85938, Precision: 0.84848, Recall: 0.87500
+[2018-05-15 19:37:11,349] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:37:11,343] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_12 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:37:21,500] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:37:21,499] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.544455, Accuracy: 0.83594, Precision: 0.84127, Recall: 0.82812
+[2018-05-15 19:37:21,593] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:37:21,592] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_3 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:37:31,617] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:37:31,617] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.425364, Accuracy: 0.89062, Precision: 0.90323, Recall: 0.87500
+[2018-05-15 19:37:31,712] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:37:31,712] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_16 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:37:41,776] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:37:41,776] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.431713, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:37:41,864] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:37:41,863] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_7 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:37:52,203] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:37:52,202] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.261855, Accuracy: 0.91406, Precision: 0.88406, Recall: 0.95312
+[2018-05-15 19:37:52,296] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:37:52,296] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_8 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:38:02,949] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:38:02,949] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.367753, Accuracy: 0.88281, Precision: 0.87692, Recall: 0.89062
+[2018-05-15 19:38:03,038] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:38:03,038] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_9 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:38:13,231] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:38:13,231] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.481975, Accuracy: 0.82031, Precision: 0.79710, Recall: 0.85938
+[2018-05-15 19:38:13,315] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:38:13,315] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_11 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:38:23,298] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:38:23,298] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.258147, Accuracy: 0.94531, Precision: 0.96721, Recall: 0.92188
+[2018-05-15 19:38:23,384] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:38:23,383] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:38:33,431] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:38:33,430] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.430189, Accuracy: 0.86719, Precision: 0.85075, Recall: 0.89062
+[2018-05-15 19:38:33,517] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:38:33,517] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_15 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:38:43,895] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:38:43,895] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.252983, Accuracy: 0.92188, Precision: 0.88571, Recall: 0.96875
+[2018-05-15 19:38:43,977] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:38:43,977] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_4 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:38:54,612] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:38:54,612] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.643864, Accuracy: 0.86719, Precision: 0.89831, Recall: 0.82812
+[2018-05-15 19:38:54,700] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:38:54,700] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_14 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:39:04,929] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:04,929] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.385614, Accuracy: 0.90625, Precision: 0.88235, Recall: 0.93750
+[2018-05-15 19:39:05,018] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:05,018] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_5 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:39:15,324] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:15,324] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.427962, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:39:15,408] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:15,408] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_10 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:39:25,665] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:25,665] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.603025, Accuracy: 0.84375, Precision: 0.84375, Recall: 0.84375
+[2018-05-15 19:39:25,752] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:25,752] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_1 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:39:35,808] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:35,808] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 109, Loss: 0.380824, Accuracy: 0.90625, Precision: 0.89394, Recall: 0.92188
+[2018-05-15 19:39:35,971] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:35,971] {preprocessing.py:192} INFO - PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+[2018-05-15 19:39:35,972] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:35,972] {preprocessing.py:167} INFO - PREPROCESSING self.config: With the Test Data Set
+[2018-05-15 19:39:35,973] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:35,972] {preprocessing.py:125} INFO - Standarizing the image
+[2018-05-15 19:39:35,977] {base_task_runner.py:95} INFO - Subtask: Test Graphs: RESNET
+[2018-05-15 19:39:35,977] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:35,977] {ops.py:12} INFO - SEED for scope: 944
+[2018-05-15 19:39:35,998] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:35,998] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:39:36,052] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,052] {resnet.py:25} INFO - conv_layer : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:39:36,052] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,052] {resnet.py:108} INFO - conv_layer : conv shape: [None, 56, 56, 64]
+[2018-05-15 19:39:36,052] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,052] {ops.py:12} INFO - SEED for scope: 232
+[2018-05-15 19:39:36,073] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,073] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:39:36,122] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,122] {resnet.py:40} INFO - residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:39:36,123] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,122] {ops.py:12} INFO - SEED for scope: 123
+[2018-05-15 19:39:36,142] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,142] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:39:36,192] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,192] {resnet.py:49} INFO - residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+[2018-05-15 19:39:36,195] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,195] {resnet.py:54} INFO - residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+[2018-05-15 19:39:36,195] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,195] {ops.py:12} INFO - SEED for scope: 321
+[2018-05-15 19:39:36,217] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,216] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:39:36,267] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,267] {resnet.py:40} INFO - residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:39:36,267] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,267] {ops.py:12} INFO - SEED for scope: 909
+[2018-05-15 19:39:36,287] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,286] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:39:36,335] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,335] {resnet.py:49} INFO - residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+[2018-05-15 19:39:36,337] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,337] {resnet.py:54} INFO - residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+[2018-05-15 19:39:36,337] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,337] {ops.py:12} INFO - SEED for scope: 784
+[2018-05-15 19:39:36,357] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,357] {resnet.py:73} INFO - residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+[2018-05-15 19:39:36,357] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,357] {ops.py:12} INFO - SEED for scope: 239
+[2018-05-15 19:39:36,377] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,377] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:39:36,426] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,426] {resnet.py:79} INFO - residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+[2018-05-15 19:39:36,426] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,426] {ops.py:12} INFO - SEED for scope: 337
+[2018-05-15 19:39:36,447] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,446] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:39:36,494] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,494] {resnet.py:88} INFO - residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+[2018-05-15 19:39:36,496] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,496] {resnet.py:92} INFO - residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+[2018-05-15 19:39:36,496] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,496] {ops.py:12} INFO - SEED for scope: 888
+[2018-05-15 19:39:36,517] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,517] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:39:36,567] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,567] {resnet.py:40} INFO - residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+[2018-05-15 19:39:36,567] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,567] {ops.py:12} INFO - SEED for scope: 666
+[2018-05-15 19:39:36,588] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,588] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:39:36,636] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,636] {resnet.py:49} INFO - residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+[2018-05-15 19:39:36,638] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,638] {resnet.py:54} INFO - residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+[2018-05-15 19:39:36,638] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,638] {ops.py:12} INFO - SEED for scope: 400
+[2018-05-15 19:39:36,658] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,658] {resnet.py:73} INFO - residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+[2018-05-15 19:39:36,658] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,658] {ops.py:12} INFO - SEED for scope: 912
+[2018-05-15 19:39:36,679] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,679] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:39:36,728] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,728] {resnet.py:79} INFO - residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+[2018-05-15 19:39:36,728] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,728] {ops.py:12} INFO - SEED for scope: 255
+[2018-05-15 19:39:36,748] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,748] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:39:36,795] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,795] {resnet.py:88} INFO - residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+[2018-05-15 19:39:36,798] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,798] {resnet.py:92} INFO - residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+[2018-05-15 19:39:36,798] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,798] {ops.py:12} INFO - SEED for scope: 983
+[2018-05-15 19:39:36,818] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,818] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:39:36,867] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,867] {resnet.py:40} INFO - residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+[2018-05-15 19:39:36,867] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,867] {ops.py:12} INFO - SEED for scope: 902
+[2018-05-15 19:39:36,887] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,887] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:39:36,935] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,935] {resnet.py:49} INFO - residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+[2018-05-15 19:39:36,938] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,938] {resnet.py:54} INFO - residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+[2018-05-15 19:39:36,938] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,938] {ops.py:12} INFO - SEED for scope: 846
+[2018-05-15 19:39:36,958] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,958] {resnet.py:73} INFO - residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+[2018-05-15 19:39:36,958] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,958] {ops.py:12} INFO - SEED for scope: 345
+[2018-05-15 19:39:36,979] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:36,979] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:39:37,028] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,028] {resnet.py:79} INFO - residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+[2018-05-15 19:39:37,029] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,028] {ops.py:12} INFO - SEED for scope: 854
+[2018-05-15 19:39:37,048] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,048] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:39:37,094] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,094] {resnet.py:88} INFO - residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+[2018-05-15 19:39:37,097] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,097] {resnet.py:92} INFO - residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+[2018-05-15 19:39:37,097] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,097] {ops.py:12} INFO - SEED for scope: 989
+[2018-05-15 19:39:37,118] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,117] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:39:37,168] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,168] {resnet.py:40} INFO - residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+[2018-05-15 19:39:37,168] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,168] {ops.py:12} INFO - SEED for scope: 291
+[2018-05-15 19:39:37,188] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,187] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:39:37,235] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,235] {resnet.py:49} INFO - residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+[2018-05-15 19:39:37,238] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,238] {resnet.py:54} INFO - residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+[2018-05-15 19:39:37,251] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,251] {resnet.py:133} INFO - X - flattened: [None, 25088]
+[2018-05-15 19:39:37,271] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,271] {resnet.py:155} INFO - X - FC Layer (RELU): [None, 512]
+[2018-05-15 19:39:37,289] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,289] {resnet.py:159} INFO - LOGITS - Softmax Layer: [None, 2]
+[2018-05-15 19:39:37,290] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,290] {resnet.py:162} INFO - Softmax Y-Prob shape: shape (?, 2)
+[2018-05-15 19:39:37,290] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,290] {ops.py:230} INFO - INITIALIZING LOSS: .....
+[2018-05-15 19:39:37,314] {base_task_runner.py:95} INFO - Subtask: Learning Rate: Initial:  0.0005
+[2018-05-15 19:39:37,314] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:37,314] {ops.py:263} INFO - INITIALIZING OPTIMIZATION WITH ADAM: .....
+[2018-05-15 19:39:48,496] {base_task_runner.py:95} INFO - Subtask: INFO:tensorflow:Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resnet/resnet_epoch_29_batch_116
+[2018-05-15 19:39:48,496] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:48,496] {tf_logging.py:82} INFO - Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resnet/resnet_epoch_29_batch_116
+[2018-05-15 19:39:49,071] {base_task_runner.py:95} INFO - Subtask: Batch path /Users/sam/All-Program/App-DataSet/HouseClassification/batch_data/new_test/aerial_cropped, batch_names: ['batch_17', 'batch_6', 'batch_13', 'batch_2', 'batch_12', 'batch_3', 'batch_16', 'batch_7', 'batch_8', 'batch_9', 'batch_11', 'batch_0', 'batch_15', 'batch_4', 'batch_14', 'batch_5', 'batch_10', 'batch_1']
+[2018-05-15 19:39:49,071] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:39:49,071] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_17 from disk, dataX shape = (198, 224, 224, 3), dataY shape = (198,)
+[2018-05-15 19:40:04,843] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:40:04,843] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.311596, Accuracy: 0.92929, Precision: 0.92929, Recall: 0.92929
+[2018-05-15 19:40:04,921] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:40:04,921] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_6 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:40:14,820] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:40:14,820] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.320284, Accuracy: 0.92969, Precision: 0.89855, Recall: 0.96875
+[2018-05-15 19:40:14,929] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:40:14,929] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_13 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:40:25,022] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:40:25,021] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.304816, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:40:25,109] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:40:25,109] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_2 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:40:35,166] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:40:35,166] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.466310, Accuracy: 0.85938, Precision: 0.84848, Recall: 0.87500
+[2018-05-15 19:40:35,273] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:40:35,273] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_12 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:40:45,384] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:40:45,384] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.544871, Accuracy: 0.83594, Precision: 0.84127, Recall: 0.82812
+[2018-05-15 19:40:45,470] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:40:45,470] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_3 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:40:55,658] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:40:55,658] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.425592, Accuracy: 0.89062, Precision: 0.90323, Recall: 0.87500
+[2018-05-15 19:40:55,748] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:40:55,747] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_16 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:41:05,835] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:41:05,835] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.431743, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:41:05,920] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:41:05,920] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_7 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:41:16,043] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:41:16,043] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.260966, Accuracy: 0.91406, Precision: 0.88406, Recall: 0.95312
+[2018-05-15 19:41:16,139] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:41:16,139] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_8 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:41:26,336] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:41:26,336] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.367732, Accuracy: 0.88281, Precision: 0.87692, Recall: 0.89062
+[2018-05-15 19:41:26,428] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:41:26,427] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_9 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:41:37,303] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:41:37,303] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.482548, Accuracy: 0.81250, Precision: 0.79412, Recall: 0.84375
+[2018-05-15 19:41:37,390] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:41:37,390] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_11 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:41:47,641] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:41:47,641] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.259395, Accuracy: 0.94531, Precision: 0.96721, Recall: 0.92188
+[2018-05-15 19:41:47,727] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:41:47,727] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:41:58,051] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:41:58,051] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.430130, Accuracy: 0.86719, Precision: 0.85075, Recall: 0.89062
+[2018-05-15 19:41:58,136] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:41:58,136] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_15 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:42:08,276] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:42:08,275] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.253002, Accuracy: 0.92969, Precision: 0.89855, Recall: 0.96875
+[2018-05-15 19:42:08,357] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:42:08,357] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_4 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:42:18,535] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:42:18,535] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.644401, Accuracy: 0.86719, Precision: 0.89831, Recall: 0.82812
+[2018-05-15 19:42:18,629] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:42:18,629] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_14 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:42:29,029] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:42:29,029] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.384413, Accuracy: 0.90625, Precision: 0.88235, Recall: 0.93750
+[2018-05-15 19:42:29,116] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:42:29,116] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_5 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:42:39,857] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:42:39,857] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.428357, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:42:39,942] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:42:39,942] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_10 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:42:50,190] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:42:50,189] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.602656, Accuracy: 0.84375, Precision: 0.84375, Recall: 0.84375
+[2018-05-15 19:42:50,275] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:42:50,275] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_1 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:43:00,558] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,557] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 29, batch: 116, Loss: 0.380336, Accuracy: 0.90625, Precision: 0.89394, Recall: 0.92188
+[2018-05-15 19:43:00,711] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,711] {preprocessing.py:192} INFO - PREPROCESSING THE DATASET of shape [224, 224, 3]..........
+[2018-05-15 19:43:00,713] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,712] {preprocessing.py:167} INFO - PREPROCESSING self.config: With the Test Data Set
+[2018-05-15 19:43:00,713] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,713] {preprocessing.py:125} INFO - Standarizing the image
+[2018-05-15 19:43:00,717] {base_task_runner.py:95} INFO - Subtask: Test Graphs: RESNET
+[2018-05-15 19:43:00,717] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,717] {ops.py:12} INFO - SEED for scope: 101
+[2018-05-15 19:43:00,740] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,740] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:43:00,793] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,793] {resnet.py:25} INFO - conv_layer : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:43:00,793] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,793] {resnet.py:108} INFO - conv_layer : conv shape: [None, 56, 56, 64]
+[2018-05-15 19:43:00,793] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,793] {ops.py:12} INFO - SEED for scope: 202
+[2018-05-15 19:43:00,814] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,814] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:43:00,865] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,865] {resnet.py:40} INFO - residual_block_1_1 : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:43:00,865] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,865] {ops.py:12} INFO - SEED for scope: 304
+[2018-05-15 19:43:00,886] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,886] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:43:00,935] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,935] {resnet.py:49} INFO - residual_block_1_1 : conv_2 shape: (?, 56, 56, 64)
+[2018-05-15 19:43:00,937] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,937] {resnet.py:54} INFO - residual_block_1_1 : Skip add shape: (?, 56, 56, 64)
+[2018-05-15 19:43:00,937] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,937] {ops.py:12} INFO - SEED for scope: 505
+[2018-05-15 19:43:00,959] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:00,959] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:43:01,009] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,008] {resnet.py:40} INFO - residual_block_1_2 : conv_1 shape: (?, 56, 56, 64)
+[2018-05-15 19:43:01,009] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,008] {ops.py:12} INFO - SEED for scope: 607
+[2018-05-15 19:43:01,029] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,029] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:43:01,078] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,078] {resnet.py:49} INFO - residual_block_1_2 : conv_2 shape: (?, 56, 56, 64)
+[2018-05-15 19:43:01,081] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,080] {resnet.py:54} INFO - residual_block_1_2 : Skip add shape: (?, 56, 56, 64)
+[2018-05-15 19:43:01,081] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,081] {ops.py:12} INFO - SEED for scope: 707
+[2018-05-15 19:43:01,100] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,100] {resnet.py:73} INFO - residual_block_2_1 : conv_shortcut shape: (?, 28, 28, 128)
+[2018-05-15 19:43:01,100] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,100] {ops.py:12} INFO - SEED for scope: 808
+[2018-05-15 19:43:01,121] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,121] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:43:01,169] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,169] {resnet.py:79} INFO - residual_block_2_1 : conv_1 shape: (?, 28, 28, 128)
+[2018-05-15 19:43:01,169] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,169] {ops.py:12} INFO - SEED for scope: 905
+[2018-05-15 19:43:01,189] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,189] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:43:01,238] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,238] {resnet.py:88} INFO - residual_block_2_1 : conv_2 shape: (?, 28, 28, 128)
+[2018-05-15 19:43:01,241] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,241] {resnet.py:92} INFO - residual_block_2_1 : Skip add shape: (?, 28, 28, 128)
+[2018-05-15 19:43:01,241] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,241] {ops.py:12} INFO - SEED for scope: 900
+[2018-05-15 19:43:01,262] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,262] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:43:01,310] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,310] {resnet.py:40} INFO - residual_block_2_2 : conv_1 shape: (?, 28, 28, 128)
+[2018-05-15 19:43:01,311] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,310] {ops.py:12} INFO - SEED for scope: 774
+[2018-05-15 19:43:01,332] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,332] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:43:01,378] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,378] {resnet.py:49} INFO - residual_block_2_2 : conv_2 shape: (?, 28, 28, 128)
+[2018-05-15 19:43:01,381] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,381] {resnet.py:54} INFO - residual_block_2_2 : Skip add shape: (?, 28, 28, 128)
+[2018-05-15 19:43:01,381] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,381] {ops.py:12} INFO - SEED for scope: 553
+[2018-05-15 19:43:01,401] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,400] {resnet.py:73} INFO - residual_block_3_1 : conv_shortcut shape: (?, 14, 14, 256)
+[2018-05-15 19:43:01,401] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,401] {ops.py:12} INFO - SEED for scope: 292
+[2018-05-15 19:43:01,422] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,421] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:43:01,474] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,474] {resnet.py:79} INFO - residual_block_3_1 : conv_1 shape: (?, 14, 14, 256)
+[2018-05-15 19:43:01,474] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,474] {ops.py:12} INFO - SEED for scope: 394
+[2018-05-15 19:43:01,494] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,493] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:43:01,548] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,547] {resnet.py:88} INFO - residual_block_3_1 : conv_2 shape: (?, 14, 14, 256)
+[2018-05-15 19:43:01,550] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,550] {resnet.py:92} INFO - residual_block_3_1 : Skip add shape: (?, 14, 14, 256)
+[2018-05-15 19:43:01,550] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,550] {ops.py:12} INFO - SEED for scope: 874
+[2018-05-15 19:43:01,571] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,571] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:43:01,620] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,620] {resnet.py:40} INFO - residual_block_3_2 : conv_1 shape: (?, 14, 14, 256)
+[2018-05-15 19:43:01,620] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,620] {ops.py:12} INFO - SEED for scope: 445
+[2018-05-15 19:43:01,641] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,641] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:43:01,690] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,689] {resnet.py:49} INFO - residual_block_3_2 : conv_2 shape: (?, 14, 14, 256)
+[2018-05-15 19:43:01,692] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,692] {resnet.py:54} INFO - residual_block_3_2 : Skip add shape: (?, 14, 14, 256)
+[2018-05-15 19:43:01,692] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,692] {ops.py:12} INFO - SEED for scope: 191
+[2018-05-15 19:43:01,713] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,713] {resnet.py:73} INFO - residual_block_4_1 : conv_shortcut shape: (?, 7, 7, 512)
+[2018-05-15 19:43:01,713] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,713] {ops.py:12} INFO - SEED for scope: 161
+[2018-05-15 19:43:01,736] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,736] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:43:01,784] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,784] {resnet.py:79} INFO - residual_block_4_1 : conv_1 shape: (?, 7, 7, 512)
+[2018-05-15 19:43:01,784] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,784] {ops.py:12} INFO - SEED for scope: 141
+[2018-05-15 19:43:01,805] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,805] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:43:01,856] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,856] {resnet.py:88} INFO - residual_block_4_1 : conv_2 shape: (?, 7, 7, 512)
+[2018-05-15 19:43:01,858] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,858] {resnet.py:92} INFO - residual_block_4_1 : Skip add shape: (?, 7, 7, 512)
+[2018-05-15 19:43:01,858] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,858] {ops.py:12} INFO - SEED for scope: 213
+[2018-05-15 19:43:01,879] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,879] {ops.py:131} INFO - Running Scope bn_1: 
+[2018-05-15 19:43:01,928] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,928] {resnet.py:40} INFO - residual_block_4_2 : conv_1 shape: (?, 7, 7, 512)
+[2018-05-15 19:43:01,928] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,928] {ops.py:12} INFO - SEED for scope: 436
+[2018-05-15 19:43:01,949] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,949] {ops.py:131} INFO - Running Scope bn_2: 
+[2018-05-15 19:43:01,995] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,995] {resnet.py:49} INFO - residual_block_4_2 : conv_2 shape: (?, 7, 7, 512)
+[2018-05-15 19:43:01,998] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:01,998] {resnet.py:54} INFO - residual_block_4_2 : Skip add shape: (?, 7, 7, 512)
+[2018-05-15 19:43:02,011] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:02,011] {resnet.py:133} INFO - X - flattened: [None, 25088]
+[2018-05-15 19:43:02,031] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:02,031] {resnet.py:155} INFO - X - FC Layer (RELU): [None, 512]
+[2018-05-15 19:43:02,049] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:02,049] {resnet.py:159} INFO - LOGITS - Softmax Layer: [None, 2]
+[2018-05-15 19:43:02,050] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:02,050] {resnet.py:162} INFO - Softmax Y-Prob shape: shape (?, 2)
+[2018-05-15 19:43:02,050] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:02,050] {ops.py:230} INFO - INITIALIZING LOSS: .....
+[2018-05-15 19:43:02,075] {base_task_runner.py:95} INFO - Subtask: Learning Rate: Initial:  0.0005
+[2018-05-15 19:43:02,075] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:02,075] {ops.py:263} INFO - INITIALIZING OPTIMIZATION WITH ADAM: .....
+[2018-05-15 19:43:13,014] {base_task_runner.py:95} INFO - Subtask: INFO:tensorflow:Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resnet/resnet_epoch_30_batch_9
+[2018-05-15 19:43:13,014] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:13,014] {tf_logging.py:82} INFO - Restoring parameters from /Users/sam/All-Program/App-DataSet/HouseClassification/checkpoints/sam_new/aerial_cropped/resnet/resnet_epoch_30_batch_9
+[2018-05-15 19:43:13,583] {base_task_runner.py:95} INFO - Subtask: Batch path /Users/sam/All-Program/App-DataSet/HouseClassification/batch_data/new_test/aerial_cropped, batch_names: ['batch_17', 'batch_6', 'batch_13', 'batch_2', 'batch_12', 'batch_3', 'batch_16', 'batch_7', 'batch_8', 'batch_9', 'batch_11', 'batch_0', 'batch_15', 'batch_4', 'batch_14', 'batch_5', 'batch_10', 'batch_1']
+[2018-05-15 19:43:13,583] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:13,583] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_17 from disk, dataX shape = (198, 224, 224, 3), dataY shape = (198,)
+[2018-05-15 19:43:28,553] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:28,553] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.311226, Accuracy: 0.92929, Precision: 0.92929, Recall: 0.92929
+[2018-05-15 19:43:28,633] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:28,633] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_6 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:43:39,102] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:39,102] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.320203, Accuracy: 0.92969, Precision: 0.89855, Recall: 0.96875
+[2018-05-15 19:43:39,209] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:39,209] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_13 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:43:49,167] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:49,167] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.302722, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:43:49,261] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:49,261] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_2 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:43:59,220] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:59,220] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.466080, Accuracy: 0.86719, Precision: 0.86154, Recall: 0.87500
+[2018-05-15 19:43:59,327] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:43:59,327] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_12 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:44:09,265] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:44:09,265] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.546575, Accuracy: 0.83594, Precision: 0.84127, Recall: 0.82812
+[2018-05-15 19:44:09,355] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:44:09,355] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_3 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:44:19,366] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:44:19,366] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.426948, Accuracy: 0.89062, Precision: 0.90323, Recall: 0.87500
+[2018-05-15 19:44:19,482] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:44:19,482] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_16 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:44:30,426] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:44:30,426] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.432915, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:44:30,514] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:44:30,514] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_7 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:44:40,767] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:44:40,767] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.261652, Accuracy: 0.91406, Precision: 0.88406, Recall: 0.95312
+[2018-05-15 19:44:40,859] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:44:40,859] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_8 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:44:51,048] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:44:51,048] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.365810, Accuracy: 0.88281, Precision: 0.87692, Recall: 0.89062
+[2018-05-15 19:44:51,154] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:44:51,154] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_9 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:45:01,332] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:45:01,332] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.482269, Accuracy: 0.81250, Precision: 0.79412, Recall: 0.84375
+[2018-05-15 19:45:01,415] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:45:01,415] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_11 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:45:11,664] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:45:11,664] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.262272, Accuracy: 0.94531, Precision: 0.96721, Recall: 0.92188
+[2018-05-15 19:45:11,749] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:45:11,749] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_0 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:45:21,798] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:45:21,798] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.429625, Accuracy: 0.86719, Precision: 0.85075, Recall: 0.89062
+[2018-05-15 19:45:21,882] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:45:21,881] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_15 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:45:31,901] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:45:31,901] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.254558, Accuracy: 0.93750, Precision: 0.91176, Recall: 0.96875
+[2018-05-15 19:45:31,990] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:45:31,989] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_4 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:45:42,927] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:45:42,927] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.644323, Accuracy: 0.86719, Precision: 0.89831, Recall: 0.82812
+[2018-05-15 19:45:43,014] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:45:43,014] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_14 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:45:53,156] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:45:53,156] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.384272, Accuracy: 0.90625, Precision: 0.88235, Recall: 0.93750
+[2018-05-15 19:45:53,241] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:45:53,241] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_5 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
+[2018-05-15 19:46:04,885] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:46:04,884] {test.py:49} INFO - VALIDATION METRICs : Fold: 1, epoch: 30, batch: 9, Loss: 0.430107, Accuracy: 0.89844, Precision: 0.89231, Recall: 0.90625
+[2018-05-15 19:46:04,997] {base_task_runner.py:95} INFO - Subtask: [2018-05-15 19:46:04,997] {data_io.py:80} INFO - DATA FORMATTER: Retrieved the hdf5 file batch_10 from disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)

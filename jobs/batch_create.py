@@ -93,3 +93,4 @@ def remove_batches(**kwargs):
 
     shutil.rmtree(batch_path)
     logging.info('Removed Batches ...................')
+    return 'COMPLETE'

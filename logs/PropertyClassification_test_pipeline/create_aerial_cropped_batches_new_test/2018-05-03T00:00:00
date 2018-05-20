@@ -1,42 +1,0 @@
-[2018-05-04 10:53:57,435] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
-[2018-05-04 10:54:00,785] {base_task_runner.py:112} INFO - Running: ['bash', '-c', 'airflow run PropertyClassification_test_pipeline create_aerial_cropped_batches_new_test 2018-05-03T00:00:00 --job_id 16 --raw -sd /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py']
-[2018-05-04 10:54:01,128] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:01,128] {__init__.py:57} INFO - Using executor SequentialExecutor
-[2018-05-04 10:54:01,551] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:01,551] {models.py:167} INFO - Filling up the DagBag from /Users/sam/All-Program/App/PropertyClassification/dags/test_pipeline.py
-[2018-05-04 10:54:04,805] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:04,804] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_aerial_cropped_batches_new_test 2018-05-03 00:00:00 [queued]>
-[2018-05-04 10:54:04,810] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:04,810] {models.py:1126} INFO - Dependencies all met for <TaskInstance: PropertyClassification_test_pipeline.create_aerial_cropped_batches_new_test 2018-05-03 00:00:00 [queued]>
-[2018-05-04 10:54:04,810] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:04,810] {models.py:1318} INFO - 
-[2018-05-04 10:54:04,811] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
-[2018-05-04 10:54:04,811] {base_task_runner.py:95} INFO - Subtask: Starting attempt 1 of 2
-[2018-05-04 10:54:04,811] {base_task_runner.py:95} INFO - Subtask: --------------------------------------------------------------------------------
-[2018-05-04 10:54:04,811] {base_task_runner.py:95} INFO - Subtask: 
-[2018-05-04 10:54:04,818] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:04,818] {models.py:1342} INFO - Executing <Task(PythonOperator): create_aerial_cropped_batches_new_test> on 2018-05-03 00:00:00
-[2018-05-04 10:54:04,840] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:04,840] {batch_create.py:54} INFO - Shape: cmn_land_pins = 902, cmn_house_pins = 902 
-[2018-05-04 10:54:04,841] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:04,840] {data_prep.py:212} INFO - Input Land Images from /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/new_new/aerial_cropped/land: 
-[2018-05-04 10:54:04,842] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:04,841] {data_prep.py:213} INFO - Input House Images from /Users/sam/All-Program/App-DataSet/HouseClassification/input_images/new_new/aerial_cropped/house: 
-[2018-05-04 10:54:04,842] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:04,841] {data_prep.py:214} INFO - Output batch array to /Users/sam/All-Program/App-DataSet/HouseClassification/batch_data/new_new/aerial_cropped: 
-[2018-05-04 10:54:04,842] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:04,842] {data_prep.py:220} INFO - Image Shape: [400, 400, 3]
-[2018-05-04 10:54:04,842] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:04,842] {data_prep.py:224} INFO - Enabling Crop: [128, 128, 3]
-[2018-05-04 10:54:04,842] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:04,842] {data_prep.py:230} INFO - Enabling Resize: [128, 128, 3]
-[2018-05-04 10:54:04,842] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:04,842] {data_prep.py:235} INFO - Enabling Rotation angle = 90:
-[2018-05-04 10:54:04,842] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:04,842] {data_prep.py:258} INFO - Running Seed for batch creation: 881
-[2018-05-04 10:54:04,847] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:04,847] {data_prep.py:456} INFO - Input Data: Total Land: 902, Total House: 902
-[2018-05-04 10:54:05,324] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:05,324] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_0 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-[2018-05-04 10:54:05,949] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 0[2018-05-04 10:54:05,949] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_1 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-[2018-05-04 10:54:06,575] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 1[2018-05-04 10:54:06,575] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_2 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-[2018-05-04 10:54:07,170] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 2[2018-05-04 10:54:07,170] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_3 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-[2018-05-04 10:54:07,763] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 3[2018-05-04 10:54:07,763] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_4 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-[2018-05-04 10:54:08,303] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 4[2018-05-04 10:54:08,303] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_5 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-[2018-05-04 10:54:08,985] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 5[2018-05-04 10:54:08,985] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_6 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-[2018-05-04 10:54:09,657] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 6[2018-05-04 10:54:09,657] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_7 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-[2018-05-04 10:54:10,222] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 7[2018-05-04 10:54:10,221] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_8 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-[2018-05-04 10:54:10,761] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 8[2018-05-04 10:54:10,760] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_9 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-[2018-05-04 10:54:11,351] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 9[2018-05-04 10:54:11,350] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_10 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-[2018-05-04 10:54:11,914] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 10[2018-05-04 10:54:11,914] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_11 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-[2018-05-04 10:54:12,448] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 11[2018-05-04 10:54:12,448] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_12 to disk, dataX shape = (128, 224, 224, 3), dataY shape = (128,)
-[2018-05-04 10:54:13,112] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 12[2018-05-04 10:54:13,112] {data_io.py:65} INFO - DATA FORMATTER: Dumping the hdf5 file batch_13 to disk, dataX shape = (140, 224, 224, 3), dataY shape = (140,)
-[2018-05-04 10:54:13,304] {base_task_runner.py:95} INFO - Subtask: TOTAL BATCH DONE:  ======== 13[2018-05-04 10:54:13,303] {data_prep.py:433} INFO - Training Land Size: 902, Training House Size: 902
-[2018-05-04 10:54:13,309] {base_task_runner.py:95} INFO - Subtask: 1804 1804 1804 1804 1804
-[2018-05-04 10:54:13,310] {base_task_runner.py:95} INFO - Subtask: [2018-05-04 10:54:13,309] {python_operator.py:81} INFO - Done. Returned value was: COMPLETE
-[2018-05-04 10:54:13,323] {base_task_runner.py:95} INFO - Subtask: /Users/sam/App-Setup/anaconda/envs/anaconda35/lib/python3.5/site-packages/airflow/ti_deps/deps/base_ti_dep.py:94: PendingDeprecationWarning: generator '_get_dep_statuses' raised StopIteration
-[2018-05-04 10:54:13,323] {base_task_runner.py:95} INFO - Subtask:   for dep_status in self._get_dep_statuses(ti, session, dep_context):
-[2018-05-04 10:54:15,794] {jobs.py:2083} INFO - Task exited with return code 0
