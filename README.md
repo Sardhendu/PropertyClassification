@@ -35,16 +35,16 @@ Here's a snapshot of the images:
     <table>
 	    <tr>
     	    <td style="padding:5px">
-        	    <img src="https://github.com/Sardhendu/PropertyClassification/blob/master/src/images/assessor.png" width="200" height="200"><figcaption><center>Assessor Image</center></figcaption>
+        	    <img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/assessor.png" width="200" height="200"><figcaption><center>Assessor Image</center></figcaption>
       	    </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/src/images/streetside.jpg" width="200" height="200"><figcaption><center>Streetside Image</center></figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/streetside.jpg" width="200" height="200"><figcaption><center>Streetside Image</center></figcaption>
              </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/src/images/aerial.png" width="200" height="200"><figcaption><center>Aerial Image</center></figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/aerial.png" width="200" height="200"><figcaption><center>Aerial Image</center></figcaption>
              </td>
              <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/src/images/overlayed.jpg" width="200" height="200"><figcaption></center>Overlayed Image</center></figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/overlayed.jpg" width="200" height="200"><figcaption></center>Overlayed Image</center></figcaption>
              </td>
         </tr>
     </table>
@@ -54,7 +54,7 @@ Here's a snapshot of the images:
 ### Models (Deep Nets) 
 Let us now discuss all different models employed for different types of images.
 
-#### [RESNET-18](https://github.com/Sardhendu/PropertyClassification/blob/master/src/conv_net/resnet.py) + a little variation
+#### [RESNET-18](https://github.com/Sardhendu/PropertyClassification/tree/master/src/conv_net/resnet.py) + a little variation
 
 <div id="wrapper">
     <div class="twoColumn">
@@ -68,20 +68,20 @@ Let us now discuss all different models employed for different types of images.
     <table>
 	    <tr>
     	    <td style="padding:5px">
-        	    <img src="https://github.com/Sardhendu/PropertyClassification/blob/master/src/images/home_cropped.jpg" width="300" height="150"><figcaption><center>House bbox cropped</center></figcaption>
+        	    <img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/home_cropped.jpg" width="300" height="150"><figcaption><center>House bbox cropped</center></figcaption>
       	    </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/src/images/home_resized.png" width="200" height="200"><figcaption><center>Home Resized/Pad</center></figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/home_resized.png" width="200" height="200"><figcaption><center>Home Resized/Pad</center></figcaption>
              </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/src/images/land.png" width="200" height="200"><figcaption><center>Land central crop</center></figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/land.png" width="200" height="200"><figcaption><center>Land central crop</center></figcaption>
              </td>
         </tr>
     </table>
     <table>
         <tr>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/src/images/prec_recall_curve.png" width="600" height="200"><figcaption><center>Precision Recall Plot</center></figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/prec_recall_curve.png" width="600" height="200"><figcaption><center>Precision Recall Plot</center></figcaption>
             </td>
         </tr>
     </table>
@@ -92,11 +92,11 @@ Let us now discuss all different models employed for different types of images.
 
 --------------
 
-#### [CONV-NET](https://github.com/Sardhendu/PropertyClassification/blob/master/src/conv_net/convnet.py)
+#### [CONV-NET](https://github.com/Sardhendu/PropertyClassification/tree/master/src/conv_net/convnet.py)
 
 <div id="wrapper">
     <div class="twoColumn">
-        <img align="right" width="200" height="200" src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/overlayed2.png">
+        <img align="right" width="200" height="200" src="https://github.com/Sardhendu/PropertyClassification/tree/master/images/overlayed2.png">
     </div>
     <div class="twoColumn">
          <p>
@@ -115,11 +115,11 @@ Let us now discuss all different models employed for different types of images.
     
 ---------------
 
-#### [CONV AUTOENCODER](https://github.com/Sardhendu/PropertyClassification/blob/master/src/conv_net/conv_autoencoder.py)
+#### [CONV AUTOENCODER](https://github.com/Sardhendu/PropertyClassification/tree/master/src/conv_net/conv_autoencoder.py)
 
 <div id="wrapper">
     <div class="twoColumn">
-        <img align="right" width="200" height="200" src="https://github.com/Sardhendu/PropertyClassification/blob/master/src/images/assessor2.png">
+        <img align="right" width="200" height="200" src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/assessor2.png">
     </div>
     <div class="twoColumn">
          <p>
