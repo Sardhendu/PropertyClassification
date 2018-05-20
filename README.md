@@ -35,16 +35,16 @@ Here's a snapshot of the images:
     <table>
 	    <tr>
     	    <td style="padding:5px">
-        	    <img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/assessor.png" width="200" height="200"><figcaption><center>Assessor Image</center></figcaption>
+        	    <img src="treehttps://github.com/Sardhendu/PropertyClassification/tree/master/images/assessor.png" width="200" height="200"><figcaption><center>Assessor Image</center></figcaption>
       	    </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/streetside.jpg" width="200" height="200"><figcaption><center>Streetside Image</center></figcaption>
+            	<img src="treehttps://github.com/Sardhendu/PropertyClassification/tree/master/images/streetside.jpg" width="200" height="200"><figcaption><center>Streetside Image</center></figcaption>
              </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/aerial.png" width="200" height="200"><figcaption><center>Aerial Image</center></figcaption>
+            	<img src="treehttps://github.com/Sardhendu/PropertyClassification/tree/master/images/aerial.png" width="200" height="200"><figcaption><center>Aerial Image</center></figcaption>
              </td>
              <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/overlayed.jpg" width="200" height="200"><figcaption></center>Overlayed Image</center></figcaption>
+            	<img src="treehttps://github.com/Sardhendu/PropertyClassification/tree/master/images/overlayed.jpg" width="200" height="200"><figcaption></center>Overlayed Image</center></figcaption>
              </td>
         </tr>
     </table>
@@ -68,20 +68,20 @@ Let us now discuss all different models employed for different types of images.
     <table>
 	    <tr>
     	    <td style="padding:5px">
-        	    <img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/home_cropped.jpg" width="300" height="150"><figcaption><center>House bbox cropped</center></figcaption>
+        	    <img src="treehttps://github.com/Sardhendu/PropertyClassification/tree/master/images/home_cropped.jpg" width="300" height="150"><figcaption><center>House bbox cropped</center></figcaption>
       	    </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/home_resized.png" width="200" height="200"><figcaption><center>Home Resized/Pad</center></figcaption>
+            	<img src="treehttps://github.com/Sardhendu/PropertyClassification/tree/master/images/home_resized.png" width="200" height="200"><figcaption><center>Home Resized/Pad</center></figcaption>
              </td>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/land.png" width="200" height="200"><figcaption><center>Land central crop</center></figcaption>
+            	<img src="treehttps://github.com/Sardhendu/PropertyClassification/tree/master/images/land.png" width="200" height="200"><figcaption><center>Land central crop</center></figcaption>
              </td>
         </tr>
     </table>
     <table>
         <tr>
             <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/prec_recall_curve.png" width="600" height="200"><figcaption><center>Precision Recall Plot</center></figcaption>
+            	<img src="treehttps://github.com/Sardhendu/PropertyClassification/tree/master/images/prec_recall_curve.png" width="600" height="200"><figcaption><center>Precision Recall Plot</center></figcaption>
             </td>
         </tr>
     </table>
@@ -119,7 +119,7 @@ Let us now discuss all different models employed for different types of images.
 
 <div id="wrapper">
     <div class="twoColumn">
-        <img align="right" width="200" height="200" src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/assessor2.png">
+        <img align="right" width="200" height="200" src="treehttps://github.com/Sardhendu/PropertyClassification/tree/master/images/assessor2.png">
     </div>
     <div class="twoColumn">
          <p>
@@ -136,4 +136,4 @@ Let us now discuss all different models employed for different types of images.
 Below is a view of Data pipeline that is achieved using Apache Airflow Framework.
 
  
-<img src="https://github.com/Sardhendu/PropertyClassification/tree/master/src/images/pipeline.jpg" width="400" height="200"><figcaption></center>Airflow Pipeline</center></figcaption>
+<img src="treehttps://github.com/Sardhendu/PropertyClassification/tree/master/images/pipeline.jpg" width="800" height="200"><figcaption></center>Airflow Pipeline</center></figcaption>
