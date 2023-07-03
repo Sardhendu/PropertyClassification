@@ -65,7 +65,7 @@ Here we bring OSM and street view images to our rescue. This problem can be amel
 ### Modeling Techniques (Deep Nets) 
 **Vanila Classification model** with input of aerial images fell short and saw several modelling problems as discussed above. Let us now discuss all different models employed for different types of images.
 
-#### [RESNET-18](https://github.com/Sardhendu/PropertyClassification/src/blob/master/conv_net/resnet.py) + a little variation
+#### [RESNET-18](https://github.com/Sardhendu/PropertyClassification/blob/master/src/conv_net/resnet.py) + a little variation
 
 <div id="wrapper">
     <div class="twoColumn">
@@ -105,7 +105,7 @@ Here we bring OSM and street view images to our rescue. This problem can be amel
 
 --------------
 
-#### [CONV-NET](https://github.com/Sardhendu/PropertyClassification/src/blob/master/conv_net/convnet.py)
+#### [CONV-NET](https://github.com/Sardhendu/PropertyClassification/blob/master/src/conv_net/convnet.py)
 
 <div id="wrapper">
     <div class="twoColumn">
@@ -126,9 +126,10 @@ Here we bring OSM and street view images to our rescue. This problem can be amel
 </div>
     
 [Notebook](https://github.com/Sardhendu/PropertyClassification/blob/master/notebooks/Model_eval-Overlayed.ipynb)/[Initial Work](https://github.com/Sardhendu/PropertyClassification/tree/master/src/semantic_segmentation)
+
 ---------------
 
-#### [CONV AUTOENCODER](https://github.com/Sardhendu/PropertyClassification/src/blob/master/conv_net/conv_autoencoder.py)
+#### [CONV AUTOENCODER](https://github.com/Sardhendu/PropertyClassification/blob/master/src/conv_net/conv_autoencoder.py)
 
 <div id="wrapper">
     <div class="twoColumn">
@@ -136,7 +137,7 @@ Here we bring OSM and street view images to our rescue. This problem can be amel
     </div>
     <div class="twoColumn">
          <p>
-            Variational Autoencoders were trained for research purposses. And they were used for Assessor/Streetside Images. Assessor images are 5-9 years old and there is a high chance that a Land property then would be a house now. This means that despite the label might say house, the image might indicate a land. So we could either trust the labels or the image. Autoencoder are unsupervised techniques that does not require a label. We feed in the autoencoder with images of house and land and leave it for the autoencoder to find an embedding that could distinguish between land and house. We create a encoding space of 64 dimensions and try k-means clustering with 2 initial centers.<br><br><b>Challange:</b> Assessor images might be expensive to obtain, since these images are manually collected by organization/individuals. In a real scenario, finding assessor image for every address is overstated.<br>    
+            Autoencoders were trained for research purposses. And they were used for Assessor/Streetside Images. Assessor images are 5-9 years old and there is a high chance that a Land property then would be a house now. This means that despite the label might say house, the image might indicate a land. So we could either trust the labels or the image. Autoencoder are unsupervised techniques that does not require a label. We feed in the autoencoder with images of house and land and leave it for the autoencoder to find an embedding that could distinguish between land and house. We create a encoding space of 64 dimensions and try k-means clustering with 2 initial centers.<br><br><b>Challange:</b> Assessor images might be expensive to obtain, since these images are manually collected by organization/individuals. In a real scenario, finding assessor image for every address is overstated.<br>    
          </p>
     </div>
 </div>
