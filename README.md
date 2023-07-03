@@ -70,10 +70,12 @@ Here we bring OSM and street view images to our rescue. This problem can be amel
 <div id="wrapper">
     <div class="twoColumn">
          <p>
-            RESNET-18 model is trained with Satellite Images from google maps. RESNET's can go very deep and are very robust to the problem of vanishing gradient. In doing so, they are able to learn very complex features within the image. The center pixel in the google extracted image is the Latitude and Longitude of the address location. We use the OSM data to crop the surronding of the building from a image. We then resize (128x128x3) and zeropad them to make a shape of 224x224x3. While 224x224x3 is not a necessity (since we dont use pretrined weights), we do it to respect the RESNET architecture. [Notebook](https://github.com/Sardhendu/PropertyClassification/blob/master/notebooks/Model_eval-Aerial_cropped.ipynb) <br><br>
+            RESNET-18 model is trained with Satellite Images from google maps. RESNET's can go very deep and are very robust to the problem of vanishing gradient. In doing so, they are able to learn very complex features within the image. The center pixel in the google extracted image is the Latitude and Longitude of the address location. We use the OSM data to crop the surronding of the building from a image. We then resize (128x128x3) and zeropad them to make a shape of 224x224x3. While 224x224x3 is not a necessity (since we dont use pretrined weights), we do it to respect the RESNET architecture. <br><br> 
          </p>
     </div>
 </div>
+
+[Notebook](https://github.com/Sardhendu/PropertyClassification/blob/master/notebooks/Model_eval-Aerial_cropped.ipynb)
 
 <div id="image-table">
     <table>
@@ -114,15 +116,17 @@ Here we bring OSM and street view images to our rescue. This problem can be amel
             Convnet model is trained with Overlayed Images i.e. The idea here is to expicitely provide the model with 
             the knowledge of house and land using coloring scheme. The roof top of the houses are colored red. This allows the model to 
             learn very quickly in few steps. Our experiment shows that the model was able to learn a good distinction in just 2-3 steps. We use a simple Conv-net architecture becasue now due to the colors the model no longer needs
-             a deep architecture to learn simple features. We further believe that even a trandional ML model could do a descent job classifying the image. [Notebook](https://github.com/Sardhendu/PropertyClassification/blob/master/notebooks/Model_eval-Overlayed.ipynb)<br><br><b>Challange</b>: The 
+             a deep architecture to learn simple features. We further believe that even a trandional ML model could do a descent job classifying the image. <br><br><b>Challange</b>: The 
              building boundaries required to create overlayed images are collected from <b>Open Street map</b>. These may not 
              be updated as frequently as Google maps. Moreover, getting building boundaries for all the location may 
              not be feasible. One way to generate colored image given an satellite view is to use <b>Fully 
-             Convolutional Networks for semantic segmenting</b>[TODO]. [Initial Work](https://github.com/Sardhendu/PropertyClassification/tree/master/src/semantic_segmentation) <br>     
+             Convolutional Networks for semantic segmenting</b>[TODO].<br>     
          </p>
     </div>
 </div>
     
+[Notebook](https://github.com/Sardhendu/PropertyClassification/blob/master/notebooks/Model_eval-Overlayed.ipynb)
+[Initial Work](https://github.com/Sardhendu/PropertyClassification/tree/master/src/semantic_segmentation)
 ---------------
 
 #### [CONV AUTOENCODER](https://github.com/Sardhendu/PropertyClassification/src/blob/master/conv_net/conv_autoencoder.py)
@@ -133,16 +137,18 @@ Here we bring OSM and street view images to our rescue. This problem can be amel
     </div>
     <div class="twoColumn">
          <p>
-            Variational Autoencoders were trained for research purposses. And they were used for Assessor/Streetside Images. Assessor images are 5-9 years old and there is a high chance that a Land property then would be a house now. This means that despite the label might say house, the image might indicate a land. So we could either trust the labels or the image. Autoencoder are unsupervised techniques that does not require a label. We feed in the autoencoder with images of house and land and leave it for the autoencoder to find an embedding that could distinguish between land and house. We create a encoding space of 64 dimensions and try k-means clustering with 2 initial centers.<br><br><b>Challange:</b> Assessor images might be expensive to obtain, since these images are manually collected by organization/individuals. In a real scenario, finding assessor image for every address is overstated. [Initial Work](https://github.com/Sardhendu/PropertyClassification/blob/master/notebooks/Model-eval-AssessorEncode.ipynb)<br>    
+            Variational Autoencoders were trained for research purposses. And they were used for Assessor/Streetside Images. Assessor images are 5-9 years old and there is a high chance that a Land property then would be a house now. This means that despite the label might say house, the image might indicate a land. So we could either trust the labels or the image. Autoencoder are unsupervised techniques that does not require a label. We feed in the autoencoder with images of house and land and leave it for the autoencoder to find an embedding that could distinguish between land and house. We create a encoding space of 64 dimensions and try k-means clustering with 2 initial centers.<br><br><b>Challange:</b> Assessor images might be expensive to obtain, since these images are manually collected by organization/individuals. In a real scenario, finding assessor image for every address is overstated.<br>    
          </p>
     </div>
 </div>
+
+[Initial Work](https://github.com/Sardhendu/PropertyClassification/blob/master/notebooks/Model-eval-AssessorEncode.ipynb)
 
 --------
 
 
 ## Data Pipeline (Using Apache Airflow):
 
-The final product submitted was an Airflow DAG that could be triggered on a need-to basis. Below is a view of Data pipeline that is achieved using Apache Airflow Framework.[Code](https://github.com/Sardhendu/PropertyClassification/blob/master/dags/train_pipeline.py)
+The final product submitted was an Airflow DAG that could be triggered on a need-to basis. Below is a view of Data pipeline that is achieved using Apache Airflow Framework. [Code](https://github.com/Sardhendu/PropertyClassification/blob/master/dags/train_pipeline.py)
 
 <img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/pipeline.png" width="800" height="200"><figcaption><center>Data Pipeline</center></figcaption>
