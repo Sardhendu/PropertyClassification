@@ -109,7 +109,7 @@ Here we bring OSM and street view images to our rescue. This problem can be amel
 
 <div id="wrapper">
     <div class="twoColumn">
-        <img align="right" width="200" height="200" src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/Overlaid2.png">
+        <img align="right" width="200" height="200" src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/overlayed2.png">
     </div>
     <div class="twoColumn">
          <p>
