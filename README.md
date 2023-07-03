@@ -120,12 +120,13 @@ Here we bring OSM and street view images to our rescue. This problem can be amel
              building boundaries required to create overlayed images are collected from <b>Open Street map</b>. These may not 
              be updated as frequently as Google maps. Moreover, getting building boundaries for all the location may 
              not be feasible. One way to generate colored image given an satellite view is to use <b>Fully 
-             Convolutional Networks for semantic segmenting</b>[TODO].<br>     
+             Convolutional Networks for semantic segmenting</b> (TODO).<br>     
          </p>
     </div>
 </div>
     
 [Notebook](https://github.com/Sardhendu/PropertyClassification/blob/master/notebooks/Model_eval-Overlayed.ipynb)
+
 [Initial Work](https://github.com/Sardhendu/PropertyClassification/tree/master/src/semantic_segmentation)
 ---------------
 
