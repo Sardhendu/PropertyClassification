@@ -125,9 +125,7 @@ Here we bring OSM and street view images to our rescue. This problem can be amel
     </div>
 </div>
     
-[Notebook](https://github.com/Sardhendu/PropertyClassification/blob/master/notebooks/Model_eval-Overlayed.ipynb)
-
-[Initial Work](https://github.com/Sardhendu/PropertyClassification/tree/master/src/semantic_segmentation)
+[Notebook](https://github.com/Sardhendu/PropertyClassification/blob/master/notebooks/Model_eval-Overlayed.ipynb)/[Initial Work](https://github.com/Sardhendu/PropertyClassification/tree/master/src/semantic_segmentation)
 ---------------
 
 #### [CONV AUTOENCODER](https://github.com/Sardhendu/PropertyClassification/src/blob/master/conv_net/conv_autoencoder.py)
