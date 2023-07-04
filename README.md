@@ -40,7 +40,7 @@ Here's a snapshot of the images:
             	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/aerial.png" width="200" height="200"><figcaption><center>Satellite/Aerial Image</center></figcaption>
              </td>
              <td style="padding:5px">
-            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/Overlaid.jpg" width="200" height="200"><figcaption></center>Overlaid Image</center></figcaption>
+            	<img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/overlayed2.png" width="200" height="200"><figcaption></center>Overlaid Image</center></figcaption>
              </td>
         </tr>
     </table>
