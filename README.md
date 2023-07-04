@@ -152,3 +152,4 @@ Here we bring OSM and street view images to our rescue. This problem can be amel
 The final product submitted was an Airflow DAG that could be triggered on a need-to basis. Below is a view of Data pipeline that is achieved using Apache Airflow Framework. [Code](https://github.com/Sardhendu/PropertyClassification/blob/master/dags/train_pipeline.py)
 
 <img src="https://github.com/Sardhendu/PropertyClassification/blob/master/images/pipeline.png" width="800" height="200"><figcaption><center>Data Pipeline</center></figcaption>
+
