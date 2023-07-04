@@ -1,22 +1,14 @@
 #  Property Classification
 
-A real-estate business needs to keep track of the state of all the residential/commecial properties in a targeted area. Ideally one would have to send a property-inspector to analyse a property in a timely basis. With growing properties in the United States this task becomes banal and expensive. Ideally, only 5-10% of all the property may need an on-site inspection, rest 90% of the properties simply add up to the expense. In this project we aim to programatcally find these 5-10% of the properties that may need invidual inspection. Doing so we cut inspection cost by 70-80%.
+Assessing the current status of a property is a major building block for any market value analysis. Ideally one would have to send a property-inspector to analyse a property in a timely basis. With growing properties in the United States this task becomes banal and expensive. Ideally, only 5-10% of all the property may need an on-site inspection, rest 90% of the properties simply add up to the expense. In this project we aim to programatcally find these 5-10% of the properties that may need invidual inspection. Doing so we cut inspection cost by 70-80%. 
 
-While there are many advance usecases that needs to be met for a complete inspection profiling, in this project we aim to cover the most basic use case. Here we simply aim to find if there is an existing property in the given address.
+While there are many advance usecases that needs to be met for a complete inspection profiling, in this project we aim to cover the most basic use case. We use deep learning models to classify images of properties local to the state of Illinois into two categories suggesting if it is occupied or otherwise.
 
-Use Case:
-1. Find whether a property was demolished from the last time it was inspected
-2. Find whether a property is constructed on a previously vacant land.
+An ensemble model is built over the output probabilities of three neural networks trained over three types of images of the properties, namely the aerial view, streetside view and an overlaid (combinatorial aerial - OpenStreetMap) view. The overall accuracy achieved by the best model is 95% with an accuracy of 96% in identifying land properties.
 
 
 ## Data availability
-* Assessor Image: Property images are collected manually once in 5-9 years. We are given a list of accessor image to use for the project. While accessor images are a great source they cannot be trustested. Below are some of the reasons
-
-1. They are 5-9 years old
-2. Poor coverage
-3. Building's sometimes are occluded with trees and other property artifacts.
-4. Expensive to collect.
-5. Human annotation can't be trusted entirely
+* Assessor Image: Property images are collected manually once in 5-9 years. We are given a list of accessor image to use for the project. 
 
 ### External Data Collection and Preparation:
 Inorder to increase coverage with more latest data we would need to have access to other data providers. Satellite, Aerial, streetside images from google maps and bing maps are updated every 6 month -2 years and have high coverage. A model would be more reliable in these images.
@@ -47,6 +39,15 @@ Here's a snapshot of the images:
 </div>
  
 
+## Data Issues:
+1. Accessor images are 5-9 years old and hence cannot be trusted entirely
+2. Accessor image and labels were expensive to collect.
+3. Accessor image had Poor coverage
+4. Building's sometimes are occluded with trees and other property artifacts.
+5. Human annotation can't be trusted entirely
+6. Data Imbalance: 85.56% of data was positive class (occupied)
+7. Data spatial difference. singlefamily, multifamily, condo, commercial, parking lots, office space etc.
+
 ### Problems Continued:
 #### Data/Labeling problems:
 1. **Incorrect Labels**: Even with the external data we see lots of our labels not consistent with the image picture. So we typically have a data issue. We plan to use all the images (Mixture of experts model). Since, there is a good chance that at least one image type would be consistent with the label. Labeling issues can not be avoided, ergo, we use a bootstrapping techniques to correct the labels and augment them per iteration. [Notebook](https://github.com/Sardhendu/PropertyClassification/blob/master/notebooks/BootStrap-Test-Mislabeled.ipynb)
@@ -54,13 +55,26 @@ Here's a snapshot of the images:
 2. **Data Imbalcnce**: Majority of data we had, had a property in it. We were missing on data for vacant land. With data sourcing and clever modeling techniques we were able to fix this problem.
 
 #### Data/Modeling problems:
-1. **Focus**: With multiple buildings in a image, how to tell the model to focus on the queried building? Address to lat-lon conversion results in a coordinate that could be anywhere on the property, additionally in a dense region the coordinate returned could overlap with the adjacent building structure. Since Deep learning CV models are known to perform worse on the edges of an image we may encounter several False positives/negatives. 
+1. **Focus/Attention**: With multiple buildings in a image, how to tell the model to focus on the queried building? Address to lat-lon conversion results in a coordinate that could be anywhere on the property, additionally in a dense region the coordinate returned could overlap with the adjacent building structure. Since Deep learning CV models are known to perform worse on the edges of an image we may encounter several False positives/negatives. 
 
 Paritally this problem can be solved by the use of OSM's. In sense, it could help in providing attention based context to the classification model. OSM building coordinates can be Overlaid on the image to provide additional focus point to the model. [Overlay building boundary on static images](https://github.com/Sardhendu/PropertyClassification/tree/master/src/semantic_segmentation)  Overlay building boundaries (collected from OSM) on satellite static images collected from google maps.
 
 2. **Image Size**: How to select the size of the image generation process? Lower size image could clear up noise by reducing the number of properties in the image. But a small size image reduces context for large properties. This will affect the model performance with large properties. 
 
 Here we bring OSM and street view images to our rescue. This problem can be ameliorated by integrating several image source.
+
+
+### Data Preparation:
+* “last_reviewed_timestamp” was used to initially sample x images with most likely correct labels. This process was augmentation by sample more data with Bootstrapping.
+* "Balance Dataset": Dataset was balanced for training purposes and samples were taken using stratified sampling approach.
+* In total training_samples 16678 = images, validation_samples = 1664 images and test_samples = 1792
+* Augmentation and Cropping:
+    
+    1. Rotation: 90
+    2. Crop(128, 128, 3) : when building polygons found then crop using that, if not then center crop using `image_crop_shape`
+    3. Resize (128, 128, 3): only if the image/crop size is greater/less than the given `image_resize_shape`
+    4. image_out_shape (224, 224, 3): final output shape. If zero pad then pad to size 224 if not then resize
+
 
 ### Modeling Techniques (Deep Nets) 
 **Vanila Classification model** with input of aerial images fell short and saw several modelling problems as discussed above. Let us now discuss all different models employed for different types of images.
