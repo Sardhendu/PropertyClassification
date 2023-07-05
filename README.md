@@ -1,6 +1,6 @@
 #  Property Classification
 
-Assessing the current status of a property is a major building block for any market value analysis. Ideally one would have to send a property-inspector to analyse a property in a timely basis. With growing properties in the United States this task becomes banal and expensive. Ideally, only 5-10% of all the property may need an on-site inspection, rest 90% of the properties simply add up to the expense. In this project we aim to programatcally find these 5-10% of the properties that may need invidual inspection. Doing so we cut inspection cost by 70-80%. 
+Assessing the current status of a property is a major building block for any market value analysis. Ideally one would have to send a property-inspector to analyse a property in a timely basis. With growing properties in the United States this task becomes tedious and expensive. Ideally, only 5-10% of all the property may need an on-site inspection, rest 90% of the properties simply add up to the expense. In this project we aim to programatcally find these 5-10% of the properties that may need invidual inspection. Doing so we cut inspection cost by 70-80%. 
 
 While there are many advance usecases that needs to be met for a complete inspection profiling, in this project we aim to cover the most basic use case. We use deep learning models to classify images of properties local to the state of Illinois into two categories suggesting if it is occupied or otherwise.
 
